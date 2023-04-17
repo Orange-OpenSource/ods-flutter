@@ -1,5 +1,3 @@
-# Orange Design System Flutter
-
 <h1 align="center">Orange Design System Flutter</h1>
 
 <p align="center">
