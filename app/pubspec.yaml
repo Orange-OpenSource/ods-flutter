@@ -35,7 +35,7 @@ dependencies:
   provider: ^6.0.0
   # Locally:
   underscore_48484645478084414891891:
-    path: ../flutter-my-package
+    path: ../lib
   # Remote
   # underscore_48484645478084414891891: ^0.0.2
 

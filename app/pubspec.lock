@@ -203,7 +203,7 @@ packages:
   underscore_48484645478084414891891:
     dependency: "direct main"
     description:
-      path: "../flutter-my-package"
+      path: "../lib"
       relative: true
     source: path
     version: "0.0.3"
