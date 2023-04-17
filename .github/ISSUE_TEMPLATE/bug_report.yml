@@ -17,7 +17,7 @@ body:
     attributes:
       label: Your test device
       description: 
-      placeholder: Huawei Mate 20 Pro
+      placeholder: Huawei Mate 20 Pro, iPhone 13 pro
     validations:
       required: true
   - type: input
@@ -25,30 +25,7 @@ body:
     attributes:
       label: OS Version
       description: 
-      placeholder: Android 10.x
-    validations:
-      required: true
-  - type: input
-    id: app-version
-    attributes:
-      label: App version
-      placeholder: v1.0.1
-    validations:
-      required: true
-  - type: input
-    id: device
-    attributes:
-      label: Your test device
-      description: 
-      placeholder: iPhone 13 pro
-    validations:
-      required: true
-  - type: input
-    id: os-version
-    attributes:
-      label: OS Version
-      description: 
-      placeholder: iOS 15.1
+      placeholder: Android 10.x, iOS 15.1
     validations:
       required: true
   - type: input
