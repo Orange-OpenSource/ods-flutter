@@ -1,7 +1,7 @@
 <h1 align="center">Orange Design System Flutter</h1>
 
 <p align="center">
-  ODS Flutter provides Orange Flutter components to developers and a demo application.
+  ODS Flutter provides Orange Flutter components for Android and iOS to developers, and a demo application.
   <br>
   <a href="https://orange-opensource.github.io/ods-flutter"><strong>Visit ODS Flutter</strong></a>
   <br>
