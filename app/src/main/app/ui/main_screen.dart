@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'about/about_page.dart';
 import 'components/components_page.dart';
-import 'favorites/favorites_page.dart';
 import 'guidelines/guidelines_page.dart';
 import 'modules/modules_page.dart';
 
@@ -29,7 +29,7 @@ class _MainScreenState extends State<MainScreen> {
         page = ModulesPage();
         break;
       case 3:
-        page = FavoritesPage();
+        page = AboutPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
