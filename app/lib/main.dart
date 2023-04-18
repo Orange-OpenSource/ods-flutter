@@ -22,6 +22,7 @@ class OdsApplication extends StatelessWidget {
         title: 'Namer App',
         theme: totoThemeData,
         home: MainScreen(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
