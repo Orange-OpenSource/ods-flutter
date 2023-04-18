@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.x versions
 
-* TODO: Describe initial release.
+* Versions used to init the project.
