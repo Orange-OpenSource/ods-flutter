@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ComponentsPage extends StatelessWidget {
+class ComponentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();

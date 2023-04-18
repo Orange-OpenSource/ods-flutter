@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/ods_flutter.dart';
 
-class GuidelinesPage extends StatelessWidget {
+class GuidelinesScreen extends StatelessWidget {
   var calculator = Calculator();
 
   @override

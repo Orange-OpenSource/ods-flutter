@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'about/about_page.dart';
-import 'components/components_page.dart';
-import 'guidelines/guidelines_page.dart';
-import 'modules/modules_page.dart';
+import 'about/about_screen.dart';
+import 'components/components_screen.dart';
+import 'guidelines/guidelines_screen.dart';
+import 'modules/modules_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -20,16 +20,16 @@ class _MainScreenState extends State<MainScreen> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = GuidelinesPage();
+        page = GuidelinesScreen();
         break;
       case 1:
-        page = ComponentsPage();
+        page = ComponentsScreen();
         break;
       case 2:
-        page = ModulesPage();
+        page = ModulesScreen();
         break;
       case 3:
-        page = AboutPage();
+        page = AboutScreen();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
