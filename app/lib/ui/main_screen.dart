@@ -56,10 +56,11 @@ class _MainScreenState extends State<MainScreen> {
                 Expanded(child: mainArea),
                 SafeArea(
                   child: BottomNavigationBar(
+                    type: BottomNavigationBarType.fixed,
                     items: [
                       BottomNavigationBarItem(
                         icon: Icon(Icons.square),
-                        label: 'Gui!delines',
+                        label: 'Guidelines',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.input),
