@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:underscore_48484645478084414891891/underscore_48484645478084414891891.dart';
+import 'package:ods_flutter/ods_flutter.dart';
 
 void main() {
   test('adds one to input values', () {
