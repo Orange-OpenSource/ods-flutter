@@ -46,84 +46,69 @@ class _MainScreenState extends State<MainScreen> {
     );
 
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth < 450) {
-            // Use a more mobile-friendly layout with BottomNavigationBar
-            // on narrow screens.
-            return Column(
-              children: [
-                Expanded(child: mainArea),
-                SafeArea(
-                  child: BottomNavigationBar(
-                    type: BottomNavigationBarType.fixed,
-                    items: [
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.square),
-                        label: 'Guidelines',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.input),
-                        label: 'Components',
-                      ),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.check_box), label: 'Modules'),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.favorite),
-                        label: 'About',
-                      ),
-                    ],
-                    currentIndex: selectedIndex,
-                    onTap: (value) {
-                      setState(() {
-                        selectedIndex = value;
-                      });
-                    },
+        bottomNavigationBar: MediaQuery.of(context).size.width < 500
+            ? BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.square),
+                    label: 'Guidelines',
                   ),
-                )
-              ],
-            );
-          } else {
-            return Row(
-              children: [
-                SafeArea(
-                  child: NavigationRail(
-                    extended: constraints.maxWidth >= 600,
-                    destinations: [
-                      NavigationRailDestination(
-                        icon: Icon(Icons.square),
-                        label: Text('Buttons'),
-                      ),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.input),
-                        label: Text('Input and Selections'),
-                      ),
-                      NavigationRailDestination(
-                          icon: Icon(Icons.check_box),
-                          label: Text('Information displays')),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.home),
-                        label: Text('Home'),
-                      ),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.favorite),
-                        label: Text('Favorites'),
-                      ),
-                    ],
-                    selectedIndex: selectedIndex,
-                    onDestinationSelected: (value) {
-                      setState(() {
-                        selectedIndex = value;
-                      });
-                    },
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.input),
+                    label: 'Components',
                   ),
-                ),
-                Expanded(child: mainArea),
-              ],
-            );
-          }
-        },
-      ),
-    );
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.check_box), label: 'Modules'),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite),
+                    label: 'About',
+                  ),
+                ],
+                currentIndex: selectedIndex,
+                onTap: (value) {
+                  setState(() {
+                    selectedIndex = value;
+                  });
+                },
+              )
+            : null,
+        body: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            if (MediaQuery.of(context).size.width >= 500)
+              NavigationRail(
+                extended: MediaQuery.of(context).size.width >= 600,
+                destinations: [
+                  NavigationRailDestination(
+                    icon: Icon(Icons.square),
+                    label: Text('Buttons'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.input),
+                    label: Text('Input and Selections'),
+                  ),
+                  NavigationRailDestination(
+                      icon: Icon(Icons.check_box),
+                      label: Text('Information displays')),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.home),
+                    label: Text('Home'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.favorite),
+                    label: Text('Favorites'),
+                  ),
+                ],
+                selectedIndex: selectedIndex,
+                onDestinationSelected: (value) {
+                  setState(() {
+                    selectedIndex = value;
+                  });
+                },
+              ),
+            Expanded(child: mainArea),
+          ],
+        ));
   }
 }
