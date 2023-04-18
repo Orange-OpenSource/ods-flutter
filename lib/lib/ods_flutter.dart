@@ -1,6 +1,5 @@
 library ods_flutter;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// A Calculator.
