@@ -8,4 +8,22 @@ in whole or part of, in any medium, except as required for reasonable and custom
 and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/App-Store-alpha-512@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-App-76@1x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-App-76@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Notification-20@1x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Notification-20@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Pro-App-83.5@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Settings-29@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Spotlight-40@1x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-Spotlight-40@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-App-60@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-App-60@3x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Notification-20@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Notification-20@3x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Settings-29@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Settings-29@3x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Spotlight-40@2x.png
+ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Spotlight-40@3x.png
+
 End of the parts list under Orange SA Copyright
