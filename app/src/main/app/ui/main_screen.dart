@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'buttons/buttons_page.dart';
+import 'components/components_page.dart';
 import 'favorites/favorites_page.dart';
-import 'home/generator_page.dart';
-import 'information/information_display_page.dart';
-import 'input_and_selection_page/input_and_selection_page.dart';
+import 'guidelines/guidelines_page.dart';
+import 'modules/modules_page.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -21,18 +20,15 @@ class _MainScreenState extends State<MainScreen> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = ButtonsPage();
+        page = GuidelinesPage();
         break;
       case 1:
-        page = InputAndSelectionsPage();
+        page = ComponentsPage();
         break;
       case 2:
-        page = InformationDisplaysPage();
+        page = ModulesPage();
         break;
       case 3:
-        page = GeneratorPage();
-        break;
-      case 4:
         page = FavoritesPage();
         break;
       default:
@@ -63,23 +59,17 @@ class _MainScreenState extends State<MainScreen> {
                     items: [
                       BottomNavigationBarItem(
                         icon: Icon(Icons.square),
-                        label: 'Buttons',
+                        label: 'Gui!delines',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.input),
-                        label: 'Input and Selections',
+                        label: 'Components',
                       ),
                       BottomNavigationBarItem(
-                          icon: Icon(Icons.check_box),
-                          label: 'Information displays'
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.home),
-                        label: 'Home',
-                      ),
+                          icon: Icon(Icons.check_box), label: 'Modules'),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.favorite),
-                        label: 'Favorites',
+                        label: 'About',
                       ),
                     ],
                     currentIndex: selectedIndex,
@@ -109,8 +99,7 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       NavigationRailDestination(
                           icon: Icon(Icons.check_box),
-                          label: Text('Information displays')
-                      ),
+                          label: Text('Information displays')),
                       NavigationRailDestination(
                         icon: Icon(Icons.home),
                         label: Text('Home'),

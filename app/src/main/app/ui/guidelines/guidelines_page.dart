@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../../domain/recipes/my_app_state.dart';
 
-class ButtonsPage extends StatelessWidget {
+class GuidelinesPage extends StatelessWidget {
   var calculator = Calculator();
 
   @override
