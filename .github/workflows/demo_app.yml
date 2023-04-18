@@ -15,4 +15,3 @@ jobs:
         with:
           workingDir: app
           baseHref: /ods-flutter/
-
