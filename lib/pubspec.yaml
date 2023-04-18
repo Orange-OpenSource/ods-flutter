@@ -1,6 +1,6 @@
 name: ods_flutter
 description: ODS Flutter provides Orange Flutter components for Android and iOS to developers, and a demo application.
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:
