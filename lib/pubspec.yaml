@@ -1,6 +1,6 @@
-name: underscore_48484645478084414891891
-description: A new Flutter package.
-version: 0.0.3
+name: ods_flutter
+description: ODS Flutter provides Orange Flutter components for Android and iOS to developers, and a demo application.
+version: 0.0.2
 homepage:
 
 environment:
