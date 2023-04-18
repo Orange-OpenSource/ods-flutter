@@ -6,12 +6,12 @@ import 'home/generator_page.dart';
 import 'information/information_display_page.dart';
 import 'input_and_selection_page/input_and_selection_page.dart';
 
-class MyHomePage extends StatefulWidget {
+class MainScreen extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainScreenState extends State<MainScreen> {
   var selectedIndex = 0;
 
   @override

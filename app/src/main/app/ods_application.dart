@@ -5,14 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:underscore_48484645478084414891891/underscore_48484645478084414891891.dart';
 
 import 'domain/recipes/my_app_state.dart';
-import 'ui/main_state.dart';
+import 'ui/main_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(OdsApplication());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class OdsApplication extends StatelessWidget {
+  const OdsApplication({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Namer App',
         theme: totoThemeData,
-        home: MyHomePage(),
+        home: MainScreen(),
       ),
     );
   }
