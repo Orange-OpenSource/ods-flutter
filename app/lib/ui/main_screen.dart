@@ -123,9 +123,13 @@ class _MainScreenConfig {
         label: 'Components',
         screen: ComponentsScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.check_box), label: 'Modules', screen: ModulesScreen()),
+        icon: Icon(Icons.check_box),
+        label: 'Modules',
+        screen: ModulesScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.favorite), label: 'About', screen: AboutScreen()),
+        icon: Icon(Icons.favorite),
+        label: 'About',
+        screen: AboutScreen()),
   ];
 }
 
