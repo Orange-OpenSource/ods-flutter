@@ -19,8 +19,9 @@ class OdsApplication extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Namer App',
-        theme: totoThemeData,
+        title: 'Orange Design System - Flutter Demo App',
+        theme: lightThemeData,
+        darkTheme: darkThemeData,
         home: MainScreen(),
         debugShowCheckedModeBanner: false,
       ),
