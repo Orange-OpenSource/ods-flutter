@@ -1,4 +1,4 @@
-# flutter2
+# ods_flutter_demo
 
 A new Flutter project.
 
