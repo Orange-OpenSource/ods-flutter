@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'domain/recipes/my_app_state.dart';
 import 'ui/main_screen.dart';
+import './model_theme.dart';
 
 void main() {
   runApp(OdsApplication());
@@ -17,14 +18,17 @@ class OdsApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Orange Design System - Flutter Demo App',
-        theme: lightThemeData,
-        darkTheme: darkThemeData,
-        home: MainScreen(),
-        debugShowCheckedModeBanner: false,
-      ),
+      create: (_) => ModelTheme(),
+      child: Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child) {
+        return MaterialApp(
+          title: 'Orange Design System - Flutter Demo App',
+          theme: lightThemeData,
+          darkTheme: darkThemeData,
+          themeMode: themeNotifier.theme,
+          debugShowCheckedModeBanner: false,
+          home: MainScreen(),
+        );
+      }),
     );
   }
 }
