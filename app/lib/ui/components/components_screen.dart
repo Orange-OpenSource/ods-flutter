@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ods_flutter/components/ods_checkbox.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter/src/main/app/component/content/ods_radiobutton.dart';
+import 'package:ods_flutter/src/main/app/component/content/ods_switch.dart';
 
 const rowSpacer = SizedBox(width: spacingM);
 const componentSpacer = SizedBox(height: spacingS);
@@ -521,27 +523,24 @@ class _SwitchRowState extends State<SwitchRow> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         // TODO: use SwitchListTile when thumbIcon is available https://github.com/flutter/flutter/issues/118616
-        Switch(
-          value: value0,
-          onChanged: widget.isEnabled
-              ? (value) {
-                  setState(() {
-                    value0 = value;
-                  });
-                }
-              : null,
-        ),
-        Switch(
-          thumbIcon: thumbIcon,
-          value: value1,
-          onChanged: widget.isEnabled
-              ? (value) {
-                  setState(() {
-                    value1 = value;
-                  });
-                }
-              : null,
-        ),
+        OdsSwitch(
+            checked: value0,
+            icon: null,
+            enabled: widget.isEnabled ? true : false,
+            onCheckedChange: (value) {
+              setState(() {
+                value0 = value!;
+              });
+            }),
+        OdsSwitch(
+            checked: value1,
+            icon: thumbIcon,
+            enabled: widget.isEnabled ? true : false,
+            onCheckedChange: (value) {
+              setState(() {
+                value1 = value!;
+              });
+            }),
       ],
     );
   }
@@ -631,31 +630,38 @@ class _RadiosButtonsState extends State<RadiosButtons> {
       name: 'Radio buttons',
       child: Column(
         children: <Widget>[
-          RadioListTile<Options>(
-            title: const Text('Option 1'),
-            value: Options.option1,
+          OdsRadioButton<Options>(
+            title: 'Option 1',
+            selected: Options.option1,
+            enabled: true,
             groupValue: _selectedOption,
-            onChanged: (value) {
+            onSelectedChange: (value) {
               setState(() {
                 _selectedOption = value;
               });
             },
           ),
-          RadioListTile<Options>(
-            title: const Text('Option 2'),
-            value: Options.option2,
+          OdsRadioButton<Options>(
+            title: 'Option 2',
+            selected: Options.option2,
             groupValue: _selectedOption,
-            onChanged: (value) {
+            enabled: true,
+            onSelectedChange: (value) {
               setState(() {
                 _selectedOption = value;
               });
             },
           ),
-          RadioListTile<Options>(
-            title: const Text('Option 3'),
-            value: Options.option3,
+          OdsRadioButton<Options>(
+            title: 'Option 3',
+            selected: Options.option3,
             groupValue: _selectedOption,
-            onChanged: null,
+            enabled: false,
+            onSelectedChange: (value) {
+              setState(() {
+                _selectedOption = value;
+              });
+            },
           ),
         ],
       ),
