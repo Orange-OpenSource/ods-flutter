@@ -9,7 +9,7 @@ class ModelTheme extends ChangeNotifier {
   ModelTheme() {
     _themeMode = ThemeMode.system;
     _preferences = ThemePreferences();
-    getPreferences();
+    _getPreferences();
   }
 
   //Switching the themes
@@ -19,7 +19,7 @@ class ModelTheme extends ChangeNotifier {
     notifyListeners();
   }
 
-  getPreferences() async {
+  _getPreferences() async {
     _themeMode = await _preferences.getThemeMode();
     notifyListeners();
   }
