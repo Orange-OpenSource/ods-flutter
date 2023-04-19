@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ods_flutter/res/spacings.dart';
-import 'package:ods_flutter/src/main/app/component/content/ods_checkbox.dart';
+import 'package:ods_flutter/components/ods_checkbox.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 
 const rowSpacer = SizedBox(width: spacingM);
 const componentSpacer = SizedBox(height: spacingS);
