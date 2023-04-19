@@ -39,43 +39,32 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
 
-    return Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child)
-    {
+    return Consumer<ModelTheme>(
+        builder: (context, ModelTheme themeNotifier, child) {
       return Scaffold(
           appBar: AppBar(
             title: Text(_MainScreenConfig.mainMenuItems[_selectedIndex].label),
-            actions: [
-              ThemeSelector()
-            ],
+            actions: [ThemeSelector()],
           ),
           bottomNavigationBar:
-          MediaQuery
-              .of(context)
-              .size
-              .width < mobileUiMaxScreenWidth
-              ? BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: _bottomNavigationBarItems,
-            currentIndex: _selectedIndex,
-            onTap: (value) {
-              setState(() {
-                _selectedIndex = value;
-              });
-            },
-          )
-              : null,
+              MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
+                  ? BottomNavigationBar(
+                      type: BottomNavigationBarType.fixed,
+                      items: _bottomNavigationBarItems,
+                      currentIndex: _selectedIndex,
+                      onTap: (value) {
+                        setState(() {
+                          _selectedIndex = value;
+                        });
+                      },
+                    )
+                  : null,
           body: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (MediaQuery
-                  .of(context)
-                  .size
-                  .width >= mobileUiMaxScreenWidth)
+              if (MediaQuery.of(context).size.width >= mobileUiMaxScreenWidth)
                 NavigationRail(
-                  extended: MediaQuery
-                      .of(context)
-                      .size
-                      .width >=
+                  extended: MediaQuery.of(context).size.width >=
                       extendedNavigationRailMinScreenWidth,
                   destinations: _navigationRailDestinations,
                   selectedIndex: _selectedIndex,
@@ -103,13 +92,9 @@ class _MainScreenConfig {
         label: 'Components',
         screen: ComponentsScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.check_box),
-        label: 'Modules',
-        screen: ModulesScreen()),
+        icon: Icon(Icons.check_box), label: 'Modules', screen: ModulesScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.favorite),
-        label: 'About',
-        screen: AboutScreen()),
+        icon: Icon(Icons.favorite), label: 'About', screen: AboutScreen()),
   ];
 }
 
