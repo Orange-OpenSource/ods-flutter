@@ -63,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
                       chosenTheme = value!;
                     });
 
-                    themeNotifier.theme = value == ThemeMode.system.toString() ? ThemeMode.system : (value == ThemeMode.dark.toString() ? ThemeMode.dark : ThemeMode.light);
+                    themeNotifier.themeMode = value == ThemeMode.system.toString() ? ThemeMode.system : (value == ThemeMode.dark.toString() ? ThemeMode.dark : ThemeMode.light);
                   }
               )
             ],

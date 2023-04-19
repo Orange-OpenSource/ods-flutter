@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'theme_preference.dart';
 
 class ModelTheme extends ChangeNotifier {
-  late ThemeMode _theme;
+  late ThemeMode _themeMode;
   late ThemePreferences _preferences;
-  ThemeMode get theme => _theme;
+  ThemeMode get themeMode => _themeMode;
 
   ModelTheme() {
-    _theme = ThemeMode.system;
+    _themeMode = ThemeMode.system;
     _preferences = ThemePreferences();
     getPreferences();
   }
 
   //Switching the themes
-  set theme(ThemeMode value) {
-    _theme = value;
-    _preferences.setTheme(value);
+  set themeMode(ThemeMode themeMode) {
+    _themeMode = themeMode;
+    _preferences.setThemeMode(themeMode);
     notifyListeners();
   }
 
   getPreferences() async {
-    _theme = await _preferences.getTheme();
+    _themeMode = await _preferences.getThemeMode();
     notifyListeners();
   }
 }

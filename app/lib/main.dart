@@ -24,7 +24,7 @@ class OdsApplication extends StatelessWidget {
           title: 'Orange Design System - Flutter Demo App',
           theme: lightThemeData,
           darkTheme: darkThemeData,
-          themeMode: themeNotifier.theme,
+          themeMode: themeNotifier.themeMode,
           debugShowCheckedModeBanner: false,
           home: MainScreen(),
         );

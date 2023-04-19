@@ -4,25 +4,25 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ThemePreferences {
   static const THEME_KEY = "theme_key";
 
-  setTheme(ThemeMode value) async {
+  setThemeMode(ThemeMode themeMode) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    sharedPreferences.setString(THEME_KEY, value.toString());
+    sharedPreferences.setString(THEME_KEY, themeMode.toString());
   }
 
-  getTheme() async {
+  getThemeMode() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
-    String? theme = sharedPreferences.getString(THEME_KEY);
+    String? themeModeString = sharedPreferences.getString(THEME_KEY);
 
-    if (theme == ThemeMode.system.toString()) {
+    if (themeModeString == ThemeMode.system.toString()) {
       return ThemeMode.system;
     }
 
-    if (theme == ThemeMode.dark.toString()) {
+    if (themeModeString == ThemeMode.dark.toString()) {
       return ThemeMode.dark;
     }
 
-    if (theme == ThemeMode.light.toString()) {
+    if (themeModeString == ThemeMode.light.toString()) {
       return ThemeMode.light;
     }
 
