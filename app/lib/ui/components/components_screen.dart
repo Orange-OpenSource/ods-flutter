@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ods_flutter/res/spacings.dart';
+import 'package:ods_flutter/src/main/app/component/content/ods_checkbox.dart';
 
 const rowSpacer = SizedBox(width: spacingM);
 const componentSpacer = SizedBox(height: spacingS);
@@ -554,9 +555,10 @@ class Checkboxes extends StatefulWidget {
 }
 
 class _CheckboxesState extends State<Checkboxes> {
-  bool? isChecked0 = true;
-  bool? isChecked1;
-  bool? isChecked2 = false;
+  bool isChecked0 = true;
+  bool isChecked1 = true;
+  bool isChecked2 = false;
+  bool isEnable = true;
 
   @override
   Widget build(BuildContext context) {
@@ -564,43 +566,45 @@ class _CheckboxesState extends State<Checkboxes> {
       name: 'Checkboxes',
       child: Column(
         children: <Widget>[
-          CheckboxListTile(
-            tristate: true,
-            value: isChecked0,
-            title: const Text('Option 1'),
-            onChanged: (value) {
-              setState(() {
-                isChecked0 = value;
-              });
-            },
-          ),
-          CheckboxListTile(
-            tristate: true,
-            value: isChecked1,
-            title: const Text('Option 2'),
-            onChanged: (value) {
-              setState(() {
-                isChecked1 = value;
-              });
-            },
-          ),
-          CheckboxListTile(
-            tristate: true,
-            value: isChecked2,
-            title: const Text('Option 3'),
+          OdsCheckbox(
+              checked: isChecked0,
+              title: 'Option 1',
+              enabled: isEnable,
+              onCheckedChange: (bool? value) {
+                //if (isEnable) {
+                setState(() {
+                  isChecked0 = value!;
+                });
+              }),
+          OdsCheckbox(
+            checked: isChecked2,
+            title: 'Option 2',
+            enabled: isEnable,
             // TODO: showcase error state https://github.com/flutter/flutter/issues/118616
-            onChanged: (value) {
+            onCheckedChange: (value) {
               setState(() {
-                isChecked2 = value;
+                isChecked2 = value!;
               });
             },
           ),
-          const CheckboxListTile(
-            tristate: true,
-            title: Text('Option 4'),
-            value: true,
-            onChanged: null,
-          ),
+          OdsCheckbox(
+              title: 'Option 3',
+              checked: true,
+              enabled: false,
+              onCheckedChange: (value) {
+                setState(() {
+                  isChecked2 = value!;
+                });
+              }),
+          OdsCheckbox(
+              title: 'Option 4',
+              checked: false,
+              enabled: false,
+              onCheckedChange: (value) {
+                setState(() {
+                  isChecked2 = value!;
+                });
+              }),
         ],
       ),
     );
