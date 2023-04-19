@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../model_theme.dart';
 import 'about/about_screen.dart';
 import 'components/components_screen.dart';
 import 'guidelines/guidelines_screen.dart';
@@ -21,10 +23,12 @@ class _MainScreenState extends State<MainScreen> {
   var _navigationRailDestinations = _MainScreenConfig.mainMenuItems
       .map((e) => NavigationRailDestination(icon: e.icon, label: Text(e.label)))
       .toList();
+  String chosenTheme = ThemeMode.system.toString();
 
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
+    List<String> themeList = <String>[ThemeMode.light.toString(), ThemeMode.dark.toString(), ThemeMode.system.toString()];
 
     // The container for the current page, with its background color
     // and subtle switching animation.
@@ -36,41 +40,75 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
 
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(_MainScreenConfig.mainMenuItems[_selectedIndex].label),
-        ),
-        bottomNavigationBar:
-            MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
-                ? BottomNavigationBar(
-                    type: BottomNavigationBarType.fixed,
-                    items: _bottomNavigationBarItems,
-                    currentIndex: _selectedIndex,
-                    onTap: (value) {
-                      setState(() {
-                        _selectedIndex = value;
-                      });
-                    },
-                  )
-                : null,
-        body: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            if (MediaQuery.of(context).size.width >= mobileUiMaxScreenWidth)
-              NavigationRail(
-                extended: MediaQuery.of(context).size.width >=
-                    extendedNavigationRailMinScreenWidth,
-                destinations: _navigationRailDestinations,
-                selectedIndex: _selectedIndex,
-                onDestinationSelected: (value) {
-                  setState(() {
-                    _selectedIndex = value;
-                  });
-                },
-              ),
-            Expanded(child: mainArea),
-          ],
-        ));
+    return Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child)
+    {
+      return Scaffold(
+          appBar: AppBar(
+            title: Text(_MainScreenConfig.mainMenuItems[_selectedIndex].label),
+            actions: [
+              DropdownButton<String>(
+                  value: chosenTheme,
+                  items: themeList.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Icon(value == ThemeMode.system.toString() ?
+                      Icons.circle_sharp
+                          : (value == ThemeMode.dark.toString()
+                          ? Icons.nightlight_round
+                          : Icons.wb_sunny)),
+                    );
+                  }).toList(),
+                  onChanged: (String? value) {
+                    setState(() {
+                      chosenTheme = value!;
+                    });
+
+                    themeNotifier.themeMode = value == ThemeMode.system.toString() ? ThemeMode.system : (value == ThemeMode.dark.toString() ? ThemeMode.dark : ThemeMode.light);
+                  }
+              )
+            ],
+          ),
+          bottomNavigationBar:
+          MediaQuery
+              .of(context)
+              .size
+              .width < mobileUiMaxScreenWidth
+              ? BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            items: _bottomNavigationBarItems,
+            currentIndex: _selectedIndex,
+            onTap: (value) {
+              setState(() {
+                _selectedIndex = value;
+              });
+            },
+          )
+              : null,
+          body: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              if (MediaQuery
+                  .of(context)
+                  .size
+                  .width >= mobileUiMaxScreenWidth)
+                NavigationRail(
+                  extended: MediaQuery
+                      .of(context)
+                      .size
+                      .width >=
+                      extendedNavigationRailMinScreenWidth,
+                  destinations: _navigationRailDestinations,
+                  selectedIndex: _selectedIndex,
+                  onDestinationSelected: (value) {
+                    setState(() {
+                      _selectedIndex = value;
+                    });
+                  },
+                ),
+              Expanded(child: mainArea),
+            ],
+          ));
+    });
   }
 }
 
@@ -85,9 +123,13 @@ class _MainScreenConfig {
         label: 'Components',
         screen: ComponentsScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.check_box), label: 'Modules', screen: ModulesScreen()),
+        icon: Icon(Icons.check_box),
+        label: 'Modules',
+        screen: ModulesScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.favorite), label: 'About', screen: AboutScreen()),
+        icon: Icon(Icons.favorite),
+        label: 'About',
+        screen: AboutScreen()),
   ];
 }
 
