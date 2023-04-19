@@ -51,14 +51,17 @@ class Buttons extends StatefulWidget {
 class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Buttons',
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const <Widget>[
-          ButtonsVariants(isDisabled: false),
-          ButtonsVariants(isDisabled: true),
-        ],
+    return Semantics(
+      header: true,
+      child: Component(
+        name: 'Buttons',
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: const <Widget>[
+            ButtonsVariants(isDisabled: false),
+            ButtonsVariants(isDisabled: true),
+          ],
+        ),
       ),
     );
   }
@@ -113,33 +116,35 @@ class ButtonsFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Floating Action Buttons (FAB)',
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        runSpacing: spacingS,
-        spacing: spacingS,
-        children: [
-          FloatingActionButton.small(
-            onPressed: () {},
-            child: const Icon(Icons.add),
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Floating Action Buttons (FAB)',
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: spacingS,
+            spacing: spacingS,
+            children: [
+              FloatingActionButton.small(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+              FloatingActionButton.extended(
+                onPressed: () {},
+                icon: const Icon(Icons.add),
+                label: const Text('Create'),
+              ),
+              FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+              FloatingActionButton.large(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+            ],
           ),
-          FloatingActionButton.extended(
-            onPressed: () {},
-            icon: const Icon(Icons.add),
-            label: const Text('Create'),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-          ),
-          FloatingActionButton.large(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -148,95 +153,97 @@ class Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Cards',
-      child: Column(
-        children: [
-          SizedBox(
-            width: cardWidth,
-            child: Card(
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(
-                    spacingM, spacingS, spacingS, spacingM),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(
-                        icon: const Icon(Icons.more_vert),
-                        onPressed: () {},
-                      ),
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Cards',
+          child: Column(
+            children: [
+              SizedBox(
+                width: cardWidth,
+                child: Card(
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(
+                        spacingM, spacingS, spacingS, spacingM),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            icon: const Icon(Icons.more_vert),
+                            onPressed: () {},
+                          ),
+                        ),
+                        const SizedBox(height: spacingL),
+                        const Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text('Elevated'),
+                        )
+                      ],
                     ),
-                    const SizedBox(height: spacingL),
-                    const Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('Elevated'),
-                    )
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
-          SizedBox(
-            width: cardWidth,
-            child: Card(
-              color: Theme.of(context).colorScheme.surfaceVariant,
-              elevation: 0,
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(10, 5, 5, 10),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(
-                        icon: const Icon(Icons.more_vert),
-                        onPressed: () {},
-                      ),
+              SizedBox(
+                width: cardWidth,
+                child: Card(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  elevation: 0,
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 5, 10),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            icon: const Icon(Icons.more_vert),
+                            onPressed: () {},
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text('Filled'),
+                        )
+                      ],
                     ),
-                    const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('Filled'),
-                    )
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
-          SizedBox(
-            width: cardWidth,
-            child: Card(
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  color: Theme.of(context).colorScheme.outline,
-                ),
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-              ),
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(10, 5, 5, 10),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(
-                        icon: const Icon(Icons.more_vert),
-                        onPressed: () {},
-                      ),
+              SizedBox(
+                width: cardWidth,
+                child: Card(
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
                     ),
-                    const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('Outlined'),
-                    )
-                  ],
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.fromLTRB(10, 5, 5, 10),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            icon: const Icon(Icons.more_vert),
+                            onPressed: () {},
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text('Outlined'),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -627,37 +634,40 @@ class _RadiosButtonsState extends State<RadiosButtons> {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Radio buttons',
-      child: Column(
-        children: <Widget>[
-          RadioListTile<Options>(
-            title: const Text('Option 1'),
-            value: Options.option1,
-            groupValue: _selectedOption,
-            onChanged: (value) {
-              setState(() {
-                _selectedOption = value;
-              });
-            },
-          ),
-          RadioListTile<Options>(
-            title: const Text('Option 2'),
-            value: Options.option2,
-            groupValue: _selectedOption,
-            onChanged: (value) {
-              setState(() {
-                _selectedOption = value;
-              });
-            },
-          ),
-          RadioListTile<Options>(
-            title: const Text('Option 3'),
-            value: Options.option3,
-            groupValue: _selectedOption,
-            onChanged: null,
-          ),
-        ],
+    return Semantics(
+      header: true,
+      child: Component(
+        name: 'Radio buttons',
+        child: Column(
+          children: <Widget>[
+            RadioListTile<Options>(
+              title: const Text('Option 1'),
+              value: Options.option1,
+              groupValue: _selectedOption,
+              onChanged: (value) {
+                setState(() {
+                  _selectedOption = value;
+                });
+              },
+            ),
+            RadioListTile<Options>(
+              title: const Text('Option 2'),
+              value: Options.option2,
+              groupValue: _selectedOption,
+              onChanged: (value) {
+                setState(() {
+                  _selectedOption = value;
+                });
+              },
+            ),
+            RadioListTile<Options>(
+              title: const Text('Option 3'),
+              value: Options.option3,
+              groupValue: _selectedOption,
+              onChanged: null,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -673,34 +683,36 @@ class ProgressIndicators extends StatefulWidget {
 class _ProgressIndicatorsState extends State<ProgressIndicators> {
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Progress indicators',
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: [
-              Expanded(
-                child: Row(
-                  children: <Widget>[
-                    rowSpacer,
-                    CircularProgressIndicator(
-                      value: null,
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Progress indicators',
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        rowSpacer,
+                        CircularProgressIndicator(
+                          value: null,
+                        ),
+                        rowSpacer,
+                        Expanded(
+                          child: LinearProgressIndicator(
+                            value: null,
+                          ),
+                        ),
+                        rowSpacer,
+                      ],
                     ),
-                    rowSpacer,
-                    Expanded(
-                      child: LinearProgressIndicator(
-                        value: null,
-                      ),
-                    ),
-                    rowSpacer,
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -780,7 +792,10 @@ class _BottomNavigationsState extends State<BottomNavigations> {
       ),
     );
 
-    return Component(name: 'Bottom navigation', child: navigationBar);
+    return Semantics(
+      header: true,
+      child: Component(name: 'Bottom navigation', child: navigationBar),
+    );
   }
 }
 
@@ -794,75 +809,77 @@ class ButtonsIcons extends StatefulWidget {
 class _ButtonsIconsState extends State<ButtonsIcons> {
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Buttons: Icons',
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Column(
-            children: const <Widget>[
-              IconToggleButton(
-                isEnabled: true,
-                tooltip: 'Standard',
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Buttons: Icons',
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Column(
+                children: const <Widget>[
+                  IconToggleButton(
+                    isEnabled: true,
+                    tooltip: 'Standard',
+                  ),
+                  componentSpacer,
+                  IconToggleButton(
+                    isEnabled: false,
+                    tooltip: 'Standard (disabled)',
+                  ),
+                ],
               ),
-              componentSpacer,
-              IconToggleButton(
-                isEnabled: false,
-                tooltip: 'Standard (disabled)',
+              Column(
+                children: const <Widget>[
+                  // Filled IconButton
+                  IconToggleButton(
+                    isEnabled: true,
+                    tooltip: 'Filled',
+                    getDefaultStyle: enabledFilledButtonStyle,
+                  ),
+                  componentSpacer,
+                  IconToggleButton(
+                    isEnabled: false,
+                    tooltip: 'Filled (disabled)',
+                    getDefaultStyle: disabledFilledButtonStyle,
+                  ),
+                ],
+              ),
+              Column(
+                children: const <Widget>[
+                  // Filled Tonal IconButton
+                  IconToggleButton(
+                    isEnabled: true,
+                    tooltip: 'Filled tonal',
+                    getDefaultStyle: enabledFilledTonalButtonStyle,
+                  ),
+                  componentSpacer,
+                  IconToggleButton(
+                    isEnabled: false,
+                    tooltip: 'Filled tonal (disabled)',
+                    getDefaultStyle: disabledFilledTonalButtonStyle,
+                  ),
+                ],
+              ),
+              Column(
+                children: const <Widget>[
+                  // Outlined IconButton
+                  IconToggleButton(
+                    isEnabled: true,
+                    tooltip: 'Outlined',
+                    getDefaultStyle: enabledOutlinedButtonStyle,
+                  ),
+                  componentSpacer,
+                  IconToggleButton(
+                    isEnabled: false,
+                    tooltip: 'Outlined (disabled)',
+                    getDefaultStyle: disabledOutlinedButtonStyle,
+                  ),
+                ],
               ),
             ],
           ),
-          Column(
-            children: const <Widget>[
-              // Filled IconButton
-              IconToggleButton(
-                isEnabled: true,
-                tooltip: 'Filled',
-                getDefaultStyle: enabledFilledButtonStyle,
-              ),
-              componentSpacer,
-              IconToggleButton(
-                isEnabled: false,
-                tooltip: 'Filled (disabled)',
-                getDefaultStyle: disabledFilledButtonStyle,
-              ),
-            ],
-          ),
-          Column(
-            children: const <Widget>[
-              // Filled Tonal IconButton
-              IconToggleButton(
-                isEnabled: true,
-                tooltip: 'Filled tonal',
-                getDefaultStyle: enabledFilledTonalButtonStyle,
-              ),
-              componentSpacer,
-              IconToggleButton(
-                isEnabled: false,
-                tooltip: 'Filled tonal (disabled)',
-                getDefaultStyle: disabledFilledTonalButtonStyle,
-              ),
-            ],
-          ),
-          Column(
-            children: const <Widget>[
-              // Outlined IconButton
-              IconToggleButton(
-                isEnabled: true,
-                tooltip: 'Outlined',
-                getDefaultStyle: enabledOutlinedButtonStyle,
-              ),
-              componentSpacer,
-              IconToggleButton(
-                isEnabled: false,
-                tooltip: 'Outlined (disabled)',
-                getDefaultStyle: disabledOutlinedButtonStyle,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -1006,65 +1023,67 @@ class _ChipsState extends State<Chips> {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Chips',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Wrap(
-            spacing: spacingS,
-            runSpacing: spacingS,
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Chips',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              ActionChip(
-                label: const Text('Assist'),
-                avatar: const Icon(Icons.event),
-                onPressed: () {},
+              Wrap(
+                spacing: spacingS,
+                runSpacing: spacingS,
+                children: <Widget>[
+                  ActionChip(
+                    label: const Text('Assist'),
+                    avatar: const Icon(Icons.event),
+                    onPressed: () {},
+                  ),
+                  FilterChip(
+                    label: const Text('Filter'),
+                    selected: isFiltered,
+                    onSelected: (selected) {
+                      setState(() => isFiltered = selected);
+                    },
+                  ),
+                  InputChip(
+                    label: const Text('Input'),
+                    onPressed: () {},
+                    onDeleted: () {},
+                  ),
+                  ActionChip(
+                    label: const Text('Suggestion'),
+                    onPressed: () {},
+                  ),
+                ],
               ),
-              FilterChip(
-                label: const Text('Filter'),
-                selected: isFiltered,
-                onSelected: (selected) {
-                  setState(() => isFiltered = selected);
-                },
-              ),
-              InputChip(
-                label: const Text('Input'),
-                onPressed: () {},
-                onDeleted: () {},
-              ),
-              ActionChip(
-                label: const Text('Suggestion'),
-                onPressed: () {},
+              componentSpacer,
+              Wrap(
+                spacing: spacingS,
+                runSpacing: spacingS,
+                children: <Widget>[
+                  const ActionChip(
+                    label: Text('Assist'),
+                    avatar: Icon(Icons.event),
+                  ),
+                  FilterChip(
+                    label: const Text('Filter'),
+                    selected: isFiltered,
+                    onSelected: null,
+                  ),
+                  InputChip(
+                    label: const Text('Input'),
+                    onDeleted: () {},
+                    isEnabled: false,
+                  ),
+                  const ActionChip(
+                    label: Text('Suggestion'),
+                  ),
+                ],
               ),
             ],
           ),
-          componentSpacer,
-          Wrap(
-            spacing: spacingS,
-            runSpacing: spacingS,
-            children: <Widget>[
-              const ActionChip(
-                label: Text('Assist'),
-                avatar: Icon(Icons.event),
-              ),
-              FilterChip(
-                label: const Text('Filter'),
-                selected: isFiltered,
-                onSelected: null,
-              ),
-              InputChip(
-                label: const Text('Input'),
-                onDeleted: () {},
-                isEnabled: false,
-              ),
-              const ActionChip(
-                label: Text('Suggestion'),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -1073,16 +1092,18 @@ class ButtonsSegmented extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
-      name: 'Segmented buttons',
-      child: Column(
-        children: const <Widget>[
-          SingleChoice(),
-          componentSpacer,
-          MultipleChoice(),
-        ],
-      ),
-    );
+    return Semantics(
+        header: true,
+        child: Component(
+          name: 'Segmented buttons',
+          child: Column(
+            children: const <Widget>[
+              SingleChoice(),
+              componentSpacer,
+              MultipleChoice(),
+            ],
+          ),
+        ));
   }
 }
 
@@ -1242,79 +1263,82 @@ class _BottomSheetsState extends State<BottomSheets> {
               ),
             ));
 
-    return Component(
-      name: 'Bottom sheet',
-      child: Wrap(
-        alignment: WrapAlignment.spaceEvenly,
-        children: [
-          TextButton(
-            child: const Text(
-              'Show modal bottom sheet',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            onPressed: () {
-              showModalBottomSheet<void>(
-                context: context,
-                // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619
-                constraints: const BoxConstraints(maxWidth: 640),
-                builder: (context) {
-                  return SizedBox(
-                    height: 150,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                      child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        children: buttonList,
+    return Semantics(
+      header: true,
+      child: Component(
+        name: 'Bottom sheet',
+        child: Wrap(
+          alignment: WrapAlignment.spaceEvenly,
+          children: [
+            TextButton(
+              child: const Text(
+                'Show modal bottom sheet',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619
+                  constraints: const BoxConstraints(maxWidth: 640),
+                  builder: (context) {
+                    return SizedBox(
+                      height: 150,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: buttonList,
+                        ),
                       ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-          TextButton(
-            child: Text(
-              isNonModalBottomSheetOpen
-                  ? 'Hide bottom sheet'
-                  : 'Show bottom sheet',
-              style: const TextStyle(fontWeight: FontWeight.bold),
+                    );
+                  },
+                );
+              },
             ),
-            onPressed: () {
-              if (isNonModalBottomSheetOpen) {
-                _nonModalBottomSheetController?.close();
-                setState(() {
-                  isNonModalBottomSheetOpen = false;
-                });
-                return;
-              } else {
-                setState(() {
-                  isNonModalBottomSheetOpen = true;
-                });
-              }
+            TextButton(
+              child: Text(
+                isNonModalBottomSheetOpen
+                    ? 'Hide bottom sheet'
+                    : 'Show bottom sheet',
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {
+                if (isNonModalBottomSheetOpen) {
+                  _nonModalBottomSheetController?.close();
+                  setState(() {
+                    isNonModalBottomSheetOpen = false;
+                  });
+                  return;
+                } else {
+                  setState(() {
+                    isNonModalBottomSheetOpen = true;
+                  });
+                }
 
-              _nonModalBottomSheetController = showBottomSheet<void>(
-                elevation: 8.0,
-                context: context,
-                // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619
-                constraints: const BoxConstraints(maxWidth: 640),
-                builder: (context) {
-                  return SizedBox(
-                    height: 150,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                      child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        children: buttonList,
+                _nonModalBottomSheetController = showBottomSheet<void>(
+                  elevation: 8.0,
+                  context: context,
+                  // TODO: Remove when this is in the framework https://github.com/flutter/flutter/issues/118619
+                  constraints: const BoxConstraints(maxWidth: 640),
+                  builder: (context) {
+                    return SizedBox(
+                      height: 150,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: buttonList,
+                        ),
                       ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-        ],
+                    );
+                  },
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
