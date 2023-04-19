@@ -59,7 +59,9 @@ class _MainScreenState extends State<MainScreen> {
                     label: 'Components',
                   ),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.check_box), label: 'Modules'),
+                      icon: Icon(Icons.check_box),
+                      label: 'Modules'
+                  ),
                   BottomNavigationBarItem(
                     icon: Icon(Icons.favorite),
                     label: 'About',
@@ -82,22 +84,19 @@ class _MainScreenState extends State<MainScreen> {
                 destinations: [
                   NavigationRailDestination(
                     icon: Icon(Icons.square),
-                    label: Text('Buttons'),
+                    label: Text('Guidelines'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.input),
-                    label: Text('Input and Selections'),
+                    label: Text('Components'),
                   ),
                   NavigationRailDestination(
-                      icon: Icon(Icons.check_box),
-                      label: Text('Information displays')),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.home),
-                    label: Text('Home'),
+                    icon: Icon(Icons.check_box),
+                    label: Text('Modules'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.favorite),
-                    label: Text('Favorites'),
+                    label: Text('About'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
