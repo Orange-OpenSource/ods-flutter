@@ -11,6 +11,9 @@
 migrate_working_dir/
 android/local.properties
 
+# Android related
+**/android/**/GeneratedPluginRegistrant.java
+
 # IntelliJ related
 *.iml
 *.ipr
