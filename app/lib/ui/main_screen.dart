@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/theme_selector.dart';
 import 'package:provider/provider.dart';
 
@@ -19,16 +19,12 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   var _selectedIndex = 0;
-  var _bottomNavigationBarItems = _MainScreenConfig.mainMenuItems
-      .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.label))
-      .toList();
-  var _navigationRailDestinations = _MainScreenConfig.mainMenuItems
-      .map((e) => NavigationRailDestination(icon: e.icon, label: Text(e.label)))
-      .toList();
 
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
+    var navigationItems = _NavigationItems(context);
+    var selectedItem = navigationItems.getSelectedMenuItem(_selectedIndex);
 
     // The container for the current page, with its background color
     // and subtle switching animation.
@@ -36,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
       color: colorScheme.surfaceVariant,
       child: AnimatedSwitcher(
         duration: Duration(milliseconds: 200),
-        child: _MainScreenConfig.mainMenuItems[_selectedIndex].screen,
+        child: selectedItem.screen,
       ),
     );
 
@@ -44,14 +40,14 @@ class _MainScreenState extends State<MainScreen> {
         builder: (context, ModelTheme themeNotifier, child) {
       return Scaffold(
           appBar: AppBar(
-            title: Text(_MainScreenConfig.mainMenuItems[_selectedIndex].label),
+            title: Text(selectedItem.label),
             actions: [ThemeSelector()],
           ),
           bottomNavigationBar:
               MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
                   ? BottomNavigationBar(
                       type: BottomNavigationBarType.fixed,
-                      items: _bottomNavigationBarItems,
+                      items: navigationItems.getBottomNavigationBarItems(),
                       currentIndex: _selectedIndex,
                       onTap: (value) {
                         setState(() {
@@ -74,7 +70,8 @@ class _MainScreenState extends State<MainScreen> {
                         child: NavigationRail(
                           extended: MediaQuery.of(context).size.width >=
                               extendedNavigationRailMinScreenWidth,
-                          destinations: _navigationRailDestinations,
+                          destinations:
+                              navigationItems.getNavigationRailDestinations(),
                           selectedIndex: _selectedIndex,
                           onDestinationSelected: (value) {
                             setState(() {
@@ -93,29 +90,47 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
-class _MainScreenConfig {
-  static List<_MainMenuItem> mainMenuItems = [
-    _MainMenuItem(
-        icon: Icon(Icons.square),
-        label: 'Guidelines',
-        // label: AppLocalizations.of(context)!.bottomNavigationGuideline,
-        screen: GuidelinesScreen()),
-    _MainMenuItem(
-        icon: Icon(Icons.input),
-        label: 'Components',
-        // label: AppLocalizations.of(context)!.bottomNavigationComponents,
-        screen: ComponentsScreen()),
-    _MainMenuItem(
-        icon: Icon(Icons.check_box),
-        label: 'Modules',
-        //label: AppLocalizations.of(context)!.bottomNavigationModules,
-        screen: ModulesScreen()),
-    _MainMenuItem(
-        icon: Icon(Icons.favorite),
-        label: 'About',
-        //label: AppLocalizations.of(context)!.bottomNavigationAbout,
-        screen: AboutScreen()),
-  ];
+class _NavigationItems {
+  late BuildContext context;
+  late List<_MainMenuItem> _mainMenuItems;
+
+  _NavigationItems(this.context) {
+    _mainMenuItems = [
+      _MainMenuItem(
+          icon: Icon(Icons.square),
+          label: AppLocalizations.of(context)!.bottomNavigationGuideline,
+          screen: GuidelinesScreen()),
+      _MainMenuItem(
+          icon: Icon(Icons.input),
+          label: AppLocalizations.of(context)!.bottomNavigationComponents,
+          screen: ComponentsScreen()),
+      _MainMenuItem(
+          icon: Icon(Icons.check_box),
+          label: AppLocalizations.of(context)!.bottomNavigationModules,
+          screen: ModulesScreen()),
+      _MainMenuItem(
+          icon: Icon(Icons.favorite),
+          label: AppLocalizations.of(context)!.bottomNavigationAbout,
+          screen: AboutScreen()),
+    ];
+  }
+
+  getSelectedMenuItem(int index) {
+    return _mainMenuItems[index];
+  }
+
+  getBottomNavigationBarItems() {
+    return _mainMenuItems
+        .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.label))
+        .toList();
+  }
+
+  getNavigationRailDestinations() {
+    return _mainMenuItems
+        .map((e) =>
+            NavigationRailDestination(icon: e.icon, label: Text(e.label)))
+        .toList();
+  }
 }
 
 class _MainMenuItem {
