@@ -1943,8 +1943,7 @@ class _ComponentState extends State<Component> {
               constraints:
                   const BoxConstraints.tightFor(width: widthConstraint),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: spacingM, vertical: spacingM),
+                padding: const EdgeInsets.symmetric(vertical: spacingM),
                 child: Center(
                   child: widget.child,
                 ),
