@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/ui/components/theme_selector.dart';
 import 'package:provider/provider.dart';
 
 import '../model_theme.dart';
@@ -23,12 +24,10 @@ class _MainScreenState extends State<MainScreen> {
   var _navigationRailDestinations = _MainScreenConfig.mainMenuItems
       .map((e) => NavigationRailDestination(icon: e.icon, label: Text(e.label)))
       .toList();
-  String chosenTheme = ThemeMode.system.toString();
 
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
-    List<String> themeList = <String>[ThemeMode.light.toString(), ThemeMode.dark.toString(), ThemeMode.system.toString()];
 
     // The container for the current page, with its background color
     // and subtle switching animation.
@@ -46,26 +45,7 @@ class _MainScreenState extends State<MainScreen> {
           appBar: AppBar(
             title: Text(_MainScreenConfig.mainMenuItems[_selectedIndex].label),
             actions: [
-              DropdownButton<String>(
-                  value: chosenTheme,
-                  items: themeList.map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Icon(value == ThemeMode.system.toString() ?
-                      Icons.circle_sharp
-                          : (value == ThemeMode.dark.toString()
-                          ? Icons.nightlight_round
-                          : Icons.wb_sunny)),
-                    );
-                  }).toList(),
-                  onChanged: (String? value) {
-                    setState(() {
-                      chosenTheme = value!;
-                    });
-
-                    themeNotifier.themeMode = value == ThemeMode.system.toString() ? ThemeMode.system : (value == ThemeMode.dark.toString() ? ThemeMode.dark : ThemeMode.light);
-                  }
-              )
+              ThemeSelector()
             ],
           ),
           bottomNavigationBar:
