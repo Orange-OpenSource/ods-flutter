@@ -14,11 +14,24 @@
 ## Table of contents
 
 - [Status](#status)
+- [Content](#content)
 - [Copyright and license](#copyright-and-license)
 
 ## Status
 
 [![Tests Status](https://img.shields.io/github/actions/workflow/status/Orange-OpenSource/ods-flutter/tests.yml?branch=main&label=Flutter%20Tests&logo=github)](https://github.com/Orange-OpenSource/ods-flutter/actions/workflows/tests.yml?query=branch%3Amain)
+
+## Content
+
+This repository contains the Orange Design System Flutter library that provides Orange Flutter components for Android and iOS, but also a demo application showcasing these different components.
+
+For more specific information:
+* [Library README](https://github.com/Orange-OpenSource/ods-flutter/blob/main/lib/README.md)
+* [Demo application README](https://github.com/Orange-OpenSource/ods-flutter/blob/main/app/README.md)
+
+**Want to check the demo app rendering on web?**
+
+It is publicly hosted on GitHub Pages at https://orange-opensource.github.io/ods-flutter/, and can also be run locally.
 
 ## Copyright and license
 
