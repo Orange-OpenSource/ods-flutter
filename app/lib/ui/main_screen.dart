@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/theme_selector.dart';
 import 'package:provider/provider.dart';
 
@@ -97,15 +98,23 @@ class _MainScreenConfig {
     _MainMenuItem(
         icon: Icon(Icons.square),
         label: 'Guidelines',
+        // label: AppLocalizations.of(context)!.bottomNavigationGuideline,
         screen: GuidelinesScreen()),
     _MainMenuItem(
         icon: Icon(Icons.input),
         label: 'Components',
+        // label: AppLocalizations.of(context)!.bottomNavigationComponents,
         screen: ComponentsScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.check_box), label: 'Modules', screen: ModulesScreen()),
+        icon: Icon(Icons.check_box),
+        label: 'Modules',
+        //label: AppLocalizations.of(context)!.bottomNavigationModules,
+        screen: ModulesScreen()),
     _MainMenuItem(
-        icon: Icon(Icons.favorite), label: 'About', screen: AboutScreen()),
+        icon: Icon(Icons.favorite),
+        label: 'About',
+        //label: AppLocalizations.of(context)!.bottomNavigationAbout,
+        screen: AboutScreen()),
   ];
 }
 

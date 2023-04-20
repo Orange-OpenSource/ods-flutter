@@ -31,6 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Localization setup
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
   english_words: ^4.0.0
   provider: ^6.0.0
   # Locally:
@@ -65,6 +70,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  # Localization setup
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   assets:

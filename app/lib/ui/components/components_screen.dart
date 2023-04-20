@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/components/ods_checkbox.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
@@ -54,7 +55,7 @@ class _ButtonsState extends State<Buttons> {
     return Semantics(
       header: true,
       child: Component(
-        name: 'Buttons',
+        name: AppLocalizations.of(context)!.componentButtonsTitle,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const <Widget>[
@@ -82,27 +83,32 @@ class ButtonsVariants extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: isDisabled ? null : () {},
-              child: const Text('Elevated'),
+              child: Text(
+                  AppLocalizations.of(context)!.componentButtonsDemoElevated),
             ),
             componentSpacer,
             FilledButton(
               onPressed: isDisabled ? null : () {},
-              child: const Text('Filled'),
+              child: Text(
+                  AppLocalizations.of(context)!.componentButtonsDemoHighest),
             ),
             componentSpacer,
             FilledButton.tonal(
               onPressed: isDisabled ? null : () {},
-              child: const Text('Filled tonal'),
+              child:
+                  Text(AppLocalizations.of(context)!.componentButtonsDemoHigh),
             ),
             componentSpacer,
             OutlinedButton(
               onPressed: isDisabled ? null : () {},
-              child: const Text('Outlined'),
+              child: Text(
+                  AppLocalizations.of(context)!.componentButtonsDemoMedium),
             ),
             componentSpacer,
             TextButton(
               onPressed: isDisabled ? null : () {},
-              child: const Text('Text'),
+              child:
+                  Text(AppLocalizations.of(context)!.componentButtonsDemoLow),
             ),
           ],
         ),
