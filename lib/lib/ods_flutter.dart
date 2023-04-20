@@ -108,13 +108,8 @@ const darkColorScheme = ColorScheme(
   // surfaceDim: Color(0xFF333333),
 );
 
-var lightThemeData = ThemeData(
-    useMaterial3: true,
-    colorScheme: lightColorScheme
-);
+var lightThemeData =
+    ThemeData(useMaterial3: true, colorScheme: lightColorScheme);
 
-var darkThemeData = ThemeData(
-    useMaterial3: true,
-    colorScheme: darkColorScheme
-);
+var darkThemeData = ThemeData(useMaterial3: true, colorScheme: darkColorScheme);
 
