@@ -45,3 +45,6 @@ app.*.map.json
 
 # macOS
 **/macos/Flutter/ephemeral
+
+# iOS
+/ios/Podfile
