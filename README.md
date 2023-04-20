@@ -15,6 +15,7 @@
 
 - [Status](#status)
 - [Content](#content)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Copyright and license](#copyright-and-license)
 
 ## Status
@@ -32,6 +33,10 @@ For more specific information:
 **Want to check the demo app rendering on web?**
 
 It is publicly hosted on GitHub Pages at https://orange-opensource.github.io/ods-flutter/, and can also be run locally.
+
+## Bugs and feature requests
+
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ods-flutter/issues/new/choose).
 
 ## Copyright and license
 
