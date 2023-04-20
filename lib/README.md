@@ -1,4 +1,4 @@
-<h1 align="center">Orange Design System Flutter</h1>
+<h1 align="center">Orange Design System Flutter Library</h1>
 
 <p align="center">
   ODS Flutter provides Orange Flutter components for Android and iOS to developers.
