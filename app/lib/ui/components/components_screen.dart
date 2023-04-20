@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/components/ods_checkbox.dart';
+import 'package:ods_flutter/components/ods_switch.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/src/main/app/component/content/ods_switch.dart';
 
@@ -16,26 +17,59 @@ class ComponentsScreen extends StatelessWidget {
     return SafeArea(
       child: ListView(
         children: [
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle:
+                  const TextStyle(fontSize: 24, decorationColor: Colors.black),
+            ),
+            onPressed: () {},
+            child: Text('ODS components'),
+          ),
+          Card(
+              child: ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, '/component_checkboxes');
+            },
+            title: const Center(child: Text('Checkboxes')),
+          )),
+          Card(
+              child: ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/component_radioButtons');
+                  },
+                  title: const Center(child: Text('RadiosButtons')))),
+          Card(
+            child: ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, '/component_switches');
+              },
+              title: const Center(child: Text('Switches')),
+            ),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 24),
+            ),
+            onPressed: () {},
+            child: Text('Others'),
+          ),
           BottomNavigations(
             selectedIndex: 1,
             isExampleBar: true,
             isBadgeExample: true,
           ),
-          BottomSheets(),
           Buttons(),
           ButtonsIcons(),
           ButtonsFab(),
           ButtonsSegmented(),
+          BottomSheets(),
           Cards(),
-          Checkboxes(),
           Chips(),
           Dialogs(),
           Menus(),
           ProgressIndicators(),
-          RadiosButtons(),
           Sliders(),
           SnackBars(),
-          Switches(),
           TextFields(),
         ],
       ),
