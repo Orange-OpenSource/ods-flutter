@@ -118,31 +118,3 @@ var darkThemeData = ThemeData(
     colorScheme: darkColorScheme
 );
 
-// Core lib with basic components + basic OSS themes
-// github.com/ods-flutter
-// theme by default
-// other OSS theme
-// Components
-// Button
-// ButtonGroup
-// Card
-
-// Sub-libs with their own themes and can create their own specific components
-// internal.com/otherbrand-flutter-theme-1
-// otherbrand theme
-// Components
-// Specific component for Brand 1
-
-// internal.com/otherbrand-flutter-theme-2
-// otherbrand theme
-
-// internal.com/app1
-// use github.com/ods-flutter
-// Button (avec style par défaut)
-
-// internal.com/app2
-// internal.com/otherbrand-flutter-theme-2
-// Button but with another theme
-
-// TODO: Create an Orange Theme based on Material
-// TODO: Create custom components
