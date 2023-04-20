@@ -11,19 +11,15 @@ import 'package:ods_flutter_demo/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
     await tester.pumpWidget(const OdsApplication());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Guidelines'), findsNWidgets(2)); // 1 in the side menu and 1 in the title
+    expect(find.text('Modules'), findsOneWidget); // 1 in the side menu
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byIcon(Icons.check_box));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Guidelines'), findsOneWidget); // 1 in the side menu
+    expect(find.text('Modules'), findsNWidgets(2)); // 1 in the side menu and 1 in the title
   });
 }
