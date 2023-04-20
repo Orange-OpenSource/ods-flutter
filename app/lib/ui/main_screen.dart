@@ -63,17 +63,28 @@ class _MainScreenState extends State<MainScreen> {
             mainAxisSize: MainAxisSize.max,
             children: [
               if (MediaQuery.of(context).size.width >= mobileUiMaxScreenWidth)
-                NavigationRail(
-                  extended: MediaQuery.of(context).size.width >=
-                      extendedNavigationRailMinScreenWidth,
-                  destinations: _navigationRailDestinations,
-                  selectedIndex: _selectedIndex,
-                  onDestinationSelected: (value) {
-                    setState(() {
-                      _selectedIndex = value;
-                    });
-                  },
-                ),
+                LayoutBuilder(builder: (context, constraints) {
+                  return SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
+                      ),
+                      child: IntrinsicHeight(
+                        child: NavigationRail(
+                          extended: MediaQuery.of(context).size.width >=
+                              extendedNavigationRailMinScreenWidth,
+                          destinations: _navigationRailDestinations,
+                          selectedIndex: _selectedIndex,
+                          onDestinationSelected: (value) {
+                            setState(() {
+                              _selectedIndex = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  );
+                }),
               Expanded(child: mainArea),
             ],
           ));
