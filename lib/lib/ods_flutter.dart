@@ -2,28 +2,6 @@ library ods_flutter;
 
 import 'package:flutter/material.dart';
 
-/// A Calculator.
-class Calculator {
-  var val = 0;
-
-  void addValue(int value) {
-    val += value;
-  }
-
-  int get() {
-    return val;
-  }
-}
-
-class TotoWidget extends StatelessWidget {
-  const TotoWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () {}, child: const Text('TotoWidgetButton'));
-  }
-}
-
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFFF16E00),
