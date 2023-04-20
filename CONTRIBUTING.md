@@ -23,7 +23,7 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`).
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
-For a complete look at our labels, see the [project labels page]([https://github.com/twbs/bootstrap/labels](https://github.com/Orange-OpenSource/ods-flutter/labels).
+For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ods-flutter/labels).
 
 ## Bug Reports
 
