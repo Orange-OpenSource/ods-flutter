@@ -56,12 +56,15 @@ class _ButtonsState extends State<Buttons> {
       header: true,
       child: Component(
         name: AppLocalizations.of(context)!.componentButtonsTitle,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const <Widget>[
-            ButtonsVariants(isDisabled: false),
-            ButtonsVariants(isDisabled: true),
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const <Widget>[
+              ButtonsVariants(isDisabled: false),
+              ButtonsVariants(isDisabled: true),
+            ],
+          ),
         ),
       ),
     );
@@ -1943,8 +1946,7 @@ class _ComponentState extends State<Component> {
               constraints:
                   const BoxConstraints.tightFor(width: widthConstraint),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: spacingM, vertical: spacingM),
+                padding: const EdgeInsets.symmetric(vertical: spacingM),
                 child: Center(
                   child: widget.child,
                 ),
