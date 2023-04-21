@@ -37,7 +37,7 @@ class ComponentsScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(context, '/component_radioButtons');
                   },
-                  title: const Center(child: Text('RadiosButtons')))),
+                  title: const Center(child: Text('Radios Buttons')))),
           Card(
             child: ListTile(
               onTap: () {
