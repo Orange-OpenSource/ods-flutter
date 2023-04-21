@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ods_flutter/l10n/languages.dart';
 import 'package:ods_flutter/l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/ods_theme.dart';
 import 'package:provider/provider.dart';
 
 import './model_theme.dart';
+import 'l10n/languages.dart';
 import 'ui/main_screen.dart';
 
 void main() {
