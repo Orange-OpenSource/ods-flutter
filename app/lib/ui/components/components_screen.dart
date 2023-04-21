@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/components/ods_checkbox.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter/l10n/ods_flutter_localizations.dart';
 
 const rowSpacer = SizedBox(width: spacingM);
 const componentSpacer = SizedBox(height: spacingS);
@@ -1484,6 +1484,7 @@ class ButtonAnchorExample extends StatelessWidget {
 
 class NavigationDrawers extends StatelessWidget {
   const NavigationDrawers({super.key, required this.scaffoldKey});
+
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
@@ -1850,6 +1851,7 @@ enum ColorLabel {
   grey('Grey', Colors.grey);
 
   const ColorLabel(this.label, this.color);
+
   final String label;
   final Color color;
 }
@@ -1864,6 +1866,7 @@ enum IconLabel {
   heart('Heart', Icons.favorite);
 
   const IconLabel(this.label, this.icon);
+
   final String label;
   final IconData icon;
 }
