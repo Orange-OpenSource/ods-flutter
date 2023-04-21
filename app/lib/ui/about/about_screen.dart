@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
-// class AboutScreen extends StatefulWidget{
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({Key? key}) : super(key: key);
@@ -39,14 +38,17 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         Image(image: AssetImage('assets/il_about.png')),
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(spacingM),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(AppLocalizations.of(context)!.appTitle,
                   style: Theme.of(context).textTheme.headlineLarge),
+              SizedBox(height: spacingXs),
               Text(
                   'Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})',
                   style: Theme.of(context).textTheme.bodySmall),
+              SizedBox(height: spacingXs),
               Text(AppLocalizations.of(context)!.aboutPageAppDescription,
                   style: Theme.of(context).textTheme.bodyMedium),
             ],
