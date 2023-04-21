@@ -1,39 +1,4 @@
 {
-  "bottomNavigationGuideline": "Guidelines",
-  "@bottomNavigationGuideline": {
-    "description": "Bottom Navigation bar item - Guidelines",
-    "type": "text"
-  },
-  "bottomNavigationComponents": "Components",
-  "@bottomNavigationComponents": {
-    "description": "Bottom Navigation bar item - Penalties",
-    "type": "text"
-  },
-  "bottomNavigationModules": "Modules",
-  "@bottomNavigationModules": {
-    "description": "Bottom Navigation bar item - Modules",
-    "type": "text"
-  },
-  "bottomNavigationAbout": "About",
-  "@bottomNavigationAbout": {
-    "description": "Bottom Navigation bar item - About",
-    "type": "text"
-  },
-  "aboutPageAppDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
-  "@aboutPageAppDescription": {
-    "description": "About page - Description of the app",
-    "type": "text"
-  },
-  "appTitle": "Orange Design System Flutter App",
-  "@appTitle": {
-    "description": "Main App name",
-    "type": "text"
-  },
-  "componentButtonsTitle": "Buttons",
-  "@componentButtonsTitle": {
-    "description": "Component Buttons Title",
-    "type": "text"
-  },
   "componentButtonsDemoElevated": "Elevated",
   "@componentButtonsDemoElevated": {
     "description": "Component Buttons Demo TBD",
