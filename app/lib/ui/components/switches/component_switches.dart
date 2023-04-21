@@ -35,24 +35,50 @@ class _ComponentSwitchesState extends State<ComponentSwitches> {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          OdsSwitch(
-              checked: value0,
-              icon: null,
-              enabled: isEnabled,
-              onCheckedChange: (value) {
-                setState(() {
-                  value0 = value!;
-                });
-              }),
-          OdsSwitch(
-              checked: value1,
-              icon: thumbIcon,
-              enabled: isEnabled,
-              onCheckedChange: (value) {
-                setState(() {
-                  value1 = value!;
-                });
-              }),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                OdsSwitch(
+                    checked: value0,
+                    icon: null,
+                    enabled: isEnabled,
+                    onCheckedChange: (value) {
+                      setState(() {
+                        value0 = value!;
+                      });
+                    }),
+                OdsSwitch(
+                    checked: value1,
+                    icon: thumbIcon,
+                    enabled: isEnabled,
+                    onCheckedChange: (value) {
+                      setState(() {
+                        value1 = value!;
+                      });
+                    }),
+              ]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                OdsSwitch(
+                    checked: value0,
+                    icon: null,
+                    enabled: false,
+                    onCheckedChange: (value) {
+                      setState(() {
+                        value0 = value!;
+                      });
+                    }),
+                OdsSwitch(
+                    checked: value1,
+                    icon: thumbIcon,
+                    enabled: false,
+                    onCheckedChange: (value) {
+                      setState(() {
+                        value1 = value!;
+                      });
+                    }),
+              ])
         ])));
   }
 }
