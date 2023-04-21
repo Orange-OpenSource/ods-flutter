@@ -5,7 +5,6 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ods_flutter_demo/main.dart';
 
@@ -13,13 +12,15 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     await tester.pumpWidget(const OdsApplication());
 
-    expect(find.text('Guidelines'), findsNWidgets(2)); // 1 in the side menu and 1 in the title
-    expect(find.text('Modules'), findsOneWidget); // 1 in the side menu
+    expect(find.text('Guidelines'),
+        findsNWidgets(2)); // 1 in the bottom bar and 1 in the title
+    expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar
 
-    await tester.tap(find.byIcon(Icons.check_box));
+    await tester.tap(find.text('Components').last);
     await tester.pump();
 
-    expect(find.text('Guidelines'), findsOneWidget); // 1 in the side menu
-    expect(find.text('Modules'), findsNWidgets(2)); // 1 in the side menu and 1 in the title
+    expect(find.text('Bottom sheet'), findsOneWidget);
+    expect(find.text('Buttons'), findsOneWidget);
+    expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar
   });
 }
