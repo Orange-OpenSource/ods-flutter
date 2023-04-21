@@ -14,8 +14,7 @@ class ComponentsScreen extends StatelessWidget {
         children: [
           TextButton(
             style: TextButton.styleFrom(
-              textStyle:
-                  const TextStyle(fontSize: 24, decorationColor: Colors.black),
+              textStyle: const TextStyle(fontSize: 24),
             ),
             onPressed: () {},
             child: Text('ODS components'),
