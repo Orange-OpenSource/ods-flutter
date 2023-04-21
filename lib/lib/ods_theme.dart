@@ -5,10 +5,11 @@ class OdsTheme {
   OdsTheme._();
 
   static ThemeData lightTheme = ThemeData(
-    colorScheme: lightColorScheme,
-    textTheme: textTheme,
-    appBarTheme: AppBarTheme(backgroundColor: lightColorScheme.surface),
-  );
+      colorScheme: lightColorScheme,
+      textTheme: textTheme,
+      appBarTheme: AppBarTheme(backgroundColor: lightColorScheme.surface),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: lightColorScheme.background));
 
   static ThemeData darkTheme = ThemeData(
       colorScheme: darkColorScheme,
