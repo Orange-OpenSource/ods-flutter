@@ -32,9 +32,11 @@ class AboutScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Text(AppLocalizations.of(context)!.appTitle),
+              Text(AppLocalizations.of(context)!.appTitle,
+                  style: Theme.of(context).textTheme.headlineLarge),
               // Text('Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})'),
-              Text(AppLocalizations.of(context)!.aboutPageAppDescription),
+              Text(AppLocalizations.of(context)!.aboutPageAppDescription,
+                  style: Theme.of(context).textTheme.bodyMedium),
             ],
           ),
         ),
