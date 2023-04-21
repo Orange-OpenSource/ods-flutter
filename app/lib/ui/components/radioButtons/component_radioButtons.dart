@@ -8,6 +8,8 @@ class ComponentRadioButtons extends StatefulWidget {
   State<ComponentRadioButtons> createState() => _ComponentRadioButtonsState();
 }
 
+enum Options { option1, option2, option3 }
+
 class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
   Options? _selectedOption = Options.option1;
 
