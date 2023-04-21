@@ -24,12 +24,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
-
-    List<String> themeList = <String>[
-      ThemeMode.light.toString(),
-      ThemeMode.dark.toString(),
-      ThemeMode.system.toString()
-    ];
+    var navigationItems = _NavigationItems(context);
+    var selectedItem = navigationItems.getSelectedMenuItem(_selectedIndex);
 
     // The container for the current page, with its background color
     // and subtle switching animation.
@@ -52,6 +48,8 @@ class _MainScreenState extends State<MainScreen> {
               MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
                   ? BottomNavigationBar(
                       type: BottomNavigationBarType.fixed,
+                      selectedItemColor: colorScheme.primary,
+                      unselectedItemColor: colorScheme.secondary,
                       items: navigationItems.getBottomNavigationBarItems(),
                       currentIndex: _selectedIndex,
                       onTap: (value) {
@@ -99,32 +97,39 @@ class _NavigationItems {
   late BuildContext context;
   late List<_MainMenuItem> _mainMenuItems;
 
-  // TODO: 1. use theme color for activeIcon, 2. manage dark scheme
   _NavigationItems(this.context) {
+    var colorScheme = Theme.of(context).colorScheme;
+
+    var activeColorFilter =
+        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     _mainMenuItems = [
-      _MainMenuItem(label: 'Guidelines', screen: GuidelinesScreen()),
       _MainMenuItem(
           activeIcon: SvgPicture.asset("assets/Guideline-DNA_32.svg",
-              colorFilter: ColorFilter.mode(Colors.orange, BlendMode.srcIn)),
-          icon: SvgPicture.asset("assets/Guideline-DNA_32.svg"),
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/Guideline-DNA_32.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationGuideline,
           screen: GuidelinesScreen()),
       _MainMenuItem(
           activeIcon: SvgPicture.asset("assets/component-atom_32.svg",
-              colorFilter: ColorFilter.mode(Colors.orange, BlendMode.srcIn)),
-          icon: SvgPicture.asset("assets/component-atom_32.svg"),
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/component-atom_32.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationComponents,
           screen: ComponentsScreen()),
       _MainMenuItem(
           activeIcon: SvgPicture.asset("assets/Module-molecule_32.svg",
-              colorFilter: ColorFilter.mode(Colors.orange, BlendMode.srcIn)),
-          icon: SvgPicture.asset("assets/Module-molecule_32.svg"),
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/Module-molecule_32.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationModules,
           screen: ModulesScreen()),
       _MainMenuItem(
           activeIcon: SvgPicture.asset("assets/info_32.svg",
-              colorFilter: ColorFilter.mode(Colors.orange, BlendMode.srcIn)),
-          icon: SvgPicture.asset("assets/info_32.svg"),
+              colorFilter: activeColorFilter),
+          icon:
+              SvgPicture.asset("assets/info_32.svg", colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationAbout,
           screen: AboutScreen()),
     ];
@@ -136,14 +141,15 @@ class _NavigationItems {
 
   getBottomNavigationBarItems() {
     return _mainMenuItems
-        .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.label))
+        .map((e) => BottomNavigationBarItem(
+            icon: e.icon, activeIcon: e.activeIcon, label: e.label))
         .toList();
   }
 
   getNavigationRailDestinations() {
     return _mainMenuItems
-        .map((e) =>
-            NavigationRailDestination(icon: e.icon, label: Text(e.label)))
+        .map((e) => NavigationRailDestination(
+            icon: e.icon, selectedIcon: e.activeIcon, label: Text(e.label)))
         .toList();
   }
 }

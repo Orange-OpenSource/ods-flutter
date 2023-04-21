@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'theme_preference.dart';
 
 class ModelTheme extends ChangeNotifier {
