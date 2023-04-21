@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
+/// ODS Small card.
+///
+/// Cards contain content and actions about a single subject.
+///
+/// A ripple effect is managed on card click.
 class OdsSmallCard extends StatelessWidget {
-  final String title;
-  final Widget image;
-  String? subtitle;
-  Function()? onTap;
-
+  /// Creates an ODS Small card.
   OdsSmallCard({
     Key? key,
     required this.title,
@@ -14,6 +15,19 @@ class OdsSmallCard extends StatelessWidget {
     this.subtitle,
     this.onTap,
   }) : super(key: key);
+
+  /// The card's title displayed below the image.
+  final String title;
+
+  /// The image displayed in the card.
+  ///TODO For the moment the fit of the image is handled by the provided image. It should be done in the library but we need help to do that!
+  final Widget image;
+
+  /// The optional card's subtitle displayed below the title.
+  String? subtitle;
+
+  /// The action executed on card tap.
+  Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
