@@ -133,34 +133,39 @@ class ButtonsFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-        header: true,
-        child: Component(
-          name: 'Floating Action Buttons (FAB)',
-          child: Wrap(
-            crossAxisAlignment: WrapCrossAlignment.center,
-            runSpacing: spacingS,
-            spacing: spacingS,
-            children: [
-              FloatingActionButton.small(
-                onPressed: () {},
-                child: const Icon(Icons.add),
-              ),
-              FloatingActionButton.extended(
-                onPressed: () {},
-                icon: const Icon(Icons.add),
-                label: const Text('Create'),
-              ),
-              FloatingActionButton(
-                onPressed: () {},
-                child: const Icon(Icons.add),
-              ),
-              FloatingActionButton.large(
-                onPressed: () {},
-                child: const Icon(Icons.add),
-              ),
-            ],
-          ),
-        ));
+      header: true,
+      child: Component(
+        name: 'Floating Action Buttons (FAB)',
+        child: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          runSpacing: spacingS,
+          spacing: spacingS,
+          children: [
+            FloatingActionButton.small(
+              heroTag: "btn1",
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            ),
+            FloatingActionButton.extended(
+              heroTag: "btn2",
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const Text('Create'),
+            ),
+            FloatingActionButton(
+              heroTag: "btn3",
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            ),
+            FloatingActionButton.large(
+              heroTag: "btn4",
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
