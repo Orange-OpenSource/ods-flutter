@@ -12,6 +12,7 @@ import 'l10n/languages.dart';
 =======
 import 'package:ods_flutter/ods_flutter.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radioButtons/component_radioButtons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 import 'package:provider/provider.dart';
@@ -42,6 +43,7 @@ class OdsApplication extends StatelessWidget {
             '/component_checkboxes': (context) => ComponentCheckboxes(),
             '/component_switches': (context) => ComponentSwitches(),
             '/component_radioButtons': (context) => ComponentRadioButtons(),
+            '/component_metarial': (context) => ComponentMaterial(),
           },
           debugShowCheckedModeBanner: false,
           home: MainScreen(),
