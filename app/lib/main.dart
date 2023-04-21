@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ods_flutter/flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/l10n/languages.dart';
+import 'package:ods_flutter/l10n/ods_flutter_localizations.dart' as odslib;
 import 'package:ods_flutter/ods_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +34,7 @@ class OdsApplication extends StatelessWidget {
           // Localization setup
           supportedLocales: L10n.all,
           localizationsDelegates: [
-            AppLocalizations.delegate,
+            odslib.AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

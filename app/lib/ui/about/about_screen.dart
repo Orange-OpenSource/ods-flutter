@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
-import 'package:ods_flutter/ods_flutter.dart';
+import 'package:ods_flutter/l10n/ods_flutter_localizations.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
