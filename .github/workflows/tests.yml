@@ -21,4 +21,5 @@ jobs:
       - name: Run Lib tests
         run: |
           cd lib
+          flutter gen-l10n 
           flutter test
