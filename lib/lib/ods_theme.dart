@@ -155,7 +155,7 @@ final TextTheme textTheme = TextTheme(
   // Body M > Android M2: Body 2 & iOS: Callout
   bodyMedium: GoogleFonts.roboto(
       fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.25),
-   // Body S > Android M2: Caption & iOS: Subheadline
+  // Body S > Android M2: Caption & iOS: Subheadline
   bodySmall: GoogleFonts.roboto(
       fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
   // Label L > Android M2: Button & iOS: Footnote
@@ -163,7 +163,7 @@ final TextTheme textTheme = TextTheme(
       fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 1.25),
   // Label M > Android M2: NA & iOS: Caption 1
   labelMedium: GoogleFonts.roboto(
-      fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.25),,
+      fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.25),
   // Label S > Android M2: Overline & iOS: Caption 2
   labelSmall: GoogleFonts.roboto(
       fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
