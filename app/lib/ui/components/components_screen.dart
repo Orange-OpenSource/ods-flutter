@@ -47,29 +47,18 @@ class ComponentsScreen extends StatelessWidget {
           ),
           TextButton(
             style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 24),
+              textStyle:
+                  const TextStyle(fontSize: 24, decorationColor: Colors.black),
             ),
             onPressed: () {},
-            child: Text('Others'),
+            child: Text('Material'),
           ),
-          BottomNavigations(
-            selectedIndex: 1,
-            isExampleBar: true,
-            isBadgeExample: true,
-          ),
-          Buttons(),
-          ButtonsIcons(),
-          ButtonsFab(),
-          ButtonsSegmented(),
-          BottomSheets(),
-          Cards(),
-          Chips(),
-          Dialogs(),
-          Menus(),
-          ProgressIndicators(),
-          Sliders(),
-          SnackBars(),
-          TextFields(),
+          Card(
+              child: ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/component_metarial');
+                  },
+                  title: const Center(child: Text('See all')))),
         ],
       ),
     );
