@@ -9,7 +9,7 @@ class OdsTheme {
       textTheme: textTheme,
       appBarTheme: AppBarTheme(backgroundColor: lightColorScheme.surface),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: darkColorScheme.background));
+          backgroundColor: lightColorScheme.background));
 
   static ThemeData darkTheme = ThemeData(
       colorScheme: darkColorScheme,
