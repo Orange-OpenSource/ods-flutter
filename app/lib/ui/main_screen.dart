@@ -105,31 +105,31 @@ class _NavigationItems {
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     _mainMenuItems = [
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/Guideline-DNA_32.svg",
+          activeIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
               colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/Guideline-DNA_32.svg",
+          icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
               colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationGuideline,
           screen: GuidelinesScreen()),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/component-atom_32.svg",
+          activeIcon: SvgPicture.asset("assets/ic_components_atom.svg",
               colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/component-atom_32.svg",
+          icon: SvgPicture.asset("assets/ic_components_atom.svg",
               colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationComponents,
           screen: ComponentsScreen()),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/Module-molecule_32.svg",
+          activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
               colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/Module-molecule_32.svg",
+          icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
               colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationModules,
           screen: ModulesScreen()),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/info_32.svg",
+          activeIcon: SvgPicture.asset("assets/ic_about_info.svg",
               colorFilter: activeColorFilter),
-          icon:
-              SvgPicture.asset("assets/info_32.svg", colorFilter: colorFilter),
+          icon: SvgPicture.asset("assets/ic_about_info.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationAbout,
           screen: AboutScreen()),
     ];
