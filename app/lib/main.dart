@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ods_flutter/ods_theme.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
-import 'package:ods_flutter_demo/ui/components/radioButtons/component_radioButtons.dart';
+import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 import 'package:provider/provider.dart';
 

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/ods_radiobutton.dart';
-
-import '../components_screen.dart';
+import 'package:ods_flutter/components/ods_radio_button.dart';
 
 class ComponentRadioButtons extends StatefulWidget {
   @override
