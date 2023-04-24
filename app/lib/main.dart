@@ -1,16 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ods_flutter/ods_theme.dart';
-import 'package:provider/provider.dart';
-
-import './model_theme.dart';
-import 'l10n/languages.dart';
-=======
-import 'package:ods_flutter/ods_flutter.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radioButtons/component_radioButtons.dart';
@@ -18,7 +11,7 @@ import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart'
 import 'package:provider/provider.dart';
 
 import './model_theme.dart';
->>>>>>> 97c2826 (Add new components pages)
+import 'l10n/languages.dart';
 import 'ui/main_screen.dart';
 
 void main() {
