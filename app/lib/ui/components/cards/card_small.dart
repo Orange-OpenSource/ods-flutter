@@ -13,13 +13,6 @@ class CardSmall extends StatefulWidget {
 class _CardSmallState extends State<CardSmall> {
   @override
   Widget build(BuildContext context) {
-    var cardWidth = -2 * spacingM;
-    if (MediaQuery.of(context).size.width < mobileUiMaxScreenWidth) {
-      cardWidth += MediaQuery.of(context).size.width / 2;
-    } else {
-      cardWidth += MediaQuery.of(context).size.width / 3.5;
-    }
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -28,9 +21,9 @@ class _CardSmallState extends State<CardSmall> {
       body: Padding(
         padding: const EdgeInsets.all(spacingM),
         child: Column(
-          children: <Widget>[
+          children: [
             SizedBox(
-              width: cardWidth,
+              width: _computeCardWidth(),
               child: OdsSmallCard(
                 title: 'Small card',
                 subtitle: 'subtitle',
@@ -38,10 +31,24 @@ class _CardSmallState extends State<CardSmall> {
                     semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
                 onTap: () {},
               ),
-            )
+            ),
           ],
         ),
       ),
     );
+  }
+
+  double _computeCardWidth() {
+    // 1. remove horizontal paddings
+    var cardWidth = -2 * spacingM;
+    if (MediaQuery.of(context).size.width < mobileUiMaxScreenWidth) {
+      // 2. split screen width in two for small width screens (2 cards per line)
+      cardWidth += MediaQuery.of(context).size.width / 2;
+    } else {
+      // 2. split screen width in 3 for larger screens (3 cards per line)
+      cardWidth += MediaQuery.of(context).size.width / 3;
+    }
+
+    return cardWidth;
   }
 }
