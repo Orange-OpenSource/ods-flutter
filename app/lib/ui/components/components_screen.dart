@@ -1,11 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter/src/main/app/component/content/ods_switch.dart';
-
-const rowSpacer = SizedBox(width: spacingM);
-const componentSpacer = SizedBox(height: spacingS);
-const double cardWidth = 240;
-const double widthConstraint = 450;
 
 class ComponentsScreen extends StatelessWidget {
   @override

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
-import '../components_screen.dart';
+const rowSpacer = SizedBox(width: spacingM);
+const componentSpacer = SizedBox(height: spacingS);
+const double cardWidth = 240;
+const double widthConstraint = 450;
 
 class ComponentMaterial extends StatefulWidget {
   @override
@@ -133,39 +137,34 @@ class ButtonsFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      header: true,
-      child: Component(
-        name: 'Floating Action Buttons (FAB)',
-        child: Wrap(
-          crossAxisAlignment: WrapCrossAlignment.center,
-          runSpacing: spacingS,
-          spacing: spacingS,
-          children: [
-            FloatingActionButton.small(
-              heroTag: "btn1",
-              onPressed: () {},
-              child: const Icon(Icons.add),
-            ),
-            FloatingActionButton.extended(
-              heroTag: "btn2",
-              onPressed: () {},
-              icon: const Icon(Icons.add),
-              label: const Text('Create'),
-            ),
-            FloatingActionButton(
-              heroTag: "btn3",
-              onPressed: () {},
-              child: const Icon(Icons.add),
-            ),
-            FloatingActionButton.large(
-              heroTag: "btn4",
-              onPressed: () {},
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
-      ),
-    );
+        header: true,
+        child: Component(
+          name: 'Floating Action Buttons (FAB)',
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: spacingS,
+            spacing: spacingS,
+            children: [
+              FloatingActionButton.small(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+              FloatingActionButton.extended(
+                onPressed: () {},
+                icon: const Icon(Icons.add),
+                label: const Text('Create'),
+              ),
+              FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+              FloatingActionButton.large(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+            ],
+          ),
+        ));
   }
 }
 
@@ -500,192 +499,6 @@ class _DialogsState extends State<Dialogs> {
             onPressed: () => openFullscreenDialog(context),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class Switches extends StatelessWidget {
-  const Switches({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Component(
-      name: 'Switches',
-      child: Column(
-        children: const <Widget>[
-          SwitchRow(isEnabled: true),
-          SwitchRow(isEnabled: false),
-        ],
-      ),
-    );
-  }
-}
-
-class SwitchRow extends StatefulWidget {
-  const SwitchRow({super.key, required this.isEnabled});
-
-  final bool isEnabled;
-
-  @override
-  State<SwitchRow> createState() => _SwitchRowState();
-}
-
-class _SwitchRowState extends State<SwitchRow> {
-  bool value0 = false;
-  bool value1 = true;
-
-  final MaterialStateProperty<Icon?> thumbIcon =
-      MaterialStateProperty.resolveWith<Icon?>((states) {
-    if (states.contains(MaterialState.selected)) {
-      return const Icon(Icons.check);
-    }
-    return const Icon(Icons.close);
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        // TODO: use SwitchListTile when thumbIcon is available https://github.com/flutter/flutter/issues/118616
-        OdsSwitch(
-            checked: value0,
-            icon: null,
-            enabled: widget.isEnabled ? true : false,
-            onCheckedChange: (value) {
-              setState(() {
-                value0 = value!;
-              });
-            }),
-        OdsSwitch(
-            checked: value1,
-            icon: thumbIcon,
-            enabled: widget.isEnabled ? true : false,
-            onCheckedChange: (value) {
-              setState(() {
-                value1 = value!;
-              });
-            }),
-      ],
-    );
-  }
-}
-
-class Checkboxes extends StatefulWidget {
-  const Checkboxes({super.key});
-
-  @override
-  State<Checkboxes> createState() => _CheckboxesState();
-}
-
-class _CheckboxesState extends State<Checkboxes> {
-  bool isChecked0 = true;
-  bool isChecked1 = true;
-  bool isChecked2 = false;
-  bool isEnable = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Component(
-      name: 'Checkboxes',
-      child: Column(
-        children: <Widget>[
-          OdsCheckbox(
-              checked: isChecked0,
-              title: 'Option 1',
-              enabled: isEnable,
-              onCheckedChange: (bool? value) {
-                //if (isEnable) {
-                setState(() {
-                  isChecked0 = value!;
-                });
-              }),
-          OdsCheckbox(
-            checked: isChecked2,
-            title: 'Option 2',
-            enabled: isEnable,
-            // TODO: showcase error state https://github.com/flutter/flutter/issues/118616
-            onCheckedChange: (value) {
-              setState(() {
-                isChecked2 = value!;
-              });
-            },
-          ),
-          OdsCheckbox(
-              title: 'Option 3',
-              checked: true,
-              enabled: false,
-              onCheckedChange: (value) {
-                setState(() {
-                  isChecked2 = value!;
-                });
-              }),
-          OdsCheckbox(
-              title: 'Option 4',
-              checked: false,
-              enabled: false,
-              onCheckedChange: (value) {
-                setState(() {
-                  isChecked2 = value!;
-                });
-              }),
-        ],
-      ),
-    );
-  }
-}
-
-enum Value { first, second }
-
-class RadiosButtons extends StatefulWidget {
-  const RadiosButtons({super.key});
-
-  @override
-  State<RadiosButtons> createState() => _RadiosButtonsState();
-}
-
-enum Options { option1, option2, option3 }
-
-class _RadiosButtonsState extends State<RadiosButtons> {
-  Options? _selectedOption = Options.option1;
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      header: true,
-      child: Component(
-        name: 'Radio buttons',
-        child: Column(
-          children: <Widget>[
-            RadioListTile<Options>(
-              title: const Text('Option 1'),
-              value: Options.option1,
-              groupValue: _selectedOption,
-              onChanged: (value) {
-                setState(() {
-                  _selectedOption = value;
-                });
-              },
-            ),
-            RadioListTile<Options>(
-              title: const Text('Option 2'),
-              value: Options.option2,
-              groupValue: _selectedOption,
-              onChanged: (value) {
-                setState(() {
-                  _selectedOption = value;
-                });
-              },
-            ),
-            RadioListTile<Options>(
-              title: const Text('Option 3'),
-              value: Options.option3,
-              groupValue: _selectedOption,
-              onChanged: null,
-            ),
-          ],
-        ),
       ),
     );
   }
