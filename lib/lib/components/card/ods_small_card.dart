@@ -16,6 +16,8 @@ class OdsSmallCard extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
+  static const double _imageHeight = 110;
+
   /// The card's title displayed below the image.
   final String title;
 
@@ -45,7 +47,7 @@ class OdsSmallCard extends StatelessWidget {
             children: [
               SizedBox(
                 width: double.infinity,
-                height: 110,
+                height: _imageHeight,
                 child: image,
               ),
               Padding(
