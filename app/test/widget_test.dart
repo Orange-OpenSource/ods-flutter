@@ -19,8 +19,10 @@ void main() {
     await tester.tap(find.text('Components').last);
     await tester.pump();
 
-    expect(find.text('Bottom sheet'), findsOneWidget);
-    expect(find.text('Buttons'), findsOneWidget);
+    expect(find.text('Checkboxes'), findsOneWidget);
+    expect(find.text('Radio Buttons'), findsOneWidget);
+    expect(find.text('Switches'), findsOneWidget);
+
     expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar
   });
 }

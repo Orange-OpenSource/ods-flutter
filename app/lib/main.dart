@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ods_flutter/ods_theme.dart';
+import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
+import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
+import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 import 'package:provider/provider.dart';
 
 import './model_theme.dart';
@@ -28,9 +32,14 @@ class OdsApplication extends StatelessWidget {
           theme: OdsTheme.lightTheme,
           darkTheme: OdsTheme.darkTheme,
           themeMode: themeNotifier.themeMode,
+          routes: {
+            '/component_checkboxes': (context) => ComponentCheckboxes(),
+            '/component_switches': (context) => ComponentSwitches(),
+            '/component_radioButtons': (context) => ComponentRadioButtons(),
+            '/component_metarial': (context) => ComponentMaterial(),
+          },
           debugShowCheckedModeBanner: false,
           home: MainScreen(),
-
           // Localization setup
           supportedLocales: L10n.all,
           localizationsDelegates: [

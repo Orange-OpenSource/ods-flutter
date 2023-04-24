@@ -27,7 +27,6 @@ class OdsCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return CheckboxListTile(
         title: Text(title),
-        checkColor: Colors.white,
         value: checked,
         onChanged: enabled ? onCheckedChange : null);
   }
