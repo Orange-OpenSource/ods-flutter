@@ -33,5 +33,30 @@
   "@componentButtonsTitle": {
     "description": "Component Buttons Title",
     "type": "text"
+  },
+  "componentButtonsDemoElevated": "Elevated",
+  "@componentButtonsDemoElevated": {
+    "description": "Component Buttons Demo TBD",
+    "type": "text"
+  },
+  "componentButtonsDemoHighest": "Highest",
+  "@componentButtonsDemoHighest": {
+    "description": "Component Buttons Demo Highest emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoHigh": "High",
+  "@componentButtonsDemoHigh": {
+    "description": "Component Buttons Demo High emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoMedium": "Medium",
+  "@componentButtonsDemoMedium": {
+    "description": "Component Buttons Demo Medium emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoLow": "Low",
+  "@componentButtonsDemoLow": {
+    "description": "Component Buttons Demo Low emphasis",
+    "type": "text"
   }
 }

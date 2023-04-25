@@ -1,7 +1,3 @@
 {
-  "componentButtonsDemoElevated": "En hauteur",
-  "componentButtonsDemoHighest": "Plus important",
-  "componentButtonsDemoHigh": "Important",
-  "componentButtonsDemoMedium": "Neutre",
-  "componentButtonsDemoLow": "Faible"
+  "fakeTitle": "Titre bidon"
 }
