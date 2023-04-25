@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/components/theme_selector.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +11,6 @@ import 'components/components_screen.dart';
 import 'guidelines/guidelines_screen.dart';
 import 'modules/modules_screen.dart';
 
-const int mobileUiMaxScreenWidth = 500;
 const int extendedNavigationRailMinScreenWidth = 600;
 
 class MainScreen extends StatefulWidget {

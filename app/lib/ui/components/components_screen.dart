@@ -14,6 +14,14 @@ class ComponentsScreen extends StatelessWidget {
             child: Text('ODS components'),
           ),
           Card(
+            child: ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, '/component_cards');
+              },
+              title: const Center(child: Text('Cards')),
+            ),
+          ),
+          Card(
               child: ListTile(
             onTap: () {
               Navigator.pushNamed(context, '/component_checkboxes');
@@ -45,7 +53,7 @@ class ComponentsScreen extends StatelessWidget {
           Card(
               child: ListTile(
                   onTap: () {
-                    Navigator.pushNamed(context, '/component_metarial');
+                    Navigator.pushNamed(context, '/component_material');
                   },
                   title: const Center(child: Text('See all')))),
         ],
