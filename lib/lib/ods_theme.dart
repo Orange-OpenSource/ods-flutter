@@ -8,6 +8,18 @@ class OdsTheme {
       colorScheme: lightColorScheme,
       textTheme: textTheme,
       appBarTheme: AppBarTheme(backgroundColor: lightColorScheme.surface),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateColor.resolveWith(
+          (states) {
+            if (states.contains(MaterialState.disabled)) {
+              return Colors.black26;
+            } else if (states.contains(MaterialState.selected)) {
+              return lightColorScheme.primary;
+            }
+            return Colors.black54;
+          },
+        ),
+      ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: lightColorScheme.background));
 
