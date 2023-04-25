@@ -17,7 +17,6 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
           title: Text('Checkboxes'),
           bottom: PreferredSize(
