@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/components/theme_selector.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +11,6 @@ import 'components/components_screen.dart';
 import 'guidelines/guidelines_screen.dart';
 import 'modules/modules_screen.dart';
 
-const int mobileUiMaxScreenWidth = 500;
 const int extendedNavigationRailMinScreenWidth = 600;
 
 class MainScreen extends StatefulWidget {
@@ -47,6 +48,8 @@ class _MainScreenState extends State<MainScreen> {
               MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
                   ? BottomNavigationBar(
                       type: BottomNavigationBarType.fixed,
+                      selectedItemColor: colorScheme.primary,
+                      unselectedItemColor: colorScheme.secondary,
                       items: navigationItems.getBottomNavigationBarItems(),
                       currentIndex: _selectedIndex,
                       onTap: (value) {
@@ -95,21 +98,38 @@ class _NavigationItems {
   late List<_MainMenuItem> _mainMenuItems;
 
   _NavigationItems(this.context) {
+    var colorScheme = Theme.of(context).colorScheme;
+
+    var activeColorFilter =
+        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     _mainMenuItems = [
       _MainMenuItem(
-          icon: Icon(Icons.square),
+          activeIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationGuideline,
           screen: GuidelinesScreen()),
       _MainMenuItem(
-          icon: Icon(Icons.input),
+          activeIcon: SvgPicture.asset("assets/ic_components_atom.svg",
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_components_atom.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationComponents,
           screen: ComponentsScreen()),
       _MainMenuItem(
-          icon: Icon(Icons.check_box),
+          activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationModules,
           screen: ModulesScreen()),
       _MainMenuItem(
-          icon: Icon(Icons.favorite),
+          activeIcon: SvgPicture.asset("assets/ic_about_info.svg",
+              colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_about_info.svg",
+              colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationAbout,
           screen: AboutScreen()),
     ];
@@ -121,14 +141,15 @@ class _NavigationItems {
 
   getBottomNavigationBarItems() {
     return _mainMenuItems
-        .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.label))
+        .map((e) => BottomNavigationBarItem(
+            icon: e.icon, activeIcon: e.activeIcon, label: e.label))
         .toList();
   }
 
   getNavigationRailDestinations() {
     return _mainMenuItems
-        .map((e) =>
-            NavigationRailDestination(icon: e.icon, label: Text(e.label)))
+        .map((e) => NavigationRailDestination(
+            icon: e.icon, selectedIcon: e.activeIcon, label: Text(e.label)))
         .toList();
   }
 }
@@ -136,12 +157,16 @@ class _NavigationItems {
 class _MainMenuItem {
   const _MainMenuItem({
     required this.icon,
+    required this.activeIcon,
     required this.label,
     required this.screen,
   });
 
   /// The icon of the menu item.
   final Widget icon;
+
+  /// The icon of the menu item when not selected.
+  final Widget activeIcon;
 
   /// The text label for this menu item.
   final String label;
