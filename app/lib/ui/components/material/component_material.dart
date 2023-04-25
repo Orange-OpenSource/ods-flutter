@@ -19,14 +19,8 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-          title: Text('Material components'),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(4.0),
-            child: Container(
-              color: Colors.black,
-              height: 1.0,
-            ),
-          )),
+        title: Text('Material components'),
+      ),
       body: ListView(
         children: [
           BottomNavigations(

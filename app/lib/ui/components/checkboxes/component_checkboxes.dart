@@ -17,15 +17,10 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-          title: Text('Checkboxes'),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(4.0),
-            child: Container(
-              color: Colors.black,
-              height: 1.0,
-            ),
-          )),
+        title: Text('Checkboxes'),
+      ),
       body: Column(
         children: <Widget>[
           OdsCheckbox(
