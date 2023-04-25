@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_demo_localizations.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 import 'package:ods_flutter/ods_theme.dart';

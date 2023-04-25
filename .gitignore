@@ -3,6 +3,3 @@
 *.ipr
 *.iws
 .idea/
-lib/lib/l10n/ods_flutter_localizations.dart
-lib/lib/l10n/ods_flutter_localizations_en.dart
-lib/lib/l10n/ods_flutter_localizations_fr.dart
