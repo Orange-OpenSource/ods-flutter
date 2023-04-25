@@ -1,107 +1,53 @@
 import 'package:flutter/material.dart';
 
-const lightColorScheme = ColorScheme(
-  brightness: Brightness.light,
-  primary: Color(0xFFF16E00),
-  onPrimary: Color(0xFF000000),
-  primaryContainer: Color(0xFFFFDBCA),
-  onPrimaryContainer: Color(0xFF331200),
-  // primaryFixed: Color(0xFFFFDBCA),
-  // onPrimaryFixed: Color(0xFF331200),
-  // primaryFixedDim: Color(0xFFFFB68E),
-  // onPrimaryFixedVariant: Color(0xFF773300),
-  secondary: Color(0xFF000000),
-  onSecondary: Color(0xFFFFFFFF),
-  secondaryContainer: Color(0xFF333333),
-  onSecondaryContainer: Color(0xFFFFFFFF),
-  // secondaryFixed: Color(0xFF999999),
-  // onSecondaryFixed: Color(0xFF000000),
-  // secondaryFixedDim: Color(0xFF595959),
-  // onSecondaryFixedVariant: Color(0xFFFFFFFF),
-  tertiary: Color(0xFF666666),
-  onTertiary: Color(0xFFFFFFFF),
-  tertiaryContainer: Color(0xFFCCCCCC),
-  onTertiaryContainer: Color(0xFF000000),
-  // tertiaryFixed: Color(0xFFEEEEEE),
-  // onTertiaryFixed: Color(0xFF000000),
-  // tertiaryFixedDim: Color(0xFFDDDDDD),
-  // onTertiaryFixedVariant: Color(0xFF000000),
-  error: Color(0xFFCD3C14),
-  onError: Color(0xFFFFFFFF),
-  errorContainer: Color(0xFFFFDAD6),
-  onErrorContainer: Color(0xFF410002),
-  outline: Color(0xFF000000),
-  background: Color(0xFFFFFFFF),
-  onBackground: Color(0xFF000000),
-  surface: Color(0xFFFFFFFF),
-  onSurface: Color(0xFF000000),
-  surfaceVariant: Color(0xFFEEEEEE),
-  onSurfaceVariant: Color(0xFF000000),
-  inverseSurface: Color(0xFF362F2C),
-  onInverseSurface: Color(0xFFFFFFFF),
-  inversePrimary: Color(0xFFFFB68E),
-  shadow: Color(0xFF000000),
-  surfaceTint: Color(0xFF9C4500),
-  outlineVariant: Color(0xFFD7C2B9),
-  scrim: Color(0xFF000000),
-  // surfaceContainerHighest: Color(0xFF666666),
-  // surfaceContainerHigh: Color(0xFF999999),
-  // surfaceContainer: Color(0xFFCCCCCC),
-  // surfaceContainerLow: Color(0xFFDDDDDD),
-  // surfaceContainerLowest: Color(0xFFFFFFFF),
-  // surfaceBright: Color(0xFFEEEEEE),
-  // surfaceDim: Color(0xFFCCCCCC),
-);
+const orange100 = Color(0xffff7900);
+const orange200 = Color(0xfff16e00);
+const white100 = Color(0xffffffff);
+const black900 = Color(0xff000000);
+const obsGrey700 = Color(0xff595959);
 
-const darkColorScheme = ColorScheme(
-  brightness: Brightness.dark,
-  primary: Color(0xFFFF7900),
-  onPrimary: Color(0xFF000000),
-  primaryContainer: Color(0xFF773300),
-  onPrimaryContainer: Color(0xFFFFDBCA),
-  // primaryFixed: Color(0xFFFFDBCA),
-  // onPrimaryFixed: Color(0xFF331200),
-  // primaryFixedDim: Color(0xFFFFB68E),
-  // onPrimaryFixedVariant: Color(0xFF773300),
-  secondary: Color(0xFFFFFFFF),
-  onSecondary: Color(0xFF000000),
-  secondaryContainer: Color(0xFFCCCCCC),
-  onSecondaryContainer: Color(0xFF000000),
-  // secondaryFixed: Color(0xFF999999),
-  // onSecondaryFixed: Color(0xFF000000),
-  // secondaryFixedDim: Color(0xFF595959),
-  // onSecondaryFixedVariant: Color(0xFFFFFFFF),
-  tertiary: Color(0xFFCCCCCC),
-  onTertiary: Color(0xFF000000),
-  tertiaryContainer: Color(0xFF333333),
-  onTertiaryContainer: Color(0xFFFFFFFF),
-  // tertiaryFixed: Color(0xFFEEEEEE),
-  // onTertiaryFixed: Color(0xFF000000),
-  // tertiaryFixedDim: Color(0xFFDDDDDD),
-  // onTertiaryFixedVariant: Color(0xFF000000),
-  error: Color(0xFFD53F15),
-  onError: Color(0xFF000000),
-  errorContainer: Color(0xFF93000A),
-  onErrorContainer: Color(0xFFFFDAD6),
-  outline: Color(0xFFEEEEEE),
-  background: Color(0xFF000000),
-  onBackground: Color(0xFFEEEEEE),
-  surface: Color(0xFF000000),
-  onSurface: Color(0xFFEEEEEE),
-  surfaceVariant: Color(0xFF000000),
-  onSurfaceVariant: Color(0xFFEEEEEE),
-  inverseSurface: Color(0xFFEEEEEE),
-  onInverseSurface: Color(0xFF000000),
-  inversePrimary: Color(0xFF9C4500),
-  shadow: Color(0xFFFFFFFF),
-  surfaceTint: Color(0xFFFFB68E),
-  outlineVariant: Color(0xFF52443C),
-  scrim: Color(0xFF000000),
-  // surfaceContainerHighest: Color(0xFFCCCCCC),
-  // surfaceContainerHigh: Color(0xFF999999),
-  // surfaceContainer: Color(0xFF666666),
-  // surfaceContainerLow: Color(0xFF595959),
-  // surfaceContainerLowest: Color(0xFF333333),
-  // surfaceBright: Color(0xFF666666),
-  // surfaceDim: Color(0xFF333333),
-);
+// Supporting colors
+
+const blue100 = Color(0xffB5E8F7);
+const blue200 = Color(0xff4BB4E6);
+const blue300 = Color(0xff085EBD);
+
+const yellow100 = Color(0xffFFF6B6);
+const yellow200 = Color(0xffFFD200);
+const yellow300 = Color(0xffFFB400);
+
+const green100 = Color(0xffB8EBD6);
+const green200 = Color(0xff50BE87);
+const green300 = Color(0xff0A6E31);
+
+const purple100 = Color(0xffD9C2F0);
+const purple200 = Color(0xffA885D8);
+const purple300 = Color(0xff492191);
+
+const pink100 = Color(0xffFFE8F7);
+const pink200 = Color(0xffFFB4E6);
+const pink300 = Color(0xffFF8AD4);
+
+// Functional colors
+
+const info100 = Color(0xff527EDB);
+const info200 = Color(0xff4170D8);
+const alert100 = Color(0xffFFCC00);
+const alert200 = Color(0xff8F7200);
+const positive100 = Color(0xff32C832);
+const positive200 = Color(0xff228722);
+const negative100 = Color(0xffD53F15);
+const negative200 = Color(0xffCD3C14);
+
+// Grey colors
+
+const grey200 = Color(0xffEEEEEE);
+const grey300 = Color(0xffDDDDDD);
+const grey400 = Color(0xffCCCCCC);
+const grey500 = Color(0xff999999);
+const grey600 = Color(0xff666666);
+const grey800 = Color(0xff333333);
+
+// Custom colors
+
+const darkSurfaceDefault = Color(0xff121212);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/theme/ods_palette.dart';
 
-import 'ods_palette.dart';
+import 'ods_color_scheme.dart';
 import 'ods_typography.dart';
 
 class OdsTheme {
@@ -9,7 +10,7 @@ class OdsTheme {
   static ThemeData lightTheme = ThemeData(
     colorScheme: lightColorScheme,
     textTheme: textTheme,
-    appBarTheme: AppBarTheme(backgroundColor: lightColorScheme.surface),
+    appBarTheme: const AppBarTheme(backgroundColor: white100),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: lightColorScheme.background),
     checkboxTheme: CheckboxThemeData(
@@ -29,8 +30,9 @@ class OdsTheme {
   static ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
     textTheme: textTheme,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: darkColorScheme.background),
+    appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
+    bottomNavigationBarTheme:
+        const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
     checkboxTheme: CheckboxThemeData(
       fillColor: MaterialStateColor.resolveWith(
         (states) {
