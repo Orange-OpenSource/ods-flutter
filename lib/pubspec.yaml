@@ -15,13 +15,13 @@ dependencies:
   # Localization setup
   flutter_localizations:
     sdk: flutter
-  intl: any
+  intl: ^0.17.0
+  intl_translation: ^0.18.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  intl_translation: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

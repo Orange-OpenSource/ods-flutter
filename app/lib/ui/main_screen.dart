@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_demo_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/components/theme_selector.dart';

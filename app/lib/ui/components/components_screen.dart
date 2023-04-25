@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/components/ods_localized_component.dart';
 
 class ComponentsScreen extends StatelessWidget {
   @override
@@ -12,6 +13,9 @@ class ComponentsScreen extends StatelessWidget {
             ),
             onPressed: () {},
             child: Text('ODS components'),
+          ),
+          Card(
+            child: ListTile(title: OdsLocalizedComponent()),
           ),
           Card(
             child: ListTile(
