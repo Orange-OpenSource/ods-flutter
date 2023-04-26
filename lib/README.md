@@ -19,5 +19,16 @@
 
 ### Generate l10n files
 
-To generate localization files, launch 'flutter gen-l10n' before build. 
-This will generate some files (`ods_localizations.dart`, `ods_localizations_en.dart` and `ods_localizations_fr`.dart)
+**Development process**
+
+* Developer modify `ods_flutter_en.arb` and/or `ods_flutter_fr.arb`
+* In order to have the translations in the app launched locally, `flutter gen-l10n` must be launched in the `lib` directory
+    * It will regenerate:
+        * `ods_flutter_localizations.dart`
+        * `ods_flutter_localizations_en.dart`
+        * `ods_flutter_localizations_fr.dart`
+* Those 3 files need **must not be** committed and pushed
+
+**Release the library**
+
+* Pre-step: run `flutter gen-l10n` before creating and publishing the package to generate `ods_flutter_localizations*.dart`
