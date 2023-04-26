@@ -16,13 +16,13 @@ jobs:
       - uses: subosito/flutter-action@v1
       - name: Generate internationalization files
         run: |
-          cd lib
+          cd library
           flutter gen-l10n
-      - name: Run App tests
+      - name: Run Application tests
         run: |
           cd app
           flutter test
-      - name: Run Lib tests
+      - name: Run Library tests
         run: |
-          cd lib
+          cd library
           flutter test
