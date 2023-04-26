@@ -9,6 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
+lib/l10n/gen/
 
 # IntelliJ related
 *.iml
