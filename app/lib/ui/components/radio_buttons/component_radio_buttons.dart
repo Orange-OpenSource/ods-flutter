@@ -14,16 +14,10 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-            title: Text('Radio Buttons'),
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(4.0),
-              child: Container(
-                color: Colors.black,
-                height: 1.0,
-              ),
-            )),
+          title: Text('Radio Buttons'),
+        ),
         body: Column(
           children: <Widget>[
             OdsRadioButton<Options>(

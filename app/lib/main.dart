@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ods_flutter/ods_theme.dart';
+import 'package:ods_flutter/theme/ods_theme.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/component_cards.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
