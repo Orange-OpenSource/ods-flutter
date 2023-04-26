@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/ods_checkbox.dart';
 
 class ComponentCheckboxes extends StatefulWidget {
   const ComponentCheckboxes({super.key});
@@ -23,39 +22,39 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
       ),
       body: Column(
         children: <Widget>[
-          OdsCheckbox(
-              checked: isChecked0,
-              title: 'Chocolate',
+          CheckboxListTile(
+              value: isChecked0,
+              title: Text('Chocolate'),
               enabled: isEnable,
-              onCheckedChange: (bool? value) {
+              onChanged: (bool? value) {
                 setState(() {
                   isChecked0 = value!;
                 });
               }),
-          OdsCheckbox(
-            checked: isChecked2,
-            title: 'Butter',
+          CheckboxListTile(
+            value: isChecked2,
+            title: Text('Butter'),
             enabled: isEnable,
-            onCheckedChange: (value) {
+            onChanged: (value) {
               setState(() {
                 isChecked2 = value!;
               });
             },
           ),
-          OdsCheckbox(
-              title: 'Sugar',
-              checked: true,
+          CheckboxListTile(
+              title: Text('Sugar'),
+              value: true,
               enabled: false,
-              onCheckedChange: (value) {
+              onChanged: (value) {
                 setState(() {
                   isChecked2 = value!;
                 });
               }),
-          OdsCheckbox(
-              title: 'Eggs',
-              checked: false,
+          CheckboxListTile(
+              title: Text('Eggs'),
+              value: false,
               enabled: false,
-              onCheckedChange: (value) {
+              onChanged: (value) {
                 setState(() {
                   isChecked2 = value!;
                 });
