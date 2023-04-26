@@ -14,6 +14,7 @@
 ## Table of contents
 
 - [Build](#build)
+- [How to use](#how-to-use)
 
 ## Build
 
@@ -32,3 +33,23 @@
 **Release the library**
 
 * Pre-step: run `flutter gen-l10n` before creating and publishing the package to generate `ods_flutter_localizations*.dart`
+
+
+## How to use
+
+### Localization
+
+To setup localization of the ods_flutter library, you need to set the `OdsLocalizations.delegate` in the `localizationsDelegates` properties of the `MaterialApp`. 
+
+```Dart
+MaterialApp(
+  title: 'Title of your app',
+  // ...
+  // Localization setup
+  supportedLocales: AppLocalizations.supportedLocales,
+  localizationsDelegates: [
+    AppLocalizations.delegate,
+    OdsLocalizations.delegate,
+  ],
+)
+```
