@@ -12,6 +12,12 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.3
 
+  # Localization setup
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  intl_translation: ^0.18.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,7 +28,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

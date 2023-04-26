@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
+      - name: Generate internationalization files
+        run: |
+          cd library
+          flutter gen-l10n
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           workingDir: app
