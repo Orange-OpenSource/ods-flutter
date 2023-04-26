@@ -17,6 +17,8 @@
 
 ## Build
 
+Before build see build section in https://orange-opensource.github.io/ods-flutter/lib/README.md
+
 ### Web
 
 The demo application is publicly hosted on GitHub Pages at https://orange-opensource.github.io/ods-flutter/, and can also be run locally.

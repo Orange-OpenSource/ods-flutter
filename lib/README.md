@@ -10,3 +10,14 @@
   ·
   <a href="https://github.com/Orange-OpenSource/ods-flutter/issues/new?assignees=B3nz01d&labels=feature%2Ctriage&template=feature_request.yml&title=%5Bfeature%5D%3A+">Request feature</a>
 </p>
+
+## Table of contents
+
+- [Build](#build)
+
+## Build
+
+### Generate l10n files
+
+To generate localization files, launch 'flutter gen-l10n' before build. 
+This will generate some files (`ods_localizations.dart`, `ods_localizations_en.dart` and `ods_localizations_fr`.dart)
