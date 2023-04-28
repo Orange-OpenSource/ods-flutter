@@ -1,5 +1,8 @@
 import 'dart:core';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 class Component {
   String titleRes;
   String imageRes;
@@ -27,7 +30,7 @@ class Components {
         "/component_checkboxes"),
     Component(
         "Cards",
-        'assets/Card_image_BW.png',
+        'assets/ic_card_image.svg',
         1,
         "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
         "Cards",
@@ -38,7 +41,7 @@ class Components {
         1,
         "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
         "Radio Buttons",
-        "/component_radioButtons"),
+        "/component_detail"),
     Component(
         "Switches",
         'assets/il_switches.png',
@@ -70,5 +73,23 @@ class Components {
 
   String getName(int index) {
     return _components[index].titleRes;
+  }
+}
+
+Widget displayImage(String imagePath) {
+  if (imagePath.contains('svg')) {
+    return SvgPicture.asset(
+      imagePath,
+      semanticsLabel: 'Flutter image',
+      fit: BoxFit.fitHeight,
+      width: double.infinity,
+    );
+  } else {
+    return Image.asset(
+      imagePath,
+      semanticLabel: 'Flutter image',
+      fit: BoxFit.fitHeight,
+      width: double.infinity,
+    );
   }
 }
