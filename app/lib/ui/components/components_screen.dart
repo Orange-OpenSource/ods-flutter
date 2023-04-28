@@ -4,8 +4,13 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 
 import 'component.dart';
 
-class ComponentsScreen extends StatelessWidget {
-  Components group = Components();
+class ComponentsScreen extends StatefulWidget {
+  @override
+  State<ComponentsScreen> createState() => _ComponentsScreenState();
+}
+
+class _ComponentsScreenState extends State<ComponentsScreen> {
+  Components component = Components();
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +22,13 @@ class ComponentsScreen extends StatelessWidget {
                 child: GridView.count(
                     crossAxisCount: 2,
                     children:
-                        List.generate(group.getComponent().length, (index) {
+                        List.generate(component.getComponent().length, (index) {
                       return OdsSmallCard(
-                        title: group.getName(index),
-                        image: Image.asset(group.getImage(index),
-                            semanticLabel: 'Flutter image',
-                            fit: BoxFit.fitHeight),
+                        title: component.getName(index),
+                        image: displayImage(component.getImage(index)),
                         onTap: () {
                           Navigator.pushNamed(
-                              context, group.getDirections(index));
+                              context, component.getDirections(index));
                         },
                       );
                     })))));
