@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/display_image.dart';
 
+import '../utilities/display_image.dart';
 import 'component.dart';
 
 class ComponentsScreen extends StatefulWidget {
