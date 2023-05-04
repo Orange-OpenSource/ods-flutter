@@ -8,7 +8,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 /// A ripple effect is managed on card click.
 class OdsSmallCard extends StatelessWidget {
   /// Creates an ODS Small card.
-  OdsSmallCard({
+  const OdsSmallCard({
     Key? key,
     required this.title,
     required this.image,
@@ -26,10 +26,10 @@ class OdsSmallCard extends StatelessWidget {
   final Widget image;
 
   /// The optional card's subtitle displayed below the title.
-  String? subtitle;
+  final String? subtitle;
 
   /// The action executed on card tap.
-  Function()? onTap;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
