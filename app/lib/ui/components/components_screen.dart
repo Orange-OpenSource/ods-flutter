@@ -4,7 +4,8 @@ import 'package:ods_flutter/components/ods_localized_component.dart';
 class ComponentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Scaffold(
+        body: SafeArea(
       child: ListView(
         children: [
           TextButton(
@@ -62,6 +63,6 @@ class ComponentsScreen extends StatelessWidget {
                   title: const Center(child: Text('See all')))),
         ],
       ),
-    );
+    ));
   }
 }
