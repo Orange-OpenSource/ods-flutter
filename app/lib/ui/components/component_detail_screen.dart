@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
 import '../utilities/display_image.dart';
@@ -19,7 +20,10 @@ class ComponentDetailScreen extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            displayImage(component.imageRes, MediaQuery.of(context).size.width),
+            displayImage(
+              component.imageRes,
+              MediaQuery.of(context).size.width,
+            ),
             Padding(
               padding: const EdgeInsets.only(
                   top: spacingM,
@@ -33,11 +37,17 @@ class ComponentDetailScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ListView.builder(
-              itemCount: 3,
+              itemCount:
+                  component.variants.isNotEmpty ? component.variants.length : 1,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                  leading: FlutterLogo(),
-                  title: Text(component.composableName),
+                  leading: SvgPicture.asset("assets/ic_modules_molecule.svg"),
+                  title: component.variants.isNotEmpty
+                      ? Text(component.variants[index].titleRes)
+                      : Text("${component.titleRes} demo"),
+                  subtitle: component.variants.isNotEmpty
+                      ? Text(component.variants[index].composableName)
+                      : Text(component.composableName),
                   onTap: () {
                     Navigator.pushNamed(context, component.direction);
                   },
