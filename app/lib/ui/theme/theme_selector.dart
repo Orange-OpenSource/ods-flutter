@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter_demo/model_theme.dart';
+import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
 
 class ThemeSelector extends StatefulWidget {

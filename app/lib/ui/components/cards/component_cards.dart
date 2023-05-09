@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 
 class ComponentCards extends StatelessWidget {
   @override
@@ -20,7 +22,7 @@ class ComponentCards extends StatelessWidget {
           Card(
             child: ListTile(
               onTap: () {
-                Navigator.pushNamed(context, '/card_small');
+                Get.to(CardSmall());
               },
               title: const Center(child: Text('Small Card')),
             ),
