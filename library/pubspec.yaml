@@ -15,7 +15,7 @@ dependencies:
   # Localization setup
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: any
   intl_translation: ^0.18.0
 
 dev_dependencies:
