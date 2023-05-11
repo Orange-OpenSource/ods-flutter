@@ -1,68 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/ods_localized_component.dart';
+import 'package:ods_flutter/components/card/ods_small_card.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
-class ComponentsScreen extends StatelessWidget {
+import 'component.dart';
+
+class ComponentsScreen extends StatefulWidget {
+  @override
+  State<ComponentsScreen> createState() => _ComponentsScreenState();
+}
+
+class _ComponentsScreenState extends State<ComponentsScreen> {
+  Components component = Components();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: ListView(
-        children: [
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 24),
-            ),
-            onPressed: () {},
-            child: Text('ODS components'),
-          ),
-          Card(
-            child: ListTile(title: OdsLocalizedComponent()),
-          ),
-          Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, '/component_cards');
-              },
-              title: const Center(child: Text('Cards')),
-            ),
-          ),
-          Card(
-              child: ListTile(
-            onTap: () {
-              Navigator.pushNamed(context, '/component_checkboxes');
-            },
-            title: const Center(child: Text('Checkboxes')),
-          )),
-          Card(
-              child: ListTile(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/component_radioButtons');
-                  },
-                  title: const Center(child: Text('Radio Buttons')))),
-          Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, '/component_switches');
-              },
-              title: const Center(child: Text('Switches')),
-            ),
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle:
-                  const TextStyle(fontSize: 24, decorationColor: Colors.black),
-            ),
-            onPressed: () {},
-            child: Text('Material'),
-          ),
-          Card(
-              child: ListTile(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/component_material');
-                  },
-                  title: const Center(child: Text('See all')))),
-        ],
-      ),
-    ));
+            child: Padding(
+                padding: const EdgeInsets.only(
+                    left: spacingXs, right: spacingXs, top: spacingS),
+                child: GridView.count(
+                    crossAxisCount: 2,
+                    children:
+                        List.generate(component.getComponent().length, (index) {
+                      return OdsSmallCard(
+                        title: component.getName(index),
+                        image: displayImage(component.getImage(index)),
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, component.getDirections(index));
+                        },
+                      );
+                    })))));
   }
+
+  Components group = Components();
 }

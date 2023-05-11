@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/ods_radio_button.dart';
 
 class ComponentRadioButtons extends StatefulWidget {
   @override
@@ -20,34 +19,31 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
         ),
         body: Column(
           children: <Widget>[
-            OdsRadioButton<Options>(
-              title: 'Summer Salad',
-              selected: Options.option1,
-              enabled: true,
+            RadioListTile<Options>(
+              title: Text('Summer Salad'),
+              value: Options.option1,
               groupValue: _selectedOption,
-              onSelectedChange: (value) {
+              onChanged: (value) {
                 setState(() {
                   _selectedOption = value;
                 });
               },
             ),
-            OdsRadioButton<Options>(
-              title: 'Brocoli Soup',
-              selected: Options.option2,
+            RadioListTile<Options>(
+              title: Text('Brocoli Soup'),
+              value: Options.option2,
               groupValue: _selectedOption,
-              enabled: true,
-              onSelectedChange: (value) {
+              onChanged: (value) {
                 setState(() {
                   _selectedOption = value;
                 });
               },
             ),
-            OdsRadioButton<Options>(
-              title: 'Pesta Farfalle',
-              selected: Options.option3,
+            RadioListTile<Options>(
+              title: Text('Pesta Farfalle'),
+              value: Options.option3,
               groupValue: _selectedOption,
-              enabled: false,
-              onSelectedChange: (value) {
+              onChanged: (value) {
                 setState(() {
                   _selectedOption = value;
                 });

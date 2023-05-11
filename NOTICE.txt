@@ -9,18 +9,25 @@ and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
 ods-flutter/app/assets/ic_about_info.svg
+ods-flutter/app/assets/ic_card_image.svg
 ods-flutter/app/assets/ic_components_atom.svg
 ods-flutter/app/assets/ic_guidelines_dna.svg
 ods-flutter/app/assets/ic_modules_molecule.svg
 ods-flutter/app/assets/il_about.png
+ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/placeholder.png
+
 ods-flutter/app/assets/1.5x/il_about.png
+ods-flutter/app/assets/1.5x/il_switches.png
 ods-flutter/app/assets/1.5x/placeholder.png
 ods-flutter/app/assets/2.0x/il_about.png
+ods-flutter/app/assets/2.0x/il_switches.png
 ods-flutter/app/assets/2.0x/placeholder.png
 ods-flutter/app/assets/3.0x/il_about.png
+ods-flutter/app/assets/3.0x/il_switches.png
 ods-flutter/app/assets/3.0x/placeholder.png
 ods-flutter/app/assets/4.0x/il_about.png
+ods-flutter/app/assets/4.0x/il_switches.png
 ods-flutter/app/assets/4.0x/placeholder.png
 
 ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/App-Store-alpha-512@2x.png

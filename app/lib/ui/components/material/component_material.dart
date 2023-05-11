@@ -140,19 +140,23 @@ class ButtonsFab extends StatelessWidget {
             spacing: spacingS,
             children: [
               FloatingActionButton.small(
+                heroTag: 'btn1',
                 onPressed: () {},
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton.extended(
+                heroTag: 'btn2',
                 onPressed: () {},
                 icon: const Icon(Icons.add),
                 label: const Text('Create'),
               ),
               FloatingActionButton(
+                heroTag: 'btn3',
                 onPressed: () {},
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton.large(
+                heroTag: 'btn4',
                 onPressed: () {},
                 child: const Icon(Icons.add),
               ),
