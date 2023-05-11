@@ -1,8 +1,5 @@
 import 'dart:core';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 class Component {
   String titleRes;
   String imageRes;
@@ -73,23 +70,5 @@ class Components {
 
   String getName(int index) {
     return _components[index].titleRes;
-  }
-}
-
-Widget displayImage(String imagePath) {
-  if (imagePath.contains('svg')) {
-    return SvgPicture.asset(
-      imagePath,
-      semanticsLabel: 'Flutter image',
-      fit: BoxFit.fitHeight,
-      width: double.infinity,
-    );
-  } else {
-    return Image.asset(
-      imagePath,
-      semanticLabel: 'Flutter image',
-      fit: BoxFit.fitHeight,
-      width: double.infinity,
-    );
   }
 }
