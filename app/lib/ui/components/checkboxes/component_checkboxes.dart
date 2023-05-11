@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 
 class ComponentCheckboxes extends StatefulWidget {
   const ComponentCheckboxes({super.key});
@@ -17,8 +18,7 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkboxes'),
-      ),
+          title: Text(AppLocalizations.of(context)!.componentCheckboxesTitle)),
       body: Column(
         children: <Widget>[
           CheckboxListTile(

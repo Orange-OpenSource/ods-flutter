@@ -5,6 +5,7 @@
     "type": "text"
   },
 
+  "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "@bottomNavigationGuideline": {
     "description": "Bottom Navigation bar item - Guidelines",
@@ -26,6 +27,7 @@
     "type": "text"
   },
 
+  "@_GUIDELINES_SCREEN": {},
   "guidelinesTypography": "Typography",
     "@guidelinesTypography": {
       "description": "Guidelines typography screen title",
@@ -43,6 +45,40 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_SCREEN": {},
+  "componentScreenTitle": "ODS Components",
+  "@componentScreenTitle": {
+    "description": "Components Screen - Title",
+    "type": "text"
+  },
+  "componentScreenCardsTitle": "Cards",
+  "@componentScreenCardsTitle": {
+    "description": "Components Screen - Cards Title",
+    "type": "text"
+  },
+  "componentScreenCheckboxesTitle": "Checkboxes",
+  "@componentScreenCheckboxesTitle": {
+    "description": "Components Screen - Checkboxes Title",
+    "type": "text"
+  },
+  "componentScreenRadioButtonsTitle": "Radio Buttons",
+  "@componentScreenRadioButtonsTitle": {
+    "description": "Components Screen - Radio Buttons Title",
+    "type": "text"
+  },
+  "componentScreenSwitchesTitle": "Switches",
+  "@componentScreenSwitchesTitle": {
+    "description": "Components Screen - Switches Title",
+    "type": "text"
+  },
+  "componentScreenAllTitle": "See All",
+  "@componentScreenAllTitle": {
+    "description": "Components Screen - All Title",
+    "type": "text"
+  },
+
+
+  "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
     "description": "Component Buttons Title",
@@ -71,6 +107,69 @@
   "componentButtonsDemoLow": "Low",
   "@componentButtonsDemoLow": {
     "description": "Component Buttons Demo Low emphasis",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_CARDS": {},
+  "componentCardsTitle": "Cards",
+  "@componentCardsTitle": {
+    "description": "Component Cards - Title",
+    "type": "text"
+  },
+  "componentSmallCardsTitle": "Small cards",
+  "@componentSmallCardsTitle": {
+    "description": "Component Small Cards - Title",
+    "type": "text"
+  },
+
+  "@_CARDS_SMALL_VARIANT": {},
+  "cardSmallVariantTitle": "Card Small",
+  "@cardSmallVariantTitle": {
+    "description": "Component Card Small Screen - Title",
+    "type": "text"
+  },
+  "cardSmallVariantExampleTitle": "Card Small",
+  "@cardSmallVariantExampleTitle": {
+    "description": "Component Card Small Example - Title",
+    "type": "text"
+  },
+  "cardSmallVariantExampleSubTitle": "Card Small",
+  "@cardSmallVariantExampleSubTitle": {
+    "description": "Component Card Small Example - SubTitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_CHECKBOXES": {},
+  "componentCheckboxesTitle": "Checkboxes",
+  "@componentCheckboxesTitle": {
+    "description": "Component Checkboxes - Title",
+    "type": "text"
+  },
+
+
+  "@_COMPONENTS_RADIOBUTTON": {},
+  "componentRadioButtonsTitle": "Bouttons radio",
+  "@componentRadioButtonsTitle": {
+    "description": "Component Bouttons radio - Title",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_SWITCHES": {},
+  "componentSwitchesTitle": "Switches",
+  "@componentSwitchesTitle": {
+    "description": "Component Switches - Title",
+    "type": "text"
+  },
+
+  "@_ABOUT_PAGE": {},
+  "aboutScreenTitle": "Orange Design System Flutter App",
+  "@aboutScreenTitle": {
+    "description": "Main App name",
+    "type": "text"
+  },
+  "aboutScreenDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
+  "@aboutScreenDescription": {
+    "description": "About page - Description of the app",
     "type": "text"
   }
 }

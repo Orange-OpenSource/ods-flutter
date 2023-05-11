@@ -1,20 +1,49 @@
 {
-  "appTitle": "App Flutter Orange Design System",
-
+  "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "bottomNavigationComponents": "Composants",
   "bottomNavigationModules": "Modules",
   "bottomNavigationAbout": "À propos de",
 
+  "@_GUIDELINES_SCREEN": {},
   "guidelinesTypography": "Typography",
   "guidelinesTypographyDescription": "TODO Utilisez la police Roboto dans votre application qui correspond à la police système Android...",
 
-  "aboutPageAppDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System.",
+  "@_COMPONENTS_SCREEN": {},
+  "componentScreenTitle": "ODS Composants",
+  "componentScreenCardsTitle": "Cartes",
+  "componentScreenCheckboxesTitle": "Cases à cocher",
+  "componentScreenRadioButtonsTitle": "Boutons radio",
+  "componentScreenSwitchesTitle": "Switches",
+  "componentScreenAllTitle": "Voir tout",
 
+  "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Boutons",
   "componentButtonsDemoElevated": "En hauteur",
   "componentButtonsDemoHighest": "Plus important",
   "componentButtonsDemoHigh": "Important",
   "componentButtonsDemoMedium": "Neutre",
-  "componentButtonsDemoLow": "Faible"
+  "componentButtonsDemoLow": "Faible",
+
+  "@_COMPONENTS_CARDS": {},
+  "componentCardsTitle": "Cartes",
+  "componentSmallCardsTitle": "Petite carte",
+
+  "@_CARDS_SMALL_VARIANT": {},
+  "cardSmallVariantTitle": "Petite carte",
+  "cardSmallVariantExampleTitle": "Petite carte",
+  "cardSmallVariantExampleSubTitle": "Petite carte",
+
+  "@_COMPONENTS_CHECKBOXES": {},
+  "componentCheckboxesTitle": "Cases à cocher",
+
+  "@_COMPONENTS_RADIOBUTTON": {},
+  "componentRadioButtonsTitle": "Bouttons radio",
+
+  "@_COMPONENTS_SWITCHES": {},
+  "componentSwitchesTitle": "Switches",
+
+  "@_ABOUT_PAGE": {},
+  "aboutScreenTitle": "App Flutter Orange Design System",
+  "aboutScreenDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System."
 }
