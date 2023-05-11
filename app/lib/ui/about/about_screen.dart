@@ -33,8 +33,9 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Column(
+    return Scaffold(
+        body: SafeArea(
+            child: Column(
       children: [
         Image(image: AssetImage('assets/il_about.png')),
         Padding(
@@ -55,6 +56,6 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ),
       ],
-    ));
+    )));
   }
 }
