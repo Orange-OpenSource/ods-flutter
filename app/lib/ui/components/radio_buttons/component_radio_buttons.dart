@@ -13,7 +13,6 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           title: Text('Radio Buttons'),
         ),

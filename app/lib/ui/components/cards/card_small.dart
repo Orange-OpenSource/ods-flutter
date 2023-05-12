@@ -14,7 +14,6 @@ class _CardSmallState extends State<CardSmall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text('Small Card'),
       ),
