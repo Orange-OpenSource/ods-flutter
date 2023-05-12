@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/theme/ods_palette.dart';
+import 'package:ods_flutter/theme/ods_typography.dart';
 
 import 'ods_color_scheme.dart';
-import 'ods_typography.dart';
 
 const double _disabledOpacity = 0.38;
 const double _switchTrackOpacity = 0.54;
@@ -12,7 +12,7 @@ class OdsTheme {
 
   static ThemeData lightTheme = ThemeData(
     colorScheme: lightColorScheme,
-    textTheme: textTheme,
+    typography: odsTypography,
     appBarTheme: const AppBarTheme(backgroundColor: white100),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: white100),
@@ -29,7 +29,7 @@ class OdsTheme {
 
   static ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
-    textTheme: textTheme,
+    typography: odsTypography,
     appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
