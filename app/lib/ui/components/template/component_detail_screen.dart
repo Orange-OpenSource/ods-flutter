@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
-import '../utilities/display_image.dart';
+import '../../utilities/display_image.dart';
 import 'component.dart';
 
 class ComponentDetailScreen extends StatelessWidget {
@@ -39,21 +38,28 @@ class ComponentDetailScreen extends StatelessWidget {
               itemCount:
                   component.variants.isNotEmpty ? component.variants.length : 1,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  leading: SvgPicture.asset("assets/ic_modules_molecule.svg"),
-                  title: component.variants.isNotEmpty
-                      ? Text(component.variants[index].titleRes)
-                      : Text("${component.titleRes} demo"),
-                  subtitle: component.variants.isNotEmpty
-                      ? Text(component.variants[index].composableName)
-                      : Text(component.composableName),
-                  onTap: () {
-                    Navigator.pushNamed(context, component.direction);
-                  },
-                );
+                return VariantEntry(variant: component.variants[index]);
               },
             ))
           ],
         ));
+  }
+}
+
+class VariantEntry extends StatelessWidget {
+  final Variant variant;
+
+  const VariantEntry({required this.variant});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(Icons.play_circle_outline),
+      title: Text(variant.title),
+      subtitle: Text(variant.technicalName),
+      onTap: () {
+        Navigator.pushNamed(context, variant.route);
+      },
+    );
   }
 }

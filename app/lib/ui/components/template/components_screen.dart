@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
-import '../utilities/display_image.dart';
+import '../../utilities/display_image.dart';
 import 'component.dart';
 import 'component_detail_screen.dart';
 

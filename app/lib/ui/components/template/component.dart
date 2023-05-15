@@ -1,16 +1,26 @@
 import 'dart:core';
 
+import 'package:flutter/cupertino.dart';
+
 class Component {
   String titleRes;
   String imageRes;
   int smallImageRes;
   String descriptionRes;
   String composableName;
-  String direction;
   List<Variant> variants;
 
   Component(this.titleRes, this.imageRes, this.smallImageRes,
-      this.descriptionRes, this.composableName, this.direction, this.variants);
+      this.descriptionRes, this.composableName, this.variants);
+}
+
+class Variant {
+  String title;
+  String technicalName;
+  String route;
+  Widget? screen;
+
+  Variant(this.title, this.technicalName, this.route, this.screen);
 }
 
 class Components {
@@ -24,34 +34,38 @@ class Components {
         'assets/ic_checkbox.png',
         1,
         "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
-        "OdsCheckbox",
-        "/component_checkboxes", []),
+        "",
+        [Variant("Checkboxes", "OdsCheckbox", "/component_checkboxes", null)]),
     Component(
         "Cards",
         'assets/ic_card.png',
         1,
         "Cards are important components that can be used to organise and present a number of different types of related information.",
-        "",
-        "/card_small",
-        List.of([
-          Variant.cardSmall,
-          Variant.cardVerticalHeaderFirst,
-          Variant.cardVerticalImageFirst
-        ])),
+        "", [
+      Variant("Small card", "OdsSmallCard", "/card_small",
+          Text("Small Card variant")),
+      Variant("Vertical image first card", "OdsVerticalImageFirstCard",
+          "/card_small", Text("Card Image first variant")),
+      Variant("Vertical header first card", "OdsVerticalHeaderFirstCard",
+          "/card_small", Text("Card header first variant")),
+    ]),
     Component(
         "Radio Buttons",
         'assets/il_radiobutton.png',
         1,
         "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
-        "OdsRadioButtons",
-        "/component_radioButtons", []),
+        "OdsRadioButtons", [
+      Variant(
+          "Radio Buttons", "OdsRadioButtons", "/component_radioButtons", null),
+    ]),
     Component(
         "Switches",
         'assets/il_switches.png',
         1,
         "On/off switches toggle the state of a single settings option. The function of the switch should be made clear by the inline label.",
-        "OdsSwitch",
-        "/component_switches", []),
+        "OdsSwitch", [
+      Variant("Switches", "OdsSwitch", "/component_switches", null),
+    ]),
     Component(
         "Others",
         'assets/placeholder.png',
@@ -59,16 +73,13 @@ class Components {
         "On/off switches toggle the state of a single settings option. The function of the switch should be made clear "
             "by the inline label.",
         "Others",
-        "/component_material",
-        [])
+        [
+          Variant("Others", "Material", "/component_material", null),
+        ])
   ];
 
   String getImage(int index) {
     return _components[index].imageRes;
-  }
-
-  String getDirections(int index) {
-    return _components[index].direction;
   }
 
   List<Component> getComponents() {
@@ -82,17 +93,4 @@ class Components {
   String getName(int index) {
     return _components[index].titleRes;
   }
-}
-
-class Variant {
-  String titleRes;
-  String composableName;
-
-  Variant(this.titleRes, this.composableName);
-
-  static Variant cardSmall = Variant("Small card", "OdsSmallCard");
-  static Variant cardVerticalImageFirst =
-      Variant("Vertical image first card", "OdsVerticalImageFirstCard");
-  static Variant cardVerticalHeaderFirst =
-      Variant("Vertical header first card", "OdsVerticalHeaderFirstCard");
 }

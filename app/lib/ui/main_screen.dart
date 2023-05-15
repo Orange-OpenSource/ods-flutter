@@ -6,7 +6,7 @@ import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:provider/provider.dart';
 
 import 'about/about_screen.dart';
-import 'components/components_screen.dart';
+import 'components/Template/components_screen.dart';
 import 'guidelines/guidelines_screen.dart';
 import 'modules/modules_screen.dart';
 import 'theme/model_theme.dart';

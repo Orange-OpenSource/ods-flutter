@@ -9,11 +9,13 @@ and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
 ods-flutter/app/assets/ic_about_info.svg
-ods-flutter/app/assets/ic_card_image.svg
+ods-flutter/app/assets/ic_card.png
+ods-flutter/app/assets/ic_checkbox.png
 ods-flutter/app/assets/ic_components_atom.svg
 ods-flutter/app/assets/ic_guidelines_dna.svg
 ods-flutter/app/assets/ic_modules_molecule.svg
 ods-flutter/app/assets/il_about.png
+ods-flutter/app/assets/il_radiobutton.png
 ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/il_typography.png
 ods-flutter/app/assets/placeholder.png
