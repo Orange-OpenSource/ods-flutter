@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/divider/ods_divider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
@@ -62,13 +63,26 @@ class GuidelineTypographyScreen extends StatelessWidget {
           title: Text('Typography'),
         ),
         body: SafeArea(
-          child: ListView(
-              padding: EdgeInsets.symmetric(
-                  horizontal: spacingM, vertical: spacingS),
-              children: textStyleItems
-                  .map((textStyleItem) =>
+          child: ListView(children: [
+            Image(
+              image: AssetImage('assets/il_typography.png'),
+              fit: BoxFit.fitWidth,
+            ),
+            Padding(
+              padding: EdgeInsets.all(spacingM),
+              child: Column(
+                children: [
+                  Text(AppLocalizations.of(context)!.guidelinesTypographyText,
+                      style: Theme.of(context).textTheme.bodyLarge),
+                  SizedBox(
+                    height: spacingM,
+                  ),
+                  ...textStyleItems.map((textStyleItem) =>
                       _TextStyleWidget(textStyleItem: textStyleItem))
-                  .toList()),
+                ],
+              ),
+            )
+          ]),
         ));
   }
 }
