@@ -7,10 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
 
-### Added
-
-### Changed
-
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.1.1) - 2023-05-04
 
 First version of ods_flutter library and Application from hackathon (publication on pub.dev)
