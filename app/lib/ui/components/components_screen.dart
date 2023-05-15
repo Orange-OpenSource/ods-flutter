@@ -21,12 +21,14 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
                     left: spacingXs, right: spacingXs, top: spacingS),
                 child: GridView.count(
                     crossAxisCount: 2,
-                    children: OdsComponents.map((c) => OdsSmallCard(
-                          title: c.titleRes,
-                          image: displayImage(c.imageRes),
-                          onTap: () {
-                            Get.to(c.varaintsScreen);
-                          },
-                        )).toList()))));
+                    children: odsComponents
+                        .map((c) => OdsSmallCard(
+                              title: c.title,
+                              image: displayImage(c.imageResourceName),
+                              onTap: () {
+                                Get.to(c.componentScreen);
+                              },
+                            ))
+                        .toList()))));
   }
 }

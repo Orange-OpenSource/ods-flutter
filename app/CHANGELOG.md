@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
 
-- Update navigation in app using get
-  package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
-- Create components list
-  screen ([#132](https://github.com/Orange-OpenSource/ods-flutter/issues/132))
+### Added
+
+- Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
+- Create components list screen ([#132](https://github.com/Orange-OpenSource/ods-flutter/issues/132))
+
+### Changed
 
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.1.0) - 2023-05-04
 
