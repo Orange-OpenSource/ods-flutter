@@ -16,27 +16,6 @@ _getPlatformTypography() {
 }
 
 TextTheme androidTextTheme = const TextTheme(
-  // Display L > Android M2: Headline 1
-  displayLarge: TextStyle(
-      debugLabel: 'Display L',
-      fontFamily: 'Roboto',
-      fontSize: 97,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -1.5),
-  // Display M > Android M2: Headline 2
-  displayMedium: TextStyle(
-      debugLabel: 'Display M',
-      fontFamily: 'Roboto',
-      fontSize: 61,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -0.5),
-  // Display S > Android M2: Headline 3
-  displaySmall: TextStyle(
-      debugLabel: 'Display S',
-      fontFamily: 'Roboto',
-      fontSize: 48,
-      fontWeight: FontWeight.w500),
-
   // Headline L > Android M2: Headline 4
   headlineLarge: TextStyle(
       debugLabel: 'Headline L',
@@ -137,27 +116,6 @@ TextTheme androidTextTheme = const TextTheme(
 );
 
 TextTheme iosTextTheme = const TextTheme(
-  // Display L
-  displayLarge: TextStyle(
-      debugLabel: 'Display L',
-      fontFamily: '.SF UI Display',
-      fontSize: 97,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -1.5),
-  // Display M
-  displayMedium: TextStyle(
-      debugLabel: 'Display M',
-      fontFamily: '.SF UI Display',
-      fontSize: 61,
-      fontWeight: FontWeight.w500,
-      letterSpacing: -0.5),
-  // Display S
-  displaySmall: TextStyle(
-      debugLabel: 'Display S',
-      fontFamily: '.SF UI Display',
-      fontSize: 48,
-      fontWeight: FontWeight.w500),
-
   // Headline L > iOS: Large Title
   headlineLarge: TextStyle(
       debugLabel: 'Headline L',
