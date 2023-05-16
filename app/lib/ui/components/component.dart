@@ -21,17 +21,17 @@ class Component {
 List<Component> odsComponents = [
   Component(
       "Checkboxes",
-      'assets/placeholder.png',
+      'assets/il_checkbox.svg',
       "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
       ComponentCheckboxes()),
   Component(
       "Cards",
-      'assets/ic_card_image.svg',
+      'assets/il_cards.svg',
       "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
       ComponentCards()),
   Component(
       "Radio Buttons",
-      'assets/placeholder.png',
+      'assets/il_radio_buttons.svg',
       "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
       ComponentRadioButtons()),
   Component(
