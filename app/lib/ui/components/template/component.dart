@@ -15,7 +15,7 @@ class OdsComponent {
 class Variant {
   String title;
   String technicalName;
-  Widget? screen;
+  Widget screen;
 
   Variant(this.title, this.technicalName, this.screen);
 }
