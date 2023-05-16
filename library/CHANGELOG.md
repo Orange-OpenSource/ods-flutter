@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add ODS typography for iOS & Android platforms ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
+- Add OdsDivider widget ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
 
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.1.1) - 2023-05-04
 
