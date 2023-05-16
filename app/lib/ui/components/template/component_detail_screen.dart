@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-
-import '../../utilities/display_image.dart';
-import 'component.dart';
+import 'package:ods_flutter_demo/ui/components/template/component.dart';
+import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentDetailScreen extends StatelessWidget {
-  final Component component;
+  final OdsComponent component;
 
   const ComponentDetailScreen({required this.component});
 
@@ -13,13 +13,13 @@ class ComponentDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(component.titleRes),
+          title: Text(component.title),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             displayImage(
-              component.imageRes,
+              component.imageResourceName,
               MediaQuery.of(context).size.width,
             ),
             Padding(
@@ -29,14 +29,13 @@ class ComponentDetailScreen extends StatelessWidget {
                   left: spacingM,
                   bottom: spacingM),
               child: Text(
-                component.descriptionRes,
+                component.description,
                 style: TextStyle(fontSize: spacingM, letterSpacing: 0.5),
               ),
             ),
             Expanded(
                 child: ListView.builder(
-              itemCount:
-                  component.variants.isNotEmpty ? component.variants.length : 1,
+              itemCount: component.variants.length,
               itemBuilder: (BuildContext context, int index) {
                 return VariantEntry(variant: component.variants[index]);
               },
@@ -58,7 +57,7 @@ class VariantEntry extends StatelessWidget {
       title: Text(variant.title),
       subtitle: Text(variant.technicalName),
       onTap: () {
-        Navigator.pushNamed(context, variant.route);
+        Get.to(variant.screen);
       },
     );
   }
