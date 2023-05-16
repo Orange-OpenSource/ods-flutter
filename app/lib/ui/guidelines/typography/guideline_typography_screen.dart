@@ -60,7 +60,7 @@ class GuidelineTypographyScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          title: Text('Typography'),
+          title: Text(AppLocalizations.of(context)!.guidelinesTypography),
         ),
         body: SafeArea(
           child: ListView(children: [
@@ -72,7 +72,9 @@ class GuidelineTypographyScreen extends StatelessWidget {
               padding: EdgeInsets.all(spacingM),
               child: Column(
                 children: [
-                  Text(AppLocalizations.of(context)!.guidelinesTypographyText,
+                  Text(
+                      AppLocalizations.of(context)!
+                          .guidelinesTypographyDescription,
                       style: Theme.of(context).textTheme.bodyLarge),
                   SizedBox(
                     height: spacingM,

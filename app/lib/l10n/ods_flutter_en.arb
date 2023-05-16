@@ -26,8 +26,13 @@
     "type": "text"
   },
 
-  "guidelinesTypographyText": "TODO You should use Roboto in your app, which is the Android system font...",
-    "@guidelinesTypographyText": {
+  "guidelinesTypography": "Typography",
+    "@guidelinesTypography": {
+      "description": "Guidelines typography screen title",
+      "type": "text"
+    },
+  "guidelinesTypographyDescription": "TODO You should use Roboto in your app, which is the Android system font...",
+    "@guidelinesTypographyDescription": {
       "description": "Guidelines typography screen - Explanation text",
       "type": "text"
     },

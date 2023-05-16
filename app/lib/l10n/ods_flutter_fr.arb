@@ -6,7 +6,9 @@
   "bottomNavigationModules": "Modules",
   "bottomNavigationAbout": "À propos de",
 
-  "guidelinesTypographyText": "TODO Utilisez la police Roboto dans votre application qui correspond à la police système Android...",
+  "guidelinesTypography": "Typography",
+  "guidelinesTypographyDescription": "TODO Utilisez la police Roboto dans votre application qui correspond à la police système Android...",
+
   "aboutPageAppDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System.",
 
   "componentButtonsTitle": "Boutons",
