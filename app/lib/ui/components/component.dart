@@ -6,10 +6,10 @@ class Component {
   int smallImageRes;
   String descriptionRes;
   String composableName;
-  String directions;
+  String direction;
 
   Component(this.titleRes, this.imageRes, this.smallImageRes,
-      this.descriptionRes, this.composableName, this.directions);
+      this.descriptionRes, this.composableName, this.direction);
 }
 
 class Components {
@@ -61,11 +61,15 @@ class Components {
   }
 
   String getDirections(int index) {
-    return _components[index].directions;
+    return _components[index].direction;
   }
 
-  List<Component> getComponent() {
+  List<Component> getComponents() {
     return _components;
+  }
+
+  Component getComponent(int index) {
+    return _components[index];
   }
 
   String getName(int index) {

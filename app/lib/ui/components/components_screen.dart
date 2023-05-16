@@ -5,6 +5,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 
 import '../utilities/display_image.dart';
 import 'component.dart';
+import 'component_detail_screen.dart';
 
 class ComponentsScreen extends StatefulWidget {
   @override
@@ -32,7 +33,8 @@ class ComponentsScreen extends StatelessWidget {
                     children: odsComponents
                         .map((c) => OdsSmallCard(
                               title: c.title,
-                              image: displayImage(c.imageResourceName),
+                              image: displayImage(
+                                  c.imageResourceName, double.infinity),
                               onTap: () {
                                 Get.to(c.componentScreen);
                               },
@@ -41,12 +43,21 @@ class ComponentsScreen extends StatelessWidget {
 /*
                     children:
                         List.generate(component.getComponent().length, (index) {
+=======
+                    children: List.generate(component.getComponents().length,
+                        (index) {
+>>>>>>> 6dbf087 (Add detail page for all components)
                       return OdsSmallCard(
                         title: component.getName(index),
-                        image: displayImage(component.getImage(index)),
+                        image: displayImage(
+                            component.getImage(index), double.infinity),
                         onTap: () {
-                          Navigator.pushNamed(
-                              context, component.getDirections(index));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ComponentDetailScreen(
+                                      component:
+                                          component.getComponent(index))));
                         },
                       );
                     })))));

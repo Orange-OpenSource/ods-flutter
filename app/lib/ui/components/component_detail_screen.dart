@@ -1,58 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
+import '../utilities/display_image.dart';
 import 'component.dart';
 
-class ComponentDetailScreen extends StatefulWidget {
-  final Component? component;
+class ComponentDetailScreen extends StatelessWidget {
+  final Component component;
 
-  const ComponentDetailScreen({Key? key, this.component}) : super(key: key);
+  const ComponentDetailScreen({required this.component});
 
-  @override
-  State<ComponentDetailScreen> createState() => _ComponentDetailScreenState();
-}
-
-class _ComponentDetailScreenState extends State<ComponentDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
-          title: Text('Cards'),
+          title: Text(component.titleRes),
         ),
-        body: SingleChildScrollView(
-          child: Column(children: [
-            Image.asset(
-              'assets/placeholder.png',
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fitHeight,
-            ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            displayImage(component.imageRes, MediaQuery.of(context).size.width),
             Padding(
-              padding: const EdgeInsets.all(spacingM),
+              padding: const EdgeInsets.only(
+                  top: spacingM,
+                  right: spacingM,
+                  left: spacingM,
+                  bottom: spacingM),
               child: Text(
-                "Cards are important components that can be used to organise and present a number of different types of related information",
+                component.descriptionRes,
                 style: TextStyle(fontSize: spacingM, letterSpacing: 0.5),
               ),
             ),
-            //Column(children: <Widget>[
-            //GridView.count(crossAxisCount: 1, children: <Widget>[
-            Card(
-              child: ListTile(
-                leading: FlutterLogo(),
-                //onTap: () { Navigator.pushNamed(context, '/card_small');},
-                title: Text('Small Card'),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                leading: FlutterLogo(),
-                //onTap: () { Navigator.pushNamed(context, '/card_small');},
-                title: Text('Small Card'),
-              ),
-            ),
-            //])
-            //])
-          ]),
+            Expanded(
+                child: ListView.builder(
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  leading: FlutterLogo(),
+                  title: Text(component.composableName),
+                  onTap: () {
+                    Navigator.pushNamed(context, component.direction);
+                  },
+                );
+              },
+            ))
+          ],
         ));
   }
 }
