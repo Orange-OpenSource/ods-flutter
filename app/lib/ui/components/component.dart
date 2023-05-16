@@ -62,7 +62,7 @@ class Components {
         "/component_checkboxes"),
     Component(
         "Cards",
-        'assets/Card_image_BW.png',
+        'assets/ic_card_image.svg',
         1,
         "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
         "Cards",
@@ -73,7 +73,7 @@ class Components {
         1,
         "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
         "Radio Buttons",
-        "/component_radioButtons"),
+        "/component_detail"),
     Component(
         "Switches",
         'assets/il_switches.png',
@@ -107,4 +107,5 @@ class Components {
     return _components[index].titleRes;
   }
 }
+<<<<<<< HEAD
 */

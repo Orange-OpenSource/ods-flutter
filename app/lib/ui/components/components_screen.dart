@@ -15,6 +15,9 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
 /*
 class ComponentsScreen extends StatelessWidget {
   Components group = Components();
+=======
+  Components component = Components();
+>>>>>>> a69b6da (Add display image to accept svg file)
 
 */
   @override
@@ -37,15 +40,13 @@ class ComponentsScreen extends StatelessWidget {
                         .toList()))));
 /*
                     children:
-                        List.generate(group.getComponent().length, (index) {
+                        List.generate(component.getComponent().length, (index) {
                       return OdsSmallCard(
-                        title: group.getName(index),
-                        image: Image.asset(group.getImage(index),
-                            semanticLabel: 'Flutter image',
-                            fit: BoxFit.fitHeight),
+                        title: component.getName(index),
+                        image: displayImage(component.getImage(index)),
                         onTap: () {
                           Navigator.pushNamed(
-                              context, group.getDirections(index));
+                              context, component.getDirections(index));
                         },
                       );
                     })))));
