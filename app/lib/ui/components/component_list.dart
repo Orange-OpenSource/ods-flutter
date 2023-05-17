@@ -9,12 +9,12 @@ import 'package:ods_flutter_demo/ui/components/template/component.dart';
 List<OdsComponent> odsComponents = [
   OdsComponent(
       "Checkboxes",
-      'assets/ic_checkbox.png',
+      'assets/il_checkbox.svg',
       "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
       [Variant("Checkboxes", "OdsCheckbox", ComponentCheckboxes())]),
   OdsComponent(
       "Cards",
-      'assets/ic_card.png',
+      'assets/il_cards.svg',
       "Cards are important components that can be used to organise and present a number of different types of related information.",
       [
         Variant("Small card", "OdsSmallCard", ComponentCardSmall()),
@@ -25,7 +25,7 @@ List<OdsComponent> odsComponents = [
       ]),
   OdsComponent(
       "Radio Buttons",
-      'assets/il_radiobutton.png',
+      'assets/il_radio_buttons.svg',
       "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
       [
         Variant("Radio Buttons", "OdsRadioButtons", ComponentRadioButtons()),
