@@ -17,7 +17,6 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text('Material components'),
       ),

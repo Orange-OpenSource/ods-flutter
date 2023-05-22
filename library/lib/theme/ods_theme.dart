@@ -13,6 +13,7 @@ class OdsTheme {
   static ThemeData lightTheme = ThemeData(
     colorScheme: lightColorScheme,
     typography: odsTypography,
+    scaffoldBackgroundColor: white100,
     appBarTheme: const AppBarTheme(backgroundColor: white100),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: white100),
@@ -30,6 +31,7 @@ class OdsTheme {
   static ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
     typography: odsTypography,
+    scaffoldBackgroundColor: black900,
     appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),

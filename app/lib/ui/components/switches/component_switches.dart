@@ -22,7 +22,6 @@ class _ComponentSwitchesState extends State<ComponentSwitches> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           title: Text('Switches'),
         ),

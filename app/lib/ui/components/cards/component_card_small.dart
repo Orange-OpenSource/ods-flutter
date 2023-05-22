@@ -3,18 +3,17 @@ import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/constants.dart';
 
-class CardSmall extends StatefulWidget {
-  const CardSmall({super.key});
+class ComponentCardSmall extends StatefulWidget {
+  const ComponentCardSmall({super.key});
 
   @override
-  State<CardSmall> createState() => _CardSmallState();
+  State<ComponentCardSmall> createState() => _ComponentCardSmallState();
 }
 
-class _CardSmallState extends State<CardSmall> {
+class _ComponentCardSmallState extends State<ComponentCardSmall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text('Small Card'),
       ),
