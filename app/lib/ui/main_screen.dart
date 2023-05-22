@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
-import 'package:ods_flutter_demo/ui/components/template/components_screen.dart';
+import 'package:ods_flutter_demo/ui/components/components_screen.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_screen.dart';
 import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';

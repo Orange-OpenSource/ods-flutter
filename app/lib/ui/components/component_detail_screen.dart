@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/ui/components/template/component.dart';
+import 'package:ods_flutter_demo/ui/components/component.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentDetailScreen extends StatelessWidget {
@@ -23,11 +23,7 @@ class ComponentDetailScreen extends StatelessWidget {
               MediaQuery.of(context).size.width,
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  top: spacingM,
-                  right: spacingM,
-                  left: spacingM,
-                  bottom: spacingM),
+              padding: const EdgeInsets.all(spacingM),
               child: Text(
                 component.description,
                 style: TextStyle(fontSize: spacingM, letterSpacing: 0.5),
@@ -53,7 +49,12 @@ class VariantEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(Icons.play_circle_outline),
+      leading: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.play_circle_outline),
+        ],
+      ),
       title: Text(variant.title),
       subtitle: Text(variant.technicalName),
       onTap: () {
