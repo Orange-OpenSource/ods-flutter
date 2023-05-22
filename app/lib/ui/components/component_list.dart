@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:ods_flutter_demo/ui/components/cards/component_card_small.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/component.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
-import 'package:ods_flutter_demo/ui/components/template/component.dart';
 
 List<OdsComponent> odsComponents = [
   OdsComponent(
@@ -18,10 +17,6 @@ List<OdsComponent> odsComponents = [
       "Cards are important components that can be used to organise and present a number of different types of related information.",
       [
         Variant("Small card", "OdsSmallCard", ComponentCardSmall()),
-        Variant("Vertical image first card", "OdsVerticalImageFirstCard",
-            Text("Coming Soon")),
-        Variant("Vertical header first card", "OdsVerticalHeaderFirstCard",
-            Text("Coming Soon")),
       ]),
   OdsComponent(
       "Radio Buttons",
