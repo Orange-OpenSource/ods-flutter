@@ -26,7 +26,7 @@ class ComponentDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(spacingM),
               child: Text(
                 component.description,
-                style: TextStyle(fontSize: spacingM, letterSpacing: 0.5),
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ),
             Expanded(
