@@ -1,4 +1,10 @@
 {
+  "appTitle": "Orange Design System Flutter App",
+  "@appTitle": {
+    "description": "Main App name",
+    "type": "text"
+  },
+
   "bottomNavigationGuideline": "Guidelines",
   "@bottomNavigationGuideline": {
     "description": "Bottom Navigation bar item - Guidelines",
@@ -19,16 +25,24 @@
     "description": "Bottom Navigation bar item - About",
     "type": "text"
   },
+
+  "guidelinesTypography": "Typography",
+    "@guidelinesTypography": {
+      "description": "Guidelines typography screen title",
+      "type": "text"
+    },
+  "guidelinesTypographyDescription": "TODO You should use Roboto in your app, which is the Android system font...",
+    "@guidelinesTypographyDescription": {
+      "description": "Guidelines typography screen - Explanation text",
+      "type": "text"
+    },
+
   "aboutPageAppDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
   "@aboutPageAppDescription": {
     "description": "About page - Description of the app",
     "type": "text"
   },
-  "appTitle": "Orange Design System Flutter App",
-  "@appTitle": {
-    "description": "Main App name",
-    "type": "text"
-  },
+
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
     "description": "Component Buttons Title",

@@ -1,10 +1,16 @@
 {
+  "appTitle": "App Flutter Orange Design System",
+
   "bottomNavigationGuideline": "Guidelines",
   "bottomNavigationComponents": "Composants",
   "bottomNavigationModules": "Modules",
   "bottomNavigationAbout": "À propos de",
+
+  "guidelinesTypography": "Typography",
+  "guidelinesTypographyDescription": "TODO Utilisez la police Roboto dans votre application qui correspond à la police système Android...",
+
   "aboutPageAppDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System.",
-  "appTitle": "App Flutter Orange Design System",
+
   "componentButtonsTitle": "Boutons",
   "componentButtonsDemoElevated": "En hauteur",
   "componentButtonsDemoHighest": "Plus important",

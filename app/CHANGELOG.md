@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Create components list screen ([#132](https://github.com/Orange-OpenSource/ods-flutter/issues/132))
+- Add guideline typography screen ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
 
 ### Changed
 
