@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/component.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentDetailScreen extends StatelessWidget {
@@ -12,9 +13,7 @@ class ComponentDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(component.title),
-        ),
+        appBar: MainAppBar(component.title),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

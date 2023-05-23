@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/divider/ods_divider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class GuidelineTypographyScreen extends StatelessWidget {
   @override
@@ -59,9 +60,7 @@ class GuidelineTypographyScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.guidelinesTypography),
-        ),
+        appBar: MainAppBar(AppLocalizations.of(context)!.guidelinesTypography),
         body: SafeArea(
           child: ListView(children: [
             Image(

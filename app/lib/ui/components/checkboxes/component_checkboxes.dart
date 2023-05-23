@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentCheckboxes extends StatefulWidget {
   const ComponentCheckboxes({super.key});
@@ -17,8 +18,8 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.componentCheckboxesTitle)),
+      appBar:
+          MainAppBar(AppLocalizations.of(context)!.componentCheckboxesTitle),
       body: Column(
         children: <Widget>[
           CheckboxListTile(

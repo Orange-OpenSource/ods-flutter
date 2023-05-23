@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 const rowSpacer = SizedBox(width: spacingM);
 const componentSpacer = SizedBox(height: spacingS);
@@ -17,9 +18,7 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Material components'),
-      ),
+      appBar: MainAppBar('Material components'),
       body: ListView(
         children: [
           BottomNavigations(
