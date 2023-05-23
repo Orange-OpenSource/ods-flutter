@@ -103,8 +103,8 @@
     "description": "Component Card Small Screen - Title",
     "type": "text"
   },
-  "cardSmallVariantSubTitle": "OdsSmallCard",
-  "@cardSmallVariantSubTitle": {
+  "cardSmallVariantSubtitle": "OdsSmallCard",
+  "@cardSmallVariantSubtitle": {
     "description": "Component Card Small Screen - Subtitle",
     "type": "text"
   },
@@ -127,8 +127,8 @@
     "description": "Checkboxes Variant - Title",
     "type": "text"
   },
-  "checkboxesVariantSubTitle": "OdsCheckbox",
-  "@checkboxesVariantSubTitle": {
+  "checkboxesVariantSubtitle": "OdsCheckbox",
+  "@checkboxesVariantSubtitle": {
     "description": "Checkboxes Variant - Subtitle",
     "type": "text"
   },
@@ -151,8 +151,8 @@
     "description": "Bouttons radio Variant - Title",
     "type": "text"
   },
-  "radioButtonVariantSubTitle": "OdsRadioButtons",
-  "@radioButtonVariantSubTitle": {
+  "radioButtonVariantSubtitle": "OdsRadioButtons",
+  "@radioButtonVariantSubtitle": {
     "description": "Bouttons radio Variant - Subtitle",
     "type": "text"
   },
@@ -175,8 +175,8 @@
     "description": "Switches Variant - Title",
     "type": "text"
   },
-  "switchesVariantTitleTitle": "OdsSwitch",
-  "@switchesVariantTitleTitle": {
+  "switchesVariantSubtitle": "OdsSwitch",
+  "@switchesVariantSubtitle": {
     "description": "Switches Variant - Subtitle",
     "type": "text"
   },
@@ -199,8 +199,8 @@
     "description": "Materials Variant - Title",
     "type": "text"
   },
-  "materialsVariantSubTitle": "Material",
-  "@materialsVariantSubTitle": {
+  "materialsVariantSubtitle": "Material",
+  "@materialsVariantSubtitle": {
     "description": "Materials Variant - Subtitle",
     "type": "text"
   },

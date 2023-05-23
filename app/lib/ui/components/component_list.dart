@@ -16,7 +16,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       [
         Variant(
             AppLocalizations.of(context)!.checkboxesVariantTitle,
-            AppLocalizations.of(context)!.checkboxesVariantSubTitle,
+            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
             ComponentCheckboxes())
       ],
     ),
@@ -27,7 +27,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       [
         Variant(
             AppLocalizations.of(context)!.cardSmallVariantTitle,
-            AppLocalizations.of(context)!.cardSmallVariantSubTitle,
+            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
             ComponentCardSmall()),
       ],
     ),
@@ -38,7 +38,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       [
         Variant(
             AppLocalizations.of(context)!.radioButtonVariantTitle,
-            AppLocalizations.of(context)!.radioButtonVariantSubTitle,
+            AppLocalizations.of(context)!.radioButtonVariantSubtitle,
             ComponentRadioButtons()),
       ],
     ),
@@ -49,7 +49,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       [
         Variant(
             AppLocalizations.of(context)!.switchesVariantTitle,
-            AppLocalizations.of(context)!.switchesVariantTitleTitle,
+            AppLocalizations.of(context)!.switchesVariantSubtitle,
             ComponentSwitches()),
       ],
     ),
@@ -60,7 +60,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       [
         Variant(
             AppLocalizations.of(context)!.materialsVariantTitle,
-            AppLocalizations.of(context)!.materialsVariantSubTitle,
+            AppLocalizations.of(context)!.materialsVariantSubtitle,
             ComponentMaterial()),
       ],
     ),

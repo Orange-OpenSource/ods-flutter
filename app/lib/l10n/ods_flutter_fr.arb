@@ -26,7 +26,7 @@
 
   "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Petite carte",
-  "cardSmallVariantSubTitle": "OdsSmallCard",
+  "cardSmallVariantSubtitle": "OdsSmallCard",
 
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Cases à cocher",
@@ -34,7 +34,7 @@
 
   "@_CHECKBOXES_VARIANT": {},
   "checkboxesVariantTitle": "Cases à cocher",
-  "checkboxesVariantSubTitle": "OdsCheckbox",
+  "checkboxesVariantSubtitle": "OdsCheckbox",
 
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Bouttons radio",
@@ -42,7 +42,7 @@
 
   "@_RADIOBUTTON_VARIANT": {},
   "radioButtonVariantTitle": "Bouttons radio",
-  "radioButtonVariantSubTitle": "OdsRadioButtons",
+  "radioButtonVariantSubtitle": "OdsRadioButtons",
 
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
@@ -50,7 +50,7 @@
 
   "@_SWITCHES_VARIANT": {},
   "switchesVariantTitle": "Switches",
-  "switchesVariantTitleTitle": "OdsSwitch",
+  "switchesVariantSubtitle": "OdsSwitch",
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
@@ -58,7 +58,7 @@
 
   "@_MATERIALS_VARIANT": {},
   "materialsVariantTitle": "Autres",
-  "materialsVariantSubTitle": "Material",
+  "materialsVariantSubtitle": "Material",
 
   "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "App Flutter Orange Design System",
