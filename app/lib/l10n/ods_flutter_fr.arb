@@ -15,7 +15,7 @@
   "componentScreenCheckboxesTitle": "Cases à cocher",
   "componentScreenRadioButtonsTitle": "Boutons radio",
   "componentScreenSwitchesTitle": "Switches",
-  "componentScreenAllTitle": "Voir tout",
+  "componentScreenMaterialsTitle": "Materials",
 
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Boutons",
@@ -27,21 +27,45 @@
 
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cartes",
-  "componentSmallCardsTitle": "Petite carte",
+  "componentCardsDescription": "Les cartes sont des composants importants qui peuvent être utilisés pour organiser et présenter un certain nombre de différents types d'informations connexes.",
 
-  "@_CARDS_SMALL_VARIANT": {},
+  "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Petite carte",
+  "cardSmallVariantSubTitle": "OdsSmallCard",
   "cardSmallVariantExampleTitle": "Petite carte",
   "cardSmallVariantExampleSubTitle": "Petite carte",
 
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Cases à cocher",
+  "componentCheckboxesDescription": "Les cases à cocher sont utilisées pour sélectionner ou désélectionner une option. Des cases à cocher simples peuvent être utilisées pour déterminer un choix individuel et elles peuvent être regroupées pour permettre aux utilisateurs de sélectionner n'importe quelle combinaison d'éléments.",
+
+  "@_CHECKBOXES_VARIANT": {},
+  "checkboxesVariantTitle": "Cases à cocher",
+  "checkboxesVariantSubTitle": "OdsCheckbox",
 
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Bouttons radio",
+  "componentRadioButtonsDescription": "Les boutons radio permettent aux utilisateurs de choisir un élément parmi un ensemble de choix liés mutuellement exclusifs.",
+
+  "@_RADIOBUTTON_VARIANT": {},
+  "radioButtonVariantTitle": "Bouttons radio",
+  "radioButtonVariantSubTitle": "OdsRadioButtons",
 
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
+  "componentSwitchesDescription": "Les interrupteurs marche/arrêt basculent l'état d'une seule option de réglage. La fonction de l'interrupteur doit être clarifiée",
+
+  "@_SWITCHES_VARIANT": {},
+  "switchesVariantTitle": "Switches",
+  "switchesVariantTitleTitle": "OdsSwitch",
+
+  "@_COMPONENTS_MATERIALS": {},
+  "componentMaterialsTitle": "Materials",
+  "componentMaterialsDescription": "Les interrupteurs marche/arrêt basculent l'état d'une seule option de réglage. La fonction du commutateur doit être clairement indiquée par l'étiquette en ligne.",
+
+  "@_MATERIALS_VARIANT": {},
+  "materialsVariantTitle": "Autres",
+  "materialsVariantSubTitle": "Material",
 
   "@_ABOUT_PAGE": {},
   "aboutScreenTitle": "App Flutter Orange Design System",

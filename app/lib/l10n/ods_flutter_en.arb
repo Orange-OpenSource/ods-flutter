@@ -71,9 +71,9 @@
     "description": "Components Screen - Switches Title",
     "type": "text"
   },
-  "componentScreenAllTitle": "See All",
+  "componentScreenMaterialsTitle": "Materials",
   "@componentScreenAllTitle": {
-    "description": "Components Screen - All Title",
+    "description": "Components Screen - Materials",
     "type": "text"
   },
 
@@ -116,16 +116,21 @@
     "description": "Component Cards - Title",
     "type": "text"
   },
-  "componentSmallCardsTitle": "Small cards",
-  "@componentSmallCardsTitle": {
-    "description": "Component Small Cards - Title",
+  "componentCardsDescription": "Cards are important components that can be used to organise and present a number of different types of related information.",
+  "@componentCardsDescription": {
+    "description": "Component Cards - Description",
     "type": "text"
   },
 
-  "@_CARDS_SMALL_VARIANT": {},
+  "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Card Small",
   "@cardSmallVariantTitle": {
     "description": "Component Card Small Screen - Title",
+    "type": "text"
+  },
+  "cardSmallVariantSubTitle": "OdsSmallCard",
+  "@cardSmallVariantSubTitle": {
+    "description": "Component Card Small Screen - Subtitle",
     "type": "text"
   },
   "cardSmallVariantExampleTitle": "Card Small",
@@ -145,7 +150,23 @@
     "description": "Component Checkboxes - Title",
     "type": "text"
   },
+  "componentCheckboxesDescription": "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
+  "@componentCheckboxesDescription": {
+    "description": "Component Checkboxes - Description",
+    "type": "text"
+  },
 
+  "@_CHECKBOXES_VARIANT": {},
+  "checkboxesVariantTitle": "Checkboxes",
+  "@checkboxesVariantTitle": {
+    "description": "Checkboxes Variant - Title",
+    "type": "text"
+  },
+  "checkboxesVariantSubTitle": "OdsCheckbox",
+  "@checkboxesVariantSubTitle": {
+    "description": "Checkboxes Variant - Subtitle",
+    "type": "text"
+  },
 
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Bouttons radio",
@@ -153,11 +174,69 @@
     "description": "Component Bouttons radio - Title",
     "type": "text"
   },
+  "componentRadioButtonsDescription": "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
+  "@componentRadioButtonsDescription": {
+    "description": "Component Bouttons radio - Description",
+    "type": "text"
+  },
+
+  "@_RADIOBUTTON_VARIANT": {},
+  "radioButtonVariantTitle": "Bouttons radio",
+  "@radioButtonVariantTitle": {
+    "description": "Bouttons radio Variant - Title",
+    "type": "text"
+  },
+  "radioButtonVariantSubTitle": "OdsRadioButtons",
+  "@radioButtonVariantSubTitle": {
+    "description": "Bouttons radio Variant - Subtitle",
+    "type": "text"
+  },
 
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
   "@componentSwitchesTitle": {
     "description": "Component Switches - Title",
+    "type": "text"
+  },
+  "componentSwitchesDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear",
+  "@componentSwitchesDescription": {
+    "description": "Component Switches - Description",
+    "type": "text"
+  },
+
+  "@_SWITCHES_VARIANT": {},
+  "switchesVariantTitle": "Switches",
+  "@switchesVariantTitle": {
+    "description": "Switches Variant - Title",
+    "type": "text"
+  },
+  "switchesVariantTitleTitle": "OdsSwitch",
+  "@switchesVariantTitleTitle": {
+    "description": "Switches Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_MATERIALS": {},
+  "componentMaterialsTitle": "Materials",
+  "@componentMaterialsTitle": {
+    "description": "Component Materials - Title",
+    "type": "text"
+  },
+  "componentMaterialsDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear by the inline label.",
+  "@componentMaterialsDescription": {
+    "description": "Component Materials - Description",
+    "type": "text"
+  },
+
+  "@_MATERIALS_VARIANT": {},
+  "materialsVariantTitle": "Others",
+  "@materialsVariantTitle": {
+    "description": "Materials Variant - Title",
+    "type": "text"
+  },
+  "materialsVariantSubTitle": "Material",
+  "@materialsVariantSubTitle": {
+    "description": "Materials Variant - Subtitle",
     "type": "text"
   },
 
