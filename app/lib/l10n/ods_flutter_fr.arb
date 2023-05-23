@@ -1,4 +1,6 @@
 {
+  "appTitle": "Orange Design System Flutter App",
+
   "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "bottomNavigationComponents": "Composants",
