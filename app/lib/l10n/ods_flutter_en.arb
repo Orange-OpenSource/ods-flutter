@@ -108,16 +108,6 @@
     "description": "Component Card Small Screen - Subtitle",
     "type": "text"
   },
-  "cardSmallVariantExampleTitle": "Card Small",
-  "@cardSmallVariantExampleTitle": {
-    "description": "Component Card Small Example - Title",
-    "type": "text"
-  },
-  "cardSmallVariantExampleSubTitle": "Card Small",
-  "@cardSmallVariantExampleSubTitle": {
-    "description": "Component Card Small Example - SubTitle",
-    "type": "text"
-  },
 
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Checkboxes",

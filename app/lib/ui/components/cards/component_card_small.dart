@@ -25,10 +25,9 @@ class _ComponentCardSmallState extends State<ComponentCardSmall> {
             SizedBox(
               width: _computeCardWidth(),
               child: OdsSmallCard(
-                title:
-                    AppLocalizations.of(context)!.cardSmallVariantExampleTitle,
-                subtitle: AppLocalizations.of(context)!
-                    .cardSmallVariantExampleSubTitle,
+                title: AppLocalizations.of(context)!.cardSmallVariantTitle,
+                subtitle:
+                    AppLocalizations.of(context)!.cardSmallVariantSubTitle,
                 image: Image.asset('assets/placeholder.png',
                     semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
                 onTap: () {},
