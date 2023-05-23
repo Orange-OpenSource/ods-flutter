@@ -67,7 +67,7 @@
   "materialsVariantTitle": "Autres",
   "materialsVariantSubTitle": "Material",
 
-  "@_ABOUT_PAGE": {},
+  "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "App Flutter Orange Design System",
   "aboutScreenDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System."
 }

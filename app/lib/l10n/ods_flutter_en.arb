@@ -240,7 +240,7 @@
     "type": "text"
   },
 
-  "@_ABOUT_PAGE": {},
+  "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "Orange Design System Flutter App",
   "@aboutScreenTitle": {
     "description": "Main App name",
