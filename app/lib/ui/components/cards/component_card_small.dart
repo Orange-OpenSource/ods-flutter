@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/constants.dart';
@@ -15,7 +16,7 @@ class _ComponentCardSmallState extends State<ComponentCardSmall> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Small Card'),
+        title: Text(AppLocalizations.of(context)!.cardSmallVariantTitle),
       ),
       body: Padding(
         padding: const EdgeInsets.all(spacingM),
@@ -24,8 +25,9 @@ class _ComponentCardSmallState extends State<ComponentCardSmall> {
             SizedBox(
               width: _computeCardWidth(),
               child: OdsSmallCard(
-                title: 'Small card',
-                subtitle: 'subtitle',
+                title: AppLocalizations.of(context)!.cardSmallVariantTitle,
+                subtitle:
+                    AppLocalizations.of(context)!.cardSmallVariantSubtitle,
                 image: Image.asset('assets/placeholder.png',
                     semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
                 onTap: () {},

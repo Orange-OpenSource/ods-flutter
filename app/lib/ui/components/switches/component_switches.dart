@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/ods_switch.dart';
 
 class ComponentSwitches extends StatefulWidget {
@@ -23,7 +24,7 @@ class _ComponentSwitchesState extends State<ComponentSwitches> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Switches'),
+          title: Text(AppLocalizations.of(context)!.componentSwitchesTitle),
         ),
         body: Center(
             child:

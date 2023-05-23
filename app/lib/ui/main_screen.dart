@@ -10,6 +10,8 @@ import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:provider/provider.dart';
 
+import 'components/component_list.dart';
+
 const int extendedNavigationRailMinScreenWidth = 600;
 
 class MainScreen extends StatefulWidget {
@@ -116,7 +118,9 @@ class _NavigationItems {
           icon: SvgPicture.asset("assets/ic_components_atom.svg",
               colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationComponents,
-          screen: ComponentsScreen()),
+          screen: ComponentsScreen(
+            odsComponents: odsComponents(context),
+          )),
       _MainMenuItem(
           activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
               colorFilter: activeColorFilter),

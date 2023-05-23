@@ -43,14 +43,14 @@ class _AboutScreenState extends State<AboutScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(AppLocalizations.of(context)!.appTitle,
+              Text(AppLocalizations.of(context)!.aboutScreenTitle,
                   style: Theme.of(context).textTheme.headlineLarge),
               SizedBox(height: spacingXs),
               Text(
                   'Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})',
                   style: Theme.of(context).textTheme.bodySmall),
               SizedBox(height: spacingXs),
-              Text(AppLocalizations.of(context)!.aboutPageAppDescription,
+              Text(AppLocalizations.of(context)!.aboutScreenDescription,
                   style: Theme.of(context).textTheme.bodyMedium),
             ],
           ),

@@ -20,7 +20,7 @@ void main() {
     await tester.pump();
 
     expect(find.text('Checkboxes'), findsOneWidget);
-    expect(find.text('Radio Buttons'), findsOneWidget);
+    expect(find.text('Radio buttons'), findsOneWidget);
     expect(find.text('Switches'), findsOneWidget);
 
     expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar

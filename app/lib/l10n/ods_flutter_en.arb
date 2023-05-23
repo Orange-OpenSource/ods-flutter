@@ -1,10 +1,11 @@
 {
   "appTitle": "Orange Design System Flutter App",
   "@appTitle": {
-    "description": "Main App name",
+    "description": "App name",
     "type": "text"
   },
 
+  "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "@bottomNavigationGuideline": {
     "description": "Bottom Navigation bar item - Guidelines",
@@ -26,6 +27,7 @@
     "type": "text"
   },
 
+  "@_GUIDELINES_SCREEN": {},
   "guidelinesTypography": "Typography",
     "@guidelinesTypography": {
       "description": "Guidelines typography screen title",
@@ -37,12 +39,14 @@
       "type": "text"
     },
 
-  "aboutPageAppDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
-  "@aboutPageAppDescription": {
-    "description": "About page - Description of the app",
+  "@_COMPONENTS_SCREEN": {},
+  "componentScreenTitle": "ODS Components",
+  "@componentScreenTitle": {
+    "description": "Components Screen - Title",
     "type": "text"
   },
 
+  "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
     "description": "Component Buttons Title",
@@ -71,6 +75,138 @@
   "componentButtonsDemoLow": "Low",
   "@componentButtonsDemoLow": {
     "description": "Component Buttons Demo Low emphasis",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_CARDS": {},
+  "componentCardsTitle": "Cards",
+  "@componentCardsTitle": {
+    "description": "Component Cards - Title",
+    "type": "text"
+  },
+  "componentCardsDescription": "Cards are important components that can be used to organise and present a number of different types of related information.",
+  "@componentCardsDescription": {
+    "description": "Component Cards - Description",
+    "type": "text"
+  },
+
+  "@_CARDS_VARIANT": {},
+  "cardSmallVariantTitle": "Card Small",
+  "@cardSmallVariantTitle": {
+    "description": "Component Card Small Screen - Title",
+    "type": "text"
+  },
+  "cardSmallVariantSubtitle": "OdsSmallCard",
+  "@cardSmallVariantSubtitle": {
+    "description": "Component Card Small Screen - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_CHECKBOXES": {},
+  "componentCheckboxesTitle": "Checkboxes",
+  "@componentCheckboxesTitle": {
+    "description": "Component Checkboxes - Title",
+    "type": "text"
+  },
+  "componentCheckboxesDescription": "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
+  "@componentCheckboxesDescription": {
+    "description": "Component Checkboxes - Description",
+    "type": "text"
+  },
+
+  "@_CHECKBOXES_VARIANT": {},
+  "checkboxesVariantTitle": "Checkboxes",
+  "@checkboxesVariantTitle": {
+    "description": "Checkboxes Variant - Title",
+    "type": "text"
+  },
+  "checkboxesVariantSubtitle": "OdsCheckbox",
+  "@checkboxesVariantSubtitle": {
+    "description": "Checkboxes Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_RADIOBUTTON": {},
+  "componentRadioButtonsTitle": "Radio buttons",
+  "@componentRadioButtonsTitle": {
+    "description": "Component Radio Buttons - Title",
+    "type": "text"
+  },
+  "componentRadioButtonsDescription": "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
+  "@componentRadioButtonsDescription": {
+    "description": "Component Radio Buttons - Description",
+    "type": "text"
+  },
+
+  "@_RADIOBUTTON_VARIANT": {},
+  "radioButtonVariantTitle": "Radio buttons",
+  "@radioButtonVariantTitle": {
+    "description": "Radio buttons Variant - Title",
+    "type": "text"
+  },
+  "radioButtonVariantSubtitle": "OdsRadioButtons",
+  "@radioButtonVariantSubtitle": {
+    "description": "Radio buttons Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_SWITCHES": {},
+  "componentSwitchesTitle": "Switches",
+  "@componentSwitchesTitle": {
+    "description": "Component Switches - Title",
+    "type": "text"
+  },
+  "componentSwitchesDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear",
+  "@componentSwitchesDescription": {
+    "description": "Component Switches - Description",
+    "type": "text"
+  },
+
+  "@_SWITCHES_VARIANT": {},
+  "switchesVariantTitle": "Switches",
+  "@switchesVariantTitle": {
+    "description": "Switches Variant - Title",
+    "type": "text"
+  },
+  "switchesVariantSubtitle": "OdsSwitch",
+  "@switchesVariantSubtitle": {
+    "description": "Switches Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_MATERIALS": {},
+  "componentMaterialsTitle": "Materials",
+  "@componentMaterialsTitle": {
+    "description": "Component Materials - Title",
+    "type": "text"
+  },
+  "componentMaterialsDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear by the inline label.",
+  "@componentMaterialsDescription": {
+    "description": "Component Materials - Description",
+    "type": "text"
+  },
+
+  "@_MATERIALS_VARIANT": {},
+  "materialsVariantTitle": "Others",
+  "@materialsVariantTitle": {
+    "description": "Materials Variant - Title",
+    "type": "text"
+  },
+  "materialsVariantSubtitle": "Material",
+  "@materialsVariantSubtitle": {
+    "description": "Materials Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_ABOUT_SCREEN": {},
+  "aboutScreenTitle": "Orange Design System Flutter App",
+  "@aboutScreenTitle": {
+    "description": "Main App name",
+    "type": "text"
+  },
+  "aboutScreenDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
+  "@aboutScreenDescription": {
+    "description": "About page - Description of the app",
     "type": "text"
   }
 }

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/cards/component_card_small.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/component.dart';
@@ -5,39 +7,62 @@ import 'package:ods_flutter_demo/ui/components/material/component_material.dart'
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
-List<OdsComponent> odsComponents = [
-  OdsComponent(
-      "Checkboxes",
+List<OdsComponent> odsComponents(BuildContext context) {
+  return [
+    OdsComponent(
+      AppLocalizations.of(context)!.componentCheckboxesTitle,
       'assets/il_checkbox.svg',
-      "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
-      [Variant("Checkboxes", "OdsCheckbox", ComponentCheckboxes())]),
-  OdsComponent(
-      "Cards",
+      AppLocalizations.of(context)!.componentCheckboxesDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.checkboxesVariantTitle,
+            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
+            ComponentCheckboxes())
+      ],
+    ),
+    OdsComponent(
+      AppLocalizations.of(context)!.componentCardsTitle,
       'assets/il_cards.svg',
-      "Cards are important components that can be used to organise and present a number of different types of related information.",
+      AppLocalizations.of(context)!.componentCardsDescription,
       [
-        Variant("Small card", "OdsSmallCard", ComponentCardSmall()),
-      ]),
-  OdsComponent(
-      "Radio Buttons",
+        Variant(
+            AppLocalizations.of(context)!.cardSmallVariantTitle,
+            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
+            ComponentCardSmall()),
+      ],
+    ),
+    OdsComponent(
+      AppLocalizations.of(context)!.componentRadioButtonsTitle,
       'assets/il_radio_buttons.svg',
-      "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
+      AppLocalizations.of(context)!.componentRadioButtonsDescription,
       [
-        Variant("Radio Buttons", "OdsRadioButtons", ComponentRadioButtons()),
-      ]),
-  OdsComponent(
-      "Switches",
+        Variant(
+            AppLocalizations.of(context)!.radioButtonVariantTitle,
+            AppLocalizations.of(context)!.radioButtonVariantSubtitle,
+            ComponentRadioButtons()),
+      ],
+    ),
+    OdsComponent(
+      AppLocalizations.of(context)!.componentSwitchesTitle,
       'assets/il_switches.png',
-      "On/off switches toggle the state of a single settings option. The function of the switch should be made clear by the inline label.",
+      AppLocalizations.of(context)!.componentSwitchesDescription,
       [
-        Variant("Switches", "OdsSwitch", ComponentSwitches()),
-      ]),
-  OdsComponent(
-      "Materials",
+        Variant(
+            AppLocalizations.of(context)!.switchesVariantTitle,
+            AppLocalizations.of(context)!.switchesVariantSubtitle,
+            ComponentSwitches()),
+      ],
+    ),
+    OdsComponent(
+      AppLocalizations.of(context)!.componentMaterialsTitle,
       'assets/placeholder.png',
-      "On/off switches toggle the state of a single settings option. The function of the switch should be made clear "
-          "by the inline label.",
+      AppLocalizations.of(context)!.componentMaterialsDescription,
       [
-        Variant("Others", "Material", ComponentMaterial()),
-      ])
-];
+        Variant(
+            AppLocalizations.of(context)!.materialsVariantTitle,
+            AppLocalizations.of(context)!.materialsVariantSubtitle,
+            ComponentMaterial()),
+      ],
+    ),
+  ];
+}
