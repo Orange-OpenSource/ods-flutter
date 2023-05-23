@@ -18,8 +18,7 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-              AppLocalizations.of(context)!.componentScreenCheckboxesTitle)),
+          title: Text(AppLocalizations.of(context)!.componentCheckboxesTitle)),
       body: Column(
         children: <Widget>[
           CheckboxListTile(

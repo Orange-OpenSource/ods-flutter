@@ -10,7 +10,7 @@ import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart'
 List<OdsComponent> odsComponents(BuildContext context) {
   return [
     OdsComponent(
-      AppLocalizations.of(context)!.componentScreenCheckboxesTitle,
+      AppLocalizations.of(context)!.componentCheckboxesTitle,
       'assets/il_checkbox.svg',
       AppLocalizations.of(context)!.componentCheckboxesDescription,
       [
@@ -21,7 +21,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       ],
     ),
     OdsComponent(
-      AppLocalizations.of(context)!.componentScreenCardsTitle,
+      AppLocalizations.of(context)!.componentCardsTitle,
       'assets/il_cards.svg',
       AppLocalizations.of(context)!.componentCardsDescription,
       [
@@ -32,7 +32,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       ],
     ),
     OdsComponent(
-      AppLocalizations.of(context)!.componentScreenRadioButtonsTitle,
+      AppLocalizations.of(context)!.componentRadioButtonsTitle,
       'assets/il_radio_buttons.svg',
       AppLocalizations.of(context)!.componentRadioButtonsDescription,
       [
@@ -43,7 +43,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       ],
     ),
     OdsComponent(
-      AppLocalizations.of(context)!.componentScreenSwitchesTitle,
+      AppLocalizations.of(context)!.componentSwitchesTitle,
       'assets/il_switches.png',
       AppLocalizations.of(context)!.componentSwitchesDescription,
       [
@@ -54,7 +54,7 @@ List<OdsComponent> odsComponents(BuildContext context) {
       ],
     ),
     OdsComponent(
-      AppLocalizations.of(context)!.componentScreenMaterialsTitle,
+      AppLocalizations.of(context)!.componentMaterialsTitle,
       'assets/placeholder.png',
       AppLocalizations.of(context)!.componentMaterialsDescription,
       [

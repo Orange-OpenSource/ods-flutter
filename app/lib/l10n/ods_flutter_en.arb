@@ -51,31 +51,6 @@
     "description": "Components Screen - Title",
     "type": "text"
   },
-  "componentScreenCardsTitle": "Cards",
-  "@componentScreenCardsTitle": {
-    "description": "Components Screen - Cards Title",
-    "type": "text"
-  },
-  "componentScreenCheckboxesTitle": "Checkboxes",
-  "@componentScreenCheckboxesTitle": {
-    "description": "Components Screen - Checkboxes Title",
-    "type": "text"
-  },
-  "componentScreenRadioButtonsTitle": "Radio Buttons",
-  "@componentScreenRadioButtonsTitle": {
-    "description": "Components Screen - Radio Buttons Title",
-    "type": "text"
-  },
-  "componentScreenSwitchesTitle": "Switches",
-  "@componentScreenSwitchesTitle": {
-    "description": "Components Screen - Switches Title",
-    "type": "text"
-  },
-  "componentScreenMaterialsTitle": "Materials",
-  "@componentScreenAllTitle": {
-    "description": "Components Screen - Materials",
-    "type": "text"
-  },
 
 
   "@_COMPONENTS_BUTTONS": {},

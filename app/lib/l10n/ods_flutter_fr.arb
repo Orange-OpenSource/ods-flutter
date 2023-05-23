@@ -11,11 +11,6 @@
 
   "@_COMPONENTS_SCREEN": {},
   "componentScreenTitle": "ODS Composants",
-  "componentScreenCardsTitle": "Cartes",
-  "componentScreenCheckboxesTitle": "Cases à cocher",
-  "componentScreenRadioButtonsTitle": "Boutons radio",
-  "componentScreenSwitchesTitle": "Switches",
-  "componentScreenMaterialsTitle": "Materials",
 
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Boutons",
