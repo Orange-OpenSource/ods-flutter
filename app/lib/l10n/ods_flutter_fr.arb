@@ -22,7 +22,7 @@
 
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cartes",
-  "componentCardsDescription": "Les cartes sont des composants importants qui peuvent être utilisés pour organiser et présenter un certain nombre de différents types d'informations connexes.",
+  "componentCardsDescription": "Les cartes peuvent être utilisées pour organiser et présenter différents types d'informations connexes.",
 
   "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Petite carte",
@@ -30,23 +30,23 @@
 
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Cases à cocher",
-  "componentCheckboxesDescription": "Les cases à cocher sont utilisées pour sélectionner ou désélectionner une option. Des cases à cocher simples peuvent être utilisées pour déterminer un choix individuel et elles peuvent être regroupées pour permettre aux utilisateurs de sélectionner n'importe quelle combinaison d'éléments.",
+  "componentCheckboxesDescription": "Les cases à cocher sont utilisées pour sélectionner ou désélectionner une option. Une simple case à cocher peut être utilisée pour faire un choix individuel. En groupe, elles permettent aux utilisateurs de sélectionner n'importe quelle combinaison d'éléments.",
 
   "@_CHECKBOXES_VARIANT": {},
   "checkboxesVariantTitle": "Cases à cocher",
   "checkboxesVariantSubtitle": "OdsCheckbox",
 
   "@_COMPONENTS_RADIOBUTTON": {},
-  "componentRadioButtonsTitle": "Bouttons radio",
-  "componentRadioButtonsDescription": "Les boutons radio permettent aux utilisateurs de choisir un élément parmi un ensemble de choix liés mutuellement exclusifs.",
+  "componentRadioButtonsTitle": "Boutons radio",
+  "componentRadioButtonsDescription": "Les boutons radio permettent aux utilisateurs de choisir un élément de façon exclusive parmi un ensemble de choix.",
 
   "@_RADIOBUTTON_VARIANT": {},
-  "radioButtonVariantTitle": "Bouttons radio",
+  "radioButtonVariantTitle": "Boutons radio",
   "radioButtonVariantSubtitle": "OdsRadioButtons",
 
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
-  "componentSwitchesDescription": "Les interrupteurs marche/arrêt basculent l'état d'une seule option de réglage. La fonction de l'interrupteur doit être clarifiée",
+  "componentSwitchesDescription": "Les switches on/off permettent de modifier l'état d'une seule option de réglage. La fonction du switch doit être clairement labelisée.",
 
   "@_SWITCHES_VARIANT": {},
   "switchesVariantTitle": "Switches",
@@ -54,7 +54,7 @@
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
-  "componentMaterialsDescription": "Les interrupteurs marche/arrêt basculent l'état d'une seule option de réglage. La fonction du commutateur doit être clairement indiquée par l'étiquette en ligne.",
+  "componentMaterialsDescription": "Les interrupteurs on/off permettent de modifier l'état d'une seule option de réglage. La fonction de l'interrupteur doit être clairement labelisée.",
 
   "@_MATERIALS_VARIANT": {},
   "materialsVariantTitle": "Autres",
@@ -62,5 +62,5 @@
 
   "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "App Flutter Orange Design System",
-  "aboutScreenDescription": "Dans cette application, vous trouverez des exemple de code des Guidelines, Composants et Modules pour l'utilisation de l'Orange Design System."
+  "aboutScreenDescription": "Dans cette application, vous trouverez des exemples de code pour mettre en oeuvre les guidelines, utiliser les composants et modules d'Orange Design System."
 }
