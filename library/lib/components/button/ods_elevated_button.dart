@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 //  be clickable
 /// * [iconButton], If `false`, no icon will be displayed.
 /// * [icon], Widget of the icon.
-class OdsButton extends StatelessWidget {
+class OdsElevatedButton extends StatelessWidget {
   final String title;
   final bool enabled;
   final bool iconButton;
   final Widget icon;
   final Function()? onPressed;
 
-  const OdsButton(
+  const OdsElevatedButton(
       {Key? key,
       required this.title,
       required this.enabled,
