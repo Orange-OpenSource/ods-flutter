@@ -1,7 +1,7 @@
 {
   "appTitle": "Orange Design System Flutter App",
   "@appTitle": {
-    "description": "Main App name",
+    "description": "App name",
     "type": "text"
   },
 
@@ -45,7 +45,6 @@
     "description": "Components Screen - Title",
     "type": "text"
   },
-
 
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
@@ -128,26 +127,26 @@
   },
 
   "@_COMPONENTS_RADIOBUTTON": {},
-  "componentRadioButtonsTitle": "Bouttons radio",
+  "componentRadioButtonsTitle": "Radio buttons",
   "@componentRadioButtonsTitle": {
-    "description": "Component Bouttons radio - Title",
+    "description": "Component Radio Buttons - Title",
     "type": "text"
   },
   "componentRadioButtonsDescription": "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
   "@componentRadioButtonsDescription": {
-    "description": "Component Bouttons radio - Description",
+    "description": "Component Radio Buttons - Description",
     "type": "text"
   },
 
   "@_RADIOBUTTON_VARIANT": {},
-  "radioButtonVariantTitle": "Bouttons radio",
+  "radioButtonVariantTitle": "Radio buttons",
   "@radioButtonVariantTitle": {
-    "description": "Bouttons radio Variant - Title",
+    "description": "Radio buttons Variant - Title",
     "type": "text"
   },
   "radioButtonVariantSubtitle": "OdsRadioButtons",
   "@radioButtonVariantSubtitle": {
-    "description": "Bouttons radio Variant - Subtitle",
+    "description": "Radio buttons Variant - Subtitle",
     "type": "text"
   },
 
