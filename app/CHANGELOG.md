@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add guideline typography screen ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
 - Create component description page structure ([#124](https://github.com/Orange-OpenSource/ods-flutter/issues/124))
 - Review the string in the app to use localization keys ([#129](https://github.com/Orange-OpenSource/ods-flutter/issues/129))
-- 
+
 ### Changed
 
 - Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
