@@ -58,11 +58,13 @@ class OdsSmallCard extends StatelessWidget {
                       Text(
                         title,
                         style: Theme.of(context).textTheme.titleLarge,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       if (subtitle != null)
                         Text(
                           subtitle!,
                           style: Theme.of(context).textTheme.titleMedium,
+                          overflow: TextOverflow.ellipsis,
                         ),
                     ]),
               )
