@@ -22,13 +22,13 @@
 
 **Development process**
 
-* Developer modify `ods_flutter_en.arb` and/or `ods_flutter_fr.arb`
+* Developer modify `ods_flutter_en.arb` (and/or other languages files)
 * In order to have the translations in the app launched locally, `flutter gen-l10n` must be launched in the `lib` directory
     * It will regenerate:
         * `ods_flutter_localizations.dart`
         * `ods_flutter_localizations_en.dart`
-        * `ods_flutter_localizations_fr.dart`
-* Those 3 files need **must not be** committed and pushed
+        * other languages files
+* Those files need **must not be** committed and pushed
 
 **Release the library**
 
