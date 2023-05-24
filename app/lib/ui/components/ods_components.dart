@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/cards/component_card_small.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
 List<OdsComponent> odsComponents(BuildContext context) {
   return [
-    OdsComponent(
-      AppLocalizations.of(context)!.componentCheckboxesTitle,
-      'assets/il_checkbox.svg',
-      AppLocalizations.of(context)!.componentCheckboxesDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.checkboxesVariantTitle,
-            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
-            ComponentCheckboxes())
-      ],
-    ),
     OdsComponent(
       AppLocalizations.of(context)!.componentCardsTitle,
       'assets/il_cards.svg',
@@ -28,6 +19,21 @@ List<OdsComponent> odsComponents(BuildContext context) {
             AppLocalizations.of(context)!.cardSmallVariantTitle,
             AppLocalizations.of(context)!.cardSmallVariantSubtitle,
             ComponentCardSmall()),
+        Variant(
+            AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle,
+            AppLocalizations.of(context)!.cardVerticalImageFirstVariantSubtitle,
+            CardVerticalImageFirst()),
+      ],
+    ),
+    OdsComponent(
+      AppLocalizations.of(context)!.componentCheckboxesTitle,
+      'assets/il_checkbox.svg',
+      AppLocalizations.of(context)!.componentCheckboxesDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.checkboxesVariantTitle,
+            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
+            ComponentCheckboxes())
       ],
     ),
     OdsComponent(

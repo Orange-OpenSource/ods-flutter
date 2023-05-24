@@ -10,7 +10,7 @@ import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'components/component_list.dart';
+import 'components/ods_components.dart';
 
 const int extendedNavigationRailMinScreenWidth = 600;
 
