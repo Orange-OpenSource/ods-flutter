@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
 
+### Removed
+
+- Remove french translations ([#154](https://github.com/Orange-OpenSource/ods-flutter/issues/154))
+
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.1.0) - 2023-05-04
 
 First version of ods_flutter library and Application from hackathon (publication on pub.dev)
