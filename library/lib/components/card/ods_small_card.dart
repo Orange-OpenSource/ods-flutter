@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
+import '../../theme/ods_theme.dart';
+
 /// ODS Small card.
 ///
 /// Cards contain content and actions about a single subject.
@@ -38,7 +40,7 @@ class OdsSmallCard extends StatelessWidget {
         width: double.infinity,
         child: Card(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(odsCardRadius),
           ),
           elevation: 1,
           clipBehavior: Clip.antiAliasWithSaveLayer,

@@ -7,6 +7,8 @@ import 'ods_color_scheme.dart';
 const double _disabledOpacity = 0.38;
 const double _switchTrackOpacity = 0.54;
 
+const double odsCardRadius = 4.0;
+
 class OdsTheme {
   OdsTheme._();
 
