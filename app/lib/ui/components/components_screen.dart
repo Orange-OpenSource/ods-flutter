@@ -32,9 +32,11 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
                       image: displayImage(
                           component.imageResourceName, double.infinity),
                       onTap: () {
-                        Get.to(ComponentDetailScreen(
-                          component: component,
-                        ));
+                        Get.to(
+                            ComponentDetailScreen(
+                              component: component,
+                            ),
+                            transition: Transition.rightToLeft);
                       },
                     ))
                 .toList(),

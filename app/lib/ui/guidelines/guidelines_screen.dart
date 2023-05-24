@@ -13,7 +13,8 @@ class GuidelinesScreen extends StatelessWidget {
           Card(
             child: ListTile(
               onTap: () {
-                Get.to(GuidelineTypographyScreen());
+                Get.to(GuidelineTypographyScreen(),
+                    transition: Transition.rightToLeft);
               },
               title: Center(
                   child:
