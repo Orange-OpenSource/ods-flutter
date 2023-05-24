@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/cards/component_card_small.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
-import 'package:ods_flutter_demo/ui/components/component.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
