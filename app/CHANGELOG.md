@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Factorize top app bar management ([#149](https://github.com/Orange-OpenSource/ods-flutter/issues/149))
 - Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
 
 ### Removed

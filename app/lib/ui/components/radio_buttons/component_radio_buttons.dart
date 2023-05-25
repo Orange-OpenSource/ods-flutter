@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentRadioButtons extends StatefulWidget {
   @override
@@ -14,9 +15,8 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.componentRadioButtonsTitle),
-        ),
+        appBar: MainAppBar(
+            AppLocalizations.of(context)!.componentRadioButtonsTitle),
         body: Column(
           children: <Widget>[
             RadioListTile<Options>(

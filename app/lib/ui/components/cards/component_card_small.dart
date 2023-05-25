@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/constants.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentCardSmall extends StatefulWidget {
   const ComponentCardSmall({super.key});
@@ -15,9 +16,7 @@ class _ComponentCardSmallState extends State<ComponentCardSmall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.cardSmallVariantTitle),
-      ),
+      appBar: MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),
       body: Padding(
         padding: const EdgeInsets.all(spacingM),
         child: Column(

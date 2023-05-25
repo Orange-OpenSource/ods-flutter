@@ -5,9 +5,9 @@ import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
 import 'package:ods_flutter_demo/ui/components/components_screen.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_screen.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
-import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:provider/provider.dart';
 
 import 'components/component_list.dart';
@@ -41,10 +41,7 @@ class _MainScreenState extends State<MainScreen> {
     return Consumer<ModelTheme>(
         builder: (context, ModelTheme themeNotifier, child) {
       return Scaffold(
-          appBar: AppBar(
-            title: Text(selectedItem.label),
-            actions: [ThemeSelector()],
-          ),
+          appBar: MainAppBar(selectedItem.label),
           bottomNavigationBar:
               MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
                   ? BottomNavigationBar(
