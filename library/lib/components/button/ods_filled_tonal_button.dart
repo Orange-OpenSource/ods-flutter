@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 
 /// ODS Design Button.
 ///
-///   OdsButton is used to toggle the on/off state of a single setting.
-///   It can be set to null to disable the switch.
-///  * [title] Text displayed in the button
-/// * [enabled], Controls the enabled state of the button. When `false`, this button will not
-//  be clickable
+///  * [title] Text displayed in the button.
+/// * [enabled], Controls the state of the button. When `false`, this button will not
+///  be clickable.
 /// * [iconButton], If `false`, no icon will be displayed.
 /// * [icon], Widget of the icon.
+/// * [onPressed], used to specified the action when the button is selected.
 class OdsFilledTonalButton extends StatelessWidget {
   final String title;
   final bool enabled;
