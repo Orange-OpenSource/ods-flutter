@@ -46,6 +46,3 @@ app.*.map.json
 
 # macOS
 macos/
-
-# iOS
-/ios/Podfile
