@@ -12,5 +12,5 @@ class OdsButtonEntity {
   final String label;
 
   /// The action executed on button click.
-  final VoidCallback? onClick;
+  final VoidCallback onClick;
 }
