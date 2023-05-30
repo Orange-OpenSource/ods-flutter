@@ -21,7 +21,18 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
       appBar:
           MainAppBar(AppLocalizations.of(context)!.componentCheckboxesTitle),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(25),
+            child: Semantics(
+              header: true,
+              child: Text(
+                AppLocalizations.of(context)!.checkboxesVariantTitleInformation,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+          ),
           CheckboxListTile(
               value: isChecked0,
               title: Text('Chocolate'),

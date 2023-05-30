@@ -156,6 +156,7 @@
     "description": "Checkboxes Variant - Subtitle",
     "type": "text"
   },
+
   "@_COMPONENTS_NAVIGATION_BAR": {},
   "componentNavigationBarTitle": "Bar: Navigation",
   "@componentNavigationBarTitle": {
@@ -198,6 +199,13 @@
     "description": "Component customization element - Number of items count",
     "type": "text"
   },
+
+  "checkboxesVariantTitleInformation": "Use checkBoxListTitle or Checkbox",
+  "@checkboxesVariantTitleInformation": {
+    "description": "Checkboxes Variant - Information",
+    "type": "text"
+  },
+  
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Radio buttons",
   "@componentRadioButtonsTitle": {
