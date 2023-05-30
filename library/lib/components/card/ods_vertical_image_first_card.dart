@@ -88,22 +88,25 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
             ),
             Padding(
               padding: const EdgeInsets.all(spacingS),
-              child: Row(
-                children: [
-                  if (widget.button1 != null)
-                    TextButton(
-                      onPressed: widget.button1!.onClick,
-                      child: Text(widget.button1!.label),
-                    ), //TODO Use ODS text button when available to display text in uppercase
-                  if (widget.button2 != null)
-                    Padding(
-                      padding: (widget.button1 != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
-                      child: TextButton(
-                        onPressed: widget.button2!.onClick,
-                        child: Text(widget.button2!.label),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    if (widget.button1 != null)
+                      TextButton(
+                        onPressed: widget.button1!.onClick,
+                        child: Text(widget.button1!.label),
                       ), //TODO Use ODS text button when available to display text in uppercase
-                    ),
-                ],
+                    if (widget.button2 != null)
+                      Padding(
+                        padding: (widget.button1 != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
+                        child: TextButton(
+                          onPressed: widget.button2!.onClick,
+                          child: Text(widget.button2!.label),
+                        ), //TODO Use ODS text button when available to display text in uppercase
+                      ),
+                  ],
+                ),
               ),
             )
           ],
