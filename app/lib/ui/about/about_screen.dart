@@ -35,7 +35,7 @@ class _AboutScreenState extends State<AboutScreen> {
             child: SingleChildScrollView(
       child: Column(
         children: [
-          Image(image: AssetImage('assets/il_about.png')),
+          Image(image: AssetImage('assets/il_about.png'), fit: BoxFit.cover),
           Padding(
             padding: const EdgeInsets.all(spacingM),
             child: Column(
