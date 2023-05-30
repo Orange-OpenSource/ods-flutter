@@ -22,17 +22,14 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: OdsVerticalImageFirstCard(
-                  image: Image.asset('assets/placeholder.png', fit: BoxFit.cover),
-                  title: "Title", //TODO Add FoODS content
-                  subtitle: "Subtitle", //TODO Add FoODS content
-                  text:
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.", //TODO Add FoODS content
-                  button1: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton1, onClick: () {}),
-                  button2: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton2, onClick: () {}),
-                ),
+              OdsVerticalImageFirstCard(
+                image: Image.asset('assets/placeholder.png', fit: BoxFit.cover),
+                title: "Title", //TODO Add FoODS content
+                subtitle: "Subtitle", //TODO Add FoODS content
+                text:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.", //TODO Add FoODS content
+                button1: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton1, onClick: () {}),
+                button2: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton2, onClick: () {}),
               ),
             ],
           ),
