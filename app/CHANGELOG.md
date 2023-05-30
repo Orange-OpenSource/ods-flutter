@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Add a scroll view to see all the content in about screen ([#149](https://github.com/Orange-OpenSource/ods-flutter/issues/160))
+- Add a scroll view to see all the content in about screen ([#160](https://github.com/Orange-OpenSource/ods-flutter/issues/160))
 - Factorize top app bar management ([#149](https://github.com/Orange-OpenSource/ods-flutter/issues/149))
 - Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
 
