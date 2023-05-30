@@ -57,7 +57,7 @@ class _ButtonsState extends State<Buttons> {
   Widget build(BuildContext context) {
     return Semantics(
       header: true,
-      child: Component(
+      child: _Component(
         name: AppLocalizations.of(context)!.componentButtonsTitle,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -89,32 +89,27 @@ class ButtonsVariants extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: isDisabled ? null : () {},
-              child: Text(
-                  AppLocalizations.of(context)!.componentButtonsDemoElevated),
+              child: Text(AppLocalizations.of(context)!.componentButtonsDemoElevated),
             ),
             componentSpacer,
             FilledButton(
               onPressed: isDisabled ? null : () {},
-              child: Text(
-                  AppLocalizations.of(context)!.componentButtonsDemoHighest),
+              child: Text(AppLocalizations.of(context)!.componentButtonsDemoHighest),
             ),
             componentSpacer,
             FilledButton.tonal(
               onPressed: isDisabled ? null : () {},
-              child:
-                  Text(AppLocalizations.of(context)!.componentButtonsDemoHigh),
+              child: Text(AppLocalizations.of(context)!.componentButtonsDemoHigh),
             ),
             componentSpacer,
             OutlinedButton(
               onPressed: isDisabled ? null : () {},
-              child: Text(
-                  AppLocalizations.of(context)!.componentButtonsDemoMedium),
+              child: Text(AppLocalizations.of(context)!.componentButtonsDemoMedium),
             ),
             componentSpacer,
             TextButton(
               onPressed: isDisabled ? null : () {},
-              child:
-                  Text(AppLocalizations.of(context)!.componentButtonsDemoLow),
+              child: Text(AppLocalizations.of(context)!.componentButtonsDemoLow),
             ),
           ],
         ),
@@ -130,7 +125,7 @@ class ButtonsFab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Floating Action Buttons (FAB)',
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -171,7 +166,7 @@ class Cards extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Cards',
           child: Column(
             children: [
@@ -179,8 +174,7 @@ class Cards extends StatelessWidget {
                 width: cardWidth,
                 child: Card(
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(
-                        spacingM, spacingS, spacingS, spacingM),
+                    padding: const EdgeInsets.fromLTRB(spacingM, spacingS, spacingS, spacingM),
                     child: Column(
                       children: [
                         Align(
@@ -288,7 +282,7 @@ class _TextFieldsState extends State<TextFields> {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Text fields',
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -368,49 +362,45 @@ class _TextFieldsState extends State<TextFields> {
           ),
           Padding(
               padding: const EdgeInsets.all(spacingS),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: SizedBox(
-                        width: 200,
-                        child: TextField(
-                          controller: _controllerOutlined,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.search),
-                            suffixIcon:
-                                _ClearButton(controller: _controllerOutlined),
-                            labelText: 'Outlined',
-                            hintText: 'hint text',
-                            helperText: 'helper text',
-                            errorText: 'error text',
-                            border: const OutlineInputBorder(),
-                            filled: true,
-                          ),
-                        ),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Flexible(
+                  child: SizedBox(
+                    width: 200,
+                    child: TextField(
+                      controller: _controllerOutlined,
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: _ClearButton(controller: _controllerOutlined),
+                        labelText: 'Outlined',
+                        hintText: 'hint text',
+                        helperText: 'helper text',
+                        errorText: 'error text',
+                        border: const OutlineInputBorder(),
+                        filled: true,
                       ),
                     ),
-                    const SizedBox(width: spacingS),
-                    Flexible(
-                      child: SizedBox(
-                        width: 200,
-                        child: TextField(
-                          controller: _controllerOutlined,
-                          enabled: false,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.search),
-                            suffixIcon:
-                                _ClearButton(controller: _controllerOutlined),
-                            labelText: 'Disabled',
-                            hintText: 'hint text',
-                            helperText: 'helper text',
-                            border: const OutlineInputBorder(),
-                            filled: true,
-                          ),
-                        ),
+                  ),
+                ),
+                const SizedBox(width: spacingS),
+                Flexible(
+                  child: SizedBox(
+                    width: 200,
+                    child: TextField(
+                      controller: _controllerOutlined,
+                      enabled: false,
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: _ClearButton(controller: _controllerOutlined),
+                        labelText: 'Disabled',
+                        hintText: 'hint text',
+                        helperText: 'helper text',
+                        border: const OutlineInputBorder(),
+                        filled: true,
                       ),
                     ),
-                  ])),
+                  ),
+                ),
+              ])),
         ],
       ),
     );
@@ -475,7 +465,7 @@ class _DialogsState extends State<Dialogs> {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Dialogs',
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
@@ -512,7 +502,7 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Progress indicators',
           child: Column(
             children: <Widget>[
@@ -621,7 +611,7 @@ class _BottomNavigationsState extends State<BottomNavigations> {
 
     return Semantics(
       header: true,
-      child: Component(name: 'Bottom navigation', child: navigationBar),
+      child: _Component(name: 'Bottom navigation', child: navigationBar),
     );
   }
 }
@@ -638,7 +628,7 @@ class _ButtonsIconsState extends State<ButtonsIcons> {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Buttons: Icons',
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -759,15 +749,9 @@ ButtonStyle enabledFilledButtonStyle(bool selected, ColorScheme colors) {
     backgroundColor: selected ? colors.primary : colors.surfaceVariant,
     disabledForegroundColor: colors.onSurface.withOpacity(0.38),
     disabledBackgroundColor: colors.onSurface.withOpacity(0.12),
-    hoverColor: selected
-        ? colors.onPrimary.withOpacity(0.08)
-        : colors.primary.withOpacity(0.08),
-    focusColor: selected
-        ? colors.onPrimary.withOpacity(0.12)
-        : colors.primary.withOpacity(0.12),
-    highlightColor: selected
-        ? colors.onPrimary.withOpacity(0.12)
-        : colors.primary.withOpacity(0.12),
+    hoverColor: selected ? colors.onPrimary.withOpacity(0.08) : colors.primary.withOpacity(0.08),
+    focusColor: selected ? colors.onPrimary.withOpacity(0.12) : colors.primary.withOpacity(0.12),
+    highlightColor: selected ? colors.onPrimary.withOpacity(0.12) : colors.primary.withOpacity(0.12),
   );
 }
 
@@ -780,19 +764,11 @@ ButtonStyle disabledFilledButtonStyle(bool selected, ColorScheme colors) {
 
 ButtonStyle enabledFilledTonalButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
-    foregroundColor:
-        selected ? colors.onSecondaryContainer : colors.onSurfaceVariant,
-    backgroundColor:
-        selected ? colors.secondaryContainer : colors.surfaceVariant,
-    hoverColor: selected
-        ? colors.onSecondaryContainer.withOpacity(0.08)
-        : colors.onSurfaceVariant.withOpacity(0.08),
-    focusColor: selected
-        ? colors.onSecondaryContainer.withOpacity(0.12)
-        : colors.onSurfaceVariant.withOpacity(0.12),
-    highlightColor: selected
-        ? colors.onSecondaryContainer.withOpacity(0.12)
-        : colors.onSurfaceVariant.withOpacity(0.12),
+    foregroundColor: selected ? colors.onSecondaryContainer : colors.onSurfaceVariant,
+    backgroundColor: selected ? colors.secondaryContainer : colors.surfaceVariant,
+    hoverColor: selected ? colors.onSecondaryContainer.withOpacity(0.08) : colors.onSurfaceVariant.withOpacity(0.08),
+    focusColor: selected ? colors.onSecondaryContainer.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
+    highlightColor: selected ? colors.onSecondaryContainer.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
   );
 }
 
@@ -806,15 +782,9 @@ ButtonStyle disabledFilledTonalButtonStyle(bool selected, ColorScheme colors) {
 ButtonStyle enabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
     backgroundColor: selected ? colors.inverseSurface : null,
-    hoverColor: selected
-        ? colors.onInverseSurface.withOpacity(0.08)
-        : colors.onSurfaceVariant.withOpacity(0.08),
-    focusColor: selected
-        ? colors.onInverseSurface.withOpacity(0.12)
-        : colors.onSurfaceVariant.withOpacity(0.12),
-    highlightColor: selected
-        ? colors.onInverseSurface.withOpacity(0.12)
-        : colors.onSurface.withOpacity(0.12),
+    hoverColor: selected ? colors.onInverseSurface.withOpacity(0.08) : colors.onSurfaceVariant.withOpacity(0.08),
+    focusColor: selected ? colors.onInverseSurface.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
+    highlightColor: selected ? colors.onInverseSurface.withOpacity(0.12) : colors.onSurface.withOpacity(0.12),
     side: BorderSide(color: colors.outline),
   ).copyWith(
     foregroundColor: MaterialStateProperty.resolveWith((states) {
@@ -832,8 +802,7 @@ ButtonStyle enabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
 ButtonStyle disabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
     disabledForegroundColor: colors.onSurface.withOpacity(0.38),
-    disabledBackgroundColor:
-        selected ? colors.onSurface.withOpacity(0.12) : null,
+    disabledBackgroundColor: selected ? colors.onSurface.withOpacity(0.12) : null,
     side: selected ? null : BorderSide(color: colors.outline.withOpacity(0.12)),
   );
 }
@@ -852,7 +821,7 @@ class _ChipsState extends State<Chips> {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Chips',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -921,7 +890,7 @@ class ButtonsSegmented extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
         header: true,
-        child: Component(
+        child: _Component(
           name: 'Segmented buttons',
           child: Column(
             children: const <Widget>[
@@ -950,22 +919,10 @@ class _SingleChoiceState extends State<SingleChoice> {
   Widget build(BuildContext context) {
     return SegmentedButton<Calendar>(
       segments: const <ButtonSegment<Calendar>>[
-        ButtonSegment<Calendar>(
-            value: Calendar.day,
-            label: Text('Day'),
-            icon: Icon(Icons.calendar_view_day)),
-        ButtonSegment<Calendar>(
-            value: Calendar.week,
-            label: Text('Week'),
-            icon: Icon(Icons.calendar_view_week)),
-        ButtonSegment<Calendar>(
-            value: Calendar.month,
-            label: Text('Month'),
-            icon: Icon(Icons.calendar_view_month)),
-        ButtonSegment<Calendar>(
-            value: Calendar.year,
-            label: Text('Year'),
-            icon: Icon(Icons.calendar_today)),
+        ButtonSegment<Calendar>(value: Calendar.day, label: Text('Day'), icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(value: Calendar.week, label: Text('Week'), icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(value: Calendar.month, label: Text('Month'), icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(value: Calendar.year, label: Text('Year'), icon: Icon(Icons.calendar_today)),
       ],
       selected: <Calendar>{calendarView},
       onSelectionChanged: (newSelection) {
@@ -1021,7 +978,7 @@ class SnackBars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Snackbars',
       child: TextButton(
         onPressed: () {
@@ -1068,14 +1025,7 @@ class _BottomSheetsState extends State<BottomSheets> {
       IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined)),
       IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
     ];
-    List<Text> labelList = const <Text>[
-      Text('Share'),
-      Text('Add to'),
-      Text('Trash'),
-      Text('Archive'),
-      Text('Settings'),
-      Text('Favorite')
-    ];
+    List<Text> labelList = const <Text>[Text('Share'), Text('Add to'), Text('Trash'), Text('Archive'), Text('Settings'), Text('Favorite')];
 
     buttonList = List.generate(
         buttonList.length,
@@ -1092,7 +1042,7 @@ class _BottomSheetsState extends State<BottomSheets> {
 
     return Semantics(
       header: true,
-      child: Component(
+      child: _Component(
         name: 'Bottom sheet',
         child: Wrap(
           alignment: WrapAlignment.spaceEvenly,
@@ -1125,9 +1075,7 @@ class _BottomSheetsState extends State<BottomSheets> {
             ),
             TextButton(
               child: Text(
-                isNonModalBottomSheetOpen
-                    ? 'Hide bottom sheet'
-                    : 'Show bottom sheet',
+                isNonModalBottomSheetOpen ? 'Hide bottom sheet' : 'Show bottom sheet',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               onPressed: () {
@@ -1176,7 +1124,7 @@ class BottomAppBars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Bottom app bar',
       child: Column(
         children: [
@@ -1188,8 +1136,7 @@ class BottomAppBars extends StatelessWidget {
                 elevation: 0.0,
                 child: const Icon(Icons.add),
               ),
-              floatingActionButtonLocation:
-                  FloatingActionButtonLocation.endContained,
+              floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
               bottomNavigationBar: BottomAppBar(
                 child: Row(
                   children: <Widget>[
@@ -1309,7 +1256,7 @@ class NavigationDrawers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Navigation drawer',
       child: Column(
         children: [
@@ -1317,8 +1264,7 @@ class NavigationDrawers extends StatelessWidget {
           componentSpacer,
           componentSpacer,
           TextButton(
-            child: const Text('Show modal navigation drawer',
-                style: TextStyle(fontWeight: FontWeight.bold)),
+            child: const Text('Show modal navigation drawer', style: TextStyle(fontWeight: FontWeight.bold)),
             onPressed: () {
               scaffoldKey.currentState!.openEndDrawer();
             },
@@ -1333,8 +1279,7 @@ class NavigationDrawerSection extends StatefulWidget {
   const NavigationDrawerSection({super.key});
 
   @override
-  State<NavigationDrawerSection> createState() =>
-      _NavigationDrawerSectionState();
+  State<NavigationDrawerSection> createState() => _NavigationDrawerSectionState();
 }
 
 class _NavigationDrawerSectionState extends State<NavigationDrawerSection> {
@@ -1395,16 +1340,13 @@ class ExampleDestination {
 const List<ExampleDestination> destinations = <ExampleDestination>[
   ExampleDestination('Inbox', Icon(Icons.inbox_outlined), Icon(Icons.inbox)),
   ExampleDestination('Outbox', Icon(Icons.send_outlined), Icon(Icons.send)),
-  ExampleDestination(
-      'Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite)),
+  ExampleDestination('Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite)),
   ExampleDestination('Trash', Icon(Icons.delete_outline), Icon(Icons.delete)),
 ];
 
 const List<ExampleDestination> labelDestinations = <ExampleDestination>[
-  ExampleDestination(
-      'Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
-  ExampleDestination(
-      'School', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination('Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination('School', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
   ExampleDestination('Work', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
 ];
 
@@ -1413,10 +1355,9 @@ class NavigationRails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Component(
+    return const _Component(
       name: 'Navigation rail',
-      child: IntrinsicWidth(
-          child: SizedBox(height: 420, child: NavigationRailSection())),
+      child: IntrinsicWidth(child: SizedBox(height: 420, child: NavigationRailSection())),
     );
   }
 }
@@ -1440,8 +1381,7 @@ class _NavigationRailSectionState extends State<NavigationRailSection> {
         });
       },
       elevation: 4,
-      leading: FloatingActionButton(
-          child: const Icon(Icons.create), onPressed: () {}),
+      leading: FloatingActionButton(child: const Icon(Icons.create), onPressed: () {}),
       groupAlignment: 0.0,
       selectedIndex: navRailIndex,
       labelType: NavigationRailLabelType.selected,
@@ -1476,7 +1416,7 @@ class _TabsState extends State<Tabs> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Tabs',
       child: SizedBox(
         height: 80,
@@ -1521,7 +1461,7 @@ class TopAppBars extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
       name: 'Top app bars',
       child: Column(
         children: [
@@ -1593,21 +1533,17 @@ class _MenusState extends State<Menus> {
 
   @override
   Widget build(BuildContext context) {
-    final List<DropdownMenuEntry<ColorLabel>> colorEntries =
-        <DropdownMenuEntry<ColorLabel>>[];
+    final List<DropdownMenuEntry<ColorLabel>> colorEntries = <DropdownMenuEntry<ColorLabel>>[];
     for (final ColorLabel color in ColorLabel.values) {
-      colorEntries.add(DropdownMenuEntry<ColorLabel>(
-          value: color, label: color.label, enabled: color.label != 'Grey'));
+      colorEntries.add(DropdownMenuEntry<ColorLabel>(value: color, label: color.label, enabled: color.label != 'Grey'));
     }
 
-    final List<DropdownMenuEntry<IconLabel>> iconEntries =
-        <DropdownMenuEntry<IconLabel>>[];
+    final List<DropdownMenuEntry<IconLabel>> iconEntries = <DropdownMenuEntry<IconLabel>>[];
     for (final IconLabel icon in IconLabel.values) {
-      iconEntries
-          .add(DropdownMenuEntry<IconLabel>(value: icon, label: icon.label));
+      iconEntries.add(DropdownMenuEntry<IconLabel>(value: icon, label: icon.label));
     }
 
-    return Component(
+    return _Component(
       name: 'Menus',
       child: Column(
         children: [
@@ -1702,7 +1638,7 @@ class _SlidersState extends State<Sliders> {
 
   @override
   Widget build(BuildContext context) {
-    return Component(
+    return _Component(
         name: 'Sliders',
         child: Column(
           children: <Widget>[
@@ -1732,8 +1668,8 @@ class _SlidersState extends State<Sliders> {
   }
 }
 
-class Component extends StatefulWidget {
-  const Component({
+class _Component extends StatefulWidget {
+  const _Component({
     super.key,
     required this.name,
     required this.child,
@@ -1743,16 +1679,15 @@ class Component extends StatefulWidget {
   final Widget child;
 
   @override
-  State<Component> createState() => _ComponentState();
+  State<_Component> createState() => _ComponentState();
 }
 
-class _ComponentState extends State<Component> {
+class _ComponentState extends State<_Component> {
   @override
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: spacingS, horizontal: spacingM),
+        padding: const EdgeInsets.symmetric(vertical: spacingS, horizontal: spacingM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1761,8 +1696,7 @@ class _ComponentState extends State<Component> {
               style: Theme.of(context).textTheme.titleLarge,
             ),
             ConstrainedBox(
-              constraints:
-                  const BoxConstraints.tightFor(width: widthConstraint),
+              constraints: const BoxConstraints.tightFor(width: widthConstraint),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: spacingM),
                 child: Center(

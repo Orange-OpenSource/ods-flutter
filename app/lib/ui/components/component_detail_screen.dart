@@ -6,7 +6,7 @@ import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentDetailScreen extends StatelessWidget {
-  final OdsComponent component;
+  final Component component;
 
   const ComponentDetailScreen({required this.component});
 

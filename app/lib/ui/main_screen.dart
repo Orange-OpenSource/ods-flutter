@@ -10,7 +10,7 @@ import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'components/ods_components.dart';
+import 'components/components.dart';
 
 const int extendedNavigationRailMinScreenWidth = 600;
 
@@ -38,25 +38,23 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
 
-    return Consumer<ModelTheme>(
-        builder: (context, ModelTheme themeNotifier, child) {
+    return Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child) {
       return Scaffold(
           appBar: MainAppBar(selectedItem.label),
-          bottomNavigationBar:
-              MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
-                  ? BottomNavigationBar(
-                      type: BottomNavigationBarType.fixed,
-                      selectedItemColor: colorScheme.primary,
-                      unselectedItemColor: colorScheme.secondary,
-                      items: navigationItems.getBottomNavigationBarItems(),
-                      currentIndex: _selectedIndex,
-                      onTap: (value) {
-                        setState(() {
-                          _selectedIndex = value;
-                        });
-                      },
-                    )
-                  : null,
+          bottomNavigationBar: MediaQuery.of(context).size.width < mobileUiMaxScreenWidth
+              ? BottomNavigationBar(
+                  type: BottomNavigationBarType.fixed,
+                  selectedItemColor: colorScheme.primary,
+                  unselectedItemColor: colorScheme.secondary,
+                  items: navigationItems.getBottomNavigationBarItems(),
+                  currentIndex: _selectedIndex,
+                  onTap: (value) {
+                    setState(() {
+                      _selectedIndex = value;
+                    });
+                  },
+                )
+              : null,
           body: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -69,10 +67,8 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       child: IntrinsicHeight(
                         child: NavigationRail(
-                          extended: MediaQuery.of(context).size.width >=
-                              extendedNavigationRailMinScreenWidth,
-                          destinations:
-                              navigationItems.getNavigationRailDestinations(),
+                          extended: MediaQuery.of(context).size.width >= extendedNavigationRailMinScreenWidth,
+                          destinations: navigationItems.getNavigationRailDestinations(),
                           selectedIndex: _selectedIndex,
                           onDestinationSelected: (value) {
                             setState(() {
@@ -98,38 +94,29 @@ class _NavigationItems {
   _NavigationItems(this.context) {
     var colorScheme = Theme.of(context).colorScheme;
 
-    var activeColorFilter =
-        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    var activeColorFilter = ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     _mainMenuItems = [
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-              colorFilter: colorFilter),
+          activeIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg", colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_guidelines_dna.svg", colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationGuideline,
           screen: GuidelinesScreen()),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_components_atom.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_components_atom.svg",
-              colorFilter: colorFilter),
+          activeIcon: SvgPicture.asset("assets/ic_components_atom.svg", colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_components_atom.svg", colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationComponents,
           screen: ComponentsScreen(
-            odsComponents: odsComponents(context),
+            odsComponents: components(context),
           )),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-              colorFilter: colorFilter),
+          activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg", colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_modules_molecule.svg", colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationModules,
           screen: ModulesScreen()),
       _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_about_info.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_about_info.svg",
-              colorFilter: colorFilter),
+          activeIcon: SvgPicture.asset("assets/ic_about_info.svg", colorFilter: activeColorFilter),
+          icon: SvgPicture.asset("assets/ic_about_info.svg", colorFilter: colorFilter),
           label: AppLocalizations.of(context)!.bottomNavigationAbout,
           screen: AboutScreen()),
     ];
@@ -140,17 +127,11 @@ class _NavigationItems {
   }
 
   getBottomNavigationBarItems() {
-    return _mainMenuItems
-        .map((e) => BottomNavigationBarItem(
-            icon: e.icon, activeIcon: e.activeIcon, label: e.label))
-        .toList();
+    return _mainMenuItems.map((e) => BottomNavigationBarItem(icon: e.icon, activeIcon: e.activeIcon, label: e.label)).toList();
   }
 
   getNavigationRailDestinations() {
-    return _mainMenuItems
-        .map((e) => NavigationRailDestination(
-            icon: e.icon, selectedIcon: e.activeIcon, label: Text(e.label)))
-        .toList();
+    return _mainMenuItems.map((e) => NavigationRailDestination(icon: e.icon, selectedIcon: e.activeIcon, label: Text(e.label))).toList();
   }
 }
 
