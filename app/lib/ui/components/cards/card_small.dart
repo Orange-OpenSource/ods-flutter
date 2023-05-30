@@ -5,14 +5,14 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentCardSmall extends StatefulWidget {
-  const ComponentCardSmall({super.key});
+class CardSmall extends StatefulWidget {
+  const CardSmall({super.key});
 
   @override
-  State<ComponentCardSmall> createState() => _ComponentCardSmallState();
+  State<CardSmall> createState() => _CardSmallState();
 }
 
-class _ComponentCardSmallState extends State<ComponentCardSmall> {
+class _CardSmallState extends State<CardSmall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +25,8 @@ class _ComponentCardSmallState extends State<ComponentCardSmall> {
               width: _computeCardWidth(),
               child: OdsSmallCard(
                 title: AppLocalizations.of(context)!.cardSmallVariantTitle,
-                subtitle:
-                    AppLocalizations.of(context)!.cardSmallVariantSubtitle,
-                image: Image.asset('assets/placeholder.png',
-                    semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
+                subtitle: AppLocalizations.of(context)!.cardSmallVariantSubtitle,
+                image: Image.asset('assets/placeholder.png', semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
                 onTap: () {},
               ),
             ),
