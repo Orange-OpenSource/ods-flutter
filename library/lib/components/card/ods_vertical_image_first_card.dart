@@ -43,14 +43,13 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   final String? button2Text;
 
   /// Optional handler for the first button click.
-  final Function()? onButton1Click;
+  final VoidCallback? onButton1Click;
 
   /// Optional handler for the second button click.
-  final Function()? onButton2Click;
+  final VoidCallback? onButton2Click;
 
   @override
-  State<OdsVerticalImageFirstCard> createState() =>
-      _OdsVerticalImageFirstCardState();
+  State<OdsVerticalImageFirstCard> createState() => _OdsVerticalImageFirstCardState();
 }
 
 class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
@@ -73,29 +72,26 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
               child: widget.image,
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: spacingM, top: spacingM, right: spacingM),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.title,
-                      style: Theme.of(context).textTheme.titleLarge,
+              padding: const EdgeInsets.only(left: spacingM, top: spacingM, right: spacingM),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(
+                  widget.title,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                if (widget.subtitle != null)
+                  Text(
+                    widget.subtitle!,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                if (widget.text != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: spacingS),
+                    child: Text(
+                      widget.text!,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
-                    if (widget.subtitle != null)
-                      Text(
-                        widget.subtitle!,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                    if (widget.text != null)
-                      Padding(
-                        padding: const EdgeInsets.only(top: spacingS),
-                        child: Text(
-                          widget.text!,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ),
-                  ]),
+                  ),
+              ]),
             ),
             Padding(
               padding: const EdgeInsets.all(spacingS),
@@ -108,9 +104,7 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
                     ), //TODO Use ODS text button when available to display text in uppercase
                   if (widget.button2Text != null)
                     Padding(
-                      padding: (widget.button1Text != null)
-                          ? const EdgeInsets.only(left: spacingS)
-                          : const EdgeInsets.only(),
+                      padding: (widget.button1Text != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
                       child: TextButton(
                         onPressed: widget.onButton2Click,
                         child: Text(widget.button2Text!),
