@@ -13,11 +13,8 @@ class AboutScreen extends StatefulWidget {
 class _AboutScreenState extends State<AboutScreen> {
   // TODO: correct version package insertion
   // Package Version instantiation
-  PackageInfo _packageInfo = PackageInfo(
-      appName: 'Unknown',
-      packageName: 'Unknown',
-      version: 'Unknown',
-      buildNumber: 'Unknown');
+  PackageInfo _packageInfo = PackageInfo(appName: 'Unknown', packageName: 'Unknown', version: 'Unknown', buildNumber: 'Unknown');
+
   @override
   void initState() {
     super.initState();
@@ -35,27 +32,25 @@ class _AboutScreenState extends State<AboutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
+            child: SingleChildScrollView(
+      child: Column(
+        children: [
+          Image(image: AssetImage('assets/il_about.png')),
+          Padding(
+            padding: const EdgeInsets.all(spacingM),
             child: Column(
-      children: [
-        Image(image: AssetImage('assets/il_about.png')),
-        Padding(
-          padding: const EdgeInsets.all(spacingM),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(AppLocalizations.of(context)!.aboutScreenTitle,
-                  style: Theme.of(context).textTheme.headlineLarge),
-              SizedBox(height: spacingXs),
-              Text(
-                  'Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})',
-                  style: Theme.of(context).textTheme.bodySmall),
-              SizedBox(height: spacingXs),
-              Text(AppLocalizations.of(context)!.aboutScreenDescription,
-                  style: Theme.of(context).textTheme.bodyMedium),
-            ],
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(AppLocalizations.of(context)!.aboutScreenTitle, style: Theme.of(context).textTheme.headlineLarge),
+                SizedBox(height: spacingXs),
+                Text('Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})', style: Theme.of(context).textTheme.bodySmall),
+                SizedBox(height: spacingXs),
+                Text(AppLocalizations.of(context)!.aboutScreenDescription, style: Theme.of(context).textTheme.bodyMedium),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     )));
   }
 }
