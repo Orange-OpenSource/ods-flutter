@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter/theme/ods_theme.dart';
 
 /// ODS Small card.
 ///
@@ -38,7 +39,7 @@ class OdsSmallCard extends StatelessWidget {
         width: double.infinity,
         child: Card(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(odsCardRadius),
           ),
           elevation: 1,
           clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -52,19 +53,19 @@ class OdsSmallCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(spacingM),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      if (subtitle != null)
-                        Text(
-                          title,
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                    ]),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleLarge,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  if (subtitle != null)
+                    Text(
+                      subtitle!,
+                      style: Theme.of(context).textTheme.titleMedium,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                ]),
               )
             ],
           ),
