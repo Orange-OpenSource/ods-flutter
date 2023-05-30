@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
+import 'package:ods_flutter/components/utilities/ods_button_entity.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -28,10 +29,8 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
                 subtitle: "Subtitle", //TODO Add FoODS content
                 text:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.", //TODO Add FoODS content
-                button1Text: AppLocalizations.of(context)?.componentElementButton1,
-                button2Text: AppLocalizations.of(context)?.componentElementButton2,
-                onButton1Click: () {},
-                onButton2Click: () {},
+                button1: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton1, onClick: () {}),
+                button2: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton2, onClick: () {}),
               ),
             ),
           ],

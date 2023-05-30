@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/components/utilities/ods_button_entity.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
 
@@ -15,10 +16,8 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
     required this.image,
     this.subtitle,
     this.text,
-    this.button1Text,
-    this.button2Text,
-    this.onButton1Click,
-    this.onButton2Click,
+    this.button1,
+    this.button2,
   }) : super(key: key);
 
   static const double _imageHeight = 194;
@@ -36,17 +35,11 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   /// The optional card's text.
   final String? text;
 
-  /// Optional text of the first button in the card. If not present, button will not be shown. If present, [onButton1Click] need to be handled.
-  final String? button1Text;
+  /// Optional first button. If null, button will not be shown.
+  final OdsButtonEntity? button1;
 
-  /// Optional text of the second button in the card. If not present, button will not be shown. If present, [onButton2Click] need to be handled.
-  final String? button2Text;
-
-  /// Optional handler for the first button click.
-  final VoidCallback? onButton1Click;
-
-  /// Optional handler for the second button click.
-  final VoidCallback? onButton2Click;
+  /// Optional second button in the card. If null, button will not be shown.
+  final OdsButtonEntity? button2;
 
   @override
   State<OdsVerticalImageFirstCard> createState() => _OdsVerticalImageFirstCardState();
@@ -97,17 +90,17 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
               padding: const EdgeInsets.all(spacingS),
               child: Row(
                 children: [
-                  if (widget.button1Text != null)
+                  if (widget.button1 != null)
                     TextButton(
-                      onPressed: widget.onButton1Click,
-                      child: Text(widget.button1Text!),
+                      onPressed: widget.button1!.onClick,
+                      child: Text(widget.button1!.label),
                     ), //TODO Use ODS text button when available to display text in uppercase
-                  if (widget.button2Text != null)
+                  if (widget.button2 != null)
                     Padding(
-                      padding: (widget.button1Text != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
+                      padding: (widget.button1 != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
                       child: TextButton(
-                        onPressed: widget.onButton2Click,
-                        child: Text(widget.button2Text!),
+                        onPressed: widget.button2!.onClick,
+                        child: Text(widget.button2!.label),
                       ), //TODO Use ODS text button when available to display text in uppercase
                     ),
                 ],
