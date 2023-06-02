@@ -28,7 +28,7 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
           child: Column(
             children: [
               OdsVerticalImageFirstCard(
-                image: Image.asset('assets/placeholder.png', fit: BoxFit.cover),
+                image: Image.network(recipe.url, fit: BoxFit.cover),
                 title: recipe.title,
                 subtitle: recipe.subtitle,
                 text: recipe.description,
