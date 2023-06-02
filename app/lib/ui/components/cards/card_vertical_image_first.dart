@@ -29,8 +29,8 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
             children: [
               OdsVerticalImageFirstCard(
                 image: Image.asset('assets/placeholder.png', fit: BoxFit.cover),
-                title: recipe.title, //TODO Add FoODS content
-                subtitle: recipe.subtitle, //TODO Add FoODS content
+                title: recipe.title,
+                subtitle: recipe.subtitle,
                 text: recipe.description,
                 button1: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton1, onClick: () {}),
                 button2: OdsButtonEntity(label: AppLocalizations.of(context)!.componentElementButton2, onClick: () {}),
