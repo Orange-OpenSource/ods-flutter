@@ -18,6 +18,7 @@ ods-flutter/app/assets/il_about.png
 ods-flutter/app/assets/il_radio_buttons.svg
 ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/il_typography.png
+ods-flutter/app/assets/il_navigation_bar.svg
 ods-flutter/app/assets/placeholder.png
 
 ods-flutter/app/assets/1.5x/il_about.png

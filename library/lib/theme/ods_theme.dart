@@ -17,16 +17,36 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: white100,
     appBarTheme: const AppBarTheme(backgroundColor: white100),
-    bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(backgroundColor: white100),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: white100,
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return IconThemeData(color: lightColorScheme.primary);
+        }
+        return IconThemeData(color: lightColorScheme.secondary);
+      }),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return TextStyle(color: lightColorScheme.primary);
+        }
+        return TextStyle(color: lightColorScheme.secondary);
+      }),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: white100,
+      selectedItemColor: lightColorScheme.primary,
+      unselectedItemColor: lightColorScheme.secondary,
+    ),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
     radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
     switchTheme: SwitchThemeData(
         thumbColor: const LightControlFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const LightControlFillColor()
-              .resolve(states)
-              .withOpacity(_switchTrackOpacity);
+          return const LightControlFillColor().resolve(states).withOpacity(_switchTrackOpacity);
         })),
   );
 
@@ -35,18 +55,36 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: black900,
     appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
-    bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
-    checkboxTheme: const CheckboxThemeData(
-        fillColor: DarkControlFillColor(),
-        checkColor: MaterialStatePropertyAll(black900)),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: black900,
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return IconThemeData(color: darkColorScheme.primary);
+        }
+        return IconThemeData(color: darkColorScheme.secondary);
+      }),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return TextStyle(color: darkColorScheme.primary);
+        }
+        return TextStyle(color: darkColorScheme.secondary);
+      }),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: darkSurfaceDefault,
+      selectedItemColor: darkColorScheme.primary,
+      unselectedItemColor: darkColorScheme.secondary,
+    ),
+    checkboxTheme: const CheckboxThemeData(fillColor: DarkControlFillColor(), checkColor: MaterialStatePropertyAll(black900)),
     radioTheme: const RadioThemeData(fillColor: DarkControlFillColor()),
     switchTheme: SwitchThemeData(
         thumbColor: const DarkControlFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const DarkControlFillColor()
-              .resolve(states)
-              .withOpacity(_switchTrackOpacity);
+          return const DarkControlFillColor().resolve(states).withOpacity(_switchTrackOpacity);
         })),
   );
 }
