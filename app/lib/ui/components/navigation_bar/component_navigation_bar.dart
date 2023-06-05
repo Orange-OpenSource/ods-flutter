@@ -35,6 +35,7 @@ class ComponentNavigationBar extends StatelessWidget {
               _MainMenuItem(icon: Icon(Icons.invert_colors_on_outlined), label: 'Elevation'), //TODO Add FoODS content
             ]),
           ),
+          )
         ],
       ),
     );
@@ -42,8 +43,9 @@ class ComponentNavigationBar extends StatelessWidget {
 }
 
 class _NavBarDemo extends StatefulWidget {
-  _NavBarDemo({super.key, required this.selectedIndex, required this.items});
+  _NavBarDemo({super.key, this.onSelectItem, required this.selectedIndex, required this.items});
 
+  final void Function(int)? onSelectItem;
   final int selectedIndex;
   final List<_MainMenuItem> items;
 
