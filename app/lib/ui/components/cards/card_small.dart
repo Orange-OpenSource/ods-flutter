@@ -37,35 +37,12 @@ class _CardSmallState extends State<CardSmall> {
           appBar: AppBar(
             title: Text(AppLocalizations.of(context)!.cardSmallVariantTitle),
           ),
-          body: _Content()),
+          body: _Body()),
     );
   }
 }
 
-class _CustomizationContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final CardCustomizationState? customizationState = CardCustomization.of(context);
-    return Column(
-      children: [
-        SwitchListTile(
-            value: customizationState?.clickable ?? true,
-            title: Text(AppLocalizations.of(context)!.componentCardClickable),
-            onChanged: (bool value) {
-              customizationState?.clickable = value;
-            }),
-        SwitchListTile(
-            value: customizationState?.hasSubtitle ?? true,
-            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
-            onChanged: (bool value) {
-              customizationState?.hasSubtitle = value;
-            })
-      ],
-    );
-  }
-}
-
-class _Content extends StatelessWidget {
+class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState = CardCustomization.of(context);
@@ -99,5 +76,28 @@ class _Content extends StatelessWidget {
     }
 
     return cardWidth;
+  }
+}
+
+class _CustomizationContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final CardCustomizationState? customizationState = CardCustomization.of(context);
+    return Column(
+      children: [
+        SwitchListTile(
+            value: customizationState?.clickable ?? true,
+            title: Text(AppLocalizations.of(context)!.componentCardClickable),
+            onChanged: (bool value) {
+              customizationState?.clickable = value;
+            }),
+        SwitchListTile(
+            value: customizationState?.hasSubtitle ?? true,
+            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
+            onChanged: (bool value) {
+              customizationState?.hasSubtitle = value;
+            })
+      ],
+    );
   }
 }
