@@ -17,26 +17,34 @@ void main() {
   runApp(OdsApplication());
 }
 
-class OdsApplication extends StatelessWidget {
+class OdsApplication extends StatefulWidget {
   const OdsApplication({super.key});
-
   static List<Recipe> recipes = [];
   static List<Category> category = [];
   static List<Food> foods = [];
 
+  @override
+  State<OdsApplication> createState() => _OdsApplicationState();
+}
+
+class _OdsApplicationState extends State<OdsApplication> {
   // Fetch content from the json file
   Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/recipes.json');
     Entity entity = entityFromJson(response);
 
-    category = entity.category;
-    recipes = entity.recipes;
-    foods = entity.foods;
+    OdsApplication.category = entity.category;
+    OdsApplication.recipes = entity.recipes;
+    OdsApplication.foods = entity.foods;
+  }
+
+  void initState() {
+    super.initState();
+    readJson();
   }
 
   @override
   Widget build(BuildContext context) {
-    readJson();
     return ChangeNotifierProvider(
       create: (_) => ModelTheme(),
       child: Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child) {
