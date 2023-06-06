@@ -58,6 +58,13 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_CUSTOMIZATION": {},
+  "componentCustomizeTitle": "Customize",
+  "@componentCustomizeTitle": {
+    "description": "Component customization bottom sheet - Title",
+    "type": "text"
+  },
+
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
