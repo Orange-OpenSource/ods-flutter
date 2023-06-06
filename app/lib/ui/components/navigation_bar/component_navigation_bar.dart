@@ -14,6 +14,19 @@ class ComponentNavigationBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
+              padding: EdgeInsets.all(spacingM),
+              child: _NavBarDemo(selectedIndex: 1, items: [
+                _MainMenuItem(icon: Icon(Icons.widgets_outlined), label: 'Component'), //TODO Add FoODS content
+                _MainMenuItem(icon: Icon(Icons.format_paint_outlined), label: 'Color'), //TODO Add FoODS content
+              ])),
+          Padding(
+              padding: EdgeInsets.all(spacingM),
+              child: _NavBarDemo(selectedIndex: 1, items: [
+                _MainMenuItem(icon: Icon(Icons.widgets_outlined), label: 'Component'), //TODO Add FoODS content
+                _MainMenuItem(icon: Icon(Icons.format_paint_outlined), label: 'Color'), //TODO Add FoODS content
+                _MainMenuItem(icon: Icon(Icons.text_snippet_outlined), label: 'Typography'), //TODO Add FoODS content
+              ])),
+          Padding(
             padding: EdgeInsets.all(spacingM),
             child: _NavBarDemo(selectedIndex: 1, items: [
               _MainMenuItem(icon: Icon(Icons.widgets_outlined), label: 'Component'), //TODO Add FoODS content
@@ -21,7 +34,7 @@ class ComponentNavigationBar extends StatelessWidget {
               _MainMenuItem(icon: Icon(Icons.text_snippet_outlined), label: 'Typography'), //TODO Add FoODS content
               _MainMenuItem(icon: Icon(Icons.invert_colors_on_outlined), label: 'Elevation'), //TODO Add FoODS content
             ]),
-          )
+          ),
         ],
       ),
     );
@@ -29,9 +42,8 @@ class ComponentNavigationBar extends StatelessWidget {
 }
 
 class _NavBarDemo extends StatefulWidget {
-  _NavBarDemo({super.key, this.onSelectItem, required this.selectedIndex, required this.items});
+  _NavBarDemo({super.key, required this.selectedIndex, required this.items});
 
-  final void Function(int)? onSelectItem;
   final int selectedIndex;
   final List<_MainMenuItem> items;
 
