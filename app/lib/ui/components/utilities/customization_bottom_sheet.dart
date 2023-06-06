@@ -38,7 +38,10 @@ class _CustomizationBottomSheetState extends State<CustomizationBottomSheet> {
                 turns: chevronTurns,
                 duration: const Duration(milliseconds: 200),
                 child: IconButton(
-                    icon: SvgPicture.asset("assets/ic_chevron_down.svg"),
+                    icon: SvgPicture.asset(
+                      "assets/ic_chevron_down.svg",
+                      colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
+                    ),
                     onPressed: () {
                       setState(() {
                         expanded = !expanded;
