@@ -50,13 +50,13 @@ class _CustomizationContent extends StatelessWidget {
       children: [
         SwitchListTile(
             value: customizationState?.clickable ?? true,
-            title: Text("Clickable card"),
+            title: Text(AppLocalizations.of(context)!.componentCardClickable),
             onChanged: (bool value) {
               customizationState?.clickable = value;
             }),
         SwitchListTile(
             value: customizationState?.hasSubtitle ?? true,
-            title: Text("Subtitle"),
+            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
             onChanged: (bool value) {
               customizationState?.hasSubtitle = value;
             })

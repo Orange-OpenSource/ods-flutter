@@ -64,6 +64,16 @@
     "description": "Component customization bottom sheet - Title",
     "type": "text"
   },
+  "componentElementSubtitle": "Subtitle",
+  "@componentCustomizeSubtitle": {
+    "description": "Component customization element - Subtitle",
+    "type": "text"
+  },
+  "componentElementSubtitle": "Subtitle",
+  "@componentCustomizeSubtitle": {
+    "description": "Component customization element - Subtitle",
+    "type": "text"
+  },
 
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
@@ -108,6 +118,12 @@
     "description": "Component Cards - Description",
     "type": "text"
   },
+  "componentCardClickable": "Clickable card",
+  "@componentCardClickable": {
+    "description": "Component Card - Clickable customization",
+    "type": "text"
+  },
+
 
   "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Small card",
