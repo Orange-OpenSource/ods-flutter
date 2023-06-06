@@ -33,35 +33,40 @@ class _CustomizationBottomSheetState extends State<CustomizationBottomSheet> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(children: [
-              AnimatedRotation(
-                turns: chevronTurns,
-                duration: const Duration(milliseconds: 200),
-                child: IconButton(
-                    icon: SvgPicture.asset(
-                      "assets/ic_chevron_down.svg",
-                      colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        expanded = !expanded;
-                        _changeChevronRotation();
-                      });
-                    }),
-              ),
-              Expanded(
-                  child: Padding(
-                padding: EdgeInsets.all(spacingM),
-                child: Text(
-                  AppLocalizations.of(context)!.componentCustomizeTitle,
-                  style: Theme.of(context).textTheme.titleMedium,
+            GestureDetector(
+              onTap: _expandCloseBottomSheet,
+              child: Row(children: [
+                AnimatedRotation(
+                  turns: chevronTurns,
+                  duration: const Duration(milliseconds: 200),
+                  child: IconButton(
+                      icon: SvgPicture.asset(
+                        "assets/ic_chevron_down.svg",
+                        colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
+                      ),
+                      onPressed: _expandCloseBottomSheet),
                 ),
-              )),
-            ]),
+                Expanded(
+                    child: Padding(
+                  padding: EdgeInsets.all(spacingM),
+                  child: Text(
+                    AppLocalizations.of(context)!.componentCustomizeTitle,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                )),
+              ]),
+            ),
             widget.content,
           ],
         ),
       ),
     );
+  }
+
+  _expandCloseBottomSheet() {
+    setState(() {
+      expanded = !expanded;
+      _changeChevronRotation();
+    });
   }
 }
