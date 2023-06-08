@@ -28,7 +28,13 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
           child: Column(
             children: [
               OdsVerticalImageFirstCard(
-                image: Image.network(recipe.url, fit: BoxFit.cover),
+                image: FadeInImage(
+                    placeholder: AssetImage('assets/placeholder.png'),
+                    image: NetworkImage(recipe.url),
+                    fit: BoxFit.cover,
+                    imageErrorBuilder: (context, error, stackTrace) {
+                      return Image(image: AssetImage('assets/placeholder.png'), fit: BoxFit.cover);
+                    }),
                 title: recipe.title,
                 subtitle: recipe.subtitle,
                 text: recipe.description,
