@@ -38,6 +38,7 @@ class _OdsApplicationState extends State<OdsApplication> {
     OdsApplication.foods = entity.foods;
   }
 
+  @override
   void initState() {
     super.initState();
     _readJson();
