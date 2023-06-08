@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Create component description page structure ([#124](https://github.com/Orange-OpenSource/ods-flutter/issues/124))
 - Review the string in the app to use localization keys ([#129](https://github.com/Orange-OpenSource/ods-flutter/issues/129))
 - Add `OdsVerticalImageFirstCard` widget demonstration ([#8](https://github.com/Orange-OpenSource/ods-flutter/issues/8))
+- Add Json file and display values ([#123](https://github.com/Orange-OpenSource/ods-flutter/issues/123))
 
 ### Changed
 
