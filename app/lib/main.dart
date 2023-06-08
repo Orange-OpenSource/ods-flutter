@@ -29,7 +29,7 @@ class OdsApplication extends StatefulWidget {
 
 class _OdsApplicationState extends State<OdsApplication> {
   // Fetch content from the json file
-  Future<void> readJson() async {
+  Future<void> _readJson() async {
     final String response = await rootBundle.loadString('assets/recipes.json');
     Entity entity = entityFromJson(response);
 
@@ -40,7 +40,7 @@ class _OdsApplicationState extends State<OdsApplication> {
 
   void initState() {
     super.initState();
-    readJson();
+    _readJson();
   }
 
   @override
