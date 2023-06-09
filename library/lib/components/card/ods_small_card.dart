@@ -7,7 +7,7 @@ import 'package:ods_flutter/theme/ods_theme.dart';
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsSmallCard extends StatelessWidget {
+class OdsSmallCard extends StatefulWidget {
   /// Creates an ODS Small card.
   const OdsSmallCard({
     Key? key,
@@ -33,6 +33,11 @@ class OdsSmallCard extends StatelessWidget {
   final Function()? onTap;
 
   @override
+  State<OdsSmallCard> createState() => _OdsSmallCardState();
+}
+
+class _OdsSmallCardState extends State<OdsSmallCard> {
+  @override
   Widget build(BuildContext context) {
     return Stack(children: [
       SizedBox(
@@ -48,20 +53,20 @@ class OdsSmallCard extends StatelessWidget {
             children: [
               SizedBox(
                 width: double.infinity,
-                height: _imageHeight,
-                child: image,
+                height: OdsSmallCard._imageHeight,
+                child: widget.image,
               ),
               Padding(
                 padding: const EdgeInsets.all(spacingM),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(
-                    title,
+                    widget.title,
                     style: Theme.of(context).textTheme.titleLarge,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  if (subtitle != null)
+                  if (widget.subtitle != null)
                     Text(
-                      subtitle!,
+                      widget.subtitle!,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -71,14 +76,15 @@ class OdsSmallCard extends StatelessWidget {
           ),
         ),
       ),
-      Positioned.fill(
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: onTap,
+      if (widget.onTap != null)
+        Positioned.fill(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: widget.onTap,
+            ),
           ),
-        ),
-      )
+        )
     ]);
   }
 }
