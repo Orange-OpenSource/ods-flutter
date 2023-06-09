@@ -25,7 +25,7 @@ class _CardSmallState extends State<CardSmall> {
   }
 
   void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>((BuildContext context) {
+    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false, (BuildContext context) {
       return CustomizationBottomSheet(content: _CustomizationContent());
     });
   }
