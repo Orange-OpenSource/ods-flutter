@@ -6,6 +6,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/constants.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class CardSmall extends StatefulWidget {
   const CardSmall({super.key});
@@ -32,12 +33,7 @@ class _CardSmallState extends State<CardSmall> {
   @override
   Widget build(BuildContext context) {
     return CardCustomization(
-      child: Scaffold(
-          key: _scaffoldKey,
-          appBar: AppBar(
-            title: Text(AppLocalizations.of(context)!.cardSmallVariantTitle),
-          ),
-          body: _Body()),
+      child: Scaffold(key: _scaffoldKey, appBar: MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle), body: _Body()),
     );
   }
 }
