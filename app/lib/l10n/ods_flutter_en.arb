@@ -54,6 +54,10 @@
     "type": "text"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c1a17e6 (148 - Add bottomsheet to configure components in application (#163))
 
   "@_COMPONENTS_CUSTOMIZATION": {},
   "componentCustomizeTitle": "Customize",
@@ -71,6 +75,11 @@
     "description": "Component customization element - Subtitle",
     "type": "text"
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7e1c95 (148 - Add bottomsheet to configure components in application (#163))
+>>>>>>> c1a17e6 (148 - Add bottomsheet to configure components in application (#163))
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
