@@ -363,6 +363,29 @@
     "description": "Snackbars Variant - Subtitle",
     "type": "text"
   },
+  "@_COMPONENTS_APP_TOP_BARS": {},
+  "componentAppTopBarsTitle": "App Top Bar",
+  "@componentAppTopBarsTitle": {
+    "description": "Component App Bar - Title",
+    "type": "text"
+  },
+  "componentAppTopBarsDescription": "A navigation bar appears at the top of an app screen, bellow the status bar, and enables navigation through a series of hierarchical screens",
+  "@componentAppTopBarsDescription": {
+    "description": "Component App Top Bars - Description",
+    "type": "text"
+  },
+
+  "@_APP_TOP_BARS_VARIANT": {},
+  "appTopBarsVariantTitle": "App top bar - demo",
+  "@appTopBarsVariantTitle": {
+    "description": "App Top Bars Variant - Title",
+    "type": "text"
+  },
+  "appTopBarsVariantSubtitle": "OdsAppTopBars",
+  "@appTopBarsVariantSubtitle": {
+    "description": "App Top Bars Variant - Subtitle",
+    "type": "text"
+  },
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",

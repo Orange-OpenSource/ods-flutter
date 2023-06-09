@@ -14,6 +14,8 @@ import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_but
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
+import 'app_bars/top/component_top_app_bars.dart';
+
 List<Component> components(BuildContext context) {
   return [
     Component(
@@ -89,6 +91,17 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.textButtonsVariantTitle,
             AppLocalizations.of(context)!.textButtonsVariantSubtitle,
             ComponentTextButtons()),
+            ],
+            ),
+            Component(
+      AppLocalizations.of(context)!.componentAppTopBarsTitle,
+      'assets/il_app_bars_top_generic.png',
+      AppLocalizations.of(context)!.componentAppTopBarsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.appTopBarsVariantTitle,
+            AppLocalizations.of(context)!.appTopBarsVariantSubtitle,
+            ComponentTopAppBars()),
       ],
     ),
     Component(
