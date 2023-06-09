@@ -21,60 +21,11 @@ class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AppBar(
-          title: title,
-          leading: leading,
-          actions: [
-            IconButton(
-              iconSize: 32,
-              icon: const Icon(Icons.account_circle_outlined),
-              onPressed: () {},
-            ),
-          ],
-          centerTitle: true,
-          toolbarHeight: 64, // Customize the toolbar height as needed
-        ),
-        const SizedBox(height: 16),
-        AppBar(
-          title: title,
-          leading: leading,
-          actions: actions,
-          centerTitle: false,
-          toolbarHeight: 64, // Customize the toolbar height as needed
-        ),
-        const SizedBox(height: 16),
-        SizedBox(
-          height: 100,
-          child: CustomScrollView(
-            slivers: [
-              SliverAppBar.medium(
-                title: title,
-                leading: leading,
-                actions: actions,
-                toolbarHeight: 64, // Customize the toolbar height as needed
-              ),
-              const SliverFillRemaining(),
-            ],
-          ),
-        ),
-        const SizedBox(height: 16),
-        SizedBox(
-          height: 130,
-          child: CustomScrollView(
-            slivers: [
-              SliverAppBar.large(
-                title: title,
-                leading: leading,
-                actions: actions,
-                toolbarHeight: 64, // Customize the toolbar height as needed
-              ),
-              const SliverFillRemaining(),
-            ],
-          ),
-        ),
-      ],
+    return SliverAppBar.large(
+      title: title,
+      leading: leading,
+      actions: actions,
+      toolbarHeight: 64, // Customize the toolbar height as needed
     );
   }
 }
