@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +14,16 @@ class CustomizationCounterState extends GetxController {
   }
 
   void increment() {
-    if (count.value < 3) {
-      count.value++;
-      update();
+    if (Platform.isIOS) {
+      if (count.value < 2) {
+        count.value++;
+        update();
+      }
+    } else {
+      if (count.value < 3) {
+        count.value++;
+        update();
+      }
     }
   }
 }
