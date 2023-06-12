@@ -65,6 +65,38 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_BUTTONS": {},
+  "componentButtonsTitle": "Buttons",
+  "@componentButtonsTitle": {
+    "description": "Component Buttons Title",
+    "type": "text"
+  },
+  "componentButtonsDemoElevated": "Elevated",
+  "@componentButtonsDemoElevated": {
+    "description": "Component Buttons Demo TBD",
+    "type": "text"
+  },
+  "componentButtonsDemoHighest": "Highest",
+  "@componentButtonsDemoHighest": {
+    "description": "Component Buttons Demo Highest emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoHigh": "High",
+  "@componentButtonsDemoHigh": {
+    "description": "Component Buttons Demo High emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoMedium": "Medium",
+  "@componentButtonsDemoMedium": {
+    "description": "Component Buttons Demo Medium emphasis",
+    "type": "text"
+  },
+  "componentButtonsDemoLow": "Low",
+  "@componentButtonsDemoLow": {
+    "description": "Component Buttons Demo Low emphasis",
+    "type": "text"
+  },
+
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
   "@componentCardsTitle": {
@@ -375,12 +407,12 @@
     "type": "text"
   },
   "componentAppTopBarsNavigationIcon": "Navigation icon",
-  "@componentCardClickable": {
+  "@componentAppTopBarsNavigationIcon": {
     "description": "Component AppTopBars - Navigation icon customization",
     "type": "text"
   },
   "componentAppTopBarsActionCount": "Action Count",
-  "@componentCardClickable": {
+  "@componentAppTopBarsActionCount": {
     "description": "Component AppTopBars - Action count customization",
     "type": "text"
   },
