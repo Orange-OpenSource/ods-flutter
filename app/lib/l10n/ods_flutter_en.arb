@@ -374,6 +374,16 @@
     "description": "Component App Top Bars - Description",
     "type": "text"
   },
+  "componentAppTopBarsNavigationIcon": "Navigation icon",
+  "@componentCardClickable": {
+    "description": "Component AppTopBars - Navigation icon customization",
+    "type": "text"
+  },
+  "componentAppTopBarsActionCount": "Action Count",
+  "@componentCardClickable": {
+    "description": "Component AppTopBars - Action count customization",
+    "type": "text"
+  },
 
   "@_APP_TOP_BARS_VARIANT": {},
   "appTopBarsVariantTitle": "App top bar - demo",

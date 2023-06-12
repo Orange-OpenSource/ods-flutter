@@ -74,10 +74,11 @@ class _Body extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           Obx(() => OdsAppTopBars(
-                leading: customizationState?.hasSubtitle == true
+                leading: customizationState?.navigationIcon == true
                     ? BackButton()
                     : null,
-                title: const Text('Page title'),
+                title: Text(
+                    AppLocalizations.of(context)!.componentAppTopBarsTitle),
                 actions: actions.sublist(0, state.count.value),
               )),
           SliverList(
@@ -107,18 +108,13 @@ class _CustomizationContent extends StatelessWidget {
     return Column(
       children: [
         SwitchListTile(
-            value: customizationState?.clickable ?? true,
-            title: Text(AppLocalizations.of(context)!.componentCardClickable),
+            value: customizationState?.navigationIcon ?? true,
+            title: Text(AppLocalizations.of(context)!
+                .componentAppTopBarsNavigationIcon),
             onChanged: (bool value) {
-              customizationState?.clickable = value;
+              customizationState?.navigationIcon = value;
             }),
         CustomizationCounter(),
-        SwitchListTile(
-            value: customizationState?.hasSubtitle ?? true,
-            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
-            onChanged: (bool value) {
-              customizationState?.hasSubtitle = value;
-            }),
       ],
     );
   }

@@ -34,20 +34,12 @@ class ComponentTopAppBarsCustomization extends StatefulWidget {
 
 class ComponentTopAppBarsCustomizationState
     extends State<ComponentTopAppBarsCustomization> {
-  bool _hasSubtitle = true;
-  bool _clickable = true;
+  bool _navigationIcon = true;
 
-  bool get hasSubtitle => _hasSubtitle;
-  set hasSubtitle(bool value) {
+  bool get navigationIcon => _navigationIcon;
+  set navigationIcon(bool value) {
     setState(() {
-      _hasSubtitle = value;
-    });
-  }
-
-  bool get clickable => _clickable;
-  set clickable(bool value) {
-    setState(() {
-      _clickable = value;
+      _navigationIcon = value;
     });
   }
 
