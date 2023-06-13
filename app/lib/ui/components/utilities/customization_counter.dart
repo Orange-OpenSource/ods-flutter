@@ -40,23 +40,53 @@ class CustomizationCounter extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Action Count',
-              style: Theme.of(context).textTheme.titleMedium,
+            Expanded(
+              child: ExcludeSemantics(
+                child: Text(
+                  'Action Count',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
             ),
             Row(
               children: [
-                IconButton(
-                  icon: Icon(Icons.remove),
-                  onPressed: controller.decrement,
+                MergeSemantics(
+                  child: Row(
+                    children: [
+                      Obx(
+                        () => Semantics(
+                          value:
+                              '${controller.count.toString()} actions in the top app bar, click to add another one',
+                          child: IconButton(
+                            icon: Icon(Icons.remove),
+                            onPressed: controller.decrement,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Obx(() => Text(
-                      controller.count.toString(),
-                      style: Theme.of(context).textTheme.titleMedium,
-                    )),
-                IconButton(
-                  icon: Icon(Icons.add),
-                  onPressed: controller.increment,
+                ExcludeSemantics(
+                  child: Obx(() => Text(
+                        controller.count.toString(),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      )),
+                ),
+                MergeSemantics(
+                  child: Row(
+                    children: [
+                      Obx(
+                        () => Semantics(
+                          value:
+                              '${controller.count.toString()} action in the top app bar, click to add one',
+                          child: IconButton(
+                            icon: Icon(Icons.add),
+                            onPressed: controller.increment,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
