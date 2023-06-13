@@ -72,33 +72,27 @@ class _Body extends StatelessWidget {
 
     return Semantics(
       checked: state.count.value >= actions.length,
-      child: Scaffold(
-        body: CustomScrollView(
-          slivers: <Widget>[
-            Obx(() => OdsAppTopBars(
-                  leading: customizationState?.navigationIcon == true
-                      ? BackButton()
-                      : null,
-                  title: Text(
-                      AppLocalizations.of(context)!.componentAppTopBarsTitle),
-                  actions: actions.sublist(0, state.count.value),
-                )),
-            SliverList(
-              delegate: SliverChildListDelegate(
-                List<Widget>.generate(10, (index) {
-                  final itemNumber = index.toString();
-                  return ListTile(
-                    title: Text(
-                      'Item #$itemNumber',
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  );
-                }),
-              ),
+      child: Obx(() => Scaffold(
+            appBar: OdsAppTopBars(
+              title: AppLocalizations.of(context)!.componentAppTopBarsTitle,
+              actions: actions.sublist(0, state.count.value),
+              leading: customizationState?.navigationIcon == true
+                  ? BackButton()
+                  : null,
             ),
-          ],
-        ),
-      ),
+            body: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                final itemNumber = index.toString();
+                return ListTile(
+                  title: Text(
+                    'Item #$itemNumber',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                );
+              },
+            ),
+          )),
     );
   }
 }

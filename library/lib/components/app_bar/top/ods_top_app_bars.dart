@@ -1,43 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class OdsAppTopBars extends StatefulWidget {
-
+class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
   const OdsAppTopBars({
-    Key? key,
-    this.title,
-    this.leading,
+    required this.title,
     this.actions,
-    this.useSliverAppBar = true,
-  }) : super(key: key);
-
+    this.leading,
+  });
 
   /// The app bar title displayed.
-  final Widget? title;
-
-  /// The widget displayed at the leading edge of the app bar.
-  /// TODO: For the moment, the fit of the image is handled by the provided image.
-  /// It should be done in the library, but we need help to do that!
-  final Widget? leading;
+  final String title;
 
   /// The optional list of actions displayed on the app bar.
   final List<Widget>? actions;
 
-  /// The flag indicating whether to use a SliverAppBar.
-  final bool useSliverAppBar;
+  /// The optional list of actions displayed on the app bar.
+  final Widget? leading;
 
   @override
-  State<OdsAppTopBars> createState() => _OdsAppTopBarsState();
-}
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
-class _OdsAppTopBarsState extends State<OdsAppTopBars> {
   @override
   Widget build(BuildContext context) {
-
-    return SliverAppBar.large(
-      title: widget.title,
-      leading: widget.leading != null ? widget.leading : Container(),
-      actions: widget.actions,
-      toolbarHeight: 64, // Customize the toolbar height as needed
+    return AppBar(
+      title: Text(title),
+      actions: actions,
+      leading: leading ?? Container(),
     );
   }
 }
