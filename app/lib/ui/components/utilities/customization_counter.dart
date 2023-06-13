@@ -34,36 +34,34 @@ class CustomizationCounter extends StatelessWidget {
     final CustomizationCounterState controller =
         Get.put(CustomizationCounterState());
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 5, top: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            'Action Count',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          Row(
-            children: [
-              IconButton(
-                icon: Icon(Icons.remove),
-
-                ///Use the decrement method of the CounterController class
-                onPressed: controller.decrement,
-              ),
-              Obx(() => Text(
-                    controller.count.toString(),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  )),
-              IconButton(
-                icon: Icon(Icons.add),
-
-                /// Use the increment method of the _CounterWidgetState class
-                onPressed: controller.increment,
-              ),
-            ],
-          ),
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Action Count',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.remove),
+                  onPressed: controller.decrement,
+                ),
+                Obx(() => Text(
+                      controller.count.toString(),
+                      style: Theme.of(context).textTheme.titleMedium,
+                    )),
+                IconButton(
+                  icon: Icon(Icons.add),
+                  onPressed: controller.increment,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
