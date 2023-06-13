@@ -53,12 +53,6 @@
     "description": "Text of button 2 element in components",
     "type": "text"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c1a17e6 (148 - Add bottomsheet to configure components in application (#163))
-
   "@_COMPONENTS_CUSTOMIZATION": {},
   "componentCustomizeTitle": "Customize",
   "@componentCustomizeTitle": {
@@ -75,11 +69,6 @@
     "description": "Component customization element - Subtitle",
     "type": "text"
   },
-<<<<<<< HEAD
-=======
-
->>>>>>> c7e1c95 (148 - Add bottomsheet to configure components in application (#163))
->>>>>>> c1a17e6 (148 - Add bottomsheet to configure components in application (#163))
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
@@ -190,6 +179,11 @@
   "navigationBarVariantSubtitle": "NavigationBar",
   "@navigationBarVariantSubtitle": {
     "description": "Navigation Bar Variant - Subtitle",
+    "type": "text"
+  },
+  "navigationBarCustomizationCount": "Navigation item count",
+  "@navigationBarCustomizationCount": {
+    "description": "Component customization element - Number of items count",
     "type": "text"
   },
   "@_COMPONENTS_RADIOBUTTON": {},

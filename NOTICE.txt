@@ -11,6 +11,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ods-flutter/app/assets/ic_about_info.svg
 ods-flutter/app/assets/ic_components_atom.svg
 ods-flutter/app/assets/ic_guidelines_dna.svg
+ods-flutter/app/assets/ic_heart.svg
 ods-flutter/app/assets/ic_modules_molecule.svg
 ods-flutter/app/assets/il_cards.svg
 ods-flutter/app/assets/il_checkbox.svg
@@ -20,6 +21,10 @@ ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/il_typography.png
 ods-flutter/app/assets/il_navigation_bar.svg
 ods-flutter/app/assets/placeholder.png
+ods-flutter/app/assets/recipes/ic_coffee.svg
+ods-flutter/app/assets/recipes/ic_cooking_pot.svg
+ods-flutter/app/assets/recipes/ic_ice_cream.svg
+ods-flutter/app/assets/recipes/ic_restaurant.svg
 
 ods-flutter/app/assets/1.5x/il_about.png
 ods-flutter/app/assets/1.5x/il_switches.png
