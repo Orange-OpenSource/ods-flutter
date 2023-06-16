@@ -11,6 +11,7 @@ import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.d
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
+import 'package:ods_flutter_demo/ui/components/snackbars/component_snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
 List<Component> components(BuildContext context) {
@@ -88,6 +89,14 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.textButtonsVariantTitle,
             AppLocalizations.of(context)!.textButtonsVariantSubtitle,
             ComponentTextButtons()),
+      AppLocalizations.of(context)!.componentSnackbarsTitle,
+      'assets/il_snackbars.svg',
+      AppLocalizations.of(context)!.componentSnackbarsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.snackbarsVariantTitle,
+            AppLocalizations.of(context)!.snackbarsVariantSubtitle,
+            ComponentSnackbars()),
       ],
     ),
     Component(
