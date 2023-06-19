@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigarion_bar_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
@@ -21,11 +22,13 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.addPostFrameCallback((_) => displayPersistentBottomSheet());
+    SchedulerBinding.instance
+        .addPostFrameCallback((_) => displayPersistentBottomSheet());
   }
 
   void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false, (BuildContext context) {
+    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
+        (BuildContext context) {
       return CustomizationBottomSheet(content: _CustomizationContent());
     });
   }
@@ -35,7 +38,8 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
     return NavigationBarCustomization(
         child: Scaffold(
       key: _scaffoldKey,
-      appBar: MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),
+      appBar:
+          MainAppBar(AppLocalizations.of(context)!.componentNavigationBarTitle),
       body: _NavBarDemo(),
     ));
   }
@@ -59,66 +63,103 @@ class _NavBarDemoState extends State<_NavBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final NavigationBarCustomizationState? customizationState = NavigationBarCustomization.of(context);
+    final NavigationBarCustomizationState? customizationState =
+        NavigationBarCustomization.of(context);
 
-    return Column(/*mainAxisAlignment: MainAxisAlignment.center, */ crossAxisAlignment: CrossAxisAlignment.center, children: [
-      Padding(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(
+          height: 100,
+          child: IndexedStack(
+            index: selectedIndex,
+            children: [
+              Center(child: Text('Coffee Screen')),
+              Center(child: Text('Cooking Pot Screen')),
+              Center(child: Text('Ice Cream Screen')),
+              Center(child: Text('Restaurant Screen')),
+              Center(child: Text('Favorites Screen')),
+            ],
+          ),
+        ),
+        Padding(
           padding: EdgeInsets.all(spacingM),
-          child: Focus(
-              autofocus: false,
-              child: NavigationBar(
-                  selectedIndex: selectedIndex,
-                  onDestinationSelected: (index) {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  },
-                  // destinations: _destinations(context).sublist(0, customizationState?.numberOfItems))))
-                  destinations: _destinationsStatic().sublist(0, customizationState?.numberOfItems))))
-      //_destinations(customizationState?.numberOfItems))))
-    ]);
+          child: Align(
+            alignment: Alignment.center,
+            child: OdsNavigationBar(
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              destinations: _destinations(context)
+                  .sublist(0, customizationState?.numberOfItems),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   List<NavigationDestination> _destinationsStatic() {
     return [
-      NavigationDestination(tooltip: '', icon: Icon(Icons.coffee), label: 'Coffee'),
-      NavigationDestination(tooltip: '', icon: Icon(Icons.soup_kitchen), label: 'Cooking Pot'),
-      NavigationDestination(tooltip: '', icon: Icon(Icons.icecream_outlined), label: 'Ice Cream'),
-      NavigationDestination(tooltip: '', icon: Icon(Icons.restaurant_outlined), label: 'Restaurant'),
-      NavigationDestination(tooltip: '', icon: Icon(Icons.favorite_outlined), label: 'Favorites')
+      NavigationDestination(
+          tooltip: '', icon: Icon(Icons.coffee), label: 'Coffee'),
+      NavigationDestination(
+          tooltip: '', icon: Icon(Icons.soup_kitchen), label: 'Cooking Pot'),
+      NavigationDestination(
+          tooltip: '', icon: Icon(Icons.icecream_outlined), label: 'Ice Cream'),
+      NavigationDestination(
+          tooltip: '',
+          icon: Icon(Icons.restaurant_outlined),
+          label: 'Restaurant'),
+      NavigationDestination(
+          tooltip: '', icon: Icon(Icons.favorite_outlined), label: 'Favorites')
     ];
   }
 
   List<NavigationDestination> _destinations(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
 
-    var activeColorFilter = ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    var activeColorFilter =
+        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     return [
       NavigationDestination(
           tooltip: '',
-          icon: SvgPicture.asset("assets/recipes/ic_coffee.svg", colorFilter: activeColorFilter),
-          selectedIcon: SvgPicture.asset("assets/recipes/ic_coffee.svg", colorFilter: colorFilter),
+          icon: SvgPicture.asset("assets/recipes/ic_coffee.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_coffee.svg",
+              colorFilter: activeColorFilter),
           label: "Coffee"),
       NavigationDestination(
           tooltip: '',
-          icon: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg", colorFilter: activeColorFilter),
-          selectedIcon: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg", colorFilter: colorFilter),
+          icon: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
+              colorFilter: activeColorFilter),
           label: "Cooking Pot"),
       NavigationDestination(
           tooltip: '',
-          icon: SvgPicture.asset("assets/recipes/ic_ice_cream.svg", colorFilter: activeColorFilter),
-          selectedIcon: SvgPicture.asset("assets/recipes/ic_ice_cream.svg", colorFilter: colorFilter),
+          icon: SvgPicture.asset("assets/recipes/ic_ice_cream.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_ice_cream.svg",
+              colorFilter: activeColorFilter),
           label: "Ice Cream"),
       NavigationDestination(
           tooltip: '',
-          icon: SvgPicture.asset("assets/recipes/ic_restaurant.svg", colorFilter: activeColorFilter),
-          selectedIcon: SvgPicture.asset("assets/recipes/ic_restaurant.svg", colorFilter: colorFilter),
+          icon: SvgPicture.asset("assets/recipes/ic_restaurant.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_restaurant.svg",
+              colorFilter: activeColorFilter),
           label: "Restaurant"),
       NavigationDestination(
           tooltip: '',
-          icon: SvgPicture.asset("assets/ic_heart.svg", colorFilter: activeColorFilter),
-          selectedIcon: SvgPicture.asset("assets/ic_heart.svg", colorFilter: colorFilter),
+          icon:
+              SvgPicture.asset("assets/ic_heart.svg", colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/ic_heart.svg",
+              colorFilter: activeColorFilter),
           label: "Favorites"),
     ];
   }
@@ -128,11 +169,13 @@ class _NavBarDemoState extends State<_NavBarDemo> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final NavigationBarCustomizationState? customizationState = NavigationBarCustomization.of(context);
+    final NavigationBarCustomizationState? customizationState =
+        NavigationBarCustomization.of(context);
     return Column(
       children: [
         ComponentCountRow(
-            title: AppLocalizations.of(context)!.navigationBarCustomizationCount,
+            title:
+                AppLocalizations.of(context)!.navigationBarCustomizationCount,
             minCount: NavigationBarCustomizationState.minNavigationItemCount,
             maxCount: NavigationBarCustomizationState.maxNavigationItemCount,
             count: customizationState!.numberOfItems,
