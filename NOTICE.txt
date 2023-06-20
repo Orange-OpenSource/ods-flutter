@@ -11,7 +11,6 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ods-flutter/app/assets/ic_about_info.svg
 ods-flutter/app/assets/ic_components_atom.svg
 ods-flutter/app/assets/ic_guidelines_dna.svg
-ods-flutter/app/assets/ic_heart.svg
 ods-flutter/app/assets/ic_modules_molecule.svg
 ods-flutter/app/assets/il_cards.svg
 ods-flutter/app/assets/il_checkbox.svg
