@@ -30,9 +30,11 @@ class OdsTheme {
       }),
       labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
         if (states.contains(MaterialState.selected)) {
-          return TextStyle(color: lightColorScheme.primary);
+          return TextStyle(
+              color: lightColorScheme.primary, overflow: TextOverflow.ellipsis);
         }
-        return TextStyle(color: lightColorScheme.secondary);
+        return TextStyle(
+            color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -46,7 +48,9 @@ class OdsTheme {
     switchTheme: SwitchThemeData(
         thumbColor: const LightControlFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const LightControlFillColor().resolve(states).withOpacity(_switchTrackOpacity);
+          return const LightControlFillColor()
+              .resolve(states)
+              .withOpacity(_switchTrackOpacity);
         })),
   );
 
@@ -68,9 +72,11 @@ class OdsTheme {
       }),
       labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
         if (states.contains(MaterialState.selected)) {
-          return TextStyle(color: darkColorScheme.primary);
+          return TextStyle(
+              color: darkColorScheme.primary, overflow: TextOverflow.ellipsis);
         }
-        return TextStyle(color: darkColorScheme.secondary);
+        return TextStyle(
+            color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -79,12 +85,16 @@ class OdsTheme {
       selectedItemColor: darkColorScheme.primary,
       unselectedItemColor: darkColorScheme.secondary,
     ),
-    checkboxTheme: const CheckboxThemeData(fillColor: DarkControlFillColor(), checkColor: MaterialStatePropertyAll(black900)),
+    checkboxTheme: const CheckboxThemeData(
+        fillColor: DarkControlFillColor(),
+        checkColor: MaterialStatePropertyAll(black900)),
     radioTheme: const RadioThemeData(fillColor: DarkControlFillColor()),
     switchTheme: SwitchThemeData(
         thumbColor: const DarkControlFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const DarkControlFillColor().resolve(states).withOpacity(_switchTrackOpacity);
+          return const DarkControlFillColor()
+              .resolve(states)
+              .withOpacity(_switchTrackOpacity);
         })),
   );
 }
