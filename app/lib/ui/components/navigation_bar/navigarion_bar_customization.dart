@@ -22,17 +22,21 @@ class NavigationBarCustomization extends StatefulWidget {
   final Widget child;
 
   @override
-  NavigationBarCustomizationState createState() => NavigationBarCustomizationState();
+  NavigationBarCustomizationState createState() =>
+      NavigationBarCustomizationState();
 
   static NavigationBarCustomizationState? of(BuildContext context) {
-    return (context.dependOnInheritedWidgetOfExactType<_NavigationBarCustomization>())?.data;
+    return (context
+            .dependOnInheritedWidgetOfExactType<_NavigationBarCustomization>())
+        ?.data;
   }
 }
 
-class NavigationBarCustomizationState extends State<NavigationBarCustomization> {
-  static get minNavigationItemCount => 3;
+class NavigationBarCustomizationState
+    extends State<NavigationBarCustomization> {
+  static get minNavigationItemCount => 2;
 
-  static get maxNavigationItemCount => 5;
+  static get maxNavigationItemCount => 4;
 
   int _numberOfItems = minNavigationItemCount;
 
