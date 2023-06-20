@@ -69,6 +69,9 @@ class VariantEntry extends StatelessWidget {
         subtitle: ExcludeSemantics(
           child: Text(variant.technicalName),
         ),
+        onTap: () {
+          Get.to(variant.screen);
+        },
       ),
     );
   }
