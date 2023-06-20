@@ -110,10 +110,13 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             SizedBox(height: spacingM),
 
             /// Documention for svg icon
-            Text(
-              'Icon of the navigation bar',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.titleSmall,
+            Semantics(
+              header: true,
+              child: Text(
+                'Icon of the navigation bar',
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
             ),
             SizedBox(height: spacingM),
             Padding(
