@@ -37,12 +37,6 @@ class OdsTheme {
             color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: white100,
-      selectedItemColor: lightColorScheme.primary,
-      unselectedItemColor: lightColorScheme.secondary,
-    ),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
     radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
     switchTheme: SwitchThemeData(
@@ -78,12 +72,6 @@ class OdsTheme {
         return TextStyle(
             color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
-    ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: darkSurfaceDefault,
-      selectedItemColor: darkColorScheme.primary,
-      unselectedItemColor: darkColorScheme.secondary,
     ),
     checkboxTheme: const CheckboxThemeData(
         fillColor: DarkControlFillColor(),
