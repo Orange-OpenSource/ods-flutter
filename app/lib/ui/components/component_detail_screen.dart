@@ -13,30 +13,36 @@ class ComponentDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MainAppBar(component.title),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            displayImage(
-              component.imageResourceName,
-              MediaQuery.of(context).size.width,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(spacingM),
-              child: Text(
-                component.description,
-                style: Theme.of(context).textTheme.bodyLarge,
+      appBar: MainAppBar(component.title),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              displayImage(
+                component.imageResourceName,
+                MediaQuery.of(context).size.width,
               ),
-            ),
-            Expanded(
-                child: ListView.builder(
-              itemCount: component.variants.length,
-              itemBuilder: (BuildContext context, int index) {
-                return VariantEntry(variant: component.variants[index]);
-              },
-            ))
-          ],
-        ));
+              Padding(
+                padding: const EdgeInsets.all(spacingM),
+                child: Text(
+                  component.description,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: component.variants.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return VariantEntry(variant: component.variants[index]);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -47,18 +53,23 @@ class VariantEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.play_circle_outline),
-        ],
-      ),
-      title: Text(variant.title),
-      subtitle: Text(variant.technicalName),
+    return Semantics(
+      button: true,
       onTap: () {
         Get.to(variant.screen);
       },
+      child: ListTile(
+        leading: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.play_circle_outline),
+          ],
+        ),
+        title: Text(variant.title),
+        subtitle: ExcludeSemantics(
+          child: Text(variant.technicalName),
+        ),
+      ),
     );
   }
 }
