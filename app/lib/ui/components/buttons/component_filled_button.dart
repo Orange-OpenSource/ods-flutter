@@ -77,7 +77,9 @@ class ButtonsVariants extends StatelessWidget {
           children: <Widget>[
             componentSpacer,
             FilledButton(
-              onPressed: isDisabled ? null : () {},
+              onPressed: () {
+                // Action à exécuter lorsque le bouton est pressé
+              },
               child: Text("Filled"),
             ),
           ],

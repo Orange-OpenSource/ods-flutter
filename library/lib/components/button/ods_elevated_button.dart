@@ -2,36 +2,81 @@ import 'package:flutter/material.dart';
 
 /// ODS Design Button.
 ///
-///  * [title] Text displayed in the button.
-/// * [enabled], Controls the state of the button. When `false`, this button will not
-///  be clickable.
-/// * [iconButton], If `false`, no icon will be displayed.
-/// * [icon], Widget of the icon.
-/// * [onPressed], used to specified the action when the button is selected.
-class OdsElevatedButton extends StatelessWidget {
+/// Displays a customizable button with an optional icon and a title.
+/// The button can expand to full screen width if specified.
+class OdsElevatedButton extends StatefulWidget {
+  /// Creates an ODS Elevated Button.
+  ///
+  /// * [title] - Text displayed in the button.
+  /// * [fullScreenWidth] - Specifies whether the button should expand to full screen width.
+  /// * [icon] - Widget of the icon.
+  /// * [onPressed] - The action to be executed when the button is pressed.
+  const OdsElevatedButton({
+    Key? key,
+    required this.title,
+    required this.fullScreenWidth,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
+
+  /// The button's title displayed inside the button.
   final String title;
-  final bool enabled;
-  final bool iconButton;
-  final Widget icon;
+
+  /// Specifies whether the button should expand to full screen width.
+  final bool fullScreenWidth;
+
+  /// The optional button's icon.
+  final Widget? icon;
+
+  /// The action to be executed when the button is pressed.
   final Function()? onPressed;
 
-  const OdsElevatedButton(
-      {Key? key,
-      required this.title,
-      required this.enabled,
-      required this.iconButton,
-      required this.icon,
-      this.onPressed})
-      : super(key: key);
+  @override
+  State<OdsElevatedButton> createState() => _OdsElevatedButtonState();
+}
 
+class _OdsElevatedButtonState extends State<OdsElevatedButton> {
   @override
   Widget build(BuildContext context) {
-    return iconButton
-        ? ElevatedButton(
-            onPressed: enabled ? null : onPressed, child: Text(title))
-        : ElevatedButton.icon(
-            onPressed: enabled ? null : onPressed,
-            icon: icon,
-            label: Text(title));
+    if (widget.icon != null && widget.fullScreenWidth == false) {
+      return ElevatedButton.icon(
+        onPressed: widget.onPressed,
+        icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+        label: Text(widget.title),
+      );
+    }
+
+    if (widget.icon != null && widget.fullScreenWidth == true) {
+      return SizedBox(
+        width: double.infinity,
+        child: ElevatedButton.icon(
+          onPressed: widget.onPressed,
+          icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+          label: Text(widget.title),
+        ),
+      );
+    }
+
+    if (widget.fullScreenWidth == true) {
+      return SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          child: Text(widget.title),
+        ),
+      );
+    }
+
+    return ElevatedButton(
+      onPressed: widget.onPressed,
+      child: Text(widget.title),
+    );
+  }
+
+  Widget _colorFilter() {
+    return ColorFiltered(
+      colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
+      child: widget.icon,
+    );
   }
 }
