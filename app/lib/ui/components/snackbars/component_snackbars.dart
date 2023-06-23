@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/component_snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -44,8 +45,9 @@ class _ComponentSnackbarsState extends State<ComponentSnackbars> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //final ComponentSnackbarsCustomizationState? customizationState =
-    ComponentSnackbarsCustomization.of(context);
+    final ComponentSnackbarsCustomizationState? customizationState =
+        ComponentSnackbarsCustomization.of(context);
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,18 +64,16 @@ class _Body extends StatelessWidget {
             width: double.infinity,
             child: TextButton(
               onPressed: () {
-                final snackBar = SnackBar(
-                  behavior: SnackBarBehavior.floating,
-                  width: 400.0,
-                  content: const Text('This is a snackbar'),
-                  action: SnackBarAction(
-                    label: 'Close',
-                    onPressed: () {},
-                  ),
+                OdsSnackbars.showSnackbar(
+                  context: context,
+                  content: 'This is a snackbar',
+                  label: customizationState?.hasActionButton == true
+                      ? 'Close'
+                      : null,
+                  onPressed: customizationState?.hasActionButton == true
+                      ? () {}
+                      : null,
                 );
-
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
               child: Text(
                 'Show snackbar',
@@ -95,17 +95,12 @@ class _CustomizationContent extends StatelessWidget {
     return Column(
       children: [
         SwitchListTile(
-            value: customizationState?.clickable ?? true,
-            title: Text(AppLocalizations.of(context)!.componentCardClickable),
+            value: customizationState?.hasActionButton ?? true,
+            title: Text(AppLocalizations.of(context)!
+                .componentSnackBarsCustomizeAction),
             onChanged: (bool value) {
-              customizationState?.clickable = value;
+              customizationState?.hasActionButton = value;
             }),
-        SwitchListTile(
-            value: customizationState?.hasSubtitle ?? true,
-            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
-            onChanged: (bool value) {
-              customizationState?.hasSubtitle = value;
-            })
       ],
     );
   }
