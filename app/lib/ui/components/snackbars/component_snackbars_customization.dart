@@ -34,20 +34,12 @@ class ComponentSnackbarsCustomization extends StatefulWidget {
 
 class ComponentSnackbarsCustomizationState
     extends State<ComponentSnackbarsCustomization> {
-  bool _hasSubtitle = true;
-  bool _clickable = true;
+  bool _hasActionButton = true;
 
-  bool get hasSubtitle => _hasSubtitle;
-  set hasSubtitle(bool value) {
+  bool get hasActionButton => _hasActionButton;
+  set hasActionButton(bool value) {
     setState(() {
-      _hasSubtitle = value;
-    });
-  }
-
-  bool get clickable => _clickable;
-  set clickable(bool value) {
-    setState(() {
-      _clickable = value;
+      _hasActionButton = value;
     });
   }
 
