@@ -306,6 +306,11 @@
     "description": "Component Snackbars - Description",
     "type": "text"
   },
+  "componentSnackBarsCustomizeAction": "Action button",
+  "@componentCustomizeEnable": {
+    "description": "Component customization snackbars - Action Buttons",
+    "type": "text"
+  },
 
   "@_SNACKBARS_VARIANT": {},
   "snackbarsVariantTitle": "Snackbars",
