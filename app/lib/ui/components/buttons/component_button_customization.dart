@@ -31,7 +31,7 @@ class ButtonCustomization extends StatefulWidget {
 }
 
 class ButtonCustomizationState extends State<ButtonCustomization> {
-  bool _hasIcon = true;
+  bool _hasIcon = false;
   bool _hasFullScreen = false;
   bool _hasEnabled = true;
 
