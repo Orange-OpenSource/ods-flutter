@@ -37,6 +37,8 @@ class OdsTheme {
             color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
+    bottomNavigationBarTheme:
+        const BottomNavigationBarThemeData(backgroundColor: white100),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
     radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
     switchTheme: SwitchThemeData(
@@ -49,45 +51,49 @@ class OdsTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
-      colorScheme: darkColorScheme,
-      typography: odsTypography,
-      scaffoldBackgroundColor: black900,
-      appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
-      navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: black900,
-        elevation: 3.0,
-        indicatorColor: Colors.transparent,
-        indicatorShape: null,
-        iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
-          if (states.contains(MaterialState.selected)) {
-            return IconThemeData(color: darkColorScheme.primary);
-          }
-          return IconThemeData(color: darkColorScheme.secondary);
-        }),
-        labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
-          if (states.contains(MaterialState.selected)) {
-            return TextStyle(
-                color: darkColorScheme.primary,
-                overflow: TextOverflow.ellipsis);
-          }
+    colorScheme: darkColorScheme,
+    typography: odsTypography,
+    scaffoldBackgroundColor: black900,
+    appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
+    bottomNavigationBarTheme:
+        const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: black900,
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return IconThemeData(color: darkColorScheme.primary);
+        }
+        return IconThemeData(color: darkColorScheme.secondary);
+      }),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+        if (states.contains(MaterialState.selected)) {
           return TextStyle(
-              color: darkColorScheme.secondary,
-              overflow: TextOverflow.ellipsis);
-        }),
-      ),
-      checkboxTheme: const CheckboxThemeData(
-          fillColor: DarkControlFillColor(),
-          checkColor: MaterialStatePropertyAll(black900)),
-      radioTheme: const RadioThemeData(fillColor: DarkControlFillColor()),
-      switchTheme: SwitchThemeData(
-          thumbColor: const DarkControlFillColor(),
-          trackColor: MaterialStateColor.resolveWith((states) {
-            return const DarkControlFillColor()
-                .resolve(states)
-                .withOpacity(_switchTrackOpacity);
-          })),
-      snackBarTheme:
-          SnackBarThemeData(actionTextColor: lightColorScheme.primary));
+              color: darkColorScheme.primary, overflow: TextOverflow.ellipsis);
+        }
+        return TextStyle(
+            color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
+      }),
+    ),
+    checkboxTheme: const CheckboxThemeData(
+        fillColor: DarkControlFillColor(),
+        checkColor: MaterialStatePropertyAll(black900)),
+    radioTheme: const RadioThemeData(fillColor: DarkControlFillColor()),
+    switchTheme: SwitchThemeData(
+        thumbColor: const DarkControlFillColor(),
+        trackColor: MaterialStateColor.resolveWith((states) {
+          return const DarkControlFillColor()
+              .resolve(states)
+              .withOpacity(_switchTrackOpacity);
+        })),
+    snackBarTheme: SnackBarThemeData(
+      actionTextColor: lightColorScheme.primary,
+      elevation: 4,
+      behavior: SnackBarBehavior.floating,
+    ),
+  );
 }
 
 /// Light theme fill color used by selection controls: Checkboxes, Radio Buttons

@@ -35,6 +35,9 @@ class ComponentSnackbarsCustomization extends StatefulWidget {
 class ComponentSnackbarsCustomizationState
     extends State<ComponentSnackbarsCustomization> {
   bool _hasActionButton = true;
+  bool _hasTwoLines = false;
+  bool _hasSingleLine = true;
+  bool _hasLongerAction = true;
 
   bool get hasActionButton => _hasActionButton;
   set hasActionButton(bool value) {
@@ -42,6 +45,31 @@ class ComponentSnackbarsCustomizationState
       _hasActionButton = value;
     });
   }
+
+  bool get hasSingleLine => _hasSingleLine;
+  set hasSingleLine(bool value) {
+    setState(() {
+      _hasSingleLine = value;
+    });
+  }
+
+  bool get hasTwoLines => _hasTwoLines;
+  set hasTwoLines(bool value) {
+    setState(() {
+      _hasTwoLines = value;
+    });
+  }
+
+  bool get hasLongerAction => _hasLongerAction;
+  set hasLongerAction(bool value) {
+    setState(
+      () {
+        _hasLongerAction = value;
+      },
+    );
+  }
+
+  bool get isActionButtonEnabled => (hasSingleLine || hasTwoLines);
 
   @override
   Widget build(BuildContext context) {
