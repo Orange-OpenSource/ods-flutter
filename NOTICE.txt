@@ -21,6 +21,7 @@ ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/il_typography.png
 ods-flutter/app/assets/placeholder.png
 ods-flutter/app/assets/il_navigation_bar.png
+ods-flutter/app/assets/il_app_bars_top_generic.png
 ods-flutter/app/assets/recipes/ic_coffee.svg
 ods-flutter/app/assets/recipes/ic_cooking_pot.svg
 ods-flutter/app/assets/recipes/ic_ice_cream.svg
@@ -32,21 +33,25 @@ ods-flutter/app/assets/1.5x/il_switches.png
 ods-flutter/app/assets/1.5x/il_typography.png
 ods-flutter/app/assets/1.5x/placeholder.png
 ods-flutter/app/assets/1.5x/il_navigation_bar.png
+ods-flutter/app/assets/1.5x/il_app_bars_top_generic.png
 ods-flutter/app/assets/2.0x/il_about.png
 ods-flutter/app/assets/2.0x/il_switches.png
 ods-flutter/app/assets/2.0x/il_typography.png
 ods-flutter/app/assets/2.0x/placeholder.png
 ods-flutter/app/assets/2.0x/il_navigation_bar.png
+ods-flutter/app/assets/2.0x/il_app_bars_top_generic.png
 ods-flutter/app/assets/3.0x/il_about.png
 ods-flutter/app/assets/3.0x/il_switches.png
 ods-flutter/app/assets/3.0x/il_typography.png
 ods-flutter/app/assets/3.0x/placeholder.png
 ods-flutter/app/assets/3.0x/il_navigation_bar.png
+ods-flutter/app/assets/3.0x/il_app_bars_top_generic.png
 ods-flutter/app/assets/4.0x/il_about.png
 ods-flutter/app/assets/4.0x/il_switches.png
 ods-flutter/app/assets/4.0x/il_typography.png
 ods-flutter/app/assets/4.0x/placeholder.png
 ods-flutter/app/assets/4.0x/il_navigation_bar.png
+ods-flutter/app/assets/4.0x/il_app_bars_top_generic.png
 
 
 ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/App-Store-alpha-512@2x.png
