@@ -11,7 +11,7 @@ import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.d
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
-import 'package:ods_flutter_demo/ui/components/snackbars/component_snackbars.dart';
+import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
 List<Component> components(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
-import 'package:ods_flutter_demo/ui/components/snackbars/component_snackbars_customization.dart';
+import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
