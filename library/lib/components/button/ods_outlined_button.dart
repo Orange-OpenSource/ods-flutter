@@ -29,7 +29,7 @@ class OdsOutlinedButton extends StatefulWidget {
   final Widget? icon;
 
   /// The action to be executed when the button is pressed.
-  final Function()? onPressed;
+  final void Function()? onPressed;
 
   @override
   State<OdsOutlinedButton> createState() => _OdsOutlinedButtonState();
