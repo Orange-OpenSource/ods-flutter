@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/component_filled_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/elevated_button.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/filled_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/filled_tonal_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/outlined_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/text_button.dart';
