@@ -81,7 +81,8 @@ class _SnackBarsVariants extends StatelessWidget {
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbars.showSnackbarSingleLine(
                   context: context,
-                  content: 'Single lines snackbar',
+                  content: AppLocalizations.of(context)!
+                      .componentSnackbarsSingleText,
                   label: customizationState?.hasActionButton == true
                       ? 'Close'
                       : null,
@@ -93,7 +94,8 @@ class _SnackBarsVariants extends StatelessWidget {
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbars.showSnackbarTwoLines(
                   context: context,
-                  content: 'Two lines snackbar with action',
+                  content: AppLocalizations.of(context)!
+                      .componentSnackbarsTwoLineActionText,
                   label: customizationState?.hasActionButton == true
                       ? 'Close'
                       : null,
@@ -105,7 +107,8 @@ class _SnackBarsVariants extends StatelessWidget {
               if (customizationState?.hasLongerAction == true) {
                 OdsSnackbars.showSnackbarLongerAction(
                   context: context,
-                  content: 'Two lines snackbar with longer action',
+                  content: AppLocalizations.of(context)!
+                      .componentSnackbarsTwoLineLongerActionText,
                   label: 'Longer action',
                   onPressed: () {},
                 );
