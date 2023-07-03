@@ -200,7 +200,7 @@
     "type": "text"
   },
 
-  "checkboxesVariantTitleInformation": "Use checkBoxListTitle or Checkbox",
+  "checkboxesVariantTitleInformation": "Use CheckboxListTitle or Checkbox",
   "@checkboxesVariantTitleInformation": {
     "description": "Checkboxes Variant - Information",
     "type": "text"
