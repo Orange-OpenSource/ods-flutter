@@ -3,7 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/button/ods_elevated_button.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/component_button_customization.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 import '../utilities/customization_bottom_sheet.dart';
