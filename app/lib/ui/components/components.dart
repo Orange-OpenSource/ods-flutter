@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/component_elevated_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/component_filled_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/component_filled_tonal_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/component_outlined_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/component_text_button.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/elevated_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
