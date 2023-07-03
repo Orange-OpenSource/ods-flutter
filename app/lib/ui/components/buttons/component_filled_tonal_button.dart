@@ -61,7 +61,7 @@ class _Body extends StatelessWidget {
         padding:
             const EdgeInsets.only(left: 15, top: 25, right: 15, bottom: 15.0),
         child: OdsFilledTonalButton(
-          title: 'BUTTON',
+          title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
           icon: customizationState?.hasIcon == true
               ? SvgPicture.asset('assets/ic_about_info.svg',
                   width: 24, height: 24, colorFilter: colorFilter)

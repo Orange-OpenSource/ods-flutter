@@ -227,6 +227,11 @@
     "description": "Component customization element - Icon",
     "type": "text"
   },
+  "componentButtonsExampleTitle": "BUTTON",
+  "@componentButtonsExampleTitle": {
+    "description": "Component Buttons example - Title",
+    "type": "text"
+  },
   "componentCustomizeFullScreen": "Full screen width",
   "@componentCustomizeFullScreen": {
     "description": "Component customization element - Full screen width",
