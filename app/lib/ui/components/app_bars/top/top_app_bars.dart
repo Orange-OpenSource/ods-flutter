@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter_demo/main.dart';
-import 'package:ods_flutter_demo/ui/components/app_bars/top/component_top_app_bars_customization.dart';
+import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_counter.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';

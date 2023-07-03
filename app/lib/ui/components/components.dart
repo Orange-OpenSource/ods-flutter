@@ -14,7 +14,7 @@ import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_but
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
-import 'app_bars/top/component_top_app_bars.dart';
+import 'app_bars/top/top_app_bars.dart';
 
 List<Component> components(BuildContext context) {
   return [
