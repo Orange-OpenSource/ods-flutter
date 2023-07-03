@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -50,7 +51,7 @@ class _Body extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(spacingM),
             child: Text(
               'Customize the snackbar before displaying it',
               style: Theme.of(context).textTheme.bodyLarge,
