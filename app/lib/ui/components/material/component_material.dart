@@ -21,11 +21,6 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
       appBar: MainAppBar('Material components'),
       body: ListView(
         children: [
-          BottomNavigations(
-            selectedIndex: 1,
-            isExampleBar: true,
-            isBadgeExample: true,
-          ),
           Buttons(),
           ButtonsIcons(),
           ButtonsFab(),
@@ -530,89 +525,6 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
             ],
           ),
         ));
-  }
-}
-
-class BottomNavigations extends StatefulWidget {
-  const BottomNavigations({
-    super.key,
-    this.onSelectItem,
-    required this.selectedIndex,
-    required this.isExampleBar,
-    this.isBadgeExample = false,
-  });
-
-  final void Function(int)? onSelectItem;
-  final int selectedIndex;
-  final bool isExampleBar;
-  final bool isBadgeExample;
-
-  @override
-  State<BottomNavigations> createState() => _BottomNavigationsState();
-}
-
-class _BottomNavigationsState extends State<BottomNavigations> {
-  late int selectedIndex;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedIndex = widget.selectedIndex;
-  }
-
-  @override
-  void didUpdateWidget(covariant BottomNavigations oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.selectedIndex != oldWidget.selectedIndex) {
-      selectedIndex = widget.selectedIndex;
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    Widget navigationBar = Focus(
-      autofocus: !(widget.isExampleBar || widget.isBadgeExample),
-      child: NavigationBar(
-        selectedIndex: selectedIndex,
-        onDestinationSelected: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-          if (!widget.isExampleBar) widget.onSelectItem!(index);
-        },
-        destinations: [
-          NavigationDestination(
-            tooltip: '',
-            icon: Icon(Icons.widgets_outlined),
-            label: 'Components',
-            selectedIcon: Icon(Icons.widgets),
-          ),
-          NavigationDestination(
-            tooltip: '',
-            icon: Icon(Icons.format_paint_outlined),
-            label: 'Color',
-            selectedIcon: Icon(Icons.format_paint),
-          ),
-          NavigationDestination(
-            tooltip: '',
-            icon: Icon(Icons.text_snippet_outlined),
-            label: 'Typography',
-            selectedIcon: Icon(Icons.text_snippet),
-          ),
-          NavigationDestination(
-            tooltip: '',
-            icon: Icon(Icons.invert_colors_on_outlined),
-            label: 'Elevation',
-            selectedIcon: Icon(Icons.opacity),
-          )
-        ],
-      ),
-    );
-
-    return Semantics(
-      header: true,
-      child: _Component(name: 'Bottom navigation', child: navigationBar),
-    );
   }
 }
 
@@ -1252,6 +1164,7 @@ class ButtonAnchorExample extends StatelessWidget {
 
 class NavigationDrawers extends StatelessWidget {
   const NavigationDrawers({super.key, required this.scaffoldKey});
+
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
@@ -1607,6 +1520,7 @@ enum ColorLabel {
   grey('Grey', Colors.grey);
 
   const ColorLabel(this.label, this.color);
+
   final String label;
   final Color color;
 }
@@ -1621,6 +1535,7 @@ enum IconLabel {
   heart('Heart', Icons.favorite);
 
   const IconLabel(this.label, this.icon);
+
   final String label;
   final IconData icon;
 }

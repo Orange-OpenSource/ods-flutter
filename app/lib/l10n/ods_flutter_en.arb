@@ -4,7 +4,6 @@
     "description": "App name",
     "type": "text"
   },
-
   "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "@bottomNavigationGuideline": {
@@ -26,26 +25,23 @@
     "description": "Bottom Navigation bar item - About",
     "type": "text"
   },
-
   "@_GUIDELINES_SCREEN": {},
   "guidelinesTypography": "Typography",
-    "@guidelinesTypography": {
-      "description": "Guidelines typography screen title",
-      "type": "text"
-    },
+  "@guidelinesTypography": {
+    "description": "Guidelines typography screen title",
+    "type": "text"
+  },
   "guidelinesTypographyDescription": "TODO You should use Roboto in your app, which is the Android system font...",
-    "@guidelinesTypographyDescription": {
-      "description": "Guidelines typography screen - Explanation text",
-      "type": "text"
-    },
-
+  "@guidelinesTypographyDescription": {
+    "description": "Guidelines typography screen - Explanation text",
+    "type": "text"
+  },
   "@_COMPONENTS_SCREEN": {},
   "componentScreenTitle": "ODS Components",
   "@componentScreenTitle": {
     "description": "Components Screen - Title",
     "type": "text"
   },
-
   "@_COMPONENTS_ELEMENTS": {},
   "componentElementButton1": "Button 1",
   "@componentElementButton1": {
@@ -57,7 +53,6 @@
     "description": "Text of button 2 element in components",
     "type": "text"
   },
-
   "@_COMPONENTS_CUSTOMIZATION": {},
   "componentCustomizeTitle": "Customize",
   "@componentCustomizeTitle": {
@@ -74,7 +69,6 @@
     "description": "Component customization element - Subtitle",
     "type": "text"
   },
-
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
   "@componentButtonsTitle": {
@@ -106,7 +100,6 @@
     "description": "Component Buttons Demo Low emphasis",
     "type": "text"
   },
-
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
   "@componentCardsTitle": {
@@ -123,8 +116,6 @@
     "description": "Component Card - Clickable customization",
     "type": "text"
   },
-
-
   "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Small card",
   "@cardSmallVariantTitle": {
@@ -146,7 +137,6 @@
     "description": "Component - Vertical image first card - Technical subtitle",
     "type": "text"
   },
-
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Checkboxes",
   "@componentCheckboxesTitle": {
@@ -158,7 +148,6 @@
     "description": "Component Checkboxes - Description",
     "type": "text"
   },
-
   "@_CHECKBOXES_VARIANT": {},
   "checkboxesVariantTitle": "Checkboxes",
   "@checkboxesVariantTitle": {
@@ -170,7 +159,48 @@
     "description": "Checkboxes Variant - Subtitle",
     "type": "text"
   },
-
+  "@_COMPONENTS_NAVIGATION_BAR": {},
+  "componentNavigationBarTitle": "Bar: Navigation",
+  "@componentNavigationBarTitle": {
+    "description": "Component Navigation Bar - Title",
+    "type": "text"
+  },
+  "componentNavigationBarDescription": "Enable users to quickly and directly explore top-level destinations.",
+  "@componentNavigationBarDescription": {
+    "description": "Component Navigation Bar - Description",
+    "type": "text"
+  },
+  "@NAVIGATION_BAR_VARIANT": {},
+  "navigationBarVariantTitle": "Bar: Navigation",
+  "@navigationBarVariantTitle": {
+    "description": "Navigation Bar Variant - Title",
+    "type": "text"
+  },
+  "navigationBarVariantSubtitle": "NavigationBar",
+  "@navigationBarVariantSubtitle": {
+    "description": "Navigation Bar Variant - Subtitle",
+    "type": "text"
+  },
+  "navigationBarVariantSubtitleExample": "Icon of the navigation bar",
+  "@navigationBarVariantSubtitleExample": {
+    "description": "Navigation Bar Variant Example - Subtitle",
+    "type": "text"
+  },
+  "navigationBarVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
+  "@navigationBarVariantDescriptionSvgExample": {
+    "description": "Navigation Bar Variant Example - Description Svg",
+    "type": "text"
+  },
+  "navigationBarVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
+  "@navigationBarVariantDescriptionPngExample": {
+    "description": "Navigation Bar Variant Example - Description PNG",
+    "type": "text"
+  },
+  "navigationBarCustomizationCount": "Navigation item count",
+  "@navigationBarCustomizationCount": {
+    "description": "Component customization element - Number of items count",
+    "type": "text"
+  },
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Radio buttons",
   "@componentRadioButtonsTitle": {
@@ -182,7 +212,6 @@
     "description": "Component Radio Buttons - Description",
     "type": "text"
   },
-
   "@_RADIOBUTTON_VARIANT": {},
   "radioButtonVariantTitle": "Radio buttons",
   "@radioButtonVariantTitle": {
@@ -194,7 +223,6 @@
     "description": "Radio buttons Variant - Subtitle",
     "type": "text"
   },
-
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
   "@componentSwitchesTitle": {
@@ -206,7 +234,6 @@
     "description": "Component Switches - Description",
     "type": "text"
   },
-
   "@_SWITCHES_VARIANT": {},
   "switchesVariantTitle": "Switches",
   "@switchesVariantTitle": {
@@ -218,7 +245,6 @@
     "description": "Switches Variant - Subtitle",
     "type": "text"
   },
-
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
   "@componentMaterialsTitle": {
@@ -230,7 +256,6 @@
     "description": "Component Materials - Description",
     "type": "text"
   },
-
   "@_MATERIALS_VARIANT": {},
   "materialsVariantTitle": "Others",
   "@materialsVariantTitle": {
@@ -242,7 +267,6 @@
     "description": "Materials Variant - Subtitle",
     "type": "text"
   },
-
   "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "Orange Design System Flutter App",
   "@aboutScreenTitle": {

@@ -17,8 +17,26 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: white100,
     appBarTheme: const AppBarTheme(backgroundColor: white100),
-    bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(backgroundColor: white100),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: white100,
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return IconThemeData(color: lightColorScheme.primary);
+        }
+        return IconThemeData(color: lightColorScheme.secondary);
+      }),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return TextStyle(
+              color: lightColorScheme.primary, overflow: TextOverflow.ellipsis);
+        }
+        return TextStyle(
+            color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
+      }),
+    ),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
     radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
     switchTheme: SwitchThemeData(
@@ -35,8 +53,26 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: black900,
     appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
-    bottomNavigationBarTheme:
-        const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: black900,
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return IconThemeData(color: darkColorScheme.primary);
+        }
+        return IconThemeData(color: darkColorScheme.secondary);
+      }),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
+        if (states.contains(MaterialState.selected)) {
+          return TextStyle(
+              color: darkColorScheme.primary, overflow: TextOverflow.ellipsis);
+        }
+        return TextStyle(
+            color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
+      }),
+    ),
     checkboxTheme: const CheckboxThemeData(
         fillColor: DarkControlFillColor(),
         checkColor: MaterialStatePropertyAll(black900)),
