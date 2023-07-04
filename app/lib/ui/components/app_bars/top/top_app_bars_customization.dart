@@ -35,11 +35,23 @@ class ComponentTopAppBarsCustomization extends StatefulWidget {
 class ComponentTopAppBarsCustomizationState
     extends State<ComponentTopAppBarsCustomization> {
   bool _navigationIcon = true;
+  static get minNavigationItemCount => 0;
+  static get maxNavigationItemCount => 2;
 
   bool get navigationIcon => _navigationIcon;
   set navigationIcon(bool value) {
     setState(() {
       _navigationIcon = value;
+    });
+  }
+
+  int _numberOfItems = minNavigationItemCount;
+
+  int get numberOfItems => _numberOfItems;
+
+  set numberOfItems(int value) {
+    setState(() {
+      _numberOfItems = value;
     });
   }
 

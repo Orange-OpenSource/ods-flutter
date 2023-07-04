@@ -1,9 +1,14 @@
-//fun ComponentCountRow(
-
 import 'package:flutter/material.dart';
 
 class ComponentCountRow extends StatefulWidget {
-  ComponentCountRow({Key? key, required this.title, this.count = 1, this.minCount = 1, this.maxCount = 100, this.onChanged}) : super(key: key);
+  ComponentCountRow(
+      {Key? key,
+      required this.title,
+      this.count = 1,
+      this.minCount = 1,
+      this.maxCount = 100,
+      this.onChanged})
+      : super(key: key);
 
   final String title;
 
@@ -55,9 +60,17 @@ class _ComponentCountRowState extends State<ComponentCountRow> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(child: Text(widget.title)),
-          MaterialButton(minWidth: 40, height: 40, onPressed: _count > widget.minCount ? _dec : null, child: Icon(Icons.remove_circle_outline_outlined)),
+          MaterialButton(
+              minWidth: 40,
+              height: 40,
+              onPressed: _count > widget.minCount ? _dec : null,
+              child: Icon(Icons.remove_circle_outline_outlined)),
           Text("$_count"),
-          MaterialButton(minWidth: 40, height: 40, onPressed: _count < widget.maxCount ? _inc : null, child: Icon(Icons.add_circle_outline)),
+          MaterialButton(
+              minWidth: 40,
+              height: 40,
+              onPressed: _count < widget.maxCount ? _inc : null,
+              child: Icon(Icons.add_circle_outline)),
         ],
       ),
     );

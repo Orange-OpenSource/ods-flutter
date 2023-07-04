@@ -428,6 +428,11 @@
     "description": "App Top Bars Variant - Subtitle",
     "type": "text"
   },
+  "appTopBarsCustomizationCount": "Action count",
+  "@appTopBarsCustomizationCount": {
+    "description": "Component customization element - Number of items count",
+    "type": "text"
+  },
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
