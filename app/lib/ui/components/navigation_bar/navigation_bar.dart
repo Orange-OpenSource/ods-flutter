@@ -113,7 +113,8 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Semantics(
               header: true,
               child: Text(
-                'Icon of the navigation bar',
+                AppLocalizations.of(context)!
+                    .navigationBarVariantSubtitleExample,
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
@@ -122,7 +123,8 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                'If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:',
+                AppLocalizations.of(context)!
+                    .navigationBarVariantDescriptionSvgExample,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
@@ -138,7 +140,8 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                'For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.',
+                AppLocalizations.of(context)!
+                    .navigationBarVariantDescriptionPngExample,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),

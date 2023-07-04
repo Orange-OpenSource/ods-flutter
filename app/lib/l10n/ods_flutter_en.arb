@@ -181,6 +181,21 @@
     "description": "Navigation Bar Variant - Subtitle",
     "type": "text"
   },
+  "navigationBarVariantSubtitleExample": "Icon of the navigation bar",
+  "@navigationBarVariantSubtitleExample": {
+    "description": "Navigation Bar Variant Example - Subtitle",
+    "type": "text"
+  },
+  "navigationBarVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
+  "@navigationBarVariantDescriptionSvgExample": {
+    "description": "Navigation Bar Variant Example - Description Svg",
+    "type": "text"
+  },
+  "navigationBarVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
+  "@navigationBarVariantDescriptionPngExample": {
+    "description": "Navigation Bar Variant Example - Description PNG",
+    "type": "text"
+  },
   "navigationBarCustomizationCount": "Navigation item count",
   "@navigationBarCustomizationCount": {
     "description": "Component customization element - Number of items count",
