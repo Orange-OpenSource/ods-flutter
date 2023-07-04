@@ -21,7 +21,7 @@
 
 ## Status
 
-[![Tests Status](https://img.shields.io/github/actions/workflow/status/Orange-OpenSource/ods-flutter/tests.yml?branch=main&label=Flutter%20Tests&logo=github)](https://github.com/Orange-OpenSource/ods-flutter/actions/workflows/tests.yml?query=branch%3Amain)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/Orange-OpenSource/ods-flutter/build.yml?branch=main&label=Flutter%20Build&logo=github)](https://github.com/Orange-OpenSource/ods-flutter/actions/workflows/build.yml?query=branch%3Amain)
 
 ## Content
 
