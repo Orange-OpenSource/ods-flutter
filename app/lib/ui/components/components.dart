@@ -89,6 +89,9 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.textButtonsVariantTitle,
             AppLocalizations.of(context)!.textButtonsVariantSubtitle,
             ComponentTextButtons()),
+      ],
+    ),
+    Component(
       AppLocalizations.of(context)!.componentSnackbarsTitle,
       'assets/il_snackbars.svg',
       AppLocalizations.of(context)!.componentSnackbarsDescription,
