@@ -64,42 +64,7 @@
     "description": "Component customization element - Subtitle",
     "type": "text"
   },
-  "componentElementSubtitle": "Subtitle",
-  "@componentCustomizeSubtitle": {
-    "description": "Component customization element - Subtitle",
-    "type": "text"
-  },
-  "@_COMPONENTS_BUTTONS": {},
-  "componentButtonsTitle": "Buttons",
-  "@componentButtonsTitle": {
-    "description": "Component Buttons Title",
-    "type": "text"
-  },
-  "componentButtonsDemoElevated": "Elevated",
-  "@componentButtonsDemoElevated": {
-    "description": "Component Buttons Demo TBD",
-    "type": "text"
-  },
-  "componentButtonsDemoHighest": "Highest",
-  "@componentButtonsDemoHighest": {
-    "description": "Component Buttons Demo Highest emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoHigh": "High",
-  "@componentButtonsDemoHigh": {
-    "description": "Component Buttons Demo High emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoMedium": "Medium",
-  "@componentButtonsDemoMedium": {
-    "description": "Component Buttons Demo Medium emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoLow": "Low",
-  "@componentButtonsDemoLow": {
-    "description": "Component Buttons Demo Low emphasis",
-    "type": "text"
-  },
+
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
   "@componentCardsTitle": {
@@ -245,6 +210,91 @@
     "description": "Switches Variant - Subtitle",
     "type": "text"
   },
+
+  "@_COMPONENTS_BUTTONS": {},
+  "componentButtonsTitle": "Buttons",
+  "@componentButtonsTitle": {
+    "description": "Component Buttons - Title",
+    "type": "text"
+  },
+  "componentButtonsDescription": "A button allows a user to perform an action or to navigate to another page. It contains a text label and supporting icon can be displayed",
+  "@componentButtonsDescription": {
+    "description": "Component Buttons - Description",
+    "type": "text"
+  },
+  "componentCustomizeIcon": "Icon",
+  "@componentCustomizeIcon": {
+    "description": "Component customization element - Icon",
+    "type": "text"
+  },
+  "componentButtonsExampleTitle": "BUTTON",
+  "@componentButtonsExampleTitle": {
+    "description": "Component Buttons example - Title",
+    "type": "text"
+  },
+  "componentCustomizeFullScreen": "Full screen width",
+  "@componentCustomizeFullScreen": {
+    "description": "Component customization element - Full screen width",
+    "type": "text"
+  },
+  "componentCustomizeEnable": "Enable",
+  "@componentCustomizeEnable": {
+    "description": "Component customization element - Enable",
+    "type": "text"
+  },
+
+  "@_BUTTONS_VARIANT": {},
+  "elevatedButtonsVariantTitle": "Elevated Buttons",
+  "@elevatedButtonsVariantTitle": {
+    "description": "Component - Elevated Buttons - Title",
+    "type": "text"
+  },
+  "elevatedButtonsVariantSubtitle": "OdsElevatedButton",
+  "@elevatedButtonsVariantSubtitle": {
+    "description": "Component - Elevated Buttons - Technical subtitle",
+    "type": "text"
+  },
+  "filledButtonsVariantTitle": "FilledButtons",
+  "@filledButtonsVariantTitle": {
+    "description": "Component - Filled Buttons - Title",
+    "type": "text"
+  },
+  "filledButtonsVariantSubtitle": "OdsFilledButton",
+  "@filledButtonsVariantSubtitle": {
+    "description": "Component - Filled Buttons - Technical subtitle",
+    "type": "text"
+  },
+  "filledTonalButtonsVariantTitle": "Filled Tonal Buttons",
+  "@filledTonalButtonsVariantTitle": {
+    "description": "Component - Filled Tonal Buttons - Title",
+    "type": "text"
+  },
+  "filledTonalButtonsVariantSubtitle": "OdsFilledTonalButton",
+  "@filledTonalButtonsVariantSubtitle": {
+    "description": "Component - Filled Tonal Buttons - Technical subtitle",
+    "type": "text"
+  },
+  "outlinedButtonsVariantTitle": "Outlined Buttons",
+  "@outlinedButtonsVariantTitle": {
+    "description": "Component - Outlined Buttons - Title",
+    "type": "text"
+  },
+  "outlinedButtonsVariantSubtitle": "OdsOutlinedButton",
+  "@outlinedButtonsVariantSubtitle": {
+    "description": "Component - Text Buttons - Technical subtitle",
+    "type": "text"
+  },
+  "textButtonsVariantTitle": "Text Buttons",
+  "@textButtonsVariantTitle": {
+    "description": "Component - Text Buttons - Title",
+    "type": "text"
+  },
+  "textButtonsVariantSubtitle": "OdsTextButton",
+  "@textButtonsVariantSubtitle": {
+    "description": "Component - Text Buttons - Technical subtitle",
+    "type": "text"
+  },
+
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
   "@componentMaterialsTitle": {
