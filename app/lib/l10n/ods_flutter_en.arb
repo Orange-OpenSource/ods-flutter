@@ -295,6 +295,50 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_SNACKBARS": {},
+  "componentSnackbarsTitle": "Snackbars",
+  "@componentSnackbarsTitle": {
+    "description": "Component Snackbars - Title",
+    "type": "text"
+  },
+  "componentSnackbarsDescription": "There are two ways to show users short, non permanent messages giving system information or feedback about an operation.",
+  "@componentSnackbarsDescription": {
+    "description": "Component Snackbars - Description",
+    "type": "text"
+  },
+  "componentSnackbarsSingleText": "Single lines snackbar",
+  "@componentSingleText": {
+    "description": "Component Snackbars Single - Text Example",
+    "type": "text"
+  },
+  "componentSnackbarsTwoLineActionText": "Two lines snackbar with action",
+  "@componentSnackbarsTwoLineActionText": {
+    "description": "Component Snackbars Two Line Action - Text Example",
+    "type": "text"
+  },
+  "componentSnackbarsTwoLineLongerActionText": "Two lines snackbar with longer action",
+  "@componentSnackbarsTwoLineLongerActionText": {
+    "description": "Component Snackbars Two Line Longer Action - Text Example",
+    "type": "text"
+  },
+  "componentSnackBarsCustomizeAction": "Action button",
+  "@componentCustomizeEnable": {
+    "description": "Component customization snackbars - Action Buttons",
+    "type": "text"
+  },
+
+  "@_SNACKBARS_VARIANT": {},
+  "snackbarsVariantTitle": "Snackbars",
+  "@snackbarsVariantTitle": {
+    "description": "Snackbars Variant - Title",
+    "type": "text"
+  },
+  "snackbarsVariantSubtitle": "OdsSnackbars",
+  "@snackbarsVariantSubtitle": {
+    "description": "Snackbars Variant - Subtitle",
+    "type": "text"
+  },
+
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
   "@componentMaterialsTitle": {
