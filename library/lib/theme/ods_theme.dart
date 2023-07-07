@@ -19,6 +19,7 @@ class OdsTheme {
     scaffoldBackgroundColor: white100,
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
+      surfaceTintColor: white100,
       backgroundColor: white100,
       systemOverlayStyle: SystemUiOverlayStyle(
           systemNavigationBarColor: white100,
@@ -28,7 +29,7 @@ class OdsTheme {
           statusBarBrightness: Brightness.light),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: white100,
+      surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
@@ -75,6 +76,7 @@ class OdsTheme {
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
       backgroundColor: darkSurfaceDefault,
+      surfaceTintColor: darkSurfaceDefault,
       systemOverlayStyle: SystemUiOverlayStyle(
           systemNavigationBarColor: black900,
           systemNavigationBarDividerColor: white100,
@@ -83,7 +85,7 @@ class OdsTheme {
           statusBarBrightness: Brightness.dark),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: black900,
+      surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
