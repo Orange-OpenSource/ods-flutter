@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -20,37 +21,28 @@ class _ThemeSelectorState extends State<ThemeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> themeList = <String>[
-      ThemeMode.light.toString(),
-      ThemeMode.dark.toString(),
-      ThemeMode.system.toString()
-    ];
     var themeNotifier = Provider.of<ModelTheme>(context);
 
-    return PopupMenuButton<String>(
-      initialValue: themeValue,
-      icon: Icon(themeIcons[themeValue]),
-      itemBuilder: (BuildContext context) {
-        return themeList.map((String value) {
-          return PopupMenuItem<String>(
-            value: value,
-            child: ListTile(
-              leading: Icon(themeIcons[value]),
-              title: Text(value),
-            ),
-          );
-        }).toList();
-      },
-      onSelected: (String value) {
-        setState(() {
-          themeValue = value;
-        });
-        themeNotifier.themeMode = value == ThemeMode.system.toString()
-            ? ThemeMode.system
-            : (value == ThemeMode.dark.toString()
+    return Semantics(
+      button: true,
+      label: themeNotifier.themeMode == ThemeMode.light
+          ? AppLocalizations.of(context)!.themeSelectorSwitchDarkMode
+          : AppLocalizations.of(context)!.themeSelectorSwitchLightMode,
+      child: IconButton(
+        icon: Icon(themeNotifier.themeMode == ThemeMode.light
+            ? Icons.light_mode
+            : Icons.dark_mode),
+        onPressed: () {
+          setState(() {
+            themeNotifier.themeMode = themeNotifier.themeMode == ThemeMode.light
                 ? ThemeMode.dark
-                : ThemeMode.light);
-      },
+                : ThemeMode.light;
+          });
+        },
+        tooltip: themeNotifier.themeMode == ThemeMode.light
+            ? AppLocalizations.of(context)!.themeSelectorSwitchDarkMode
+            : AppLocalizations.of(context)!.themeSelectorSwitchLightMode,
+      ),
     );
   }
 }
