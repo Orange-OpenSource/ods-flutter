@@ -254,7 +254,7 @@
     "description": "Component - Elevated Buttons - Technical subtitle",
     "type": "text"
   },
-  "filledButtonsVariantTitle": "FilledButtons",
+  "filledButtonsVariantTitle": "Highest emphasis buttons",
   "@filledButtonsVariantTitle": {
     "description": "Component - Filled Buttons - Title",
     "type": "text"
@@ -264,7 +264,7 @@
     "description": "Component - Filled Buttons - Technical subtitle",
     "type": "text"
   },
-  "filledTonalButtonsVariantTitle": "Filled Tonal Buttons",
+  "filledTonalButtonsVariantTitle": "High emphasis buttons",
   "@filledTonalButtonsVariantTitle": {
     "description": "Component - Filled Tonal Buttons - Title",
     "type": "text"
@@ -274,7 +274,7 @@
     "description": "Component - Filled Tonal Buttons - Technical subtitle",
     "type": "text"
   },
-  "outlinedButtonsVariantTitle": "Outlined Buttons",
+  "outlinedButtonsVariantTitle": "Medium emphasis buttons",
   "@outlinedButtonsVariantTitle": {
     "description": "Component - Outlined Buttons - Title",
     "type": "text"
@@ -284,7 +284,7 @@
     "description": "Component - Text Buttons - Technical subtitle",
     "type": "text"
   },
-  "textButtonsVariantTitle": "Text Buttons",
+  "textButtonsVariantTitle": "Low emphasis buttons",
   "@textButtonsVariantTitle": {
     "description": "Component - Text Buttons - Title",
     "type": "text"
