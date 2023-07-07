@@ -7,7 +7,7 @@ import 'package:ods_flutter_demo/ui/components/buttons/outlined_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/text_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
-import 'package:ods_flutter_demo/ui/components/checkboxes/component_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
@@ -91,9 +91,9 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.textButtonsVariantTitle,
             AppLocalizations.of(context)!.textButtonsVariantSubtitle,
             ComponentTextButtons()),
-            ],
-            ),
-            Component(
+      ],
+    ),
+    Component(
       AppLocalizations.of(context)!.componentAppTopBarsTitle,
       'assets/il_app_bars_top_generic.png',
       AppLocalizations.of(context)!.componentAppTopBarsDescription,
