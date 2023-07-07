@@ -65,38 +65,6 @@
     "type": "text"
   },
 
-  "@_COMPONENTS_BUTTONS": {},
-  "componentButtonsTitle": "Buttons",
-  "@componentButtonsTitle": {
-    "description": "Component Buttons Title",
-    "type": "text"
-  },
-  "componentButtonsDemoElevated": "Elevated",
-  "@componentButtonsDemoElevated": {
-    "description": "Component Buttons Demo TBD",
-    "type": "text"
-  },
-  "componentButtonsDemoHighest": "Highest",
-  "@componentButtonsDemoHighest": {
-    "description": "Component Buttons Demo Highest emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoHigh": "High",
-  "@componentButtonsDemoHigh": {
-    "description": "Component Buttons Demo High emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoMedium": "Medium",
-  "@componentButtonsDemoMedium": {
-    "description": "Component Buttons Demo Medium emphasis",
-    "type": "text"
-  },
-  "componentButtonsDemoLow": "Low",
-  "@componentButtonsDemoLow": {
-    "description": "Component Buttons Demo Low emphasis",
-    "type": "text"
-  },
-
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
   "@componentCardsTitle": {
@@ -145,6 +113,36 @@
     "description": "Component Checkboxes - Description",
     "type": "text"
   },
+  "componentCheckboxesCheckedAccessibility": "Checked",
+  "@componentCheckboxesCheckedAccessibility": {
+    "description": "Component Checkboxes Checked Accessibility - Description",
+    "type": "text"
+  },
+  "componentCheckboxesUnCheckedAccessibility": "Unchecked",
+  "@componentCheckboxesUncheckedAccessibility": {
+    "description": "Component Checkboxes Unchecked Accessibility - Description",
+    "type": "text"
+  },
+  "componentCheckboxesChocolateAccessibility": "Chocolate Checkbox",
+  "@componentCheckboxesChocolateAccessibility": {
+    "description": "Component Checkboxes Chocoloate Accessibility  - Description",
+    "type": "text"
+  },
+  "componentCheckboxesButterAccessibility": "Butter Checkbox",
+  "@componentCheckboxesButterAccessibility": {
+    "description": "Component Checkboxes Butter Accessibility  - Description",
+    "type": "text"
+  },
+  "componentCheckboxesSugarAccessibility": "Butter Checkbox",
+  "@componentCheckboxesSugarAccessibility": {
+    "description": "Component Checkboxes Sugar Accessibility  - Description",
+    "type": "text"
+  },
+  "componentCheckboxesEggsAccessibility": "Eggs Checkbox",
+  "@componentCheckboxesEggsAccessibility": {
+    "description": "Component Checkboxes Eggs Accessibility  - Description",
+    "type": "text"
+  },
   "@_CHECKBOXES_VARIANT": {},
   "checkboxesVariantTitle": "Checkboxes",
   "@checkboxesVariantTitle": {
@@ -156,6 +154,7 @@
     "description": "Checkboxes Variant - Subtitle",
     "type": "text"
   },
+
   "@_COMPONENTS_NAVIGATION_BAR": {},
   "componentNavigationBarTitle": "Bar: Navigation",
   "@componentNavigationBarTitle": {
@@ -198,6 +197,13 @@
     "description": "Component customization element - Number of items count",
     "type": "text"
   },
+
+  "checkboxesVariantTitleInformation": "Use CheckboxListTitle or Checkbox",
+  "@checkboxesVariantTitleInformation": {
+    "description": "Checkboxes Variant - Information",
+    "type": "text"
+  },
+  
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Radio buttons",
   "@componentRadioButtonsTitle": {
