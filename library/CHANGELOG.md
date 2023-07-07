@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Remove french translations ([#154](https://github.com/Orange-OpenSource/ods-flutter/issues/154))
+- Add OdsDivider widget ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
+- Add button with different variants ([#105](https://github.com/Orange-OpenSource/ods-flutter/issues/105))
 
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.1.1) - 2023-05-04
 

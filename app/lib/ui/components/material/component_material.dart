@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -21,7 +20,6 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
       appBar: MainAppBar('Material components'),
       body: ListView(
         children: [
-          Buttons(),
           ButtonsIcons(),
           ButtonsFab(),
           ButtonsSegmented(),
@@ -35,79 +33,6 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
           SnackBars(),
           TextFields(),
         ],
-      ),
-    );
-  }
-}
-
-class Buttons extends StatefulWidget {
-  const Buttons({super.key});
-
-  @override
-  State<Buttons> createState() => _ButtonsState();
-}
-
-class _ButtonsState extends State<Buttons> {
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      header: true,
-      child: _Component(
-        name: AppLocalizations.of(context)!.componentButtonsTitle,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const <Widget>[
-              ButtonsVariants(isDisabled: false),
-              ButtonsVariants(isDisabled: true),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ButtonsVariants extends StatelessWidget {
-  final bool isDisabled;
-
-  const ButtonsVariants({super.key, required this.isDisabled});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-      child: IntrinsicWidth(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: isDisabled ? null : () {},
-              child: Text(AppLocalizations.of(context)!.componentButtonsDemoElevated),
-            ),
-            componentSpacer,
-            FilledButton(
-              onPressed: isDisabled ? null : () {},
-              child: Text(AppLocalizations.of(context)!.componentButtonsDemoHighest),
-            ),
-            componentSpacer,
-            FilledButton.tonal(
-              onPressed: isDisabled ? null : () {},
-              child: Text(AppLocalizations.of(context)!.componentButtonsDemoHigh),
-            ),
-            componentSpacer,
-            OutlinedButton(
-              onPressed: isDisabled ? null : () {},
-              child: Text(AppLocalizations.of(context)!.componentButtonsDemoMedium),
-            ),
-            componentSpacer,
-            TextButton(
-              onPressed: isDisabled ? null : () {},
-              child: Text(AppLocalizations.of(context)!.componentButtonsDemoLow),
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -169,7 +94,8 @@ class Cards extends StatelessWidget {
                 width: cardWidth,
                 child: Card(
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(spacingM, spacingS, spacingS, spacingM),
+                    padding: const EdgeInsets.fromLTRB(
+                        spacingM, spacingS, spacingS, spacingM),
                     child: Column(
                       children: [
                         Align(
@@ -357,45 +283,49 @@ class _TextFieldsState extends State<TextFields> {
           ),
           Padding(
               padding: const EdgeInsets.all(spacingS),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Flexible(
-                  child: SizedBox(
-                    width: 200,
-                    child: TextField(
-                      controller: _controllerOutlined,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.search),
-                        suffixIcon: _ClearButton(controller: _controllerOutlined),
-                        labelText: 'Outlined',
-                        hintText: 'hint text',
-                        helperText: 'helper text',
-                        errorText: 'error text',
-                        border: const OutlineInputBorder(),
-                        filled: true,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: SizedBox(
+                        width: 200,
+                        child: TextField(
+                          controller: _controllerOutlined,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.search),
+                            suffixIcon:
+                                _ClearButton(controller: _controllerOutlined),
+                            labelText: 'Outlined',
+                            hintText: 'hint text',
+                            helperText: 'helper text',
+                            errorText: 'error text',
+                            border: const OutlineInputBorder(),
+                            filled: true,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                const SizedBox(width: spacingS),
-                Flexible(
-                  child: SizedBox(
-                    width: 200,
-                    child: TextField(
-                      controller: _controllerOutlined,
-                      enabled: false,
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.search),
-                        suffixIcon: _ClearButton(controller: _controllerOutlined),
-                        labelText: 'Disabled',
-                        hintText: 'hint text',
-                        helperText: 'helper text',
-                        border: const OutlineInputBorder(),
-                        filled: true,
+                    const SizedBox(width: spacingS),
+                    Flexible(
+                      child: SizedBox(
+                        width: 200,
+                        child: TextField(
+                          controller: _controllerOutlined,
+                          enabled: false,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.search),
+                            suffixIcon:
+                                _ClearButton(controller: _controllerOutlined),
+                            labelText: 'Disabled',
+                            hintText: 'hint text',
+                            helperText: 'helper text',
+                            border: const OutlineInputBorder(),
+                            filled: true,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ])),
+                  ])),
         ],
       ),
     );
@@ -661,9 +591,15 @@ ButtonStyle enabledFilledButtonStyle(bool selected, ColorScheme colors) {
     backgroundColor: selected ? colors.primary : colors.surfaceVariant,
     disabledForegroundColor: colors.onSurface.withOpacity(0.38),
     disabledBackgroundColor: colors.onSurface.withOpacity(0.12),
-    hoverColor: selected ? colors.onPrimary.withOpacity(0.08) : colors.primary.withOpacity(0.08),
-    focusColor: selected ? colors.onPrimary.withOpacity(0.12) : colors.primary.withOpacity(0.12),
-    highlightColor: selected ? colors.onPrimary.withOpacity(0.12) : colors.primary.withOpacity(0.12),
+    hoverColor: selected
+        ? colors.onPrimary.withOpacity(0.08)
+        : colors.primary.withOpacity(0.08),
+    focusColor: selected
+        ? colors.onPrimary.withOpacity(0.12)
+        : colors.primary.withOpacity(0.12),
+    highlightColor: selected
+        ? colors.onPrimary.withOpacity(0.12)
+        : colors.primary.withOpacity(0.12),
   );
 }
 
@@ -676,11 +612,19 @@ ButtonStyle disabledFilledButtonStyle(bool selected, ColorScheme colors) {
 
 ButtonStyle enabledFilledTonalButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
-    foregroundColor: selected ? colors.onSecondaryContainer : colors.onSurfaceVariant,
-    backgroundColor: selected ? colors.secondaryContainer : colors.surfaceVariant,
-    hoverColor: selected ? colors.onSecondaryContainer.withOpacity(0.08) : colors.onSurfaceVariant.withOpacity(0.08),
-    focusColor: selected ? colors.onSecondaryContainer.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
-    highlightColor: selected ? colors.onSecondaryContainer.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
+    foregroundColor:
+        selected ? colors.onSecondaryContainer : colors.onSurfaceVariant,
+    backgroundColor:
+        selected ? colors.secondaryContainer : colors.surfaceVariant,
+    hoverColor: selected
+        ? colors.onSecondaryContainer.withOpacity(0.08)
+        : colors.onSurfaceVariant.withOpacity(0.08),
+    focusColor: selected
+        ? colors.onSecondaryContainer.withOpacity(0.12)
+        : colors.onSurfaceVariant.withOpacity(0.12),
+    highlightColor: selected
+        ? colors.onSecondaryContainer.withOpacity(0.12)
+        : colors.onSurfaceVariant.withOpacity(0.12),
   );
 }
 
@@ -694,9 +638,15 @@ ButtonStyle disabledFilledTonalButtonStyle(bool selected, ColorScheme colors) {
 ButtonStyle enabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
     backgroundColor: selected ? colors.inverseSurface : null,
-    hoverColor: selected ? colors.onInverseSurface.withOpacity(0.08) : colors.onSurfaceVariant.withOpacity(0.08),
-    focusColor: selected ? colors.onInverseSurface.withOpacity(0.12) : colors.onSurfaceVariant.withOpacity(0.12),
-    highlightColor: selected ? colors.onInverseSurface.withOpacity(0.12) : colors.onSurface.withOpacity(0.12),
+    hoverColor: selected
+        ? colors.onInverseSurface.withOpacity(0.08)
+        : colors.onSurfaceVariant.withOpacity(0.08),
+    focusColor: selected
+        ? colors.onInverseSurface.withOpacity(0.12)
+        : colors.onSurfaceVariant.withOpacity(0.12),
+    highlightColor: selected
+        ? colors.onInverseSurface.withOpacity(0.12)
+        : colors.onSurface.withOpacity(0.12),
     side: BorderSide(color: colors.outline),
   ).copyWith(
     foregroundColor: MaterialStateProperty.resolveWith((states) {
@@ -714,7 +664,8 @@ ButtonStyle enabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
 ButtonStyle disabledOutlinedButtonStyle(bool selected, ColorScheme colors) {
   return IconButton.styleFrom(
     disabledForegroundColor: colors.onSurface.withOpacity(0.38),
-    disabledBackgroundColor: selected ? colors.onSurface.withOpacity(0.12) : null,
+    disabledBackgroundColor:
+        selected ? colors.onSurface.withOpacity(0.12) : null,
     side: selected ? null : BorderSide(color: colors.outline.withOpacity(0.12)),
   );
 }
@@ -831,10 +782,22 @@ class _SingleChoiceState extends State<SingleChoice> {
   Widget build(BuildContext context) {
     return SegmentedButton<Calendar>(
       segments: const <ButtonSegment<Calendar>>[
-        ButtonSegment<Calendar>(value: Calendar.day, label: Text('Day'), icon: Icon(Icons.calendar_view_day)),
-        ButtonSegment<Calendar>(value: Calendar.week, label: Text('Week'), icon: Icon(Icons.calendar_view_week)),
-        ButtonSegment<Calendar>(value: Calendar.month, label: Text('Month'), icon: Icon(Icons.calendar_view_month)),
-        ButtonSegment<Calendar>(value: Calendar.year, label: Text('Year'), icon: Icon(Icons.calendar_today)),
+        ButtonSegment<Calendar>(
+            value: Calendar.day,
+            label: Text('Day'),
+            icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(
+            value: Calendar.week,
+            label: Text('Week'),
+            icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(
+            value: Calendar.month,
+            label: Text('Month'),
+            icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(
+            value: Calendar.year,
+            label: Text('Year'),
+            icon: Icon(Icons.calendar_today)),
       ],
       selected: <Calendar>{calendarView},
       onSelectionChanged: (newSelection) {
@@ -937,7 +900,14 @@ class _BottomSheetsState extends State<BottomSheets> {
       IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined)),
       IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
     ];
-    List<Text> labelList = const <Text>[Text('Share'), Text('Add to'), Text('Trash'), Text('Archive'), Text('Settings'), Text('Favorite')];
+    List<Text> labelList = const <Text>[
+      Text('Share'),
+      Text('Add to'),
+      Text('Trash'),
+      Text('Archive'),
+      Text('Settings'),
+      Text('Favorite')
+    ];
 
     buttonList = List.generate(
         buttonList.length,
@@ -987,7 +957,9 @@ class _BottomSheetsState extends State<BottomSheets> {
             ),
             TextButton(
               child: Text(
-                isNonModalBottomSheetOpen ? 'Hide bottom sheet' : 'Show bottom sheet',
+                isNonModalBottomSheetOpen
+                    ? 'Hide bottom sheet'
+                    : 'Show bottom sheet',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               onPressed: () {
@@ -1048,7 +1020,8 @@ class BottomAppBars extends StatelessWidget {
                 elevation: 0.0,
                 child: const Icon(Icons.add),
               ),
-              floatingActionButtonLocation: FloatingActionButtonLocation.endContained,
+              floatingActionButtonLocation:
+                  FloatingActionButtonLocation.endContained,
               bottomNavigationBar: BottomAppBar(
                 child: Row(
                   children: <Widget>[
@@ -1177,7 +1150,8 @@ class NavigationDrawers extends StatelessWidget {
           componentSpacer,
           componentSpacer,
           TextButton(
-            child: const Text('Show modal navigation drawer', style: TextStyle(fontWeight: FontWeight.bold)),
+            child: const Text('Show modal navigation drawer',
+                style: TextStyle(fontWeight: FontWeight.bold)),
             onPressed: () {
               scaffoldKey.currentState!.openEndDrawer();
             },
@@ -1192,7 +1166,8 @@ class NavigationDrawerSection extends StatefulWidget {
   const NavigationDrawerSection({super.key});
 
   @override
-  State<NavigationDrawerSection> createState() => _NavigationDrawerSectionState();
+  State<NavigationDrawerSection> createState() =>
+      _NavigationDrawerSectionState();
 }
 
 class _NavigationDrawerSectionState extends State<NavigationDrawerSection> {
@@ -1253,13 +1228,16 @@ class ExampleDestination {
 const List<ExampleDestination> destinations = <ExampleDestination>[
   ExampleDestination('Inbox', Icon(Icons.inbox_outlined), Icon(Icons.inbox)),
   ExampleDestination('Outbox', Icon(Icons.send_outlined), Icon(Icons.send)),
-  ExampleDestination('Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite)),
+  ExampleDestination(
+      'Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite)),
   ExampleDestination('Trash', Icon(Icons.delete_outline), Icon(Icons.delete)),
 ];
 
 const List<ExampleDestination> labelDestinations = <ExampleDestination>[
-  ExampleDestination('Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
-  ExampleDestination('School', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination(
+      'Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination(
+      'School', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
   ExampleDestination('Work', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
 ];
 
@@ -1270,7 +1248,8 @@ class NavigationRails extends StatelessWidget {
   Widget build(BuildContext context) {
     return const _Component(
       name: 'Navigation rail',
-      child: IntrinsicWidth(child: SizedBox(height: 420, child: NavigationRailSection())),
+      child: IntrinsicWidth(
+          child: SizedBox(height: 420, child: NavigationRailSection())),
     );
   }
 }
@@ -1294,7 +1273,8 @@ class _NavigationRailSectionState extends State<NavigationRailSection> {
         });
       },
       elevation: 4,
-      leading: FloatingActionButton(child: const Icon(Icons.create), onPressed: () {}),
+      leading: FloatingActionButton(
+          child: const Icon(Icons.create), onPressed: () {}),
       groupAlignment: 0.0,
       selectedIndex: navRailIndex,
       labelType: NavigationRailLabelType.selected,
@@ -1446,14 +1426,18 @@ class _MenusState extends State<Menus> {
 
   @override
   Widget build(BuildContext context) {
-    final List<DropdownMenuEntry<ColorLabel>> colorEntries = <DropdownMenuEntry<ColorLabel>>[];
+    final List<DropdownMenuEntry<ColorLabel>> colorEntries =
+        <DropdownMenuEntry<ColorLabel>>[];
     for (final ColorLabel color in ColorLabel.values) {
-      colorEntries.add(DropdownMenuEntry<ColorLabel>(value: color, label: color.label, enabled: color.label != 'Grey'));
+      colorEntries.add(DropdownMenuEntry<ColorLabel>(
+          value: color, label: color.label, enabled: color.label != 'Grey'));
     }
 
-    final List<DropdownMenuEntry<IconLabel>> iconEntries = <DropdownMenuEntry<IconLabel>>[];
+    final List<DropdownMenuEntry<IconLabel>> iconEntries =
+        <DropdownMenuEntry<IconLabel>>[];
     for (final IconLabel icon in IconLabel.values) {
-      iconEntries.add(DropdownMenuEntry<IconLabel>(value: icon, label: icon.label));
+      iconEntries
+          .add(DropdownMenuEntry<IconLabel>(value: icon, label: icon.label));
     }
 
     return _Component(
@@ -1602,7 +1586,8 @@ class _ComponentState extends State<_Component> {
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: spacingS, horizontal: spacingM),
+        padding: const EdgeInsets.symmetric(
+            vertical: spacingS, horizontal: spacingM),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1611,7 +1596,8 @@ class _ComponentState extends State<_Component> {
               style: Theme.of(context).textTheme.titleLarge,
             ),
             ConstrainedBox(
-              constraints: const BoxConstraints.tightFor(width: widthConstraint),
+              constraints:
+                  const BoxConstraints.tightFor(width: widthConstraint),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: spacingM),
                 child: Center(
