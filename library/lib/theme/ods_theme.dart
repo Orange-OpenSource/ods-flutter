@@ -46,6 +46,11 @@ class OdsTheme {
               .resolve(states)
               .withOpacity(_switchTrackOpacity);
         })),
+    snackBarTheme: SnackBarThemeData(
+      actionTextColor: lightColorScheme.primary,
+      elevation: 4,
+      behavior: SnackBarBehavior.floating,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -84,6 +89,11 @@ class OdsTheme {
               .resolve(states)
               .withOpacity(_switchTrackOpacity);
         })),
+    snackBarTheme: SnackBarThemeData(
+      actionTextColor: darkColorScheme.primary,
+      elevation: 4,
+      behavior: SnackBarBehavior.floating,
+    ),
   );
 }
 

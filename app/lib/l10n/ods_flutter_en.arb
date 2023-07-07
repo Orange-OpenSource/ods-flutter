@@ -295,6 +295,75 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_SNACKBARS": {},
+  "componentSnackbarsTitle": "Snackbars",
+  "@componentSnackbarsTitle": {
+    "description": "Component Snackbars - Title",
+    "type": "text"
+  },
+  "componentSnackbarsDescription": "There are two ways to show users short, non permanent messages giving system information or feedback about an operation.",
+  "@componentSnackbarsDescription": {
+    "description": "Component Snackbars - Description",
+    "type": "text"
+  },
+  "componentSnackbarsDescriptionExampleText": "Customize the snackbar before displaying it",
+  "@componentSnackbarsDescriptionExampleText": {
+    "description": "Component Button Text Description Example - Text",
+    "type": "text"
+  },
+  "componentSnackbarsDescriptionExampleButton": "Show snackbar",
+  "@componentSnackbarsDescriptionExampleButton": {
+    "description": "Component Button Text Display - Button",
+    "type": "text"
+  },
+  "componentSnackbarsSingleText": "Single line snackbar",
+  "@componentSingleText": {
+    "description": "Component Snackbars Single - Text Example",
+    "type": "text"
+  },
+  "componentSnackbarsTwoLineActionText": "Two lines snackbar with action",
+  "@componentSnackbarsTwoLineActionText": {
+    "description": "Component Snackbars Two Line Action - Text Example",
+    "type": "text"
+  },
+  "componentSnackbarsActionExampleButtonText": "Close",
+  "@componentSnackbarsActionExampleButtonText": {
+    "description": "Component Snackbars Single/Two Line Longer Action - Button Example",
+    "type": "text"
+  },
+  "componentSnackbarsTwoLineLongerActionText": "Two lines snackbar with longer action",
+  "@componentSnackbarsTwoLineLongerActionText": {
+    "description": "Component Snackbars Two Line Longer Action - Text Example",
+    "type": "text"
+  },
+    "componentSnackbarsTwoLineLongerActionButton": "Longer action",
+  "@componentSnackbarsTwoLineLongerActionButton": {
+    "description": "Component Snackbars Two Line Longer Action - Button Example",
+    "type": "text"
+  },
+  "componentSnackBarsCustomizeAction": "Action button",
+  "@componentSnackBarsCustomizeAction": {
+    "description": "Component customization snackbars - Action Buttons",
+    "type": "text"
+  },
+  "componentSnackBarsTwoLineCustomizeText": "Two Lines",
+  "@componentSnackBarsTwoLineCustomizeText": {
+    "description": "Component customization snackbars - Text",
+    "type": "text"
+  },
+
+  "@_SNACKBARS_VARIANT": {},
+  "snackbarsVariantTitle": "Snackbars",
+  "@snackbarsVariantTitle": {
+    "description": "Snackbars Variant - Title",
+    "type": "text"
+  },
+  "snackbarsVariantSubtitle": "OdsSnackbars",
+  "@snackbarsVariantSubtitle": {
+    "description": "Snackbars Variant - Subtitle",
+    "type": "text"
+  },
+
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
   "@componentMaterialsTitle": {
