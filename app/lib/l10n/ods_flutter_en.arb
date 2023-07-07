@@ -306,7 +306,7 @@
     "description": "Component Snackbars - Description",
     "type": "text"
   },
-  "componentSnackbarsSingleText": "Single lines snackbar",
+  "componentSnackbarsSingleText": "Single line snackbar",
   "@componentSingleText": {
     "description": "Component Snackbars Single - Text Example",
     "type": "text"
