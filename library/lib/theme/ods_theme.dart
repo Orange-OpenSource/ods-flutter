@@ -16,6 +16,7 @@ class OdsTheme {
     colorScheme: lightColorScheme,
     typography: odsTypography,
     scaffoldBackgroundColor: white100,
+    useMaterial3: true,
     appBarTheme: const AppBarTheme(backgroundColor: white100),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: white100,
@@ -57,6 +58,7 @@ class OdsTheme {
     colorScheme: darkColorScheme,
     typography: odsTypography,
     scaffoldBackgroundColor: black900,
+    useMaterial3: true,
     appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: black900,

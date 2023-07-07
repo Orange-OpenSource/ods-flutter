@@ -12,6 +12,12 @@ class ThemeSelector extends StatefulWidget {
 class _ThemeSelectorState extends State<ThemeSelector> {
   String themeValue = ThemeMode.system.toString();
 
+  final Map<String, IconData> themeIcons = {
+    ThemeMode.light.toString(): Icons.wb_sunny,
+    ThemeMode.dark.toString(): Icons.nightlight_round,
+    ThemeMode.system.toString(): Icons.circle_sharp,
+  };
+
   @override
   Widget build(BuildContext context) {
     List<String> themeList = <String>[
@@ -21,13 +27,23 @@ class _ThemeSelectorState extends State<ThemeSelector> {
     ];
     var themeNotifier = Provider.of<ModelTheme>(context);
 
-    return DropdownButton<String>(
-      value: themeValue,
-      icon: const Icon(Icons.arrow_downward),
-      elevation: 16,
-      onChanged: (String? value) {
+    return PopupMenuButton<String>(
+      initialValue: themeValue,
+      icon: Icon(themeIcons[themeValue]),
+      itemBuilder: (BuildContext context) {
+        return themeList.map((String value) {
+          return PopupMenuItem<String>(
+            value: value,
+            child: ListTile(
+              leading: Icon(themeIcons[value]),
+              title: Text(value),
+            ),
+          );
+        }).toList();
+      },
+      onSelected: (String value) {
         setState(() {
-          themeValue = value!;
+          themeValue = value;
         });
         themeNotifier.themeMode = value == ThemeMode.system.toString()
             ? ThemeMode.system
@@ -35,16 +51,6 @@ class _ThemeSelectorState extends State<ThemeSelector> {
                 ? ThemeMode.dark
                 : ThemeMode.light);
       },
-      items: themeList.map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Icon(value == ThemeMode.system.toString()
-              ? Icons.circle_sharp
-              : (value == ThemeMode.dark.toString()
-                  ? Icons.nightlight_round
-                  : Icons.wb_sunny)),
-        );
-      }).toList(),
     );
   }
 }

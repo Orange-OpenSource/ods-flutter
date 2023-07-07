@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add component navigation bar ([#23](https://github.com/Orange-OpenSource/ods-flutter/issues/23))
 - Create different screens for the variants of button ([#105](https://github.com/Orange-OpenSource/ods-flutter/issues/105))
 - Create components snackbar ([#31](https://github.com/Orange-OpenSource/ods-flutter/issues/31))
+- Add top app bar components ([#107](https://github.com/Orange-OpenSource/ods-flutter/issues/107))
 
 ### Changed
 
