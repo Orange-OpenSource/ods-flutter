@@ -53,7 +53,8 @@ class _Body extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(spacingM),
             child: Text(
-              'Customize the snackbar before displaying it',
+              AppLocalizations.of(context)!
+                  .componentSnackbarsDescriptionExampleText,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
@@ -84,7 +85,8 @@ class _SnackBarsVariants extends StatelessWidget {
                   content: AppLocalizations.of(context)!
                       .componentSnackbarsSingleText,
                   label: customizationState?.hasActionButton == true
-                      ? 'Close'
+                      ? AppLocalizations.of(context)!
+                          .componentSnackbarsActionExampleButtonText
                       : null,
                   onPressed: customizationState?.hasActionButton == true
                       ? () {}
@@ -97,7 +99,8 @@ class _SnackBarsVariants extends StatelessWidget {
                   content: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineActionText,
                   label: customizationState?.hasActionButton == true
-                      ? 'Close'
+                      ? AppLocalizations.of(context)!
+                          .componentSnackbarsActionExampleButtonText
                       : null,
                   onPressed: customizationState?.hasActionButton == true
                       ? () {}
@@ -109,13 +112,15 @@ class _SnackBarsVariants extends StatelessWidget {
                   context: context,
                   content: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineLongerActionText,
-                  label: 'Longer action',
+                  label: AppLocalizations.of(context)!
+                      .componentSnackbarsTwoLineLongerActionButton,
                   onPressed: () {},
                 );
               }
             },
             child: Text(
-              'Show snackbar',
+              AppLocalizations.of(context)!
+                  .componentSnackbarsDescriptionExampleButton,
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),
@@ -145,7 +150,8 @@ class _CustomizationContent extends StatelessWidget {
         ),
         SwitchListTile(
           value: customizationState.hasTwoLines,
-          title: Text('Two lines'),
+          title: Text(AppLocalizations.of(context)!
+              .componentSnackBarsTwoLineCustomizeText),
           onChanged: customizationState.hasLongerAction == false
               ? (bool value) {
                   customizationState.hasTwoLines = value;
@@ -154,7 +160,8 @@ class _CustomizationContent extends StatelessWidget {
         ),
         SwitchListTile(
           value: customizationState.hasLongerAction,
-          title: Text('Longer action'),
+          title: Text(AppLocalizations.of(context)!
+              .componentSnackbarsTwoLineLongerActionButton),
           onChanged: customizationState.hasActionButton
               ? (bool value) {
                   customizationState.hasTwoLines = false;

@@ -306,6 +306,16 @@
     "description": "Component Snackbars - Description",
     "type": "text"
   },
+  "componentSnackbarsDescriptionExampleText": "Customize the snackbar before displaying it",
+  "@componentSnackbarsDescriptionExampleText": {
+    "description": "Component Button Text Description Example - Text",
+    "type": "text"
+  },
+  "componentSnackbarsDescriptionExampleButton": "Show snackbar",
+  "@componentSnackbarsDescriptionExampleButton": {
+    "description": "Component Button Text Display - Button",
+    "type": "text"
+  },
   "componentSnackbarsSingleText": "Single line snackbar",
   "@componentSingleText": {
     "description": "Component Snackbars Single - Text Example",
@@ -316,14 +326,29 @@
     "description": "Component Snackbars Two Line Action - Text Example",
     "type": "text"
   },
+  "componentSnackbarsActionExampleButtonText": "Close",
+  "@componentSnackbarsActionExampleButtonText": {
+    "description": "Component Snackbars Single/Two Line Longer Action - Button Example",
+    "type": "text"
+  },
   "componentSnackbarsTwoLineLongerActionText": "Two lines snackbar with longer action",
   "@componentSnackbarsTwoLineLongerActionText": {
     "description": "Component Snackbars Two Line Longer Action - Text Example",
     "type": "text"
   },
+    "componentSnackbarsTwoLineLongerActionButton": "Longer action",
+  "@componentSnackbarsTwoLineLongerActionButton": {
+    "description": "Component Snackbars Two Line Longer Action - Button Example",
+    "type": "text"
+  },
   "componentSnackBarsCustomizeAction": "Action button",
-  "@componentCustomizeEnable": {
+  "@componentSnackBarsCustomizeAction": {
     "description": "Component customization snackbars - Action Buttons",
+    "type": "text"
+  },
+  "componentSnackBarsTwoLineCustomizeText": "Two Lines",
+  "@componentSnackBarsTwoLineCustomizeText": {
+    "description": "Component customization snackbars - Text",
     "type": "text"
   },
 
