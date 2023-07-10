@@ -4,6 +4,19 @@
     "description": "App name",
     "type": "text"
   },
+
+  "@_THEME_SELECTOR": {},
+  "themeSelectorSwitchDarkMode": "Switch to Dark Mode",
+  "@themeSelectorSwitchDarkMode": {
+    "description": "Accessibility Dark mode",
+    "type": "text"
+  },
+  "themeSelectorSwitchLightMode": "Switch to Light Mode",
+  "@themeSelectorSwitchLightMode": {
+    "description": "Accessibility Light mode",
+    "type": "text"
+  },
+
   "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
   "@bottomNavigationGuideline": {

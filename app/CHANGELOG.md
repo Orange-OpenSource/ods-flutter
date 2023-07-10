@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Create components snackbar ([#31](https://github.com/Orange-OpenSource/ods-flutter/issues/31))
 - Add top app bar components ([#107](https://github.com/Orange-OpenSource/ods-flutter/issues/107))
 - Update demo app for checkboxes component ([#142](https://github.com/Orange-OpenSource/ods-flutter/issues/142))
+- Update Customization Bottom Sheet ([#169](https://github.com/Orange-OpenSource/ods-flutter/issues/169))
 
 ### Changed
 

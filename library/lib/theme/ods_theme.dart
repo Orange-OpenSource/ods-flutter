@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ods_flutter/theme/ods_palette.dart';
 import 'package:ods_flutter/theme/ods_typography.dart';
 
@@ -7,7 +8,7 @@ import 'ods_color_scheme.dart';
 const double _disabledOpacity = 0.38;
 const double _switchTrackOpacity = 0.54;
 
-const double odsCardRadius = 4.0;
+const double odsCardRadius = 5.0;
 
 class OdsTheme {
   OdsTheme._();
@@ -17,9 +18,18 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: white100,
     useMaterial3: true,
-    appBarTheme: const AppBarTheme(backgroundColor: white100),
-    navigationBarTheme: NavigationBarThemeData(
+    appBarTheme: const AppBarTheme(
+      surfaceTintColor: white100,
       backgroundColor: white100,
+      systemOverlayStyle: SystemUiOverlayStyle(
+          systemNavigationBarColor: white100,
+          systemNavigationBarDividerColor: grey200,
+          systemNavigationBarIconBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.light,
+          statusBarBrightness: Brightness.light),
+    ),
+    navigationBarTheme: NavigationBarThemeData(
+      surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
@@ -38,6 +48,11 @@ class OdsTheme {
             color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
+    cardTheme: CardTheme(
+      surfaceTintColor: lightColorScheme.onSecondary,
+    ),
+    bottomNavigationBarTheme:
+        const BottomNavigationBarThemeData(backgroundColor: white100),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
     radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
     switchTheme: SwitchThemeData(
@@ -59,9 +74,18 @@ class OdsTheme {
     typography: odsTypography,
     scaffoldBackgroundColor: black900,
     useMaterial3: true,
-    appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceDefault),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: darkSurfaceDefault,
+      surfaceTintColor: darkSurfaceDefault,
+      systemOverlayStyle: SystemUiOverlayStyle(
+          systemNavigationBarColor: black900,
+          systemNavigationBarDividerColor: white100,
+          systemNavigationBarIconBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.light,
+          statusBarBrightness: Brightness.dark),
+    ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: black900,
+      surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
@@ -80,6 +104,11 @@ class OdsTheme {
             color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
+    cardTheme: CardTheme(
+      surfaceTintColor: darkColorScheme.onSecondary,
+    ),
+    bottomNavigationBarTheme:
+        const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
     checkboxTheme: const CheckboxThemeData(
         fillColor: DarkControlFillColor(),
         checkColor: MaterialStatePropertyAll(black900)),

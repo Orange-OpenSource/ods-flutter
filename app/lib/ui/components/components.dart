@@ -10,6 +10,7 @@ import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.d
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
+import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
@@ -64,6 +65,17 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.switchesVariantTitle,
             AppLocalizations.of(context)!.switchesVariantSubtitle,
             ComponentSwitches()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentNavigationBarTitle,
+      'assets/il_navigation_bar.png',
+      AppLocalizations.of(context)!.componentNavigationBarDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.navigationBarVariantTitle,
+            AppLocalizations.of(context)!.navigationBarVariantSubtitle,
+            ComponentNavigationBar()),
       ],
     ),
     Component(
