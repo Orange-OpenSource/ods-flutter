@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/domain/chips_enum.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
@@ -61,6 +62,7 @@ class _BodyState extends State<_Body> {
   Widget build(BuildContext context) {
     final ChipsCustomizationState? customizationState =
         ChipsCustomization.of(context);
+
     return Padding(
       padding: const EdgeInsets.all(spacingS),
       child: Wrap(
@@ -68,18 +70,18 @@ class _BodyState extends State<_Body> {
         children: List<Widget>.generate(4, (int index) {
           bool isSelected = selectedIndex == index;
           Widget? avatar;
-          if (customizationState?.selectedIndex == 0) {
+          if (customizationState?.selectedElement == ChipsEnum.none) {
             avatar = null;
-          } else if (customizationState?.selectedIndex == 1) {
+          } else if (customizationState?.selectedElement == ChipsEnum.avatar) {
             avatar = CircleAvatar(
               backgroundImage:
-                  NetworkImage(OdsApplication.foods[index + 28].image),
+                  NetworkImage(OdsApplication.foods[index + 41].image),
               radius: 120,
             );
           }
 
           return OdsFilterChips(
-            label: OdsApplication.foods[index + 28].name,
+            label: OdsApplication.foods[index + 41].name,
             isSelected: isSelected,
             avatar: avatar,
             onSelected: customizationState?.hasEnabled == true
@@ -136,13 +138,15 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChips(
-                      label: customizationState?.elements[index] ?? "",
+                      label:
+                          customizationState?.elements[index].stringValue ?? '',
                       isSelected: isSelected,
                       onSelected: (selected) {
                         setState(() {
                           selectedIndex = index;
                           isFiltered = selected!;
-                          customizationState?.selectedIndex = index;
+                          customizationState?.selectedElement =
+                              customizationState.elements[index];
                         });
                       },
                     ),

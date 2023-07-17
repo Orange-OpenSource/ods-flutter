@@ -6,6 +6,7 @@ import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/chips/ods_input_chips.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/domain/chips_enum.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
@@ -65,21 +66,23 @@ class _BodyState extends State<_Body> {
         ChipsCustomization.of(context);
     var colorScheme = Theme.of(context).colorScheme;
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
+
     return Padding(
       padding: const EdgeInsets.all(spacingS),
       child: Wrap(
         spacing: spacingS,
         children: List<Widget>.generate(1, (int index) {
           Widget? avatar;
-          if (customizationState?.selectedIndex == 0) {
+
+          if (customizationState?.selectedElement == ChipsEnum.none) {
             avatar = null;
-          } else if (customizationState?.selectedIndex == 1) {
+          } else if (customizationState?.selectedElement == ChipsEnum.avatar) {
             avatar = CircleAvatar(
               backgroundImage: NetworkImage(
                 OdsApplication.recipes[index].url,
               ),
             );
-          } else if (customizationState?.selectedIndex == 2) {
+          } else if (customizationState?.selectedElement == ChipsEnum.icon) {
             avatar = SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
                 colorFilter: colorFilter);
           }
@@ -133,13 +136,15 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChips(
-                      label: customizationState?.elements[index] ?? "",
+                      label:
+                          customizationState?.elements[index].stringValue ?? '',
                       isSelected: isSelected,
                       onSelected: (selected) {
                         setState(() {
                           selectedIndex = index;
                           isFiltered = selected!;
-                          customizationState?.selectedIndex = index;
+                          customizationState?.selectedElement =
+                              customizationState.elements[index];
                         });
                       },
                     ),

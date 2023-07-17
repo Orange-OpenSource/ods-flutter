@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/domain/chips_enum.dart';
 
 class _ChipsCustomization extends InheritedWidget {
   _ChipsCustomization({
@@ -33,8 +34,13 @@ class ChipsCustomization extends StatefulWidget {
 class ChipsCustomizationState extends State<ChipsCustomization> {
   bool _hasEnabled = true;
   bool _hasIcon = true;
-  List<String> _elements = ["None", "Avatar", "Icon"];
-  int _selectedIndex = 0;
+
+  List<ChipsEnum> _elements = [
+    ChipsEnum.none,
+    ChipsEnum.avatar,
+    ChipsEnum.icon,
+  ];
+  ChipsEnum _selectedElement = ChipsEnum.none;
 
   bool get hasEnabled => _hasEnabled;
   set hasEnabled(bool value) {
@@ -50,18 +56,18 @@ class ChipsCustomizationState extends State<ChipsCustomization> {
     });
   }
 
-  List<String> get elements => _elements;
-  set elements(List<String> value) {
+  List<ChipsEnum> get elements => _elements;
+  set elements(List<ChipsEnum> value) {
     setState(() {
       _elements = value;
     });
   }
 
-  int get selectedIndex => _selectedIndex;
+  ChipsEnum get selectedElement => _selectedElement;
 
-  set selectedIndex(int value) {
+  set selectedElement(ChipsEnum value) {
     setState(() {
-      _selectedIndex = value;
+      _selectedElement = value;
     });
   }
 
