@@ -67,6 +67,11 @@ class OdsTheme {
       elevation: 4,
       behavior: SnackBarBehavior.floating,
     ),
+    chipTheme: const ChipThemeData(
+      iconTheme: IconThemeData(color: black900),
+      selectedColor: orange200,
+      deleteIconColor: black900,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -124,6 +129,11 @@ class OdsTheme {
       actionTextColor: darkColorScheme.primary,
       elevation: 4,
       behavior: SnackBarBehavior.floating,
+    ),
+    chipTheme: const ChipThemeData(
+      iconTheme: IconThemeData(color: white100),
+      selectedColor: orange100,
+      deleteIconColor: white100,
     ),
   );
 }
