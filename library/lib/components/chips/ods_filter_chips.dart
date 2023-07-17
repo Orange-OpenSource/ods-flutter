@@ -9,7 +9,7 @@ class OdsFilterChips extends StatefulWidget {
   ///
   /// * [label] - Text displayed in the chip.
   /// * [avatar] - Widget of the icon.
-  /// * [isSelected] - The action to be executed when the chips is pressed.
+  /// * [isSelected] - Specifies whether the chips is selected or not.
   /// * [onSelected] - The action to be executed when the chips is pressed.
   OdsFilterChips(
       {Key? key,
@@ -25,7 +25,7 @@ class OdsFilterChips extends StatefulWidget {
   /// The optional chip's icon.
   final Widget? avatar;
 
-  /// Specifies whether the button should expand to full screen width.
+  /// Specifies whether the chips is selected or not.
   bool isSelected;
 
   final void Function(bool?)? onSelected;
