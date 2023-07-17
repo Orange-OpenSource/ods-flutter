@@ -8,6 +8,9 @@ import 'package:ods_flutter_demo/ui/components/buttons/text_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
@@ -125,6 +128,25 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.snackbarsVariantTitle,
             AppLocalizations.of(context)!.snackbarsVariantSubtitle,
             ComponentSnackbars()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentChipsTitle,
+      'assets/il_chips.png',
+      AppLocalizations.of(context)!.componentChipsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.chipsVariantActionTitle,
+            AppLocalizations.of(context)!.chipsVariantActionSubtitle,
+            ComponentChipsAction()),
+        Variant(
+            AppLocalizations.of(context)!.chipsVariantFilterTitle,
+            AppLocalizations.of(context)!.chipsVariantFilterSubtitle,
+            ComponentChipsFilter()),
+        Variant(
+            AppLocalizations.of(context)!.chipsVariantInputTitle,
+            AppLocalizations.of(context)!.chipsVariantInputSubtitle,
+            ComponentChipsInput()),
       ],
     ),
     Component(
