@@ -93,6 +93,10 @@ class OdsTheme {
       selectedColor: orange200,
       deleteIconColor: black900,
     ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor: lightColorScheme.onPrimary,
+      backgroundColor: lightColorScheme.primary,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -172,6 +176,10 @@ class OdsTheme {
       iconTheme: IconThemeData(color: white100),
       selectedColor: orange100,
       deleteIconColor: white100,
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor: darkColorScheme.onPrimary,
+      backgroundColor: darkColorScheme.primary,
     ),
   );
 }
