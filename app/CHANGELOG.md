@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Chips: ([#14](https://github.com/Orange-OpenSource/ods-flutter/issues/14))
 - [Bug]: vertical card image does not show ([#173](https://github.com/Orange-OpenSource/ods-flutter/issues/173))
 - [Bug]: ODS - Component Screen - Navigation rail ([#178](https://github.com/Orange-OpenSource/ods-flutter/issues/178))
+- ODS - Component - Buttons: Floating Action Buttons ([#5](https://github.com/Orange-OpenSource/ods-flutter/issues/5))
 
 ### Changed
 
