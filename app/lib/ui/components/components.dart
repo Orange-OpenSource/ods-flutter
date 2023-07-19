@@ -19,6 +19,7 @@ import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
 import 'app_bars/top/top_app_bars.dart';
+import 'floating_action_button/floating_action_button.dart';
 
 List<Component> components(BuildContext context) {
   return [
@@ -147,6 +148,18 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.chipsVariantInputTitle,
             AppLocalizations.of(context)!.chipsVariantInputSubtitle,
             ComponentChipsInput()),
+      ],
+    ),
+    Component(
+      'Button: FAB',
+      'assets/il_floating_action_button.svg',
+      'A floating Action Button (FAB) is an interactive element that enables the user to initiate an immediate action. There are a number of different options for how they can be presented',
+      [
+        Variant(
+          'Buttons: FAB demo',
+          'OdsFloatingActionButton',
+          ComponentFloatingActionButton(),
+        ),
       ],
     ),
     Component(
