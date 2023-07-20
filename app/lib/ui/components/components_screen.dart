@@ -22,7 +22,7 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
         builder: (context, orientation) {
           return GridView.count(
             crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            childAspectRatio: orientation == Orientation.portrait ? 1.0 : 1.2,
+            childAspectRatio: orientation == Orientation.portrait ? 0.97 : 0.9,
             children: widget.odsComponents.map(
               (component) {
                 return Column(

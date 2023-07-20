@@ -28,32 +28,65 @@ class _MainScreenState extends State<MainScreen> {
     var selectedItem = navigationItems.getSelectedMenuItem(_selectedIndex);
 
     return Consumer<ModelTheme>(
-        builder: (context, ModelTheme themeNotifier, child) {
-      return Scaffold(
-        appBar: MainAppBar(selectedItem.label),
-        bottomNavigationBar: OdsNavigationBar(
-            selectedIndex: _selectedIndex,
-            onDestinationSelected: (int index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-            destinations: navigationItems.getBottomNavigationBarItems()),
-        body: <Widget>[
-          GuidelinesScreen(),
-          ComponentsScreen(odsComponents: components(context)),
-          ModulesScreen(),
-          AboutScreen()
-        ][_selectedIndex],
-      );
-    });
+      builder: (context, ModelTheme themeNotifier, child) {
+        final isLargeScreen = MediaQuery.of(context).size.width > 600;
+
+        return Scaffold(
+          appBar: MainAppBar(selectedItem.label),
+          body: isLargeScreen
+              ? Row(
+                  children: [
+                    NavigationRail(
+                      selectedIndex: _selectedIndex,
+                      labelType: NavigationRailLabelType.all,
+                      onDestinationSelected: (int index) {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                      destinations:
+                          navigationItems.getNavigationRailDestinations(),
+                    ),
+                    Expanded(
+                      child: IndexedStack(
+                        index: _selectedIndex,
+                        children: [
+                          GuidelinesScreen(),
+                          ComponentsScreen(odsComponents: components(context)),
+                          ModulesScreen(),
+                          AboutScreen(),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              : <Widget>[
+                  GuidelinesScreen(),
+                  ComponentsScreen(odsComponents: components(context)),
+                  ModulesScreen(),
+                  AboutScreen(),
+                ][_selectedIndex],
+          bottomNavigationBar: isLargeScreen
+              ? null // Don't show OdsNavigationBar for large screens
+              : OdsNavigationBar(
+                  selectedIndex: _selectedIndex,
+                  onDestinationSelected: (int index) {
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                  },
+                  destinations: navigationItems.getBottomNavigationBarItems(),
+                ),
+        );
+      },
+    );
   }
 }
 
 class _NavigationItems {
   late BuildContext context;
-  late List<_MainMenuItem> _mainMenuItems;
   late List<NavigationDestination> _destinationsStatic;
+  late List<NavigationRailDestination> _destinationsRailStatic;
 
   _NavigationItems(this.context) {
     var colorScheme = Theme.of(context).colorScheme;
@@ -96,37 +129,43 @@ class _NavigationItems {
         label: AppLocalizations.of(context)!.bottomNavigationAbout,
       ),
     ];
-    _mainMenuItems = [
-      _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-              colorFilter: colorFilter),
-          label: AppLocalizations.of(context)!.bottomNavigationGuideline,
-          screen: GuidelinesScreen()),
-      _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_components_atom.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_components_atom.svg",
-              colorFilter: colorFilter),
-          label: AppLocalizations.of(context)!.bottomNavigationComponents,
-          screen: ComponentsScreen(
-            odsComponents: components(context),
-          )),
-      _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-              colorFilter: colorFilter),
-          label: AppLocalizations.of(context)!.bottomNavigationModules,
-          screen: ModulesScreen()),
-      _MainMenuItem(
-          activeIcon: SvgPicture.asset("assets/ic_about_info.svg",
-              colorFilter: activeColorFilter),
-          icon: SvgPicture.asset("assets/ic_about_info.svg",
-              colorFilter: colorFilter),
-          label: AppLocalizations.of(context)!.bottomNavigationAbout,
-          screen: AboutScreen()),
+    _destinationsRailStatic = [
+      NavigationRailDestination(
+        icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
+            colorFilter: colorFilter),
+        selectedIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
+            colorFilter: activeColorFilter),
+        label: Text(
+          AppLocalizations.of(context)!.bottomNavigationGuideline,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ),
+      NavigationRailDestination(
+        icon: SvgPicture.asset("assets/ic_components_atom.svg",
+            colorFilter: colorFilter),
+        selectedIcon: SvgPicture.asset("assets/ic_components_atom.svg",
+            colorFilter: activeColorFilter),
+        label: Text(
+          AppLocalizations.of(context)!.bottomNavigationComponents,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ),
+      NavigationRailDestination(
+        icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
+            colorFilter: colorFilter),
+        selectedIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
+            colorFilter: activeColorFilter),
+        label: Text(AppLocalizations.of(context)!.bottomNavigationModules,
+            style: Theme.of(context).textTheme.bodyMedium),
+      ),
+      NavigationRailDestination(
+        icon: SvgPicture.asset("assets/ic_about_info.svg",
+            colorFilter: colorFilter),
+        selectedIcon: SvgPicture.asset("assets/ic_about_info.svg",
+            colorFilter: activeColorFilter),
+        label: Text(AppLocalizations.of(context)!.bottomNavigationAbout,
+            style: Theme.of(context).textTheme.bodyMedium),
+      ),
     ];
   }
 
@@ -137,25 +176,8 @@ class _NavigationItems {
   getBottomNavigationBarItems() {
     return _destinationsStatic;
   }
-}
 
-class _MainMenuItem {
-  const _MainMenuItem({
-    required this.icon,
-    required this.activeIcon,
-    required this.label,
-    required this.screen,
-  });
-
-  /// The icon of the menu item.
-  final Widget icon;
-
-  /// The icon of the menu item when not selected.
-  final Widget activeIcon;
-
-  /// The text label for this menu item.
-  final String label;
-
-  /// The screen launched on menu item tap.
-  final Widget screen;
+  getNavigationRailDestinations() {
+    return _destinationsRailStatic;
+  }
 }
