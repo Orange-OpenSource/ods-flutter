@@ -29,6 +29,7 @@ ods-flutter/app/assets/recipes/ic_restaurant.svg
 ods-flutter/app/assets/il_snackbars.svg
 ods-flutter/app/assets/il_app_bars_top_generic.png
 ods-flutter/app/assets/il_chips.png
+ods-flutter/app/assets/il_floating_action_button.svg
 
 ods-flutter/app/assets/1.5x/il_about.png
 ods-flutter/app/assets/1.5x/il_switches.png

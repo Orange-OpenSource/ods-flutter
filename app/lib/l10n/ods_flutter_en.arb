@@ -540,6 +540,67 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_FAB": {},
+  "componentFloatingActionButtonTitle": "Buttons: fab",
+  "@componentFloatingActionButtonTitle": {
+    "description": "Component FAB - Title",
+    "type": "text"
+  },
+  "componentFloatingActionButtonDescription": "A floating Action Button (FAB) is an interactive element that enables the user to initiate an immediate action. There are a number of different options for how they can be presented",
+  "@componentFloatingActionButtonDescription": {
+    "description": "Component FAB - Description",
+    "type": "text"
+  },
+
+  "@_FAB_VARIANT": {},
+  "floatingActionButtonVariantActionTitle": "Buttons: fab demo",
+  "@floatingActionButtonVariantActionTitle": {
+    "description": "FAB Variant - Title",
+    "type": "text"
+  },
+  "floatingActionButtonVariantActionSubtitle": "OdsFloatingActionButton",
+  "@floatingActionButtonVariantActionSubtitle": {
+    "description": "FAB Variant - Subtitle",
+    "type": "text"
+  },
+  "floatingActionButtonVariantSize": "Size",
+  "@floatingActionButtonVariantSize": {
+    "description": "FAB Variant Size - Text",
+    "type": "text"
+  },
+  "floatingActionButtonVariantExtendedAdd": "ADD",
+  "@floatingActionButtonVariantExtendedAdd": {
+    "description": "FAB Variant Add - Text",
+    "type": "text"
+  },
+  "floatingActionButtonVariantTooltip": "Increment",
+  "@floatingActionButtonVariantTooltip": {
+    "description": "FAB Variant Increment - Text",
+    "type": "text"
+  },
+  "floatingActionButtonEnumDefault": "Default",
+  "@floatingActionButtonEnumNone": {
+    "description": "FAB Default - Enum",
+    "type": "text"
+  },
+  "floatingActionButtonEnumSmall": "Small",
+  "@floatingActionButtonEnumSmall": {
+    "description": "FAB Small - Enum",
+    "type": "text"
+  },
+  "floatingActionButtonEnumLarge": "Large",
+  "@floatingActionButtonEnumLarge": {
+    "description": "FAB Large - Enum",
+    "type": "text"
+  },
+  "floatingActionButtonEnumExtended": "Extended",
+  "@floatingActionButtonEnumExtended": {
+    "description": "FAB Extended - Enum",
+    "type": "text"
+  },
+
+
+
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
   "@componentMaterialsTitle": {

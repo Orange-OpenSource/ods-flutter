@@ -19,6 +19,7 @@ import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
 import 'app_bars/top/top_app_bars.dart';
+import 'floating_action_button/floating_action_button.dart';
 
 List<Component> components(BuildContext context) {
   return [
@@ -147,6 +148,19 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.chipsVariantInputTitle,
             AppLocalizations.of(context)!.chipsVariantInputSubtitle,
             ComponentChipsInput()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentFloatingActionButtonTitle,
+      'assets/il_floating_action_button.svg',
+      AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.floatingActionButtonVariantActionTitle,
+          AppLocalizations.of(context)!
+              .floatingActionButtonVariantActionSubtitle,
+          ComponentFloatingActionButton(),
+        ),
       ],
     ),
     Component(
