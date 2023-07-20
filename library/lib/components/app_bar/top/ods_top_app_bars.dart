@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
 class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
   const OdsAppTopBars({
+    super.key,
     required this.title,
     this.actions,
     this.leading,

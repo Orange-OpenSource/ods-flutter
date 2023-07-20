@@ -17,34 +17,50 @@ class ComponentsScreen extends StatefulWidget {
 class _ComponentsScreenState extends State<ComponentsScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
+    int crossAxisCount;
+    double childAspectRatio;
+
+    if (width >= 1024) {
+      /// Desktop && Tablet
+      crossAxisCount = 5;
+      childAspectRatio = 1.0;
+    } else if (width >= 640) {
+      /// Mobile Paysage
+      crossAxisCount = 3;
+      childAspectRatio = 0.9;
+    } else {
+      /// Mobile Portrait
+      crossAxisCount = 2;
+      childAspectRatio = 0.97;
+    }
+
     return SafeArea(
-      child: OrientationBuilder(
-        builder: (context, orientation) {
-          return GridView.count(
-            crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            childAspectRatio: orientation == Orientation.portrait ? 1.0 : 1.2,
-            children: widget.odsComponents.map(
-              (component) {
-                return Column(
-                  children: [
-                    OdsSmallCard(
-                      title: component.title,
-                      image: displayImage(
-                          component.imageResourceName, double.infinity),
-                      onTap: () {
-                        Get.to(
-                            ComponentDetailScreen(
-                              component: component,
-                            ),
-                            transition: Transition.rightToLeft);
-                      },
-                    ),
-                  ],
-                );
-              },
-            ).toList(),
-          );
-        },
+      child: GridView.count(
+        crossAxisCount: crossAxisCount,
+        childAspectRatio: childAspectRatio,
+        children: widget.odsComponents.map(
+          (component) {
+            return Column(
+              children: [
+                OdsSmallCard(
+                  title: component.title,
+                  image: displayImage(
+                      component.imageResourceName, double.infinity),
+                  onTap: () {
+                    Get.to(
+                      ComponentDetailScreen(
+                        component: component,
+                      ),
+                      transition: Transition.rightToLeft,
+                    );
+                  },
+                ),
+              ],
+            );
+          },
+        ).toList(),
       ),
     );
   }

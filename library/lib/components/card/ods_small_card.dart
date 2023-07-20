@@ -41,43 +41,38 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
   Widget build(BuildContext context) {
     return Stack(children: [
       SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.all(spacingXs),
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(odsCardRadius),
-            ),
-            elevation: 3,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: OdsSmallCard._imageHeight,
-                  child: widget.image,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(spacingM),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(odsCardRadius),
+          ),
+          elevation: 1,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: OdsSmallCard._imageHeight,
+                child: widget.image,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(spacingM),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.titleLarge,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      if (widget.subtitle != null)
                         Text(
-                          widget.title,
+                          widget.subtitle!,
                           style: Theme.of(context).textTheme.titleMedium,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        if (widget.subtitle != null)
-                          Text(
-                            widget.subtitle!,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                      ]),
-                )
-              ],
-            ),
+                    ]),
+              )
+            ],
           ),
         ),
       ),
