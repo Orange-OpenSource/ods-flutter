@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update demo app for checkboxes component ([#142](https://github.com/Orange-OpenSource/ods-flutter/issues/142))
 - Update Customization Bottom Sheet ([#169](https://github.com/Orange-OpenSource/ods-flutter/issues/169))
 - ODS - Component - Chips: ([#14](https://github.com/Orange-OpenSource/ods-flutter/issues/14))
+- [Bug]: vertical card image does not show ([#173](https://github.com/Orange-OpenSource/ods-flutter/issues/173))
 
 ### Changed
 

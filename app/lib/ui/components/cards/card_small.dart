@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
-import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/constants.dart';
+import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -21,11 +20,13 @@ class _CardSmallState extends State<CardSmall> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.addPostFrameCallback((_) => displayPersistentBottomSheet());
+    SchedulerBinding.instance
+        .addPostFrameCallback((_) => displayPersistentBottomSheet());
   }
 
   void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false, (BuildContext context) {
+    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
+        (BuildContext context) {
       return CustomizationBottomSheet(content: _CustomizationContent());
     });
   }
@@ -33,7 +34,11 @@ class _CardSmallState extends State<CardSmall> {
   @override
   Widget build(BuildContext context) {
     return CardCustomization(
-      child: Scaffold(key: _scaffoldKey, appBar: MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle), body: _Body()),
+      child: Scaffold(
+          key: _scaffoldKey,
+          appBar:
+              MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),
+          body: _Body()),
     );
   }
 }
@@ -41,44 +46,56 @@ class _CardSmallState extends State<CardSmall> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CardCustomizationState? customizationState = CardCustomization.of(context);
-    return Padding(
-      padding: const EdgeInsets.all(spacingM),
-      child: Column(
-        children: [
-          SizedBox(
-            width: _computeCardWidth(customizationState!.context),
-            child: OdsSmallCard(
-              title: AppLocalizations.of(context)!.cardSmallVariantTitle,
-              subtitle: customizationState.hasSubtitle == true ? AppLocalizations.of(context)!.cardSmallVariantSubtitle : null,
-              image: Image.asset('assets/placeholder.png', semanticLabel: 'Flutter image', fit: BoxFit.fitHeight),
-              onTap: customizationState.clickable ? () {} : null,
-            ),
-          ),
-        ],
+    final CardCustomizationState? customizationState =
+        CardCustomization.of(context);
+
+    return SafeArea(
+      child: OrientationBuilder(
+        builder: (context, orientation) {
+          return GridView.count(
+            crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+            childAspectRatio: orientation == Orientation.portrait ? 0.9 : 1.1,
+            children: OdsApplication.recipes
+                .map(
+                  (recipe) {
+                    return Column(
+                      children: [
+                        OdsSmallCard(
+                          title: recipe.title,
+                          subtitle: customizationState?.hasSubtitle == true
+                              ? recipe.subtitle
+                              : null,
+                          image: FadeInImage(
+                            placeholder: AssetImage('assets/placeholder.png'),
+                            image: NetworkImage(recipe.url),
+                            fit: BoxFit.cover,
+                            imageErrorBuilder: (context, error, stackTrace) {
+                              return Image(
+                                image: AssetImage('assets/placeholder.png'),
+                                fit: BoxFit.cover,
+                              );
+                            },
+                          ),
+                          onTap: customizationState!.clickable ? () {} : null,
+                        ),
+                      ],
+                    );
+                  },
+                )
+                .take(1) // Take only the first element from the map
+                .toList(),
+          );
+        },
       ),
     );
-  }
-
-  double _computeCardWidth(BuildContext context) {
-    // 1. remove horizontal paddings
-    var cardWidth = -2 * spacingM;
-    if (MediaQuery.of(context).size.width < mobileUiMaxScreenWidth) {
-      // 2. split screen width in two for small width screens (2 cards per line)
-      cardWidth += MediaQuery.of(context).size.width / 2;
-    } else {
-      // 2. split screen width in 3 for larger screens (3 cards per line)
-      cardWidth += MediaQuery.of(context).size.width / 3;
-    }
-
-    return cardWidth;
   }
 }
 
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CardCustomizationState? customizationState = CardCustomization.of(context);
+    final CardCustomizationState? customizationState =
+        CardCustomization.of(context);
     return Column(
       children: [
         SwitchListTile(
