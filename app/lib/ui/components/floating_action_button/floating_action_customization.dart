@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button_enum.dart';
 
 class _FloatingActionButtonCustomization extends InheritedWidget {
   _FloatingActionButtonCustomization({
@@ -34,36 +35,27 @@ class FloatingActionButtonCustomization extends StatefulWidget {
 
 class FloatingActionButtonCustomizationState
     extends State<FloatingActionButtonCustomization> {
-  bool _hasDefault = true;
-  bool _hasSmall = true;
-  bool _hasLarge = true;
-  bool _hasExtended = true;
+  List<FloatingActionButtonEnum> _elements = [
+    FloatingActionButtonEnum.defaultFab,
+    FloatingActionButtonEnum.smallFab,
+    FloatingActionButtonEnum.largeFab,
+    FloatingActionButtonEnum.extendedFab,
+  ];
+  FloatingActionButtonEnum _selectedElement =
+      FloatingActionButtonEnum.defaultFab;
 
-  bool get hasDefault => _hasDefault;
-  set hasDefault(bool value) {
+  List<FloatingActionButtonEnum> get elements => _elements;
+  set elements(List<FloatingActionButtonEnum> value) {
     setState(() {
-      _hasDefault = value;
+      _elements = value;
     });
   }
 
-  bool get hasSmall => _hasSmall;
-  set hasSmall(bool value) {
-    setState(() {
-      _hasSmall = value;
-    });
-  }
+  FloatingActionButtonEnum get selectedElement => _selectedElement;
 
-  bool get hasLarge => _hasLarge;
-  set hasLarge(bool value) {
+  set selectedElement(FloatingActionButtonEnum value) {
     setState(() {
-      _hasLarge = value;
-    });
-  }
-
-  bool get hasExtended => _hasExtended;
-  set hasExtended(bool value) {
-    setState(() {
-      _hasExtended = value;
+      _selectedElement = value;
     });
   }
 

@@ -151,13 +151,14 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      'Button: FAB',
+      AppLocalizations.of(context)!.componentFloatingActionButtonTitle,
       'assets/il_floating_action_button.svg',
-      'A floating Action Button (FAB) is an interactive element that enables the user to initiate an immediate action. There are a number of different options for how they can be presented',
+      AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
       [
         Variant(
-          'Buttons: FAB demo',
-          'OdsFloatingActionButton',
+          AppLocalizations.of(context)!.floatingActionButtonVariantActionTitle,
+          AppLocalizations.of(context)!
+              .floatingActionButtonVariantActionSubtitle,
           ComponentFloatingActionButton(),
         ),
       ],
