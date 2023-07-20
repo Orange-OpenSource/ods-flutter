@@ -6,9 +6,9 @@ import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/chips/ods_input_chips.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/domain/chips_enum.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
@@ -68,32 +68,45 @@ class _BodyState extends State<_Body> {
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
 
     return Padding(
-      padding: const EdgeInsets.all(spacingS),
-      child: Wrap(
-        spacing: spacingS,
-        children: List<Widget>.generate(1, (int index) {
-          Widget? avatar;
+      padding:
+          const EdgeInsets.only(left: spacingS, right: spacingM, top: spacingM),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(AppLocalizations.of(context)!.chipsVariantFilterDescription,
+              style: Theme.of(context).textTheme.bodyMedium),
+          SizedBox(height: spacingM),
+          Wrap(
+            spacing: spacingS,
+            children: List<Widget>.generate(1, (int index) {
+              Widget? avatar;
 
-          if (customizationState?.selectedElement == ChipsEnum.none) {
-            avatar = null;
-          } else if (customizationState?.selectedElement == ChipsEnum.avatar) {
-            avatar = CircleAvatar(
-              backgroundImage: NetworkImage(
-                OdsApplication.recipes[index].url,
-              ),
-            );
-          } else if (customizationState?.selectedElement == ChipsEnum.icon) {
-            avatar = SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
-                colorFilter: colorFilter);
-          }
+              if (customizationState?.selectedElement == ChipsEnum.none) {
+                avatar = null;
+              } else if (customizationState?.selectedElement ==
+                  ChipsEnum.avatar) {
+                avatar = CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    OdsApplication.recipes[index].url,
+                  ),
+                );
+              } else if (customizationState?.selectedElement ==
+                  ChipsEnum.icon) {
+                avatar = SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
+                    colorFilter: colorFilter);
+              }
 
-          return OdsInputChips(
-            label: OdsApplication.recipes[index].title,
-            avatar: avatar,
-            onPressed: customizationState?.hasEnabled == true ? () {} : null,
-            onDeleted: customizationState?.hasEnabled == true ? () {} : null,
-          );
-        }),
+              return OdsInputChips(
+                label: OdsApplication.recipes[index].title,
+                avatar: avatar,
+                onPressed:
+                    customizationState?.hasEnabled == true ? () {} : null,
+                onDeleted:
+                    customizationState?.hasEnabled == true ? () {} : null,
+              );
+            }),
+          ),
+        ],
       ),
     );
   }
@@ -136,8 +149,9 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChips(
-                      label:
-                          customizationState?.elements[index].stringValue ?? '',
+                      label: customizationState?.elements[index]
+                              .stringValue(context) ??
+                          '',
                       isSelected: isSelected,
                       onSelected: (selected) {
                         setState(() {

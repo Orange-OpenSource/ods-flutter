@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter_demo/domain/chips_enum.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 
 class _ChipsCustomization extends InheritedWidget {
   _ChipsCustomization({

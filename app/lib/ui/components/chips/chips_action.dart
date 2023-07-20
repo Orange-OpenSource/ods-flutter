@@ -57,12 +57,21 @@ class _Body extends StatelessWidget {
     var colorScheme = Theme.of(context).colorScheme;
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
     return Padding(
-      padding: const EdgeInsets.all(spacingS),
-      child: OdsActionChips(
-        label: OdsApplication.recipes[0].title,
-        avatar: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
-            colorFilter: colorFilter),
-        onPressed: customizationState?.hasEnabled == true ? () {} : null,
+      padding:
+          const EdgeInsets.only(left: spacingS, right: spacingM, top: spacingM),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(AppLocalizations.of(context)!.chipsVariantActionDescription,
+              style: Theme.of(context).textTheme.bodyMedium),
+          SizedBox(height: spacingM),
+          OdsActionChips(
+            label: OdsApplication.recipes[0].title,
+            avatar: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
+                colorFilter: colorFilter),
+            onPressed: customizationState?.hasEnabled == true ? () {} : null,
+          ),
+        ],
       ),
     );
   }

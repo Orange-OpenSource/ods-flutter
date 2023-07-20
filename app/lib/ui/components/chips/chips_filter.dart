@@ -4,9 +4,9 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/domain/chips_enum.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
@@ -64,38 +64,48 @@ class _BodyState extends State<_Body> {
         ChipsCustomization.of(context);
 
     return Padding(
-      padding: const EdgeInsets.all(spacingS),
-      child: Wrap(
-        spacing: 8.0,
-        children: List<Widget>.generate(4, (int index) {
-          bool isSelected = selectedIndex == index;
-          Widget? avatar;
-          if (customizationState?.selectedElement == ChipsEnum.none) {
-            avatar = null;
-          } else if (customizationState?.selectedElement == ChipsEnum.avatar) {
-            avatar = CircleAvatar(
-              backgroundImage:
-                  NetworkImage(OdsApplication.foods[index + 41].image),
-              radius: 120,
-            );
-          }
+      padding:
+          const EdgeInsets.only(left: spacingS, right: spacingM, top: spacingM),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(AppLocalizations.of(context)!.chipsVariantFilterDescription,
+              style: Theme.of(context).textTheme.bodyMedium),
+          SizedBox(height: spacingM),
+          Wrap(
+            spacing: spacingS,
+            children: List<Widget>.generate(4, (int index) {
+              bool isSelected = selectedIndex == index;
+              Widget? avatar;
+              if (customizationState?.selectedElement == ChipsEnum.none) {
+                avatar = null;
+              } else if (customizationState?.selectedElement ==
+                  ChipsEnum.avatar) {
+                avatar = CircleAvatar(
+                  backgroundImage:
+                      NetworkImage(OdsApplication.foods[index + 41].image),
+                  radius: 120,
+                );
+              }
 
-          return OdsFilterChips(
-            label: OdsApplication.foods[index + 41].name,
-            isSelected: isSelected,
-            avatar: avatar,
-            onSelected: customizationState?.hasEnabled == true
-                ? (selected) {
-                    setState(() {
-                      selectedIndex = index;
-                      isFiltered = selected!;
-                    });
-                  }
-                : customizationState?.hasEnabled == false
-                    ? null
-                    : null,
-          );
-        }),
+              return OdsFilterChips(
+                label: OdsApplication.foods[index + 41].name,
+                isSelected: isSelected,
+                avatar: avatar,
+                onSelected: customizationState?.hasEnabled == true
+                    ? (selected) {
+                        setState(() {
+                          selectedIndex = index;
+                          isFiltered = selected!;
+                        });
+                      }
+                    : customizationState?.hasEnabled == false
+                        ? null
+                        : null,
+              );
+            }).toList(),
+          ),
+        ],
       ),
     );
   }
@@ -138,8 +148,9 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChips(
-                      label:
-                          customizationState?.elements[index].stringValue ?? '',
+                      label: customizationState?.elements[index]
+                              .stringValue(context) ??
+                          '',
                       isSelected: isSelected,
                       onSelected: (selected) {
                         setState(() {
