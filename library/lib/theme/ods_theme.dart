@@ -48,6 +48,11 @@ class OdsTheme {
             color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
     ),
+    navigationRailTheme: const NavigationRailThemeData(
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
+    ),
     cardTheme: CardTheme(
       surfaceTintColor: lightColorScheme.onSecondary,
     ),
@@ -108,6 +113,11 @@ class OdsTheme {
         return TextStyle(
             color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
       }),
+    ),
+    navigationRailTheme: const NavigationRailThemeData(
+      elevation: 3.0,
+      indicatorColor: Colors.transparent,
+      indicatorShape: null,
     ),
     cardTheme: CardTheme(
       surfaceTintColor: darkColorScheme.onSecondary,
