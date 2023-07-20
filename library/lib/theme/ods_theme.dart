@@ -52,6 +52,8 @@ class OdsTheme {
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
+      selectedLabelTextStyle:
+          TextStyle(color: orange200, overflow: TextOverflow.ellipsis),
     ),
     cardTheme: CardTheme(
       surfaceTintColor: lightColorScheme.onSecondary,
@@ -118,6 +120,8 @@ class OdsTheme {
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
+      selectedLabelTextStyle:
+          TextStyle(color: orange100, overflow: TextOverflow.ellipsis),
     ),
     cardTheme: CardTheme(
       surfaceTintColor: darkColorScheme.onSecondary,
