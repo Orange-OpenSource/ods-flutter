@@ -3,14 +3,12 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
-import 'package:ods_flutter_demo/ui/components/components_screen.dart';
+import 'package:ods_flutter_demo/ui/components/components.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_screen.dart';
-import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
-import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
-import 'package:provider/provider.dart';
 
-import 'components/components.dart';
+import 'components/components_screen.dart';
+import 'main_app_bar.dart';
 
 const int extendedNavigationRailMinScreenWidth = 600;
 
@@ -27,58 +25,36 @@ class _MainScreenState extends State<MainScreen> {
     var navigationItems = _NavigationItems(context);
     var selectedItem = navigationItems.getSelectedMenuItem(_selectedIndex);
 
-    return Consumer<ModelTheme>(
-      builder: (context, ModelTheme themeNotifier, child) {
-        final isLargeScreen = MediaQuery.of(context).size.width > 600;
-
-        return Scaffold(
-          appBar: MainAppBar(selectedItem.label),
-          body: isLargeScreen
-              ? Row(
-                  children: [
-                    NavigationRail(
-                      selectedIndex: _selectedIndex,
-                      labelType: NavigationRailLabelType.all,
-                      onDestinationSelected: (int index) {
-                        setState(() {
-                          _selectedIndex = index;
-                        });
-                      },
-                      destinations:
-                          navigationItems.getNavigationRailDestinations(),
-                    ),
-                    Expanded(
-                      child: IndexedStack(
-                        index: _selectedIndex,
-                        children: [
-                          GuidelinesScreen(),
-                          ComponentsScreen(odsComponents: components(context)),
-                          ModulesScreen(),
-                          AboutScreen(),
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-              : <Widget>[
-                  GuidelinesScreen(),
-                  ComponentsScreen(odsComponents: components(context)),
-                  ModulesScreen(),
-                  AboutScreen(),
-                ][_selectedIndex],
-          bottomNavigationBar: isLargeScreen
-              ? null // Don't show OdsNavigationBar for large screens
-              : OdsNavigationBar(
-                  selectedIndex: _selectedIndex,
-                  onDestinationSelected: (int index) {
-                    setState(() {
-                      _selectedIndex = index;
-                    });
-                  },
-                  destinations: navigationItems.getBottomNavigationBarItems(),
-                ),
-        );
-      },
+    return Scaffold(
+      appBar: MainAppBar(selectedItem.label),
+      bottomNavigationBar: MediaQuery.of(context).size.width < 640
+          ? OdsNavigationBar(
+              selectedIndex: _selectedIndex,
+              onDestinationSelected: (int index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              destinations: navigationItems.getBottomNavigationBarItems(),
+            )
+          : null,
+      body: Row(
+        children: [
+          if (MediaQuery.of(context).size.width >= 640)
+            NavigationRail(
+              onDestinationSelected: (int index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              selectedIndex: _selectedIndex,
+              destinations: navigationItems._destinationsRailStatic,
+              labelType: NavigationRailLabelType.all,
+              // Called when one tab is selected,
+            ),
+          Expanded(child: navigationItems._screens[_selectedIndex])
+        ],
+      ),
     );
   }
 }
@@ -87,6 +63,7 @@ class _NavigationItems {
   late BuildContext context;
   late List<NavigationDestination> _destinationsStatic;
   late List<NavigationRailDestination> _destinationsRailStatic;
+  late List<Widget> _screens;
 
   _NavigationItems(this.context) {
     var colorScheme = Theme.of(context).colorScheme;
@@ -137,7 +114,6 @@ class _NavigationItems {
             colorFilter: activeColorFilter),
         label: Text(
           AppLocalizations.of(context)!.bottomNavigationGuideline,
-          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
       NavigationRailDestination(
@@ -145,27 +121,28 @@ class _NavigationItems {
             colorFilter: colorFilter),
         selectedIcon: SvgPicture.asset("assets/ic_components_atom.svg",
             colorFilter: activeColorFilter),
-        label: Text(
-          AppLocalizations.of(context)!.bottomNavigationComponents,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        label: Text(AppLocalizations.of(context)!.bottomNavigationComponents),
       ),
       NavigationRailDestination(
         icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
             colorFilter: colorFilter),
         selectedIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
             colorFilter: activeColorFilter),
-        label: Text(AppLocalizations.of(context)!.bottomNavigationModules,
-            style: Theme.of(context).textTheme.bodyMedium),
+        label: Text(AppLocalizations.of(context)!.bottomNavigationModules),
       ),
       NavigationRailDestination(
         icon: SvgPicture.asset("assets/ic_about_info.svg",
             colorFilter: colorFilter),
         selectedIcon: SvgPicture.asset("assets/ic_about_info.svg",
             colorFilter: activeColorFilter),
-        label: Text(AppLocalizations.of(context)!.bottomNavigationAbout,
-            style: Theme.of(context).textTheme.bodyMedium),
+        label: Text(AppLocalizations.of(context)!.bottomNavigationAbout),
       ),
+    ];
+    _screens = [
+      GuidelinesScreen(),
+      ComponentsScreen(odsComponents: components(context)),
+      ModulesScreen(),
+      AboutScreen(),
     ];
   }
 
@@ -179,5 +156,9 @@ class _NavigationItems {
 
   getNavigationRailDestinations() {
     return _destinationsRailStatic;
+  }
+
+  getScreens() {
+    return _screens;
   }
 }
