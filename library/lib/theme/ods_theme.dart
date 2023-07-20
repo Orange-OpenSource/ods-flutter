@@ -33,20 +33,34 @@ class OdsTheme {
       elevation: 3.0,
       indicatorColor: Colors.transparent,
       indicatorShape: null,
-      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
-        if (states.contains(MaterialState.selected)) {
-          return IconThemeData(color: lightColorScheme.primary);
-        }
-        return IconThemeData(color: lightColorScheme.secondary);
-      }),
-      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
-        if (states.contains(MaterialState.selected)) {
+      iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>(
+        (states) {
+          if (states.contains(MaterialState.selected)) {
+            return IconThemeData(color: lightColorScheme.primary);
+          }
+          return IconThemeData(color: lightColorScheme.secondary);
+        },
+      ),
+      labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>(
+        (states) {
+          if (states.contains(MaterialState.selected)) {
+            return TextStyle(
+                color: lightColorScheme.primary,
+                overflow: TextOverflow.ellipsis,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                height: 1.43,
+                letterSpacing: 0.25);
+          }
           return TextStyle(
-              color: lightColorScheme.primary, overflow: TextOverflow.ellipsis);
-        }
-        return TextStyle(
-            color: lightColorScheme.secondary, overflow: TextOverflow.ellipsis);
-      }),
+              color: lightColorScheme.secondary,
+              overflow: TextOverflow.ellipsis,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              height: 1.43,
+              letterSpacing: 0.25);
+        },
+      ),
     ),
     navigationRailTheme: const NavigationRailThemeData(
       elevation: 3.0,
@@ -110,10 +124,20 @@ class OdsTheme {
       labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>((states) {
         if (states.contains(MaterialState.selected)) {
           return TextStyle(
-              color: darkColorScheme.primary, overflow: TextOverflow.ellipsis);
+              color: darkColorScheme.primary,
+              overflow: TextOverflow.ellipsis,
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              height: 1.43,
+              letterSpacing: 0.25);
         }
         return TextStyle(
-            color: darkColorScheme.secondary, overflow: TextOverflow.ellipsis);
+            color: darkColorScheme.secondary,
+            overflow: TextOverflow.ellipsis,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            height: 1.43,
+            letterSpacing: 0.25);
       }),
     ),
     navigationRailTheme: const NavigationRailThemeData(
