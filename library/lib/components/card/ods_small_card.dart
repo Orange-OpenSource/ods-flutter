@@ -41,6 +41,7 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
   Widget build(BuildContext context) {
     return Stack(children: [
       SizedBox(
+        width: double.infinity,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(odsCardRadius),
@@ -51,6 +52,7 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
+                width: double.infinity,
                 height: OdsSmallCard._imageHeight,
                 child: widget.image,
               ),
