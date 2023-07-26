@@ -12,6 +12,8 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
+import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
+import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
@@ -160,6 +162,23 @@ List<Component> components(BuildContext context) {
           AppLocalizations.of(context)!
               .floatingActionButtonVariantActionSubtitle,
           ComponentFloatingActionButton(),
+        ),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentListsTitle,
+      'assets/il_lists.svg',
+      AppLocalizations.of(context)!.componentListsDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.listsVariantSelectionTitle,
+          AppLocalizations.of(context)!.listsVariantSelectionSubtitle,
+          ComponentListsSelection(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.listsVariantStandardTitle,
+          AppLocalizations.of(context)!.listsVariantStandardSubtitle,
+          ComponentListsStandard(),
         ),
       ],
     ),
