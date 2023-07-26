@@ -138,7 +138,7 @@
   },
   "componentCheckboxesChocolateAccessibility": "Chocolate Checkbox",
   "@componentCheckboxesChocolateAccessibility": {
-    "description": "Component Checkboxes Chocoloate Accessibility  - Description",
+    "description": "Component Checkboxes Chocolate Accessibility  - Description",
     "type": "text"
   },
   "componentCheckboxesButterAccessibility": "Butter Checkbox",
@@ -599,6 +599,114 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_LISTS": {},
+  "componentListsTitle": "Lists",
+  "@componentListsTitle": {
+    "description": "Component Lists - Title",
+    "type": "text"
+  },
+  "componentListsDescription": "A list is a continuous vertical group of data entries like text, icons or images",
+  "@componentListsDescription": {
+    "description": "Component Lists - Description",
+    "type": "text"
+  },
+
+  "@_LISTS_VARIANT": {},
+  "listsVariantSelectionTitle": "List with selection",
+  "@listsVariantSelectionTitle": {
+    "description": "List Variant - Title",
+    "type": "text"
+  },
+  "listsSelectionTitle": "List selection",
+  "@listsSelectionTitle": {
+    "description": "List selection - Title",
+    "type": "text"
+  },
+  "listsVariantSelectionSubtitle": "OdsListSelectionItem",
+  "@listsVariantSelectionSubtitle": {
+    "description": "List Variant - Subtitle",
+    "type": "text"
+  },
+  "listsVariantStandardTitle": "Standard Lists",
+  "@listsVariantStandardTitle": {
+    "description": "List Standard Variant - Title",
+    "type": "text"
+  },
+  "listsVariantStandardSubtitle": "OdsListStandardItem",
+  "@listsVariantStandardSubtitle": {
+    "description": "List Variant - Subtitle",
+    "type": "text"
+  },
+  "listsCustomizationSubtitle": "Subtitle",
+  "@listsCustomizationSubtitle": {
+    "description": "Lists Subtitle Customization - Subtitle",
+    "type": "text"
+  },
+  "listsLeadingCustomizationTitle": "Leading",
+  "@listsLeadingCustomizationTitle": {
+    "description": "Lists Leading Customization - Title",
+    "type": "text"
+  },
+  "listsLeadingEnumNone": "None",
+  "@listsLeadingEnumNone": {
+    "description": "Lists None - Enum",
+    "type": "text"
+  },
+  "listsLeadingEnumIcon": "Icon",
+  "@listsLeadingEnumIcon": {
+    "description": "Lists Icon - Enum",
+    "type": "text"
+  },
+  "listsLeadingEnumCircle": "Circle",
+  "@listsLeadingEnumCircle": {
+    "description": "Lists Circle - Enum",
+    "type": "text"
+  },
+  "listsLeadingEnumWide": "Wide",
+  "@listsLeadingEnumWide": {
+    "description": "Lists Wide - Enum",
+    "type": "text"
+  },
+  "listsLeadingEnumSquare": "Square",
+  "@listsLeadingEnumSquare": {
+    "description": "Lists Square - Enum",
+    "type": "text"
+  },
+  "listsTrailingCustomizationTitle": "Trailing",
+  "@listsTrailingCustomizationTitle": {
+    "description": "Lists Trailing Customization - Title",
+    "type": "text"
+  },
+  "listsTrailingEnumNone": "None",
+  "@listsTrailingEnumNone": {
+    "description": "Lists None - Enum",
+    "type": "text"
+  },
+  "listsTrailingEnumSwitch": "Switch",
+  "@listsTrailingEnumSwitch": {
+    "description": "Lists Switch - Enum",
+    "type": "text"
+  },
+  "listsTrailingEnumCheckbox": "Checkbox",
+  "@listsTrailingEnumCheckbox": {
+    "description": "Lists Checkbox - Enum",
+    "type": "text"
+  },
+  "listsTrailingEnumText": "Text",
+  "@listsTrailingEnumText": {
+    "description": "Lists Text - Enum",
+    "type": "text"
+  },
+  "listsTrailingEnumInfoButton": "Info Button",
+  "@listsTrailingEnumInfoButton": {
+    "description": "Lists Info Button - Enum",
+    "type": "text"
+  },
+  "listsTrailingExampleDetails": "Details",
+  "@listsTrailingExampleDetails": {
+    "description": "Lists Example Detail - Text",
+    "type": "text"
+  },
 
 
   "@_COMPONENTS_MATERIALS": {},
