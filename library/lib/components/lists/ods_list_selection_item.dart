@@ -46,7 +46,6 @@ class _OdsListSelectionItemState extends State<OdsListSelectionItem> {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      label: 'Liste de sélections',
       child: MergeSemantics(
         child: Column(
           children: [
