@@ -57,8 +57,8 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
                       style: Theme.of(context).textTheme.bodyLarge,
                     )
                   : null,
-              trailing: Wrap(
-                spacing: 12,
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   if (widget.text != null) Text(widget.text!),
                   if (widget.icon != null) widget.icon!, // icon-2
