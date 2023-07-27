@@ -223,7 +223,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Row(
                 children: List<Widget>.generate(
                     customizationState!.leadingElements.length, (int index) {
-                  bool isSelected = selectedLeadingIndex == index;
+                  ListsLeadingEnum currentElement =
+                      customizationState.leadingElements[index];
+                  bool isSelected = currentElement ==
+                      customizationState.selectedLeadingElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsFilterChips(
@@ -264,7 +267,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Row(
                 children: List<Widget>.generate(
                     customizationState.trailingElements.length, (int index) {
-                  bool isSelected = selectedTrailingIndex == index;
+                  ListsTrailingEnum currentElement =
+                      customizationState.trailingElements[index];
+                  bool isSelected = currentElement ==
+                      customizationState.selectedTrailingElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsFilterChips(

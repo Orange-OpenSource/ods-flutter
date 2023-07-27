@@ -144,7 +144,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List<Widget>.generate(2, (int index) {
-                  bool isSelected = selectedIndex == index;
+                  ChipsEnum? currentElement =
+                      customizationState?.elements[index];
+                  bool isSelected =
+                      currentElement == customizationState?.selectedElement;
                   return Padding(
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChips(

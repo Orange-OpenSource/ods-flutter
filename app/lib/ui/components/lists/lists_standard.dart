@@ -157,7 +157,10 @@ class _BodyState extends State<_Body> {
             image: buildFadeInImage(recipe),
             icon: customizationState?.selectedTrailingStandardElement ==
                     ListsTrailingEnum.trailingInfoButton
-                ? Icon(Icons.info, color: colorScheme.secondary)
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.info),
+                    color: colorScheme.secondary)
                 : null,
             text: customizationState?.selectedTrailingStandardElement ==
                     ListsTrailingEnum.trailingText
@@ -213,7 +216,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Row(
                 children: List<Widget>.generate(
                     customizationState!.leadingElements.length, (int index) {
-                  bool isSelected = selectedLeadingIndex == index;
+                  ListsLeadingEnum currentElement =
+                      customizationState.leadingElements[index];
+                  bool isSelected = currentElement ==
+                      customizationState.selectedLeadingElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsFilterChips(
@@ -255,7 +261,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 children: List<Widget>.generate(
                     customizationState.trailingStandardElements.length,
                     (int index) {
-                  bool isSelected = selectedStandardTrailingIndex == index;
+                  ListsTrailingEnum currentElement =
+                      customizationState.trailingStandardElements[index];
+                  bool isSelected = currentElement ==
+                      customizationState.selectedTrailingStandardElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsFilterChips(

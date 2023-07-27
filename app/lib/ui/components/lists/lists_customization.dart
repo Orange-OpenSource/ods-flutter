@@ -43,7 +43,7 @@ class ListsCustomizationState extends State<ListsCustomization> {
     ListsLeadingEnum.wide,
     ListsLeadingEnum.square,
   ];
-  ListsLeadingEnum _selectedLeadingElement = ListsLeadingEnum.none;
+  ListsLeadingEnum _selectedLeadingElement = ListsLeadingEnum.circle;
 
   ///Trailing Enum
   List<ListsTrailingEnum> _trailingElements = [
