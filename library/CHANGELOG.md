@@ -12,6 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add ODS typography for iOS & Android platforms ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
 - Add `OdsDivider` widget ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
 - Add `OdsVerticalImageFirstCard` widget ([#8](https://github.com/Orange-OpenSource/ods-flutter/issues/8))
+- Add `OdsNavigationBar` widget ([#23](https://github.com/Orange-OpenSource/ods-flutter/issues/23))
+- Add `OdsSnackbars` widget ([#31](https://github.com/Orange-OpenSource/ods-flutter/issues/31))
+- Add `OdsAppTopBars` widget ([#107](https://github.com/Orange-OpenSource/ods-flutter/issues/107))
+- Add `OdsActionChips`,`OdsFilterChips`,`OdsInputChips` widget ([#14](https://github.com/Orange-OpenSource/ods-flutter/issues/14))
+- Add `OdsFloatingActionButton` widget ([#5](https://github.com/Orange-OpenSource/ods-flutter/issues/5))
+- Add `OdsListSelectionItem`,`OdsListSelectionItem` widget ([#21](https://github.com/Orange-OpenSource/ods-flutter/issues/21))
+
 
 ### Removed
 
