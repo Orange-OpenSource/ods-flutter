@@ -5,7 +5,6 @@ const orange200 = Color(0xfff16e00);
 const white100 = Color(0xffffffff);
 const black900 = Color(0xff000000);
 const obsGrey700 = Color(0xff595959);
-
 // Supporting colors
 
 const blue100 = Color(0xffB5E8F7);
@@ -47,6 +46,7 @@ const grey400 = Color(0xffCCCCCC);
 const grey500 = Color(0xff999999);
 const grey600 = Color(0xff666666);
 const grey800 = Color(0xff333333);
+const grey900 = Color(0xFF212121);
 
 // Custom colors
 
