@@ -39,6 +39,16 @@
     "type": "text"
   },
   "@_GUIDELINES_SCREEN": {},
+  "guidelinesColours": "Colours",
+  "@guidelinesColours": {
+    "description": "Guidelines colour screen title",
+    "type": "text"
+  },
+  "guidelinesColoursDescription": "Comming soon...",
+  "@guidelinesColoursDescription": {
+    "description": "Guidelines colour screen - Explanation text",
+    "type": "text"
+  },
   "guidelinesTypography": "Typography",
   "@guidelinesTypography": {
     "description": "Guidelines typography screen title",
@@ -49,6 +59,18 @@
     "description": "Guidelines typography screen - Explanation text",
     "type": "text"
   },
+  "guidelinesSpacings": "Spacings",
+  "@guidelinesSpacings": {
+    "description": "Guidelines spacing screen title",
+    "type": "text"
+  },
+  "guidelinesSpacingsDescription": "Spacing tokens are used to position elements on the screen and layout within components. Spacing tokens can be applied ad padding and margins",
+  "@guidelinesSpacingsDescription": {
+    "description": "Guidelines spacing screen - Explanation text",
+    "type": "text"
+  },
+
+
   "@_COMPONENTS_SCREEN": {},
   "componentScreenTitle": "ODS Components",
   "@componentScreenTitle": {

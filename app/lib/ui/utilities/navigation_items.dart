@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
 import 'package:ods_flutter_demo/ui/components/components.dart';
 import 'package:ods_flutter_demo/ui/components/components_screen.dart';
+import 'package:ods_flutter_demo/ui/guidelines/guidelines.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_screen.dart';
 import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 
@@ -87,7 +88,7 @@ class NavigationItems {
       ),
     ];
     _screens = [
-      GuidelinesScreen(),
+      GuidelinesScreen(odsGuidelines: guidelines(context)),
       ComponentsScreen(odsComponents: components(context)),
       ModulesScreen(),
       AboutScreen(),

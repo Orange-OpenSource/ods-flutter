@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/elevated_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/filled_button.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/filled_tonal_button.dart';
@@ -12,6 +13,7 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
+import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
@@ -19,9 +21,6 @@ import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dar
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
-
-import 'app_bars/top/top_app_bars.dart';
-import 'floating_action_button/floating_action_button.dart';
 
 List<Component> components(BuildContext context) {
   return [

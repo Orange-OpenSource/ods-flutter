@@ -1,28 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:ods_flutter_demo/ui/guidelines/typography/guideline_typography_screen.dart';
+import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/guidelines/guidelines_entities.dart';
+import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
-class GuidelinesScreen extends StatelessWidget {
+class GuidelinesScreen extends StatefulWidget {
+  final List<Guideline> odsGuidelines;
+
+  GuidelinesScreen({required this.odsGuidelines});
+
+  @override
+  State<GuidelinesScreen> createState() => _GuidelinesScreenState();
+}
+
+class _GuidelinesScreenState extends State<GuidelinesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-      child: ListView(
-        children: [
-          Card(
-            child: ListTile(
-              onTap: () {
-                Get.to(GuidelineTypographyScreen(),
-                    transition: Transition.rightToLeft);
-              },
-              title: Center(
-                  child:
-                      Text(AppLocalizations.of(context)!.guidelinesTypography)),
+    return SafeArea(
+      child: ListView.builder(
+        itemCount: widget.odsGuidelines.length,
+        itemBuilder: (context, index) {
+          var guideline = widget.odsGuidelines[index];
+          return Padding(
+            padding: const EdgeInsets.all(spacingS),
+            child: Column(
+              children: [
+                OdsVerticalImageFirstCard(
+                  title: guideline.title,
+                  image: displayImage(
+                      guideline.imageResourceName, double.infinity),
+                  onTap: () {
+                    Get.to(
+                      guideline.screen,
+                      transition: Transition.rightToLeft,
+                    );
+                  },
+                ),
+              ],
             ),
-          ),
-        ],
+          );
+        },
       ),
-    ));
+    );
   }
 }

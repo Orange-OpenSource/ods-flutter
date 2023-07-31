@@ -18,6 +18,7 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
     this.text,
     this.button1,
     this.button2,
+    this.onTap,
   }) : super(key: key);
 
   static const double _imageHeight = 194;
@@ -41,8 +42,12 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   /// Optional second button in the card. If null, button will not be shown.
   final OdsButtonEntity? button2;
 
+  /// The action executed on card tap.
+  final Function()? onTap;
+
   @override
-  State<OdsVerticalImageFirstCard> createState() => _OdsVerticalImageFirstCardState();
+  State<OdsVerticalImageFirstCard> createState() =>
+      _OdsVerticalImageFirstCardState();
 }
 
 class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
@@ -50,66 +55,74 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(odsCardRadius),
-        ),
-        elevation: 1,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: OdsVerticalImageFirstCard._imageHeight,
-              child: widget.image,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: spacingM, top: spacingM, right: spacingM),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                if (widget.subtitle != null)
-                  Text(
-                    widget.subtitle!,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                if (widget.text != null)
-                  Padding(
-                    padding: const EdgeInsets.only(top: spacingS),
-                    child: Text(
-                      widget.text!,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                  ),
-              ]),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(spacingS),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    if (widget.button1 != null)
-                      TextButton(
-                        onPressed: widget.button1!.onClick,
-                        child: Text(widget.button1!.label),
-                      ), //TODO Use ODS text button when available to display text in uppercase
-                    if (widget.button2 != null)
-                      Padding(
-                        padding: (widget.button1 != null) ? const EdgeInsets.only(left: spacingS) : const EdgeInsets.only(),
-                        child: TextButton(
-                          onPressed: widget.button2!.onClick,
-                          child: Text(widget.button2!.label),
-                        ), //TODO Use ODS text button when available to display text in uppercase
-                      ),
-                  ],
-                ),
+      child: InkWell(
+        onTap: widget.onTap,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(odsCardRadius),
+          ),
+          elevation: 1,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: OdsVerticalImageFirstCard._imageHeight,
+                child: widget.image,
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: spacingM, top: spacingM, right: spacingM),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      if (widget.subtitle != null)
+                        Text(
+                          widget.subtitle!,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      if (widget.text != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: spacingS),
+                          child: Text(
+                            widget.text!,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ),
+                    ]),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(spacingS),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      if (widget.button1 != null)
+                        TextButton(
+                          onPressed: widget.button1!.onClick,
+                          child: Text(widget.button1!.label),
+                        ),
+                      if (widget.button2 != null)
+                        Padding(
+                          padding: (widget.button1 != null)
+                              ? const EdgeInsets.only(left: spacingS)
+                              : const EdgeInsets.only(),
+                          child: TextButton(
+                            onPressed: widget.button2!.onClick,
+                            child: Text(widget.button2!.label),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
