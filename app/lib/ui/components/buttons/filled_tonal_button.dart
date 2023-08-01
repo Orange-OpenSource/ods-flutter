@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/button/ods_filled_tonal_button.dart';
@@ -22,21 +21,15 @@ class _ComponentFilledTonalButtonsState
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance
-        .addPostFrameCallback((_) => displayPersistentBottomSheet());
-  }
-
-  void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
-        (BuildContext context) {
-      return CustomizationBottomSheet(content: _CustomizationContent());
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return ButtonCustomization(
       child: Scaffold(
+          bottomSheet: CustomizationBottomSheet(
+            content: _CustomizationContent(),
+          ),
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.filledTonalButtonsVariantTitle),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
@@ -17,28 +16,20 @@ class ComponentChipsFilter extends StatefulWidget {
 }
 
 class _ComponentChipsFilterState extends State<ComponentChipsFilter> {
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
   bool isFiltered = true;
 
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance
-        .addPostFrameCallback((_) => displayPersistentBottomSheet());
-  }
-
-  void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
-        (BuildContext context) {
-      return CustomizationBottomSheet(content: _CustomizationContent());
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return ChipsCustomization(
       child: Scaffold(
-        key: _scaffoldKey,
+        bottomSheet: CustomizationBottomSheet(
+          content: _CustomizationContent(),
+        ),
         appBar: OdsAppTopBars(
             title: AppLocalizations.of(context)!.chipsVariantFilterTitle,
             actions: [ThemeSelector()],

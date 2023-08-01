@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
@@ -23,21 +22,15 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance
-        .addPostFrameCallback((_) => displayPersistentBottomSheet());
-  }
-
-  void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
-        (BuildContext context) {
-      return CustomizationBottomSheet(content: _CustomizationContent());
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return NavigationBarCustomization(
         child: Scaffold(
+      bottomSheet: CustomizationBottomSheet(
+        content: _CustomizationContent(),
+      ),
       key: _scaffoldKey,
       appBar:
           MainAppBar(AppLocalizations.of(context)!.componentNavigationBarTitle),
@@ -47,7 +40,7 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
 }
 
 class _NavBarDemo extends StatefulWidget {
-  _NavBarDemo({super.key});
+  _NavBarDemo();
 
   @override
   State<_NavBarDemo> createState() => _NavBarDemoState();

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter_demo/main.dart';
@@ -20,21 +19,15 @@ class _CardSmallState extends State<CardSmall> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance
-        .addPostFrameCallback((_) => displayPersistentBottomSheet());
-  }
-
-  void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
-        (BuildContext context) {
-      return CustomizationBottomSheet(content: _CustomizationContent());
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return CardCustomization(
       child: Scaffold(
+          bottomSheet: CustomizationBottomSheet(
+            content: _CustomizationContent(),
+          ),
           key: _scaffoldKey,
           appBar:
               MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),
