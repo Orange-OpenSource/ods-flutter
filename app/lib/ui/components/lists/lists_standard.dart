@@ -3,13 +3,13 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_customization.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_leading_enum.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_trailing_enum.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentListsStandard extends StatefulWidget {
@@ -32,6 +32,10 @@ class _ComponentListsStandardState extends State<ComponentListsStandard> {
     return ListsCustomization(
       child: Scaffold(
         key: _scaffoldKey,
+        bottomSheet: OdsSheetsBottom(
+          content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
         appBar:
             MainAppBar(AppLocalizations.of(context)!.listsVariantStandardTitle),
         body: _Body(),
@@ -141,9 +145,6 @@ class _BodyState extends State<_Body> {
     }
 
     return Scaffold(
-      bottomSheet: CustomizationBottomSheet(
-        content: _CustomizationContent(),
-      ),
       body: ListView.builder(
         itemCount: OdsApplication.recipes.length - 4,
         itemBuilder: (context, index) {
@@ -166,6 +167,7 @@ class _BodyState extends State<_Body> {
                     ListsTrailingEnum.trailingText
                 ? AppLocalizations.of(context)!.listsTrailingExampleDetails
                 : null,
+            divider: true,
           );
         },
       ),

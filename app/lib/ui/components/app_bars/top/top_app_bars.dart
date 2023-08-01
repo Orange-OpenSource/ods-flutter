@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customization.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
@@ -25,8 +25,9 @@ class _ComponentTopAppBarsState extends State<ComponentTopAppBars> {
   Widget build(BuildContext context) {
     return ComponentTopAppBarsCustomization(
       child: Scaffold(
-          bottomSheet: CustomizationBottomSheet(
+          bottomSheet: OdsSheetsBottom(
             content: _CustomizationContent(),
+            title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
           body: _Body()),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
 class ComponentChipsFilter extends StatefulWidget {
@@ -27,8 +27,9 @@ class _ComponentChipsFilterState extends State<ComponentChipsFilter> {
   Widget build(BuildContext context) {
     return ChipsCustomization(
       child: Scaffold(
-        bottomSheet: CustomizationBottomSheet(
+        bottomSheet: OdsSheetsBottom(
           content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBars(
             title: AppLocalizations.of(context)!.chipsVariantFilterTitle,
