@@ -95,7 +95,7 @@
     "type": "text"
   },
   "componentElementSubtitle": "Subtitle",
-  "@componentCustomizeSubtitle": {
+  "@componentElementSubtitle": {
     "description": "Component customization element - Subtitle",
     "type": "text"
   },
@@ -727,6 +727,56 @@
   "listsTrailingExampleDetails": "Details",
   "@listsTrailingExampleDetails": {
     "description": "Lists Example Detail - Text",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_SHEETS_BOTTOM": {},
+  "componentSheetsBottomTitle": "Sheets: bottom",
+  "@componentSheetsBottomTitle": {
+    "description": "Component Sheets Bottom - Title",
+    "type": "text"
+  },
+  "componentSheetsBottomDescription": "Bottom sheets are surfaces anchored to the bottom of the screen that present users supplemental content.",
+  "@componentSheetsBottomDescription": {
+    "description": "Component Sheets Bottom - Description",
+    "type": "text"
+  },
+
+  "@_SHEETS_BOTTOM_VARIANT": {},
+
+  "sheetsBottomVariantTitle": "Sheets: bottom demo",
+  "@sheetsBottomVariantTitle": {
+    "description": "Sheets Bottom Variant - Title",
+    "type": "text"
+  },
+  "sheetsBottomVariantSubtitle": "OdsBottomSheetScaffold",
+  "@sheetsBottomVariantSubtitle": {
+    "description": "Sheets Bottom Variant - Subtitle",
+    "type": "text"
+  },
+  "sheetsBottomDescriptionExample": "Customize the bottom sheet",
+  "@sheetsBottomDescriptionExample": {
+    "description": "Sheets Bottom Description Example - Description",
+    "type": "text"
+  },
+  "sheetsBottomSubtitleExample": "Content",
+  "@sheetsBottomSubtitleExample": {
+    "description": "Sheets Bottom Subtitle Example - Subtitle",
+    "type": "text"
+  },
+  "sheetsBottomEnumEmpty": "Empty",
+  "@sheetsBottomEnumEmpty": {
+    "description": "Sheets Bottom Empty - Enum",
+    "type": "text"
+  },
+  "sheetsBottomEnumExample": "Example",
+  "@sheetsBottomEnumExample": {
+    "description": "Sheets Bottom Example - Enum",
+    "type": "text"
+  },
+  "sheetsBottomCustomizeTitle": "Recipes",
+  "@sheetsBottomCustomizeTitle": {
+    "description": "Component customization bottom sheet - Title",
     "type": "text"
   },
 
