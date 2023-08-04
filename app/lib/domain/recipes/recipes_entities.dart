@@ -26,6 +26,16 @@ class Entity {
         "category": List<dynamic>.from(category.map((x) => x.toJson())),
         "foods": List<dynamic>.from(foods.map((x) => x.toJson())),
       };
+
+  static final Map<String, String> iconPaths = {
+    "Restaurant": 'assets/recipes/ic_restaurant.svg',
+    "CookingPot": 'assets/recipes/ic_cooking_pot.svg',
+    "IceCream": 'assets/recipes/ic_ice_cream.svg',
+    "Cafe": 'assets/recipes/ic_cooking_pot.svg',
+    "InformationData": 'assets/recipes/ic_restaurant.svg',
+    "OrangeDetente": 'assets/recipes/ic_cooking_pot.svg',
+    "OrangeExpert": 'assets/recipes/ic_ice_cream.svg',
+  };
 }
 
 class Category {
@@ -115,6 +125,14 @@ class Recipe {
         "url": url,
         "iconName": iconName,
       };
+
+  String getIconPath() {
+    if (Entity.iconPaths.containsKey(iconName)) {
+      return Entity.iconPaths[iconName]!;
+    } else {
+      return 'assets/placeholder.png';
+    }
+  }
 }
 
 class Ingredient {
