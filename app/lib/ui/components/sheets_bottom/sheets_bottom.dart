@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom_customization.dart';
@@ -88,7 +88,6 @@ class _BodyState extends State<_Body> {
                         isFiltered = selected!;
                         customizationState.selectedElement =
                             customizationState.elements[index];
-                        print(customizationState.selectedElement);
                       },
                     );
                   },
@@ -112,9 +111,6 @@ class _CustomizationContentState extends State<_CustomizationContent> {
   Widget build(BuildContext context) {
     final SheetsBottomCustomizationState? customizationState =
         SheetsBottomCustomization.of(context);
-    var colorScheme = Theme.of(context).colorScheme;
-    var activeColorFilter =
-        ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
 
     if (customizationState?.selectedElement == SheetsBottomEnum.empty) {
       return Container(
@@ -130,22 +126,12 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           itemCount: 3,
           itemBuilder: (context, index) {
             var recipe = OdsApplication.recipes[index];
+            final odsImageShape = OdsImageShape(
+                context, OdsImageShapeEnum.icon.name, recipe.getIconPath());
 
             return OdsListStandardItem(
               title: recipe.title,
-              image: SvgPicture.asset(
-                'assets/recipes/ic_cooking_pot.svg',
-                fit: BoxFit.cover,
-                width: 55,
-                height: 45,
-                colorFilter: activeColorFilter,
-                placeholderBuilder: (context) => Image.asset(
-                  'assets/placeholder.png',
-                  fit: BoxFit.cover,
-                  width: 55,
-                  height: 45,
-                ),
-              ),
+              image: odsImageShape.buildImage(),
             );
           },
         ),
