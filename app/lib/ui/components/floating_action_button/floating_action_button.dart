@@ -33,10 +33,6 @@ class _ComponentFloatingActionButtonState
     return FloatingActionButtonCustomization(
       child: Scaffold(
           key: _scaffoldKey,
-          bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
-          ),
           appBar: MainAppBar(
               AppLocalizations.of(context)!.componentFloatingActionButtonTitle),
           body: _Body()),
@@ -98,6 +94,10 @@ class _BodyState extends State<_Body> {
     }
 
     return Scaffold(
+      bottomSheet: OdsSheetsBottom(
+        content: _CustomizationContent(),
+        title: AppLocalizations.of(context)!.componentCustomizeTitle,
+      ),
       floatingActionButton: fab,
     );
   }

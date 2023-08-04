@@ -19,6 +19,7 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
+import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
@@ -179,6 +180,17 @@ List<Component> components(BuildContext context) {
           AppLocalizations.of(context)!.listsVariantStandardSubtitle,
           ComponentListsStandard(),
         ),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentSheetsBottomTitle,
+      'assets/il_sheets_bottom.png',
+      AppLocalizations.of(context)!.componentSheetsBottomDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.sheetsBottomVariantTitle,
+            AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
+            ComponentSheetsBottom()),
       ],
     ),
     Component(
