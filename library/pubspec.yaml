@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^4.0.3
+  flutter_svg: ^2.0.5
 
   # Localization setup
   flutter_localizations:
