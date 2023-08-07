@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/ui/guidelines/spacings/guideline_pacing_screen.dart';
+import 'package:ods_flutter_demo/ui/guidelines/spacings/guideline_spacings_image.dart';
 import 'package:ods_flutter_demo/ui/guidelines/spacings/spacing.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 

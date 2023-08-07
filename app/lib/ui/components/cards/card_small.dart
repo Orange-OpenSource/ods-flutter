@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class CardSmall extends StatefulWidget {
@@ -20,21 +19,16 @@ class _CardSmallState extends State<CardSmall> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance
-        .addPostFrameCallback((_) => displayPersistentBottomSheet());
-  }
-
-  void displayPersistentBottomSheet() {
-    _scaffoldKey.currentState?.showBottomSheet<void>(enableDrag: false,
-        (BuildContext context) {
-      return CustomizationBottomSheet(content: _CustomizationContent());
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return CardCustomization(
       child: Scaffold(
+          bottomSheet: OdsSheetsBottom(
+            content: _CustomizationContent(),
+            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          ),
           key: _scaffoldKey,
           appBar:
               MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),

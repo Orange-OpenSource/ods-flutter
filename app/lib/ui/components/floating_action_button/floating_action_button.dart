@@ -5,10 +5,10 @@ import 'package:ods_flutter/components/floating_action_button/ods_fab.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_extended.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_large.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_small.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button_enum.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_customization.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentFloatingActionButton extends StatefulWidget {
@@ -94,8 +94,9 @@ class _BodyState extends State<_Body> {
     }
 
     return Scaffold(
-      bottomSheet: CustomizationBottomSheet(
+      bottomSheet: OdsSheetsBottom(
         content: _CustomizationContent(),
+        title: AppLocalizations.of(context)!.componentCustomizeTitle,
       ),
       floatingActionButton: fab,
     );

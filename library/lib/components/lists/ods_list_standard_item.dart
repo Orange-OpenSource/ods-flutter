@@ -14,6 +14,7 @@ class OdsListStandardItem extends StatefulWidget {
     this.image,
     this.text,
     this.icon,
+    this.divider,
   }) : super(key: key);
 
   /// The list's title .
@@ -32,6 +33,9 @@ class OdsListStandardItem extends StatefulWidget {
   /// The icon displayed in the list trailing.
   final Widget? icon;
 
+  /// The divider displayed in the list.
+  final bool? divider;
+
   @override
   State<OdsListStandardItem> createState() => _OdsListStandardItemState();
 }
@@ -40,8 +44,6 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      container: true,
-      label: 'Liste de sélections',
       child: MergeSemantics(
         child: Column(
           children: [
@@ -65,7 +67,7 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
                 ],
               ),
             ),
-            const Divider(),
+            if (widget.divider != null) const Divider(),
           ],
         ),
       ),

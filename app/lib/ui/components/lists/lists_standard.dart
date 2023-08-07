@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_customization.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_leading_enum.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_trailing_enum.dart';
-import 'package:ods_flutter_demo/ui/components/utilities/customization_bottom_sheet.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentListsStandard extends StatefulWidget {
@@ -32,6 +31,10 @@ class _ComponentListsStandardState extends State<ComponentListsStandard> {
     return ListsCustomization(
       child: Scaffold(
         key: _scaffoldKey,
+        bottomSheet: OdsSheetsBottom(
+          content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
         appBar:
             MainAppBar(AppLocalizations.of(context)!.listsVariantStandardTitle),
         body: _Body(),
@@ -52,109 +55,41 @@ class _BodyState extends State<_Body> {
   Widget build(BuildContext context) {
     final ListsCustomizationState? customizationState =
         ListsCustomization.of(context);
-
     var colorScheme = Theme.of(context).colorScheme;
-    var activeColorFilter =
-        ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
-
-    Widget? buildFadeInImage(Recipe recipe) {
-      if (customizationState?.selectedLeadingElement == ListsLeadingEnum.none) {
-        return null;
-      } else if (customizationState?.selectedLeadingElement ==
-          ListsLeadingEnum.icon) {
-        String url = "";
-        if (recipe.iconName == "Restaurant") {
-          url = 'assets/recipes/ic_restaurant.svg';
-        } else if (recipe.iconName == "CookingPot") {
-          url = 'assets/recipes/ic_cooking_pot.svg';
-        } else if (recipe.iconName == "IceCream") {
-          url = 'assets/recipes/ic_ice_cream.svg';
-        } else if (recipe.iconName == "Cafe") {
-          url = 'assets/recipes/ic_coffee.svg';
-        } else if (recipe.iconName == "InformationData") {
-          url = 'assets/recipes/ic_restaurant.svg';
-        } else if (recipe.iconName == "OrangeDetente") {
-          url = 'assets/recipes/ic_coffee.svg';
-        } else if (recipe.iconName == "OrangeExpert") {
-          url = 'assets/recipes/ic_ice_cream.svg';
-        }
-
-        return SvgPicture.asset(
-          url,
-          fit: BoxFit.cover,
-          width: 55,
-          height: 45,
-          colorFilter: activeColorFilter,
-          placeholderBuilder: (context) => Image.asset(
-            'assets/placeholder.png',
-            fit: BoxFit.cover,
-            width: 55,
-            height: 45,
-          ),
-        );
-      } else if (customizationState?.selectedLeadingElement ==
-          ListsLeadingEnum.circle) {
-        return CircleAvatar(
-          backgroundImage: NetworkImage(recipe.url),
-          radius: 25,
-        );
-      } else if (customizationState?.selectedLeadingElement ==
-          ListsLeadingEnum.wide) {
-        return FadeInImage(
-          placeholder: const AssetImage('assets/placeholder.png'),
-          image: NetworkImage(recipe.url),
-          fit: BoxFit.cover,
-          alignment: Alignment.center,
-          width: 110,
-          height: 74,
-          imageErrorBuilder: (context, error, stackTrace) {
-            return const Image(
-              image: AssetImage('assets/placeholder.png'),
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-              width: 110,
-              height: 74,
-            );
-          },
-        );
-      } else if (customizationState?.selectedLeadingElement ==
-          ListsLeadingEnum.square) {
-        return FadeInImage(
-          placeholder: const AssetImage('assets/placeholder.png'),
-          image: NetworkImage(recipe.url),
-          fit: BoxFit.cover,
-          alignment: Alignment.center,
-          width: 60,
-          height: 74,
-          imageErrorBuilder: (context, error, stackTrace) {
-            return const Image(
-              image: AssetImage('assets/placeholder.png'),
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-              width: 60,
-              height: 74,
-            );
-          },
-        );
-      }
-      return null;
-    }
 
     return Scaffold(
-      bottomSheet: CustomizationBottomSheet(
-        content: _CustomizationContent(),
-      ),
       body: ListView.builder(
         itemCount: OdsApplication.recipes.length - 4,
         itemBuilder: (context, index) {
           var recipe = OdsApplication.recipes[index];
+          var url = "";
+          switch (customizationState?.selectedLeadingElement ?? "") {
+            case ListsLeadingEnum.icon:
+              url = recipe.getIconPath();
+              break;
+            case ListsLeadingEnum.circle:
+              url = recipe.url;
+              break;
+            case ListsLeadingEnum.square:
+              url = recipe.url;
+              break;
+            case ListsLeadingEnum.wide:
+              url = recipe.url;
+              break;
+            case ListsLeadingEnum.none:
+              // TODO: Handle this case.
+              break;
+          }
+
+          final odsImageShape = OdsImageShape(
+              context, customizationState?.selectedLeadingElement.name, url);
 
           return OdsListStandardItem(
             title: recipe.title,
             subtitle: customizationState?.hasSubtitle == true
                 ? recipe.subtitle
                 : null,
-            image: buildFadeInImage(recipe),
+            image: odsImageShape.buildImage(),
             icon: customizationState?.selectedTrailingStandardElement ==
                     ListsTrailingEnum.trailingInfoButton
                 ? IconButton(
@@ -166,6 +101,7 @@ class _BodyState extends State<_Body> {
                     ListsTrailingEnum.trailingText
                 ? AppLocalizations.of(context)!.listsTrailingExampleDetails
                 : null,
+            divider: true,
           );
         },
       ),

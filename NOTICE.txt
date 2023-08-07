@@ -33,6 +33,7 @@ ods-flutter/app/assets/il_floating_action_button.svg
 ods-flutter/app/assets/il_lists.svg
 ods-flutter/app/assets/il_color.png
 ods-flutter/app/assets/il_spacing.png
+ods-flutter/app/assets/il_sheets_bottom.png
 
 ods-flutter/app/assets/1.5x/il_about.png
 ods-flutter/app/assets/1.5x/il_switches.png
