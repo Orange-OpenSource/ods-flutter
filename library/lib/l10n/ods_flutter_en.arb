@@ -1,3 +1,15 @@
 {
-    "localizedComponent": "Localized component"
+    "localizedComponent": "Localized component",
+
+    "@_COMPONENTS_SHEETS_BOTTOM_ACCESSIBILITY": {},
+    "componentSheetsBottomTitle": "Bottom sheets",
+    "@componentSheetsBottomTitle": {
+        "description": "Component Bottom sheets - Title",
+        "type": "text"
+    },
+    "componentSheetsBottomLabel": "Button. Double tap to open",
+    "@componentSheetsBottomLabel": {
+        "description": "Component Bottom sheets accessibility - Label",
+        "type": "text"
+    }
 }
