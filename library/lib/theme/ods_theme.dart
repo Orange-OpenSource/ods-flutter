@@ -97,6 +97,10 @@ class OdsTheme {
       foregroundColor: lightColorScheme.onPrimary,
       backgroundColor: lightColorScheme.primary,
     ),
+    sliderTheme: SliderThemeData(
+      inactiveTrackColor: lightColorScheme.tertiaryContainer,
+      showValueIndicator: ShowValueIndicator.always,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -180,6 +184,10 @@ class OdsTheme {
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: darkColorScheme.onPrimary,
       backgroundColor: darkColorScheme.primary,
+    ),
+    sliderTheme: SliderThemeData(
+      inactiveTrackColor: darkColorScheme.tertiaryContainer,
+      showValueIndicator: ShowValueIndicator.always,
     ),
   );
 }

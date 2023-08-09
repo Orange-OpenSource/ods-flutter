@@ -37,7 +37,7 @@ class ComponentSnackbarsCustomizationState
   bool _hasActionButton = true;
   bool _hasTwoLines = false;
   bool _hasSingleLine = true;
-  bool _hasLongerAction = true;
+  bool _hasLongerAction = false;
 
   bool get hasActionButton => _hasActionButton;
   set hasActionButton(bool value) {
