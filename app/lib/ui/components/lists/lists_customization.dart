@@ -84,7 +84,7 @@ class ListsCustomizationState extends State<ListsCustomization> {
     });
   }
 
-  ///Leading Enum
+  ///Trailing Enum
   List<ListsTrailingEnum> get trailingElements => _trailingElements;
   set trailingElements(List<ListsTrailingEnum> value) {
     setState(() {
@@ -100,7 +100,7 @@ class ListsCustomizationState extends State<ListsCustomization> {
     });
   }
 
-  ///Leading Standard Enum
+  ///Trailing Standard Enum
   List<ListsTrailingEnum> get trailingStandardElements =>
       _trailingStandardElements;
   set trailingStandardElements(List<ListsTrailingEnum> value) {
