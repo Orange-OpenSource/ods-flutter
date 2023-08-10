@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Buttons: Floating Action Buttons ([#5](https://github.com/Orange-OpenSource/ods-flutter/issues/5))
 - ODS - Component - Lists ([#21](https://github.com/Orange-OpenSource/ods-flutter/issues/21))
 - ODS - Component - Slider ([#30](https://github.com/Orange-OpenSource/ods-flutter/issues/30))
+- ODS - Component - Progress Indicator ([#26](https://github.com/Orange-OpenSource/ods-flutter/issues/26))
 
 ### Changed
 
