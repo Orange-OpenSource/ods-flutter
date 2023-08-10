@@ -18,6 +18,8 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
+import 'package:ods_flutter_demo/ui/components/progress/progress_circular.dart';
+import 'package:ods_flutter_demo/ui/components/progress/progress_linear.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/component_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom.dart';
 import 'package:ods_flutter_demo/ui/components/sliders/sliders.dart';
@@ -184,17 +186,6 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSheetsBottomTitle,
-      'assets/il_sheets_bottom.png',
-      AppLocalizations.of(context)!.componentSheetsBottomDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.sheetsBottomVariantTitle,
-            AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
-            ComponentSheetsBottom()),
-      ],
-    ),
-    Component(
       AppLocalizations.of(context)!.componentSlidersTitle,
       'assets/il_sliders.png',
       AppLocalizations.of(context)!.componentSlidersDescription,
@@ -203,6 +194,34 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.slidersVariantTitle,
             AppLocalizations.of(context)!.slidersVariantSubtitle,
             ComponentSliders()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentProgressTitle,
+      'assets/il_progress.png',
+      AppLocalizations.of(context)!.componentProgressDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.progressLinearVariantTitle,
+          AppLocalizations.of(context)!.progressLinearVariantSubtitle,
+          ComponentProgressLinear(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.progressCircularVariantTitle,
+          AppLocalizations.of(context)!.progressCircularVariantSubtitle,
+          ComponentProgressCircular(),
+        ),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentSheetsBottomTitle,
+      'assets/il_sheets_bottom.png',
+      AppLocalizations.of(context)!.componentSheetsBottomDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.sheetsBottomVariantTitle,
+            AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
+            ComponentSheetsBottom()),
       ],
     ),
     Component(
