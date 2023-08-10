@@ -11,5 +11,12 @@
     "@componentSheetsBottomLabel": {
         "description": "Component Bottom sheets accessibility - Label",
         "type": "text"
+    },
+
+    "@_COMPONENTS_PROGRESS_ACCESSIBILITY": {},
+    "componentProgressTitle": "Progress indicator",
+    "@componentProgressTitle": {
+        "description": "Component Progress - Title",
+        "type": "text"
     }
 }
