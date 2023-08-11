@@ -30,25 +30,34 @@ class _OdsCircularProgressIndicatorState
 
   @override
   Widget build(BuildContext context) {
-    return MergeSemantics(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          CircularProgressIndicator(
-            semanticsLabel:
-                OdsLocalizations.of(context)!.componentProgressTitle,
-            value: widget.progress != null ? widget.progress! : null,
+    final progressValue = widget.progress ?? 0.0;
+
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0.0, end: progressValue),
+      duration: const Duration(seconds: 3),
+      builder: (BuildContext context, double value, Widget? child) {
+        final circularProgress = CircularProgressIndicator(
+          semanticsLabel: OdsLocalizations.of(context)!.componentProgressTitle,
+          value: widget.progress != null ? value : null,
+        );
+
+        return MergeSemantics(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              circularProgress,
+              if (widget.label != null)
+                Padding(
+                  padding: const EdgeInsets.all(spacingM),
+                  child: Text(
+                    widget.label!,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+            ],
           ),
-          if (widget.label != null)
-            Padding(
-              padding: const EdgeInsets.all(spacingM),
-              child: Text(
-                widget.label!,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

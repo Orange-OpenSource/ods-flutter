@@ -60,28 +60,36 @@ class _OdsLinearProgressIndicatorState
               ],
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              LinearProgressIndicator(
-                semanticsLabel:
-                    OdsLocalizations.of(context)!.componentProgressTitle,
-                value: widget.progress,
-              ),
-              ExcludeSemantics(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: spacingS, bottom: spacingS),
-                  child: widget.showCurrentValue == true &&
-                          widget.showCurrentValue != null
-                      ? Text(
-                          "${(widget.progress! * 100).toInt()} %",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        )
-                      : null,
-                ),
-              ),
-            ],
+          TweenAnimationBuilder<double>(
+            tween: Tween(begin: 0.0, end: widget.progress ?? 0.0),
+            duration: const Duration(seconds: 5),
+            builder: (BuildContext context, double value, Widget? child) {
+              final progressValue = value * 100;
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  LinearProgressIndicator(
+                    semanticsLabel:
+                        OdsLocalizations.of(context)!.componentProgressTitle,
+                    value: widget.progress != null ? value : null,
+                  ),
+                  ExcludeSemantics(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: spacingS, bottom: spacingS),
+                      child: widget.showCurrentValue == true &&
+                              widget.showCurrentValue != null
+                          ? Text(
+                              "${progressValue.toInt()} %",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            )
+                          : null,
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),
