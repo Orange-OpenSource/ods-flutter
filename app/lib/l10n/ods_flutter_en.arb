@@ -44,7 +44,7 @@
     "description": "Guidelines colour screen title",
     "type": "text"
   },
-  "guidelinesColoursDescription": "Comming soon...",
+  "guidelinesColoursDescription": "Coming soon...",
   "@guidelinesColoursDescription": {
     "description": "Guidelines colour screen - Explanation text",
     "type": "text"
@@ -816,6 +816,75 @@
   "slidersVariantSubtitle": "OdsSlider",
   "@slidersVariantSubtitle": {
     "description": "Sliders Variant - Subtitle",
+    "type": "text"
+  },
+
+  "@_COMPONENTS_PROGRESS": {},
+  "componentProgressTitle": "Progress Indicators",
+  "@componentProgressTitle": {
+    "description": "Component Progress - Title",
+    "type": "text"
+  },
+  "componentProgressDescription": "Progress bar and activity indicator are used when a process is taking place to illustrate progress and to reassure users that something is happening, and if possible, how long it will take.",
+  "@componentProgressDescription": {
+    "description": "Component Progress - Description",
+    "type": "text"
+  },
+  "componentCustomizeProgressType": "Type",
+  "@componentCustomizeProgressType": {
+    "description": "Component Progress customization type - Label",
+    "type": "text"
+  },
+  "componentCustomizeProgressLabel": "Label",
+  "@componentCustomizeProgressLabel": {
+    "description": "Component Progress customization Label - Label",
+    "type": "text"
+  },
+  "componentCustomizeProgressIcon": "Icon",
+  "@componentCustomizeProgressIcon": {
+    "description": "Component Progress customization Icon - Icon",
+    "type": "text"
+  },
+  "componentCustomizeProgressCurrentValue": "Current Value",
+  "@componentCustomizeProgressCurrentValue": {
+    "description": "Component Progress customization Current Value - Label",
+    "type": "text"
+  },
+
+  "@_PROGRESS_VARIANT": {},
+  "progressLinearVariantTitle": "Linear",
+  "@progressLinearVariantTitle": {
+    "description": "Sliders Linear Variant - Title",
+    "type": "text"
+  },
+  "progressLinearVariantSubtitle": "OdsLinearProgressIndicator",
+  "@progressLinearVariantSubtitle": {
+    "description": "Sliders Linear Variant - Subtitle",
+    "type": "text"
+  },
+  "progressCircularVariantTitle": "Circular",
+  "@progressCircularVariantTitle": {
+    "description": "Sliders Circular Variant - Title",
+    "type": "text"
+  },
+  "progressCircularVariantSubtitle": "OdsCircularProgressIndicator",
+  "@progressCircularVariantSubtitle": {
+    "description": "Sliders Circular Variant - Subtitle",
+    "type": "text"
+  },
+  "progressCircularVariantExampleLabel": "Downloading ...",
+  "@progressCircularVariantExampleLabel": {
+    "description": "Progress indicator example Variant - Label",
+    "type": "text"
+  },
+  "progressTypeDeterminateEnum": "Determinate",
+  "@progressTypeDeterminateEnum": {
+    "description": "Progress Determinate - Enum",
+    "type": "text"
+  },
+  "progressTypeIndeterminateEnum": "Indeterminate",
+  "@progressTypeIndeterminateEnum": {
+    "description": "Progress Indeterminate - Enum",
     "type": "text"
   },
 

@@ -101,6 +101,9 @@ class OdsTheme {
       inactiveTrackColor: lightColorScheme.tertiaryContainer,
       showValueIndicator: ShowValueIndicator.always,
     ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      linearTrackColor: lightColorScheme.tertiaryContainer,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -188,6 +191,9 @@ class OdsTheme {
     sliderTheme: SliderThemeData(
       inactiveTrackColor: darkColorScheme.tertiaryContainer,
       showValueIndicator: ShowValueIndicator.always,
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      linearTrackColor: darkColorScheme.tertiaryContainer,
     ),
   );
 }
