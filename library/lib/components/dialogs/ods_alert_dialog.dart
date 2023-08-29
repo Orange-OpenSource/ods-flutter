@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/button/ods_filled_button.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
+class DismissButtonDescription {
+  final String? dismissButtonText;
+  final Function()? onDismissButtonClick;
+
+  DismissButtonDescription({
+    this.dismissButtonText,
+    this.onDismissButtonClick,
+  });
+}
+
 class OdsAlertDialog extends StatefulWidget {
   const OdsAlertDialog({
     Key? key,
@@ -16,8 +26,7 @@ class OdsAlertDialog extends StatefulWidget {
     required String confirmButtonText,
     required Function() onConfirmButtonClick,
     String? titleText,
-    String? dismissButtonText,
-    Function()? onDismissButtonClick,
+    DismissButtonDescription? dismissButtonDescription,
   }) {
     showDialog<void>(
       context: context,
@@ -29,10 +38,10 @@ class OdsAlertDialog extends StatefulWidget {
             onPressed: onConfirmButtonClick,
             child: Text(confirmButtonText),
           ),
-          if (dismissButtonText != null)
+          if (dismissButtonDescription != null)
             OdsFilledButton(
-              title: dismissButtonText!,
-              onPressed: onDismissButtonClick,
+              title: dismissButtonDescription.dismissButtonText!,
+              onPressed: dismissButtonDescription.onDismissButtonClick,
             ),
         ],
       ),

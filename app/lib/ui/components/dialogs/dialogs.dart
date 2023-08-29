@@ -75,12 +75,15 @@ class _BodyState extends State<_Body> {
                           : AppLocalizations.of(context)!
                               .dialogsVariantExampleOkButton,
                   onConfirmButtonClick: () => Navigator.of(context).pop(),
-                  dismissButtonText:
+                  dismissButtonDescription:
                       customizationState?.hasDismissButton == true
-                          ? AppLocalizations.of(context)!
-                              .dialogsVariantExampleDeclineButton
+                          ? DismissButtonDescription(
+                              dismissButtonText: AppLocalizations.of(context)!
+                                  .dialogsVariantExampleDeclineButton,
+                              onDismissButtonClick: () =>
+                                  Navigator.of(context).pop(),
+                            )
                           : null,
-                  onDismissButtonClick: () => Navigator.of(context).pop(),
                 ),
               ),
               OdsFilledButton(
