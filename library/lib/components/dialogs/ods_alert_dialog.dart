@@ -14,7 +14,7 @@ class OdsAlertDialog extends StatefulWidget {
     required BuildContext context,
     required String text,
     required String confirmButtonText,
-    Function()? onConfirmButtonClick,
+    required Function() onConfirmButtonClick,
     String? titleText,
     String? dismissButtonText,
     Function()? onDismissButtonClick,
