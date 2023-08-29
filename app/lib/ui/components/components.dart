@@ -26,6 +26,8 @@ import 'package:ods_flutter_demo/ui/components/sliders/sliders.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/component_switches.dart';
 
+import 'dialogs/dialogs.dart';
+
 List<Component> components(BuildContext context) {
   return [
     Component(
@@ -222,6 +224,17 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.sheetsBottomVariantTitle,
             AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
             ComponentSheetsBottom()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentDialogsTitle,
+      'assets/il_dialogs.png',
+      AppLocalizations.of(context)!.componentDialogsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.dialogsVariantTitle,
+            AppLocalizations.of(context)!.dialogsVariantSubtitle,
+            ComponentDialogs()),
       ],
     ),
     Component(
