@@ -888,6 +888,75 @@
     "type": "text"
   },
 
+  "@_COMPONENTS_DIALOGS": {},
+  "componentDialogsTitle": "Dialogs",
+  "@componentDialogsTitle": {
+    "description": "Component Dialogs - Title",
+    "type": "text"
+  },
+  "componentDialogsDescription": "Dialogs are for prompting the user when the app requires a decision or further details required to complete a task.",
+  "@componentDialogsDescription": {
+    "description": "Component Dialogs - Description",
+    "type": "text"
+  },
+
+  "@_DIALOGS_VARIANT": {},
+  "dialogsVariantTitle": "Dialogs demo",
+  "@dialogsVariantTitle": {
+    "description": "Dialogs Variant - Title",
+    "type": "text"
+  },
+  "dialogsVariantSubtitle": "OdsAlertDialog",
+  "@dialogsVariantSubtitle": {
+    "description": "Dialogs Variant - Subtitle",
+    "type": "text"
+  },
+  "componentCustomizeDialogsTitle": "Title",
+  "@componentCustomizeDialogsTitle": {
+    "description": "Component Dialogs customization - Title",
+    "type": "text"
+  },
+  "componentCustomizeDialogsDismissButton": "Dismiss button",
+  "@componentCustomizeDialogsDismissButton": {
+    "description": "Component Dialogs customization dismiss - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleLabel": "Customize the dialog before opening it",
+  "@dialogsVariantExampleLabel": {
+    "description": "Dialogs example Variant - Label",
+    "type": "text"
+  },
+  "dialogsVariantExampleOpenButton": "OPEN DIALOGS",
+  "@dialogsVariantExampleOpenButton": {
+    "description": "Dialogs example Variant Button Open - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleOpenFullDialogsButton": "OPEN FULL DIALOGS",
+  "@dialogsVariantExampleOpenFullDialogsButton": {
+    "description": "Dialogs example Variant Button Open Full - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleAcceptButton": "Accept",
+  "@dialogsVariantExampleAcceptButton": {
+    "description": "Dialogs example Variant Accept - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleOkButton": "OK",
+  "@dialogsVariantExampleOkButton": {
+    "description": "Dialogs example Variant Ok - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleDeclineButton": "Decline",
+  "@dialogsVariantExampleDeclineButton": {
+    "description": "Dialogs example Variant Decline - Button",
+    "type": "text"
+  },
+  "dialogsVariantExampleCloseButton": "Close",
+  "@dialogsVariantExampleCloseButton": {
+    "description": "Dialogs example Variant Close - Button",
+    "type": "text"
+  },
+
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
