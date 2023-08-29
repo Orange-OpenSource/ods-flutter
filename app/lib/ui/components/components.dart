@@ -13,7 +13,6 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
-import 'package:ods_flutter_demo/ui/components/dialogs/dialogs.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
@@ -30,51 +29,14 @@ import 'package:ods_flutter_demo/ui/components/switches/switches.dart';
 List<Component> components(BuildContext context) {
   return [
     Component(
-      AppLocalizations.of(context)!.componentCardsTitle,
-      'assets/il_cards.svg',
-      AppLocalizations.of(context)!.componentCardsDescription,
+      AppLocalizations.of(context)!.componentAppTopBarsTitle,
+      'assets/il_app_bars_top_generic.svg',
+      AppLocalizations.of(context)!.componentAppTopBarsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.cardSmallVariantTitle,
-            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
-            CardSmall()),
-        Variant(
-            AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle,
-            AppLocalizations.of(context)!.cardVerticalImageFirstVariantSubtitle,
-            CardVerticalImageFirst()),
-      ],
-    ),
-    Component(
-      AppLocalizations.of(context)!.componentCheckboxesTitle,
-      'assets/il_checkbox.svg',
-      AppLocalizations.of(context)!.componentCheckboxesDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.checkboxesVariantTitle,
-            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
-            ComponentCheckboxes())
-      ],
-    ),
-    Component(
-      AppLocalizations.of(context)!.componentRadioButtonsTitle,
-      'assets/il_radio_buttons.svg',
-      AppLocalizations.of(context)!.componentRadioButtonsDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.radioButtonVariantTitle,
-            AppLocalizations.of(context)!.radioButtonVariantSubtitle,
-            ComponentRadioButtons()),
-      ],
-    ),
-    Component(
-      AppLocalizations.of(context)!.componentSwitchesTitle,
-      'assets/il_switches.png',
-      AppLocalizations.of(context)!.componentSwitchesDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.switchesVariantTitle,
-            AppLocalizations.of(context)!.switchesVariantSubtitle,
-            ComponentSwitches()),
+            AppLocalizations.of(context)!.appTopBarsVariantTitle,
+            AppLocalizations.of(context)!.appTopBarsVariantSubtitle,
+            ComponentTopAppBars()),
       ],
     ),
     Component(
@@ -116,25 +78,42 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentAppTopBarsTitle,
-      'assets/il_app_bars_top_generic.svg',
-      AppLocalizations.of(context)!.componentAppTopBarsDescription,
+      AppLocalizations.of(context)!.componentFloatingActionButtonTitle,
+      'assets/il_floating_action_button.svg',
+      AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.appTopBarsVariantTitle,
-            AppLocalizations.of(context)!.appTopBarsVariantSubtitle,
-            ComponentTopAppBars()),
+          AppLocalizations.of(context)!.floatingActionButtonVariantActionTitle,
+          AppLocalizations.of(context)!
+              .floatingActionButtonVariantActionSubtitle,
+          ComponentFloatingActionButton(),
+        ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSnackbarsTitle,
-      'assets/il_snackbars.svg',
-      AppLocalizations.of(context)!.componentSnackbarsDescription,
+      AppLocalizations.of(context)!.componentCardsTitle,
+      'assets/il_cards.svg',
+      AppLocalizations.of(context)!.componentCardsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.snackbarsVariantTitle,
-            AppLocalizations.of(context)!.snackbarsVariantSubtitle,
-            ComponentSnackbars()),
+            AppLocalizations.of(context)!.cardSmallVariantTitle,
+            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
+            CardSmall()),
+        Variant(
+            AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle,
+            AppLocalizations.of(context)!.cardVerticalImageFirstVariantSubtitle,
+            CardVerticalImageFirst()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentCheckboxesTitle,
+      'assets/il_checkbox.svg',
+      AppLocalizations.of(context)!.componentCheckboxesDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.checkboxesVariantTitle,
+            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
+            ComponentCheckboxes())
       ],
     ),
     Component(
@@ -157,19 +136,6 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentFloatingActionButtonTitle,
-      'assets/il_floating_action_button.svg',
-      AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
-      [
-        Variant(
-          AppLocalizations.of(context)!.floatingActionButtonVariantActionTitle,
-          AppLocalizations.of(context)!
-              .floatingActionButtonVariantActionSubtitle,
-          ComponentFloatingActionButton(),
-        ),
-      ],
-    ),
-    Component(
       AppLocalizations.of(context)!.componentListsTitle,
       'assets/il_lists.svg',
       AppLocalizations.of(context)!.componentListsDescription,
@@ -184,17 +150,6 @@ List<Component> components(BuildContext context) {
           AppLocalizations.of(context)!.listsVariantStandardSubtitle,
           ComponentListsStandard(),
         ),
-      ],
-    ),
-    Component(
-      AppLocalizations.of(context)!.componentSlidersTitle,
-      'assets/il_sliders.png',
-      AppLocalizations.of(context)!.componentSlidersDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.slidersVariantTitle,
-            AppLocalizations.of(context)!.slidersVariantSubtitle,
-            ComponentSliders()),
       ],
     ),
     Component(
@@ -215,6 +170,28 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
+      AppLocalizations.of(context)!.componentRadioButtonsTitle,
+      'assets/il_radio_buttons.svg',
+      AppLocalizations.of(context)!.componentRadioButtonsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.radioButtonVariantTitle,
+            AppLocalizations.of(context)!.radioButtonVariantSubtitle,
+            ComponentRadioButtons()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentSlidersTitle,
+      'assets/il_sliders.png',
+      AppLocalizations.of(context)!.componentSlidersDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.slidersVariantTitle,
+            AppLocalizations.of(context)!.slidersVariantSubtitle,
+            ComponentSliders()),
+      ],
+    ),
+    Component(
       AppLocalizations.of(context)!.componentSheetsBottomTitle,
       'assets/il_sheets_bottom.png',
       AppLocalizations.of(context)!.componentSheetsBottomDescription,
@@ -226,14 +203,25 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentDialogsTitle,
-      'assets/il_dialogs.png',
-      AppLocalizations.of(context)!.componentDialogsDescription,
+      AppLocalizations.of(context)!.componentSnackbarsTitle,
+      'assets/il_snackbars.svg',
+      AppLocalizations.of(context)!.componentSnackbarsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.dialogsVariantTitle,
-            AppLocalizations.of(context)!.dialogsVariantSubtitle,
-            ComponentDialogs()),
+            AppLocalizations.of(context)!.snackbarsVariantTitle,
+            AppLocalizations.of(context)!.snackbarsVariantSubtitle,
+            ComponentSnackbars()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentSwitchesTitle,
+      'assets/il_switches.png',
+      AppLocalizations.of(context)!.componentSwitchesDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.switchesVariantTitle,
+            AppLocalizations.of(context)!.switchesVariantSubtitle,
+            ComponentSwitches()),
       ],
     ),
     Component(
