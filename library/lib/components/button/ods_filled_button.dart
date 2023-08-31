@@ -14,7 +14,7 @@ class OdsFilledButton extends StatefulWidget {
   const OdsFilledButton({
     Key? key,
     required this.title,
-    required this.fullScreenWidth,
+    this.fullScreenWidth = false,
     this.icon,
     this.onPressed,
   }) : super(key: key);

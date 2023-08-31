@@ -13,6 +13,7 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
+import 'package:ods_flutter_demo/ui/components/dialogs/dialogs.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
@@ -222,6 +223,17 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.sheetsBottomVariantTitle,
             AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
             ComponentSheetsBottom()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentDialogsTitle,
+      'assets/il_dialogs.png',
+      AppLocalizations.of(context)!.componentDialogsDescription,
+      [
+        Variant(
+            AppLocalizations.of(context)!.dialogsVariantTitle,
+            AppLocalizations.of(context)!.dialogsVariantSubtitle,
+            ComponentDialogs()),
       ],
     ),
     Component(

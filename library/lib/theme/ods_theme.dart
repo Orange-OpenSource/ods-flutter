@@ -104,6 +104,10 @@ class OdsTheme {
     progressIndicatorTheme: ProgressIndicatorThemeData(
       linearTrackColor: lightColorScheme.tertiaryContainer,
     ),
+    dialogTheme: const DialogTheme(
+        backgroundColor: Colors.white,
+        shadowColor: Colors.white,
+        surfaceTintColor: Colors.white),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -195,6 +199,10 @@ class OdsTheme {
     progressIndicatorTheme: ProgressIndicatorThemeData(
       linearTrackColor: darkColorScheme.tertiaryContainer,
     ),
+    dialogTheme: const DialogTheme(
+        backgroundColor: grey900,
+        shadowColor: grey900,
+        surfaceTintColor: grey900),
   );
 }
 
