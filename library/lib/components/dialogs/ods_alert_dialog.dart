@@ -3,12 +3,12 @@ import 'package:ods_flutter/components/button/ods_filled_button.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
 class DismissButtonDescription {
-  final String? dismissButtonText;
-  final Function()? onDismissButtonClick;
+  final String dismissButtonText;
+  final Function() onDismissButtonClick;
 
   DismissButtonDescription({
-    this.dismissButtonText,
-    this.onDismissButtonClick,
+    required this.dismissButtonText,
+    required this.onDismissButtonClick,
   });
 }
 
