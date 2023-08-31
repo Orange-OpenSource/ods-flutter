@@ -33,7 +33,7 @@ class SwitchesCustomization extends StatefulWidget {
 
 class SwitchesCustomizationState extends State<SwitchesCustomization> {
   bool _hasEnabled = true;
-  bool _hasIcon = true;
+  bool _hasIcon = false;
 
   bool get hasEnabled => _hasEnabled;
   set hasEnabled(bool value) {

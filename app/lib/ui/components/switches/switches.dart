@@ -30,8 +30,8 @@ class _ComponentSwitchesState extends State<ComponentSwitches> {
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.componentCheckboxesTitle),
+          appBar:
+              MainAppBar(AppLocalizations.of(context)!.componentSwitchesTitle),
           body: _Body()),
     );
   }
@@ -43,7 +43,7 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  bool isChecked0 = true;
+  bool isChecked0 = false;
   bool isChecked1 = false;
   bool isChecked2 = false;
   bool isEnabled = true;
