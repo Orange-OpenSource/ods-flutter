@@ -189,6 +189,21 @@
     "description": "Checkboxes Variant - Subtitle",
     "type": "text"
   },
+  "checkboxesVariantTitleInformation": "Use CheckboxListTitle or Checkbox",
+  "@checkboxesVariantTitleInformation": {
+    "description": "Checkboxes Variant - Information",
+    "type": "text"
+  },
+  "componentCheckboxesCustomizationEnabled": "Enabled",
+  "@componentCheckboxesCustomizationEnabled": {
+    "description": "Component Checkboxes Enabled - Checkboxes lists",
+    "type": "text"
+  },
+  "componentCheckboxesCustomizationIcon": "Icon",
+  "@componentCheckboxesCustomizationIcon": {
+    "description": "Component Checkboxes Icon - Checkboxes lists",
+    "type": "text"
+  },
 
   "@_COMPONENTS_NAVIGATION_BAR": {},
   "componentNavigationBarTitle": "Bar: Navigation",
@@ -230,12 +245,6 @@
   "navigationBarCustomizationCount": "Navigation item count",
   "@navigationBarCustomizationCount": {
     "description": "Component customization element - Number of items count",
-    "type": "text"
-  },
-
-  "checkboxesVariantTitleInformation": "Use CheckboxListTitle or Checkbox",
-  "@checkboxesVariantTitleInformation": {
-    "description": "Checkboxes Variant - Information",
     "type": "text"
   },
   
@@ -281,6 +290,11 @@
   "switchesVariantSubtitle": "OdsSwitch",
   "@switchesVariantSubtitle": {
     "description": "Switches Variant - Subtitle",
+    "type": "text"
+  },
+  "switchesVariantTitleInformation": "Use SwitchListTitle or Switch",
+  "@switchesVariantTitleInformation": {
+    "description": "Switches Variant - Information",
     "type": "text"
   },
 
