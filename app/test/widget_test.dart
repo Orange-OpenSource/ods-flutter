@@ -19,9 +19,15 @@ void main() {
     await tester.tap(find.text('Components').last);
     await tester.pump();
 
+    expect(find.text('App Top Bar'), findsOneWidget);
+    expect(find.text('Bar: Navigation'), findsOneWidget);
+    expect(find.text('Buttons'), findsOneWidget);
+    expect(find.text('Buttons: fab'), findsOneWidget);
+    expect(find.text('Cards'), findsOneWidget);
     expect(find.text('Checkboxes'), findsOneWidget);
-    expect(find.text('Radio buttons'), findsOneWidget);
-    expect(find.text('Switches'), findsOneWidget);
+    expect(find.text('Chips'), findsOneWidget);
+    expect(find.text('Lists'), findsOneWidget);
+    expect(find.text('Progress Indicators'), findsOneWidget);
 
     expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar
   });
