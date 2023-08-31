@@ -13,16 +13,16 @@ List<Guideline> guidelines(BuildContext context) {
         AppLocalizations.of(context)!.cardSmallVariantTitle,
         GuidelineColoursScreen()),
     Guideline(
-      AppLocalizations.of(context)!.guidelinesTypography,
-      'assets/il_typography.png',
-      AppLocalizations.of(context)!.cardSmallVariantTitle,
-      GuidelineTypographyScreen(),
-    ),
-    Guideline(
       AppLocalizations.of(context)!.guidelinesSpacings,
       'assets/il_spacing.png',
       AppLocalizations.of(context)!.cardSmallVariantTitle,
       GuidelineSpacingsScreen(),
+    ),
+    Guideline(
+      AppLocalizations.of(context)!.guidelinesTypography,
+      'assets/il_typography.png',
+      AppLocalizations.of(context)!.cardSmallVariantTitle,
+      GuidelineTypographyScreen(),
     ),
   ];
 }
