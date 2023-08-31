@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
@@ -42,6 +44,8 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
+    var recipes =
+        OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
     return SafeArea(
       child: OrientationBuilder(
@@ -55,13 +59,13 @@ class _Body extends StatelessWidget {
                     return Column(
                       children: [
                         OdsSmallCard(
-                          title: recipe.title,
+                          title: recipes.title,
                           subtitle: customizationState?.hasSubtitle == true
-                              ? recipe.subtitle
+                              ? recipes.subtitle
                               : null,
                           image: FadeInImage(
                             placeholder: AssetImage('assets/placeholder.png'),
-                            image: NetworkImage(recipe.url),
+                            image: NetworkImage(recipes.url),
                             fit: BoxFit.cover,
                             imageErrorBuilder: (context, error, stackTrace) {
                               return Image(
