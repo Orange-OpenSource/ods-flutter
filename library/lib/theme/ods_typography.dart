@@ -43,7 +43,7 @@ TextTheme androidTextTheme = const TextTheme(
   titleLarge: TextStyle(
       debugLabel: 'Title L',
       fontFamily: 'Roboto',
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: FontWeight.w700,
       height: 1.2,
       letterSpacing: 0.15),
@@ -120,7 +120,7 @@ TextTheme iosTextTheme = const TextTheme(
   headlineLarge: TextStyle(
       debugLabel: 'Headline L',
       fontFamily: '.SF UI Display',
-      fontSize: 34,
+      fontSize: 32,
       fontWeight: FontWeight.w700,
       height: 1.2,
       letterSpacing: 0.37),
@@ -135,7 +135,7 @@ TextTheme iosTextTheme = const TextTheme(
   headlineSmall: TextStyle(
       debugLabel: 'Headline S',
       fontFamily: '.SF UI Display',
-      fontSize: 17,
+      fontSize: 24,
       fontWeight: FontWeight.w700,
       height: 1.3,
       letterSpacing: -0.41),
@@ -144,7 +144,7 @@ TextTheme iosTextTheme = const TextTheme(
   titleLarge: TextStyle(
       debugLabel: 'Title L',
       fontFamily: '.SF UI Display',
-      fontSize: 28,
+      fontSize: 22,
       fontWeight: FontWeight.w700,
       height: 1.21,
       letterSpacing: 0.36),
@@ -152,7 +152,7 @@ TextTheme iosTextTheme = const TextTheme(
   titleMedium: TextStyle(
       debugLabel: 'Title M',
       fontFamily: '.SF UI Display',
-      fontSize: 22,
+      fontSize: 16,
       fontWeight: FontWeight.w700,
       height: 1.27,
       letterSpacing: 0.35),
@@ -160,7 +160,7 @@ TextTheme iosTextTheme = const TextTheme(
   titleSmall: TextStyle(
       debugLabel: 'Title S',
       fontFamily: '.SF UI Display',
-      fontSize: 20,
+      fontSize: 14,
       fontWeight: FontWeight.w700,
       height: 1.25,
       letterSpacing: 0.38),
@@ -169,7 +169,7 @@ TextTheme iosTextTheme = const TextTheme(
   bodyLarge: TextStyle(
       debugLabel: 'Body L',
       fontFamily: '.SF UI Display',
-      fontSize: 17,
+      fontSize: 16,
       fontWeight: FontWeight.w400,
       height: 1.29,
       letterSpacing: 0.41),
@@ -177,7 +177,7 @@ TextTheme iosTextTheme = const TextTheme(
   bodyMedium: TextStyle(
       debugLabel: 'Body M',
       fontFamily: '.SF UI Display',
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: FontWeight.w400,
       height: 1.31,
       letterSpacing: 0.32),
@@ -185,7 +185,7 @@ TextTheme iosTextTheme = const TextTheme(
   bodySmall: TextStyle(
       debugLabel: 'Body S',
       fontFamily: '.SF UI Display',
-      fontSize: 15,
+      fontSize: 12,
       fontWeight: FontWeight.w700,
       height: 1.33,
       letterSpacing: -0.5),
@@ -194,7 +194,7 @@ TextTheme iosTextTheme = const TextTheme(
   labelLarge: TextStyle(
       debugLabel: 'Label L',
       fontFamily: '.SF UI Display',
-      fontSize: 13,
+      fontSize: 14,
       fontWeight: FontWeight.w400,
       height: 1.38,
       letterSpacing: -0.08),
