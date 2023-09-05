@@ -41,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card content update ([#188](https://github.com/Orange-OpenSource/ods-flutter/issues/188))
 - Update the App icons for dedicater flutter icon ([#76](https://github.com/Orange-OpenSource/ods-flutter/issues/76))
 - Bottom Navigation number items update ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/194))
+- [Bug]: Image do not Load on android ([#186](https://github.com/Orange-OpenSource/ods-flutter/issues/186))
 
 ### Removed
 
