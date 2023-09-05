@@ -114,7 +114,6 @@ class _SnackBarsVariants extends StatelessWidget {
             },
             title: AppLocalizations.of(context)!
                 .componentSnackbarsDescriptionExampleButton,
-            //fullScreenWidth: true,
           ),
         ),
       ],
