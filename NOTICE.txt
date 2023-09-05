@@ -81,4 +81,29 @@ ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Settings-29
 ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Spotlight-40@2x.png
 ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPhone-Spotlight-40@3x.png
 
+ods-flutter/app/android/app/src/main/res/drawable/ic_launcher_foreground.xml
+ods-flutter/app/android/app/src/main/res/drawable/launch_background.xml
+ods-flutter/app/android/app/src/main/res/drawable-v21/launch_background.xml
+ods-flutter/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+ods-flutter/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+ods-flutter/app/android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png
+ods-flutter/app/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+ods-flutter/app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+ods-flutter/app/android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png
+ods-flutter/app/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+ods-flutter/app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+ods-flutter/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png
+ods-flutter/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+ods-flutter/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+ods-flutter/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+ods-flutter/app/android/app/src/main/res/values/ic_launcher_background.xml
+ods-flutter/app/android/app/src/main/res/values/styles.xml
+ods-flutter/app/android/app/src/main/res/values-night/styles.xml
+
+
 End of the parts list under Orange SA Copyright
