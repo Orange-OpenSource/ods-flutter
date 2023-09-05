@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Remove french translations ([#154](https://github.com/Orange-OpenSource/ods-flutter/issues/154))
+- Keep the Elevated button ([#197](https://github.com/Orange-OpenSource/ods-flutter/issues/197))
 
 ## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.1.0) - 2023-05-04
 
