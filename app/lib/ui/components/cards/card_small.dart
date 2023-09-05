@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
@@ -38,6 +40,9 @@ class _CardSmallState extends State<CardSmall> {
 }
 
 class _Body extends StatelessWidget {
+  var recipe =
+      OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
+
   @override
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState =
@@ -49,35 +54,30 @@ class _Body extends StatelessWidget {
           return GridView.count(
             crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
             childAspectRatio: orientation == Orientation.portrait ? 0.9 : 1.1,
-            children: OdsApplication.recipes
-                .map(
-                  (recipe) {
-                    return Column(
-                      children: [
-                        OdsSmallCard(
-                          title: recipe.title,
-                          subtitle: customizationState?.hasSubtitle == true
-                              ? recipe.subtitle
-                              : null,
-                          image: FadeInImage(
-                            placeholder: AssetImage('assets/placeholder.png'),
-                            image: NetworkImage(recipe.url),
-                            fit: BoxFit.cover,
-                            imageErrorBuilder: (context, error, stackTrace) {
-                              return Image(
-                                image: AssetImage('assets/placeholder.png'),
-                                fit: BoxFit.cover,
-                              );
-                            },
-                          ),
-                          onTap: customizationState!.clickable ? () {} : null,
-                        ),
-                      ],
-                    );
-                  },
-                )
-                .take(1) // Take only the first element from the map
-                .toList(),
+            children: [
+              Column(
+                children: [
+                  OdsSmallCard(
+                    title: recipe.title,
+                    subtitle: customizationState?.hasSubtitle == true
+                        ? recipe.subtitle
+                        : null,
+                    image: FadeInImage(
+                      placeholder: AssetImage('assets/placeholder.png'),
+                      image: NetworkImage(recipe.url),
+                      fit: BoxFit.cover,
+                      imageErrorBuilder: (context, error, stackTrace) {
+                        return Image(
+                          image: AssetImage('assets/placeholder.png'),
+                          fit: BoxFit.cover,
+                        );
+                      },
+                    ),
+                    onTap: customizationState!.clickable ? () {} : null,
+                  ),
+                ],
+              ),
+            ],
           );
         },
       ),

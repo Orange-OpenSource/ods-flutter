@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update navigation in app using get package ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/127))
 - Disabled component customization options ([#192](https://github.com/Orange-OpenSource/ods-flutter/issues/192))
 - Component list page reordering ([#190](https://github.com/Orange-OpenSource/ods-flutter/issues/190))
+- Card content update ([#188](https://github.com/Orange-OpenSource/ods-flutter/issues/188))
 
 ### Removed
 
