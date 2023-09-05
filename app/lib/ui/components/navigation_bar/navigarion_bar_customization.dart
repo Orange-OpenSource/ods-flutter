@@ -36,7 +36,7 @@ class NavigationBarCustomizationState
     extends State<NavigationBarCustomization> {
   static get minNavigationItemCount => 2;
 
-  static get maxNavigationItemCount => 4;
+  static get maxNavigationItemCount => 5;
 
   int _numberOfItems = minNavigationItemCount;
 
