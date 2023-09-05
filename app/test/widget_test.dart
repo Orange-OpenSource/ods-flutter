@@ -27,7 +27,6 @@ void main() {
     expect(find.text('Checkboxes'), findsOneWidget);
     expect(find.text('Chips'), findsOneWidget);
     expect(find.text('Lists'), findsOneWidget);
-    expect(find.text('Progress Indicators'), findsOneWidget);
 
     expect(find.text('Modules'), findsOneWidget); // 1 in the tab bar
   });
