@@ -46,65 +46,67 @@ class _BodyState extends State<_Body> {
         OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(spacingM),
-            child:
-                Text(AppLocalizations.of(context)!.dialogsVariantExampleLabel),
-          ),
-          Wrap(
-            crossAxisAlignment: WrapCrossAlignment.start,
-            alignment: WrapAlignment.center,
-            spacing: spacingM,
-            children: [
-              OdsFilledButton(
-                title: AppLocalizations.of(context)!
-                    .dialogsVariantExampleOpenButton,
-                onPressed: () => OdsAlertDialog.openDialog(
-                  context: context,
-                  titleText: customizationState?.hasTitle == true
-                      ? recipe.title
-                      : null,
-                  text: recipe.description,
-                  confirmButtonText:
-                      customizationState?.hasDismissButton == true
-                          ? AppLocalizations.of(context)!
-                              .dialogsVariantExampleAcceptButton
-                          : AppLocalizations.of(context)!
-                              .dialogsVariantExampleOkButton,
-                  onConfirmButtonClick: () => Navigator.of(context).pop(),
-                  dismissButtonDescription:
-                      customizationState?.hasDismissButton == true
-                          ? DismissButtonDescription(
-                              dismissButtonText: AppLocalizations.of(context)!
-                                  .dialogsVariantExampleDeclineButton,
-                              onDismissButtonClick: () =>
-                                  Navigator.of(context).pop(),
-                            )
-                          : null,
-                ),
-              ),
-              OdsFilledButton(
-                title: AppLocalizations.of(context)!
-                    .dialogsVariantExampleOpenFullDialogsButton,
-                fullScreenWidth: false,
-                onPressed: () => OdsAlertDialog.openFullscreenDialog(
-                  context: context,
-                  text: recipe.title,
-                  body: Padding(
-                    padding: const EdgeInsets.all(spacingL),
-                    child: Text(recipe.description),
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(spacingM),
+              child: Text(
+                  AppLocalizations.of(context)!.dialogsVariantExampleLabel),
+            ),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.start,
+              alignment: WrapAlignment.center,
+              spacing: spacingM,
+              children: [
+                OdsFilledButton(
+                  title: AppLocalizations.of(context)!
+                      .dialogsVariantExampleOpenButton,
+                  onPressed: () => OdsAlertDialog.openDialog(
+                    context: context,
+                    titleText: customizationState?.hasTitle == true
+                        ? recipe.title
+                        : null,
+                    text: recipe.description,
+                    confirmButtonText:
+                        customizationState?.hasDismissButton == true
+                            ? AppLocalizations.of(context)!
+                                .dialogsVariantExampleAcceptButton
+                            : AppLocalizations.of(context)!
+                                .dialogsVariantExampleOkButton,
+                    onConfirmButtonClick: () => Navigator.of(context).pop(),
+                    dismissButtonDescription:
+                        customizationState?.hasDismissButton == true
+                            ? DismissButtonDescription(
+                                dismissButtonText: AppLocalizations.of(context)!
+                                    .dialogsVariantExampleDeclineButton,
+                                onDismissButtonClick: () =>
+                                    Navigator.of(context).pop(),
+                              )
+                            : null,
                   ),
-                  buttonRight: AppLocalizations.of(context)!
-                      .dialogsVariantExampleCloseButton,
-                  onButtonRightClick: () => Navigator.of(context).pop(),
                 ),
-              ),
-            ],
-          ),
-        ],
+                OdsFilledButton(
+                  title: AppLocalizations.of(context)!
+                      .dialogsVariantExampleOpenFullDialogsButton,
+                  fullScreenWidth: false,
+                  onPressed: () => OdsAlertDialog.openFullscreenDialog(
+                    context: context,
+                    text: recipe.title,
+                    body: Padding(
+                      padding: const EdgeInsets.all(spacingL),
+                      child: Text(recipe.description),
+                    ),
+                    buttonRight: AppLocalizations.of(context)!
+                        .dialogsVariantExampleCloseButton,
+                    onButtonRightClick: () => Navigator.of(context).pop(),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
