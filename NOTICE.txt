@@ -12,6 +12,7 @@ ods-flutter/app/assets/ic_about_info.svg
 ods-flutter/app/assets/ic_components_atom.svg
 ods-flutter/app/assets/ic_guidelines_dna.svg
 ods-flutter/app/assets/ic_modules_molecule.svg
+ods-flutter/app/assets/ic_heart_favorite.svg
 ods-flutter/app/assets/il_buttons.svg
 ods-flutter/app/assets/il_cards.svg
 ods-flutter/app/assets/il_checkbox.svg
