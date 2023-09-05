@@ -197,6 +197,13 @@ class _NavBarDemoState extends State<_NavBarDemo> {
           selectedIcon: SvgPicture.asset("assets/recipes/ic_restaurant.svg",
               colorFilter: activeColorFilter),
           label: "Restaurant"),
+      NavigationDestination(
+          tooltip: '',
+          icon: SvgPicture.asset("assets/recipes/ic_heart_favorite.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_heart_favorite.svg",
+              colorFilter: activeColorFilter),
+          label: "Favorites"),
     ];
   }
 
