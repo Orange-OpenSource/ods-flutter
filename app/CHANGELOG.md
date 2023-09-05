@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disabled component customization options ([#192](https://github.com/Orange-OpenSource/ods-flutter/issues/192))
 - Component list page reordering ([#190](https://github.com/Orange-OpenSource/ods-flutter/issues/190))
 - Card content update ([#188](https://github.com/Orange-OpenSource/ods-flutter/issues/188))
+- Update the App icons for dedicater flutter icon ([#76](https://github.com/Orange-OpenSource/ods-flutter/issues/76))
 
 ### Removed
 
