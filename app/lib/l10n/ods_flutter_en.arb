@@ -247,7 +247,7 @@
     "description": "Component customization element - Number of items count",
     "type": "text"
   },
-  
+
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Radio buttons",
   "@componentRadioButtonsTitle": {
@@ -331,16 +331,6 @@
   },
 
   "@_BUTTONS_VARIANT": {},
-  "elevatedButtonsVariantTitle": "Elevated Buttons",
-  "@elevatedButtonsVariantTitle": {
-    "description": "Component - Elevated Buttons - Title",
-    "type": "text"
-  },
-  "elevatedButtonsVariantSubtitle": "OdsElevatedButton",
-  "@elevatedButtonsVariantSubtitle": {
-    "description": "Component - Elevated Buttons - Technical subtitle",
-    "type": "text"
-  },
   "filledButtonsVariantTitle": "Highest emphasis buttons",
   "@filledButtonsVariantTitle": {
     "description": "Component - Filled Buttons - Title",
