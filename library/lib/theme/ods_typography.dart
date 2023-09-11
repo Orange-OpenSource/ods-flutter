@@ -21,7 +21,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Headline L',
       fontFamily: 'Roboto',
       fontSize: 32,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
       height: 1.25,
       letterSpacing: 0),
   // Headline M > no correspondence
@@ -29,7 +29,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Headline M',
       fontFamily: 'Roboto',
       fontSize: 28,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
       height: 1.29,
       letterSpacing: 0),
   // Headline S > Android M2: Headline 5
@@ -37,7 +37,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Headline S',
       fontFamily: 'Roboto',
       fontSize: 24,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
       height: 1.33,
       letterSpacing: 0),
 
@@ -46,7 +46,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Title L',
       fontFamily: 'Roboto',
       fontSize: 22,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700, // or w500,
       height: 1.27,
       letterSpacing: 0),
   // Title M > Android M2: Subtitle 1
@@ -54,7 +54,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Title M',
       fontFamily: 'Roboto',
       fontSize: 16,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w700, // or w500,
       height: 1.5,
       letterSpacing: 0.15),
   // Title S > Android M2: Subtitle 2
@@ -62,7 +62,7 @@ TextTheme androidTextTheme = const TextTheme(
       debugLabel: 'Title S',
       fontFamily: 'Roboto',
       fontSize: 14,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w700, // or w500,
       height: 1.5,
       letterSpacing: 0.1),
 
@@ -116,25 +116,6 @@ TextTheme androidTextTheme = const TextTheme(
       height: 1.45,
       letterSpacing: 0.5),
 );
-
-/*
-M3 Reference in Flutter implementation
-    displayLarge: TextStyle(fontSize: 57.0, fontWeight: FontWeight.w400, letterSpacing: -0.25, height: 1.12),
-    displayMedium: TextStyle(fontSize: 45.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.16),
-    displaySmall: TextStyle(fontSize: 36.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.22),
-    headlineLarge: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.25),
-    headlineMedium: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.29),
-    headlineSmall: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.33),
-    titleLarge: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w400, letterSpacing: 0.0, height: 1.27),
-    titleMedium: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500, letterSpacing: 0.15, height: 1.50),
-    titleSmall: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1, height: 1.43),
-    bodyLarge: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400, letterSpacing: 0.5, height: 1.50),
-    bodyMedium: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400, letterSpacing: 0.25, height: 1.43),
-    bodySmall: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400, letterSpacing: 0.4, height: 1.33),
-    labelLarge: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, letterSpacing: 0.1, height: 1.43),
-    labelMedium: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, letterSpacing: 0.5, height: 1.33),
-    labelSmall: TextStyle(fontSize: 11.0, fontWeight: FontWeight.w500, letterSpacing: 0.5, height: 1.45),
- */
 
 TextTheme iosTextTheme = const TextTheme(
   // Headline L > iOS: Large Title
