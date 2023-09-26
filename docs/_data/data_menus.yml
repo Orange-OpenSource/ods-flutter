@@ -1,0 +1,24 @@
+# Edit this file to update the documentation menu
+toc2:
+  - title: Get Started
+    subfolderitems:
+      - page: Integration
+        url: index.html
+    
+  - title: Guidelines
+    subfolderitems:
+      - page: Spacings
+        url: guidelines/spacings_docs
+      - page: Typography
+        url: guidelines/typography_docs
+
+  - title: Components
+    subfolderitems:
+      - page: Buttons
+        url: components/buttons_docs
+      - page: Cards
+        url: components/cards_docs
+      - page: Lists
+        url: components/lists_docs
+
+  - title: Modules
