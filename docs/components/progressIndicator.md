@@ -1,7 +1,7 @@
 ---
 layout: detail
-title: Progress indicator
-description: Progress indicators show users that elements or pages are loading
+title: Progress indicators
+description: Progress indicators express an unspecified wait time or display the length of a process.
 ---
 
 ---
@@ -13,59 +13,115 @@ description: Progress indicators show users that elements or pages are loading
 * [Variants](#variants)
     * [Progress bar](#progress-bar)
     * [Activity indicator](#activity-indicator)
+* [Component specific tokens](#component-specific-tokens)
 
 ---
 
 ## Specifications references
 
-- [Design System Manager - Progress indicators](https://system.design.orange.com/0c1af118d/p/5969ab-progress-indicator)
-- [Apple guideline - Progress indicators](https://developer.apple.com/design/human-interface-guidelines/components/status/progress-indicators)
+- [Design System Manager - Progress indicators](https://system.design.orange.com/0c1af118d/p/085a98-progress-indicators/b/623d1d)
+- [Material Design - Progress indicators](https://m3.material.io/components/progress-indicators/accessibility)
+- Technical documentation soon available
 
 ## Accessibility
 
-Please follow [accessibility criteria for development](https://a11y-guidelines.orange.com/en/mobile/ios/)
+Please follow [accessibility criteria for development](https://m3.material.io/components/progress-indicators/accessibility)
 
 ## Variants
 
-Progress indicators show users that elements or pages are loading.
+### Progress bar
 
-### Progress bars
+Progress bars, also called linear progress indicators, display progress by animating an indicator along the length of a fixed,
+visible track. The behavior of the indicator is dependent on whether the progress of a process is
+known.
 
-Progres bar is used to display **determinate** operations. It display the indicator increasing in width from 0 to 100% of the track, in sync with the process’s progress. 
+Linear progress indicators support both determinate and indeterminate operations.
 
-To display the indicator as progress bar with a specific color use the `tint`.
+* Determinate operations display the indicator increasing in width
+  from 0 to 100% of the track, in sync with the process’s progress.
+* Indeterminate operations display the indicator continually growing
+  and shrinking along the track until the process is complete.
 
-We recommend to use the theme for that using the accent color as shown in following exemple.  
- 
-```swift
-ProgressView("Downloading...", value: value, total: 100)
-    .tint(theme.componentColors.accent)
-```
+  ![Progress bar light](images/progress_linear_light.png)
 
-It is possible to display the current value to provide more context.
+  ![Progress bar dark](images/progress_linear_dark.png)
 
-```swift
-ProgressView(value: value, total: 100) {
-    Text("Downloading...")
-} currentValueLabel: {
-    let percent = String(format: "%0.2f", value)
-    Text("\(percent) %").frame(maxWidth: .infinity, alignment: .trailing)
+> **Flutter implementation**
+
+You can use the composable `OdsLinearProgressIndicator` like this:
+
+For a **determinate** linear progress indicator, provide the progress value:
+
+```dart
+class ProgressDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    return SingleChildScrollView(
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(spacingM),
+          child: OdsLinearProgressIndicator(
+            progress: currentProgressValue,
+            label: 'Downloading ...',
+            icon: const Icon(Icons.download),
+            showCurrentValue: true,
+          ),
+        ),
+      ),
+    );
+  }
 }
-.tint(theme.componentColors.accent)
 ```
 
-### Activity indicators
+For an **indeterminate** linear progress indicator, no need to provide a progress value:
 
-Activity indicator is used to display **Indeterminate** operations. It spins while a task is performed. 
-
-```swift
-ProgressView()
-``` 
-
-An additional label can be added to provide more context.
-
-```swift
-ProgressView {
-   Text("Loading...")
-}
+```dart
+return OdsLinearProgressIndicator(
+            label: 'Downloading ...', // Optional
+            icon: const Icon(Icons.download),
+            showCurrentValue: true, // Optional
+);
 ```
+
+
+### Activity indicator
+
+Activity indicators, also called circular progress indicators, display progress by animating an indicator along an
+invisible circular track in a clockwise direction. They can be applied directly
+to a surface, such as a button or card.
+
+Circular progress indicators support both determinate and indeterminate
+processes.
+
+* Determinate circular indicators fill the invisible, circular track with
+  color, as the indicator moves from 0 to 360 degrees.
+* Indeterminate circular indicators grow and shrink in size while moving along
+  the invisible track.
+
+![Activity indicator light](images/progress_circular_light.png)  ![Activity indicator dark](images/progress_circular_dark.png)
+
+> **Flutter implementation**
+
+You can use the `OdsCircularProgressIndicator` composable like this:
+
+- For a **determinate** circular progress indicator, provide the progress value:
+
+```dart
+return OdsCircularProgressIndicator(
+    progress = 0.9,
+    label = "Downloading ..." // Optional
+)
+```
+
+- For an **indeterminate** circular progress indicator, no need to provide a progress value:
+
+```dart
+return OdsCircularProgressIndicator(
+    label = "Downloading ..." // Optional
+)
+```
+
+## Component specific tokens
+
+_Soon available_

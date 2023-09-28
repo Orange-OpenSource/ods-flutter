@@ -18,10 +18,6 @@ toc2:
         url: components/navigationBar_docs
       - page: Bars - tab
         url: components/tabBar_docs
-      - page: Chips
-        url: components/chips_docs
-      - page: Lists
-        url: components/lists_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
       - page: Slider
