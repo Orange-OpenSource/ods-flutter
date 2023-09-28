@@ -34,12 +34,12 @@ class OdsSlider extends StatefulWidget {
 }
 
 class _OdsSliderState extends State<OdsSlider> {
-  late double _currentSliderValue;
+  late double currentValue;
 
   @override
   void initState() {
     super.initState();
-    _currentSliderValue = widget.value;
+    currentValue = widget.value;
   }
 
   @override
@@ -57,16 +57,16 @@ class _OdsSliderState extends State<OdsSlider> {
             Expanded(
               child: Slider(
                 max: 100,
-                value: _currentSliderValue,
+                value: currentValue,
                 divisions: widget.steps,
                 //inactiveColor: Colors.red,
                 label: widget.label != null
-                    ? _currentSliderValue.round().toString()
+                    ? currentValue.round().toString()
                     : null,
                 onChanged: (value) {
                   setState(
                     () {
-                      _currentSliderValue = value;
+                      currentValue = value;
                     },
                   );
                 },

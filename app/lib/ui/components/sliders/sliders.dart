@@ -34,7 +34,7 @@ class _Body extends StatefulWidget {
 }
 
 class _BodyState extends State<_Body> {
-  double sliderValue = 20.0;
+  double value = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +45,10 @@ class _BodyState extends State<_Body> {
       child: Padding(
         padding: const EdgeInsets.all(spacingXs),
         child: OdsSlider(
-          value: sliderValue,
+          value: value,
           steps: customizationState?.stepped == true ? 10 : null,
           label: customizationState?.displayValue == true
-              ? sliderValue.round().toString()
+              ? value.round().toString()
               : null,
           leftIcon: customizationState?.hasIcon == true
               ? Icon(Icons.volume_mute)
