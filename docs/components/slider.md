@@ -48,13 +48,12 @@ With icons:
 In your screen you can use:
 
 ```dart
-class _BodyState extends State<_Body> {
-  double sliderValue = 20.0;
+class SliderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return OdsSlider(
-      sliderValue: sliderValue,
+      value: 20.0,
     );
   }
 }
@@ -64,9 +63,9 @@ You can add icons to the continuous slider like this:
 
 ```dart
 return OdsSlider(
-      sliderValue: 20.0,
-      iconLeft: Icon(Icons.volume_mute),
-      iconRight: Icon(Icons.volume_up),
+      value: 20.0,
+      leftIcon: Icon(Icons.volume_mute),
+      rightIcon: Icon(Icons.volume_up),
 );
 ```
 
@@ -82,14 +81,13 @@ With icons:
 In your screen you can use:
 
 ```dart
-class _BodyState extends State<_Body> {
-  double sliderValue = 20.0;
+class SliderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return OdsSlider(
-      sliderValue: sliderValue,
-      label: sliderValue.round().toString(),
+      value: 20.0,
+      label: 20.0.round().toString(),
     );
   }
 }
@@ -99,10 +97,10 @@ You can add icons to the continuous lockups slider like this:
 
 ```dart
 return OdsSlider(
-      sliderValue: 20.0,
+      value: 20.0,
       label: sliderValue.round().toString(),
-      iconLeft: Icon(Icons.volume_mute),
-      iconRight: Icon(Icons.volume_up),
+      leftIcon: Icon(Icons.volume_mute),
+      rightIcon: Icon(Icons.volume_up),
 );
 ```
 
@@ -120,14 +118,13 @@ With icons:
 In your screen you can use:
 
 ```dart
-class _BodyState extends State<_Body> {
-  double sliderValue = 20.0;
+class SliderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return OdsSlider(
-      sliderValue: sliderValue,
-      divisions: 10,
+      value: 20.0,
+      steps: 10,
     );
   }
 }
@@ -137,10 +134,10 @@ You can add icons to the discrete slider like this:
 
 ```dart
 return OdsSlider(
-      sliderValue: sliderValue,
-      divisions: 10,
-      iconLeft: Icon(Icons.volume_mute),
-      iconRight: Icon(Icons.volume_up),
+      value: 20.0,
+      steps: 10,
+      leftIcon: Icon(Icons.volume_mute),
+      rightIcon: Icon(Icons.volume_up),
  );
 ```
 
