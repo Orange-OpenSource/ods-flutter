@@ -14,11 +14,18 @@ toc2:
 
   - title: Components
     subfolderitems:
-      - page: Buttons
-        url: components/buttons_docs
-      - page: Cards
-        url: components/cards_docs
+      - page: Bars - navigation
+        url: components/navigationBar_docs
+      - page: Bars - tab
+        url: components/tabBar_docs
+      - page: Chips
+        url: components/chips_docs
       - page: Lists
         url: components/lists_docs
+      - page: Progress indicator
+        url: components/progressIndicator_docs
+      - page: Slider
+        url: components/slider_docs
 
   - title: Modules
+    subfolderitems:
