@@ -205,45 +205,45 @@
     "type": "text"
   },
 
-  "@_COMPONENTS_NAVIGATION_BAR": {},
-  "componentNavigationBarTitle": "Bar: Navigation",
-  "@componentNavigationBarTitle": {
+  "@_COMPONENTS_Tab": {},
+  "componentTabTitle": "Bar: Navigation",
+  "@componentTabTitle": {
     "description": "Component Navigation Bar - Title",
     "type": "text"
   },
-  "componentNavigationBarDescription": "Enable users to quickly and directly explore top-level destinations.",
-  "@componentNavigationBarDescription": {
+  "componentTabDescription": "Enable users to quickly and directly explore top-level destinations.",
+  "@componentTabDescription": {
     "description": "Component Navigation Bar - Description",
     "type": "text"
   },
-  "@NAVIGATION_BAR_VARIANT": {},
-  "navigationBarVariantTitle": "Bar: Navigation",
-  "@navigationBarVariantTitle": {
+  "@NAVIGATION_TAB": {},
+  "tabVariantTitle": "Bar: Navigation",
+  "@tabVariantTitle": {
     "description": "Navigation Bar Variant - Title",
     "type": "text"
   },
-  "navigationBarVariantSubtitle": "NavigationBar",
-  "@navigationBarVariantSubtitle": {
+  "tabVariantSubtitle": "NavigationBar",
+  "@tabVariantSubtitle": {
     "description": "Navigation Bar Variant - Subtitle",
     "type": "text"
   },
-  "navigationBarVariantSubtitleExample": "Icon of the navigation bar",
-  "@navigationBarVariantSubtitleExample": {
+  "tabVariantSubtitleExample": "Icon of the navigation bar",
+  "@tabVariantSubtitleExample": {
     "description": "Navigation Bar Variant Example - Subtitle",
     "type": "text"
   },
-  "navigationBarVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
-  "@navigationBarVariantDescriptionSvgExample": {
+  "tabVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
+  "@tabVariantDescriptionSvgExample": {
     "description": "Navigation Bar Variant Example - Description Svg",
     "type": "text"
   },
-  "navigationBarVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
-  "@navigationBarVariantDescriptionPngExample": {
+  "tabVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
+  "@tabVariantDescriptionPngExample": {
     "description": "Navigation Bar Variant Example - Description PNG",
     "type": "text"
   },
-  "navigationBarCustomizationCount": "Navigation item count",
-  "@navigationBarCustomizationCount": {
+  "tabCustomizationCount": "Navigation item count",
+  "@tabCustomizationCount": {
     "description": "Component customization element - Number of items count",
     "type": "text"
   },

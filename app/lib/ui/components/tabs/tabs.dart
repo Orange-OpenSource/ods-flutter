@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
+import 'package:ods_flutter/components/navigation_bar/ods_tab.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter_demo/ui/components/navigation_bar/navigarion_bar_customization.dart';
+import 'package:ods_flutter_demo/ui/components/tabs/tabs_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 import 'package:ods_flutter_demo/ui/utilities/expandable_text.dart';
 
-class ComponentNavigationBar extends StatefulWidget {
-  const ComponentNavigationBar({Key? key}) : super(key: key);
+class ComponentTabs extends StatefulWidget {
+  const ComponentTabs({Key? key}) : super(key: key);
 
   @override
-  State<ComponentNavigationBar> createState() => _ComponentNavigationBarState();
+  State<ComponentTabs> createState() => _ComponentTabsState();
 }
 
-class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
+class _ComponentTabsState extends State<ComponentTabs> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,28 +26,27 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return NavigationBarCustomization(
+    return TabsCustomization(
         child: Scaffold(
       bottomSheet: OdsSheetsBottom(
         content: _CustomizationContent(),
         title: AppLocalizations.of(context)!.componentCustomizeTitle,
       ),
       key: _scaffoldKey,
-      appBar:
-          MainAppBar(AppLocalizations.of(context)!.componentNavigationBarTitle),
-      body: _NavBarDemo(),
+      appBar: MainAppBar(AppLocalizations.of(context)!.componentTabTitle),
+      body: _TabsDemo(),
     ));
   }
 }
 
-class _NavBarDemo extends StatefulWidget {
-  _NavBarDemo();
+class _TabsDemo extends StatefulWidget {
+  _TabsDemo();
 
   @override
-  State<_NavBarDemo> createState() => _NavBarDemoState();
+  State<_TabsDemo> createState() => _TabsDemoState();
 }
 
-class _NavBarDemoState extends State<_NavBarDemo> {
+class _TabsDemoState extends State<_TabsDemo> {
   late int selectedIndex;
 
   @override
@@ -58,8 +57,8 @@ class _NavBarDemoState extends State<_NavBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final NavigationBarCustomizationState? customizationState =
-        NavigationBarCustomization.of(context);
+    final TabsCustomizationState? customizationState =
+        TabsCustomization.of(context);
 
     List<Widget> navigationDestinations =
         _destinations(context).sublist(0, customizationState?.numberOfItems);
@@ -90,7 +89,7 @@ class _NavBarDemoState extends State<_NavBarDemo> {
               padding: EdgeInsets.all(spacingM),
               child: Align(
                 alignment: Alignment.center,
-                child: OdsNavigationBar(
+                child: OdsTab(
                   selectedIndex: selectedIndex,
                   onDestinationSelected: (index) {
                     setState(() {
@@ -107,8 +106,7 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Semantics(
               header: true,
               child: Text(
-                AppLocalizations.of(context)!
-                    .navigationBarVariantSubtitleExample,
+                AppLocalizations.of(context)!.tabVariantSubtitleExample,
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
@@ -117,8 +115,7 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                AppLocalizations.of(context)!
-                    .navigationBarVariantDescriptionSvgExample,
+                AppLocalizations.of(context)!.tabVariantDescriptionSvgExample,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
@@ -134,8 +131,7 @@ class _NavBarDemoState extends State<_NavBarDemo> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                AppLocalizations.of(context)!
-                    .navigationBarVariantDescriptionPngExample,
+                AppLocalizations.of(context)!.tabVariantDescriptionPngExample,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
@@ -221,15 +217,14 @@ For images provided in PNG, there is nothing to do (just provide icon: parameter
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final NavigationBarCustomizationState? customizationState =
-        NavigationBarCustomization.of(context);
+    final TabsCustomizationState? customizationState =
+        TabsCustomization.of(context);
     return Column(
       children: [
         ComponentCountRow(
-            title:
-                AppLocalizations.of(context)!.navigationBarCustomizationCount,
-            minCount: NavigationBarCustomizationState.minNavigationItemCount,
-            maxCount: NavigationBarCustomizationState.maxNavigationItemCount,
+            title: AppLocalizations.of(context)!.tabCustomizationCount,
+            minCount: TabsCustomizationState.minTabItemCount,
+            maxCount: TabsCustomizationState.maxTabItemCount,
             count: customizationState!.numberOfItems,
             onChanged: (value) {
               customizationState.numberOfItems = value;

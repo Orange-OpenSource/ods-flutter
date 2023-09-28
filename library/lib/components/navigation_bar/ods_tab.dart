@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-/// ODS Navigation Bar.
+/// ODS Tab.
 ///
-/// The navigation bar displays a list of destinations that can be selected.
+/// The tab displays a list of destinations that can be selected.
 /// It highlights the selected destination and calls a callback when a destination is selected.
-class OdsNavigationBar extends StatefulWidget {
-  /// Creates an ODS Small card.
-  const OdsNavigationBar({
+class OdsTab extends StatefulWidget {
+  /// Creates an ODS Tab.
+  const OdsTab({
     Key? key,
     required this.selectedIndex,
     required this.destinations,
@@ -23,10 +23,10 @@ class OdsNavigationBar extends StatefulWidget {
   final void Function(int)? onDestinationSelected;
 
   @override
-  State<OdsNavigationBar> createState() => _OdsNavigationBarState();
+  State<OdsTab> createState() => _OdsTabState();
 }
 
-class _OdsNavigationBarState extends State<OdsNavigationBar> {
+class _OdsTabState extends State<OdsTab> {
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
