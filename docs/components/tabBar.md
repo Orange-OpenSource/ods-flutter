@@ -53,186 +53,101 @@ This composable allows to display:
 - a text label only tab
 - a tab with an icon on top of text label
 
-```kotlin
-OdsTabRow(selectedTabIndex = pagerState.currentPage) {
-    OdsTab(
-        icon = painterResource(id = R.drawable.ic_alert), // if set to `null`, no icon will be displayed
-        text = "Alerts", // if set to `null`, no text will be displayed
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
-    OdsTab(
-        icon = painterResource(id = R.drawable.ic_calendar), // if set to `null`, no icon will be displayed
-        text = "Calendar", // if set to `null`, no text will be displayed
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
+```dart
+class _NavBarDemoState extends State<_NavBarDemo> {
+  late int selectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = 1;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> navigationDestinations = _destinations(context).sublist(0, 3);
+
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            /// Screens for each navigation destination
+            SizedBox(
+              height: 110,
+              child: IndexedStack(
+                index: selectedIndex,
+                children: [
+                  Center(child: Text('Favourites')),
+                  Center(child: Text('Calls')),
+                  Center(child: Text('Alerts')),
+                ],
+              ),
+            ),
+
+            /// Navigation Bar icon
+            Padding(
+              padding: EdgeInsets.all(spacingM),
+              child: Align(
+                alignment: Alignment.center,
+                child: OdsNavigationBar(
+                  selectedIndex: selectedIndex,
+                  onDestinationSelected: (index) {
+                    setState(() {
+                      selectedIndex = index;
+                    });
+                  },
+                  destinations: navigationDestinations,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 ```
 
 **`OdsLeadingIconTab` composable:**
 
-This composable allows to display a tab with a text label and an icon in front of the label.
 
-```kotlin
-OdsTabRow(selectedTabIndex = pagerState.currentPage) {
-    OdsLeadingIconTab(
-        icon = painterResource(id = R.drawable.ic_alert), // icon is mandatory in an `OdsLeadingIconTab`
-        text = "Alerts", // text is mandatory in an `OdsLeadingIconTab`
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
-    OdsLeadingIconTab(
-        icon = painterResource(id = R.drawable.ic_calendar),
-        text = "Calendar",
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
-}
+If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this :
+
+```dart
+  List<NavigationDestination> _destinations(BuildContext context) {
+    var colorScheme = Theme.of(context).colorScheme;
+
+    var activeColorFilter =
+        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
+    return [
+      NavigationDestination(
+          tooltip: '',
+          icon: SvgPicture.asset("assets/recipes/ic_favourites.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_favourites.svg",
+              colorFilter: activeColorFilter),
+          label: "Favourites"),
+      NavigationDestination(
+          tooltip: '',
+          icon: SvgPicture.asset("assets/recipes/ic_calls.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_calls.svg",
+              colorFilter: activeColorFilter),
+          label: "Calls"),
+      NavigationDestination(
+          tooltip: '',
+          icon: SvgPicture.asset("assets/recipes/ic_alertes.svg",
+              colorFilter: colorFilter),
+          selectedIcon: SvgPicture.asset("assets/recipes/ic_alertes.svg",
+              colorFilter: activeColorFilter),
+          label: "Alertes"),
+    ];
+  }
 ```
 
- > **XML implementation**
-
-API and source code:
-
-* `TabLayout`: [Class definition](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout), [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/tabs/TabLayout.java)
-* `TabItem`: [Class definition](https://developer.android.com/reference/com/google/android/material/tabs/TabItem), [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/tabs/TabItem.java)
-
-In the layout:
-
-```xml
-<com.google.android.material.tabs.TabLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:tabMode="fixed">
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_1"
-        android:icon="@drawable/ic_favorite_24dp"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_2"
-        android:icon="@drawable/ic_music_24dp"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_3"
-        android:icon="@drawable/ic_search_24dp"
-        />
-
-</com.google.android.material.tabs.TabLayout>
-```
-
-### Scrollable tabs
-
-Scrollable tabs are displayed without fixed widths. They are scrollable, such
-that some tabs will remain off-screen until scrolled.
-
-  ![Scrollable tabs light](images/tabs_scrollable_light.png)
-
-  ![Scrollable tabs dark](images/tabs_scrollable_dark.png)
-
-> **Jetpack Compose implementation**
-
-For scrollable tabs, the tabs should be added inside of an `OdsScrollableTabRow`. This is the only difference with fixed tabs implementation.
-As for fixed tabs, you can use an `OdsTab` composable or an `OdsLeadingIconTab` inside.
-
-```kotlin
-OdsScrollableTabRow(selectedTabIndex = pagerState.currentPage) {
-    OdsTab(
-        icon = painterResource(id = R.drawable.ic_alert), // if set to `null`, no icon will be displayed
-        text = "Alerts", // if set to `null`, no text will be displayed
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
-    OdsTab(
-        icon = painterResource(id = R.drawable.ic_calendar), // if set to `null`, no icon will be displayed
-        text = "Calendar", // if set to `null`, no text will be displayed
-        selected = pagerState.currentPage == index,
-        onClick = {
-            scope.launch {
-                pagerState.animateScrollToPage(index)
-            }
-        }
-    )
-}
-```
-
-> **XML implementation**
-
-API and source code:
-
-*   `TabLayout`: [Class definition](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout), [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/tabs/TabLayout.java)
-*   `TabItem`: [Class definition](https://developer.android.com/reference/com/google/android/material/tabs/TabItem), [Class source](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/tabs/TabItem.java)
-
-In the layout:
-
-```xml
-<com.google.android.material.tabs.TabLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:tabMode="scrollable"
-    app:tabContentStart="56dp">
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_1"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_2"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_3"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_4"
-        />
-
-    <com.google.android.material.tabs.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_5"
-        />
-
-</com.google.android.material.tabs.TabLayout>
-```
 
 ## Component specific tokens
 
