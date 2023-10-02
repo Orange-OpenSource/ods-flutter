@@ -15,8 +15,9 @@ title: Typography
 
 ## Specifications references
 
-- [Design System Manager - Typography](https://system.design.orange.com/0c1af118d/p/54fe27-typography)
+- [Design System Manager - Typography]()
 - [Apple guideline - Typography](https://developer.apple.com/design/human-interface-guidelines/foundations/typography/)
+- [Android material - Typography](https://m3.material.io/styles/typography/overview)
 
 ## Implementation 
 
@@ -26,25 +27,31 @@ ODS library defines its own font style. The font associated to the style is defi
 
 Apply the font style on text like this:
 
-``` swift
- Text("Sample").odsFont(.title3)
- TextField("A text field", text: $textToEdit).odsFont(.title3)
+``` dart
+Text("Sample",
+	style: Theme.of(context).textTheme.bodyLarge,
+),
 ```
 
 ### Apply font style on view
 
-In the example below, the first text field has a font style set directly, while the font applied to the following container applies to all of the text views inside that container.
+In the example the first text field has a font style set directly.
     
-``` swift
-VStack {
-    Text("Font applied to a text view.")
-        .odsFont(.largeTitle)
-
-    VStack {
-        Text("These two text views have the same font")
-        Text("applied to their parent view.")
-    }
-    .odsFont(.title3)
+``` dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            'Font applied to a text view',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 

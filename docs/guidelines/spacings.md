@@ -15,8 +15,8 @@ title: Spacings
 
 ## Specifications references
 
-- [Design System Manager - Spacings](https://system.design.orange.com/0c1af118d/p/375be7-spacing)
-- [Apple guideline - Layout](https://developer.apple.com/design/human-interface-guidelines/foundations/layout)
+- [Design System Manager - Spacings]()
+- [Material guideline - Layout](https://m3.material.io/foundations/layout/understanding-layout/spacing)
 
 ## Usage 
 
@@ -26,23 +26,30 @@ The spacing scale increases in small increments needed to describe both internal
 
 Apply the spacing to get magin arround element like this:
 
-``` swift
+``` dart
 // Add a padding of 16px arround the text in the button
-
-Button {
+ElevatedButton(
+  onPressed: () {
     // Add your action here
-} label: {
-    Text("ButtonText")
-    .padding(.all, ODSSpacing.m)
-}
+  },
+  child: Padding(
+    padding: EdgeInsets.all(spacingM),
+    child: Text("ButtonText"),
+  ),
+),
 
 
 // Add a magin of 16px (leading and trailing)
-VStack {
-    Text("Title")
-    Text("A very long text for description in the main view")
-}
-.padding(.horizontal: ODSSpacing.m) // Add a margin to the
+Container(
+  margin: EdgeInsets.symmetric(horizontal: spacingM),
+  child: Column(
+    children: [
+      Text("Title"),
+      Text("A very long text for description in the main view"),
+    ],
+  ),
+),
+
 
 ```
 
@@ -50,9 +57,12 @@ VStack {
 
 Apply the spacing to separate elements like this:
 
-``` swift
-HStack(spacing: ODSSpacing.m) {
-    Image(systemname: "heart")
-    Text("Some text")
-}
+``` dart
+Row(
+  children: [
+    Icon(Icons.favorite),
+    SizedBox(width: ODSSpacing.m),
+    Text("Some text"),
+  ],
+)
 ```

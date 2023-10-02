@@ -19,12 +19,12 @@ description: A button allows a user to perform an action or to navigate to anoth
 
 ## Specifications references
 
-- [Design System Manager - Buttons](https://system.design.orange.com/0c1af118d/p/278734-buttons-shape/b/536b5f)
-- [Apple guideline - Buttons](https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/buttons)
+- [Design System Manager - Buttons](https://system.design.orange.com/0c1af118d/p/120472-buttons/b/223c31)
+- [Material guideline - Buttons](https://m3.material.io/components/buttons/guidelines)
 
 ## Accessibility
 
-Please follow [accessibility criteria for development](https://a11y-guidelines.orange.com/en/mobile/ios/)
+Please follow [accessibility criteria for development](https://m3.material.io/components/buttons/accessibility)
 
 ## Variants
 
