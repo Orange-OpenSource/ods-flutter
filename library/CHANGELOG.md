@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Library : check composant parameter name ([#222](https://github.com/Orange-OpenSource/ods-flutter/issues/222))
+- [Library] : Align component name and parameters to material ones  ([#222](https://github.com/Orange-OpenSource/ods-flutter/issues/222))
 
 ### Removed
 
