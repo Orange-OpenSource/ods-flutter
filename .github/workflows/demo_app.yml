@@ -2,7 +2,7 @@ name: Deploy Demo App to GitHub Pages 🚀
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build:
