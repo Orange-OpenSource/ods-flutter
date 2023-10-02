@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
+import 'package:ods_flutter/components/navigation_bar/ods_tab.dart';
 import 'package:ods_flutter_demo/ui/utilities/navigation_items.dart';
 
 import 'main_app_bar.dart';
@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: MainAppBar(selectedItem.label),
       bottomNavigationBar: MediaQuery.of(context).size.width < 640
-          ? OdsNavigationBar(
+          ? OdsTab(
               selectedIndex: _selectedIndex,
               onDestinationSelected: (int index) {
                 setState(() {

@@ -17,7 +17,6 @@ import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_a
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
-import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_circular.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_linear.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons.dart';
@@ -25,6 +24,7 @@ import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom.dart'
 import 'package:ods_flutter_demo/ui/components/sliders/sliders.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/switches.dart';
+import 'package:ods_flutter_demo/ui/components/tabs/tabs.dart';
 
 List<Component> components(BuildContext context) {
   return [
@@ -40,14 +40,12 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentNavigationBarTitle,
+      AppLocalizations.of(context)!.componentTabTitle,
       'assets/il_navigation_bar.png',
-      AppLocalizations.of(context)!.componentNavigationBarDescription,
+      AppLocalizations.of(context)!.componentTabDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.navigationBarVariantTitle,
-            AppLocalizations.of(context)!.navigationBarVariantSubtitle,
-            ComponentNavigationBar()),
+        Variant(AppLocalizations.of(context)!.tabVariantTitle,
+            AppLocalizations.of(context)!.tabVariantSubtitle, ComponentTabs()),
       ],
     ),
     Component(
