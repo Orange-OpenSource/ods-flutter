@@ -216,34 +216,47 @@
     "description": "Component Navigation Bar - Description",
     "type": "text"
   },
-  "@NAVIGATION_TAB": {},
-  "tabVariantTitle": "Bar: Navigation",
-  "@tabVariantTitle": {
+
+
+  "@_COMPONENTS_NAVIGATION_BAR": {},
+  "componentNavigationBarTitle": "Bar: Navigation",
+  "@componentNavigationBarTitle": {
+    "description": "Component Navigation Bar - Title",
+    "type": "text"
+  },
+  "componentNavigationBarDescription": "Enable users to quickly and directly explore top-level destinations.",
+  "@componentNavigationBarDescription": {
+    "description": "Component Navigation Bar - Description",
+    "type": "text"
+  },
+  "@NAVIGATION_BAR_VARIANT": {},
+  "navigationBarVariantTitle": "Bar: Navigation",
+  "@navigationBarVariantTitle": {
     "description": "Navigation Bar Variant - Title",
     "type": "text"
   },
-  "tabVariantSubtitle": "NavigationBar",
-  "@tabVariantSubtitle": {
+  "navigationBarVariantSubtitle": "NavigationBar",
+  "@navigationBarVariantSubtitle": {
     "description": "Navigation Bar Variant - Subtitle",
     "type": "text"
   },
-  "tabVariantSubtitleExample": "Icon of the navigation bar",
-  "@tabVariantSubtitleExample": {
+  "navigationBarVariantSubtitleExample": "Icon of the navigation bar",
+  "@navigationBarVariantSubtitleExample": {
     "description": "Navigation Bar Variant Example - Subtitle",
     "type": "text"
   },
-  "tabVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
-  "@tabVariantDescriptionSvgExample": {
+  "navigationBarVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
+  "@navigationBarVariantDescriptionSvgExample": {
     "description": "Navigation Bar Variant Example - Description Svg",
     "type": "text"
   },
-  "tabVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
-  "@tabVariantDescriptionPngExample": {
+  "navigationBarVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
+  "@navigationBarVariantDescriptionPngExample": {
     "description": "Navigation Bar Variant Example - Description PNG",
     "type": "text"
   },
-  "tabCustomizationCount": "Navigation item count",
-  "@tabCustomizationCount": {
+  "navigationBarCustomizationCount": "Navigation item count",
+  "@navigationBarCustomizationCount": {
     "description": "Component customization element - Number of items count",
     "type": "text"
   },
