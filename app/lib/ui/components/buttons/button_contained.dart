@@ -32,7 +32,7 @@ class _ButtonsContainedState extends State<ButtonsContained> {
           ),
           key: _scaffoldKey,
           appBar: MainAppBar(
-              AppLocalizations.of(context)!.filledButtonsVariantTitle),
+              AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle),
           body: _Body()),
     );
   }

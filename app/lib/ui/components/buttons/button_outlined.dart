@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ods_flutter/components/button/ods_text_button.dart';
+import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
-import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentTextButtons extends StatefulWidget {
-  const ComponentTextButtons({super.key});
+class ButtonsOutlined extends StatefulWidget {
+  const ButtonsOutlined({super.key});
 
   @override
-  State<ComponentTextButtons> createState() => _ComponentTextButtonsState();
+  State<ButtonsOutlined> createState() => _ButtonsOutlinedState();
 }
 
-class _ComponentTextButtonsState extends State<ComponentTextButtons> {
+class _ButtonsOutlinedState extends State<ButtonsOutlined> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -31,8 +30,8 @@ class _ComponentTextButtonsState extends State<ComponentTextButtons> {
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar:
-              MainAppBar(AppLocalizations.of(context)!.textButtonsVariantTitle),
+          appBar: MainAppBar(
+              AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle),
           body: _Body()),
     );
   }
@@ -47,17 +46,16 @@ class _Body extends StatelessWidget {
     return Semantics(
       header: true,
       child: Padding(
-        padding: const EdgeInsets.only(
-            left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
-        child: OdsTextButton(
-            title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
-            icon: customizationState?.hasIcon == true
-                ? SvgPicture.asset('assets/ic_profil.svg',
-                    width: 18, height: 18)
-                : null,
-            onPressed: customizationState?.hasEnabled == true ? () {} : null,
-            fullScreenWidth: customizationState?.hasFullScreen ?? false,
-            style: OdsTextButtonStyle.functionalDefault),
+        padding:
+            const EdgeInsets.only(left: 15, top: 25, right: 15, bottom: 15.0),
+        child: OdsOutlinedButton(
+          title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+          icon: customizationState?.hasIcon == true
+              ? SvgPicture.asset('assets/ic_profil.svg', width: 18, height: 18)
+              : null,
+          onPressed: customizationState?.hasEnabled == true ? () {} : null,
+          fullScreenWidth: customizationState?.hasFullScreen ?? false,
+        ),
       ),
     );
   }

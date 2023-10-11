@@ -33,7 +33,7 @@ class _ComponentFilledTonalButtonsState
           ),
           key: _scaffoldKey,
           appBar: MainAppBar(
-              AppLocalizations.of(context)!.filledTonalButtonsVariantTitle),
+              AppLocalizations.of(context)!.buttonsMediumEmphasisVariantTitle),
           body: _Body()),
     );
   }

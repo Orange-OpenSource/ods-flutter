@@ -344,44 +344,54 @@
   },
 
   "@_BUTTONS_VARIANT": {},
-  "filledButtonsVariantTitle": "Highest emphasis buttons",
-  "@filledButtonsVariantTitle": {
-    "description": "Component - Filled Buttons - Title",
+  "buttonsHighEmphasisVariantTitle": "High emphasis buttons",
+  "@buttonsHighEmphasisVariantTitle": {
+    "description": "Component - Buttons High Emphasis - Title",
     "type": "text"
   },
-  "filledButtonsVariantSubtitle": "OdsFilledButton",
-  "@filledButtonsVariantSubtitle": {
-    "description": "Component - Filled Buttons - Technical subtitle",
+  "buttonsHighEmphasisVariantSubtitle": "OdsButton with Default",
+  "@buttonsHighEmphasisVariantSubtitle": {
+    "description": "Component - Buttons High Emphasis - Technical subtitle",
     "type": "text"
   },
-  "filledTonalButtonsVariantTitle": "High emphasis buttons",
-  "@filledTonalButtonsVariantTitle": {
-    "description": "Component - Filled Tonal Buttons - Title",
+  "buttonsMediumEmphasisVariantTitle": "Medium emphasis buttons",
+  "@buttonsMediumEmphasisVariantTitle": {
+    "description": "Component - Buttons Medium Emphasis - Title",
     "type": "text"
   },
-  "filledTonalButtonsVariantSubtitle": "OdsFilledTonalButton",
-  "@filledTonalButtonsVariantSubtitle": {
-    "description": "Component - Filled Tonal Buttons - Technical subtitle",
+  "buttonsMediumEmphasisVariantSubtitle": "OdsButton with Default",
+  "@buttonsMediumEmphasisVariantSubtitle": {
+    "description": "Component - Buttons Medium Emphasis - Technical subtitle",
     "type": "text"
   },
-  "outlinedButtonsVariantTitle": "Medium emphasis buttons",
-  "@outlinedButtonsVariantTitle": {
-    "description": "Component - Outlined Buttons - Title",
+  "buttonsLowEmphasisVariantTitle": "Low emphasis buttons",
+  "@buttonsLowEmphasisVariantTitle": {
+    "description": "Component - Buttons Low Emphasis - Title",
     "type": "text"
   },
-  "outlinedButtonsVariantSubtitle": "OdsOutlinedButton",
-  "@outlinedButtonsVariantSubtitle": {
-    "description": "Component - Text Buttons - Technical subtitle",
+  "buttonsLowEmphasisVariantSubtitle": "OdsOutlinedButton",
+  "@buttonsLowEmphasisVariantSubtitle": {
+    "description": "Component - Buttons Low Emphasis - Technical subtitle",
     "type": "text"
   },
-  "textButtonsVariantTitle": "Low emphasis buttons",
-  "@textButtonsVariantTitle": {
-    "description": "Component - Text Buttons - Title",
+  "buttonsLowestEmphasisVariantTitle": "Lowest emphasis buttons",
+  "@buttonsLowestEmphasisVariantTitle": {
+    "description": "Component - Buttons Lowest emphasis - Title",
     "type": "text"
   },
-  "textButtonsVariantSubtitle": "OdsTextButton",
-  "@textButtonsVariantSubtitle": {
-    "description": "Component - Text Buttons - Technical subtitle",
+  "buttonsLowestEmphasisVariantSubtitle": "OdsTextButton",
+  "@buttonsLowestEmphasisVariantSubtitle": {
+    "description": "Component - Buttons Lowest emphasis - Technical subtitle",
+    "type": "text"
+  },
+  "buttonsFunctionalVariantTitle": "Functional buttons",
+  "@buttonsFunctionalVariantTitle": {
+    "description": "Component - Buttons Functional - Title",
+    "type": "text"
+  },
+  "buttonsFunctionalVariantSubtitle": "OdsButton with a functional style",
+  "@buttonsFunctionalVariantSubtitle": {
+    "description": "Component - Buttons Functional - Technical subtitle",
     "type": "text"
   },
 
