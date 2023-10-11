@@ -4,8 +4,13 @@ class OdsButtonColors {
   final Color background;
   final Color text;
   final Color? icon;
+  final Color? textDisabled;
 
-  OdsButtonColors(this.background, this.text, [this.icon]);
+  OdsButtonColors(
+      {required this.background,
+      required this.text,
+      this.icon,
+      this.textDisabled});
 }
 
 enum OdsTextButtonStyle {
