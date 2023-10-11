@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
-import 'package:ods_flutter/components/button/ods_filled_button.dart';
+import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
 class DismissButtonDescription {
@@ -40,10 +39,10 @@ class OdsAlertDialog extends StatefulWidget {
             child: Text(confirmButtonText),
           ),
           if (dismissButtonDescription != null)
-            OdsFilledButton(
+            OdsButton(
               title: dismissButtonDescription.dismissButtonText!,
               onPressed: dismissButtonDescription.onDismissButtonClick,
-              style: OdsTextButtonStyle.functionalPrimary,
+              style: OdsButtonStyle.functionalPrimary,
             ),
         ],
       ),
