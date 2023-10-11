@@ -44,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: Image do not Load on android ([#186](https://github.com/Orange-OpenSource/ods-flutter/issues/186))
 - [Bug]: Snackbar demo trigger update ([#199](https://github.com/Orange-OpenSource/ods-flutter/issues/199))
 - [Demo] : Align component name and parameters to material ones ([#224](https://github.com/Orange-OpenSource/ods-flutter/issues/224))
+- Design Update for buttons ([#230](https://github.com/Orange-OpenSource/ods-flutter/issues/230))
 
 ### Removed
 
