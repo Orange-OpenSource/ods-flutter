@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -43,22 +45,19 @@ class _Body extends StatelessWidget {
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
 
-    var colorScheme = Theme.of(context).colorScheme;
-    var colorFilter = ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
-
     return Semantics(
       header: true,
       child: Padding(
-        padding:
-            const EdgeInsets.only(left: 15, top: 25, right: 15, bottom: 15.0),
+        padding: const EdgeInsets.only(
+            left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
         child: OdsTextButton(
           title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
           icon: customizationState?.hasIcon == true
-              ? SvgPicture.asset('assets/ic_about_info.svg',
-                  width: 24, height: 24, colorFilter: colorFilter)
+              ? SvgPicture.asset('assets/ic_profil.svg', width: 18, height: 18)
               : null,
           onPressed: customizationState?.hasEnabled == true ? () {} : null,
           fullScreenWidth: customizationState?.hasFullScreen ?? false,
+          style: OdsTextButtonStyle.functionalDefault,
         ),
       ),
     );

@@ -44,9 +44,6 @@ class _Body extends StatelessWidget {
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
 
-    var colorScheme = Theme.of(context).colorScheme;
-    var colorFilter = ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
-
     return Semantics(
       header: true,
       child: Padding(
@@ -55,8 +52,7 @@ class _Body extends StatelessWidget {
         child: OdsOutlinedButton(
           title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
           icon: customizationState?.hasIcon == true
-              ? SvgPicture.asset('assets/ic_about_info.svg',
-                  width: 24, height: 24, colorFilter: colorFilter)
+              ? SvgPicture.asset('assets/ic_profil.svg', width: 18, height: 18)
               : null,
           onPressed: customizationState?.hasEnabled == true ? () {} : null,
           fullScreenWidth: customizationState?.hasFullScreen ?? false,
