@@ -1,21 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_palette.dart';
+
+///
+///Specifying an [OdsButtonStyle] allow to display a button with specific colors.
+///
+///
+class OdsButtonColors {
+  final Color background;
+  final Color text;
+  final Color? icon;
+  final Color? textDisabled;
+
+  OdsButtonColors(
+      {required this.background,
+      required this.text,
+      this.icon,
+      this.textDisabled});
+}
+
+enum OdsButtonStyle {
+  functionalPositive,
+  functionalNegative,
+  functionalPrimary,
+  functionalDefault,
+}
 
 /// ODS Design Button.
 ///
 /// Displays a customizable button with an optional icon and a title.
 /// The button can expand to full screen width if specified.
-class OdsFilledButton extends StatefulWidget {
-  /// Creates an ODS Filled Button.
+class OdsButton extends StatefulWidget {
+  /// Creates an ODS Button.
   ///
   /// * [title] - Text displayed in the button.
   /// * [fullScreenWidth] - Specifies whether the button should expand to full screen width.
   /// * [icon] - Widget of the icon.
   /// * [onPressed] - The action to be executed when the button is pressed.
   /// * [style] - The button's style color.
-  const OdsFilledButton({
+  const OdsButton({
     Key? key,
     required this.title,
     this.fullScreenWidth = false,
@@ -37,37 +60,37 @@ class OdsFilledButton extends StatefulWidget {
   final void Function()? onPressed;
 
   /// The background style.
-  final OdsTextButtonStyle style;
+  final OdsButtonStyle style;
 
   @override
-  State<OdsFilledButton> createState() => _OdsFilledButtonState();
+  State<OdsButton> createState() => _OdsButtonState();
 }
 
-class _OdsFilledButtonState extends State<OdsFilledButton> {
+class _OdsButtonState extends State<OdsButton> {
   static const double minimumWidthButtonIcon = 108;
   static const double minimumHeightButtonIcon = 40;
 
-  OdsButtonColors getColorsForStyle(OdsTextButtonStyle? style) {
+  OdsButtonColors getColorsForStyle(OdsButtonStyle? style) {
     switch (style) {
-      case OdsTextButtonStyle.functionalPrimary:
+      case OdsButtonStyle.functionalPrimary:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.primary,
             text: Theme.of(context).colorScheme.onPrimary,
             icon: Theme.of(context).colorScheme.onPrimary,
             textDisabled: grey500);
-      case OdsTextButtonStyle.functionalDefault:
+      case OdsButtonStyle.functionalDefault:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.secondary,
             text: Theme.of(context).colorScheme.onSecondary,
             icon: Theme.of(context).colorScheme.onSecondary,
             textDisabled: grey500);
-      case OdsTextButtonStyle.functionalPositive:
+      case OdsButtonStyle.functionalPositive:
         return OdsButtonColors(
             background: positive200,
             text: Theme.of(context).colorScheme.onSecondary,
             icon: Theme.of(context).colorScheme.onSecondary,
             textDisabled: grey500);
-      case OdsTextButtonStyle.functionalNegative:
+      case OdsButtonStyle.functionalNegative:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.error,
             text: Theme.of(context).colorScheme.onSecondary,

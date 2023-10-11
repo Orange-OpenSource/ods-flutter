@@ -1,7 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_palette.dart';
+
+///
+///Specifying an [OdsTextButtonStyle] allow to display a button with specific colors.
+///
+///
+class OdsButtonColors {
+  final Color background;
+  final Color text;
+  final Color? icon;
+  final Color? textDisabled;
+
+  OdsButtonColors(
+      {required this.background,
+      required this.text,
+      this.icon,
+      this.textDisabled});
+}
+
+enum OdsTextButtonStyle {
+  functionalPrimary,
+  functionalDefault,
+}
 
 /// ODS Design Button.
 ///
@@ -37,7 +58,7 @@ class OdsTextButton extends StatefulWidget {
   final Function()? onPressed;
 
   /// The background style.
-  final OdsButtonStyle style;
+  final OdsTextButtonStyle style;
 
   @override
   State<OdsTextButton> createState() => _OdsTextButtonState();
@@ -47,15 +68,15 @@ class _OdsTextButtonState extends State<OdsTextButton> {
   static const double minimumWidthButtonIcon = 108;
   static const double minimumHeightButtonIcon = 40;
 
-  OdsButtonColors getColorsForStyle(OdsButtonStyle? style) {
+  OdsButtonColors getColorsForStyle(OdsTextButtonStyle? style) {
     switch (style) {
-      case OdsButtonStyle.functionalPrimary:
+      case OdsTextButtonStyle.functionalPrimary:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.onSecondary,
             text: Theme.of(context).colorScheme.primary,
             icon: Theme.of(context).colorScheme.primary,
             textDisabled: grey500);
-      case OdsButtonStyle.functionalDefault:
+      case OdsTextButtonStyle.functionalDefault:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.onSecondary,
             text: Theme.of(context).colorScheme.onSurface,
