@@ -21,7 +21,7 @@ class OdsFilledButton extends StatefulWidget {
     this.fullScreenWidth = false,
     this.icon,
     this.onPressed,
-    this.style,
+    required this.style,
   }) : super(key: key);
 
   /// The button's title displayed inside the button.
@@ -37,7 +37,7 @@ class OdsFilledButton extends StatefulWidget {
   final void Function()? onPressed;
 
   /// The background style.
-  final OdsTextButtonStyle? style;
+  final OdsTextButtonStyle style;
 
   @override
   State<OdsFilledButton> createState() => _OdsFilledButtonState();
@@ -51,21 +51,33 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
     switch (style) {
       case OdsTextButtonStyle.functionalPrimary:
         return OdsButtonColors(
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.onPrimary,
-            Theme.of(context).colorScheme.onPrimary);
+            background: Theme.of(context).colorScheme.primary,
+            text: Theme.of(context).colorScheme.onPrimary,
+            icon: Theme.of(context).colorScheme.onPrimary,
+            textDisabled: grey500);
+      case OdsTextButtonStyle.functionalDefault:
+        return OdsButtonColors(
+            background: Theme.of(context).colorScheme.secondary,
+            text: Theme.of(context).colorScheme.onSecondary,
+            icon: Theme.of(context).colorScheme.onSecondary,
+            textDisabled: grey500);
       case OdsTextButtonStyle.functionalPositive:
         return OdsButtonColors(
-            positive200,
-            Theme.of(context).colorScheme.onSecondary,
-            Theme.of(context).colorScheme.onSecondary);
+            background: positive200,
+            text: Theme.of(context).colorScheme.onSecondary,
+            icon: Theme.of(context).colorScheme.onSecondary,
+            textDisabled: grey500);
       case OdsTextButtonStyle.functionalNegative:
         return OdsButtonColors(
-            Theme.of(context).colorScheme.error,
-            Theme.of(context).colorScheme.onSecondary,
-            Theme.of(context).colorScheme.onSecondary);
+            background: Theme.of(context).colorScheme.error,
+            text: Theme.of(context).colorScheme.onSecondary,
+            icon: Theme.of(context).colorScheme.onSecondary,
+            textDisabled: grey500);
       default:
-        return OdsButtonColors(Theme.of(context).colorScheme.primary, black900);
+        return OdsButtonColors(
+            background: Theme.of(context).colorScheme.primary,
+            text: black900,
+            textDisabled: grey500);
     }
   }
 
@@ -90,7 +102,9 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
           label: Text(
             widget.title,
             style: TextStyle(
-              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+              color: widget.onPressed != null
+                  ? styleButtonColor.text
+                  : styleButtonColor.textDisabled,
             ),
           ),
         ),
@@ -108,7 +122,9 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
           label: Text(
             widget.title,
             style: TextStyle(
-              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+              color: widget.onPressed != null
+                  ? styleButtonColor.text
+                  : styleButtonColor.textDisabled,
             ),
           ),
           style: FilledButton.styleFrom(
@@ -127,7 +143,9 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
           child: Text(
             widget.title,
             style: TextStyle(
-              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+              color: widget.onPressed != null
+                  ? styleButtonColor.text
+                  : styleButtonColor.textDisabled,
             ),
           ),
         ),
@@ -141,7 +159,9 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
       child: Text(
         widget.title,
         style: TextStyle(
-          color: widget.onPressed != null ? styleButtonColor.text : grey500,
+          color: widget.onPressed != null
+              ? styleButtonColor.text
+              : styleButtonColor.textDisabled,
         ),
       ),
     );

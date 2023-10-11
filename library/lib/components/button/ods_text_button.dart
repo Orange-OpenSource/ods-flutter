@@ -21,7 +21,7 @@ class OdsTextButton extends StatefulWidget {
     this.fullScreenWidth = false,
     this.icon,
     this.onPressed,
-    this.style,
+    required this.style,
   }) : super(key: key);
 
   /// The button's title displayed inside the button.
@@ -37,7 +37,7 @@ class OdsTextButton extends StatefulWidget {
   final Function()? onPressed;
 
   /// The background style.
-  final OdsTextButtonStyle? style;
+  final OdsTextButtonStyle style;
 
   @override
   State<OdsTextButton> createState() => _OdsTextButtonState();
@@ -51,19 +51,22 @@ class _OdsTextButtonState extends State<OdsTextButton> {
     switch (style) {
       case OdsTextButtonStyle.functionalPrimary:
         return OdsButtonColors(
-            Theme.of(context).colorScheme.onSecondary,
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).colorScheme.primary);
+            background: Theme.of(context).colorScheme.onSecondary,
+            text: Theme.of(context).colorScheme.primary,
+            icon: Theme.of(context).colorScheme.primary,
+            textDisabled: grey500);
       case OdsTextButtonStyle.functionalDefault:
         return OdsButtonColors(
-            Theme.of(context).colorScheme.onSecondary,
-            Theme.of(context).colorScheme.onSurface,
-            Theme.of(context).colorScheme.secondary);
+            background: Theme.of(context).colorScheme.onSecondary,
+            text: Theme.of(context).colorScheme.onSurface,
+            icon: Theme.of(context).colorScheme.secondary,
+            textDisabled: grey500);
       default:
         return OdsButtonColors(
-            Theme.of(context).colorScheme.onSecondary,
-            Theme.of(context).colorScheme.secondary,
-            Theme.of(context).colorScheme.onSecondary);
+            background: Theme.of(context).colorScheme.onSecondary,
+            text: Theme.of(context).colorScheme.secondary,
+            icon: Theme.of(context).colorScheme.onSecondary,
+            textDisabled: grey500);
     }
   }
 
@@ -87,7 +90,9 @@ class _OdsTextButtonState extends State<OdsTextButton> {
         label: Text(
           widget.title,
           style: TextStyle(
-            color: widget.onPressed != null ? styleButtonColor.text : grey500,
+            color: widget.onPressed != null
+                ? styleButtonColor.text
+                : styleButtonColor.textDisabled,
           ),
         ),
       );
@@ -104,7 +109,9 @@ class _OdsTextButtonState extends State<OdsTextButton> {
           label: Text(
             widget.title,
             style: TextStyle(
-              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+              color: widget.onPressed != null
+                  ? styleButtonColor.text
+                  : styleButtonColor.textDisabled,
             ),
           ),
           style: FilledButton.styleFrom(
@@ -123,7 +130,9 @@ class _OdsTextButtonState extends State<OdsTextButton> {
           child: Text(
             widget.title,
             style: TextStyle(
-              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+              color: widget.onPressed != null
+                  ? styleButtonColor.text
+                  : styleButtonColor.textDisabled,
             ),
           ),
         ),
@@ -137,7 +146,9 @@ class _OdsTextButtonState extends State<OdsTextButton> {
       child: Text(
         widget.title,
         style: TextStyle(
-          color: widget.onPressed != null ? styleButtonColor.text : grey500,
+          color: widget.onPressed != null
+              ? styleButtonColor.text
+              : styleButtonColor.textDisabled,
         ),
       ),
     );
