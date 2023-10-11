@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -51,14 +50,14 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.only(
             left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
         child: OdsTextButton(
-          title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
-          icon: customizationState?.hasIcon == true
-              ? SvgPicture.asset('assets/ic_profil.svg', width: 18, height: 18)
-              : null,
-          onPressed: customizationState?.hasEnabled == true ? () {} : null,
-          fullScreenWidth: customizationState?.hasFullScreen ?? false,
-          style: OdsButtonStyle.functionalDefault,
-        ),
+            title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+            icon: customizationState?.hasIcon == true
+                ? SvgPicture.asset('assets/ic_profil.svg',
+                    width: 18, height: 18)
+                : null,
+            onPressed: customizationState?.hasEnabled == true ? () {} : null,
+            fullScreenWidth: customizationState?.hasFullScreen ?? false,
+            style: OdsTextButtonStyle.functionalDefault),
       ),
     );
   }

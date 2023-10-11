@@ -3,8 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
-import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
-import 'package:ods_flutter/components/button/ods_filled_button.dart';
+import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/dialogs/ods_alert_dialog.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -61,7 +60,7 @@ class _BodyState extends State<_Body> {
               alignment: WrapAlignment.center,
               spacing: spacingM,
               children: [
-                OdsFilledButton(
+                OdsButton(
                   title: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenButton,
                   style: OdsButtonStyle.functionalPrimary,
@@ -89,7 +88,7 @@ class _BodyState extends State<_Body> {
                             : null,
                   ),
                 ),
-                OdsFilledButton(
+                OdsButton(
                   title: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenFullDialogsButton,
                   fullScreenWidth: false,
