@@ -7,14 +7,14 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentFilledButtons extends StatefulWidget {
-  const ComponentFilledButtons({super.key});
+class ButtonsContained extends StatefulWidget {
+  const ButtonsContained({super.key});
 
   @override
-  State<ComponentFilledButtons> createState() => _ComponentFilledButtonsState();
+  State<ButtonsContained> createState() => _ButtonsContainedState();
 }
 
-class _ComponentFilledButtonsState extends State<ComponentFilledButtons> {
+class _ButtonsContainedState extends State<ButtonsContained> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
