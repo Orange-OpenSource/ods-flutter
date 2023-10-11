@@ -115,7 +115,7 @@ class _SnackBarsVariants extends StatelessWidget {
             },
             title: AppLocalizations.of(context)!
                 .componentSnackbarsDescriptionExampleButton,
-            style: OdsTextButtonStyle.functionalPrimary,
+            style: OdsButtonStyle.functionalPrimary,
           ),
         ),
       ],

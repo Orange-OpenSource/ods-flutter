@@ -57,7 +57,7 @@ class _Body extends StatelessWidget {
               : null,
           onPressed: customizationState?.hasEnabled == true ? () {} : null,
           fullScreenWidth: customizationState?.hasFullScreen ?? false,
-          style: OdsTextButtonStyle.functionalPrimary,
+          style: OdsButtonStyle.functionalPrimary,
         ),
       ),
     );

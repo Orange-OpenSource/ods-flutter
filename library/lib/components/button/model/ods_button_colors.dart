@@ -13,7 +13,7 @@ class OdsButtonColors {
       this.textDisabled});
 }
 
-enum OdsTextButtonStyle {
+enum OdsButtonStyle {
   functionalPositive,
   functionalNegative,
   functionalPrimary,

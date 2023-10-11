@@ -64,7 +64,7 @@ class _BodyState extends State<_Body> {
                 OdsFilledButton(
                   title: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenButton,
-                  style: OdsTextButtonStyle.functionalPrimary,
+                  style: OdsButtonStyle.functionalPrimary,
                   onPressed: () => OdsAlertDialog.openDialog(
                     context: context,
                     titleText: customizationState?.hasTitle == true
@@ -93,7 +93,7 @@ class _BodyState extends State<_Body> {
                   title: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenFullDialogsButton,
                   fullScreenWidth: false,
-                  style: OdsTextButtonStyle.functionalPrimary,
+                  style: OdsButtonStyle.functionalPrimary,
                   onPressed: () => OdsAlertDialog.openFullscreenDialog(
                     context: context,
                     text: recipe.title,

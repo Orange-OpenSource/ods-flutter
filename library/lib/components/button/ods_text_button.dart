@@ -37,7 +37,7 @@ class OdsTextButton extends StatefulWidget {
   final Function()? onPressed;
 
   /// The background style.
-  final OdsTextButtonStyle style;
+  final OdsButtonStyle style;
 
   @override
   State<OdsTextButton> createState() => _OdsTextButtonState();
@@ -47,15 +47,15 @@ class _OdsTextButtonState extends State<OdsTextButton> {
   static const double minimumWidthButtonIcon = 108;
   static const double minimumHeightButtonIcon = 40;
 
-  OdsButtonColors getColorsForStyle(OdsTextButtonStyle? style) {
+  OdsButtonColors getColorsForStyle(OdsButtonStyle? style) {
     switch (style) {
-      case OdsTextButtonStyle.functionalPrimary:
+      case OdsButtonStyle.functionalPrimary:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.onSecondary,
             text: Theme.of(context).colorScheme.primary,
             icon: Theme.of(context).colorScheme.primary,
             textDisabled: grey500);
-      case OdsTextButtonStyle.functionalDefault:
+      case OdsButtonStyle.functionalDefault:
         return OdsButtonColors(
             background: Theme.of(context).colorScheme.onSecondary,
             text: Theme.of(context).colorScheme.onSurface,
