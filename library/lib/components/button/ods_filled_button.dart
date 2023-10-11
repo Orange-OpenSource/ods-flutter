@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/components/button/model/ods_button_colors.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter/theme/ods_palette.dart';
 
 /// ODS Design Button.
 ///
@@ -11,12 +14,14 @@ class OdsFilledButton extends StatefulWidget {
   /// * [fullScreenWidth] - Specifies whether the button should expand to full screen width.
   /// * [icon] - Widget of the icon.
   /// * [onPressed] - The action to be executed when the button is pressed.
+  /// * [style] - The button's style color.
   const OdsFilledButton({
     Key? key,
     required this.title,
     this.fullScreenWidth = false,
     this.icon,
     this.onPressed,
+    this.style,
   }) : super(key: key);
 
   /// The button's title displayed inside the button.
@@ -31,18 +36,64 @@ class OdsFilledButton extends StatefulWidget {
   /// The action to be executed when the button is pressed.
   final void Function()? onPressed;
 
+  /// The background style.
+  final OdsTextButtonStyle? style;
+
   @override
   State<OdsFilledButton> createState() => _OdsFilledButtonState();
 }
 
 class _OdsFilledButtonState extends State<OdsFilledButton> {
+  static const double minimumWidthButtonIcon = 108;
+  static const double minimumHeightButtonIcon = 40;
+
+  OdsButtonColors getColorsForStyle(OdsTextButtonStyle? style) {
+    switch (style) {
+      case OdsTextButtonStyle.functionalPrimary:
+        return OdsButtonColors(
+            Theme.of(context).colorScheme.primary,
+            Theme.of(context).colorScheme.onPrimary,
+            Theme.of(context).colorScheme.onPrimary);
+      case OdsTextButtonStyle.functionalPositive:
+        return OdsButtonColors(
+            positive200,
+            Theme.of(context).colorScheme.onSecondary,
+            Theme.of(context).colorScheme.onSecondary);
+      case OdsTextButtonStyle.functionalNegative:
+        return OdsButtonColors(
+            Theme.of(context).colorScheme.error,
+            Theme.of(context).colorScheme.onSecondary,
+            Theme.of(context).colorScheme.onSecondary);
+      default:
+        return OdsButtonColors(Theme.of(context).colorScheme.primary, black900);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final styleButtonColor = getColorsForStyle(widget.style);
+
     if (widget.icon != null && widget.fullScreenWidth == false) {
-      return FilledButton.icon(
-        onPressed: widget.onPressed,
-        icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
-        label: Text(widget.title),
+      return SizedBox(
+        child: FilledButton.icon(
+          style: FilledButton.styleFrom(
+            minimumSize:
+                const Size(minimumWidthButtonIcon, minimumHeightButtonIcon),
+            padding: const EdgeInsets.fromLTRB(
+                spacingM, spacingS, spacingL, spacingS),
+            backgroundColor: styleButtonColor.background,
+          ),
+          onPressed: widget.onPressed,
+          icon: widget.onPressed != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
+          label: Text(
+            widget.title,
+            style: TextStyle(
+              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+            ),
+          ),
+        ),
       );
     }
 
@@ -51,8 +102,17 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
         width: double.infinity,
         child: FilledButton.icon(
           onPressed: widget.onPressed,
-          icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
-          label: Text(widget.title),
+          icon: widget.onPressed != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
+          label: Text(
+            widget.title,
+            style: TextStyle(
+              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+            ),
+          ),
+          style: FilledButton.styleFrom(
+              backgroundColor: styleButtonColor.background),
         ),
       );
     }
@@ -62,18 +122,41 @@ class _OdsFilledButtonState extends State<OdsFilledButton> {
         width: double.infinity,
         child: FilledButton(
           onPressed: widget.onPressed,
-          child: Text(widget.title),
+          style: FilledButton.styleFrom(
+              backgroundColor: styleButtonColor.background),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              color: widget.onPressed != null ? styleButtonColor.text : grey500,
+            ),
+          ),
         ),
       );
     }
 
     return FilledButton(
       onPressed: widget.onPressed,
-      child: Text(widget.title),
+      style:
+          FilledButton.styleFrom(backgroundColor: styleButtonColor.background),
+      child: Text(
+        widget.title,
+        style: TextStyle(
+          color: widget.onPressed != null ? styleButtonColor.text : grey500,
+        ),
+      ),
     );
   }
 
-  Widget _colorFilter() {
+  ///Color Filter
+  Widget colorDefaultFilter() {
+    final styleButtonColor = getColorsForStyle(widget.style);
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(styleButtonColor.icon!, BlendMode.srcIn),
+      child: widget.icon,
+    );
+  }
+
+  Widget _colorEnableFilter() {
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
       child: widget.icon,

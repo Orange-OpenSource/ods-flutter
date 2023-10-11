@@ -41,7 +41,9 @@ class _OdsFilledTonalButtonState extends State<OdsFilledTonalButton> {
     if (widget.icon != null && widget.fullScreenWidth == false) {
       return FilledButton.tonalIcon(
         onPressed: widget.onPressed,
-        icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+        icon: widget.onPressed != null
+            ? colorDefaultFilter()
+            : _colorEnableFilter(),
         label: Text(widget.title),
       );
     }
@@ -51,7 +53,9 @@ class _OdsFilledTonalButtonState extends State<OdsFilledTonalButton> {
         width: double.infinity,
         child: FilledButton.tonalIcon(
           onPressed: widget.onPressed,
-          icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+          icon: widget.onPressed != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
           label: Text(widget.title),
         ),
       );
@@ -73,7 +77,16 @@ class _OdsFilledTonalButtonState extends State<OdsFilledTonalButton> {
     );
   }
 
-  Widget _colorFilter() {
+  ///Color Filter
+  Widget colorDefaultFilter() {
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(
+          Theme.of(context).colorScheme.onSecondary, BlendMode.srcIn),
+      child: widget.icon,
+    );
+  }
+
+  Widget _colorEnableFilter() {
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
       child: widget.icon,

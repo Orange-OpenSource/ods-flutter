@@ -41,7 +41,9 @@ class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
     if (widget.icon != null && widget.fullScreenWidth == false) {
       return OutlinedButton.icon(
         onPressed: widget.onPressed,
-        icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+        icon: widget.onPressed != null
+            ? colorDefaultFilter()
+            : _colorEnableFilter(),
         label: Text(widget.title),
       );
     }
@@ -51,7 +53,9 @@ class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
         width: double.infinity,
         child: OutlinedButton.icon(
           onPressed: widget.onPressed,
-          icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
+          icon: widget.onPressed != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
           label: Text(widget.title),
         ),
       );
@@ -73,7 +77,16 @@ class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
     );
   }
 
-  Widget _colorFilter() {
+  ///Color Filter
+  Widget colorDefaultFilter() {
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(
+          Theme.of(context).colorScheme.secondary, BlendMode.srcIn),
+      child: widget.icon,
+    );
+  }
+
+  Widget _colorEnableFilter() {
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
       child: widget.icon,
