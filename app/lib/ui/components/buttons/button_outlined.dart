@@ -25,14 +25,15 @@ class _ButtonsOutlinedState extends State<ButtonsOutlined> {
   Widget build(BuildContext context) {
     return ButtonCustomization(
       child: Scaffold(
-          bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
-          ),
-          key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle),
-          body: _Body()),
+        bottomSheet: OdsSheetsBottom(
+          content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
+        key: _scaffoldKey,
+        appBar: MainAppBar(
+            AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle),
+        body: SafeArea(child: _Body()),
+      ),
     );
   }
 }

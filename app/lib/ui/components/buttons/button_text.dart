@@ -28,14 +28,15 @@ class _ButtonsTextState extends State<ButtonsText> {
   Widget build(BuildContext context) {
     return ButtonCustomization(
       child: Scaffold(
-          bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
-          ),
-          key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.buttonsLowestEmphasisVariantTitle),
-          body: _Body()),
+        bottomSheet: OdsSheetsBottom(
+          content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
+        key: _scaffoldKey,
+        appBar: MainAppBar(
+            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantTitle),
+        body: SafeArea(child: _Body()),
+      ),
     );
   }
 }

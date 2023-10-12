@@ -36,7 +36,7 @@ class _ButtonsContainedState extends State<ButtonsContained> {
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: MainAppBar(getAppBarTitle()),
-        body: _Body(emphasis: widget.emphasis),
+        body: SafeArea(child: _Body(emphasis: widget.emphasis)),
       ),
     );
   }
