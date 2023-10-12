@@ -394,6 +394,36 @@
     "description": "Component - Buttons Functional - Technical subtitle",
     "type": "text"
   },
+  "buttonsFunctionalPositiveEnum": "Positive",
+  "@buttonsFunctionalPositiveEnum": {
+    "description": "Buttons Functional Positive - Enum",
+    "type": "text"
+  },
+  "buttonsFunctionalNegativeEnum": "Negative",
+  "@buttonsFunctionalNegativeEnum": {
+    "description": "Buttons Functional Negative - Enum",
+    "type": "text"
+  },
+  "buttonsFunctionalCustomizeFunctionalTitle": "Functional",
+  "@buttonsFunctionalCustomizeFunctionalTitle": {
+    "description": "Component Buttons Functional customization functional - Title",
+    "type": "text"
+  },
+  "buttonsTextFunctionalPrimaryEnum": "Primary",
+  "@buttonsTextFunctionalPrimaryEnum": {
+    "description": "Buttons Text Functional Primary - Enum",
+    "type": "text"
+  },
+  "buttonsTextFunctionalDefaultEnum": "Default",
+  "@buttonsTextFunctionalDefaultEnum": {
+    "description": "Buttons Text Functional Default - Enum",
+    "type": "text"
+  },
+  "buttonsTextFunctionalCustomizeFunctionalTitle": "Style",
+  "@buttonsTextFunctionalCustomizeFunctionalTitle": {
+    "description": "Component Buttons Functional customization functional - Title",
+    "type": "text"
+  },
 
   "@_COMPONENTS_SNACKBARS": {},
   "componentSnackbarsTitle": "Snackbars",

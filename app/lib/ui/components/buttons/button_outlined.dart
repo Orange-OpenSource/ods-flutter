@@ -51,7 +51,7 @@ class _Body extends StatelessWidget {
         child: OdsOutlinedButton(
           title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
           icon: customizationState?.hasIcon == true
-              ? SvgPicture.asset('assets/ic_profil.svg', width: 18, height: 18)
+              ? SvgPicture.asset('assets/ic_profile.svg', width: 18, height: 18)
               : null,
           onPressed: customizationState?.hasEnabled == true ? () {} : null,
           fullScreenWidth: customizationState?.hasFullScreen ?? false,

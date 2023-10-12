@@ -57,11 +57,11 @@ List<Component> components(BuildContext context) {
         Variant(
             AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle,
             AppLocalizations.of(context)!.buttonsHighEmphasisVariantSubtitle,
-            ButtonsContained()),
+            ButtonsContained(emphasis: ButtonEmphasis.highEmphasis)),
         Variant(
             AppLocalizations.of(context)!.buttonsMediumEmphasisVariantTitle,
             AppLocalizations.of(context)!.buttonsMediumEmphasisVariantSubtitle,
-            ButtonsContained()),
+            ButtonsContained(emphasis: ButtonEmphasis.mediumEmphasis)),
         Variant(
             AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle,
             AppLocalizations.of(context)!.buttonsLowEmphasisVariantSubtitle,
@@ -73,7 +73,7 @@ List<Component> components(BuildContext context) {
         Variant(
             AppLocalizations.of(context)!.buttonsFunctionalVariantTitle,
             AppLocalizations.of(context)!.buttonsFunctionalVariantSubtitle,
-            ButtonsContained()),
+            ButtonsContained(emphasis: ButtonEmphasis.functional)),
       ],
     ),
     Component(
