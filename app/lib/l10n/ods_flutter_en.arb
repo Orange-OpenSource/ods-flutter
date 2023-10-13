@@ -349,7 +349,7 @@
     "description": "Component - Buttons High Emphasis - Title",
     "type": "text"
   },
-  "buttonsHighEmphasisVariantSubtitle": "OdsButton with Default",
+  "buttonsHighEmphasisVariantSubtitle": "OdsButton with Primary",
   "@buttonsHighEmphasisVariantSubtitle": {
     "description": "Component - Buttons High Emphasis - Technical subtitle",
     "type": "text"
