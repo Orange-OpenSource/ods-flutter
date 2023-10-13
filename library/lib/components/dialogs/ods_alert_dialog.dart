@@ -40,8 +40,8 @@ class OdsAlertDialog extends StatefulWidget {
           ),
           if (dismissButtonDescription != null)
             OdsButton(
-              title: dismissButtonDescription.dismissButtonText!,
-              onPressed: dismissButtonDescription.onDismissButtonClick,
+              text: dismissButtonDescription.dismissButtonText!,
+              onClick: dismissButtonDescription.onDismissButtonClick,
               style: OdsButtonStyle.functionalPrimary,
             ),
         ],

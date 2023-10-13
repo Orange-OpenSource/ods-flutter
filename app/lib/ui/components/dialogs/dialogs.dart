@@ -61,10 +61,10 @@ class _BodyState extends State<_Body> {
               spacing: spacingM,
               children: [
                 OdsButton(
-                  title: AppLocalizations.of(context)!
+                  text: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenButton,
                   style: OdsButtonStyle.functionalPrimary,
-                  onPressed: () => OdsAlertDialog.openDialog(
+                  onClick: () => OdsAlertDialog.openDialog(
                     context: context,
                     titleText: customizationState?.hasTitle == true
                         ? recipe.title
@@ -89,11 +89,11 @@ class _BodyState extends State<_Body> {
                   ),
                 ),
                 OdsButton(
-                  title: AppLocalizations.of(context)!
+                  text: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenFullDialogsButton,
-                  fullScreenWidth: false,
+                  fullWidth: false,
                   style: OdsButtonStyle.functionalPrimary,
-                  onPressed: () => OdsAlertDialog.openFullscreenDialog(
+                  onClick: () => OdsAlertDialog.openFullscreenDialog(
                     context: context,
                     text: recipe.title,
                     body: Padding(

@@ -71,7 +71,7 @@ class _SnackBarsVariants extends StatelessWidget {
       children: [
         Center(
           child: OdsButton(
-            onPressed: () {
+            onClick: () {
               if (customizationState?.hasTwoLines == false &&
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbars.showSnackbarSingleLine(
@@ -112,7 +112,7 @@ class _SnackBarsVariants extends StatelessWidget {
                 );
               }
             },
-            title: AppLocalizations.of(context)!
+            text: AppLocalizations.of(context)!
                 .componentSnackbarsDescriptionExampleButton,
             style: OdsButtonStyle.functionalPrimary,
           ),

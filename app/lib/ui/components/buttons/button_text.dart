@@ -59,12 +59,12 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.only(
             left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
         child: OdsTextButton(
-          title: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+          text: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+          onClick: customizationState?.hasEnabled == true ? () {} : null,
           icon: customizationState?.hasIcon == true
-              ? SvgPicture.asset('assets/ic_profile.svg', width: 18, height: 18)
+              ? SvgPicture.asset('assets/ic_profile.svg')
               : null,
-          onPressed: customizationState?.hasEnabled == true ? () {} : null,
-          fullScreenWidth: customizationState?.hasFullScreen ?? false,
+          fullWidth: customizationState?.hasFullScreen ?? false,
           style: functionalStyle,
         ),
       ),

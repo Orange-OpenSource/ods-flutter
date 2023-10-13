@@ -31,31 +31,31 @@ enum OdsTextButtonStyle {
 class OdsTextButton extends StatefulWidget {
   /// Creates an ODS Text Button.
   ///
-  /// * [title] - Text displayed in the button.
-  /// * [fullScreenWidth] - Specifies whether the button should expand to full screen width.
+  /// * [text] - Text displayed in the button.
+  /// * [fullWidth] - Specifies whether the button should expand to full screen width.
   /// * [icon] - Widget of the icon.
-  /// * [onPressed] - The action to be executed when the button is pressed.
+  /// * [onClick] - The action to be executed when the button is pressed.
   /// * [style] - The button's style color.
   const OdsTextButton({
     Key? key,
-    required this.title,
-    this.fullScreenWidth = false,
+    required this.text,
+    this.onClick,
+    this.fullWidth = false,
     this.icon,
-    this.onPressed,
-    required this.style,
+    this.style = OdsTextButtonStyle.functionalDefault,
   }) : super(key: key);
 
   /// The button's title displayed inside the button.
-  final String title;
+  final String text;
+
+  /// The action to be executed when the button is pressed.
+  final Function()? onClick;
 
   /// Specifies whether the button should expand to full screen width.
-  final bool fullScreenWidth;
+  final bool fullWidth;
 
   /// The optional button's icon.
   final Widget? icon;
-
-  /// The action to be executed when the button is pressed.
-  final Function()? onPressed;
 
   /// The background style.
   final OdsTextButtonStyle style;
@@ -95,7 +95,7 @@ class _OdsTextButtonState extends State<OdsTextButton> {
   Widget build(BuildContext context) {
     final styleButtonColor = getColorsForStyle(widget.style);
 
-    if (widget.icon != null && widget.fullScreenWidth == false) {
+    if (widget.icon != null && widget.fullWidth == false) {
       return TextButton.icon(
         style: FilledButton.styleFrom(
           minimumSize:
@@ -104,14 +104,14 @@ class _OdsTextButtonState extends State<OdsTextButton> {
               const EdgeInsets.fromLTRB(spacingM, spacingS, spacingL, spacingS),
           backgroundColor: styleButtonColor.background,
         ),
-        onPressed: widget.onPressed,
-        icon: widget.onPressed != null
+        onPressed: widget.onClick,
+        icon: widget.onClick != null
             ? colorDefaultFilter()
             : _colorEnableFilter(),
         label: Text(
-          widget.title,
+          widget.text,
           style: TextStyle(
-            color: widget.onPressed != null
+            color: widget.onClick != null
                 ? styleButtonColor.text
                 : styleButtonColor.textDisabled,
           ),
@@ -119,18 +119,18 @@ class _OdsTextButtonState extends State<OdsTextButton> {
       );
     }
 
-    if (widget.icon != null && widget.fullScreenWidth == true) {
+    if (widget.icon != null && widget.fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: TextButton.icon(
-          onPressed: widget.onPressed,
-          icon: widget.onPressed != null
+          onPressed: widget.onClick,
+          icon: widget.onClick != null
               ? colorDefaultFilter()
               : _colorEnableFilter(),
           label: Text(
-            widget.title,
+            widget.text,
             style: TextStyle(
-              color: widget.onPressed != null
+              color: widget.onClick != null
                   ? styleButtonColor.text
                   : styleButtonColor.textDisabled,
             ),
@@ -141,17 +141,17 @@ class _OdsTextButtonState extends State<OdsTextButton> {
       );
     }
 
-    if (widget.fullScreenWidth == true) {
+    if (widget.fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: TextButton(
-          onPressed: widget.onPressed,
+          onPressed: widget.onClick,
           style: FilledButton.styleFrom(
               backgroundColor: styleButtonColor.background),
           child: Text(
-            widget.title,
+            widget.text,
             style: TextStyle(
-              color: widget.onPressed != null
+              color: widget.onClick != null
                   ? styleButtonColor.text
                   : styleButtonColor.textDisabled,
             ),
@@ -161,13 +161,13 @@ class _OdsTextButtonState extends State<OdsTextButton> {
     }
 
     return TextButton(
-      onPressed: widget.onPressed,
+      onPressed: widget.onClick,
       style:
           FilledButton.styleFrom(backgroundColor: styleButtonColor.background),
       child: Text(
-        widget.title,
+        widget.text,
         style: TextStyle(
-          color: widget.onPressed != null
+          color: widget.onClick != null
               ? styleButtonColor.text
               : styleButtonColor.textDisabled,
         ),
