@@ -16,6 +16,8 @@ toc2:
     subfolderitems:
       - page: Bars - navigation
         url: components/navigationBar_docs
+      - page: Buttons
+        url: components/buttons_docs
       - page: Checkboxes
         url: components/checkboxes_docs
       - page: Progress indicator
