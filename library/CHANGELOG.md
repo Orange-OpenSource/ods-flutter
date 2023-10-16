@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Align component name and parameters for button ([#232](https://github.com/Orange-OpenSource/ods-flutter/issues/232))
 - Update the button emphasis scale naming ([#221](https://github.com/Orange-OpenSource/ods-flutter/issues/221))
 - Design Update for buttons ([#230](https://github.com/Orange-OpenSource/ods-flutter/issues/230))
+- Align component name and parameters for Dialogs ([#234](https://github.com/Orange-OpenSource/ods-flutter/issues/234))
+- Design Update for dialogs ([#233](https://github.com/Orange-OpenSource/ods-flutter/issues/233))
 
 ### Removed
 
