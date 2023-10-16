@@ -43,8 +43,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bottom Navigation number items update ([#127](https://github.com/Orange-OpenSource/ods-flutter/issues/194))
 - [Bug]: Image do not Load on android ([#186](https://github.com/Orange-OpenSource/ods-flutter/issues/186))
 - [Bug]: Snackbar demo trigger update ([#199](https://github.com/Orange-OpenSource/ods-flutter/issues/199))
-- [Demo] : Align component name and parameters to material ones ([#224](https://github.com/Orange-OpenSource/ods-flutter/issues/224))
+- Align component name and parameters for button ([#232](https://github.com/Orange-OpenSource/ods-flutter/issues/232))
 - Design Update for buttons ([#230](https://github.com/Orange-OpenSource/ods-flutter/issues/230))
+- Update the button emphasis scale naming ([#221](https://github.com/Orange-OpenSource/ods-flutter/issues/221))
+- [Bug]: Button icons in Dark mode ([#196](https://github.com/Orange-OpenSource/ods-flutter/issues/196))
 
 ### Removed
 
