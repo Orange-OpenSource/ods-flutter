@@ -1,6 +1,6 @@
 
 # Build settings
-baseurl: /ods-flutte
+baseurl: /ods-flutter
 relative_links:
   enabled: true
   collections: true

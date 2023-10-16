@@ -20,6 +20,8 @@ toc2:
         url: components/buttons_docs
       - page: Checkboxes
         url: components/checkboxes_docs
+      - page: Dialogs
+        url: components/dialogs_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
       - page: Slider
