@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
-class DismissButtonDescription {
-  final String dismissButtonText;
-  final Function() onDismissButtonClick;
-
-  DismissButtonDescription({
-    required this.dismissButtonText,
-    required this.onDismissButtonClick,
+/// A button in an [OdsAlertDialog].
+///
+/// @constructor Creates an instance of [OdsAlertDialogButton].
+/// It represents a simple button with a [text]
+/// Will be called when the user clicks the button [onClick].
+class OdsAlertDialogButton {
+  const OdsAlertDialogButton({
+    required this.text,
+    required this.onClick,
   });
+
+  /// The text label for this button.
+  final String text;
+
+  /// The action executed on button click.
+  final VoidCallback onClick;
 }
 
+/// ODS Design Button.
+///
+/// Displays a customizable dialog with an optional dismiss button.
+/// The dialog can expand to full screen width if specified.
 class OdsAlertDialog extends StatefulWidget {
   const OdsAlertDialog({
     Key? key,
@@ -20,29 +31,35 @@ class OdsAlertDialog extends StatefulWidget {
   @override
   State<OdsAlertDialog> createState() => _OdsAlertDialogState();
 
+  /// Creates an ODS Alert Dialog.
+  ///
+  /// * [text] - Text displayed into the dialog which presents the details regarding the Dialog's purpose.
+  /// * [confirmButton] - [OdsAlertDialogButton] displayed into the dialog which is meant to confirm a proposed action, thus resolving what triggered the dialog
+  /// * [dismissButton] - Button displayed into the dialog which is meant to dismiss the dialog.
+  /// * [title] - Title displayed into the dialog which should specify the purpose of the dialog. The title is not mandatory, because there may be sufficient information inside the `text`.
+  ///
+  ///
   static void openDialog({
     required BuildContext context,
     required String text,
-    required String confirmButtonText,
-    required Function() onConfirmButtonClick,
-    String? titleText,
-    DismissButtonDescription? dismissButtonDescription,
+    required OdsAlertDialogButton confirmButton,
+    OdsAlertDialogButton? dismissButton,
+    String? title,
   }) {
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: titleText != null ? Text(titleText) : null,
-        content: Text(text),
+        title: title != null ? Text(title) : null,
+        content: SingleChildScrollView(child: Text(text)),
         actions: <Widget>[
           TextButton(
-            onPressed: onConfirmButtonClick,
-            child: Text(confirmButtonText),
+            onPressed: confirmButton.onClick,
+            child: Text(confirmButton.text),
           ),
-          if (dismissButtonDescription != null)
-            OdsButton(
-              text: dismissButtonDescription.dismissButtonText!,
-              onClick: dismissButtonDescription.onDismissButtonClick,
-              style: OdsButtonStyle.functionalPrimary,
+          if (dismissButton != null)
+            TextButton(
+              onPressed: dismissButton.onClick,
+              child: Text(dismissButton.text),
             ),
         ],
       ),
