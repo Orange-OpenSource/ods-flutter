@@ -7,29 +7,29 @@ import 'package:flutter/material.dart';
 class OdsOutlinedButton extends StatefulWidget {
   /// Creates an ODS Outlined Button.
   ///
-  /// * [title] - Text displayed in the button.
-  /// * [fullScreenWidth] - Specifies whether the button should expand to full screen width.
+  /// * [text] - Text displayed in the button.
+  /// * [onClick] - The action to be executed when the button is pressed.
   /// * [icon] - Widget of the icon.
-  /// * [onPressed] - The action to be executed when the button is pressed.
+  /// * [fullWidth] - Specifies whether the button should expand to full screen width.
   const OdsOutlinedButton({
     Key? key,
-    required this.title,
-    this.fullScreenWidth = false,
+    required this.text,
+    this.onClick,
     this.icon,
-    this.onPressed,
+    this.fullWidth = false,
   }) : super(key: key);
 
   /// The button's title displayed inside the button.
-  final String title;
+  final String text;
 
-  /// Specifies whether the button should expand to full screen width.
-  final bool fullScreenWidth;
+  /// The action to be executed when the button is pressed.
+  final void Function()? onClick;
 
   /// The optional button's icon.
   final Widget? icon;
 
-  /// The action to be executed when the button is pressed.
-  final void Function()? onPressed;
+  /// Specifies whether the button should expand to full screen width.
+  final bool fullWidth;
 
   @override
   State<OdsOutlinedButton> createState() => _OdsOutlinedButtonState();
@@ -38,42 +38,61 @@ class OdsOutlinedButton extends StatefulWidget {
 class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
   @override
   Widget build(BuildContext context) {
-    if (widget.icon != null && widget.fullScreenWidth == false) {
+    if (widget.icon != null && widget.fullWidth == false) {
       return OutlinedButton.icon(
-        onPressed: widget.onPressed,
-        icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
-        label: Text(widget.title),
+        onPressed: widget.onClick,
+        icon: ExcludeSemantics(
+          excluding: true,
+          child: widget.onClick != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
+        ),
+        label: Text(widget.text),
       );
     }
 
-    if (widget.icon != null && widget.fullScreenWidth == true) {
+    if (widget.icon != null && widget.fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: OutlinedButton.icon(
-          onPressed: widget.onPressed,
-          icon: widget.onPressed != null ? widget.icon! : _colorFilter(),
-          label: Text(widget.title),
+          onPressed: widget.onClick,
+          icon: ExcludeSemantics(
+            excluding: true,
+            child: widget.onClick != null
+                ? colorDefaultFilter()
+                : _colorEnableFilter(),
+          ),
+          label: Text(widget.text),
         ),
       );
     }
 
-    if (widget.fullScreenWidth == true) {
+    if (widget.fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: OutlinedButton(
-          onPressed: widget.onPressed,
-          child: Text(widget.title),
+          onPressed: widget.onClick,
+          child: Text(widget.text),
         ),
       );
     }
 
     return OutlinedButton(
-      onPressed: widget.onPressed,
-      child: Text(widget.title),
+      onPressed: widget.onClick,
+      child: Text(widget.text),
     );
   }
 
-  Widget _colorFilter() {
+  ///Color Filter
+  Widget colorDefaultFilter() {
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(
+          Theme.of(context).colorScheme.secondary, BlendMode.srcIn),
+      child: widget.icon,
+    );
+  }
+
+  Widget _colorEnableFilter() {
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
       child: widget.icon,

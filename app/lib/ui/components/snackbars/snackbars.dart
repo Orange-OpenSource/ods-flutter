@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/button/ods_filled_button.dart';
+import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -70,8 +70,8 @@ class _SnackBarsVariants extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Center(
-          child: OdsFilledButton(
-            onPressed: () {
+          child: OdsButton(
+            onClick: () {
               if (customizationState?.hasTwoLines == false &&
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbars.showSnackbarSingleLine(
@@ -112,8 +112,9 @@ class _SnackBarsVariants extends StatelessWidget {
                 );
               }
             },
-            title: AppLocalizations.of(context)!
+            text: AppLocalizations.of(context)!
                 .componentSnackbarsDescriptionExampleButton,
+            style: OdsButtonStyle.functionalPrimary,
           ),
         ),
       ],

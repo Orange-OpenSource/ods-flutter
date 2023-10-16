@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/filled_button.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/filled_tonal_button.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/outlined_button.dart';
-import 'package:ods_flutter_demo/ui/components/buttons/text_button.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/button_contained.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/button_outlined.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/button_text.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
@@ -56,21 +55,25 @@ List<Component> components(BuildContext context) {
       AppLocalizations.of(context)!.componentButtonsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.filledButtonsVariantTitle,
-            AppLocalizations.of(context)!.filledButtonsVariantSubtitle,
-            ComponentFilledButtons()),
+            AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle,
+            AppLocalizations.of(context)!.buttonsHighEmphasisVariantSubtitle,
+            ButtonsContained(emphasis: ButtonEmphasis.highEmphasis)),
         Variant(
-            AppLocalizations.of(context)!.filledTonalButtonsVariantTitle,
-            AppLocalizations.of(context)!.filledTonalButtonsVariantSubtitle,
-            ComponentFilledTonalButtons()),
+            AppLocalizations.of(context)!.buttonsMediumEmphasisVariantTitle,
+            AppLocalizations.of(context)!.buttonsMediumEmphasisVariantSubtitle,
+            ButtonsContained(emphasis: ButtonEmphasis.mediumEmphasis)),
         Variant(
-            AppLocalizations.of(context)!.outlinedButtonsVariantTitle,
-            AppLocalizations.of(context)!.outlinedButtonsVariantSubtitle,
-            ComponentOutlinedButtons()),
+            AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle,
+            AppLocalizations.of(context)!.buttonsLowEmphasisVariantSubtitle,
+            ButtonsOutlined()),
         Variant(
-            AppLocalizations.of(context)!.textButtonsVariantTitle,
-            AppLocalizations.of(context)!.textButtonsVariantSubtitle,
-            ComponentTextButtons()),
+            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantTitle,
+            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantSubtitle,
+            ButtonsText()),
+        Variant(
+            AppLocalizations.of(context)!.buttonsFunctionalVariantTitle,
+            AppLocalizations.of(context)!.buttonsFunctionalVariantSubtitle,
+            ButtonsContained(emphasis: ButtonEmphasis.functional)),
       ],
     ),
     Component(

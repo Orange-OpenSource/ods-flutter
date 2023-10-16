@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_palette.dart';
 import 'package:ods_flutter/theme/ods_typography.dart';
 
@@ -108,6 +109,54 @@ class OdsTheme {
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
         surfaceTintColor: Colors.white),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ).copyWith(
+        overlayColor: MaterialStateProperty.all<Color>(
+            lightColorScheme.primaryContainer.withOpacity(0.12)),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        foregroundColor: lightColorScheme.secondary,
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ).copyWith(
+        overlayColor: MaterialStateProperty.all<Color>(
+            lightColorScheme.primary.withOpacity(0.12)),
+        side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+          if (states.contains(MaterialState.hovered) ||
+              states.contains(MaterialState.pressed)) {
+            return BorderSide(
+              color: lightColorScheme.primary,
+            );
+          }
+          return BorderSide(
+            color: lightColorScheme.secondary,
+          );
+        }),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -203,6 +252,54 @@ class OdsTheme {
         backgroundColor: grey900,
         shadowColor: grey900,
         surfaceTintColor: grey900),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ).copyWith(
+        overlayColor: MaterialStateProperty.all<Color>(
+            darkColorScheme.primaryContainer.withOpacity(0.12)),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        foregroundColor: darkColorScheme.secondary,
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ).copyWith(
+        overlayColor: MaterialStateProperty.all<Color>(
+            darkColorScheme.primary.withOpacity(0.12)),
+        side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+          if (states.contains(MaterialState.hovered) ||
+              states.contains(MaterialState.pressed)) {
+            return BorderSide(
+              color: darkColorScheme.primary,
+            );
+          }
+          return BorderSide(
+            color: darkColorScheme.secondary,
+          );
+        }),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(90, 40),
+        padding:
+            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(spacingS),
+        ),
+      ),
+    ),
   );
 }
 

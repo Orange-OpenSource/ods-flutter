@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/button_enum.dart';
 
 class _ButtonCustomization extends InheritedWidget {
   _ButtonCustomization({
@@ -53,6 +54,52 @@ class ButtonCustomizationState extends State<ButtonCustomization> {
   set hasEnabled(bool value) {
     setState(() {
       _hasEnabled = value;
+    });
+  }
+
+  ///Functional Enum
+  List<ButtonsEnum> _functionalType = [
+    ButtonsEnum.functionalPositive,
+    ButtonsEnum.functionalNegative,
+  ];
+  ButtonsEnum _selectedFunctionalType = ButtonsEnum.functionalPositive;
+
+  ///Functional Enum
+  List<ButtonsEnum> get functionalType => _functionalType;
+  set functionalType(List<ButtonsEnum> value) {
+    setState(() {
+      _functionalType = value;
+    });
+  }
+
+  ButtonsEnum get selectedFunctionalType => _selectedFunctionalType;
+
+  set selectedFunctionalType(ButtonsEnum value) {
+    setState(() {
+      _selectedFunctionalType = value;
+    });
+  }
+
+  ///Style Enum
+  List<ButtonsEnum> _style = [
+    ButtonsEnum.functionalPrimary,
+    ButtonsEnum.functionalDefault,
+  ];
+  ButtonsEnum _selectedStyle = ButtonsEnum.functionalDefault;
+
+  ///Style Enum
+  List<ButtonsEnum> get style => _style;
+  set style(List<ButtonsEnum> value) {
+    setState(() {
+      _style = value;
+    });
+  }
+
+  ButtonsEnum get selectedStyle => _selectedStyle;
+
+  set selectedStyle(ButtonsEnum value) {
+    setState(() {
+      _selectedStyle = value;
     });
   }
 

@@ -21,7 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] : Align component name and parameters to material ones  ([#222](https://github.com/Orange-OpenSource/ods-flutter/issues/222))
+- Align component name and parameters for button ([#232](https://github.com/Orange-OpenSource/ods-flutter/issues/232))
+- Update the button emphasis scale naming ([#221](https://github.com/Orange-OpenSource/ods-flutter/issues/221))
+- Design Update for buttons ([#230](https://github.com/Orange-OpenSource/ods-flutter/issues/230))
 
 ### Removed
 
