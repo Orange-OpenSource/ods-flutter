@@ -119,9 +119,12 @@ class _OdsButtonState extends State<OdsButton> {
             backgroundColor: styleButtonColor.background,
           ),
           onPressed: widget.onClick,
-          icon: widget.onClick != null
-              ? colorDefaultFilter()
-              : _colorEnableFilter(),
+          icon: ExcludeSemantics(
+            excluding: true,
+            child: widget.onClick != null
+                ? colorDefaultFilter()
+                : _colorEnableFilter(),
+          ),
           label: Text(
             widget.text,
             style: TextStyle(
@@ -139,9 +142,12 @@ class _OdsButtonState extends State<OdsButton> {
         width: double.infinity,
         child: FilledButton.icon(
           onPressed: widget.onClick,
-          icon: widget.onClick != null
-              ? colorDefaultFilter()
-              : _colorEnableFilter(),
+          icon: ExcludeSemantics(
+            excluding: true,
+            child: widget.onClick != null
+                ? colorDefaultFilter()
+                : _colorEnableFilter(),
+          ),
           label: Text(
             widget.text,
             style: TextStyle(

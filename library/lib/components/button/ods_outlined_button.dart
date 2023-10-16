@@ -41,9 +41,12 @@ class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
     if (widget.icon != null && widget.fullWidth == false) {
       return OutlinedButton.icon(
         onPressed: widget.onClick,
-        icon: widget.onClick != null
-            ? colorDefaultFilter()
-            : _colorEnableFilter(),
+        icon: ExcludeSemantics(
+          excluding: true,
+          child: widget.onClick != null
+              ? colorDefaultFilter()
+              : _colorEnableFilter(),
+        ),
         label: Text(widget.text),
       );
     }
@@ -53,9 +56,12 @@ class _OdsOutlinedButtonState extends State<OdsOutlinedButton> {
         width: double.infinity,
         child: OutlinedButton.icon(
           onPressed: widget.onClick,
-          icon: widget.onClick != null
-              ? colorDefaultFilter()
-              : _colorEnableFilter(),
+          icon: ExcludeSemantics(
+            excluding: true,
+            child: widget.onClick != null
+                ? colorDefaultFilter()
+                : _colorEnableFilter(),
+          ),
           label: Text(widget.text),
         ),
       );
