@@ -66,28 +66,28 @@ class _BodyState extends State<_Body> {
                   style: OdsButtonStyle.functionalPrimary,
                   onClick: () => OdsAlertDialog.openDialog(
                     context: context,
-                    titleText: customizationState?.hasTitle == true
+                    text: recipe.description,
+                    confirmButton: OdsAlertDialogButton(
+                      text: customizationState?.hasDismissButton == true
+                          ? AppLocalizations.of(context)!
+                              .dialogsVariantExampleAcceptButton
+                          : AppLocalizations.of(context)!
+                              .dialogsVariantExampleOkButton,
+                      onClick: () => Navigator.of(context).pop(),
+                    ),
+                    title: customizationState?.hasTitle == true
                         ? recipe.title
                         : null,
-                    text: recipe.description,
-                    confirmButtonText:
-                        customizationState?.hasDismissButton == true
-                            ? AppLocalizations.of(context)!
-                                .dialogsVariantExampleAcceptButton
-                            : AppLocalizations.of(context)!
-                                .dialogsVariantExampleOkButton,
-                    onConfirmButtonClick: () => Navigator.of(context).pop(),
-                    dismissButtonDescription:
-                        customizationState?.hasDismissButton == true
-                            ? DismissButtonDescription(
-                                dismissButtonText: AppLocalizations.of(context)!
-                                    .dialogsVariantExampleDeclineButton,
-                                onDismissButtonClick: () =>
-                                    Navigator.of(context).pop(),
-                              )
-                            : null,
+                    dismissButton: customizationState?.hasDismissButton == true
+                        ? OdsAlertDialogButton(
+                            text: AppLocalizations.of(context)!
+                                .dialogsVariantExampleDeclineButton,
+                            onClick: () => Navigator.of(context).pop(),
+                          )
+                        : null,
                   ),
                 ),
+                /*
                 OdsButton(
                   text: AppLocalizations.of(context)!
                       .dialogsVariantExampleOpenFullDialogsButton,
@@ -105,6 +105,7 @@ class _BodyState extends State<_Body> {
                     onButtonRightClick: () => Navigator.of(context).pop(),
                   ),
                 ),
+                */
               ],
             ),
           ],
