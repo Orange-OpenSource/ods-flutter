@@ -59,7 +59,6 @@ class _BodyState extends State<_Body> {
       fab = OdsFloatingActionButton(
         onClick: () {},
         icon: const Icon(Icons.add),
-        semanticsLabel: 'Ajouter',
       );
     } else if (customizationState?.selectedElement ==
         FloatingActionButtonEnum.smallFab) {
