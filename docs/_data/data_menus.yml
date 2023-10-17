@@ -22,6 +22,8 @@ toc2:
         url: components/checkboxes_docs
       - page: Dialogs
         url: components/dialogs_docs
+      - page: Floating action buttons
+        url: components/floatingActionButtons_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
       - page: Slider

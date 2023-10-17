@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab.dart';
@@ -56,49 +57,43 @@ class _BodyState extends State<_Body> {
     if (customizationState?.selectedElement ==
         FloatingActionButtonEnum.defaultFab) {
       fab = OdsFloatingActionButton(
-        onPressed: () {},
-        tooltip:
-            AppLocalizations.of(context)!.floatingActionButtonVariantTooltip,
+        onClick: () {},
         icon: const Icon(Icons.add),
-        //label: 'Create',
       );
     } else if (customizationState?.selectedElement ==
         FloatingActionButtonEnum.smallFab) {
-      fab = OdsFloatingActionButtonSmall(
-        onPressed: () {},
-        tooltip:
-            AppLocalizations.of(context)!.floatingActionButtonVariantTooltip,
+      fab = OdsSmallFloatingActionButton(
+        onClick: () {},
         icon: const Icon(Icons.add),
-        //label: 'Create',
       );
     } else if (customizationState?.selectedElement ==
         FloatingActionButtonEnum.largeFab) {
-      fab = OdsFloatingActionButtonLarge(
-        onPressed: () {},
-        tooltip:
-            AppLocalizations.of(context)!.floatingActionButtonVariantTooltip,
+      fab = OdsLargeFloatingActionButton(
+        onClick: () {},
         icon: const Icon(Icons.add),
-        //label: 'Create',
       );
     } else if (customizationState?.selectedElement ==
         FloatingActionButtonEnum.extendedFab) {
-      fab = OdsFloatingActionButtonExtended(
-        onPressed: () {},
-        tooltip:
-            AppLocalizations.of(context)!.floatingActionButtonVariantTooltip,
+      fab = OdsExtendedFloatingActionButton(
+        onClick: () {},
         icon: const Icon(Icons.add),
-        label: AppLocalizations.of(context)!
+        text: AppLocalizations.of(context)!
             .floatingActionButtonVariantExtendedAdd,
-        //label: 'Create',
       );
     }
 
     return Scaffold(
-      bottomSheet: OdsSheetsBottom(
-        content: _CustomizationContent(),
-        title: AppLocalizations.of(context)!.componentCustomizeTitle,
+      bottomSheet: Semantics(
+        sortKey: OrdinalSortKey(2.0),
+        child: OdsSheetsBottom(
+          content: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
       ),
-      floatingActionButton: fab,
+      floatingActionButton: Semantics(
+        sortKey: OrdinalSortKey(1.0),
+        child: fab,
+      ),
     );
   }
 }
