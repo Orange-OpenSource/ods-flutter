@@ -1,50 +1,44 @@
 import 'package:flutter/material.dart';
 
-/// ODS Design Floating Action Button Extended.
+/// ODS Design Extended Floating Action Button Extended.
 ///
 /// Displays a customizable floating action button with an optional icon and a tooltip.
 /// The floating action button
-class OdsFloatingActionButtonExtended extends StatefulWidget {
+class OdsExtendedFloatingActionButton extends StatefulWidget {
   /// Creates an ODS Floating Action Button.
   ///
-  /// * [tooltip] - The tooltip text displayed when hovering over the button.
+  /// * [onClick] - The callback function when the button is pressed.
   /// * [icon] - The icon widget displayed inside the button.
-  /// * [onPressed] - The callback function when the button is pressed.
-  const OdsFloatingActionButtonExtended({
+  const OdsExtendedFloatingActionButton({
     Key? key,
-    required this.tooltip,
-    required this.label,
-    this.icon,
-    this.onPressed,
+    this.onClick,
+    required this.text,
+    required this.icon,
   }) : super(key: key);
 
-  /// The tooltip text displayed when hovering over the button.
-  final String tooltip;
+  /// The callback function when the button is pressed.
+  final void Function()? onClick;
 
   /// The label text displayed inside the button.
-  final String label;
+  final String text;
 
   /// The optional icon widget displayed inside the button.
   final Widget? icon;
 
-  /// The callback function when the button is pressed.
-  final void Function()? onPressed;
-
   @override
-  State<OdsFloatingActionButtonExtended> createState() =>
-      _OdsFloatingActionButtonExtendedState();
+  State<OdsExtendedFloatingActionButton> createState() =>
+      _OdsExtendedFloatingActionButtonState();
 }
 
-class _OdsFloatingActionButtonExtendedState
-    extends State<OdsFloatingActionButtonExtended> {
+class _OdsExtendedFloatingActionButtonState
+    extends State<OdsExtendedFloatingActionButton> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
       child: FloatingActionButton.extended(
-        onPressed: widget.onPressed,
-        tooltip: widget.tooltip,
-        label: Text(widget.label),
+        onPressed: widget.onClick,
+        label: Text(widget.text),
         icon: widget.icon,
       ),
     );

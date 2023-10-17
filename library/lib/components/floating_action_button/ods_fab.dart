@@ -7,24 +7,24 @@ import 'package:flutter/material.dart';
 class OdsFloatingActionButton extends StatefulWidget {
   /// Creates an ODS Floating Action Button.
   ///
-  /// * [tooltip] - The tooltip text displayed when hovering over the button.
+  /// * [onClick] - The callback function when the button is pressed.
   /// * [icon] - The icon widget displayed inside the button.
-  /// * [onPressed] - The callback function when the button is pressed.
+  /// * [semanticsLabel] - The description accessibility button.
   const OdsFloatingActionButton({
     Key? key,
-    required this.tooltip,
-    this.icon,
-    this.onPressed,
+    this.onClick,
+    required this.icon,
+    this.semanticsLabel = "Floating action",
   }) : super(key: key);
-
-  /// The tooltip text displayed when hovering over the button.
-  final String tooltip;
 
   /// The optional icon widget displayed inside the button.
   final Widget? icon;
 
   /// The callback function when the button is pressed.
-  final void Function()? onPressed;
+  final void Function()? onClick;
+
+  /// The optional description accessibility floating button.
+  final String? semanticsLabel;
 
   @override
   State<OdsFloatingActionButton> createState() =>
@@ -36,9 +36,10 @@ class _OdsFloatingActionButtonState extends State<OdsFloatingActionButton> {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
+      label: widget.semanticsLabel,
+      excludeSemantics: true,
       child: FloatingActionButton(
-        onPressed: widget.onPressed,
-        tooltip: widget.tooltip,
+        onPressed: widget.onClick,
         child: widget.icon,
       ),
     );
