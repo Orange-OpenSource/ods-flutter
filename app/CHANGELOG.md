@@ -49,6 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: Button icons in Dark mode ([#196](https://github.com/Orange-OpenSource/ods-flutter/issues/196))
 - Align component name and parameters for Dialogs ([#234](https://github.com/Orange-OpenSource/ods-flutter/issues/234))
 - Design Update for dialogs ([#233](https://github.com/Orange-OpenSource/ods-flutter/issues/233))
+- Align component name and parameters for FAB ([#239](https://github.com/Orange-OpenSource/ods-flutter/issues/239))
+- Design Update for fabs ([#238](https://github.com/Orange-OpenSource/ods-flutter/issues/238))
 
 ### Removed
 
