@@ -47,13 +47,14 @@ class _BodyState extends State<_Body> {
         child: OdsSlider(
           value: value,
           steps: customizationState?.stepped == true ? 10 : null,
-          label: customizationState?.displayValue == true
+          displayValue: customizationState?.displayValue == true
               ? value.round().toString()
               : null,
-          leftIcon: customizationState?.hasIcon == true
+          enabled: false,
+          startIcon: customizationState?.hasIcon == true
               ? Icon(Icons.volume_mute)
               : null,
-          rightIcon: customizationState?.hasIcon == true
+          endIcon: customizationState?.hasIcon == true
               ? Icon(Icons.volume_up)
               : null,
         ),
