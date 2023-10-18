@@ -48,24 +48,18 @@ With icons:
 In your screen you can use:
 
 ```dart
-class SliderDemo extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return OdsSlider(
-      value: 20.0,
-    );
-  }
-}
+return OdsSlider(
+  value: 20.0,
+);
 ```
 
 You can add icons to the continuous slider like this:
 
 ```dart
 return OdsSlider(
-      value: 20.0,
-      leftIcon: Icon(Icons.volume_mute),
-      rightIcon: Icon(Icons.volume_up),
+  value: 20.0,
+  startIcon: Icon(Icons.volume_mute),
+  endIcon: Icon(Icons.volume_up),
 );
 ```
 
@@ -81,26 +75,20 @@ With icons:
 In your screen you can use:
 
 ```dart
-class SliderDemo extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return OdsSlider(
-      value: 20.0,
-      label: 20.0.round().toString(),
-    );
-  }
-}
+return OdsSlider(
+  value: 20.0,
+  displayValue: 20.0.round().toString(),
+);
 ```
 
 You can add icons to the continuous lockups slider like this:
 
 ```dart
 return OdsSlider(
-      value: 20.0,
-      label: sliderValue.round().toString(),
-      leftIcon: Icon(Icons.volume_mute),
-      rightIcon: Icon(Icons.volume_up),
+  value: 20.0,
+  label: sliderValue.round().toString(),
+  leftIcon: Icon(Icons.volume_mute),
+  rightIcon: Icon(Icons.volume_up),
 );
 ```
 
@@ -118,27 +106,21 @@ With icons:
 In your screen you can use:
 
 ```dart
-class SliderDemo extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return OdsSlider(
-      value: 20.0,
-      steps: 10,
-    );
-  }
-}
+return OdsSlider(
+  value: 20.0,
+  steps: 10,
+);
 ```
 
 You can add icons to the discrete slider like this:
 
 ```dart
-return OdsSlider(
-      value: 20.0,
-      steps: 10,
-      leftIcon: Icon(Icons.volume_mute),
-      rightIcon: Icon(Icons.volume_up),
- );
+ return OdsSlider(
+  value: 20.0,
+  steps: 10,
+  leftIcon: Icon(Icons.volume_mute),
+  rightIcon: Icon(Icons.volume_up),
+);
 ```
 
 ## Component specific tokens
