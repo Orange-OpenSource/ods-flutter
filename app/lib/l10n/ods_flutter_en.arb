@@ -794,42 +794,14 @@
 
   "@_COMPONENTS_SLIDERS": {},
   "componentSlidersTitle": "Sliders",
-  "@componentSlidersTitle": {
-    "description": "Component Sliders - Title",
-    "type": "text"
-  },
   "componentSlidersDescription": "Sliders enable the user to set a value by moving the slider thumb. The lowest value is always on the left. Sliders can be either continuous or discrete, where the slider thumb snaps to evenly spaced tick marks along the slider rail.",
-  "@componentSlidersDescription": {
-    "description": "Component Sliders - Description",
-    "type": "text"
-  },
   "componentSlidersCustomizeIcon": "Icon",
-  "@componentSliderCustomizeIcon": {
-    "description": "Component Sliders customization element - Icon",
-    "type": "text"
-  },
   "componentSlidersCustomizeDisplayValue": "Display value",
-  "@componentSlidersCustomizeDisplayValue": {
-    "description": "Component Sliders customization element - Display value",
-    "type": "text"
-  },
   "componentCustomizeSlidersStepped": "Stepped",
-  "@componentCustomizeSlidersStepped": {
-    "description": "Component Sliders customization element - Stepped",
-    "type": "text"
-  },
 
   "@_SLIDERS_VARIANT": {},
   "slidersVariantTitle": "Sliders demo",
-  "@slidersVariantTitle": {
-    "description": "Sliders Variant - Title",
-    "type": "text"
-  },
   "slidersVariantSubtitle": "OdsSlider",
-  "@slidersVariantSubtitle": {
-    "description": "Sliders Variant - Subtitle",
-    "type": "text"
-  },
 
   "@_COMPONENTS_PROGRESS": {},
   "componentProgressTitle": "Progress Indicators",
