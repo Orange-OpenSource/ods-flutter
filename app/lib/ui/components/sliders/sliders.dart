@@ -43,14 +43,17 @@ class _BodyState extends State<_Body> {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(spacingXs),
+        padding: const EdgeInsets.only(
+            left: spacingXs,
+            right: spacingXs,
+            top: spacingXl,
+            bottom: spacingXs),
         child: OdsSlider(
           value: value,
           steps: customizationState?.stepped == true ? 10 : null,
           displayValue: customizationState?.displayValue == true
               ? value.round().toString()
               : null,
-          enabled: false,
           startIcon: customizationState?.hasIcon == true
               ? Icon(Icons.volume_mute)
               : null,
