@@ -99,8 +99,11 @@ class OdsTheme {
       backgroundColor: lightColorScheme.primary,
     ),
     sliderTheme: SliderThemeData(
-      inactiveTrackColor: lightColorScheme.tertiaryContainer,
       showValueIndicator: ShowValueIndicator.always,
+      inactiveTrackColor: grey300,
+      overlayColor: grey600.withOpacity(0.2),
+      activeTickMarkColor: grey300,
+      inactiveTickMarkColor: grey600,
     ),
     progressIndicatorTheme: ProgressIndicatorThemeData(
       linearTrackColor: lightColorScheme.tertiaryContainer,
@@ -242,9 +245,11 @@ class OdsTheme {
       backgroundColor: darkColorScheme.primary,
     ),
     sliderTheme: SliderThemeData(
-      inactiveTrackColor: darkColorScheme.tertiaryContainer,
-      showValueIndicator: ShowValueIndicator.always,
-    ),
+        showValueIndicator: ShowValueIndicator.always,
+        inactiveTrackColor: grey600,
+        overlayColor: grey600.withOpacity(0.3),
+        activeTickMarkColor: grey600,
+        inactiveTickMarkColor: grey500),
     progressIndicatorTheme: ProgressIndicatorThemeData(
       linearTrackColor: darkColorScheme.tertiaryContainer,
     ),
