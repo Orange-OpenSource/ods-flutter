@@ -8,9 +8,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
 import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart';
+import 'package:ods_flutter_demo/ui/main_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'ui/main_screen.dart';
 import 'ui/theme/model_theme.dart';
 
 void main() {
@@ -48,7 +48,8 @@ class _OdsApplicationState extends State<OdsApplication> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => ModelTheme(),
-      child: Consumer<ModelTheme>(builder: (context, ModelTheme themeNotifier, child) {
+      child: Consumer<ModelTheme>(
+          builder: (context, ModelTheme themeNotifier, child) {
         return GetMaterialApp(
           title: 'Orange Design System - Flutter Demo App',
           theme: OdsTheme.lightTheme,

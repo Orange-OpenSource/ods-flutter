@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar_item.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
 import 'package:ods_flutter_demo/ui/components/components.dart';
 import 'package:ods_flutter_demo/ui/components/components_screen.dart';
@@ -10,7 +11,7 @@ import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 
 class NavigationItems {
   late BuildContext context;
-  late List<NavigationDestination> _destinationsStatic;
+  late List<OdsNavigationItem> _destinationsStatic;
   late List<NavigationRailDestination> _destinationsRailStatic;
   late List<Widget> _screens;
 
@@ -22,39 +23,40 @@ class NavigationItems {
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
 
     _destinationsStatic = [
-      NavigationDestination(
-        tooltip: '',
-        icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: activeColorFilter),
+      OdsNavigationItem(
+        context: context,
         label: AppLocalizations.of(context)!.bottomNavigationGuideline,
+        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+          icon: "assets/ic_guidelines_dna.svg",
+          type: IconType.svg,
+        ),
       ),
-      NavigationDestination(
-        tooltip: '',
-        icon: SvgPicture.asset("assets/ic_components_atom.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_components_atom.svg",
-            colorFilter: activeColorFilter),
+      OdsNavigationItem(
+        context: context,
         label: AppLocalizations.of(context)!.bottomNavigationComponents,
+        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+          icon: "assets/ic_components_atom.svg",
+          type: IconType.svg,
+        ),
       ),
-      NavigationDestination(
-        tooltip: '',
-        icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-            colorFilter: activeColorFilter),
+      OdsNavigationItem(
+        context: context,
         label: AppLocalizations.of(context)!.bottomNavigationModules,
+        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+          icon: "assets/ic_modules_molecule.svg",
+          type: IconType.svg,
+        ),
       ),
-      NavigationDestination(
-        tooltip: '',
-        icon: SvgPicture.asset("assets/ic_about_info.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_about_info.svg",
-            colorFilter: activeColorFilter),
+      OdsNavigationItem(
+        context: context,
         label: AppLocalizations.of(context)!.bottomNavigationAbout,
+        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+          icon: "assets/ic_about_info.svg",
+          type: IconType.svg,
+        ),
       ),
     ];
+
     _destinationsRailStatic = [
       NavigationRailDestination(
         icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
