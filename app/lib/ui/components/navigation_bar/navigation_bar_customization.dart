@@ -35,16 +35,22 @@ class NavigationBarCustomization extends StatefulWidget {
 class NavigationBarCustomizationState
     extends State<NavigationBarCustomization> {
   static get minNavigationItemCount => 2;
-
   static get maxNavigationItemCount => 5;
+  bool _hasBadge = true;
 
   int _numberOfItems = minNavigationItemCount;
-
   int get numberOfItems => _numberOfItems;
 
   set numberOfItems(int value) {
     setState(() {
       _numberOfItems = value;
+    });
+  }
+
+  bool get hasBadge => _hasBadge;
+  set hasBadge(bool value) {
+    setState(() {
+      _hasBadge = value;
     });
   }
 
