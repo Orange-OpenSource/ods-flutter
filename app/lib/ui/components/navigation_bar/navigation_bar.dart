@@ -74,11 +74,22 @@ class _NavBarDemoState extends State<_NavBarDemo> {
               child: IndexedStack(
                 index: selectedIndex,
                 children: [
-                  Center(child: Text('Cooking Pot Screen')),
-                  Center(child: Text('Coffee Screen')),
-                  Center(child: Text('Ice Cream Screen')),
-                  Center(child: Text('Restaurant Screen')),
-                  Center(child: Text('Favorites Screen')),
+                  Center(
+                      child: Text(AppLocalizations.of(context)!
+                          .navigationBarScreenCookingPot)),
+                  Center(
+                      child: Text(
+                    AppLocalizations.of(context)!.navigationBarScreenCoffee,
+                  )),
+                  Center(
+                      child: Text(AppLocalizations.of(context)!
+                          .navigationBarScreenIceCream)),
+                  Center(
+                      child: Text(AppLocalizations.of(context)!
+                          .navigationBarScreenRestaurant)),
+                  Center(
+                      child: Text(AppLocalizations.of(context)!
+                          .navigationBarScreenFavorites)),
                 ],
               ),
             ),
@@ -171,7 +182,7 @@ class _CustomizationContent extends StatelessWidget {
             }),
         SwitchListTile(
           value: customizationState.hasBadge,
-          title: Text(AppLocalizations.of(context)!.componentCustomizeIcon),
+          title: Text(AppLocalizations.of(context)!.navigationBarItemBadge),
           onChanged: (bool value) {
             customizationState.hasBadge = value;
           },
