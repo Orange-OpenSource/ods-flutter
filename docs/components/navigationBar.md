@@ -28,120 +28,66 @@ Please follow [accessibility criteria for development](https://m3.material.io/co
 
 ## Implementation
 
-  ![BottomNavigation light](images/bottom_navigation_light.png)
+  ![BottomNavigation light](images/navigation_bar_light.png)
 
-  ![BottomNavigation dark](images/bottom_navigation_dark.png)
+  ![BottomNavigation dark](images/navigation_bar_dark.png)
 
 > **Flutter implementation**
 
-In your screen, use the `OdsNavigationBar`. It should contain multiple `OdsBottomBarItem`s.
+In your screen, use the `OdsNavigationBar`. It should contain multiple `OdsNavigationItems`.
 
 Here is an example:
 
 ```dart
-class NavigationBarDemo extends State<NavigationBarScreen> {
-  var _selectedIndex = 0;
+late int selectedIndex = 0;
 
-  @override
-  Widget build(BuildContext context) {
-    var navigationItems = NavigationItems(context);
-    var selectedItem = navigationItems.getSelectedMenuItem(_selectedIndex);
-
-    return Scaffold(
-      bottomNavigationBar: MediaQuery.of(context).size.width < 640
-          ? OdsTab(
-              selectedIndex: _selectedIndex,
-              onDestinationSelected: (int index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              destinations: navigationItems.getBottomNavigationBarItems(),
-            )
-          : null,
-      body: Row(
-        children: [
-          if (MediaQuery.of(context).size.width >= 640)
-            NavigationRail(
-              onDestinationSelected: (int index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              selectedIndex: _selectedIndex,
-              destinations: navigationItems.getNavigationRailDestinations(),
-              labelType: NavigationRailLabelType.all,
-              // Called when one tab is selected,
-            ),
-          Expanded(
-            child: navigationItems.getScreens(_selectedIndex),
-          ),
-        ],
-      ),
-    );
-  }
-}
+return OdsNavigationBar(
+  selectedIndex: selectedIndex,
+  onDestinationSelected: (index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  },
+  destinations: _destinations,
+)
 ```
 
-> **NavigationItems implementation**
+> **OdsNavigationItem implementation**
+
+You can add a native Flutter icons, an svg or png image  : select icon type (svg or png or icon)
 
 Source code:
 
 ```dart
-class NavigationItems {
-  late BuildContext context;
-  late List<NavigationDestination> _destinationsStatic;
-  late List<NavigationRailDestination> _destinationsRailStatic;
-  late List<Widget> _screens;
-
-  NavigationItems(this.context) {
-    var colorScheme = Theme.of(context).colorScheme;
-
-    var activeColorFilter =
-        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
-    var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
-
-    _destinationsStatic = [
-      NavigationDestination(
-        tooltip: '',
-        icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: activeColorFilter),
-        label: AppLocalizations.of(context)!.bottomNavigationGuideline,
+List<OdsNavigationItem> _destinations(BuildContext context) {
+  return [
+    OdsNavigationItem(
+      context: context,
+      label: "Cooking",
+      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+        icon: "assets/recipes/ic_cooking_pot.svg",
+        type: IconType.svg,
+        badge: "3", // Optional, line can be removed if you don't need any badge
       ),
-    ];
-    _destinationsRailStatic = [
-      NavigationRailDestination(
-        icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: activeColorFilter),
-        label: Text(
-          AppLocalizations.of(context)!.bottomNavigationGuideline,
-        ),
+    ),
+    OdsNavigationItem(
+      context: context,
+      label: "Cooking",
+      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+        icon: "assets/recipes/ic_cooking_pot.svg",
+        type: IconType.png,
       ),
-    ];
-    _screens = [
-      GuidelinesScreen(odsGuidelines: guidelines(context)),
-    ];
-  }
-
-  getSelectedMenuItem(int index) {
-    return _destinationsStatic[index];
-  }
-
-  getBottomNavigationBarItems() {
-    return _destinationsStatic;
-  }
-
-  getNavigationRailDestinations() {
-    return _destinationsRailStatic;
-  }
-
-  getScreens(int index) {
-    return _screens[index];
-  }
+    ),
+    OdsNavigationItem(
+      context: context,
+      label: "Coffee",
+      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
+        icon: Icon(Icons.coffee_sharp),
+        type: IconType.icon,
+      ),
+    ),
+    ...
+  ];
 }
 ```
 
