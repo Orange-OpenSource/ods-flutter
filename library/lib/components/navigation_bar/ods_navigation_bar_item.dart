@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-enum IconType { svg, icon }
+enum IconType { svg, icon, png }
 
 class OdsBottomNavigationItemIcon {
   final dynamic icon;
@@ -34,23 +34,34 @@ class OdsNavigationItem extends NavigationDestination {
       BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
     var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
+    Widget icon;
 
-    if (odsBottomNavigationItemIcon.type == IconType.svg) {
-      /// If the type is IconType.svg, use the SVG icon
-      final icon = SvgPicture.asset(
-        odsBottomNavigationItemIcon.icon,
-        colorFilter: colorFilter,
-      );
-      return odsBottomNavigationItemIcon.badge != null
-          ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
-          : icon;
-    } else {
-      /// If the type is IconType.icon, use the provided icon (of type Icon)
-      var icon = odsBottomNavigationItemIcon.icon;
-      return odsBottomNavigationItemIcon.badge != null
-          ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
-          : icon;
+    switch (odsBottomNavigationItemIcon.type) {
+      case IconType.svg:
+
+        /// If the type is IconType.svg, use the SVG icon
+        icon = SvgPicture.asset(
+          odsBottomNavigationItemIcon.icon,
+          colorFilter: colorFilter,
+        );
+        break;
+      case IconType.icon:
+
+        /// If the type is IconType.icon, use the provided icon (of type Icon)
+        icon = odsBottomNavigationItemIcon.icon;
+        break;
+      case IconType.png:
+
+        /// If the type is IconType.svg, use the SVG icon
+        icon = Image.asset(
+          odsBottomNavigationItemIcon.icon,
+        );
+        break;
     }
+
+    return odsBottomNavigationItemIcon.badge != null
+        ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
+        : icon;
   }
 
   static Widget _buildSelectedIcon(
@@ -59,22 +70,33 @@ class OdsNavigationItem extends NavigationDestination {
     final colorScheme = Theme.of(context).colorScheme;
     var activeColorFilter =
         ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
+    Widget icon;
 
-    if (odsBottomNavigationItemIcon.type == IconType.svg) {
-      /// If the type is IconType.svg, use the SVG icon
-      final icon = SvgPicture.asset(
-        odsBottomNavigationItemIcon.icon,
-        colorFilter: activeColorFilter,
-      );
-      return odsBottomNavigationItemIcon.badge != null
-          ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
-          : icon;
-    } else {
-      /// If the type is IconType.icon, use the provided icon (of type Icon)
-      var icon = odsBottomNavigationItemIcon.icon;
-      return odsBottomNavigationItemIcon.badge != null
-          ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
-          : icon;
+    switch (odsBottomNavigationItemIcon.type) {
+      case IconType.svg:
+
+        /// If the type is IconType.svg, use the SVG icon
+        icon = SvgPicture.asset(
+          odsBottomNavigationItemIcon.icon,
+          colorFilter: activeColorFilter,
+        );
+        break;
+      case IconType.icon:
+
+        /// If the type is IconType.icon, use the provided icon (of type Icon)
+        icon = odsBottomNavigationItemIcon.icon;
+        break;
+      case IconType.png:
+
+        /// If the type is IconType.svg, use the SVG icon
+        icon = Image.asset(
+          odsBottomNavigationItemIcon.icon,
+        );
+        break;
     }
+
+    return odsBottomNavigationItemIcon.badge != null
+        ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
+        : icon;
   }
 }
