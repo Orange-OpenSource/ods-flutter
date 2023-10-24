@@ -18,5 +18,8 @@
     "@componentProgressTitle": {
         "description": "Component Progress - Title",
         "type": "text"
-    }
+    },
+
+    "@_COMPONENTS_NAVIGATION_BAR": {},
+    "componentNavigationBarNotification": "Notification(s)"
 }

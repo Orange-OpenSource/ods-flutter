@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
 enum IconType { svg, icon, png }
 
@@ -40,9 +41,12 @@ class OdsNavigationItem extends NavigationDestination {
       case IconType.svg:
 
         /// If the type is IconType.svg, use the SVG icon
-        icon = SvgPicture.asset(
-          odsBottomNavigationItemIcon.icon,
-          colorFilter: colorFilter,
+        icon = Semantics(
+          excludeSemantics: true,
+          child: SvgPicture.asset(
+            odsBottomNavigationItemIcon.icon,
+            colorFilter: colorFilter,
+          ),
         );
         break;
       case IconType.icon:
@@ -52,15 +56,23 @@ class OdsNavigationItem extends NavigationDestination {
         break;
       case IconType.png:
 
-        /// If the type is IconType.svg, use the SVG icon
-        icon = Image.asset(
-          odsBottomNavigationItemIcon.icon,
+        /// If the type is IconType.png, use the PNG icon
+        icon = Semantics(
+          excludeSemantics: true,
+          child: Image.asset(
+            odsBottomNavigationItemIcon.icon,
+          ),
         );
         break;
     }
 
     return odsBottomNavigationItemIcon.badge != null
-        ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
+        ? Badge(
+            label: Text(
+              odsBottomNavigationItemIcon.badge!,
+              textScaleFactor: 1.0,
+            ),
+            child: icon)
         : icon;
   }
 
@@ -76,9 +88,12 @@ class OdsNavigationItem extends NavigationDestination {
       case IconType.svg:
 
         /// If the type is IconType.svg, use the SVG icon
-        icon = SvgPicture.asset(
-          odsBottomNavigationItemIcon.icon,
-          colorFilter: activeColorFilter,
+        icon = Semantics(
+          excludeSemantics: true,
+          child: SvgPicture.asset(
+            odsBottomNavigationItemIcon.icon,
+            colorFilter: activeColorFilter,
+          ),
         );
         break;
       case IconType.icon:
@@ -89,14 +104,27 @@ class OdsNavigationItem extends NavigationDestination {
       case IconType.png:
 
         /// If the type is IconType.svg, use the SVG icon
-        icon = Image.asset(
-          odsBottomNavigationItemIcon.icon,
+        icon = Semantics(
+          excludeSemantics: true,
+          child: Image.asset(
+            odsBottomNavigationItemIcon.icon,
+          ),
         );
         break;
     }
 
     return odsBottomNavigationItemIcon.badge != null
-        ? Badge(label: Text(odsBottomNavigationItemIcon.badge!), child: icon)
+        ? Badge(
+            label: Semantics(
+              label:
+                  "${odsBottomNavigationItemIcon.badge!} ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
+              excludeSemantics: true,
+              child: Text(
+                odsBottomNavigationItemIcon.badge!,
+                textScaleFactor: 1.0,
+              ),
+            ),
+            child: icon)
         : icon;
   }
 }
