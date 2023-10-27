@@ -70,16 +70,11 @@ In your screen you can use `OdsHorizontalCard` composable:
 ```dart
 return OdsHorizontalCard(
   title: "Title",
-  image: FadeInImage(
-    placeholder: AssetImage('assets/placeholder.png'),
-    image: NetworkImage("url"),
-    fit: BoxFit.cover,
-    imageErrorBuilder: (context, error, stackTrace) {
-      return Image(
-        image: AssetImage('assets/placeholder.png'),
-        fit: BoxFit.cover,
-      );
-    },
+  image: OdsCardImage(
+    imageProvider: NetworkImage(recipe.url),
+    contentDescription: 'Picture content description', //Optional
+    alignment: Alignment.center, //Optional. Center by default.
+    contentScale: BoxFit.cover, //Optional. BoxFit.cover by default.
   ),
   subtitle: "Subtitle", //Optional
   text: "Text", //Optional

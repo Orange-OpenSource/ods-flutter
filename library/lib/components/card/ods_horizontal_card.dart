@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/button/ods_outlined_button.dart';
+import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
 
@@ -35,7 +36,7 @@ class OdsHorizontalCard extends StatefulWidget {
 
   /// The image displayed in the card.
   ///TODO For the moment the fit of the image is handled by the provided image. It should be done in the library but we need help to do that!
-  final Widget image;
+  final OdsCardImage image;
 
   /// The card's title displayed below the image.
   final String title;
