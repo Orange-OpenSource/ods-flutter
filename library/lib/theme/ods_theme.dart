@@ -71,8 +71,8 @@ class OdsTheme {
           TextStyle(color: orange200, overflow: TextOverflow.ellipsis),
     ),
     cardTheme: CardTheme(
-      surfaceTintColor: lightColorScheme.onSecondary,
-    ),
+        surfaceTintColor: lightColorScheme.onSecondary,
+        color: lightColorScheme.surface),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: white100),
     checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
@@ -216,6 +216,7 @@ class OdsTheme {
     ),
     cardTheme: CardTheme(
       surfaceTintColor: darkColorScheme.onSecondary,
+      color: darkSurfaceDefault,
     ),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
