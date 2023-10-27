@@ -59,7 +59,11 @@ class _ComponentCountRowState extends State<ComponentCountRow> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: Text(widget.title)),
+          Expanded(
+              child: Text(
+            widget.title,
+            style: Theme.of(context).textTheme.bodyLarge,
+          )),
           MaterialButton(
               minWidth: 40,
               height: 40,
