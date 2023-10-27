@@ -18,6 +18,8 @@ toc2:
         url: components/navigationBar_docs
       - page: Buttons
         url: components/buttons_docs
+      - page: Cards
+        url: components/cards_docs
       - page: Checkboxes
         url: components/checkboxes_docs
       - page: Dialogs
