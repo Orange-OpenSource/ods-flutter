@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter_demo/ui/components/cards/card_enum.dart';
 
 class _CardCustomization extends InheritedWidget {
   _CardCustomization({
@@ -25,12 +26,29 @@ class CardCustomization extends StatefulWidget {
   CardCustomizationState createState() => CardCustomizationState();
 
   static CardCustomizationState? of(BuildContext context) {
-    return (context.dependOnInheritedWidgetOfExactType<_CardCustomization>())?.data;
+    return (context.dependOnInheritedWidgetOfExactType<_CardCustomization>())
+        ?.data;
   }
 }
 
 class CardCustomizationState extends State<CardCustomization> {
+  static get minNavigationItemCount => 0;
+
+  static get maxNavigationItemCount => 2;
+
+  int _numberOfItems = minNavigationItemCount;
+
+  int get numberOfItems => _numberOfItems;
+
+  set numberOfItems(int value) {
+    setState(() {
+      _numberOfItems = value;
+    });
+  }
+
   bool _hasSubtitle = true;
+  bool _hasText = true;
+  bool _hasDivider = false;
   bool _clickable = true;
 
   bool get hasSubtitle => _hasSubtitle;
@@ -40,10 +58,45 @@ class CardCustomizationState extends State<CardCustomization> {
     });
   }
 
+  bool get hasText => _hasText;
+  set hasText(bool value) {
+    setState(() {
+      _hasText = value;
+    });
+  }
+
+  bool get hasDivider => _hasDivider;
+  set hasDivider(bool value) {
+    setState(() {
+      _hasDivider = value;
+    });
+  }
+
   bool get clickable => _clickable;
   set clickable(bool value) {
     setState(() {
       _clickable = value;
+    });
+  }
+
+  List<CardEnum> _elements = [
+    CardEnum.start,
+    CardEnum.end,
+  ];
+  CardEnum _selectedElement = CardEnum.start;
+
+  List<CardEnum> get elements => _elements;
+  set elements(List<CardEnum> value) {
+    setState(() {
+      _elements = value;
+    });
+  }
+
+  CardEnum get selectedElement => _selectedElement;
+
+  set selectedElement(CardEnum value) {
+    setState(() {
+      _selectedElement = value;
     });
   }
 
