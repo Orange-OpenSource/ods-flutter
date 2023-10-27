@@ -69,7 +69,7 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
                       if (widget.subtitle != null)
                         Text(
                           widget.subtitle!,
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context).textTheme.bodyMedium,
                           overflow: TextOverflow.ellipsis,
                         ),
                     ]),
