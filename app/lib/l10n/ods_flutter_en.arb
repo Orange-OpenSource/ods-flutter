@@ -95,48 +95,26 @@
     "type": "text"
   },
   "componentElementSubtitle": "Subtitle",
-  "@componentElementSubtitle": {
-    "description": "Component customization element - Subtitle",
-    "type": "text"
-  },
+  "componentElementText": "Text",
+  "componentElementDivider": "Divider",
 
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
-  "@componentCardsTitle": {
-    "description": "Component Cards - Title",
-    "type": "text"
-  },
   "componentCardsDescription": "Cards are important components that can be used to organise and present a number of different types of related information.",
-  "@componentCardsDescription": {
-    "description": "Component Cards - Description",
-    "type": "text"
-  },
   "componentCardClickable": "Clickable card",
-  "@componentCardClickable": {
-    "description": "Component Card - Clickable customization",
-    "type": "text"
-  },
+
   "@_CARDS_VARIANT": {},
   "cardSmallVariantTitle": "Small card",
-  "@cardSmallVariantTitle": {
-    "description": "Component - Small card - Title",
-    "type": "text"
-  },
   "cardSmallVariantSubtitle": "OdsSmallCard",
-  "@cardSmallVariantSubtitle": {
-    "description": "Component - Small card - Technical subtitle",
-    "type": "text"
-  },
   "cardVerticalImageFirstVariantTitle": "Vertical image first card",
-  "@cardVerticalImageFirstVariantTitle": {
-    "description": "Component - Vertical image first card - Title",
-    "type": "text"
-  },
   "cardVerticalImageFirstVariantSubtitle": "OdsVerticalImageFirstCard",
-  "@cardVerticalImageFirstVariantSubtitle": {
-    "description": "Component - Vertical image first card - Technical subtitle",
-    "type": "text"
-  },
+  "componentCardHorizontalTitle": "Horizontal card",
+  "componentCardHorizontalSubtitle": "OdsHorizontalCard",
+  "componentCardActionButtonCount": "Action buttons",
+  "componentCardHorizontalImagePosition": "Image position",
+  "componentCardHorizontalImagePositionStart": "Start",
+  "componentCardHorizontalImagePositionEnd": "End",
+
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxesTitle": "Checkboxes",
   "@componentCheckboxesTitle": {

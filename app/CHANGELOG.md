@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Slider ([#30](https://github.com/Orange-OpenSource/ods-flutter/issues/30))
 - ODS - Component - Progress Indicator ([#26](https://github.com/Orange-OpenSource/ods-flutter/issues/26))
 - ODS - Component - Dialogs ([#19](https://github.com/Orange-OpenSource/ods-flutter/issues/19))
+- ODS - Component - Cards: Horizontal Card ([#11](https://github.com/Orange-OpenSource/ods-flutter/issues/11))
 
 ### Changed
 

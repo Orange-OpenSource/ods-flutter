@@ -21,6 +21,7 @@ ods-flutter/app/assets/il_radio_buttons.svg
 ods-flutter/app/assets/il_switches.png
 ods-flutter/app/assets/il_typography.png
 ods-flutter/app/assets/placeholder.png
+ods-flutter/library/assets/placeholder.png
 ods-flutter/app/assets/il_navigation_bar.png
 ods-flutter/app/assets/recipes/ic_coffee.svg
 ods-flutter/app/assets/recipes/ic_cooking_pot.svg

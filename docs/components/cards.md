@@ -11,177 +11,81 @@ description: Cards contain content and actions about a single subject.
 * [Specifications references](#specifications-references)
 * [Accessibility](#accessibility)
 * [Variants](#variants)
-    * [Vertical Image First Card)](#vertical-image-first-card)
-    * [Vertical Header First Card)](#vertical-header-first-card)
-    * [Horizontal Card](#horizontal-card)
-    * [Small Card](#small-card)
+    * [Vertical image first card](#vertical-image-first-card)
+    * [Vertical header first card](#vertical-header-first-card)
+    * [Small card](#small-card)
+    * [Horizontal card](#horizontal-card)
 * [Component specific tokens](#component-specific-tokens)
 
 ---
 
 ## Specifications references
 
-- [Design System Manager - Cards](https://system.design.orange.com/0c1af118d/p/66bac5-cards/b/1591fb)
+- [Design System Manager - Cards](https://system.design.orange.com/0c1af118d/p/0336aa-cards/b/47a25a)
+- [Material Design - Cards](https://material.io/components/cards/)
+- Technical documentation soon available
 
 ## Accessibility
 
-Please follow [accessibility criteria for development](https://a11y-guidelines.orange.com/en/mobile/ios/)
-
-Images in cards are considered as decorative, so they are ignored by Voice Over.
+Please follow [accessibility criteria for development](https://m3.material.io/components/cards/accessibility)
 
 ## Variants
 
-Cards are a contained and independent element that can display content and actions on a single topic.
+### Vertical image first card
 
-There are a few ways cards can be presented. Ranging from a single title on its own for a simple card view or with more information shown in a subtitle and supporting text and actions at the bottom of the card.
+This is a full width card containing elements arranged vertically with an image as first element.
 
+> **Flutter implementation**
 
-### Vertical Image First Card
+_Soon available_
 
-This is a full width card displayed with an image as first element.
+### Vertical header first card
 
-This card is composed of two parts:
-- Media: (today an image)
-- Content: with a title, an optinal subtitle an optinal supporting text and optional buttons (zero up to two)
+This is a full width card containing elements arranged vertically with a header (thumbnail, title & subtitle) as first element.
 
-> **Implementation**
+> **Flutter implementation**
 
-Card is configured using `ODSCardVerticalHeaderFirstModel` like this:
+_Soon available_
 
-```swift
-let model = ODSCardVerticalImageFirstModel(
-    title: "Title",
-    subtitle: "Subtitle",
-    image: Image("ods_empty", bundle: Bundle.ods),
-    supportingText: "A supporting text to describe something")
-    
-ODSCardVerticalImageFirst(model: model) {
-    ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        }
-    } buttonContent2: {
-        ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        } 
-    }
-}
+### Small card
+
+This is a small card which takes the half screen width.
+
+> **Flutter implementation**
+
+You can add an `OdsSmallCard` in your screen to add a small card:
+
+_Soon available_
+
+### Horizontal card
+
+This is a full screen width card with an image on the side. The image can be displayed on the left or on the right.
+
+  ![Horizontal card light](images/card_horizontal_light.png) ![Horizontal card dark](images/card_horizontal_dark.png)
+
+> **Flutter implementation**
+
+In your screen you can use `OdsHorizontalCard` composable:
+
+```dart
+return OdsHorizontalCard(
+  title: "Title",
+  image: OdsCardImage(
+    imageProvider: NetworkImage(recipe.url),
+    contentDescription: 'Picture content description', //Optional
+    alignment: Alignment.center, //Optional. Center by default.
+    contentScale: BoxFit.cover, //Optional. BoxFit.cover by default.
+  ),
+  subtitle: "Subtitle", //Optional
+  text: "Text", //Optional
+  firstButton: OdsOutlinedButton(text: "First button", onClick: () {}), //Optional
+  secondButton: OdsButton(text: "Second button", onClick: () {}), //Optional
+  imagePosition: OdsHorizontalCardImagePosition.start, //Optional. Start by default.
+  divider: false, // Optional. True by default.
+  onClick: () {},
+);
 ```
 
-### Vertical Header First Card
+## Component specific tokens
 
-This is a full width card displaying with a title and a thumbnail on top as first element.
-
-This card is composed of three parts:
-- Header: with a title, an optinal subtitle and an optinal thmubnail
-- Media: (today an image)
-- Content: with an optinal supporting text and optional buttons (zero up to two)
-
-> **Implementation**
-
-Card is configured using `ODSCardVerticalHeaderFirstModel` like this:
-
-```swift
-let model = ODSCardVerticalHeaderFirstModel(
-    title: "Title",
-    subtitle: "Subtitle",
-    thumbnail: Image("ods_empty", bundle: Bundle.ods),
-    image: Image("ods_empty", bundle: Bundle.ods),
-    supportingText: "A supporting text to describe something")
-    
-ODSCardVerticalHeaderFirst(model: model) {
-    ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        }
-    } buttonContent2: {
-        ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        } 
-    }
-}
-```
-
-### Horizontal Card
-
-This is a full width card displaying with image on left and content with texts on the right. Additonal action buttons can be added at the bottom of the card. 
-
-Thes content is composed by:
-- a title
-- an optional subtitle
-- an optional supporting text for larger description
-
-> **Implementation**
-
-Card is configured using `ODSCardHorizontalModel` like this:
-
-```swift
-let model = ODSCardHorizontalModel(
-    title: "Title",
-    subtitle: "Subtitle",
-    imageSource: .image(Image("ods_empty", bundle: Bundle.ods)),
-    imagePosition: .leading,
-    supportingText: "A supporting text to describe something")
-    
-ODSCardHorizontal(model: model) {
-    ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        }
-    } buttonContent2: {
-        ODSButton(text: "Button 1", emphasis: .medium) {
-            // do something here
-        } 
-    }
-}
-```
-
-### Small Card  
-
-The small card if prefered for two-column portrait mobile screen display.
-As it is smaller than full-width cards, it contains only title and subtitle (optinal) in one line (Truncated tail).
-
-> **Implementation**
-
-Card is configured using `ODSCardSmallModel` like this:
-
-```swift
-let model = ODSCardSmallModel(
-    title: "Title",
-    subtitle: "Subtitle",
-    image: Image("ods_empty", bundle: Bundle.ods)) 
-
-ODSCardSmall(model: model)
-```
-
-How to add Small Card in Grid 
-
-```swift
-let models = [
-    ODSCardSmallModel(
-        title: "Title 1",
-        subtitle: "Subtitle 1",
-        image: Image("ods_empty", bundle: Bundle.ods)) { 
-            Text("This card has a destination view")
-        },
-    ODSCardSmallModel(
-        title: "Title 2",
-        subtitle: "Subtitle 2",
-        image: Image("ods_empty", bundle: Bundle.ods)) { 
-            Text("This card has a destination view")
-        },
-    //...
-    ]
-
-/// /!\ Don't forget to put the grid into a scrollview
-ScrollView {
-    LazyVGrid(columns: columns, spacing: ODSSpacing.none) {
-        ForEach(models) { model in
-            ODSCardSmall(model: model)
-        }
-        .padding(.bottom, ODSSpacing.m)
-    }
-}
- 
-```
-
- 
-
-
+_Soon available_
