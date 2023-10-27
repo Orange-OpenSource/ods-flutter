@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/button/ods_outlined_button.dart';
+import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_horizontal_card.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
@@ -84,16 +85,11 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.all(spacingM),
         child: SingleChildScrollView(
           child: OdsHorizontalCard(
-            image: FadeInImage(
-              placeholder: AssetImage('assets/placeholder.png'),
-              image: NetworkImage(recipe.url),
-              fit: BoxFit.cover,
-              imageErrorBuilder: (context, error, stackTrace) {
-                return Image(
-                  image: AssetImage('assets/placeholder.png'),
-                  fit: BoxFit.cover,
-                );
-              },
+            image: OdsCardImage(
+              imageProvider: NetworkImage(recipe.url),
+              contentDescription: '', //Optional
+              alignment: Alignment.center,
+              contentScale: BoxFit.cover,
             ),
             title: recipe.title,
             subtitle: customizationState?.hasSubtitle == true
