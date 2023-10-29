@@ -32,7 +32,7 @@ class OdsTheme {
     navigationBarTheme: NavigationBarThemeData(
       surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
-      indicatorColor: Colors.transparent,
+      indicatorColor: grey200,
       indicatorShape: null,
       iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>(
         (states) {
@@ -65,7 +65,7 @@ class OdsTheme {
     ),
     navigationRailTheme: const NavigationRailThemeData(
       elevation: 3.0,
-      indicatorColor: Colors.transparent,
+      indicatorColor: grey200,
       indicatorShape: null,
       selectedLabelTextStyle:
           TextStyle(color: orange200, overflow: TextOverflow.ellipsis),
@@ -180,7 +180,7 @@ class OdsTheme {
     navigationBarTheme: NavigationBarThemeData(
       surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
-      indicatorColor: Colors.transparent,
+      indicatorColor: grey800,
       indicatorShape: null,
       iconTheme: MaterialStateProperty.resolveWith<IconThemeData?>((states) {
         if (states.contains(MaterialState.selected)) {
@@ -209,7 +209,7 @@ class OdsTheme {
     ),
     navigationRailTheme: const NavigationRailThemeData(
       elevation: 3.0,
-      indicatorColor: Colors.transparent,
+      indicatorColor: grey800,
       indicatorShape: null,
       selectedLabelTextStyle:
           TextStyle(color: orange100, overflow: TextOverflow.ellipsis),

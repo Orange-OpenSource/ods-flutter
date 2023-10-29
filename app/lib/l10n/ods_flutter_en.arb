@@ -183,61 +183,25 @@
     "type": "text"
   },
 
-  "@_COMPONENTS_Tab": {},
-  "componentTabTitle": "Bar: Navigation",
-  "@componentTabTitle": {
-    "description": "Component Navigation Bar - Title",
-    "type": "text"
-  },
-  "componentTabDescription": "Enable users to quickly and directly explore top-level destinations.",
-  "@componentTabDescription": {
-    "description": "Component Navigation Bar - Description",
-    "type": "text"
-  },
-
-
   "@_COMPONENTS_NAVIGATION_BAR": {},
   "componentNavigationBarTitle": "Bar: Navigation",
-  "@componentNavigationBarTitle": {
-    "description": "Component Navigation Bar - Title",
-    "type": "text"
-  },
   "componentNavigationBarDescription": "Enable users to quickly and directly explore top-level destinations.",
-  "@componentNavigationBarDescription": {
-    "description": "Component Navigation Bar - Description",
-    "type": "text"
-  },
+
   "@NAVIGATION_BAR_VARIANT": {},
   "navigationBarVariantTitle": "Bar: Navigation",
-  "@navigationBarVariantTitle": {
-    "description": "Navigation Bar Variant - Title",
-    "type": "text"
-  },
   "navigationBarVariantSubtitle": "NavigationBar",
-  "@navigationBarVariantSubtitle": {
-    "description": "Navigation Bar Variant - Subtitle",
-    "type": "text"
-  },
-  "navigationBarVariantSubtitleExample": "Icon of the navigation bar",
-  "@navigationBarVariantSubtitleExample": {
-    "description": "Navigation Bar Variant Example - Subtitle",
-    "type": "text"
-  },
-  "navigationBarVariantDescriptionSvgExample": "If icons are provided in SVG format the system does not apply right color on images if selected. So we need to provide icon: and selectedIcon: parameters with right colorFilter using theme like this:",
-  "@navigationBarVariantDescriptionSvgExample": {
-    "description": "Navigation Bar Variant Example - Description Svg",
-    "type": "text"
-  },
-  "navigationBarVariantDescriptionPngExample": "For images provided in PNG, there is nothing to do (just provide icon: parameter), the system do it itself.",
-  "@navigationBarVariantDescriptionPngExample": {
-    "description": "Navigation Bar Variant Example - Description PNG",
-    "type": "text"
-  },
-  "navigationBarCustomizationCount": "Navigation item count",
-  "@navigationBarCustomizationCount": {
-    "description": "Component customization element - Number of items count",
-    "type": "text"
-  },
+  "navigationBarItemCount": "Navigation item count",
+  "navigationBarItemBadge": "Badge options",
+  "navigationBarItemCoffee": "Coffee",
+  "navigationBarItemCookingPot": "Cooking",
+  "navigationBarItemIceCream": "Ice Cream",
+  "navigationBarItemRestaurant": "Restaurant",
+  "navigationBarItemFavorites": "Favorites",
+  "navigationBarScreenCoffee": "Coffee Screen",
+  "navigationBarScreenCookingPot": "Cooking Pot Screen",
+  "navigationBarScreenIceCream": "Ice Cream Screen",
+  "navigationBarScreenRestaurant": "Restaurant Screen",
+  "navigationBarScreenFavorites": "Favorites Screen",
 
   "@_COMPONENTS_RADIOBUTTON": {},
   "componentRadioButtonsTitle": "Radio buttons",
