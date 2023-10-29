@@ -113,6 +113,7 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                                   bottom: spacingS),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     widget.title,
