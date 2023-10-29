@@ -108,39 +108,6 @@ class _Body extends StatelessWidget {
         ),
       ),
     );
-
-    /*
-    return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: double.infinity,
-          child: Card(
-            child: IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Image.network(
-                    recipe.url,
-                    width: 150,
-                    height: 0.0,
-                    fit: BoxFit.cover,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.all(12),
-                      child: Text(recipe.description,
-                          maxLines: 2, overflow: TextOverflow.ellipsis),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-
-     */
   }
 }
 
