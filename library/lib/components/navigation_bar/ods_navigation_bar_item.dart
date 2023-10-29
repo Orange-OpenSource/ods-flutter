@@ -2,129 +2,65 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
-enum IconType { svg, icon, png }
-
-class OdsBottomNavigationItemIcon {
-  final dynamic icon;
-  final IconType type;
-  final String? badge;
-
-  OdsBottomNavigationItemIcon({
-    required this.icon,
-    required this.type,
-    this.badge,
-  });
-}
-
 class OdsNavigationItem extends NavigationDestination {
   OdsNavigationItem({
     Key? key,
-    required OdsBottomNavigationItemIcon odsBottomNavigationItemIcon,
+    required dynamic icon,
+    String? badge,
     required String label,
     required BuildContext context,
   }) : super(
           key: key,
+          icon: _buildIcon(icon, badge, context),
           label: label,
-          icon: _buildIcons(odsBottomNavigationItemIcon, context),
-          selectedIcon:
-              _buildSelectedIcon(odsBottomNavigationItemIcon, context),
+          selectedIcon: _buildIcon(icon, badge, context, isSelected: true),
         );
 
-  static Widget _buildIcons(
-      OdsBottomNavigationItemIcon odsBottomNavigationItemIcon,
-      BuildContext context) {
+  static Widget _buildIcon(
+      dynamic iconData, String? badge, BuildContext context,
+      {bool isSelected = false}) {
     var colorScheme = Theme.of(context).colorScheme;
-    var colorFilter = ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
-    Widget icon;
+    var colorFilter = isSelected
+        ? ColorFilter.mode(colorScheme.primary, BlendMode.srcIn)
+        : ColorFilter.mode(colorScheme.secondary, BlendMode.srcIn);
 
-    switch (odsBottomNavigationItemIcon.type) {
-      case IconType.svg:
-
-        /// If the type is IconType.svg, use the SVG icon
-        icon = Semantics(
-          excludeSemantics: true,
-          child: SvgPicture.asset(
-            odsBottomNavigationItemIcon.icon,
-            colorFilter: colorFilter,
-          ),
-        );
-        break;
-      case IconType.icon:
-
-        /// If the type is IconType.icon, use the provided icon (of type Icon)
-        icon = odsBottomNavigationItemIcon.icon;
-        break;
-      case IconType.png:
-
-        /// If the type is IconType.png, use the PNG icon
-        icon = Semantics(
-          excludeSemantics: true,
-          child: Image.asset(
-            odsBottomNavigationItemIcon.icon,
-          ),
-        );
-        break;
-    }
-
-    return odsBottomNavigationItemIcon.badge != null
-        ? Badge(
-            label: Text(
-              odsBottomNavigationItemIcon.badge!,
-              textScaleFactor: 1.0,
-            ),
-            child: icon)
-        : icon;
-  }
-
-  static Widget _buildSelectedIcon(
-      OdsBottomNavigationItemIcon odsBottomNavigationItemIcon,
-      BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    var activeColorFilter =
-        ColorFilter.mode(colorScheme.primary, BlendMode.srcIn);
-    Widget icon;
-
-    switch (odsBottomNavigationItemIcon.type) {
-      case IconType.svg:
+    /// If the type is IconType.icon, use the provided icon (of type Icon)
+    Widget iconWidget = iconData is Widget
+        ? iconData
 
         /// If the type is IconType.svg, use the SVG icon
-        icon = Semantics(
-          excludeSemantics: true,
-          child: SvgPicture.asset(
-            odsBottomNavigationItemIcon.icon,
-            colorFilter: activeColorFilter,
-          ),
-        );
-        break;
-      case IconType.icon:
+        : (iconData is String && iconData.endsWith('.svg')
+            ? Semantics(
+                excludeSemantics: true,
+                child: SvgPicture.asset(
+                  iconData,
+                  colorFilter: colorFilter,
+                ),
+              )
 
-        /// If the type is IconType.icon, use the provided icon (of type Icon)
-        icon = odsBottomNavigationItemIcon.icon;
-        break;
-      case IconType.png:
+            /// If the type is IconType.png, use the PNG icon
+            : (iconData is String && iconData.endsWith('.png')
+                ? Semantics(
+                    excludeSemantics: true,
+                    child: Image.asset(iconData),
+                  )
+                : throw Exception(
+                    'Invalid icon type: ${iconData.runtimeType}')));
 
-        /// If the type is IconType.svg, use the SVG icon
-        icon = Semantics(
-          excludeSemantics: true,
-          child: Image.asset(
-            odsBottomNavigationItemIcon.icon,
-          ),
-        );
-        break;
-    }
-
-    return odsBottomNavigationItemIcon.badge != null
+    /// If the odsBottomNavigationItemIcon.badge parameter is not empty, use the Widget Badge
+    return badge != null
         ? Badge(
             label: Semantics(
               label:
-                  "${odsBottomNavigationItemIcon.badge!} ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
+                  "${badge!} ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
               excludeSemantics: true,
               child: Text(
-                odsBottomNavigationItemIcon.badge!,
+                badge!,
                 textScaleFactor: 1.0,
               ),
             ),
-            child: icon)
-        : icon;
+            child: iconWidget,
+          )
+        : iconWidget;
   }
 }
