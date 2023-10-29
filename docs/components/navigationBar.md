@@ -54,7 +54,7 @@ return OdsNavigationBar(
 
 > **OdsNavigationItem implementation**
 
-You can add a native Flutter icons, an svg or png image  : select icon type (svg or png or icon)
+You can add a native Flutter icons, an svg or png image  : identify the 3 examples based on your need to use icons
 
 Source code:
 
@@ -64,27 +64,18 @@ List<OdsNavigationItem> _destinations(BuildContext context) {
     OdsNavigationItem(
       context: context,
       label: "Cooking",
-      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-        icon: "assets/recipes/ic_cooking_pot.svg",
-        type: IconType.svg,
-        badge: "3", // Optional, line can be removed if you don't need any badge
-      ),
+      icon: "assets/recipes/ic_cooking_pot.svg", // Extension svg
+      badge: "3", // Optional, line can be removed if you don't need any badge
     ),
     OdsNavigationItem(
       context: context,
       label: "Cooking",
-      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-        icon: "assets/recipes/ic_cooking_pot.svg",
-        type: IconType.png,
-      ),
+      icon: "assets/recipes/ic_cooking_pot.png", // Extension png
     ),
     OdsNavigationItem(
       context: context,
       label: "Coffee",
-      odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-        icon: Icon(Icons.coffee_sharp),
-        type: IconType.icon,
-      ),
+      icon: Icon(Icons.coffee_sharp), // Widget Icon
     ),
     ...
   ];
