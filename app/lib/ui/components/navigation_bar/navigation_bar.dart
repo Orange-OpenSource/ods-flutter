@@ -63,6 +63,10 @@ class _NavBarDemoState extends State<_NavBarDemo> {
     List<OdsNavigationItem> navigationDestinations =
         _destinations(context).sublist(0, customizationState?.numberOfItems);
 
+    if (selectedIndex >= navigationDestinations.length) {
+      selectedIndex = navigationDestinations.length - 1;
+    }
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -123,42 +127,30 @@ class _NavBarDemoState extends State<_NavBarDemo> {
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.navigationBarItemCookingPot,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-            icon: "assets/recipes/ic_cooking_pot.svg",
-            type: IconType.svg,
-            badge: customizationState?.hasBadge == true ? "3" : null),
+        icon: "assets/recipes/ic_cooking_pot.svg",
+        badge: customizationState?.hasBadge == true ? "3" : null,
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.navigationBarItemCoffee,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: Icon(Icons.coffee_sharp),
-          type: IconType.icon,
+        icon: Icon(
+          Icons.coffee_sharp,
         ),
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.navigationBarItemIceCream,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/recipes/ic_ice_cream.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/recipes/ic_ice_cream.svg",
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.navigationBarItemRestaurant,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/recipes/ic_restaurant.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/recipes/ic_restaurant.svg",
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.navigationBarItemFavorites,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/recipes/ic_heart_favorite.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/recipes/ic_heart_favorite.svg",
       ),
     ];
   }

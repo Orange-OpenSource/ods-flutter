@@ -26,34 +26,22 @@ class NavigationItems {
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.bottomNavigationGuideline,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/ic_guidelines_dna.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/ic_guidelines_dna.svg",
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.bottomNavigationComponents,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/ic_components_atom.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/ic_components_atom.svg",
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.bottomNavigationModules,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/ic_modules_molecule.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/ic_modules_molecule.svg",
       ),
       OdsNavigationItem(
         context: context,
         label: AppLocalizations.of(context)!.bottomNavigationAbout,
-        odsBottomNavigationItemIcon: OdsBottomNavigationItemIcon(
-          icon: "assets/ic_about_info.svg",
-          type: IconType.svg,
-        ),
+        icon: "assets/ic_about_info.svg",
       ),
     ];
 
