@@ -23,7 +23,7 @@ class GuidelineSpacingsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(spacingS),
                 child: Image.asset(
                   'assets/il_spacing.png',
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: spacingS),
