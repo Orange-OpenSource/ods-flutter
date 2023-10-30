@@ -22,7 +22,7 @@ void main() {
     expect(find.text('App Top Bar'), findsOneWidget);
     expect(find.text('Bar: Navigation'), findsOneWidget);
     expect(find.text('Buttons'), findsOneWidget);
-    expect(find.text('Buttons: fab'), findsOneWidget);
+    expect(find.text('Buttons: FAB'), findsOneWidget);
     expect(find.text('Cards'), findsOneWidget);
     expect(find.text('Checkboxes'), findsOneWidget);
     expect(find.text('Chips'), findsOneWidget);

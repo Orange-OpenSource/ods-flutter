@@ -7,13 +7,17 @@ extension CustomElementExtension on FloatingActionButtonEnum {
   String stringValue(BuildContext context) {
     switch (this) {
       case FloatingActionButtonEnum.defaultFab:
-        return AppLocalizations.of(context)!.floatingActionButtonEnumDefault;
+        return AppLocalizations.of(context)!
+            .componentFloatingActionButtonSizeDefault;
       case FloatingActionButtonEnum.smallFab:
-        return AppLocalizations.of(context)!.floatingActionButtonEnumSmall;
+        return AppLocalizations.of(context)!
+            .componentFloatingActionButtonSizeSmall;
       case FloatingActionButtonEnum.largeFab:
-        return AppLocalizations.of(context)!.floatingActionButtonEnumLarge;
+        return AppLocalizations.of(context)!
+            .componentFloatingActionButtonSizeLarge;
       case FloatingActionButtonEnum.extendedFab:
-        return AppLocalizations.of(context)!.floatingActionButtonEnumExtended;
+        return AppLocalizations.of(context)!
+            .componentFloatingActionButtonSizeExtended;
       default:
         return "";
     }
