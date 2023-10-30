@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/components/divider/ods_divider.dart';
 
 /// ODS List Selection
 ///
@@ -67,7 +68,7 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
                 ],
               ),
             ),
-            if (widget.divider != null) const Divider(),
+            if (widget.divider != null) const OdsDivider(),
           ],
         ),
       ),
