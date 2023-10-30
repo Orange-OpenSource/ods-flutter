@@ -13,7 +13,7 @@ class OdsExtendedFloatingActionButton extends StatefulWidget {
     Key? key,
     this.onClick,
     required this.text,
-    required this.icon,
+    this.icon,
   }) : super(key: key);
 
   /// The callback function when the button is pressed.
