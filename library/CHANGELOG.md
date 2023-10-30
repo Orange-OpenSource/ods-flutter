@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `OdsFloatingActionButton` widget ([#5](https://github.com/Orange-OpenSource/ods-flutter/issues/5))
 - Add `OdsListSelectionItem`,`OdsListSelectionItem` widget ([#21](https://github.com/Orange-OpenSource/ods-flutter/issues/21))
 - ODS - Component - Cards: Horizontal Card ([#11](https://github.com/Orange-OpenSource/ods-flutter/issues/11))
+- [Bug]: Guideline Spacing value ([#252](https://github.com/Orange-OpenSource/ods-flutter/issues/252))
 
 ### Changed
 
