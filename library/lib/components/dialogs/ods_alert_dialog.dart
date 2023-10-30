@@ -50,7 +50,12 @@ class OdsAlertDialog extends StatefulWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: title != null ? Text(title) : null,
-        content: SingleChildScrollView(child: Text(text)),
+        content: (title == null)
+            ? Padding(
+                padding: const EdgeInsets.only(top: spacingL),
+                child: SingleChildScrollView(child: Text(text)),
+              )
+            : SingleChildScrollView(child: Text(text)),
         actions: <Widget>[
           TextButton(
             onPressed: confirmButton.onClick,
