@@ -14,7 +14,7 @@ extension SpacingProperties on Spacing {
   double get rawValue {
     switch (this) {
       case Spacing.none:
-        return spacingNone + 1;
+        return spacingNone;
       case Spacing.xs:
         return spacingXs;
       case Spacing.s:
