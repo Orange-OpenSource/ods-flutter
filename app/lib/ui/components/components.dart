@@ -83,9 +83,9 @@ List<Component> components(BuildContext context) {
       AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.floatingActionButtonVariantActionTitle,
           AppLocalizations.of(context)!
-              .floatingActionButtonVariantActionSubtitle,
+              .componentFloatingActionButtonVariantTitle,
+          AppLocalizations.of(context)!.componentFloatingActionButtonOds,
           ComponentFloatingActionButton(),
         ),
       ],
