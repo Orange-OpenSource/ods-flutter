@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: ODS - Component - Top App Bars ([#255](https://github.com/Orange-OpenSource/ods-flutter/issues/255))
 - [Bug]: Guideline Spacing ([#251](https://github.com/Orange-OpenSource/ods-flutter/issues/251))
 - [feature]: Buttons: FAB extended text only ([#250](https://github.com/Orange-OpenSource/ods-flutter/issues/250))
+- [Bug]: ODS - component - Lists - standard lists ([#264](https://github.com/Orange-OpenSource/ods-flutter/issues/264))
 
 ### Changed
 
