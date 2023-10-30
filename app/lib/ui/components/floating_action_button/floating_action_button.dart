@@ -76,9 +76,9 @@ class _BodyState extends State<_Body> {
         FloatingActionButtonEnum.extendedFab) {
       fab = OdsExtendedFloatingActionButton(
         onClick: () {},
-        icon: const Icon(Icons.add),
+        icon: customizationState?.hasIcon == true ? Icon(Icons.add) : null,
         text: AppLocalizations.of(context)!
-            .floatingActionButtonVariantExtendedAdd,
+            .componentFloatingActionButtonSizeExtended,
       );
     }
 
@@ -119,8 +119,9 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.floatingActionButtonVariantSize,
-                style: Theme.of(context).textTheme.titleMedium,
+                AppLocalizations.of(context)!
+                    .componentFloatingActionButtonSizeTitle,
+                style: Theme.of(context).textTheme.bodyLarge,
                 textAlign: TextAlign.left,
               ),
             ),
@@ -152,6 +153,17 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 }),
               ),
             ),
+          ),
+          SwitchListTile(
+            value: customizationState?.hasIcon ?? true,
+            title: Text(AppLocalizations.of(context)!
+                .componentFloatingActionButtonIcon),
+            onChanged: (customizationState?.selectedElement ==
+                    FloatingActionButtonEnum.extendedFab)
+                ? (bool value) {
+                    customizationState?.hasIcon = value;
+                  }
+                : null,
           ),
         ],
       ),
