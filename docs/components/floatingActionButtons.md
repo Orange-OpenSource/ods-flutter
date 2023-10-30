@@ -50,7 +50,7 @@ To display a regular Floating Action Button in your composable screen, use `OdsF
 return OdsFloatingActionButton(
   onClick: () {},
   icon: const Icon(Icons.add),
-  semanticsLabel: 'Add', //Optionnal
+  semanticsLabel: 'Add', //Optional
 );
 ```
 
@@ -70,7 +70,7 @@ To display a small FAB in your screen use `OdsSmallFloatingActionButton`
 return OdsSmallFloatingActionButton(
   onClick: () {},
   icon: const Icon(Icons.add),
-  semanticsLabel: 'Add', //Optionnal
+  semanticsLabel: 'Add', //Optional
 );
 ```
 
@@ -90,7 +90,7 @@ To display a small FAB in your screen use `OdsLargeFloatingActionButton`
 return OdsLargeFloatingActionButton(
   onClick: () {},
   icon: const Icon(Icons.add),
-  semanticsLabel: 'Add', //Optionnal
+  semanticsLabel: 'Add', //Optional
 );
 ```
 
@@ -109,7 +109,7 @@ To display an extended FAB, use `OdsExtendedFloatingActionButton`:
 return OdsSmallFloatingActionButton(
   onClick: () {},
   text = "Add",
-  icon: const Icon(Icons.add),
+  icon: const Icon(Icons.add), //Optional
 );
 ```
 
