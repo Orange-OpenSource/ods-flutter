@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Dialogs ([#19](https://github.com/Orange-OpenSource/ods-flutter/issues/19))
 - ODS - Component - Cards: Horizontal Card ([#11](https://github.com/Orange-OpenSource/ods-flutter/issues/11))
 - [Bug]: ODS - Component - Top App Bars ([#255](https://github.com/Orange-OpenSource/ods-flutter/issues/255))
+- [Bug]: Guideline Spacing ([#251](https://github.com/Orange-OpenSource/ods-flutter/issues/251))
 
 ### Changed
 

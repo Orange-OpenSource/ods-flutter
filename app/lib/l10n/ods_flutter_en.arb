@@ -59,7 +59,7 @@
     "description": "Guidelines typography screen - Explanation text",
     "type": "text"
   },
-  "guidelinesSpacings": "Spacings",
+  "guidelinesSpacings": "Spacing",
   "@guidelinesSpacings": {
     "description": "Guidelines spacing screen title",
     "type": "text"
