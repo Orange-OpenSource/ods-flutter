@@ -78,7 +78,6 @@ class _Body extends StatelessWidget {
             return ListTile(
               title: Text(
                 'Item #$itemNumber',
-                style: Theme.of(context).textTheme.bodyLarge,
               ),
             );
           },
