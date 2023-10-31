@@ -154,7 +154,7 @@ class OdsTheme {
       style: OutlinedButton.styleFrom(
         minimumSize: const Size(90, 40),
         padding:
-            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+            const EdgeInsets.fromLTRB(spacingS, spacingS, spacingS, spacingS),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(spacingS),
         ),
@@ -300,7 +300,7 @@ class OdsTheme {
       style: OutlinedButton.styleFrom(
         minimumSize: const Size(90, 40),
         padding:
-            const EdgeInsets.fromLTRB(spacingL, spacingS, spacingL, spacingS),
+            const EdgeInsets.fromLTRB(spacingS, spacingS, spacingS, spacingS),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(spacingS),
         ),

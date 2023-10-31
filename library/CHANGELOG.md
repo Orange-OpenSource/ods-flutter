@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: FAB naming update ([#249](https://github.com/Orange-OpenSource/ods-flutter/issues/249))
 - [feature]: Buttons: FAB extended text only ([#250](https://github.com/Orange-OpenSource/ods-flutter/issues/250))
 - [Bug]: ODS - component - Lists - standard lists ([#264](https://github.com/Orange-OpenSource/ods-flutter/issues/264))
+- [Bug]: dialog top padding update ([#248](https://github.com/Orange-OpenSource/ods-flutter/issues/248))
+- [Bug]: button padding update ([#247](https://github.com/Orange-OpenSource/ods-flutter/issues/247))
 
 ### Changed
 
