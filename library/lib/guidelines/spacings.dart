@@ -1,4 +1,4 @@
-const spacingNone = 1.0;
+const spacingNone = 0.0;
 const spacingXs = 4.0;
 const spacingS = 8.0;
 const spacingM = 16.0;
