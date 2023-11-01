@@ -53,25 +53,12 @@ You can use the composable `OdsLinearProgressIndicator` like this:
 For a **determinate** linear progress indicator, provide the progress value:
 
 ```dart
-class ProgressDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-
-    return SingleChildScrollView(
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.all(spacingM),
-          child: OdsLinearProgressIndicator(
-            progress: currentProgressValue,
-            label: 'Downloading ...',
-            icon: const Icon(Icons.download),
-            showCurrentValue: true,
-          ),
-        ),
-      ),
-    );
-  }
-}
+return OdsLinearProgressIndicator(
+  progress: 0.9,
+  label: 'Downloading ...', // Optional
+  icon: const Icon(Icons.download), // Optional
+  showCurrentValue: true,
+)
 ```
 
 For an **indeterminate** linear progress indicator, no need to provide a progress value:
@@ -80,7 +67,6 @@ For an **indeterminate** linear progress indicator, no need to provide a progres
 return OdsLinearProgressIndicator(
             label: 'Downloading ...', // Optional
             icon: const Icon(Icons.download),
-            showCurrentValue: true, // Optional
 );
 ```
 
