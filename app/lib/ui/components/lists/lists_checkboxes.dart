@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/lists/ods_checkbox_list.dart';
+import 'package:ods_flutter/components/lists/ods_list_checkbox.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
@@ -59,7 +59,7 @@ class __BodyState extends State<_Body> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            OdsCheckboxList(
+            OdsListCheckbox(
               checked: isChecked0,
               title: OdsApplication.foods[46].name,
               enabled:
@@ -71,7 +71,7 @@ class __BodyState extends State<_Body> {
                 });
               },
             ),
-            OdsCheckboxList(
+            OdsListCheckbox(
               checked: isChecked1,
               title: OdsApplication.foods[47].name,
               enabled:
@@ -83,7 +83,7 @@ class __BodyState extends State<_Body> {
                 });
               },
             ),
-            OdsCheckboxList(
+            OdsListCheckbox(
               title: OdsApplication.foods[41].name,
               checked: isChecked2,
               enabled:
