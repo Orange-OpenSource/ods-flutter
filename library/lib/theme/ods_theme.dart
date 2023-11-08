@@ -75,12 +75,14 @@ class OdsTheme {
         color: lightColorScheme.surface),
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: white100),
-    checkboxTheme: const CheckboxThemeData(fillColor: LightControlFillColor()),
-    radioTheme: const RadioThemeData(fillColor: LightControlFillColor()),
+    checkboxTheme:
+        const CheckboxThemeData(fillColor: LightControlCheckboxFillColor()),
+    radioTheme:
+        const RadioThemeData(fillColor: LightControlRadioButtonsFillColor()),
     switchTheme: SwitchThemeData(
-        thumbColor: const LightControlFillColor(),
+        thumbColor: const LightControlSwitchFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const LightControlFillColor()
+          return const LightControlSwitchFillColor()
               .resolve(states)
               .withOpacity(_switchTrackOpacity);
         })),
@@ -221,13 +223,14 @@ class OdsTheme {
     bottomNavigationBarTheme:
         const BottomNavigationBarThemeData(backgroundColor: darkSurfaceDefault),
     checkboxTheme: const CheckboxThemeData(
-        fillColor: DarkControlFillColor(),
+        fillColor: DarkControlCheckboxFillColor(),
         checkColor: MaterialStatePropertyAll(black900)),
-    radioTheme: const RadioThemeData(fillColor: DarkControlFillColor()),
+    radioTheme:
+        const RadioThemeData(fillColor: DarkControlRadioButtonsFillColor()),
     switchTheme: SwitchThemeData(
-        thumbColor: const DarkControlFillColor(),
+        thumbColor: const DarkControlSwitchFillColor(),
         trackColor: MaterialStateColor.resolveWith((states) {
-          return const DarkControlFillColor()
+          return const DarkControlSwitchFillColor()
               .resolve(states)
               .withOpacity(_switchTrackOpacity);
         })),
@@ -309,9 +312,9 @@ class OdsTheme {
   );
 }
 
-/// Light theme fill color used by selection controls: Checkboxes, Radio Buttons
-class LightControlFillColor extends MaterialStateColor {
-  const LightControlFillColor() : super(_defaultColor);
+/// Light theme fill color used by selection controls: Radio Buttons
+class LightControlRadioButtonsFillColor extends MaterialStateColor {
+  const LightControlRadioButtonsFillColor() : super(_defaultColor);
 
   static const int _defaultColor = 0xff000000;
 
@@ -326,9 +329,105 @@ class LightControlFillColor extends MaterialStateColor {
   }
 }
 
-/// Dark theme fill color used by selection controls: Checkboxes, Radio Buttons
-class DarkControlFillColor extends MaterialStateColor {
-  const DarkControlFillColor() : super(_defaultColor);
+/// Light theme fill color used by selection controls: Checkbox
+class LightControlCheckboxFillColor extends MaterialStateColor {
+  const LightControlCheckboxFillColor() : super(_defaultColor);
+
+  static const int _defaultColor = 0xff000000;
+
+  @override
+  Color resolve(Set states) {
+    /// Disabled and selected
+    if (states.contains(MaterialState.disabled) &&
+        states.contains(MaterialState.selected)) {
+      return lightColorScheme.onSurface.withOpacity(0.38);
+    }
+
+    /// Enabled and selected
+    else if (states.contains(MaterialState.selected)) {
+      return lightColorScheme.primary;
+    }
+
+    /// Disabled and not selected
+    else if (states.contains(MaterialState.disabled)) {
+      return lightColorScheme.onSecondary;
+    }
+
+    /// Enabled and not selected (default color)
+    else {
+      return lightColorScheme.onSecondary;
+    }
+  }
+}
+
+/// Dark theme fill color used by selection controls: Radio Buttons
+class DarkControlRadioButtonsFillColor extends MaterialStateColor {
+  const DarkControlRadioButtonsFillColor() : super(_defaultColor);
+
+  static const int _defaultColor = 0xffffffff;
+
+  @override
+  Color resolve(Set states) {
+    if (states.contains(MaterialState.disabled)) {
+      return darkColorScheme.onSurface.withOpacity(_disabledOpacity);
+    } else if (states.contains(MaterialState.selected)) {
+      return darkColorScheme.primary;
+    }
+    return grey400;
+  }
+}
+
+/// Dark theme fill color used by selection controls: Checkbox
+class DarkControlCheckboxFillColor extends MaterialStateColor {
+  const DarkControlCheckboxFillColor() : super(_defaultColor);
+
+  static const int _defaultColor = 0xffffffff;
+
+  @override
+  Color resolve(Set states) {
+    /// Disabled and selected
+    if (states.contains(MaterialState.disabled) &&
+        states.contains(MaterialState.selected)) {
+      return darkColorScheme.onSurface.withOpacity(0.38);
+    }
+
+    /// Enabled and selected
+    else if (states.contains(MaterialState.selected)) {
+      return darkColorScheme.primary;
+    }
+
+    /// Disabled and not selected
+    else if (states.contains(MaterialState.disabled)) {
+      return darkColorScheme.onSecondary;
+    }
+
+    /// Enabled and not selected (default color)
+    else {
+      return darkColorScheme.onSecondary;
+    }
+  }
+}
+
+/// Light theme fill color used by selection controls: Swicth
+class LightControlSwitchFillColor extends MaterialStateColor {
+  const LightControlSwitchFillColor() : super(_defaultColor);
+
+  static const int _defaultColor = 0xff000000;
+
+  @override
+  Color resolve(Set states) {
+    if (states.contains(MaterialState.disabled)) {
+      return lightColorScheme.onSurface.withOpacity(_disabledOpacity);
+    } else if (states.contains(MaterialState.selected)) {
+      return lightColorScheme.primary;
+    }
+    return grey600;
+  }
+}
+
+/// Dark theme fill color used by selection controls: Switch
+class DarkControlSwitchFillColor extends MaterialStateColor {
+  const DarkControlSwitchFillColor() : super(_defaultColor);
 
   static const int _defaultColor = 0xffffffff;
 
