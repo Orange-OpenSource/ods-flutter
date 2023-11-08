@@ -21,5 +21,11 @@
     },
 
     "@_COMPONENTS_NAVIGATION_BAR": {},
-    "componentNavigationBarNotification": "Notification(s)"
+    "componentNavigationBarNotification": "Notification(s)",
+
+    "@_COMPONENTS_CHECKBOXES": {},
+    "componentCheckboxes": "Checkbox",
+    "componentCheckboxesIndeterminate": "indeterminate",
+    "componentCheckboxesChecked": "checked",
+    "componentCheckboxesUnchecked": "unchecked"
 }

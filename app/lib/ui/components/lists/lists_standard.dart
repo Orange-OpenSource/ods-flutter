@@ -36,7 +36,7 @@ class _ComponentListsStandardState extends State<ComponentListsStandard> {
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar:
-            MainAppBar(AppLocalizations.of(context)!.listsVariantStandardTitle),
+            MainAppBar(AppLocalizations.of(context)!.listVariantStandardTitle),
         body: _Body(),
       ),
     );
@@ -99,7 +99,7 @@ class _BodyState extends State<_Body> {
                 : null,
             text: customizationState?.selectedTrailingStandardElement ==
                     ListsTrailingEnum.trailingText
-                ? AppLocalizations.of(context)!.listsTrailingExampleDetails
+                ? AppLocalizations.of(context)!.listTrailingExampleDetails
                 : null,
             divider: true,
           );
@@ -129,8 +129,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
         children: [
           SwitchListTile(
               value: customizationState?.hasSubtitle ?? true,
-              title: Text(
-                  AppLocalizations.of(context)!.listsCustomizationSubtitle),
+              title:
+                  Text(AppLocalizations.of(context)!.listCustomizationSubtitle),
               onChanged: (bool value) {
                 customizationState?.hasSubtitle = value;
               }),
@@ -139,7 +139,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listsLeadingCustomizationTitle,
+                AppLocalizations.of(context)!.listLeadingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -183,7 +183,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listsTrailingCustomizationTitle,
+                AppLocalizations.of(context)!.listTrailingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),

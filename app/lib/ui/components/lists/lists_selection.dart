@@ -36,7 +36,7 @@ class _ComponentListsSelectionState extends State<ComponentListsSelection> {
           content: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
-        appBar: MainAppBar(AppLocalizations.of(context)!.listsSelectionTitle),
+        appBar: MainAppBar(AppLocalizations.of(context)!.listSelectionTitle),
         body: _Body(),
       ),
     );
@@ -137,8 +137,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
         children: [
           SwitchListTile(
               value: customizationState?.hasSubtitle ?? true,
-              title: Text(
-                  AppLocalizations.of(context)!.listsCustomizationSubtitle),
+              title:
+                  Text(AppLocalizations.of(context)!.listCustomizationSubtitle),
               onChanged: (bool value) {
                 customizationState?.hasSubtitle = value;
               }),
@@ -147,7 +147,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listsLeadingCustomizationTitle,
+                AppLocalizations.of(context)!.listLeadingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -191,7 +191,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listsTrailingCustomizationTitle,
+                AppLocalizations.of(context)!.listTrailingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),

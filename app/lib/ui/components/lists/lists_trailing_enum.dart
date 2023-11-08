@@ -13,15 +13,15 @@ extension CustomElementExtension on ListsTrailingEnum {
   String stringValue(BuildContext context) {
     switch (this) {
       case ListsTrailingEnum.none:
-        return AppLocalizations.of(context)!.listsTrailingEnumNone;
+        return AppLocalizations.of(context)!.listTrailingEnumNone;
       case ListsTrailingEnum.trailingSwitch:
-        return AppLocalizations.of(context)!.listsTrailingEnumSwitch;
+        return AppLocalizations.of(context)!.listTrailingEnumSwitch;
       case ListsTrailingEnum.trailingCheckbox:
-        return AppLocalizations.of(context)!.listsTrailingEnumCheckbox;
+        return AppLocalizations.of(context)!.listTrailingEnumCheckbox;
       case ListsTrailingEnum.trailingText:
-        return AppLocalizations.of(context)!.listsTrailingEnumText;
+        return AppLocalizations.of(context)!.listTrailingEnumText;
       case ListsTrailingEnum.trailingInfoButton:
-        return AppLocalizations.of(context)!.listsTrailingEnumInfoButton;
+        return AppLocalizations.of(context)!.listTrailingEnumInfoButton;
       default:
         return "";
     }

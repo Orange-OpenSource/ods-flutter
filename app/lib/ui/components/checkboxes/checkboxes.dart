@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/checkbox/ods_checkbox.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
-import 'package:ods_flutter_demo/main.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -29,8 +30,7 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.componentCheckboxesTitle),
+          appBar: MainAppBar(AppLocalizations.of(context)!.componentCheckboxes),
           body: _Body()),
     );
   }
@@ -42,10 +42,9 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  bool isChecked0 = true;
-  bool isChecked1 = false;
-  bool isChecked2 = false;
+  bool? isChecked = true;
   bool isEnable = true;
+  bool isIndeterminate = true;
 
   @override
   Widget build(BuildContext context) {
@@ -53,81 +52,21 @@ class __BodyState extends State<_Body> {
         CheckboxesCustomization.of(context);
 
     return SafeArea(
-      child: SingleChildScrollView(
+      child: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             Padding(
-              padding: EdgeInsets.all(15),
-              child: Semantics(
-                header: true,
-                child: Text(
-                  AppLocalizations.of(context)!
-                      .checkboxesVariantTitleInformation,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ),
-            ),
-            Semantics(
-              label: AppLocalizations.of(context)!
-                  .componentCheckboxesChocolateAccessibility,
-              value: isChecked0
-                  ? AppLocalizations.of(context)!
-                      .componentCheckboxesCheckedAccessibility
-                  : AppLocalizations.of(context)!
-                      .componentCheckboxesUnCheckedAccessibility,
-              enabled: isEnable,
-              child: CheckboxListTile(
-                value: isChecked0,
-                title: Text(OdsApplication.foods[46].name),
-                enabled:
-                    customizationState?.hasEnabled == true ? isEnable : false,
-                onChanged: (bool? value) {
+              padding: const EdgeInsets.all(spacingS),
+              child: OdsCheckbox(
+                checked: isChecked,
+                onCheckedChange: (value) {
                   setState(() {
-                    isChecked0 = value!;
+                    isChecked = value;
                   });
                 },
-              ),
-            ),
-            Semantics(
-              label: AppLocalizations.of(context)!
-                  .componentCheckboxesButterAccessibility,
-              value: isChecked1
-                  ? AppLocalizations.of(context)!
-                      .componentCheckboxesCheckedAccessibility
-                  : AppLocalizations.of(context)!
-                      .componentCheckboxesUnCheckedAccessibility,
-              enabled: isEnable,
-              child: CheckboxListTile(
-                value: isChecked1,
-                title: Text(OdsApplication.foods[47].name),
                 enabled:
                     customizationState?.hasEnabled == true ? isEnable : false,
-                onChanged: (value) {
-                  setState(() {
-                    isChecked1 = value!;
-                  });
-                },
-              ),
-            ),
-            Semantics(
-              label: AppLocalizations.of(context)!
-                  .componentCheckboxesEggsAccessibility,
-              value: AppLocalizations.of(context)!
-                  .componentCheckboxesUnCheckedAccessibility,
-              enabled: isEnable,
-              child: ExcludeSemantics(
-                child: CheckboxListTile(
-                    title: Text(OdsApplication.foods[41].name),
-                    value: isChecked2,
-                    enabled: customizationState?.hasEnabled == true
-                        ? isEnable
-                        : false,
-                    onChanged: (value) {
-                      setState(() {
-                        isChecked2 = value!;
-                      });
-                    }),
+                indeterminate: true,
               ),
             ),
           ],
@@ -145,12 +84,13 @@ class _CustomizationContent extends StatelessWidget {
     return Column(
       children: [
         SwitchListTile(
-            value: customizationState?.hasEnabled ?? true,
-            title: Text(AppLocalizations.of(context)!
-                .componentCheckboxesCustomizationEnabled),
-            onChanged: (bool value) {
-              customizationState?.hasEnabled = value;
-            }),
+          value: customizationState?.hasEnabled ?? true,
+          title: Text(AppLocalizations.of(context)!
+              .componentCheckboxesCustomizationEnabled),
+          onChanged: (bool value) {
+            customizationState?.hasEnabled = value;
+          },
+        ),
       ],
     );
   }
