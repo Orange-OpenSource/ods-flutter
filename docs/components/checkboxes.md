@@ -5,8 +5,6 @@ description: Checkbox selection control allows the user to select options.
 ---
 
 Use checkboxes to:
-* Select one or more options from a list
-* Present a list containing sub-selections
 * Turn an item on or off in a desktop environment
 
 ---
@@ -16,7 +14,7 @@ Use checkboxes to:
 * [Specifications references](#specifications-references)
 * [Accessibility](#accessibility)
 * [Implementation](#implementation)
-* [Component specific tokens](#component-specific-tokens)
+    * [OdsCheckbox API](#odscheckbox-api)
 
 ---
 
@@ -40,19 +38,23 @@ Additional content labels are usually unnecessary.
 
 > **Flutter implementation**
 
-In your screen you can use CheckboxListTitle or Checkbox :
+In your screen you can use Checkbox :
 
 ```dart
-return CheckboxListTile(
-	value: true,
-	title: Text("Enabled"),
-	enabled: true,
-	onChanged: (value) {
- 		setState(() {});
-	},
+return OdsCheckbox(
+  checked: true,
+  onCheckedChange: () {},
+  enabled: true,
+  indeterminate: true, // Optional. False by default
 )
 ```
 
-## Component specific tokens
+#### OdsCheckbox API
 
-_Soon available_
+Parameter | Default&nbsp;value | Description
+-- | -- | --
+`checked: bool` | | Controls checked state of the checkbox
+`onCheckedChange: (bool?)? Callback ` | `null` | Callback invoked on checkbox click. If `null`, then this is passive and relies entirely on a higher-level component to control the checked state.
+`enabled: bool` | `true` | Controls enabled state of the checkbox. When `false`, this checkbox will not be clickable.
+`indeterminate: bool` | `false` | Controls enabled state of the checkbox
+{:.table}
