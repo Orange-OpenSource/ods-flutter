@@ -22,7 +22,7 @@ description: Lists are continuous, vertical indexes of text or images.
 
 ## Accessibility
 
-Please follow [accessibility criteria for development](https://a11y-guidelines.orange.com/en/mobile/android/development/).
+_Soon available_
 
 ## Variants
 
