@@ -31,8 +31,8 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar:
-            MainAppBar(AppLocalizations.of(context)!.componentCheckboxesTitle),
+        appBar: MainAppBar(
+            AppLocalizations.of(context)!.componentRadioButtonsTitle),
         body: _Body(),
       ),
     );
