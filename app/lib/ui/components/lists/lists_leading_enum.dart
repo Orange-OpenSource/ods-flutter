@@ -7,15 +7,15 @@ extension CustomElementExtension on ListsLeadingEnum {
   String stringValue(BuildContext context) {
     switch (this) {
       case ListsLeadingEnum.none:
-        return AppLocalizations.of(context)!.listsLeadingEnumNone;
+        return AppLocalizations.of(context)!.listLeadingEnumNone;
       case ListsLeadingEnum.icon:
-        return AppLocalizations.of(context)!.listsLeadingEnumIcon;
+        return AppLocalizations.of(context)!.listLeadingEnumIcon;
       case ListsLeadingEnum.circle:
-        return AppLocalizations.of(context)!.listsLeadingEnumCircle;
+        return AppLocalizations.of(context)!.listLeadingEnumCircle;
       case ListsLeadingEnum.wide:
-        return AppLocalizations.of(context)!.listsLeadingEnumWide;
+        return AppLocalizations.of(context)!.listLeadingEnumWide;
       case ListsLeadingEnum.square:
-        return AppLocalizations.of(context)!.listsLeadingEnumSquare;
+        return AppLocalizations.of(context)!.listLeadingEnumSquare;
       default:
         return "";
     }

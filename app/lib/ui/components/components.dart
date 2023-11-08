@@ -14,6 +14,7 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/dialogs/dialogs.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
+import 'package:ods_flutter_demo/ui/components/lists/list_checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
@@ -110,7 +111,7 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentCheckboxesTitle,
+      AppLocalizations.of(context)!.componentCheckboxes,
       'assets/il_checkbox.svg',
       AppLocalizations.of(context)!.componentCheckboxesDescription,
       [
@@ -151,19 +152,24 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentListsTitle,
+      AppLocalizations.of(context)!.componentListItem,
       'assets/il_lists.svg',
-      AppLocalizations.of(context)!.componentListsDescription,
+      AppLocalizations.of(context)!.componentListItemDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.listsVariantSelectionTitle,
-          AppLocalizations.of(context)!.listsVariantSelectionSubtitle,
+          AppLocalizations.of(context)!.listVariantSelectionTitle,
+          AppLocalizations.of(context)!.listVariantSelectionSubtitle,
           ComponentListsSelection(),
         ),
         Variant(
-          AppLocalizations.of(context)!.listsVariantStandardTitle,
-          AppLocalizations.of(context)!.listsVariantStandardSubtitle,
+          AppLocalizations.of(context)!.listVariantStandardTitle,
+          AppLocalizations.of(context)!.listVariantStandardSubtitle,
           ComponentListsStandard(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.listCheckboxesTitle,
+          AppLocalizations.of(context)!.listCheckboxesSubtitle,
+          ComponentCheckboxesList(),
         ),
       ],
     ),
