@@ -116,72 +116,20 @@
   "componentCardHorizontalImagePositionEnd": "End",
 
   "@_COMPONENTS_CHECKBOXES": {},
-  "componentCheckboxesTitle": "Checkboxes",
-  "@componentCheckboxesTitle": {
-    "description": "Component Checkboxes - Title",
-    "type": "text"
-  },
+  "componentCheckboxes": "Checkboxes",
   "componentCheckboxesDescription": "Checkboxes are used to select or deselect an option. Single checkboxes can be used to determine an individual choice and they can be grouped to allow users to select any combination of items.",
-  "@componentCheckboxesDescription": {
-    "description": "Component Checkboxes - Description",
-    "type": "text"
-  },
   "componentCheckboxesCheckedAccessibility": "Checked",
-  "@componentCheckboxesCheckedAccessibility": {
-    "description": "Component Checkboxes Checked Accessibility - Description",
-    "type": "text"
-  },
   "componentCheckboxesUnCheckedAccessibility": "Unchecked",
-  "@componentCheckboxesUncheckedAccessibility": {
-    "description": "Component Checkboxes Unchecked Accessibility - Description",
-    "type": "text"
-  },
   "componentCheckboxesChocolateAccessibility": "Chocolate Checkbox",
-  "@componentCheckboxesChocolateAccessibility": {
-    "description": "Component Checkboxes Chocolate Accessibility  - Description",
-    "type": "text"
-  },
   "componentCheckboxesButterAccessibility": "Butter Checkbox",
-  "@componentCheckboxesButterAccessibility": {
-    "description": "Component Checkboxes Butter Accessibility  - Description",
-    "type": "text"
-  },
   "componentCheckboxesSugarAccessibility": "Butter Checkbox",
-  "@componentCheckboxesSugarAccessibility": {
-    "description": "Component Checkboxes Sugar Accessibility  - Description",
-    "type": "text"
-  },
   "componentCheckboxesEggsAccessibility": "Eggs Checkbox",
-  "@componentCheckboxesEggsAccessibility": {
-    "description": "Component Checkboxes Eggs Accessibility  - Description",
-    "type": "text"
-  },
+
   "@_CHECKBOXES_VARIANT": {},
   "checkboxesVariantTitle": "Checkboxes",
-  "@checkboxesVariantTitle": {
-    "description": "Checkboxes Variant - Title",
-    "type": "text"
-  },
   "checkboxesVariantSubtitle": "OdsCheckbox",
-  "@checkboxesVariantSubtitle": {
-    "description": "Checkboxes Variant - Subtitle",
-    "type": "text"
-  },
-  "checkboxesVariantTitleInformation": "Use CheckboxListTitle or Checkbox",
-  "@checkboxesVariantTitleInformation": {
-    "description": "Checkboxes Variant - Information",
-    "type": "text"
-  },
   "componentCheckboxesCustomizationEnabled": "Enabled",
-  "@componentCheckboxesCustomizationEnabled": {
-    "description": "Component Checkboxes Enabled - Checkboxes lists",
-    "type": "text"
-  },
   "componentCheckboxesCustomizationIcon": "Icon",
-  "@componentCheckboxesCustomizationIcon": {
-    "description": "Component Checkboxes Icon - Checkboxes lists",
-    "type": "text"
-  },
 
   "@_COMPONENTS_NAVIGATION_BAR": {},
   "componentNavigationBarTitle": "Bar: Navigation",
@@ -576,113 +524,31 @@
   "componentFloatingActionButtonIcon": "Icon",
 
   "@_COMPONENTS_LISTS": {},
-  "componentListsTitle": "Lists",
-  "@componentListsTitle": {
-    "description": "Component Lists - Title",
-    "type": "text"
-  },
-  "componentListsDescription": "A list is a continuous vertical group of data entries like text, icons or images",
-  "@componentListsDescription": {
-    "description": "Component Lists - Description",
-    "type": "text"
-  },
+  "componentListItem": "List item",
+  "componentListItemDescription": "A list item is the individual element of data entries like text, icons or images that is used to create a list.",
 
   "@_LISTS_VARIANT": {},
-  "listsVariantSelectionTitle": "List with selection",
-  "@listsVariantSelectionTitle": {
-    "description": "List Variant - Title",
-    "type": "text"
-  },
-  "listsSelectionTitle": "List selection",
-  "@listsSelectionTitle": {
-    "description": "List selection - Title",
-    "type": "text"
-  },
-  "listsVariantSelectionSubtitle": "OdsListSelectionItem",
-  "@listsVariantSelectionSubtitle": {
-    "description": "List Variant - Subtitle",
-    "type": "text"
-  },
-  "listsVariantStandardTitle": "Standard Lists",
-  "@listsVariantStandardTitle": {
-    "description": "List Standard Variant - Title",
-    "type": "text"
-  },
-  "listsVariantStandardSubtitle": "OdsListStandardItem",
-  "@listsVariantStandardSubtitle": {
-    "description": "List Variant - Subtitle",
-    "type": "text"
-  },
-  "listsCustomizationSubtitle": "Subtitle",
-  "@listsCustomizationSubtitle": {
-    "description": "Lists Subtitle Customization - Subtitle",
-    "type": "text"
-  },
-  "listsLeadingCustomizationTitle": "Leading",
-  "@listsLeadingCustomizationTitle": {
-    "description": "Lists Leading Customization - Title",
-    "type": "text"
-  },
-  "listsLeadingEnumNone": "None",
-  "@listsLeadingEnumNone": {
-    "description": "Lists None - Enum",
-    "type": "text"
-  },
-  "listsLeadingEnumIcon": "Icon",
-  "@listsLeadingEnumIcon": {
-    "description": "Lists Icon - Enum",
-    "type": "text"
-  },
-  "listsLeadingEnumCircle": "Circle",
-  "@listsLeadingEnumCircle": {
-    "description": "Lists Circle - Enum",
-    "type": "text"
-  },
-  "listsLeadingEnumWide": "Wide",
-  "@listsLeadingEnumWide": {
-    "description": "Lists Wide - Enum",
-    "type": "text"
-  },
-  "listsLeadingEnumSquare": "Square",
-  "@listsLeadingEnumSquare": {
-    "description": "Lists Square - Enum",
-    "type": "text"
-  },
-  "listsTrailingCustomizationTitle": "Trailing",
-  "@listsTrailingCustomizationTitle": {
-    "description": "Lists Trailing Customization - Title",
-    "type": "text"
-  },
-  "listsTrailingEnumNone": "None",
-  "@listsTrailingEnumNone": {
-    "description": "Lists None - Enum",
-    "type": "text"
-  },
-  "listsTrailingEnumSwitch": "Switch",
-  "@listsTrailingEnumSwitch": {
-    "description": "Lists Switch - Enum",
-    "type": "text"
-  },
-  "listsTrailingEnumCheckbox": "Checkbox",
-  "@listsTrailingEnumCheckbox": {
-    "description": "Lists Checkbox - Enum",
-    "type": "text"
-  },
-  "listsTrailingEnumText": "Text",
-  "@listsTrailingEnumText": {
-    "description": "Lists Text - Enum",
-    "type": "text"
-  },
-  "listsTrailingEnumInfoButton": "Info Button",
-  "@listsTrailingEnumInfoButton": {
-    "description": "Lists Info Button - Enum",
-    "type": "text"
-  },
-  "listsTrailingExampleDetails": "Details",
-  "@listsTrailingExampleDetails": {
-    "description": "Lists Example Detail - Text",
-    "type": "text"
-  },
+  "listVariantSelectionTitle": "List with selection",
+  "listSelectionTitle": "List selection",
+  "listVariantSelectionSubtitle": "OdsListSelectionItem",
+  "listVariantStandardTitle": "Standard Lists",
+  "listVariantStandardSubtitle": "OdsListStandardItem",
+  "listCustomizationSubtitle": "Subtitle",
+  "listLeadingCustomizationTitle": "Leading",
+  "listLeadingEnumNone": "None",
+  "listLeadingEnumIcon": "Icon",
+  "listLeadingEnumCircle": "Circle",
+  "listLeadingEnumWide": "Wide",
+  "listLeadingEnumSquare": "Square",
+  "listTrailingCustomizationTitle": "Trailing",
+  "listTrailingEnumNone": "None",
+  "listTrailingEnumSwitch": "Switch",
+  "listTrailingEnumCheckbox": "Checkbox",
+  "listTrailingEnumText": "Text",
+  "listTrailingEnumInfoButton": "Info Button",
+  "listTrailingExampleDetails": "Details",
+  "listCheckboxesTitle": "Checkboxes Lists",
+  "listCheckboxesSubtitle": "OdsListCheckbox",
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",
