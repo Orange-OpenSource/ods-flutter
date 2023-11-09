@@ -152,27 +152,13 @@
   "navigationBarScreenFavorites": "Favorites Screen",
 
   "@_COMPONENTS_RADIOBUTTON": {},
-  "componentRadioButtonsTitle": "Radio buttons",
-  "@componentRadioButtonsTitle": {
-    "description": "Component Radio Buttons - Title",
-    "type": "text"
-  },
+  "componentRadioButtons": "Radio buttons",
   "componentRadioButtonsDescription": "Radio buttons enable users to choose one item from a set of mutually exclusive, related choices.",
-  "@componentRadioButtonsDescription": {
-    "description": "Component Radio Buttons - Description",
-    "type": "text"
-  },
+
   "@_RADIOBUTTON_VARIANT": {},
   "radioButtonVariantTitle": "Radio buttons",
-  "@radioButtonVariantTitle": {
-    "description": "Radio buttons Variant - Title",
-    "type": "text"
-  },
   "radioButtonVariantSubtitle": "OdsRadioButtons",
-  "@radioButtonVariantSubtitle": {
-    "description": "Radio buttons Variant - Subtitle",
-    "type": "text"
-  },
+
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
   "@componentSwitchesTitle": {
@@ -549,6 +535,8 @@
   "listTrailingExampleDetails": "Details",
   "listCheckboxesTitle": "Checkboxes Lists",
   "listCheckboxesSubtitle": "OdsListCheckbox",
+  "listRadioButtonsTitle": "Radio buttons Lists",
+  "listRadioButtonsSubtitle": "OdsListRadioButton",
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",

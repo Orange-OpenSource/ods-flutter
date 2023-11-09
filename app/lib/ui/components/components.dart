@@ -197,7 +197,7 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentRadioButtonsTitle,
+      AppLocalizations.of(context)!.componentRadioButtons,
       'assets/il_radio_buttons.svg',
       AppLocalizations.of(context)!.componentRadioButtonsDescription,
       [
