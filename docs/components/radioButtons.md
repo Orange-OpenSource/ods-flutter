@@ -50,7 +50,7 @@ Options? _selectedOption = Options.option1;
 return OdsRadioButton(
   value: Options.option1,
   groupValue: _selectedOption,
-  onChanged: (value) {}
+  onChanged: (Options? value) {}
 )
 ```
 

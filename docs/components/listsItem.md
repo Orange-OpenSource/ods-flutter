@@ -46,7 +46,7 @@ In your screen you can use `OdsListCheckbox` :
 return OdsListCheckbox(
   title: "Enabled"
   checked: true,
-  onCheckedChange: () {},
+  onCheckedChange: (Options? value) {},
   enabled: true,
   indeterminate: true, // Optional. False by default
 )
