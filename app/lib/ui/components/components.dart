@@ -15,6 +15,7 @@ import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/dialogs/dialogs.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_checkboxes.dart';
+import 'package:ods_flutter_demo/ui/components/lists/lists_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
@@ -170,6 +171,11 @@ List<Component> components(BuildContext context) {
           AppLocalizations.of(context)!.listCheckboxesTitle,
           AppLocalizations.of(context)!.listCheckboxesSubtitle,
           ComponentCheckboxesList(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.listRadioButtonsTitle,
+          AppLocalizations.of(context)!.listRadioButtonsSubtitle,
+          ComponentRadioButtonsList(),
         ),
       ],
     ),
