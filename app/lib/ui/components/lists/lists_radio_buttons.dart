@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/lists/ods_list_radio_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
@@ -63,11 +64,11 @@ class __BodyState extends State<_Body> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            RadioListTile(
-              title: Text(OdsApplication.recipes[0].title),
+            OdsListRadioButton(
+              text: OdsApplication.recipes[0].title,
               value: Options.option1,
               groupValue: _selectedOption,
-              onChanged: customizationState?.hasEnabled == true
+              onCheckedChange: customizationState?.hasEnabled == true
                   ? (Options? value) {
                       setState(
                         () {
@@ -77,11 +78,11 @@ class __BodyState extends State<_Body> {
                     }
                   : null,
             ),
-            RadioListTile<Options>(
-              title: Text(OdsApplication.recipes[1].title),
+            OdsListRadioButton<Options>(
+              text: OdsApplication.recipes[1].title,
               value: Options.option2,
               groupValue: _selectedOption,
-              onChanged: customizationState?.hasEnabled == true
+              onCheckedChange: customizationState?.hasEnabled == true
                   ? (value) {
                       setState(
                         () {
@@ -91,11 +92,11 @@ class __BodyState extends State<_Body> {
                     }
                   : null,
             ),
-            RadioListTile<Options>(
-              title: Text(OdsApplication.recipes[2].title),
+            OdsListRadioButton<Options>(
+              text: OdsApplication.recipes[2].title,
               value: Options.option3,
               groupValue: _selectedOption,
-              onChanged: customizationState?.hasEnabled == true
+              onCheckedChange: customizationState?.hasEnabled == true
                   ? (value) {
                       setState(
                         () {
