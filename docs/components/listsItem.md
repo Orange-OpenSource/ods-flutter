@@ -12,6 +12,9 @@ description: Lists are continuous, vertical indexes of text or images.
     * [Checkbox list](#checkbox-list)
         * [Flutter implementation](#flutter-implementation)
             * [OdsListItem API](#odslistitem-api)
+    * [RadioButtons list](#radiobuttons-list)
+        * [Flutter implementation](#flutter-implementation-1)
+            * [OdsListRadioButton API](#odslistradiobutton-api)
 
 ---
 
@@ -58,4 +61,38 @@ Parameter | Default&nbsp;value | Description
 `onCheckedChange: (bool?)? Callback ` | `null` | Callback invoked on checkbox click. If `null`, then this is passive and relies entirely on a higher-level component to control the checked state.
 `enabled: bool` | `true` | Controls enabled state of the checkbox. When `false`, this checkbox will not be clickable.
 `indeterminate: bool` | `false` | Controls enabled state of the checkbox
+{:.table}
+
+### RadioButtons list
+
+A ListTile with a Radio Button. In other words, a radio button with a label.
+The entire list tile is interactive: tapping anywhere in the tile toggles the radio button.
+
+![ListsRadioButton](images/lists_radio_button_light.png) ![ListsRadioButton dark](images/lists_radio_button_dark.png)
+
+### Flutter implementation
+
+In your screen you can use:
+
+```dart
+enum Options { option1, option2, option3 }
+Options? _selectedOption = Options.option1;
+
+return OdsListRadioButton(
+  text: "Enabled",
+  value: Options.option1,
+  groupValue: _selectedOption,
+  onCheckedChange: (value) {},
+)
+```
+
+#### OdsListRadioButton API
+
+Parameter | Default&nbsp;value | Description
+-- | -- | --
+`text: String?` | | The primary content of the list tile
+`value: T` | | The value represented by this radio button
+`groupValue: T? ` | | The currently selected value for a group of radio buttons.
+`onCheckedChange: ((value: T?) -> Callback)?` | `null` | Called when the user selects this radio button. The radio button passes [value] as a parameter to this callback. The radio button does not actually change state until the parent widget rebuilds theradio button with the new [groupValue]. If null, the radio button will be displayed as disabled. The provided callback will not be invoked if this radio button is already selected.
+`enabled: bool? ` | false | Controls the enabled state of the radio button. When false, this button will not be clickable.
 {:.table}
