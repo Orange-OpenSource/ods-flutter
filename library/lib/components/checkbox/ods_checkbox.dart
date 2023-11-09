@@ -21,7 +21,7 @@ class OdsCheckbox extends StatefulWidget {
   /// A callback function to handle changes in the checked state.
   final void Function(bool?)? onCheckedChange;
 
-  /// A flag indicating whether the widget is enabled.
+  /// Controls the enabled state of the checkbox. When false, this button will not be clickable.
   final bool? enabled;
 
   /// A flag indicating whether the widget is in an indeterminate state.
