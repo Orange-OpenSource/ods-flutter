@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/radio_button/ods_radio_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -30,8 +31,7 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar: MainAppBar(
-            AppLocalizations.of(context)!.componentRadioButtonsTitle),
+        appBar: MainAppBar(AppLocalizations.of(context)!.componentRadioButtons),
         body: _Body(),
       ),
     );
@@ -54,32 +54,28 @@ class __BodyState extends State<_Body> {
     return Center(
       child: Column(
         children: <Widget>[
-          Radio(
-            value: Options.option1,
-            groupValue: _selectedOption,
-            onChanged: customizationState?.hasEnabled == true
-                ? (Options? value) {
-                    setState(
-                      () {
-                        _selectedOption = value;
-                      },
-                    );
-                  }
-                : null,
-          ),
-          Radio(
-            value: Options.option2,
-            groupValue: _selectedOption,
-            onChanged: customizationState?.hasEnabled == true
-                ? (Options? value) {
-                    setState(
-                      () {
-                        _selectedOption = value;
-                      },
-                    );
-                  }
-                : null,
-          ),
+          OdsRadioButton(
+              value: Options.option1,
+              groupValue: _selectedOption,
+              enabled: customizationState?.hasEnabled == true ? true : false,
+              onCheckedChange: (Options? value) {
+                setState(
+                  () {
+                    _selectedOption = value;
+                  },
+                );
+              }),
+          OdsRadioButton(
+              value: Options.option2,
+              groupValue: _selectedOption,
+              enabled: customizationState?.hasEnabled == true ? true : false,
+              onCheckedChange: (Options? value) {
+                setState(
+                  () {
+                    _selectedOption = value;
+                  },
+                );
+              }),
         ],
       ),
     );
