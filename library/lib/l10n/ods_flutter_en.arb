@@ -27,5 +27,10 @@
     "componentCheckboxes": "Checkbox",
     "componentCheckboxesIndeterminate": "indeterminate",
     "componentCheckboxesChecked": "checked",
-    "componentCheckboxesUnchecked": "unchecked"
+    "componentCheckboxesUnchecked": "unchecked",
+
+    "@_COMPONENTS_SWITCHES": {},
+    "componentSwitches": "Switch",
+    "componentSwitchesChecked": "activated",
+    "componentSwitchesUnchecked": "deactivated"
 }
