@@ -6,6 +6,8 @@ import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 ///
 /// The OdsListSwitch widget represents a switch list element that can be checked or unchecked.
 /// It allows for handling the OdsListSwitch list state and triggering a callback when its state changes.
+/// * [checked] determines whether this switch is on or off.
+/// * [onCheckedChange] is called when the user toggles the switch on or off.
 class OdsListSwitch extends StatefulWidget {
   /// Creates an ODS Switch list.
   const OdsListSwitch({
@@ -17,10 +19,10 @@ class OdsListSwitch extends StatefulWidget {
     this.enabled = true,
   }) : super(key: key);
 
-  /// The value.
+  /// The primary content of the list tile.
   final String title;
 
-  /// The value checked.
+  /// Determines whether this switch is on or off.
   final bool checked;
 
   /// A callback function to handle changes in the checked state.

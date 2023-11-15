@@ -109,17 +109,17 @@ class _CustomizationContent extends StatelessWidget {
     return Column(
       children: [
         OdsListSwitch(
-          checked: customizationState?.hasEnabled ?? true,
           title: AppLocalizations.of(context)!
               .componentCheckboxesCustomizationEnabled,
+          checked: customizationState?.hasEnabled ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;
           },
         ),
         OdsListSwitch(
-          checked: customizationState?.hasIcon ?? true,
           title: AppLocalizations.of(context)!
               .componentCheckboxesCustomizationIcon,
+          checked: customizationState?.hasIcon ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasIcon = value;
           },

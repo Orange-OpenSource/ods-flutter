@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_action_chips.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
@@ -76,10 +77,10 @@ class _CustomizationContent extends StatelessWidget {
         ChipsCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-            value: customizationState?.hasEnabled ?? true,
-            title: Text(AppLocalizations.of(context)!.componentChipsEnabled),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title: AppLocalizations.of(context)!.componentChipsEnabled,
+            checked: customizationState?.hasEnabled ?? true,
+            onCheckedChange: (bool value) {
               customizationState?.hasEnabled = value;
             }),
       ],

@@ -2,20 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/utilities/ods_switch_icon.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
-/// ODS Design Switch.
+/// ODS OdsSwitch.
 ///
-///   Switch is used to toggle the on/off state of a single setting.
-/// * [checked], To specify whether the switch is checked or not.
-/// * [onCheckedChange], Called when the user toggles the switch on or off.
-///   It can be set to null to disable the switch.
-/// * [enabled], which help to determine if the switch is disable or not.
-/// * [icon], The icon to use on the thumb of this switch.
-class OdsSwitch extends StatelessWidget {
-  final bool checked;
-  final Function(bool?) onCheckedChange;
-  final bool enabled;
-  final bool? icon;
-
+///  Switch is used to toggle the on/off state of a single setting.
+class OdsSwitch extends StatefulWidget {
+  /// Creates an ODS Switch .
   const OdsSwitch({
     Key? key,
     required this.checked,
@@ -24,23 +15,40 @@ class OdsSwitch extends StatelessWidget {
     this.enabled = true,
   }) : super(key: key);
 
+  /// The value checked.
+  final bool checked;
+
+  /// A callback function to handle changes in the checked state.
+  final void Function(bool)? onCheckedChange;
+
+  /// The icon to use on the thumb of this switch.
+  final bool? icon;
+
+  /// Controls the enabled state of the switch. When false, this button will not be clickable.
+  final bool? enabled;
+
+  @override
+  State<OdsSwitch> createState() => _OdsSwitchState();
+}
+
+class _OdsSwitchState extends State<OdsSwitch> {
   @override
   Widget build(BuildContext context) {
-    OdsSwitchIcon odsSwitchIcon = OdsSwitchIcon(context);
-
-    String switchValue = checked
+    String switchValue = widget.checked
         ? OdsLocalizations.of(context)!.componentSwitchesChecked
         : OdsLocalizations.of(context)!.componentSwitchesUnchecked;
 
+    OdsSwitchIcon odsSwitchIcon = OdsSwitchIcon(context);
+
     return Semantics(
       value: switchValue,
-      enabled: enabled,
+      enabled: widget.enabled,
       button: true,
       excludeSemantics: true,
       child: Switch(
-          thumbIcon: icon == true ? odsSwitchIcon.thumbIcon : null,
-          value: checked,
-          onChanged: enabled ? onCheckedChange : null),
+          thumbIcon: widget.icon == true ? odsSwitchIcon.thumbIcon : null,
+          value: widget.checked,
+          onChanged: widget.enabled == true ? widget.onCheckedChange : null),
     );
   }
 }

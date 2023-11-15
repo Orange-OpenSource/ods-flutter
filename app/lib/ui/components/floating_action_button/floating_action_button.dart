@@ -6,6 +6,7 @@ import 'package:ods_flutter/components/floating_action_button/ods_fab.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_extended.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_large.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_small.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button_enum.dart';
@@ -154,11 +155,11 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               ),
             ),
           ),
-          SwitchListTile(
-            value: customizationState?.hasIcon ?? true,
-            title: Text(AppLocalizations.of(context)!
-                .componentFloatingActionButtonIcon),
-            onChanged: (customizationState?.selectedElement ==
+          OdsListSwitch(
+            title:
+                AppLocalizations.of(context)!.componentFloatingActionButtonIcon,
+            checked: customizationState?.hasIcon ?? true,
+            onCheckedChange: (customizationState?.selectedElement ==
                     FloatingActionButtonEnum.extendedFab)
                 ? (bool value) {
                     customizationState?.hasIcon = value;

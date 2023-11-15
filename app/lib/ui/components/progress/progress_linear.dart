@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/progress/ods_linear_progress_indicator.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -136,27 +137,25 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ),
           ),
         ),
-        SwitchListTile(
-          value: customizationState.hasLabel,
-          title: Text(
-              AppLocalizations.of(context)!.componentCustomizeProgressLabel),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.componentCustomizeProgressLabel,
+          checked: customizationState.hasLabel,
+          onCheckedChange: (bool value) {
             customizationState.hasLabel = value;
           },
         ),
-        SwitchListTile(
-          value: customizationState.hasIcon,
-          title: Text(
-              AppLocalizations.of(context)!.componentCustomizeProgressIcon),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.componentCustomizeProgressIcon,
+          checked: customizationState.hasIcon,
+          onCheckedChange: (bool value) {
             customizationState.hasIcon = value;
           },
         ),
-        SwitchListTile(
-          value: customizationState.hasCurrentValue,
-          title: Text(AppLocalizations.of(context)!
-              .componentCustomizeProgressCurrentValue),
-          onChanged: customizationState.selectedProgressType ==
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentCustomizeProgressCurrentValue,
+          checked: customizationState.hasCurrentValue,
+          onCheckedChange: customizationState.selectedProgressType ==
                   ProgressEnum.determinate
               ? (bool value) {
                   customizationState.hasCurrentValue = value;

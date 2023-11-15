@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
@@ -172,10 +173,10 @@ class _CustomizationContent extends StatelessWidget {
             onChanged: (value) {
               customizationState.numberOfItems = value;
             }),
-        SwitchListTile(
-          value: customizationState.hasBadge,
-          title: Text(AppLocalizations.of(context)!.navigationBarItemBadge),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.navigationBarItemBadge,
+          checked: customizationState.hasBadge,
+          onCheckedChange: (bool value) {
             customizationState.hasBadge = value;
           },
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/switch/ods_switch.dart';
 import 'package:ods_flutter_demo/ui/components/switches/switches_customization.dart';
@@ -42,9 +43,7 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  bool isChecked0 = false;
-  bool isChecked1 = false;
-  bool isChecked2 = false;
+  bool isChecked = true;
   bool isEnabled = true;
 
   @override
@@ -56,14 +55,14 @@ class __BodyState extends State<_Body> {
       child: Column(
         children: <Widget>[
           OdsSwitch(
-            checked: isChecked0,
-            icon: customizationState?.hasIcon == true ? true : false,
-            enabled: customizationState?.hasEnabled == true ? isEnabled : false,
+            checked: isChecked,
             onCheckedChange: (value) {
               setState(() {
-                isChecked0 = value!;
+                isChecked = value!;
               });
             },
+            icon: customizationState?.hasIcon == true ? true : false,
+            enabled: customizationState?.hasEnabled == true ? isEnabled : false,
           ),
         ],
       ),
@@ -78,19 +77,19 @@ class _CustomizationContent extends StatelessWidget {
         SwitchesCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-          value: customizationState?.hasEnabled ?? true,
-          title: Text(AppLocalizations.of(context)!
-              .componentCheckboxesCustomizationEnabled),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentCheckboxesCustomizationEnabled,
+          checked: customizationState?.hasEnabled ?? true,
+          onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;
           },
         ),
-        SwitchListTile(
-          value: customizationState?.hasIcon ?? true,
-          title: Text(AppLocalizations.of(context)!
-              .componentCheckboxesCustomizationIcon),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentCheckboxesCustomizationIcon,
+          checked: customizationState?.hasIcon ?? true,
+          onCheckedChange: (bool value) {
             customizationState?.hasIcon = value;
           },
         ),
