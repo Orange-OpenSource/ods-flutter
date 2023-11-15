@@ -34,6 +34,8 @@ toc2:
         url: components/radioButtons_docs
       - page: Slider
         url: components/slider_docs
+      - page: Switches
+        url: components/switches_docs
 
   - title: Modules
     subfolderitems:
