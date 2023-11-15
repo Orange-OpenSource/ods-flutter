@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/sliders/ods_slider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -73,31 +74,29 @@ class _CustomizationContent extends StatelessWidget {
         SlidersCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-          value: customizationState?.hasIcon ?? true,
-          title:
-              Text(AppLocalizations.of(context)!.componentSlidersCustomizeIcon),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.componentSlidersCustomizeIcon,
+          checked: customizationState?.hasIcon ?? true,
+          onCheckedChange: (bool value) {
             if (customizationState != null) {
               customizationState.hasIcon = value;
             }
           },
         ),
-        SwitchListTile(
-          value: customizationState?.displayValue ?? true,
-          title: Text(AppLocalizations.of(context)!
-              .componentSlidersCustomizeDisplayValue),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentSlidersCustomizeDisplayValue,
+          checked: customizationState?.displayValue ?? true,
+          onCheckedChange: (bool value) {
             if (customizationState != null) {
               customizationState.displayValue = value;
             }
           },
         ),
-        SwitchListTile(
-          value: customizationState?.stepped ?? true,
-          title: Text(
-              AppLocalizations.of(context)!.componentCustomizeSlidersStepped),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.componentCustomizeSlidersStepped,
+          checked: customizationState?.stepped ?? true,
+          onCheckedChange: (bool value) {
             if (customizationState != null) {
               customizationState.stepped = value;
             }

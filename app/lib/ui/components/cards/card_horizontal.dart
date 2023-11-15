@@ -7,6 +7,7 @@ import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_horizontal_card.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
@@ -126,10 +127,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
         CardCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-            value: customizationState?.clickable ?? true,
-            title: Text(AppLocalizations.of(context)!.componentCardClickable),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title: AppLocalizations.of(context)!.componentCardClickable,
+            checked: customizationState?.clickable ?? true,
+            onCheckedChange: (bool value) {
               customizationState?.clickable = value;
             }),
         Align(
@@ -172,16 +173,16 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ),
           ),
         ),
-        SwitchListTile(
-            value: customizationState?.hasSubtitle ?? true,
-            title: Text(AppLocalizations.of(context)!.componentElementSubtitle),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title: AppLocalizations.of(context)!.componentElementSubtitle,
+            checked: customizationState?.hasSubtitle ?? true,
+            onCheckedChange: (bool value) {
               customizationState?.hasSubtitle = value;
             }),
-        SwitchListTile(
-            value: customizationState?.hasText ?? true,
-            title: Text(AppLocalizations.of(context)!.componentElementText),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title: AppLocalizations.of(context)!.componentElementText,
+            checked: customizationState?.hasText ?? true,
+            onCheckedChange: (bool value) {
               customizationState?.hasText = value;
             }),
         ComponentCountRow(
@@ -192,10 +193,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             onChanged: (value) {
               customizationState.numberOfItems = value;
             }),
-        SwitchListTile(
-            value: customizationState.hasDivider,
-            title: Text(AppLocalizations.of(context)!.componentElementDivider),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title: AppLocalizations.of(context)!.componentElementDivider,
+            checked: customizationState.hasDivider,
+            onCheckedChange: (bool value) {
               customizationState.hasDivider = value;
             }),
       ],

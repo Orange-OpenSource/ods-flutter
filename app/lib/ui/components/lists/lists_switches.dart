@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/lists/ods_list_checkbox.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
-import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
+import 'package:ods_flutter_demo/ui/components/switches/switches_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentCheckboxesList extends StatefulWidget {
-  const ComponentCheckboxesList({super.key});
+class ComponentSwitchesList extends StatefulWidget {
+  const ComponentSwitchesList({super.key});
 
   @override
-  State<ComponentCheckboxesList> createState() =>
-      _ComponentCheckboxesListState();
+  State<ComponentSwitchesList> createState() => _ComponentSwitchesListState();
 }
 
-class _ComponentCheckboxesListState extends State<ComponentCheckboxesList> {
+class _ComponentSwitchesListState extends State<ComponentSwitchesList> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -25,14 +23,15 @@ class _ComponentCheckboxesListState extends State<ComponentCheckboxesList> {
 
   @override
   Widget build(BuildContext context) {
-    return CheckboxesCustomization(
+    return SwitchesCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             content: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(AppLocalizations.of(context)!.listCheckboxesTitle),
+          appBar:
+              MainAppBar(AppLocalizations.of(context)!.listSwitchesSubtitle),
           body: _Body()),
     );
   }
@@ -44,55 +43,54 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  bool? isChecked0 = true;
-  bool? isChecked1 = false;
-  bool? isChecked2 = false;
-  bool isEnable = true;
-  bool isIndeterminate = true;
+  bool isChecked0 = true;
+  bool isChecked1 = false;
+  bool isChecked2 = false;
+  bool isEnabled = true;
 
   @override
   Widget build(BuildContext context) {
-    final CheckboxesCustomizationState? customizationState =
-        CheckboxesCustomization.of(context);
+    final SwitchesCustomizationState? customizationState =
+        SwitchesCustomization.of(context);
 
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            OdsListCheckbox(
-              checked: isChecked0,
+            OdsListSwitch(
               title: OdsApplication.foods[46].name,
+              checked: isChecked0,
+              icon: customizationState?.hasIcon == true ? true : false,
               enabled:
-                  customizationState?.hasEnabled == true ? isEnable : false,
-              indeterminate: true,
+                  customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked0 = value;
+                  isChecked0 = value!;
                 });
               },
             ),
-            OdsListCheckbox(
-              checked: isChecked1,
+            OdsListSwitch(
               title: OdsApplication.foods[47].name,
+              checked: isChecked1,
+              icon: customizationState?.hasIcon == true ? true : false,
               enabled:
-                  customizationState?.hasEnabled == true ? isEnable : false,
-              indeterminate: true,
+                  customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked1 = value;
+                  isChecked1 = value!;
                 });
               },
             ),
-            OdsListCheckbox(
-              title: OdsApplication.foods[41].name,
+            OdsListSwitch(
+              title: OdsApplication.foods[48].name,
               checked: isChecked2,
+              icon: customizationState?.hasIcon == true ? true : false,
               enabled:
-                  customizationState?.hasEnabled == true ? isEnable : false,
-              indeterminate: true,
+                  customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked2 = value;
+                  isChecked2 = value!;
                 });
               },
             ),
@@ -106,8 +104,8 @@ class __BodyState extends State<_Body> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final CheckboxesCustomizationState? customizationState =
-        CheckboxesCustomization.of(context);
+    final SwitchesCustomizationState? customizationState =
+        SwitchesCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
@@ -116,6 +114,14 @@ class _CustomizationContent extends StatelessWidget {
           checked: customizationState?.hasEnabled ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;
+          },
+        ),
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentCheckboxesCustomizationIcon,
+          checked: customizationState?.hasIcon ?? true,
+          onCheckedChange: (bool value) {
+            customizationState?.hasIcon = value;
           },
         ),
       ],

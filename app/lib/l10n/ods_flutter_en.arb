@@ -537,6 +537,8 @@
   "listCheckboxesSubtitle": "OdsListCheckbox",
   "listRadioButtonsTitle": "Radio buttons Lists",
   "listRadioButtonsSubtitle": "OdsListRadioButton",
+  "listSwitchesTitle": "Switches Lists",
+  "listSwitchesSubtitle": "OdsListSwitch",
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",

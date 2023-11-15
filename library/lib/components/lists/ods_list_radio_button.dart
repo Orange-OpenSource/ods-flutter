@@ -9,7 +9,7 @@ class OdsListRadioButton<T> extends StatefulWidget {
   /// Creates an ODS OdsListRadioButton.
   const OdsListRadioButton({
     Key? key,
-    required this.text,
+    required this.title,
     required this.value,
     required this.groupValue,
     required this.onCheckedChange,
@@ -17,7 +17,7 @@ class OdsListRadioButton<T> extends StatefulWidget {
   }) : super(key: key);
 
   /// The primary content of the list tile
-  final String text;
+  final String title;
 
   /// The value.
   final T value;
@@ -53,9 +53,9 @@ class _OdsRadioButtonState<T> extends State<OdsListRadioButton<T>> {
       hint: OdsLocalizations.of(context)!.componentCheckboxes,
       excludeSemantics: true,
       child: RadioListTile<T>(
-        title: Text(widget.text),
+        title: Text(widget.title),
         value: widget.value,
-        onChanged: widget.onCheckedChange,
+        onChanged: widget.enabled != false ? widget.onCheckedChange : null,
         groupValue: widget.groupValue,
       ),
     );

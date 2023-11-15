@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/radio_button/ods_radio_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons_customization.dart';
@@ -89,11 +90,11 @@ class _CustomizationContent extends StatelessWidget {
         RadioButtonsCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-          value: customizationState?.hasEnabled ?? true,
-          title: Text(AppLocalizations.of(context)!
-              .componentCheckboxesCustomizationEnabled),
-          onChanged: (bool value) {
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentCheckboxesCustomizationEnabled,
+          checked: customizationState?.hasEnabled ?? true,
+          onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;
           },
         ),

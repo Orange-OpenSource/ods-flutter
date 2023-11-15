@@ -7,7 +7,6 @@ import 'package:ods_flutter/theme/ods_typography.dart';
 import 'ods_color_scheme.dart';
 
 const double _disabledOpacity = 0.38;
-const double _switchTrackOpacity = 0.54;
 
 const double odsCardRadius = 5.0;
 
@@ -80,12 +79,52 @@ class OdsTheme {
     radioTheme:
         const RadioThemeData(fillColor: LightControlRadioButtonsFillColor()),
     switchTheme: SwitchThemeData(
-        thumbColor: const LightControlSwitchFillColor(),
-        trackColor: MaterialStateColor.resolveWith((states) {
-          return const LightControlSwitchFillColor()
-              .resolve(states)
-              .withOpacity(_switchTrackOpacity);
-        })),
+      trackColor: MaterialStateProperty.resolveWith((states) {
+        /// Disabled and selected
+        if (states.contains(MaterialState.disabled) &&
+            states.contains(MaterialState.selected)) {
+          return grey300;
+        }
+
+        /// Enabled and selected
+        else if (states.contains(MaterialState.selected)) {
+          return positive200;
+        }
+
+        /// Disabled and not selected
+        else if (states.contains(MaterialState.disabled)) {
+          return grey300;
+        }
+
+        /// Enabled and not selected (default color)
+        else {
+          return grey200;
+        }
+      }),
+      overlayColor: MaterialStateProperty.all(Colors.grey.withOpacity(0.4)),
+      thumbColor: MaterialStateProperty.resolveWith((states) {
+        /// Disabled and selected
+        if (states.contains(MaterialState.disabled) &&
+            states.contains(MaterialState.selected)) {
+          return darkColorScheme.onSurface.withOpacity(_disabledOpacity);
+        }
+
+        /// Enabled and selected
+        else if (states.contains(MaterialState.selected)) {
+          return white100;
+        }
+
+        /// Disabled and not selected
+        else if (states.contains(MaterialState.disabled)) {
+          return darkColorScheme.onSecondary.withOpacity(_disabledOpacity);
+        }
+
+        /// Enabled and not selected (default color)
+        else {
+          return darkColorScheme.onSecondary;
+        }
+      }),
+    ),
     snackBarTheme: SnackBarThemeData(
       actionTextColor: lightColorScheme.primary,
       elevation: 4,
@@ -228,12 +267,52 @@ class OdsTheme {
     radioTheme:
         const RadioThemeData(fillColor: DarkControlRadioButtonsFillColor()),
     switchTheme: SwitchThemeData(
-        thumbColor: const DarkControlSwitchFillColor(),
-        trackColor: MaterialStateColor.resolveWith((states) {
-          return const DarkControlSwitchFillColor()
-              .resolve(states)
-              .withOpacity(_switchTrackOpacity);
-        })),
+      trackColor: MaterialStateProperty.resolveWith((states) {
+        /// Disabled and selected
+        if (states.contains(MaterialState.disabled) &&
+            states.contains(MaterialState.selected)) {
+          return grey800;
+        }
+
+        /// Enabled and selected
+        else if (states.contains(MaterialState.selected)) {
+          return positive100;
+        }
+
+        /// Disabled and not selected
+        else if (states.contains(MaterialState.disabled)) {
+          return grey900;
+        }
+
+        /// Enabled and not selected (default color)
+        else {
+          return grey600;
+        }
+      }),
+      overlayColor: MaterialStateProperty.all(Colors.grey.withOpacity(0.4)),
+      thumbColor: MaterialStateProperty.resolveWith((states) {
+        /// Disabled and selected
+        if (states.contains(MaterialState.disabled) &&
+            states.contains(MaterialState.selected)) {
+          return darkColorScheme.onSurface.withOpacity(_disabledOpacity);
+        }
+
+        /// Enabled and selected
+        else if (states.contains(MaterialState.selected)) {
+          return white100;
+        }
+
+        /// Disabled and not selected
+        else if (states.contains(MaterialState.disabled)) {
+          return darkColorScheme.onSecondary.withOpacity(_disabledOpacity);
+        }
+
+        /// Enabled and not selected (default color)
+        else {
+          return darkColorScheme.onSecondary;
+        }
+      }),
+    ),
     snackBarTheme: SnackBarThemeData(
       actionTextColor: darkColorScheme.primary,
       elevation: 4,
@@ -405,39 +484,5 @@ class DarkControlCheckboxFillColor extends MaterialStateColor {
     else {
       return darkColorScheme.onSecondary;
     }
-  }
-}
-
-/// Light theme fill color used by selection controls: Swicth
-class LightControlSwitchFillColor extends MaterialStateColor {
-  const LightControlSwitchFillColor() : super(_defaultColor);
-
-  static const int _defaultColor = 0xff000000;
-
-  @override
-  Color resolve(Set states) {
-    if (states.contains(MaterialState.disabled)) {
-      return lightColorScheme.onSurface.withOpacity(_disabledOpacity);
-    } else if (states.contains(MaterialState.selected)) {
-      return lightColorScheme.primary;
-    }
-    return grey600;
-  }
-}
-
-/// Dark theme fill color used by selection controls: Switch
-class DarkControlSwitchFillColor extends MaterialStateColor {
-  const DarkControlSwitchFillColor() : super(_defaultColor);
-
-  static const int _defaultColor = 0xffffffff;
-
-  @override
-  Color resolve(Set states) {
-    if (states.contains(MaterialState.disabled)) {
-      return darkColorScheme.onSurface.withOpacity(_disabledOpacity);
-    } else if (states.contains(MaterialState.selected)) {
-      return darkColorScheme.primary;
-    }
-    return grey400;
   }
 }

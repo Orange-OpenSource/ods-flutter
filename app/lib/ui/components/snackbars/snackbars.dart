@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -129,32 +130,32 @@ class _CustomizationContent extends StatelessWidget {
         ComponentSnackbarsCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-          value: customizationState?.hasActionButton ?? true,
-          title: Text(
-              AppLocalizations.of(context)!.componentSnackBarsCustomizeAction),
-          onChanged: customizationState!.isActionButtonEnabled
+        OdsListSwitch(
+          title:
+              AppLocalizations.of(context)!.componentSnackBarsCustomizeAction,
+          checked: customizationState?.hasActionButton ?? true,
+          onCheckedChange: customizationState!.isActionButtonEnabled
               ? (bool value) {
                   customizationState.hasLongerAction = false;
                   customizationState.hasActionButton = value;
                 }
               : null,
         ),
-        SwitchListTile(
-          value: customizationState.hasTwoLines,
-          title: Text(AppLocalizations.of(context)!
-              .componentSnackBarsTwoLineCustomizeText),
-          onChanged: customizationState.hasLongerAction == false
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentSnackBarsTwoLineCustomizeText,
+          checked: customizationState.hasTwoLines,
+          onCheckedChange: customizationState.hasLongerAction == false
               ? (bool value) {
                   customizationState.hasTwoLines = value;
                 }
               : null,
         ),
-        SwitchListTile(
-          value: customizationState.hasLongerAction,
-          title: Text(AppLocalizations.of(context)!
-              .componentSnackbarsTwoLineLongerActionButton),
-          onChanged: customizationState.hasActionButton
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!
+              .componentSnackbarsTwoLineLongerActionButton,
+          checked: customizationState.hasLongerAction,
+          onCheckedChange: customizationState.hasActionButton
               ? (bool value) {
                   customizationState.hasTwoLines = false;
                   customizationState.hasLongerAction = value;

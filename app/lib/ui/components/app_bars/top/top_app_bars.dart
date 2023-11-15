@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customization.dart';
@@ -94,11 +95,11 @@ class _CustomizationContent extends StatelessWidget {
         ComponentTopAppBarsCustomization.of(context);
     return Column(
       children: [
-        SwitchListTile(
-            value: customizationState?.navigationIcon ?? true,
-            title: Text(AppLocalizations.of(context)!
-                .componentAppTopBarsNavigationIcon),
-            onChanged: (bool value) {
+        OdsListSwitch(
+            title:
+                AppLocalizations.of(context)!.componentAppTopBarsNavigationIcon,
+            checked: customizationState?.navigationIcon ?? true,
+            onCheckedChange: (bool value) {
               customizationState?.navigationIcon = value;
             }),
         ComponentCountRow(
