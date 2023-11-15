@@ -66,6 +66,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for checkbox ([#235](https://github.com/Orange-OpenSource/ods-flutter/issues/235))
 - Align component name and parameters for Radio Buttons ([#282](https://github.com/Orange-OpenSource/ods-flutter/issues/282))
 - Design Update for radio buttons ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/281))
+- Align component name and parameters for Switch ([#284](https://github.com/Orange-OpenSource/ods-flutter/issues/284))
+- Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
 
 ### Removed
 
