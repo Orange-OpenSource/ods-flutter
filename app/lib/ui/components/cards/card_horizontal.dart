@@ -6,7 +6,7 @@ import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_horizontal_card.dart';
-import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -154,12 +154,12 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 bool isSelected = selectedIndex == index;
                 return Padding(
                   padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                  child: OdsFilterChips(
-                    label: customizationState?.elements[index]
+                  child: OdsChoiceChip(
+                    text: customizationState?.elements[index]
                             .stringValue(context) ??
                         '',
-                    isSelected: isSelected,
-                    onSelected: (selected) {
+                    selected: isSelected,
+                    onClick: (selected) {
                       setState(() {
                         selectedIndex = index;
                         isFiltered = selected!;

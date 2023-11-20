@@ -136,12 +136,11 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   bool isSelected = selectedIndex == index;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                    child: OdsFilterChips(
-                      label: customizationState?.elements[index]
+                    child: OdsFilterChip(
+                      text: customizationState?.elements[index]
                               .stringValue(context) ??
                           '',
-                      isSelected: isSelected,
-                      onSelected: (selected) {
+                      onClick: (selected) {
                         setState(() {
                           selectedIndex = index;
                           isFiltered = selected!;
@@ -149,6 +148,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                               customizationState.elements[index];
                         });
                       },
+                      selected: isSelected,
                     ),
                   );
                 }),

@@ -77,11 +77,9 @@ class _BodyState extends State<_Body> {
                 bool isSelected =
                     currentElement == customizationState.selectedElement;
 
-                return OdsFilterChips(
-                  label:
-                      customizationState.elements[index].stringValue(context),
-                  isSelected: isSelected,
-                  onSelected: (selected) {
+                return OdsFilterChip(
+                  text: customizationState.elements[index].stringValue(context),
+                  onClick: (selected) {
                     setState(
                       () {
                         selectedIndex = index;
@@ -91,6 +89,7 @@ class _BodyState extends State<_Body> {
                       },
                     );
                   },
+                  selected: isSelected,
                 );
               },
             ).toList(),

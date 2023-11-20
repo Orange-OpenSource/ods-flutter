@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
-import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -120,11 +120,11 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       currentElement == customizationState.selectedStyle;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                    child: OdsFilterChips(
-                      label:
+                    child: OdsChoiceChip(
+                      text:
                           customizationState.style[index].stringValue(context),
-                      isSelected: isSelected,
-                      onSelected: (selected) {
+                      selected: isSelected,
+                      onClick: (selected) {
                         setState(
                           () {
                             customizationState.selectedStyle =
