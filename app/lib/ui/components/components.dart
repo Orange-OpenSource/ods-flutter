@@ -9,6 +9,7 @@ import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
+import 'package:ods_flutter_demo/ui/components/chips/chips_choice.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_filter.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
@@ -124,22 +125,26 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentChipsTitle,
+      AppLocalizations.of(context)!.componentChips,
       'assets/il_chips.png',
       AppLocalizations.of(context)!.componentChipsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.chipsVariantActionTitle,
-            AppLocalizations.of(context)!.chipsVariantActionSubtitle,
+            AppLocalizations.of(context)!.componentChipAction,
+            AppLocalizations.of(context)!.componentChipActionSubtitle,
             ComponentChipsAction()),
         Variant(
-            AppLocalizations.of(context)!.chipsVariantFilterTitle,
-            AppLocalizations.of(context)!.chipsVariantFilterSubtitle,
+            AppLocalizations.of(context)!.componentChipFilter,
+            AppLocalizations.of(context)!.componentChipFilterSubtitle,
             ComponentChipsFilter()),
         Variant(
-            AppLocalizations.of(context)!.chipsVariantInputTitle,
-            AppLocalizations.of(context)!.chipsVariantInputSubtitle,
+            AppLocalizations.of(context)!.componentChipInput,
+            AppLocalizations.of(context)!.componentChipInputSubtitle,
             ComponentChipsInput()),
+        Variant(
+            AppLocalizations.of(context)!.componentChipChoice,
+            AppLocalizations.of(context)!.componentChipChoiceSubtitle,
+            ComponentChipsChoice()),
       ],
     ),
     Component(
