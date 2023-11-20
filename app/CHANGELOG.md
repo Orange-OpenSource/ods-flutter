@@ -37,6 +37,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: ODS - component - Lists - standard lists ([#264](https://github.com/Orange-OpenSource/ods-flutter/issues/264))
 - [Bug]: dialog top padding update ([#248](https://github.com/Orange-OpenSource/ods-flutter/issues/248))
 - [Bug]: button padding update ([#247](https://github.com/Orange-OpenSource/ods-flutter/issues/247))
+- [Bug]: ODS - component - Chips: Input - disabled state outline ([#254](https://github.com/Orange-OpenSource/ods-flutter/issues/254))
+- [Bug]: ODS - Components - Chips - Filter chips ([#274](https://github.com/Orange-OpenSource/ods-flutter/issues/274))
+- [feature]: ODS - Component - Chips - Filter chips - shape ([#275](https://github.com/Orange-OpenSource/ods-flutter/issues/275))
 
 ### Changed
 
@@ -68,6 +71,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for radio buttons ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/281))
 - Align component name and parameters for Switch ([#284](https://github.com/Orange-OpenSource/ods-flutter/issues/284))
 - Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
+- Align component name and parameters for Chips ([#287](https://github.com/Orange-OpenSource/ods-flutter/issues/287))
+- Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
+- Filter Chip Design Update ([#205](https://github.com/Orange-OpenSource/ods-flutter/issues/205))
+- Other Material Component Page Updates ([#202](https://github.com/Orange-OpenSource/ods-flutter/issues/202))
 
 ### Removed
 
