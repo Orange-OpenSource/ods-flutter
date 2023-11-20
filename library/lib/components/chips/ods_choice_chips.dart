@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-/// ODS Design Chips.
+import 'ods_chip_common.dart';
+
+/// ODS Design Choice Chips.
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsFilterChip extends StatefulWidget {
-  /// Creates an ODS Fliter Chip.
+class OdsChoiceChip extends StatefulWidget {
+  /// Creates an ODS Choice Chip.
   ///
   /// * [text] - Text to be displayed into the chip
   /// * [onClick] - Callback called on chip click.
@@ -13,7 +15,7 @@ class OdsFilterChip extends StatefulWidget {
   /// * [leadingAvatar] - Widget of the icon.
   /// * [selected] - Specifies whether the chips is selected or not.
   ///
-  const OdsFilterChip({
+  const OdsChoiceChip({
     Key? key,
     required this.text,
     this.onClick,
@@ -26,7 +28,7 @@ class OdsFilterChip extends StatefulWidget {
   final String text;
 
   /// Callback called on chip click
-  final void Function(bool)? onClick;
+  final void Function(bool?)? onClick;
 
   /// Specifies whether the chips is selected or not.
   final bool enabled;
@@ -35,52 +37,24 @@ class OdsFilterChip extends StatefulWidget {
   final bool selected;
 
   /// The optional chip's icon.
-  final Widget? leadingAvatar;
+  final OdsChipLeadingAvatar? leadingAvatar;
 
   @override
-  State<OdsFilterChip> createState() => _OdsFilterChipState();
+  State<OdsChoiceChip> createState() => _OdsChoiceChipState();
 }
 
-class _OdsFilterChipState extends State<OdsFilterChip> {
+class _OdsChoiceChipState extends State<OdsChoiceChip> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
       label: widget.text,
-      child: FilterChip(
+      child: ChoiceChip(
         label: Text(widget.text),
         onSelected: widget.enabled != false ? widget.onClick : null,
         selected: widget.selected,
         avatar: widget.leadingAvatar,
       ),
     );
-
-    /*
-    return Semantics(
-      button: true,
-      label: widget.label,
-      child: ChipTheme(
-        data: ChipThemeData(
-          iconTheme: const IconThemeData(color: black900),
-          checkmarkColor: black900,
-          selectedColor: orange200,
-          deleteIconColor: black900,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          labelStyle: const TextStyle(
-            color: ChipLabelColor(),
-          ),
-        ),
-        child: FilterChip(
-          label: Text(widget.label),
-          avatar: widget.avatar,
-          selected: widget.isSelected,
-          onSelected: widget.onSelected,
-        ),
-      ),
-    );
-
-     */
   }
 }

@@ -9,6 +9,7 @@ import 'ods_color_scheme.dart';
 const double _disabledOpacity = 0.38;
 
 const double odsCardRadius = 5.0;
+const double odsChipRadius = 20.0;
 
 class OdsTheme {
   OdsTheme._();
@@ -130,10 +131,14 @@ class OdsTheme {
       elevation: 4,
       behavior: SnackBarBehavior.floating,
     ),
-    chipTheme: const ChipThemeData(
-      iconTheme: IconThemeData(color: black900),
+    chipTheme: ChipThemeData(
+      iconTheme: const IconThemeData(color: black900),
+      checkmarkColor: black900,
       selectedColor: orange200,
       deleteIconColor: black900,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(odsChipRadius),
+      ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: lightColorScheme.onPrimary,
@@ -318,10 +323,17 @@ class OdsTheme {
       elevation: 4,
       behavior: SnackBarBehavior.floating,
     ),
-    chipTheme: const ChipThemeData(
-      iconTheme: IconThemeData(color: white100),
-      selectedColor: orange100,
-      deleteIconColor: white100,
+    chipTheme: ChipThemeData(
+      iconTheme: const IconThemeData(color: black900),
+      checkmarkColor: darkColorScheme.onSecondary,
+      selectedColor: orange200,
+      deleteIconColor: darkColorScheme.secondary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(odsChipRadius),
+      ),
+      labelStyle: const TextStyle(
+        color: DarkChipLabelColor(),
+      ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: darkColorScheme.onPrimary,
@@ -484,5 +496,20 @@ class DarkControlCheckboxFillColor extends MaterialStateColor {
     else {
       return darkColorScheme.onSecondary;
     }
+  }
+}
+
+/// Dark theme fill color used by selection controls: Chip
+class DarkChipLabelColor extends Color implements MaterialStateColor {
+  const DarkChipLabelColor() : super(_default);
+
+  static const int _default = 0xFF000000;
+
+  @override
+  Color resolve(Set<MaterialState> states) {
+    if (states.contains(MaterialState.selected)) {
+      return darkColorScheme.onSecondary; // Selected text color
+    }
+    return darkColorScheme.secondary; // normal text color
   }
 }

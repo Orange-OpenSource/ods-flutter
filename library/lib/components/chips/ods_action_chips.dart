@@ -4,42 +4,46 @@ import 'package:flutter/material.dart';
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsActionChips extends StatefulWidget {
+class OdsActionChip extends StatefulWidget {
   /// Creates an ODS Action Chips.
   ///
-  /// * [label] - Text displayed in the chip.
+  /// * [text] - Text displayed in the chip.
   /// * [avatar] - Widget of the icon.
-  /// * [onPressed] - The action to be executed when the chips is pressed.
-  const OdsActionChips({
+  /// * [onClick] - The action to be executed when the chips is pressed.
+  const OdsActionChip({
     Key? key,
-    required this.label,
-    this.avatar,
-    this.onPressed,
+    required this.text,
+    this.leadingIcon,
+    this.onClick,
+    this.enabled = true,
   }) : super(key: key);
 
   /// The app bar title displayed.
-  final String label;
-
-  /// The optional chip's icon.
-  final Widget? avatar;
+  final String text;
 
   /// The action to be executed when the button is pressed.
-  final void Function()? onPressed;
+  final void Function()? onClick;
+
+  /// The optional chip's icon.
+  final Widget? leadingIcon;
+
+  /// Specifies whether the chips is selected or not.
+  final bool? enabled;
 
   @override
-  State<OdsActionChips> createState() => _OdsActionChipsState();
+  State<OdsActionChip> createState() => _OdsActionChipState();
 }
 
-class _OdsActionChipsState extends State<OdsActionChips> {
+class _OdsActionChipState extends State<OdsActionChip> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.label,
+      label: widget.text,
       child: ActionChip(
-        label: Text(widget.label),
-        avatar: widget.avatar,
-        onPressed: widget.onPressed,
+        label: Text(widget.text),
+        avatar: widget.leadingIcon,
+        onPressed: widget.enabled != false ? widget.onClick : null,
       ),
     );
   }
