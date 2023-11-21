@@ -33,7 +33,7 @@ class _ComponentChipsActionState extends State<ComponentChipsAction> {
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBars(
-            title: AppLocalizations.of(context)!.chipsVariantActionTitle,
+            title: AppLocalizations.of(context)!.componentChipAction,
             actions: [ThemeSelector()],
             leading: BackButton()),
         body: SafeArea(child: _Body()),
@@ -55,14 +55,15 @@ class _Body extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.chipsVariantActionDescription,
+          Text(AppLocalizations.of(context)!.componentChipActionDescription,
               style: Theme.of(context).textTheme.bodyMedium),
           SizedBox(height: spacingM),
-          OdsActionChips(
-            label: OdsApplication.recipes[0].title,
-            avatar: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
+          OdsActionChip(
+            text: OdsApplication.recipes[0].title,
+            leadingIcon: SvgPicture.asset("assets/recipes/ic_cooking_pot.svg",
                 colorFilter: colorFilter),
-            onPressed: customizationState?.hasEnabled == true ? () {} : null,
+            onClick: () {},
+            enabled: customizationState?.hasEnabled == false ? false : true,
           ),
         ],
       ),

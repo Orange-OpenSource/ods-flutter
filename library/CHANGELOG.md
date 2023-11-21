@@ -45,6 +45,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for radio buttons ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/281))
 - Align component name and parameters for Switch ([#284](https://github.com/Orange-OpenSource/ods-flutter/issues/284))
 - Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
+- Align component name and parameters for Chips ([#287](https://github.com/Orange-OpenSource/ods-flutter/issues/287))
+- Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
 
 ### Removed
 

@@ -409,91 +409,27 @@
   },
 
   "@_COMPONENTS_CHIPS": {},
-  "componentChipsTitle": "Chips",
-  "@componentChipsTitle": {
-    "description": "Component Chips - Title",
-    "type": "text"
-  },
+  "componentChips": "Chips",
   "componentChipsDescription": "Chips are small components containing a number of elements that represent a calendar event or contact.",
-  "@componentChipsDescription": {
-    "description": "Component Chips - Description",
-    "type": "text"
-  },
   "componentChipsLeading": "Leading element",
-  "@componentChipsLeading": {
-    "description": "Component Chips - Leading element icon customization",
-    "type": "text"
-  },
   "componentChipsEnabled": "Enabled",
-  "@componentChipsEnabled": {
-    "description": "Component Chips - Enabled customization",
-    "type": "text"
-  },
 
   "@_CHIPS_VARIANT": {},
-  "chipsVariantActionTitle": "Action chips",
-  "@chipsVariantActionTitle": {
-    "description": "Chips Variant action - Title",
-    "type": "text"
-  },
-  "chipsVariantActionSubtitle": "OdsActionChips",
-  "@chipsVariantActionSubtitle": {
-    "description": "Chips Variant action - Subtitle",
-    "type": "text"
-  },
-  "chipsVariantActionDescription": "The user can initiate actions by tapping on a chip.",
-  "@chipsVariantActionDescription": {
-    "description": "Chips Variant action - Description",
-    "type": "text"
-  },
-
-  "chipsVariantFilterTitle": "Filter chips",
-  "@chipsVariantFilterTitle": {
-    "description": "Chips Variant action - Title",
-    "type": "text"
-  },
-  "chipsVariantFilterSubtitle": "OdsFilterChips",
-  "@chipsVariantFilterSubtitle": {
-    "description": "Chips Variant Filter - Subtitle",
-    "type": "text"
-  },
-  "chipsVariantFilterDescription": "The chips allow the user to select only one item within the proposed items.",
-  "@chipsVariantFilterDescription": {
-    "description": "Chips Variant Filter - Description",
-    "type": "text"
-  },
-
-  "chipsVariantInputTitle": "Input chips",
-  "@chipsVariantInputTitle": {
-    "description": "Chips Variant Input - Title",
-    "type": "text"
-  },
-  "chipsVariantInputSubtitle": "OdsInputChips",
-  "@chipsVariantInputSubtitle": {
-    "description": "Chips Variant Input - Subtitle",
-    "type": "text"
-  },
-  "chipsVariantInputDescription": "The user input searches are transformed into chips that can be added or deleted.",
-  "@chipsVariantInputDescription": {
-    "description": "Chips Variant Input - Subtitle",
-    "type": "text"
-  },
-
-  "chipsEnumNone": "None",
-  "@chipsEnumNone": {
-    "description": "Chips None - Enum",
-    "type": "text"
-  },
-  "chipsEnumAvatar": "Avatar",
-  "@chipsEnumAvatar": {
-    "description": "Chips Avatar - Enum",
-    "type": "text"
-  },
-  "chipsEnumIcon": "Icon",
-  "@chipsEnumIcon": {
-    "description": "Chips Icon - Enum",
-    "type": "text"
-  },
+  "componentChipAction": "Action chips",
+  "componentChipActionSubtitle": "OdsActionChip",
+  "componentChipActionDescription": "The user can initiate actions by tapping on a chip.",
+  "componentChipChoice": "Choice chip",
+  "componentChipChoiceSubtitle": "OdsChoiceChip",
+  "componentChipChoiceDescription": "The chips allow the user to select only one item within the proposed items.",
+  "componentChipFilter": "Filter chips",
+  "componentChipFilterSubtitle": "OdsFilterChip",
+  "componentChipFilterDescription": "The chips allow the user to select only one item within the proposed items.",
+  "componentChipInput": "Input chips",
+  "componentChipInputSubtitle": "OdsInputChip",
+  "componentChipInputDescription": "The user input searches are transformed into chips that can be added or deleted.",
+  "componentChipEnumNone": "None",
+  "componentChipEnumAvatar": "Avatar",
+  "componentChipEnumIcon": "Icon",
 
   "@_COMPONENTS_FAB": {},
   "componentFloatingActionButtonTitle": "Buttons: FAB",

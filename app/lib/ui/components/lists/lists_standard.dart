@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
+import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
@@ -158,11 +158,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       customizationState.selectedLeadingElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                    child: OdsFilterChips(
-                      label: customizationState.leadingElements[index]
+                    child: OdsChoiceChip(
+                      text: customizationState.leadingElements[index]
                           .stringValue(context),
-                      isSelected: isSelected,
-                      onSelected: (selected) {
+                      onClick: (selected) {
                         setState(
                           () {
                             selectedLeadingIndex = index;
@@ -172,6 +171,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           },
                         );
                       },
+                      selected: isSelected,
                     ),
                   );
                 }),
@@ -203,11 +203,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       customizationState.selectedTrailingStandardElement;
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                    child: OdsFilterChips(
-                      label: customizationState.trailingStandardElements[index]
+                    child: OdsChoiceChip(
+                      text: customizationState.trailingStandardElements[index]
                           .stringValue(context),
-                      isSelected: isSelected,
-                      onSelected: (selected) {
+                      onClick: (selected) {
                         setState(
                           () {
                             selectedStandardTrailingIndex = index;
@@ -218,6 +217,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           },
                         );
                       },
+                      selected: isSelected,
                     ),
                   );
                 }),
