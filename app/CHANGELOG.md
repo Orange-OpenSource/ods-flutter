@@ -5,7 +5,37 @@ All notable changes done in Demo application of ods_flutter library will be docu
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
+## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/releases)
+
+## [0.5.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.5.0) - 2023-11-27
+
+### Added
+
+- [Bug]: ODS - component - Lists - standard lists ([#264](https://github.com/Orange-OpenSource/ods-flutter/issues/264))
+- [Bug]: dialog top padding update ([#248](https://github.com/Orange-OpenSource/ods-flutter/issues/248))
+- [Bug]: button padding update ([#247](https://github.com/Orange-OpenSource/ods-flutter/issues/247))
+- [Bug]: ODS - component - Chips: Input - disabled state outline ([#254](https://github.com/Orange-OpenSource/ods-flutter/issues/254))
+- [Bug]: ODS - Components - Chips - Filter chips ([#274](https://github.com/Orange-OpenSource/ods-flutter/issues/274))
+- [feature]: ODS - Component - Chips - Filter chips - shape ([#275](https://github.com/Orange-OpenSource/ods-flutter/issues/275))
+- Add Change log in about page ([#172](https://github.com/Orange-OpenSource/ods-flutter/issues/172))
+
+### Changed
+
+- Align component name and parameters for Checkbox ([#279](https://github.com/Orange-OpenSource/ods-flutter/issues/279))
+- Design Update for checkbox ([#235](https://github.com/Orange-OpenSource/ods-flutter/issues/235))
+- Align component name and parameters for Radio Buttons ([#282](https://github.com/Orange-OpenSource/ods-flutter/issues/282))
+- Design Update for radio buttons ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/281))
+- Align component name and parameters for Switch ([#284](https://github.com/Orange-OpenSource/ods-flutter/issues/284))
+- Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
+- Align component name and parameters for Chips ([#287](https://github.com/Orange-OpenSource/ods-flutter/issues/287))
+- Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
+- Filter Chip Design Update ([#205](https://github.com/Orange-OpenSource/ods-flutter/issues/205))
+- Other Material Component Page Updates ([#202](https://github.com/Orange-OpenSource/ods-flutter/issues/202))
+
+### Removed
+
+
+## [0.4.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.4.0) - 2023-11-02
 
 ### Added
 
