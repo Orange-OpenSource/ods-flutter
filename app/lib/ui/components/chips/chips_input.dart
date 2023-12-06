@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/chips/ods_input_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
@@ -34,10 +34,10 @@ class _ComponentChipsInputState extends State<ComponentChipsInput> {
           content: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
-        appBar: OdsAppTopBars(
+        appBar: OdsAppTopBar(
             title: AppLocalizations.of(context)!.componentChipInput,
             actions: [ThemeSelector()],
-            leading: BackButton()),
+            navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
       ),
     );

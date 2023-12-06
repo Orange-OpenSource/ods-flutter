@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/sliders/ods_slider.dart';
@@ -19,10 +19,10 @@ class ComponentSliders extends StatelessWidget {
           content: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
-        appBar: OdsAppTopBars(
+        appBar: OdsAppTopBar(
             title: AppLocalizations.of(context)!.componentSlidersTitle,
             actions: [ThemeSelector()],
-            leading: BackButton()),
+            navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
       ),
     );

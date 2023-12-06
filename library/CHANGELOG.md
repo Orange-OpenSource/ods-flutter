@@ -47,6 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
 - Align component name and parameters for Chips ([#287](https://github.com/Orange-OpenSource/ods-flutter/issues/287))
 - Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
+- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
+- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
 
 ### Removed
 

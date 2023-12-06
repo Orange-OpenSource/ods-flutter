@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
+import 'package:ods_flutter/components/app_bar/top/ods_large_top_app_bar.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter_demo/main.dart';
@@ -8,13 +8,14 @@ import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customi
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class ComponentTopAppBars extends StatefulWidget {
-  const ComponentTopAppBars({super.key});
+class ComponentTopAppBarLarge extends StatefulWidget {
+  const ComponentTopAppBarLarge({super.key});
   @override
-  State<ComponentTopAppBars> createState() => _ComponentTopAppBarsState();
+  State<ComponentTopAppBarLarge> createState() =>
+      _ComponentTopAppBarLargeState();
 }
 
-class _ComponentTopAppBarsState extends State<ComponentTopAppBars> {
+class _ComponentTopAppBarLargeState extends State<ComponentTopAppBarLarge> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -65,24 +66,19 @@ class _Body extends StatelessWidget {
       ),
     ];
 
-    return Semantics(
-      child: Scaffold(
-        appBar: OdsAppTopBar(
-          title: AppLocalizations.of(context)!.componentAppBarsTopRegular,
-          actions: actions.sublist(0, customizationState?.numberOfItems),
-          navigationIcon:
-              customizationState?.navigationIcon == true ? BackButton() : null,
-        ),
-        body: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            final itemNumber = index.toString();
+    return OdsLargeTopAppBar(
+      title: AppLocalizations.of(context)!.componentAppBarsTopLarge,
+      actions: actions.sublist(0, customizationState?.numberOfItems),
+      navigationIcon:
+          customizationState?.navigationIcon == true ? BackButton() : null,
+      scrollBehavior: SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (BuildContext context, int index) {
             return ListTile(
-              title: Text(
-                'Item #$itemNumber',
-              ),
+              title: Text('List item $index'),
             );
           },
+          childCount: 20,
         ),
       ),
     );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
-  const OdsAppTopBars({
+class OdsAppTopBar extends StatelessWidget implements PreferredSizeWidget {
+  const OdsAppTopBar({
     super.key,
     required this.title,
     this.actions,
-    this.leading,
+    this.navigationIcon,
   });
 
   /// The app bar title displayed.
@@ -14,8 +14,8 @@ class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
   /// The optional list of actions displayed on the app bar.
   final List<Widget>? actions;
 
-  /// The optional list of actions displayed on the app bar.
-  final Widget? leading;
+  /// Icon to be displayed at the start of the top app bar
+  final Widget? navigationIcon;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -25,7 +25,9 @@ class OdsAppTopBars extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(title),
       actions: actions,
-      leading: leading ?? Container(),
+      leading: navigationIcon,
+      automaticallyImplyLeading: navigationIcon != null ? true : false,
+      //centerTitle: true,
     );
   }
 }

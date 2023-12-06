@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:markdown/markdown.dart' as md;
-import 'package:ods_flutter/components/app_bar/top/ods_top_app_bars.dart';
+import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class OdsAboutFileScreen extends StatelessWidget {
@@ -22,9 +22,9 @@ class OdsAboutFileScreen extends StatelessWidget {
     const verticalPadding = 13.0;
 
     return Scaffold(
-      appBar: OdsAppTopBars(
+      appBar: OdsAppTopBar(
         title: AppLocalizations.of(context)!.aboutMenuChangelog,
-        leading: BackButton(),
+        navigationIcon: BackButton(),
       ),
       body: SafeArea(
         child: FutureBuilder(

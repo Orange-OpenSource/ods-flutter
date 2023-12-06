@@ -370,43 +370,17 @@
     "type": "text"
   },
   "@_COMPONENTS_APP_TOP_BARS": {},
-  "componentAppTopBarsTitle": "App Top Bar",
-  "@componentAppTopBarsTitle": {
-    "description": "Component App Bar - Title",
-    "type": "text"
-  },
-  "componentAppTopBarsDescription": "A navigation bar appears at the top of an app screen, bellow the status bar, and enables navigation through a series of hierarchical screens",
-  "@componentAppTopBarsDescription": {
-    "description": "Component App Top Bars - Description",
-    "type": "text"
-  },
+  "componentAppBarsTop": "App bars: top",
+  "componentAppBarsTopDescription": "The app bar is a key component and organizes titling, navigation and action buttons.",
   "componentAppTopBarsNavigationIcon": "Navigation icon",
-  "@componentAppTopBarsNavigationIcon": {
-    "description": "Component AppTopBars - Navigation icon customization",
-    "type": "text"
-  },
   "componentAppTopBarsActionCount": "Action Count",
-  "@componentAppTopBarsActionCount": {
-    "description": "Component AppTopBars - Action count customization",
-    "type": "text"
-  },
 
   "@_APP_TOP_BARS_VARIANT": {},
-  "appTopBarsVariantTitle": "App top bar - demo",
-  "@appTopBarsVariantTitle": {
-    "description": "App Top Bars Variant - Title",
-    "type": "text"
-  },
-  "appTopBarsVariantSubtitle": "OdsAppTopBars",
-  "@appTopBarsVariantSubtitle": {
-    "description": "App Top Bars Variant - Subtitle",
-    "type": "text"
-  },
-  "appTopBarsCustomizationCount": "Action count",
-  "@appTopBarsCustomizationCount": {
-    "description": "Component customization element - Number of items count",
-    "type": "text"
-  },
+  "componentAppBarsTopRegular": "Regular",
+  "componentAppTopBarsRegularSubtitle": "OdsTopAppBar",
+  "componentAppBarsTopLarge": "Large",
+  "componentAppBarsTopLargeSubtitle": "OdsLargeTopAppBar",
+  "componentAppBarsTopActionsCount": "Action count",
 
   "@_COMPONENTS_CHIPS": {},
   "componentChips": "Chips",
