@@ -19,7 +19,7 @@ void main() {
     await tester.tap(find.text('Components').last);
     await tester.pump();
 
-    expect(find.text('App Top Bar'), findsOneWidget);
+    expect(find.text('App bars: top'), findsOneWidget);
     expect(find.text('Bar: Navigation'), findsOneWidget);
     expect(find.text('Buttons'), findsOneWidget);
     expect(find.text('Buttons: FAB'), findsOneWidget);
