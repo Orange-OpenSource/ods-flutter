@@ -14,6 +14,8 @@ toc2:
 
   - title: Components
     subfolderitems:
+      - page: App bars - top
+        url: components/appBarsTop_docs
       - page: Bars - navigation
         url: components/navigationBar_docs
       - page: Buttons

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bar_large.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_contained.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_outlined.dart';
@@ -33,14 +34,20 @@ import 'package:ods_flutter_demo/ui/components/switches/switches.dart';
 List<Component> components(BuildContext context) {
   return [
     Component(
-      AppLocalizations.of(context)!.componentAppTopBarsTitle,
+      AppLocalizations.of(context)!.componentAppBarsTop,
       'assets/il_app_bars_top_generic.svg',
-      AppLocalizations.of(context)!.componentAppTopBarsDescription,
+      AppLocalizations.of(context)!.componentAppBarsTopDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.appTopBarsVariantTitle,
-            AppLocalizations.of(context)!.appTopBarsVariantSubtitle,
-            ComponentTopAppBars()),
+          AppLocalizations.of(context)!.componentAppBarsTopRegular,
+          AppLocalizations.of(context)!.componentAppTopBarsRegularSubtitle,
+          ComponentTopAppBars(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.componentAppBarsTopLarge,
+          AppLocalizations.of(context)!.componentAppBarsTopLargeSubtitle,
+          ComponentTopAppBarLarge(),
+        ),
       ],
     ),
     Component(

@@ -27,7 +27,16 @@ class ComponentDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(spacingM),
                 child: Text(
                   component.description,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  //style: Theme.of(context).textTheme.bodyLarge,
+                  style: TextStyle(
+                      debugLabel: 'Body L',
+                      fontFamily: 'Roboto',
+                      //fontFamily: '.AppleSystemUIFont',
+                      //fontFamily: 'CupertinoSystemDisplay',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      height: 1.5,
+                      letterSpacing: 0.5),
                 ),
               ),
               ListView.builder(

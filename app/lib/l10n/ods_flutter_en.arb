@@ -1,99 +1,33 @@
 {
   "appTitle": "Orange Design System Flutter App",
-  "@appTitle": {
-    "description": "App name",
-    "type": "text"
-  },
 
   "@_THEME_SELECTOR": {},
   "themeSelectorSwitchDarkMode": "Switch to Dark Mode",
-  "@themeSelectorSwitchDarkMode": {
-    "description": "Accessibility Dark mode",
-    "type": "text"
-  },
   "themeSelectorSwitchLightMode": "Switch to Light Mode",
-  "@themeSelectorSwitchLightMode": {
-    "description": "Accessibility Light mode",
-    "type": "text"
-  },
 
   "@_BOTTOM_NAVIGATION": {},
   "bottomNavigationGuideline": "Guidelines",
-  "@bottomNavigationGuideline": {
-    "description": "Bottom Navigation bar item - Guidelines",
-    "type": "text"
-  },
   "bottomNavigationComponents": "Components",
-  "@bottomNavigationComponents": {
-    "description": "Bottom Navigation bar item - Penalties",
-    "type": "text"
-  },
   "bottomNavigationModules": "Modules",
-  "@bottomNavigationModules": {
-    "description": "Bottom Navigation bar item - Modules",
-    "type": "text"
-  },
   "bottomNavigationAbout": "About",
-  "@bottomNavigationAbout": {
-    "description": "Bottom Navigation bar item - About",
-    "type": "text"
-  },
+
   "@_GUIDELINES_SCREEN": {},
   "guidelinesColours": "Colours",
-  "@guidelinesColours": {
-    "description": "Guidelines colour screen title",
-    "type": "text"
-  },
   "guidelinesColoursDescription": "Coming soon...",
-  "@guidelinesColoursDescription": {
-    "description": "Guidelines colour screen - Explanation text",
-    "type": "text"
-  },
   "guidelinesTypography": "Typography",
-  "@guidelinesTypography": {
-    "description": "Guidelines typography screen title",
-    "type": "text"
-  },
   "guidelinesTypographyDescription": "TODO You should use Roboto in your app, which is the Android system font...",
-  "@guidelinesTypographyDescription": {
-    "description": "Guidelines typography screen - Explanation text",
-    "type": "text"
-  },
   "guidelinesSpacings": "Spacing",
-  "@guidelinesSpacings": {
-    "description": "Guidelines spacing screen title",
-    "type": "text"
-  },
   "guidelinesSpacingsDescription": "Spacing tokens are used to position elements on the screen and layout within components. Spacing tokens can be applied ad padding and margins",
-  "@guidelinesSpacingsDescription": {
-    "description": "Guidelines spacing screen - Explanation text",
-    "type": "text"
-  },
-
 
   "@_COMPONENTS_SCREEN": {},
   "componentScreenTitle": "ODS Components",
-  "@componentScreenTitle": {
-    "description": "Components Screen - Title",
-    "type": "text"
-  },
+
   "@_COMPONENTS_ELEMENTS": {},
   "componentElementButton1": "Button 1",
-  "@componentElementButton1": {
-    "description": "Text of button 1 element in components",
-    "type": "text"
-  },
   "componentElementButton2": "Button 2",
-  "@componentElementButton2": {
-    "description": "Text of button 2 element in components",
-    "type": "text"
-  },
+
   "@_COMPONENTS_CUSTOMIZATION": {},
   "componentCustomizeTitle": "Customize",
-  "@componentCustomizeTitle": {
-    "description": "Component customization bottom sheet - Title",
-    "type": "text"
-  },
   "componentElementSubtitle": "Subtitle",
   "componentElementText": "Text",
   "componentElementDivider": "Divider",
@@ -161,252 +95,68 @@
 
   "@_COMPONENTS_SWITCHES": {},
   "componentSwitchesTitle": "Switches",
-  "@componentSwitchesTitle": {
-    "description": "Component Switches - Title",
-    "type": "text"
-  },
   "componentSwitchesDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear",
-  "@componentSwitchesDescription": {
-    "description": "Component Switches - Description",
-    "type": "text"
-  },
+
   "@_SWITCHES_VARIANT": {},
   "switchesVariantTitle": "Switches",
-  "@switchesVariantTitle": {
-    "description": "Switches Variant - Title",
-    "type": "text"
-  },
   "switchesVariantSubtitle": "OdsSwitch",
-  "@switchesVariantSubtitle": {
-    "description": "Switches Variant - Subtitle",
-    "type": "text"
-  },
   "switchesVariantTitleInformation": "Use SwitchListTitle or Switch",
-  "@switchesVariantTitleInformation": {
-    "description": "Switches Variant - Information",
-    "type": "text"
-  },
 
   "@_COMPONENTS_BUTTONS": {},
   "componentButtonsTitle": "Buttons",
-  "@componentButtonsTitle": {
-    "description": "Component Buttons - Title",
-    "type": "text"
-  },
   "componentButtonsDescription": "A button allows a user to perform an action or to navigate to another page. It contains a text label and supporting icon can be displayed",
-  "@componentButtonsDescription": {
-    "description": "Component Buttons - Description",
-    "type": "text"
-  },
   "componentCustomizeIcon": "Icon",
-  "@componentCustomizeIcon": {
-    "description": "Component customization element - Icon",
-    "type": "text"
-  },
   "componentButtonsExampleTitle": "BUTTON",
-  "@componentButtonsExampleTitle": {
-    "description": "Component Buttons example - Title",
-    "type": "text"
-  },
   "componentCustomizeFullScreen": "Full screen width",
-  "@componentCustomizeFullScreen": {
-    "description": "Component customization element - Full screen width",
-    "type": "text"
-  },
   "componentCustomizeEnable": "Enable",
-  "@componentCustomizeEnable": {
-    "description": "Component customization element - Enable",
-    "type": "text"
-  },
 
   "@_BUTTONS_VARIANT": {},
   "buttonsHighEmphasisVariantTitle": "High emphasis buttons",
-  "@buttonsHighEmphasisVariantTitle": {
-    "description": "Component - Buttons High Emphasis - Title",
-    "type": "text"
-  },
   "buttonsHighEmphasisVariantSubtitle": "OdsButton with Primary",
-  "@buttonsHighEmphasisVariantSubtitle": {
-    "description": "Component - Buttons High Emphasis - Technical subtitle",
-    "type": "text"
-  },
   "buttonsMediumEmphasisVariantTitle": "Medium emphasis buttons",
-  "@buttonsMediumEmphasisVariantTitle": {
-    "description": "Component - Buttons Medium Emphasis - Title",
-    "type": "text"
-  },
   "buttonsMediumEmphasisVariantSubtitle": "OdsButton with Default",
-  "@buttonsMediumEmphasisVariantSubtitle": {
-    "description": "Component - Buttons Medium Emphasis - Technical subtitle",
-    "type": "text"
-  },
   "buttonsLowEmphasisVariantTitle": "Low emphasis buttons",
-  "@buttonsLowEmphasisVariantTitle": {
-    "description": "Component - Buttons Low Emphasis - Title",
-    "type": "text"
-  },
   "buttonsLowEmphasisVariantSubtitle": "OdsOutlinedButton",
-  "@buttonsLowEmphasisVariantSubtitle": {
-    "description": "Component - Buttons Low Emphasis - Technical subtitle",
-    "type": "text"
-  },
   "buttonsLowestEmphasisVariantTitle": "Lowest emphasis buttons",
-  "@buttonsLowestEmphasisVariantTitle": {
-    "description": "Component - Buttons Lowest emphasis - Title",
-    "type": "text"
-  },
   "buttonsLowestEmphasisVariantSubtitle": "OdsTextButton",
-  "@buttonsLowestEmphasisVariantSubtitle": {
-    "description": "Component - Buttons Lowest emphasis - Technical subtitle",
-    "type": "text"
-  },
   "buttonsFunctionalVariantTitle": "Functional buttons",
-  "@buttonsFunctionalVariantTitle": {
-    "description": "Component - Buttons Functional - Title",
-    "type": "text"
-  },
   "buttonsFunctionalVariantSubtitle": "OdsButton with a functional style",
-  "@buttonsFunctionalVariantSubtitle": {
-    "description": "Component - Buttons Functional - Technical subtitle",
-    "type": "text"
-  },
   "buttonsFunctionalPositiveEnum": "Positive",
-  "@buttonsFunctionalPositiveEnum": {
-    "description": "Buttons Functional Positive - Enum",
-    "type": "text"
-  },
   "buttonsFunctionalNegativeEnum": "Negative",
-  "@buttonsFunctionalNegativeEnum": {
-    "description": "Buttons Functional Negative - Enum",
-    "type": "text"
-  },
   "buttonsFunctionalCustomizeFunctionalTitle": "Functional",
-  "@buttonsFunctionalCustomizeFunctionalTitle": {
-    "description": "Component Buttons Functional customization functional - Title",
-    "type": "text"
-  },
   "buttonsTextFunctionalPrimaryEnum": "Primary",
-  "@buttonsTextFunctionalPrimaryEnum": {
-    "description": "Buttons Text Functional Primary - Enum",
-    "type": "text"
-  },
   "buttonsTextFunctionalDefaultEnum": "Default",
-  "@buttonsTextFunctionalDefaultEnum": {
-    "description": "Buttons Text Functional Default - Enum",
-    "type": "text"
-  },
   "buttonsTextFunctionalCustomizeFunctionalTitle": "Style",
-  "@buttonsTextFunctionalCustomizeFunctionalTitle": {
-    "description": "Component Buttons Functional customization functional - Title",
-    "type": "text"
-  },
 
   "@_COMPONENTS_SNACKBARS": {},
   "componentSnackbarsTitle": "Snackbars",
-  "@componentSnackbarsTitle": {
-    "description": "Component Snackbars - Title",
-    "type": "text"
-  },
   "componentSnackbarsDescription": "There are two ways to show users short, non permanent messages giving system information or feedback about an operation.",
-  "@componentSnackbarsDescription": {
-    "description": "Component Snackbars - Description",
-    "type": "text"
-  },
   "componentSnackbarsDescriptionExampleText": "Customize the snackbar before displaying it",
-  "@componentSnackbarsDescriptionExampleText": {
-    "description": "Component Button Text Description Example - Text",
-    "type": "text"
-  },
   "componentSnackbarsDescriptionExampleButton": "Show snackbar",
-  "@componentSnackbarsDescriptionExampleButton": {
-    "description": "Component Button Text Display - Button",
-    "type": "text"
-  },
   "componentSnackbarsSingleText": "Single line snackbar",
-  "@componentSingleText": {
-    "description": "Component Snackbars Single - Text Example",
-    "type": "text"
-  },
   "componentSnackbarsTwoLineActionText": "Two lines snackbar with action",
-  "@componentSnackbarsTwoLineActionText": {
-    "description": "Component Snackbars Two Line Action - Text Example",
-    "type": "text"
-  },
   "componentSnackbarsActionExampleButtonText": "Close",
-  "@componentSnackbarsActionExampleButtonText": {
-    "description": "Component Snackbars Single/Two Line Longer Action - Button Example",
-    "type": "text"
-  },
   "componentSnackbarsTwoLineLongerActionText": "Two lines snackbar with longer action",
-  "@componentSnackbarsTwoLineLongerActionText": {
-    "description": "Component Snackbars Two Line Longer Action - Text Example",
-    "type": "text"
-  },
-    "componentSnackbarsTwoLineLongerActionButton": "Longer action",
-  "@componentSnackbarsTwoLineLongerActionButton": {
-    "description": "Component Snackbars Two Line Longer Action - Button Example",
-    "type": "text"
-  },
+  "componentSnackbarsTwoLineLongerActionButton": "Longer action",
   "componentSnackBarsCustomizeAction": "Action button",
-  "@componentSnackBarsCustomizeAction": {
-    "description": "Component customization snackbars - Action Buttons",
-    "type": "text"
-  },
   "componentSnackBarsTwoLineCustomizeText": "Two Lines",
-  "@componentSnackBarsTwoLineCustomizeText": {
-    "description": "Component customization snackbars - Text",
-    "type": "text"
-  },
 
   "@_SNACKBARS_VARIANT": {},
   "snackbarsVariantTitle": "Snackbars",
-  "@snackbarsVariantTitle": {
-    "description": "Snackbars Variant - Title",
-    "type": "text"
-  },
   "snackbarsVariantSubtitle": "OdsSnackbars",
-  "@snackbarsVariantSubtitle": {
-    "description": "Snackbars Variant - Subtitle",
-    "type": "text"
-  },
+
   "@_COMPONENTS_APP_TOP_BARS": {},
-  "componentAppTopBarsTitle": "App Top Bar",
-  "@componentAppTopBarsTitle": {
-    "description": "Component App Bar - Title",
-    "type": "text"
-  },
-  "componentAppTopBarsDescription": "A navigation bar appears at the top of an app screen, bellow the status bar, and enables navigation through a series of hierarchical screens",
-  "@componentAppTopBarsDescription": {
-    "description": "Component App Top Bars - Description",
-    "type": "text"
-  },
+  "componentAppBarsTop": "App bars: top",
+  "componentAppBarsTopDescription": "The app bar is a key component and organizes titling, navigation and action buttons.",
   "componentAppTopBarsNavigationIcon": "Navigation icon",
-  "@componentAppTopBarsNavigationIcon": {
-    "description": "Component AppTopBars - Navigation icon customization",
-    "type": "text"
-  },
   "componentAppTopBarsActionCount": "Action Count",
-  "@componentAppTopBarsActionCount": {
-    "description": "Component AppTopBars - Action count customization",
-    "type": "text"
-  },
 
   "@_APP_TOP_BARS_VARIANT": {},
-  "appTopBarsVariantTitle": "App top bar - demo",
-  "@appTopBarsVariantTitle": {
-    "description": "App Top Bars Variant - Title",
-    "type": "text"
-  },
-  "appTopBarsVariantSubtitle": "OdsAppTopBars",
-  "@appTopBarsVariantSubtitle": {
-    "description": "App Top Bars Variant - Subtitle",
-    "type": "text"
-  },
-  "appTopBarsCustomizationCount": "Action count",
-  "@appTopBarsCustomizationCount": {
-    "description": "Component customization element - Number of items count",
-    "type": "text"
-  },
+  "componentAppBarsTopRegular": "Regular",
+  "componentAppTopBarsRegularSubtitle": "OdsTopAppBar",
+  "componentAppBarsTopLarge": "Large",
+  "componentAppBarsTopLargeSubtitle": "OdsLargeTopAppBar",
+  "componentAppBarsTopActionsCount": "Action count",
 
   "@_COMPONENTS_CHIPS": {},
   "componentChips": "Chips",
@@ -478,53 +228,16 @@
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",
-  "@componentSheetsBottomTitle": {
-    "description": "Component Sheets Bottom - Title",
-    "type": "text"
-  },
   "componentSheetsBottomDescription": "Bottom sheets are surfaces anchored to the bottom of the screen that present users supplemental content.",
-  "@componentSheetsBottomDescription": {
-    "description": "Component Sheets Bottom - Description",
-    "type": "text"
-  },
 
   "@_SHEETS_BOTTOM_VARIANT": {},
-
   "sheetsBottomVariantTitle": "Sheets: bottom demo",
-  "@sheetsBottomVariantTitle": {
-    "description": "Sheets Bottom Variant - Title",
-    "type": "text"
-  },
   "sheetsBottomVariantSubtitle": "OdsBottomSheetScaffold",
-  "@sheetsBottomVariantSubtitle": {
-    "description": "Sheets Bottom Variant - Subtitle",
-    "type": "text"
-  },
   "sheetsBottomDescriptionExample": "Customize the bottom sheet",
-  "@sheetsBottomDescriptionExample": {
-    "description": "Sheets Bottom Description Example - Description",
-    "type": "text"
-  },
   "sheetsBottomSubtitleExample": "Content",
-  "@sheetsBottomSubtitleExample": {
-    "description": "Sheets Bottom Subtitle Example - Subtitle",
-    "type": "text"
-  },
   "sheetsBottomEnumEmpty": "Empty",
-  "@sheetsBottomEnumEmpty": {
-    "description": "Sheets Bottom Empty - Enum",
-    "type": "text"
-  },
   "sheetsBottomEnumExample": "Example",
-  "@sheetsBottomEnumExample": {
-    "description": "Sheets Bottom Example - Enum",
-    "type": "text"
-  },
   "sheetsBottomCustomizeTitle": "Recipes",
-  "@sheetsBottomCustomizeTitle": {
-    "description": "Component customization bottom sheet - Title",
-    "type": "text"
-  },
 
   "@_COMPONENTS_SLIDERS": {},
   "componentSlidersTitle": "Sliders",
@@ -539,165 +252,46 @@
 
   "@_COMPONENTS_PROGRESS": {},
   "componentProgressTitle": "Progress Indicators",
-  "@componentProgressTitle": {
-    "description": "Component Progress - Title",
-    "type": "text"
-  },
   "componentProgressDescription": "Progress bar and activity indicator are used when a process is taking place to illustrate progress and to reassure users that something is happening, and if possible, how long it will take.",
-  "@componentProgressDescription": {
-    "description": "Component Progress - Description",
-    "type": "text"
-  },
   "componentCustomizeProgressType": "Type",
-  "@componentCustomizeProgressType": {
-    "description": "Component Progress customization type - Label",
-    "type": "text"
-  },
   "componentCustomizeProgressLabel": "Label",
-  "@componentCustomizeProgressLabel": {
-    "description": "Component Progress customization Label - Label",
-    "type": "text"
-  },
   "componentCustomizeProgressIcon": "Icon",
-  "@componentCustomizeProgressIcon": {
-    "description": "Component Progress customization Icon - Icon",
-    "type": "text"
-  },
   "componentCustomizeProgressCurrentValue": "Current Value",
-  "@componentCustomizeProgressCurrentValue": {
-    "description": "Component Progress customization Current Value - Label",
-    "type": "text"
-  },
 
   "@_PROGRESS_VARIANT": {},
   "progressLinearVariantTitle": "Linear",
-  "@progressLinearVariantTitle": {
-    "description": "Sliders Linear Variant - Title",
-    "type": "text"
-  },
   "progressLinearVariantSubtitle": "OdsLinearProgressIndicator",
-  "@progressLinearVariantSubtitle": {
-    "description": "Sliders Linear Variant - Subtitle",
-    "type": "text"
-  },
   "progressCircularVariantTitle": "Circular",
-  "@progressCircularVariantTitle": {
-    "description": "Sliders Circular Variant - Title",
-    "type": "text"
-  },
   "progressCircularVariantSubtitle": "OdsCircularProgressIndicator",
-  "@progressCircularVariantSubtitle": {
-    "description": "Sliders Circular Variant - Subtitle",
-    "type": "text"
-  },
   "progressCircularVariantExampleLabel": "Downloading ...",
-  "@progressCircularVariantExampleLabel": {
-    "description": "Progress indicator example Variant - Label",
-    "type": "text"
-  },
   "progressTypeDeterminateEnum": "Determinate",
-  "@progressTypeDeterminateEnum": {
-    "description": "Progress Determinate - Enum",
-    "type": "text"
-  },
   "progressTypeIndeterminateEnum": "Indeterminate",
-  "@progressTypeIndeterminateEnum": {
-    "description": "Progress Indeterminate - Enum",
-    "type": "text"
-  },
 
   "@_COMPONENTS_DIALOGS": {},
   "componentDialogsTitle": "Dialogs",
-  "@componentDialogsTitle": {
-    "description": "Component Dialogs - Title",
-    "type": "text"
-  },
   "componentDialogsDescription": "Dialogs are for prompting the user when the app requires a decision or further details required to complete a task.",
-  "@componentDialogsDescription": {
-    "description": "Component Dialogs - Description",
-    "type": "text"
-  },
 
   "@_DIALOGS_VARIANT": {},
   "dialogsVariantTitle": "Dialogs demo",
-  "@dialogsVariantTitle": {
-    "description": "Dialogs Variant - Title",
-    "type": "text"
-  },
   "dialogsVariantSubtitle": "OdsAlertDialog",
-  "@dialogsVariantSubtitle": {
-    "description": "Dialogs Variant - Subtitle",
-    "type": "text"
-  },
   "componentCustomizeDialogsTitle": "Title",
-  "@componentCustomizeDialogsTitle": {
-    "description": "Component Dialogs customization - Title",
-    "type": "text"
-  },
   "componentCustomizeDialogsDismissButton": "Dismiss button",
-  "@componentCustomizeDialogsDismissButton": {
-    "description": "Component Dialogs customization dismiss - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleLabel": "Customize the dialog before opening it",
-  "@dialogsVariantExampleLabel": {
-    "description": "Dialogs example Variant - Label",
-    "type": "text"
-  },
   "dialogsVariantExampleOpenButton": "OPEN DIALOGS",
-  "@dialogsVariantExampleOpenButton": {
-    "description": "Dialogs example Variant Button Open - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleOpenFullDialogsButton": "OPEN FULL DIALOGS",
-  "@dialogsVariantExampleOpenFullDialogsButton": {
-    "description": "Dialogs example Variant Button Open Full - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleAcceptButton": "Accept",
-  "@dialogsVariantExampleAcceptButton": {
-    "description": "Dialogs example Variant Accept - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleOkButton": "OK",
-  "@dialogsVariantExampleOkButton": {
-    "description": "Dialogs example Variant Ok - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleDeclineButton": "Decline",
-  "@dialogsVariantExampleDeclineButton": {
-    "description": "Dialogs example Variant Decline - Button",
-    "type": "text"
-  },
   "dialogsVariantExampleCloseButton": "Close",
-  "@dialogsVariantExampleCloseButton": {
-    "description": "Dialogs example Variant Close - Button",
-    "type": "text"
-  },
-
 
   "@_COMPONENTS_MATERIALS": {},
   "componentMaterialsTitle": "Materials",
-  "@componentMaterialsTitle": {
-    "description": "Component Materials - Title",
-    "type": "text"
-  },
+
   "componentMaterialsDescription": "On/off switches toggle the state of a single settings option. The function of the switch should be made clear by the inline label.",
-  "@componentMaterialsDescription": {
-    "description": "Component Materials - Description",
-    "type": "text"
-  },
   "@_MATERIALS_VARIANT": {},
   "materialsVariantTitle": "Others",
-  "@materialsVariantTitle": {
-    "description": "Materials Variant - Title",
-    "type": "text"
-  },
   "materialsVariantSubtitle": "Material",
-  "@materialsVariantSubtitle": {
-    "description": "Materials Variant - Subtitle",
-    "type": "text"
-  },
+
   "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "Orange Design System Flutter App",
   "aboutScreenDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",

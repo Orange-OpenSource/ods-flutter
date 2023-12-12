@@ -36,7 +36,7 @@ class ComponentTopAppBarsCustomizationState
     extends State<ComponentTopAppBarsCustomization> {
   bool _navigationIcon = true;
   static get minNavigationItemCount => 0;
-  static get maxNavigationItemCount => 2;
+  static get maxNavigationItemCount => 3;
 
   bool get navigationIcon => _navigationIcon;
   set navigationIcon(bool value) {

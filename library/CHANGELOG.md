@@ -5,6 +5,23 @@ All notable changes done in ODS library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.5.0) - 2023-12-06
+
+### Added
+
+- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
+- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
+
+### Changed
+
+- Nothing
+
+### Removed
+
+- Nothing
+
+## [0.4.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.4.0) - 2023-11-21
+
 ## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
 
 ### Added
@@ -47,6 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for switch ([#281](https://github.com/Orange-OpenSource/ods-flutter/issues/283))
 - Align component name and parameters for Chips ([#287](https://github.com/Orange-OpenSource/ods-flutter/issues/287))
 - Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
+- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
+- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
 
 ### Removed
 

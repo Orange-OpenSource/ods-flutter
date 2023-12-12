@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: ODS - Components - Chips - Filter chips ([#274](https://github.com/Orange-OpenSource/ods-flutter/issues/274))
 - [feature]: ODS - Component - Chips - Filter chips - shape ([#275](https://github.com/Orange-OpenSource/ods-flutter/issues/275))
 - Add Change log in about page ([#172](https://github.com/Orange-OpenSource/ods-flutter/issues/172))
+- [Bug]: ODS - Component - App bars: top ([#273](https://github.com/Orange-OpenSource/ods-flutter/issues/273))
 
 ### Changed
 
@@ -31,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Design Update for chips ([#286](https://github.com/Orange-OpenSource/ods-flutter/issues/286))
 - Filter Chip Design Update ([#205](https://github.com/Orange-OpenSource/ods-flutter/issues/205))
 - Other Material Component Page Updates ([#202](https://github.com/Orange-OpenSource/ods-flutter/issues/202))
+- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
+- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
 
 ### Removed
 
