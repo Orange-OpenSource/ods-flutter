@@ -46,8 +46,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.orange.ods.test.flutterapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
@@ -55,6 +53,19 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+    
+    flavorDimensions "default"
+    productFlavors {
+      prod {
+          dimension "default"
+          applicationId "com.orange.ods.flutterapp"
+      }
+      qualif {
+          dimension "default"
+          applicationId "com.orange.ods.test.flutterapp"
+          versionNameSuffix ".dev"
+      }
+  }
 
     buildTypes {
         release {
