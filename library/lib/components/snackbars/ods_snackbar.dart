@@ -1,63 +1,64 @@
 import 'package:flutter/material.dart';
 
-class OdsSnackbars {
+class OdsSnackbar {
   static void showSnackbarSingleLine({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     OdsSnackbarsSingleLineExtension.showSnackbarSingleLine(
       context: context,
-      content: content,
-      label: label,
+      message: message,
+      actionLabel: actionLabel,
       onPressed: onPressed,
     );
   }
 
   static void showSnackbarTwoLines({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     OdsSnackbarsTwoLinesExtension.showSnackbarTwoLines(
       context: context,
-      content: content,
-      label: label,
+      message: message,
+      actionLabel: actionLabel,
       onPressed: onPressed,
     );
   }
 
   static void showSnackbarLongerAction({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     OdsSnackbarsLongerActionExtension.showSnackbarLongerAction(
       context: context,
-      content: content,
-      label: label,
+      message: message,
+      actionLabel: actionLabel,
       onPressed: onPressed,
     );
   }
 }
 
 /// Single line variant of Snackbar to display content on a single line.
-extension OdsSnackbarsSingleLineExtension on OdsSnackbars {
+extension OdsSnackbarsSingleLineExtension on OdsSnackbar {
   static void showSnackbarSingleLine({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     final snackbar = SnackBar(
       width: double.infinity,
-      content: Text(content),
-      action: label != null && label.isNotEmpty && onPressed != null
+      content: Text(message),
+      behavior: SnackBarBehavior.floating,
+      action: actionLabel != null && actionLabel.isNotEmpty && onPressed != null
           ? SnackBarAction(
-              label: label,
+              label: actionLabel,
               onPressed: onPressed,
             )
           : null,
@@ -69,11 +70,11 @@ extension OdsSnackbarsSingleLineExtension on OdsSnackbars {
 }
 
 /// Two lines variant of Snackbar to display content on a two line.
-extension OdsSnackbarsTwoLinesExtension on OdsSnackbars {
+extension OdsSnackbarsTwoLinesExtension on OdsSnackbar {
   static void showSnackbarTwoLines({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     SnackBar snackbar = SnackBar(
@@ -84,16 +85,14 @@ extension OdsSnackbarsTwoLinesExtension on OdsSnackbars {
           SizedBox(
             width: MediaQuery.of(context).size.width / 2.5,
             child: Text(
-              content,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+              message,
             ),
           ),
         ],
       ),
-      action: label != null && label.isNotEmpty && onPressed != null
+      action: actionLabel != null && actionLabel.isNotEmpty && onPressed != null
           ? SnackBarAction(
-              label: label,
+              label: actionLabel,
               onPressed: onPressed,
             )
           : null,
@@ -104,11 +103,11 @@ extension OdsSnackbarsTwoLinesExtension on OdsSnackbars {
 }
 
 /// Longer action variant of Snackbar to display content on a longer action.
-extension OdsSnackbarsLongerActionExtension on OdsSnackbars {
+extension OdsSnackbarsLongerActionExtension on OdsSnackbar {
   static void showSnackbarLongerAction({
     required BuildContext context,
-    String content = '',
-    String? label,
+    String message = '',
+    String? actionLabel,
     VoidCallback? onPressed,
   }) {
     SnackBar snackbar = SnackBar(
@@ -125,19 +124,19 @@ extension OdsSnackbarsLongerActionExtension on OdsSnackbars {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 2.5,
                   child: Text(
-                    content,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                    message,
                   ),
                 ),
               ],
             ),
           ),
-          if (label != null && label.isNotEmpty && onPressed != null)
+          if (actionLabel != null &&
+              actionLabel.isNotEmpty &&
+              onPressed != null)
             Align(
               alignment: Alignment.centerRight,
               child: SnackBarAction(
-                label: label,
+                label: actionLabel,
                 onPressed: onPressed,
               ),
             ),

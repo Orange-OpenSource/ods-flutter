@@ -24,6 +24,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
 
+## [0.6.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.0) - 2023-12-14
+
+### Changed
+
+- Design Update for snackbars ([#297](https://github.com/Orange-OpenSource/ods-flutter/issues/297))
+- Align component name and parameters for Snackbars ([#298](https://github.com/Orange-OpenSource/ods-flutter/issues/298))
+
 ### Added
 
 - Add ODS typography for iOS & Android platforms ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))

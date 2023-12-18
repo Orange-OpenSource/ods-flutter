@@ -1,15 +1,26 @@
-### ODS_Flutter Demo Application
+### ODS Flutter Demo Application
 
 All notable changes done in Demo application of ods_flutter library will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/releases)
+### [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/releases)
 
-## [0.5.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.5.0) - 2023-11-27
+### [0.6.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.0) - 2023-12-14
 
-### Added
+## Added
+
+- [Bug] Update changelog title ([#294](https://github.com/Orange-OpenSource/ods-flutter/issues/194))
+
+## Changed
+
+- Design Update for snackbars ([#297](https://github.com/Orange-OpenSource/ods-flutter/issues/297))
+- Align component name and parameters for Snackbars ([#298](https://github.com/Orange-OpenSource/ods-flutter/issues/298))
+
+### [0.5.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.5.0) - 2023-11-27
+
+## Added
 
 - [Bug]: ODS - component - Lists - standard lists ([#264](https://github.com/Orange-OpenSource/ods-flutter/issues/264))
 - [Bug]: dialog top padding update ([#248](https://github.com/Orange-OpenSource/ods-flutter/issues/248))
@@ -20,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Change log in about page ([#172](https://github.com/Orange-OpenSource/ods-flutter/issues/172))
 - [Bug]: ODS - Component - App bars: top ([#273](https://github.com/Orange-OpenSource/ods-flutter/issues/273))
 
-### Changed
+## Changed
 
 - Align component name and parameters for Checkbox ([#279](https://github.com/Orange-OpenSource/ods-flutter/issues/279))
 - Design Update for checkbox ([#235](https://github.com/Orange-OpenSource/ods-flutter/issues/235))
@@ -35,12 +46,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
 - Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
 
-### Removed
 
+### [0.4.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.4.0) - 2023-11-02
 
-## [0.4.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.4.0) - 2023-11-02
-
-### Added
+## Added
 
 - Create components list screen ([#132](https://github.com/Orange-OpenSource/ods-flutter/issues/132))
 - Add guideline typography screen ([#121](https://github.com/Orange-OpenSource/ods-flutter/issues/121))
@@ -74,7 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: ODS - Components - Chips - Filter chips ([#274](https://github.com/Orange-OpenSource/ods-flutter/issues/274))
 - [feature]: ODS - Component - Chips - Filter chips - shape ([#275](https://github.com/Orange-OpenSource/ods-flutter/issues/275))
 
-### Changed
+## Changed
 
 - Add a scroll view to see all the content in about screen ([#160](https://github.com/Orange-OpenSource/ods-flutter/issues/160))
 - Factorize top app bar management ([#149](https://github.com/Orange-OpenSource/ods-flutter/issues/149))
@@ -109,16 +118,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Filter Chip Design Update ([#205](https://github.com/Orange-OpenSource/ods-flutter/issues/205))
 - Other Material Component Page Updates ([#202](https://github.com/Orange-OpenSource/ods-flutter/issues/202))
 
-### Removed
+## Removed
 
 - Remove french translations ([#154](https://github.com/Orange-OpenSource/ods-flutter/issues/154))
 - Remove the Elevated button ([#197](https://github.com/Orange-OpenSource/ods-flutter/issues/197))
 
-## [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.1.0) - 2023-05-04
+### [0.1.1](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.1.0) - 2023-05-04
 
 First version of ods_flutter library and Application from hackathon (publication on pub.dev)
 
-## [0.1.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0) - 2023-05-02
+### [0.1.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0) - 2023-05-02
 
 First version of ods_flutter library and Application from hackathon.
 (Not published on pub.dev due to warnings, missing files and assets listing)

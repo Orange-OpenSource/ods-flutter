@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
-import 'package:ods_flutter/components/snackbars/ods_snackbars.dart';
+import 'package:ods_flutter/components/snackbars/ods_snackbar.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -75,11 +75,11 @@ class _SnackBarsVariants extends StatelessWidget {
             onClick: () {
               if (customizationState?.hasTwoLines == false &&
                   customizationState?.hasLongerAction == false) {
-                OdsSnackbars.showSnackbarSingleLine(
+                OdsSnackbar.showSnackbarSingleLine(
                   context: context,
-                  content: AppLocalizations.of(context)!
+                  message: AppLocalizations.of(context)!
                       .componentSnackbarsSingleText,
-                  label: customizationState?.hasActionButton == true
+                  actionLabel: customizationState?.hasActionButton == true
                       ? AppLocalizations.of(context)!
                           .componentSnackbarsActionExampleButtonText
                       : null,
@@ -89,11 +89,11 @@ class _SnackBarsVariants extends StatelessWidget {
                 );
               } else if (customizationState?.hasTwoLines == true &&
                   customizationState?.hasLongerAction == false) {
-                OdsSnackbars.showSnackbarTwoLines(
+                OdsSnackbar.showSnackbarTwoLines(
                   context: context,
-                  content: AppLocalizations.of(context)!
+                  message: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineActionText,
-                  label: customizationState?.hasActionButton == true
+                  actionLabel: customizationState?.hasActionButton == true
                       ? AppLocalizations.of(context)!
                           .componentSnackbarsActionExampleButtonText
                       : null,
@@ -103,11 +103,11 @@ class _SnackBarsVariants extends StatelessWidget {
                 );
               }
               if (customizationState?.hasLongerAction == true) {
-                OdsSnackbars.showSnackbarLongerAction(
+                OdsSnackbar.showSnackbarLongerAction(
                   context: context,
-                  content: AppLocalizations.of(context)!
+                  message: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineLongerActionText,
-                  label: AppLocalizations.of(context)!
+                  actionLabel: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineLongerActionButton,
                   onPressed: () {},
                 );

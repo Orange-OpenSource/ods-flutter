@@ -3,22 +3,10 @@
 
     "@_COMPONENTS_SHEETS_BOTTOM_ACCESSIBILITY": {},
     "componentSheetsBottomTitle": "Bottom sheets",
-    "@componentSheetsBottomTitle": {
-        "description": "Component Bottom sheets - Title",
-        "type": "text"
-    },
     "componentSheetsBottomLabel": "Button. Double tap to open",
-    "@componentSheetsBottomLabel": {
-        "description": "Component Bottom sheets accessibility - Label",
-        "type": "text"
-    },
 
     "@_COMPONENTS_PROGRESS_ACCESSIBILITY": {},
     "componentProgressTitle": "Progress indicator",
-    "@componentProgressTitle": {
-        "description": "Component Progress - Title",
-        "type": "text"
-    },
 
     "@_COMPONENTS_NAVIGATION_BAR": {},
     "componentNavigationBarNotification": "Notification(s)",
