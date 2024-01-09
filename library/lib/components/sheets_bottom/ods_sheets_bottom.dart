@@ -33,7 +33,7 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
 
   @override
   Widget build(BuildContext context) {
-    double collapsedHeight = Platform.isAndroid ? 56 : 71;
+    double collapsedHeight = Platform.isAndroid ? 76 : 91;
 
     return Container(
       decoration: BoxDecoration(
@@ -49,48 +49,51 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
         ],
         color: Theme.of(context).colorScheme.onSecondaryContainer,
       ),
-      child: SafeArea(
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          height: expanded ? collapsedHeight : null,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              /*
-          Padding(
-            padding: const EdgeInsets.all(spacingXs),
-            child: Container(
-              width: 32,
-              height: 4,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondaryContainer,
-                borderRadius: BorderRadius.circular(2.5),
-              ),
-            ),
-          ),
-
-           */
-              GestureDetector(
-                onVerticalDragDown: (_) {
+      child: AnimatedContainer(
+        duration: const Duration(seconds: 11150),
+        height: expanded ? collapsedHeight : null,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GestureDetector(
+              onPanEnd: (details) {
+                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                    details.velocity.pixelsPerSecond.dy != 0.0) {
                   _expandCloseBottomSheet();
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(spacingXs),
-                  child: Container(
-                    width: 40,
-                    height: 5,
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondaryContainer,
-                      borderRadius: BorderRadius.circular(2.5),
+                }
+              },
+              child: Container(
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: spacingM),
+                      child: Container(
+                        width: 40,
+                        height: 5,
+                        margin: const EdgeInsets.symmetric(vertical: spacingXs),
+                        decoration: BoxDecoration(
+                          color:
+                              Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.circular(2.5),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ),
-              GestureDetector(
-                onTap: _expandCloseBottomSheet,
-                child: MergeSemantics(
+            ),
+            GestureDetector(
+              onPanEnd: (details) {
+                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                    details.velocity.pixelsPerSecond.dy != 0.0) {
+                  _expandCloseBottomSheet();
+                }
+              },
+              child: MergeSemantics(
+                child: Container(
+                  color: Colors.transparent,
                   child: Row(
                     children: [
                       AnimatedRotation(
@@ -115,26 +118,17 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
                   ),
                 ),
               ),
-              if (Platform.isIOS && !expanded)
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: spacingXl),
-                      child: widget.content,
-                    ),
-                  ),
-                )
-              else if (Platform.isAndroid && !expanded)
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: spacingL),
-                      child: widget.content,
-                    ),
+            ),
+            if (!expanded)
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: spacingXl),
+                    child: widget.content,
                   ),
                 ),
-            ],
-          ),
+              )
+          ],
         ),
       ),
     );

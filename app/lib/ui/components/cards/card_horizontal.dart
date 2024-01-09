@@ -125,81 +125,84 @@ class _CustomizationContentState extends State<_CustomizationContent> {
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
-    return Column(
-      children: [
-        OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentCardClickable,
-            checked: customizationState?.clickable ?? true,
-            onCheckedChange: (bool value) {
-              customizationState?.clickable = value;
-            }),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.all(spacingM),
-            child: Text(
-              AppLocalizations.of(context)!
-                  .componentCardHorizontalImagePosition,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.left,
-            ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List<Widget>.generate(2, (int index) {
-                bool isSelected = selectedIndex == index;
-                return Padding(
-                  padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                  child: OdsChoiceChip(
-                    text: customizationState?.elements[index]
-                            .stringValue(context) ??
-                        '',
-                    selected: isSelected,
-                    onClick: (selected) {
-                      setState(() {
-                        selectedIndex = index;
-                        isFiltered = selected!;
-                        customizationState?.selectedElement =
-                            customizationState.elements[index];
-                      });
-                    },
-                  ),
-                );
+    return SafeArea(
+      child: Column(
+        children: [
+          OdsListSwitch(
+              title: AppLocalizations.of(context)!.componentCardClickable,
+              checked: customizationState?.clickable ?? true,
+              onCheckedChange: (bool value) {
+                customizationState?.clickable = value;
               }),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(spacingM),
+              child: Text(
+                AppLocalizations.of(context)!
+                    .componentCardHorizontalImagePosition,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.left,
+              ),
             ),
           ),
-        ),
-        OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementSubtitle,
-            checked: customizationState?.hasSubtitle ?? true,
-            onCheckedChange: (bool value) {
-              customizationState?.hasSubtitle = value;
-            }),
-        OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementText,
-            checked: customizationState?.hasText ?? true,
-            onCheckedChange: (bool value) {
-              customizationState?.hasText = value;
-            }),
-        ComponentCountRow(
-            title: AppLocalizations.of(context)!.componentCardActionButtonCount,
-            minCount: CardCustomizationState.minNavigationItemCount,
-            maxCount: CardCustomizationState.maxNavigationItemCount,
-            count: customizationState!.numberOfItems,
-            onChanged: (value) {
-              customizationState.numberOfItems = value;
-            }),
-        OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementDivider,
-            checked: customizationState.hasDivider,
-            onCheckedChange: (bool value) {
-              customizationState.hasDivider = value;
-            }),
-      ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List<Widget>.generate(2, (int index) {
+                  bool isSelected = selectedIndex == index;
+                  return Padding(
+                    padding: EdgeInsets.only(right: spacingXs, left: spacingS),
+                    child: OdsChoiceChip(
+                      text: customizationState?.elements[index]
+                              .stringValue(context) ??
+                          '',
+                      selected: isSelected,
+                      onClick: (selected) {
+                        setState(() {
+                          selectedIndex = index;
+                          isFiltered = selected!;
+                          customizationState?.selectedElement =
+                              customizationState.elements[index];
+                        });
+                      },
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ),
+          OdsListSwitch(
+              title: AppLocalizations.of(context)!.componentElementSubtitle,
+              checked: customizationState?.hasSubtitle ?? true,
+              onCheckedChange: (bool value) {
+                customizationState?.hasSubtitle = value;
+              }),
+          OdsListSwitch(
+              title: AppLocalizations.of(context)!.componentElementText,
+              checked: customizationState?.hasText ?? true,
+              onCheckedChange: (bool value) {
+                customizationState?.hasText = value;
+              }),
+          ComponentCountRow(
+              title:
+                  AppLocalizations.of(context)!.componentCardActionButtonCount,
+              minCount: CardCustomizationState.minNavigationItemCount,
+              maxCount: CardCustomizationState.maxNavigationItemCount,
+              count: customizationState!.numberOfItems,
+              onChanged: (value) {
+                customizationState.numberOfItems = value;
+              }),
+          OdsListSwitch(
+              title: AppLocalizations.of(context)!.componentElementDivider,
+              checked: customizationState.hasDivider,
+              onCheckedChange: (bool value) {
+                customizationState.hasDivider = value;
+              }),
+        ],
+      ),
     );
   }
 }
