@@ -33,7 +33,7 @@ class _ButtonsContainedState extends State<ButtonsContained> {
     return ButtonCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(emphasis: widget.emphasis),
+          sheetContent: _CustomizationContent(emphasis: widget.emphasis),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: MainAppBar(getAppBarTitle()),

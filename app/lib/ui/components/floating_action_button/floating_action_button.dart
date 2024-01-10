@@ -87,7 +87,7 @@ class _BodyState extends State<_Body> {
       bottomSheet: Semantics(
         sortKey: OrdinalSortKey(2.0),
         child: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
       ),

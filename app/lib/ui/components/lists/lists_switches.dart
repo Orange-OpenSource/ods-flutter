@@ -26,7 +26,7 @@ class _ComponentSwitchesListState extends State<ComponentSwitchesList> {
     return SwitchesCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
+            sheetContent: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,

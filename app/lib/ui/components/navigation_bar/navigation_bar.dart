@@ -29,7 +29,7 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
     return NavigationBarCustomization(
         child: Scaffold(
       bottomSheet: OdsSheetsBottom(
-        content: _CustomizationContent(),
+        sheetContent: _CustomizationContent(),
         title: AppLocalizations.of(context)!.componentCustomizeTitle,
       ),
       key: _scaffoldKey,

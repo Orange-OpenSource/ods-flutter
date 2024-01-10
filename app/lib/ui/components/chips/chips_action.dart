@@ -29,7 +29,7 @@ class _ComponentChipsActionState extends State<ComponentChipsAction> {
     return ChipsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(

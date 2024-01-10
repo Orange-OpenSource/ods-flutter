@@ -29,7 +29,7 @@ class _CardSmallState extends State<CardSmall> {
     return CardCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
+            sheetContent: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,

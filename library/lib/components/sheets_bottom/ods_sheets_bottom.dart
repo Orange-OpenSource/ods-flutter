@@ -10,14 +10,14 @@ class OdsSheetsBottom extends StatefulWidget {
   const OdsSheetsBottom({
     Key? key,
     required this.title,
-    required this.content,
+    required this.sheetContent,
   }) : super(key: key);
 
   /// The title of the sheet bottom.
   final String title;
 
   /// The content of the sheets bottom
-  final Widget content;
+  final Widget sheetContent;
 
   @override
   State<OdsSheetsBottom> createState() => _OdsSheetsBottomState();
@@ -124,7 +124,7 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: spacingXl),
-                    child: widget.content,
+                    child: widget.sheetContent,
                   ),
                 ),
               )

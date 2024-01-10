@@ -27,7 +27,7 @@ class _ComponentTopAppBarsState extends State<ComponentTopAppBars> {
     return ComponentTopAppBarsCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
+            sheetContent: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,

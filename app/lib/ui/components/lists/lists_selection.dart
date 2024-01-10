@@ -34,7 +34,7 @@ class _ComponentListsSelectionState extends State<ComponentListsSelection> {
       child: Scaffold(
         key: _scaffoldKey,
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: MainAppBar(AppLocalizations.of(context)!.listSelectionTitle),

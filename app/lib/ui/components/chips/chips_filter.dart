@@ -31,7 +31,7 @@ class _ComponentChipsFilterState extends State<ComponentChipsFilter> {
     return ChipsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(

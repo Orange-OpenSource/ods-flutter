@@ -20,7 +20,7 @@ class ComponentDialogs extends StatelessWidget {
     return DialogsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
