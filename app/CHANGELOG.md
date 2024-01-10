@@ -12,11 +12,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Added
 
 - [Bug] Update changelog title ([#294](https://github.com/Orange-OpenSource/ods-flutter/issues/194))
+- [Bug]: ODS - Component - Sheets: bottom ([#256](https://github.com/Orange-OpenSource/ods-flutter/issues/256))
+- Bottom Sheet Interaction updates ([#204](https://github.com/Orange-OpenSource/ods-flutter/issues/204))
+- Update Beta release publication process ([#276](https://github.com/Orange-OpenSource/ods-flutter/issues/276))
+- Update Beta release publication process ([#276](https://github.com/Orange-OpenSource/ods-flutter/issues/276))
+- Publish Public release ([#277](https://github.com/Orange-OpenSource/ods-flutter/issues/277))
 
 ## Changed
 
 - Design Update for snackbars ([#297](https://github.com/Orange-OpenSource/ods-flutter/issues/297))
 - Align component name and parameters for Snackbars ([#298](https://github.com/Orange-OpenSource/ods-flutter/issues/298))
+- Design Update for sheets bottoms ([#299](https://github.com/Orange-OpenSource/ods-flutter/issues/299))
+- Align component name and parameters for Bottom sheet ([#300](https://github.com/Orange-OpenSource/ods-flutter/issues/300))
 
 ### [0.5.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.5.0) - 2023-11-27
 
