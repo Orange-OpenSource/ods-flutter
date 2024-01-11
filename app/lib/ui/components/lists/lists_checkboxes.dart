@@ -28,7 +28,7 @@ class _ComponentCheckboxesListState extends State<ComponentCheckboxesList> {
     return CheckboxesCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
+            sheetContent: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,

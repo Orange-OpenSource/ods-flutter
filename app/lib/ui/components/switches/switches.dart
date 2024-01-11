@@ -25,14 +25,15 @@ class _ComponentSwitchesState extends State<ComponentSwitches> {
   Widget build(BuildContext context) {
     return SwitchesCustomization(
       child: Scaffold(
-          bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
-          ),
-          key: _scaffoldKey,
-          appBar:
-              MainAppBar(AppLocalizations.of(context)!.componentSwitchesTitle),
-          body: _Body()),
+        bottomSheet: OdsSheetsBottom(
+          sheetContent: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
+        key: _scaffoldKey,
+        appBar:
+            MainAppBar(AppLocalizations.of(context)!.componentSwitchesTitle),
+        body: _Body(),
+      ),
     );
   }
 }

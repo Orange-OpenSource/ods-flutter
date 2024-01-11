@@ -30,7 +30,7 @@ class _ButtonsTextState extends State<ButtonsText> {
     return ButtonCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         key: _scaffoldKey,

@@ -28,7 +28,7 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
     return RadioButtonsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         key: _scaffoldKey,

@@ -28,7 +28,7 @@ class _ComponentSheetsBottomState extends State<ComponentSheetsBottom> {
     return SheetsBottomCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          content: _CustomizationContent(),
+          sheetContent: _CustomizationContent(),
           title: AppLocalizations.of(context)!.sheetsBottomCustomizeTitle,
         ),
         appBar: OdsAppTopBar(

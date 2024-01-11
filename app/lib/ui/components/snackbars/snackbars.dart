@@ -28,7 +28,7 @@ class _ComponentSnackbarsState extends State<ComponentSnackbars> {
     return ComponentSnackbarsCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
-            content: _CustomizationContent(),
+            sheetContent: _CustomizationContent(),
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,

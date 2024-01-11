@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
 /// ODS Sheets Bottom.
 
@@ -11,14 +10,14 @@ class OdsSheetsBottom extends StatefulWidget {
   const OdsSheetsBottom({
     Key? key,
     required this.title,
-    required this.content,
+    required this.sheetContent,
   }) : super(key: key);
 
   /// The title of the sheet bottom.
   final String title;
 
   /// The content of the sheets bottom
-  final Widget content;
+  final Widget sheetContent;
 
   @override
   State<OdsSheetsBottom> createState() => _OdsSheetsBottomState();
@@ -34,153 +33,103 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
 
   @override
   Widget build(BuildContext context) {
-    double collapsedHeight = Platform.isAndroid ? 56 : 71;
+    double collapsedHeight = Platform.isAndroid ? 76 : 91;
 
     return Container(
-      color: Theme.of(context).colorScheme.onSecondaryContainer,
-      child: SafeArea(
-        child: expanded
-            ? MergeSemantics(
-                child: Semantics(
-                  label:
-                      "${widget.title} ${OdsLocalizations.of(context)!.componentSheetsBottomLabel}",
-                  button: true,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 150),
-                    height: expanded ? collapsedHeight : null,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(spacingXl),
-                        topRight: Radius.circular(spacingXl),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          blurRadius: 5,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(spacingXl),
+          topRight: Radius.circular(spacingXl),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            blurRadius: 5,
+          ),
+        ],
+        color: Theme.of(context).colorScheme.onSecondaryContainer,
+      ),
+      child: AnimatedContainer(
+        duration: const Duration(seconds: 11150),
+        height: expanded ? collapsedHeight : null,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GestureDetector(
+              onPanEnd: (details) {
+                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                    details.velocity.pixelsPerSecond.dy != 0.0) {
+                  _expandCloseBottomSheet();
+                }
+              },
+              child: Container(
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: spacingM),
+                      child: Container(
+                        width: 40,
+                        height: 5,
+                        margin: const EdgeInsets.symmetric(vertical: spacingXs),
+                        decoration: BoxDecoration(
+                          color:
+                              Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.circular(2.5),
                         ),
-                      ],
-                      color: Theme.of(context).colorScheme.onSecondaryContainer,
-                    ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          GestureDetector(
-                            onTap: _expandCloseBottomSheet,
-                            child: MergeSemantics(
-                              child: Row(
-                                children: [
-                                  AnimatedRotation(
-                                    turns: chevronTurns,
-                                    duration: const Duration(milliseconds: 200),
-                                    child: IconButton(
-                                      icon: const Icon(
-                                        Icons.expand_more,
-                                        size: 31,
-                                      ),
-                                      onPressed: _expandCloseBottomSheet,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(spacingM),
-                                      child: Text(
-                                        widget.title,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleMedium,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          if (expanded)
-                            ExcludeSemantics(child: widget.content)
-                          else if (Platform.isIOS)
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: spacingXl),
-                              child: widget.content,
-                            )
-                          else
-                            widget.content,
-                        ],
                       ),
-                    ),
-                  ),
-                ),
-              )
-            : AnimatedContainer(
-                duration: const Duration(milliseconds: 150),
-                height: expanded ? collapsedHeight : null,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(spacingXl),
-                    topRight: Radius.circular(spacingXl),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      blurRadius: 5,
                     ),
                   ],
-                  color: Theme.of(context).colorScheme.onSecondaryContainer,
                 ),
-                child: SingleChildScrollView(
-                  child: Semantics(
-                    label: OdsLocalizations.of(context)!
-                        .componentSheetsBottomTitle,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GestureDetector(
-                          onTap: _expandCloseBottomSheet,
-                          child: MergeSemantics(
-                            child: Row(
-                              children: [
-                                AnimatedRotation(
-                                  turns: chevronTurns,
-                                  duration: const Duration(milliseconds: 200),
-                                  child: IconButton(
-                                    icon: const Icon(
-                                      Icons.expand_more,
-                                      size: 31,
-                                    ),
-                                    onPressed: _expandCloseBottomSheet,
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(spacingM),
-                                    child: Text(
-                                      widget.title,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+              ),
+            ),
+            GestureDetector(
+              onPanEnd: (details) {
+                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                    details.velocity.pixelsPerSecond.dy != 0.0) {
+                  _expandCloseBottomSheet();
+                }
+              },
+              child: MergeSemantics(
+                child: Container(
+                  color: Colors.transparent,
+                  child: Row(
+                    children: [
+                      AnimatedRotation(
+                        turns: chevronTurns,
+                        duration: const Duration(milliseconds: 200),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.expand_more,
+                            size: 31,
                           ),
+                          onPressed: _expandCloseBottomSheet,
                         ),
-                        if (expanded)
-                          ExcludeSemantics(child: widget.content)
-                        else if (Platform.isIOS)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: spacingXl),
-                            child: widget.content,
-                          )
-                        else
-                          widget.content,
-                      ],
-                    ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          widget.title,
+                          style: Theme.of(context).textTheme.titleMedium,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+            ),
+            if (!expanded)
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: spacingXl),
+                    child: widget.sheetContent,
+                  ),
+                ),
+              )
+          ],
+        ),
       ),
     );
   }
