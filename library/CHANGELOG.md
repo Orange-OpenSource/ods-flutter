@@ -5,26 +5,7 @@ All notable changes done in ODS library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.5.0) - 2023-12-06
-
-### Added
-
-- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
-- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
-
-### Changed
-
-- Nothing
-
-### Removed
-
-- Nothing
-
-## [0.4.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.4.0) - 2023-11-21
-
-## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
-
-## [0.6.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.0) - 2023-12-14
+## [0.6.2](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.2) - 2023-01-10
 
 ### Added
 
@@ -37,6 +18,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Align component name and parameters for Snackbars ([#298](https://github.com/Orange-OpenSource/ods-flutter/issues/298))
 - Design Update for sheets bottoms ([#299](https://github.com/Orange-OpenSource/ods-flutter/issues/299))
 - Align component name and parameters for Bottom sheet ([#300](https://github.com/Orange-OpenSource/ods-flutter/issues/300))
+
+## [0.5.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.5.0) - 2023-12-06
+
+### Added
+
+- Align component name and parameters for App bars : top ([#292](https://github.com/Orange-OpenSource/ods-flutter/issues/292))
+- Design Update for app bar top ([#291](https://github.com/Orange-OpenSource/ods-flutter/issues/291))
+
+
+## [0.4.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.0...0.4.0) - 2023-11-21
+
+## [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...main)
+
 
 ### Added
 
