@@ -226,6 +226,19 @@
   "listSwitchesTitle": "Switches Lists",
   "listSwitchesSubtitle": "OdsListSwitch",
 
+  "@_COMPONENTS_MENUS": {},
+  "componentMenus": "Menus",
+  "componentMenuDescription": "Menus appear from a button, action, or other control. It contains at least 2 items that can affect the app, the view or elements within the view.",
+
+  "@_MENUS_VARIANT": {},
+  "componentMenuDropdown": "Dropdown menu",
+  "componentMenuDropdownSubtitle": "OdsDropdownMenu",
+  "componentMenuDropdownDescription": "Dropdown menus display a list of options, triggered by an icon, button, or action. \n\nClick on the vertical more icon to open a dropdown menu.",
+  "componentMenuExposedDropdown": "Exposed dropdown menu",
+  "componentMenuExposedDropdownSubtitle": "OdsExposedDropdownMenu",
+  "componentMenuIcons" : "Icons",
+  "componentMenuEnabled" : "Enabled",
+
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",
   "componentSheetsBottomDescription": "Bottom sheets are surfaces anchored to the bottom of the screen that present users supplemental content.",
