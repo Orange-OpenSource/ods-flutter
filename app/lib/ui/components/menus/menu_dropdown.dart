@@ -1,0 +1,161 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ods_flutter/components/lists/ods_list_switch.dart';
+import 'package:ods_flutter/components/menu/item/ods_dropdown_menu_Item.dart';
+import 'package:ods_flutter/components/menu/ods_dropdown_menu.dart';
+import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter_demo/main.dart';
+import 'package:ods_flutter_demo/ui/components/menus/menu_customization.dart';
+import 'package:ods_flutter_demo/ui/main_app_bar.dart';
+
+class ComponentMenuDropdown extends StatefulWidget {
+  const ComponentMenuDropdown({super.key});
+
+  @override
+  State<ComponentMenuDropdown> createState() => _ComponentMenuDropdownState();
+}
+
+class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MenuCustomization(
+      child: Scaffold(
+        bottomSheet: OdsSheetsBottom(
+          sheetContent: _CustomizationContent(),
+          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        ),
+        key: _scaffoldKey,
+        appBar: MainAppBar(AppLocalizations.of(context)!.componentMenuDropdown),
+        body: _Body(),
+      ),
+    );
+  }
+}
+
+class _Body extends StatefulWidget {
+  @override
+  __BodyState createState() => __BodyState();
+}
+
+class __BodyState extends State<_Body> {
+  bool isChecked = true;
+  bool isEnabled = true;
+  var recipe =
+      OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
+
+  @override
+  Widget build(BuildContext context) {
+    final MenuCustomizationState? customizationState =
+        MenuCustomization.of(context);
+
+    Color? colorIconEnabled = Theme.of(context).brightness == Brightness.dark
+        ? Colors.grey[600]
+        : Colors.grey[400];
+
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          title: Text(recipe.title,
+              style: Theme.of(context).textTheme.titleMedium),
+          subtitle: Text(recipe.subtitle),
+          trailing: OdsDropdownMenu(
+            items: [
+              OdsDropdownMenuItem(
+                value: OdsApplication.recipes[0].title,
+                text: OdsApplication.recipes[0].title,
+                enabled: false,
+                icon: customizationState?.hasIcon == true
+                    ? SvgPicture.asset(
+                        "assets/recipes/ic_cooking_pot.svg",
+                        colorFilter: ColorFilter.mode(
+                            colorIconEnabled!, BlendMode.srcIn),
+                      )
+                    : null,
+              ),
+              OdsDropdownMenuItem(
+                value: OdsApplication.recipes[1].title,
+                text: OdsApplication.recipes[1].title,
+                icon: customizationState?.hasIcon == true
+                    ? SvgPicture.asset(
+                        "assets/recipes/ic_cooking_pot.svg",
+                        colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.onBackground,
+                            BlendMode.srcIn),
+                      )
+                    : null,
+              ),
+              OdsDropdownMenuItem(
+                value: OdsApplication.recipes[2].title,
+                text: OdsApplication.recipes[2].title,
+                icon: customizationState?.hasIcon == true
+                    ? SvgPicture.asset(
+                        "assets/recipes/ic_restaurant.svg",
+                        colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.onBackground,
+                            BlendMode.srcIn),
+                      )
+                    : null,
+              ),
+              OdsDropdownMenuItem(
+                value: OdsApplication.recipes[3].title,
+                text: OdsApplication.recipes[3].title,
+                icon: customizationState?.hasIcon == true
+                    ? SvgPicture.asset(
+                        "assets/recipes/ic_restaurant.svg",
+                        colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.onBackground,
+                            BlendMode.srcIn),
+                      )
+                    : null,
+              ),
+              OdsDropdownMenuItem(
+                value: OdsApplication.recipes[4].title,
+                text: OdsApplication.recipes[4].title,
+                icon: customizationState?.hasIcon == true
+                    ? SvgPicture.asset(
+                        "assets/recipes/ic_ice_cream.svg",
+                        colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.onBackground,
+                            BlendMode.srcIn),
+                      )
+                    : null,
+              ),
+            ],
+            onClick: (String value) {
+              print('${recipe.title} $value');
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _CustomizationContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final MenuCustomizationState? customizationState =
+        MenuCustomization.of(context);
+    return Column(
+      children: [
+        OdsListSwitch(
+          title: AppLocalizations.of(context)!.componentMenuIcons,
+          checked: customizationState?.hasIcon ?? true,
+          onCheckedChange: (bool value) {
+            customizationState?.hasIcon = value;
+          },
+        ),
+      ],
+    );
+  }
+}
