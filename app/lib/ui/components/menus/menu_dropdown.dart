@@ -7,6 +7,7 @@ import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/menu/item/ods_dropdown_menu_Item.dart';
 import 'package:ods_flutter/components/menu/ods_dropdown_menu.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -48,8 +49,6 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  bool isChecked = true;
-  bool isEnabled = true;
   var recipe =
       OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
@@ -62,78 +61,92 @@ class __BodyState extends State<_Body> {
         ? Colors.grey[600]
         : Colors.grey[400];
 
-    return ListView(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        ListTile(
-          title: Text(recipe.title,
-              style: Theme.of(context).textTheme.titleMedium),
-          subtitle: Text(recipe.subtitle),
-          trailing: OdsDropdownMenu(
-            items: [
-              OdsDropdownMenuItem(
-                value: OdsApplication.recipes[0].title,
-                text: OdsApplication.recipes[0].title,
-                enabled: false,
-                icon: customizationState?.hasIcon == true
-                    ? SvgPicture.asset(
-                        "assets/recipes/ic_cooking_pot.svg",
-                        colorFilter: ColorFilter.mode(
-                            colorIconEnabled!, BlendMode.srcIn),
-                      )
-                    : null,
-              ),
-              OdsDropdownMenuItem(
-                value: OdsApplication.recipes[1].title,
-                text: OdsApplication.recipes[1].title,
-                icon: customizationState?.hasIcon == true
-                    ? SvgPicture.asset(
-                        "assets/recipes/ic_cooking_pot.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onBackground,
-                            BlendMode.srcIn),
-                      )
-                    : null,
-              ),
-              OdsDropdownMenuItem(
-                value: OdsApplication.recipes[2].title,
-                text: OdsApplication.recipes[2].title,
-                icon: customizationState?.hasIcon == true
-                    ? SvgPicture.asset(
-                        "assets/recipes/ic_restaurant.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onBackground,
-                            BlendMode.srcIn),
-                      )
-                    : null,
-              ),
-              OdsDropdownMenuItem(
-                value: OdsApplication.recipes[3].title,
-                text: OdsApplication.recipes[3].title,
-                icon: customizationState?.hasIcon == true
-                    ? SvgPicture.asset(
-                        "assets/recipes/ic_restaurant.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onBackground,
-                            BlendMode.srcIn),
-                      )
-                    : null,
-              ),
-              OdsDropdownMenuItem(
-                value: OdsApplication.recipes[4].title,
-                text: OdsApplication.recipes[4].title,
-                icon: customizationState?.hasIcon == true
-                    ? SvgPicture.asset(
-                        "assets/recipes/ic_ice_cream.svg",
-                        colorFilter: ColorFilter.mode(
-                            Theme.of(context).colorScheme.onBackground,
-                            BlendMode.srcIn),
-                      )
-                    : null,
+        Padding(
+          padding: const EdgeInsets.all(spacingM),
+          child: Text(
+            AppLocalizations.of(context)!.componentMenuDropdownDescription,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ),
+        Expanded(
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                title: Text(recipe.title,
+                    style: Theme.of(context).textTheme.titleMedium),
+                subtitle: Text(recipe.subtitle),
+                trailing: OdsDropdownMenu(
+                  items: [
+                    OdsDropdownMenuItem(
+                      value: OdsApplication.recipes[0].title,
+                      text: OdsApplication.recipes[0].title,
+                      enabled: false,
+                      icon: customizationState?.hasIcon == true
+                          ? SvgPicture.asset(
+                              "assets/recipes/ic_cooking_pot.svg",
+                              colorFilter: ColorFilter.mode(
+                                  colorIconEnabled!, BlendMode.srcIn),
+                            )
+                          : null,
+                    ),
+                    OdsDropdownMenuItem(
+                      value: OdsApplication.recipes[1].title,
+                      text: OdsApplication.recipes[1].title,
+                      icon: customizationState?.hasIcon == true
+                          ? SvgPicture.asset(
+                              "assets/recipes/ic_cooking_pot.svg",
+                              colorFilter: ColorFilter.mode(
+                                  Theme.of(context).colorScheme.onBackground,
+                                  BlendMode.srcIn),
+                            )
+                          : null,
+                    ),
+                    OdsDropdownMenuItem(
+                      value: OdsApplication.recipes[2].title,
+                      text: OdsApplication.recipes[2].title,
+                      icon: customizationState?.hasIcon == true
+                          ? SvgPicture.asset(
+                              "assets/recipes/ic_restaurant.svg",
+                              colorFilter: ColorFilter.mode(
+                                  Theme.of(context).colorScheme.onBackground,
+                                  BlendMode.srcIn),
+                            )
+                          : null,
+                    ),
+                    OdsDropdownMenuItem(
+                      value: OdsApplication.recipes[3].title,
+                      text: OdsApplication.recipes[3].title,
+                      icon: customizationState?.hasIcon == true
+                          ? SvgPicture.asset(
+                              "assets/recipes/ic_restaurant.svg",
+                              colorFilter: ColorFilter.mode(
+                                  Theme.of(context).colorScheme.onBackground,
+                                  BlendMode.srcIn),
+                            )
+                          : null,
+                    ),
+                    OdsDropdownMenuItem(
+                      value: OdsApplication.recipes[4].title,
+                      text: OdsApplication.recipes[4].title,
+                      icon: customizationState?.hasIcon == true
+                          ? SvgPicture.asset(
+                              "assets/recipes/ic_ice_cream.svg",
+                              colorFilter: ColorFilter.mode(
+                                  Theme.of(context).colorScheme.onBackground,
+                                  BlendMode.srcIn),
+                            )
+                          : null,
+                    ),
+                  ],
+                  onClick: (String value) {
+                    print('${recipe.title} $value');
+                  },
+                ),
               ),
             ],
-            onClick: (String value) {
-              print('${recipe.title} $value');
-            },
           ),
         ),
       ],
