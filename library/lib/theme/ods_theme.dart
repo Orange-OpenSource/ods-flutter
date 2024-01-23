@@ -221,19 +221,20 @@ class OdsTheme {
     ),
     menuButtonTheme: MenuButtonThemeData(
       style: ButtonStyle(
-        backgroundColor:
-            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-          if (states.contains(MaterialState.pressed)) {
-            return lightColorScheme.primary.withOpacity(0.3);
-          }
-          if (states.contains(MaterialState.hovered)) {
-            return lightColorScheme.primary;
-          }
-          if (states.contains(MaterialState.focused)) {
-            return lightColorScheme.primaryContainer;
-          }
-          return Colors.transparent;
-        }),
+        backgroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return lightColorScheme.primary.withOpacity(0.3);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return lightColorScheme.primary.withOpacity(0.3);
+            }
+            if (states.contains(MaterialState.focused)) {
+              return lightColorScheme.primaryContainer;
+            }
+            return Colors.transparent;
+          },
+        ),
         foregroundColor: MaterialStateProperty.resolveWith(
           (Set<MaterialState> states) {
             if (states.contains(MaterialState.disabled)) {
@@ -241,7 +242,6 @@ class OdsTheme {
             }
 
             if (states.contains(MaterialState.focused)) {
-              //return Colors.orange;
               return lightColorScheme.primary;
             }
 
@@ -475,19 +475,21 @@ class OdsTheme {
     ),
     menuButtonTheme: MenuButtonThemeData(
       style: ButtonStyle(
-        backgroundColor:
-            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-          if (states.contains(MaterialState.pressed)) {
-            return darkColorScheme.primary.withOpacity(0.6);
-          }
-          if (states.contains(MaterialState.hovered)) {
-            return darkColorScheme.primary;
-          }
-          if (states.contains(MaterialState.focused)) {
-            return darkColorScheme.primaryContainer;
-          }
-          return Colors.transparent;
-        }),
+        backgroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return darkColorScheme.primary.withOpacity(0.6);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return darkColorScheme.primary.withOpacity(0.6);
+            }
+            if (states.contains(MaterialState.focused)) {
+              return darkColorScheme.primaryContainer;
+            }
+            //return Colors.transparent;
+            return darkSurfaceDefault;
+          },
+        ),
         foregroundColor: MaterialStateProperty.resolveWith(
           (Set<MaterialState> states) {
             if (states.contains(MaterialState.disabled)) {
