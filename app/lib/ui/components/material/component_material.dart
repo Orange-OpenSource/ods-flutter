@@ -27,7 +27,7 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
           //Cards(),
           //Chips(),
           //Dialogs(),
-          Menus(),
+          //Menus(),
           //ProgressIndicators(),
           //Sliders(),
           //SnackBars(),
