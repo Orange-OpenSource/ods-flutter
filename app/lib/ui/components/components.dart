@@ -22,6 +22,8 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_switches.dart';
 import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
+import 'package:ods_flutter_demo/ui/components/menus/menu_dropdown.dart';
+import 'package:ods_flutter_demo/ui/components/menus/menu_exposed_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_circular.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_linear.dart';
@@ -194,6 +196,23 @@ List<Component> components(BuildContext context) {
           AppLocalizations.of(context)!.listSwitchesTitle,
           AppLocalizations.of(context)!.listSwitchesSubtitle,
           ComponentSwitchesList(),
+        ),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentMenus,
+      'assets/il_menu.png',
+      AppLocalizations.of(context)!.componentMenuDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.componentMenuDropdown,
+          AppLocalizations.of(context)!.componentMenuDropdownSubtitle,
+          ComponentMenuDropdown(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.componentMenuExposedDropdown,
+          AppLocalizations.of(context)!.componentMenuExposedDropdownSubtitle,
+          MenuExposedDropdown(),
         ),
       ],
     ),
