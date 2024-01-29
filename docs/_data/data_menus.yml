@@ -46,6 +46,8 @@ toc2:
         url: components/snackbars_docs
       - page: Switches
         url: components/switches_docs
+      - page: TextFields
+        url: components/textFields_docs
 
   - title: Modules
     subfolderitems:
