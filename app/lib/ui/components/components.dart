@@ -32,6 +32,8 @@ import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom.dart'
 import 'package:ods_flutter_demo/ui/components/sliders/sliders.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars.dart';
 import 'package:ods_flutter_demo/ui/components/switches/switches.dart';
+import 'package:ods_flutter_demo/ui/components/textfields/textfield.dart';
+import 'package:ods_flutter_demo/ui/components/textfields/textfield_password.dart';
 
 List<Component> components(BuildContext context) {
   return [
@@ -286,6 +288,23 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.switchesVariantTitle,
             AppLocalizations.of(context)!.switchesVariantSubtitle,
             ComponentSwitches()),
+      ],
+    ),
+    Component(
+      AppLocalizations.of(context)!.componentTextFields,
+      'assets/il_text-fields.png',
+      AppLocalizations.of(context)!.componentTextFieldsDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.componentTextField,
+          AppLocalizations.of(context)!.componentTextFieldSubtitle,
+          ComponentTextField(),
+        ),
+        Variant(
+          AppLocalizations.of(context)!.componentTextFieldPassword,
+          AppLocalizations.of(context)!.componentTextFieldPasswordSubtitle,
+          ComponentTextFieldPassword(),
+        ),
       ],
     ),
     Component(
