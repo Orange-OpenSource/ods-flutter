@@ -10,7 +10,7 @@ class OdsDropdownMenuItem<T> extends PopupMenuEntry<T> {
   final String text;
 
   ///The value that will be returned by showMenu if this entry is selected.
-  final String? value;
+  final T? value;
 
   /// Whether the user is permitted to select this item.
   final bool enabled;
