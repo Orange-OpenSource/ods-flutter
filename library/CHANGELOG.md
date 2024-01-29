@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - ODS - Component - Menus ([#22](https://github.com/Orange-OpenSource/ods-flutter/issues/22))
 - Align component name and parameters for Menus ([#308](https://github.com/Orange-OpenSource/ods-flutter/issues/308))
+- ODS - Component - Text Fields ([#34](https://github.com/Orange-OpenSource/ods-flutter/issues/34))
+- Align component name and parameters for Text fields ([#309](https://github.com/Orange-OpenSource/ods-flutter/issues/309))
 
 ## [0.6.2](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.2) - 2023-01-10
 
