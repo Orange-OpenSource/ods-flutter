@@ -31,7 +31,7 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
           //ProgressIndicators(),
           //Sliders(),
           //SnackBars(),
-          TextFields(),
+          //TextFields(),
         ],
       ),
     );
