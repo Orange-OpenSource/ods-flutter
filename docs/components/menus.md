@@ -51,7 +51,7 @@ return OdsDropdownMenu(
       icon: const Icon(Icons.coffee) // Optional
     ),
   ],
-  onClick: (String value) {
+    selectedItem: (String value) {
     print('$value');
   },
 );
@@ -101,6 +101,6 @@ Parameter | Default&nbsp;value | Description
 -- | -- | --
 `label: String` | | Label of the exposed menu text field
 `items: List<DropdownMenuEntry>` | | Items displayed into the dropdown menu
-`selectedItem: Function(String?)?` | | Selected item displayed into the text field
+`selectedItem: Function(T?)?` | | Selected item displayed into the text field
 `enabled: Boolean` | `true` | Controls the enabled state of the dropdown menu. When `false`, the dropdown menu text field will be neither clickable nor focusable, visually it will appear in the disabled state.
 {:.table}

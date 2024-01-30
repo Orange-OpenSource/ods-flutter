@@ -8,15 +8,15 @@ import 'package:ods_flutter/components/menu/item/ods_dropdown_menu_Item.dart';
 ///.
 class OdsDropdownMenu<T> extends StatefulWidget {
   /// Signature used by PopupMenuButton to lazily construct the items shown when the button is presse
-  final List<OdsDropdownMenuItem<String>> items;
+  final List<OdsDropdownMenuItem<T>> items;
 
   /// Called when the user selects a value from the popup menu created by this button
-  final Function(String)? onClick;
+  final Function(dynamic)? selectedItem;
 
   const OdsDropdownMenu({
     Key? key,
     required this.items,
-    this.onClick,
+    this.selectedItem,
   }) : super(key: key);
 
   @override
@@ -37,7 +37,7 @@ class _OdsDropdownMenuState extends State<OdsDropdownMenu> {
       itemBuilder: (context) {
         return widget.items;
       },
-      onSelected: widget.onClick,
+      onSelected: widget.selectedItem,
     );
   }
 }

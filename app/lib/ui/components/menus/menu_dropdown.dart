@@ -141,7 +141,7 @@ class __BodyState extends State<_Body> {
                           : null,
                     ),
                   ],
-                  onClick: (String value) {
+                  selectedItem: (value) {
                     print('${recipe.title} $value');
                   },
                 ),
