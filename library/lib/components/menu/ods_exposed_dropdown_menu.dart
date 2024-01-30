@@ -20,7 +20,7 @@ class OdsExposedDropdownMenu<T> extends StatefulWidget {
   final bool enabled;
 
   /// The callback is called when a selection is made.
-  final Function(dynamic)? selectedItem;
+  final Function(T)? selectedItem;
 
   const OdsExposedDropdownMenu({
     Key? key,
@@ -48,7 +48,7 @@ class _OdsExposedDropdownMenuState extends State<OdsExposedDropdownMenu> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(spacingS),
-          child: DropdownMenu<dynamic>(
+          child: DropdownMenu(
             requestFocusOnTap: true,
             label: Text(widget.label),
             enabled: widget.enabled,
