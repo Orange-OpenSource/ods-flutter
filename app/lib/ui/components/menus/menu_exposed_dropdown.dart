@@ -117,10 +117,12 @@ class __BodyState extends State<_Body> {
                 : null,
           ),
         ],
-        selectedItem: (String? value) {
-          setState(() {
-            print('$value');
-          });
+        selectedItem: (value) {
+          setState(
+            () {
+              print('$value');
+            },
+          );
         },
       ),
     );

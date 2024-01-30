@@ -8,7 +8,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 ///.
 class OdsExposedDropdownMenu<T> extends StatefulWidget {
   /// Descriptions of the menu items in the [OdsExposedDropdownMenu]
-  final List<DropdownMenuEntry<String>> items;
+  final List<DropdownMenuEntry> items;
 
   /// Text describes the input field
   final String label;
@@ -20,7 +20,7 @@ class OdsExposedDropdownMenu<T> extends StatefulWidget {
   final bool enabled;
 
   /// The callback is called when a selection is made.
-  final Function(String?)? selectedItem;
+  final Function(dynamic)? selectedItem;
 
   const OdsExposedDropdownMenu({
     Key? key,
@@ -48,7 +48,7 @@ class _OdsExposedDropdownMenuState extends State<OdsExposedDropdownMenu> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(spacingS),
-          child: DropdownMenu<String>(
+          child: DropdownMenu<dynamic>(
             requestFocusOnTap: true,
             label: Text(widget.label),
             enabled: widget.enabled,
