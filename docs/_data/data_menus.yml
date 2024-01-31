@@ -32,6 +32,8 @@ toc2:
         url: components/floatingActionButtons_docs
       - page: List item
         url: components/listsItem_docs
+      - page: Menus
+        url: components/menus_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
       - page: Radio Buttons

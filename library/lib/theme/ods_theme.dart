@@ -206,6 +206,79 @@ class OdsTheme {
         ),
       ),
     ),
+    menuTheme: MenuThemeData(
+      style: MenuStyle(
+        backgroundColor: MaterialStatePropertyAll<Color>(
+          lightColorScheme.onSecondary,
+        ),
+        shadowColor: MaterialStateProperty.all(
+          lightColorScheme.onSecondary,
+        ),
+        surfaceTintColor: MaterialStateProperty.all<Color>(
+          Colors.white,
+        ),
+      ),
+    ),
+    menuButtonTheme: MenuButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return lightColorScheme.primary.withOpacity(0.3);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return lightColorScheme.primary.withOpacity(0.3);
+            }
+            if (states.contains(MaterialState.focused)) {
+              return lightColorScheme.primaryContainer;
+            }
+            return Colors.transparent;
+          },
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return lightColorScheme.onSurface.withOpacity(0.28);
+            }
+
+            if (states.contains(MaterialState.focused)) {
+              return lightColorScheme.primary;
+            }
+
+            return lightColorScheme.onSurface;
+          },
+        ),
+        iconColor:
+            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return lightColorScheme.onSurface.withOpacity(0.38);
+          }
+          if (states.contains(MaterialState.pressed)) {
+            return lightColorScheme.onPrimary;
+          }
+          if (states.contains(MaterialState.hovered)) {
+            return lightColorScheme.onPrimary;
+          }
+          if (states.contains(MaterialState.focused)) {
+            return lightColorScheme.onPrimaryContainer;
+          }
+          return lightColorScheme.onSurfaceVariant;
+        }),
+        overlayColor:
+            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.pressed)) {
+            return lightColorScheme.onPrimary.withOpacity(0.12);
+          }
+          if (states.contains(MaterialState.hovered)) {
+            return lightColorScheme.onPrimary.withOpacity(0.08);
+          }
+          if (states.contains(MaterialState.focused)) {
+            return lightColorScheme.onPrimaryContainer.withOpacity(0.12);
+          }
+          return Colors.transparent;
+        }),
+      ),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -398,6 +471,67 @@ class OdsTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(spacingS),
         ),
+      ),
+    ),
+    menuButtonTheme: MenuButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return darkColorScheme.primary.withOpacity(0.6);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return darkColorScheme.primary.withOpacity(0.6);
+            }
+            if (states.contains(MaterialState.focused)) {
+              return darkColorScheme.primaryContainer;
+            }
+            //return Colors.transparent;
+            return darkSurfaceDefault;
+          },
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return darkColorScheme.onSurface.withOpacity(0.28);
+            }
+
+            if (states.contains(MaterialState.focused)) {
+              return darkColorScheme.primary;
+            }
+
+            return darkColorScheme.onSurface;
+          },
+        ),
+        iconColor:
+            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return darkColorScheme.onSurface.withOpacity(0.38);
+          }
+          if (states.contains(MaterialState.pressed)) {
+            return darkColorScheme.onPrimary;
+          }
+          if (states.contains(MaterialState.hovered)) {
+            return darkColorScheme.onPrimary;
+          }
+          if (states.contains(MaterialState.focused)) {
+            return darkColorScheme.onPrimaryContainer;
+          }
+          return darkColorScheme.onSurfaceVariant;
+        }),
+        overlayColor:
+            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.pressed)) {
+            return darkColorScheme.onPrimary.withOpacity(0.12);
+          }
+          if (states.contains(MaterialState.hovered)) {
+            return darkColorScheme.onPrimary.withOpacity(0.08);
+          }
+          if (states.contains(MaterialState.focused)) {
+            return darkColorScheme.onPrimaryContainer.withOpacity(0.12);
+          }
+          return Colors.transparent;
+        }),
       ),
     ),
   );

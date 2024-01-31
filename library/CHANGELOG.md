@@ -5,6 +5,13 @@ All notable changes done in ODS library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
+
+### Added
+
+- ODS - Component - Menus ([#22](https://github.com/Orange-OpenSource/ods-flutter/issues/22))
+- Align component name and parameters for Menus ([#308](https://github.com/Orange-OpenSource/ods-flutter/issues/308))
+
 ## [0.6.2](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.6.2) - 2023-01-10
 
 ### Added
