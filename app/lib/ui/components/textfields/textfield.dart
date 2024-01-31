@@ -356,31 +356,6 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            /*
-                            children: List<Widget>.generate(3, (int index) {
-                              bool isSelected = selectedTrailingIndex == index;
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    right: spacingXs, left: spacingS),
-                                child: OdsChoiceChip(
-                                  text: customizationState.trailings[index]
-                                      .stringValue(context),
-                                  selected: isSelected,
-                                  onClick: (selected) {
-                                    setState(
-                                      () {
-                                        selectedTrailingIndex = index;
-                                        isFilteredTrailing = selected!;
-                                        customizationState.selectedTrailing =
-                                            customizationState.trailings[index];
-                                      },
-                                    );
-                                  },
-                                ),
-                              );
-                            }),
-
-                             */
                             children: List<Widget>.generate(
                               customizationState.trailings.length,
                               (int index) {

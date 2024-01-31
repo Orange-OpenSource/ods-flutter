@@ -206,29 +206,6 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              /*
-              children: List<Widget>.generate(3, (int index) {
-                bool isSelected = selectedStateIndex == index;
-                return Padding(
-                  padding: EdgeInsets.only(right: spacingXs, left: spacingS),
-                  child: OdsChoiceChip(
-                    text: customizationState?.states[index]
-                            .stringValue(context) ??
-                        '',
-                    selected: isSelected,
-                    onClick: (selected) {
-                      setState(() {
-                        selectedStateIndex = index;
-                        isFilteredState = selected!;
-                        customizationState?.selectedState =
-                            customizationState.states[index];
-                      });
-                    },
-                  ),
-                );
-              }),
-
-               */
               children: List<Widget>.generate(
                 customizationState!.states.length,
                 (int index) {
@@ -245,13 +222,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       onClick: (selected) {
                         setState(
                           () {
-                            FocusScope.of(context).unfocus();
                             customizationState.selectedState =
                                 customizationState.states[index];
-                            Future.delayed(Duration(milliseconds: 100))
-                                .then((value) {
-                              FocusScope.of(context).requestFocus();
-                            });
                           },
                         );
                       },
