@@ -72,19 +72,19 @@ class _OdsTextButtonState extends State<OdsTextButton> {
     switch (style) {
       case OdsTextButtonStyle.functionalPrimary:
         return OdsButtonColors(
-            background: Theme.of(context).colorScheme.onSecondary,
+            background: Colors.transparent,
             text: Theme.of(context).colorScheme.primary,
             icon: Theme.of(context).colorScheme.primary,
             textDisabled: grey500);
       case OdsTextButtonStyle.functionalDefault:
         return OdsButtonColors(
-            background: Theme.of(context).colorScheme.onSecondary,
+            background: Colors.transparent,
             text: Theme.of(context).colorScheme.onSurface,
             icon: Theme.of(context).colorScheme.secondary,
             textDisabled: grey500);
       default:
         return OdsButtonColors(
-            background: Theme.of(context).colorScheme.onSecondary,
+            background: Colors.transparent,
             text: Theme.of(context).colorScheme.secondary,
             icon: Theme.of(context).colorScheme.onSecondary,
             textDisabled: grey500);
