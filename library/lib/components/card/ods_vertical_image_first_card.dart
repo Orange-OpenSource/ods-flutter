@@ -78,14 +78,20 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.title,
-                        style: Theme.of(context).textTheme.titleLarge,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: spacingS),
+                        child: Text(
+                          widget.title,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
                       ),
                       if (widget.subtitle != null)
-                        Text(
-                          widget.subtitle!,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: spacingS),
+                          child: Text(
+                            widget.subtitle!,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                         ),
                       if (widget.text != null)
                         Padding(
