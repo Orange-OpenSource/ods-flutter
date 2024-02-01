@@ -196,11 +196,14 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 customizationState.numberOfItems = value;
               }),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentElementDivider,
-              checked: customizationState.hasDivider,
-              onCheckedChange: (bool value) {
-                customizationState.hasDivider = value;
-              }),
+            title: AppLocalizations.of(context)!.componentElementDivider,
+            checked: customizationState.hasDivider,
+            onCheckedChange: (customizationState.numberOfItems >= 1)
+                ? (bool value) {
+                    customizationState.hasDivider = value;
+                  }
+                : null,
+          ),
         ],
       ),
     );

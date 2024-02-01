@@ -43,6 +43,7 @@ class CardCustomizationState extends State<CardCustomization> {
   set numberOfItems(int value) {
     setState(() {
       _numberOfItems = value;
+      updateHasDivider();
     });
   }
 
@@ -97,6 +98,15 @@ class CardCustomizationState extends State<CardCustomization> {
   set selectedElement(CardEnum value) {
     setState(() {
       _selectedElement = value;
+    });
+  }
+
+  /// Determine if _hasDivider should be enabled
+  void updateHasDivider() {
+    setState(() {
+      if (_numberOfItems == 0) {
+        _hasDivider = false;
+      }
     });
   }
 
