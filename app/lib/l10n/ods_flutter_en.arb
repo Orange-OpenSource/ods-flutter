@@ -15,12 +15,14 @@
   "guidelinesColours": "Colours",
   "guidelinesColoursDescription": "Coming soon...",
   "guidelinesTypography": "Typography",
-  "guidelinesTypographyDescription": "TODO You should use Roboto in your app, which is the Android system font...",
+  "guidelinesTypographyAndroidDescription": "TODO You should use Roboto in your app, which is the Android system font...",
+  "guidelinesTypographyAppleDescription": "Apple proposes built-in text styles based on the Apple Dynamic Types and using the native typeface San Francisco for all Latin, Greek and Cyrillic alphabets. \nTo create you application you should use the following updated styles.",
   "guidelinesSpacings": "Spacing",
   "guidelinesSpacingsDescription": "Spacing tokens are used to position elements on the screen and layout within components. Spacing tokens can be applied ad padding and margins",
 
   "@_COMPONENTS_SCREEN": {},
   "componentScreenTitle": "ODS Components",
+  "componentScreenVariantTitle": "Variants",
 
   "@_COMPONENTS_ELEMENTS": {},
   "componentElementButton1": "Button 1",
