@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update Copyright in files ([#303](https://github.com/Orange-OpenSource/ods-flutter/issues/303))
+- Vertical Card customization updates ([#189](https://github.com/Orange-OpenSource/ods-flutter/issues/189))
+- Typographie flutter ios ([#293](https://github.com/Orange-OpenSource/ods-flutter/issues/293))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 
