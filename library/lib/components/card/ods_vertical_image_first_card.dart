@@ -94,7 +94,7 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
                         padding: const EdgeInsets.only(bottom: spacingS),
                         child: Text(
                           widget.title,
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                       ),
                       if (widget.subtitle != null)

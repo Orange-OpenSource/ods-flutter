@@ -64,12 +64,12 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
               leading: widget.image,
               title: Text(
                 widget.title,
-                style: Theme.of(context).textTheme.titleSmall,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               subtitle: widget.subtitle != null
                   ? Text(
                       widget.subtitle!,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     )
                   : null,
               trailing: Row(
