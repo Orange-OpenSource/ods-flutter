@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.8.0) - 2023-03-02
 
-## Added
+### Added
 
 - [Bug]: ODS - Components - Cards - Horizontal card - divider ([#271](https://github.com/Orange-OpenSource/ods-flutter/issues/271))
 - ODS - Component - Buttons: Segmented Buttons ([#7](https://github.com/Orange-OpenSource/ods-flutter/issues/7))
+
+### Changed
+
+- Update Copyright in files ([#303](https://github.com/Orange-OpenSource/ods-flutter/issues/303))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 
