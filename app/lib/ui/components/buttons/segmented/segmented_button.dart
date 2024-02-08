@@ -104,7 +104,6 @@ class _BodyState extends State<_Body> {
         value: Foods.ham,
         label: Text(
           OdsApplication.foods[32].name,
-          //overflow: TextOverflow.ellipsis,
         ),
         icon: customizationState!.hasIcon ? Icon(Icons.restaurant) : null,
       ),
@@ -112,7 +111,6 @@ class _BodyState extends State<_Body> {
         value: Foods.milk,
         label: Text(
           OdsApplication.foods[10].name,
-          //overflow: TextOverflow.ellipsis,
         ),
         icon: customizationState.hasIcon ? Icon(Icons.restaurant) : null,
       ),
@@ -120,7 +118,6 @@ class _BodyState extends State<_Body> {
         value: Foods.figs,
         label: Text(
           OdsApplication.foods[18].name,
-          //overflow: TextOverflow.ellipsis,
         ),
         icon: customizationState.hasIcon ? Icon(Icons.restaurant) : null,
       ),
@@ -128,7 +125,6 @@ class _BodyState extends State<_Body> {
         value: Foods.eggs,
         label: Text(
           OdsApplication.foods[19].name,
-          //overflow: TextOverflow.ellipsis,
         ),
         icon: customizationState.hasIcon ? Icon(Icons.restaurant) : null,
       ),
@@ -136,7 +132,6 @@ class _BodyState extends State<_Body> {
         value: Foods.oil,
         label: Text(
           OdsApplication.foods[25].name,
-          //overflow: TextOverflow.ellipsis,
         ),
         icon: customizationState.hasIcon ? Icon(Icons.restaurant) : null,
       ),
