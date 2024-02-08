@@ -41,6 +41,9 @@
   "componentElementText": "Text",
   "componentElementTrailing": "Trailing element",
   "componentElementLabel": "Label",
+  "componentElementTypes": "Types",
+  "componentElementToggleCount": "Toggle count",
+  "componentElementEnabled": "Enabled",
 
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
@@ -137,6 +140,10 @@
   "buttonsTextFunctionalPrimaryEnum": "Primary",
   "buttonsTextFunctionalDefaultEnum": "Default",
   "buttonsTextFunctionalCustomizeFunctionalTitle": "Style",
+  "segmentedButtonsVariantTitle": "Segmented Buttons",
+  "segmentedButtonsVariantSubtitle": "OdsSegmentedButton",
+  "segmentedEnumSingle": "Single",
+  "segmentedEnumMulti": "Multi",
 
   "@_COMPONENTS_SNACKBARS": {},
   "componentSnackbarsTitle": "Snackbars",
