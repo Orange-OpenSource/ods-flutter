@@ -12,9 +12,14 @@ description: Buttons allow users to take actions, and make choices, with a singl
 * [Accessibility](#accessibility)
 * [Variants](#variants)
     * [Text button](#text-button)
+        * [Flutter implementation](#flutter-implementation)
     * [Outlined button](#outlined-button)
+        * [Flutter implementation](#flutter-implementation-1)
     * [Contained button](#contained-button)
-* [Component specific tokens](#component-specific-tokens)
+        * [Flutter implementation](#flutter-implementation-2)
+    * [Segmented button](#segmented-button)
+        * [Flutter implementation](#flutter-implementation-3)
+            * [OdsSegmentedButton API](#odssegmentedbutton-api)
 
 ---
 
@@ -41,7 +46,7 @@ cards. In cards, text buttons help maintain an emphasis on card content.
 
 ![TextButton](images/button_text_light.png) ![TextButton dark](images/button_text_dark.png)
 
-> **Flutter implementation**
+#### Flutter implementation
 
 Use the `OdsTextButton`:
 
@@ -72,7 +77,7 @@ the primary action in an app.
 
 ![ButtonOutlined](images/button_outlined_light.png) ![ButtonOutlined dark](images/button_outlined_dark.png)
 
-> **Flutter implementation**
+#### Flutter implementation
 
 Use the `OdsOutlinedButton` composable:
 
@@ -99,7 +104,7 @@ Functional negative:
 
 ![ContainedButton negative light](images/button_contained_negative_light.png) ![ContainedButton negative dark](images/button_contained_negative_dark.png)
 
-> **Flutter implementation**
+#### Flutter implementation
 
 Use the `OdsButton`:
 
@@ -123,6 +128,90 @@ return OdsButton(
 );
 ```
 
-## Component specific tokens
+### Segmented button
 
-_Soon available_
+A group of toggle buttons. Only one option in a group of toggle buttons can be selected and active
+at a time.
+Selecting one option deselects any other.
+Use for simple choices between two to five items (for more items or complex choices, use chips)
+
+![Segmented button single light](images/segmented_button_single_light.png) ![Segmented button single dark](images/segmented_button_single_dark.png)
+
+#### Flutter implementation
+
+Single-select segmented button :
+
+```dart
+enum Foods { ham, milk, figs, eggs, oil }
+
+///Single Choice
+Foods foodsView = Foods.ham;
+  
+return OdsSegmentedButton<Foods>(
+        enabled: false, //Optional by default true
+        segments: <ButtonSegment<Foods>>[
+          ButtonSegment<Foods>(
+            value: Foods.ham,
+            label: Text("Ham"),
+            icon: Icon(Icons.restaurant), // Optional, line can be removed if you don't need any icon
+          ),
+          ButtonSegment<Foods>(
+            value: Foods.milk,
+            label: Text("Milk"),
+            icon: Icon(Icons.restaurant), // Optional, line can be removed if you don't need any icon
+          ),
+        ],
+        selected: <Foods>{foodsView},
+        onSelectionChanged: (Set<Foods> newSelection) {
+          setState(
+            () {
+              foodsView = newSelection.last;
+            },
+          );
+        });
+```
+
+Multi-select segmented button :
+
+![Segmented button multi light](images/segmented_button_multi_light.png) ![Segmented button multi dark](images/segmented_button_multi_dark.png)
+
+```dart
+enum Foods { ham, milk, figs, eggs, oil }
+
+///Multi Choice
+Set<Foods> selectionMulti = <Foods>{Foods.ham, Foods.milk};
+  
+return OdsSegmentedButton<Foods>(
+  enabled: false, //Optional by default true
+  segments: <ButtonSegment<Foods>>[
+    ButtonSegment<Foods>(
+      value: Foods.ham,
+      label: Text("Ham"),
+      icon: Icon(Icons.restaurant), // Optional, line can be removed if you don't need any icon
+    ),
+    ButtonSegment<Foods>(
+      value: Foods.milk,
+      label: Text("Milk"),
+      icon: Icon(Icons.restaurant), // Optional, line can be removed if you don't need any icon
+    ),
+  ],
+  selected: selectionMulti,
+  onSelectionChanged: (Set<Foods> newSelection) {
+    setState(() {
+      selectionMulti = newSelection;
+    });
+  },
+);
+
+
+```
+
+##### OdsSegmentedButton API
+
+Parameter | Default&nbsp;value | Description
+-- | -- | --
+`segments: List<ButtonSegment<T>> segment` | | Descriptions of the segments in the button.
+`selected: Set<T>` | | The set of `ButtonSegment.values` that indicate which `segments` are selected.
+`onSelectionChanged: (Set<T>)? onSelectionChanged` | `null` | Callback invoked on selection change
+`enabled: bool?` | `true` | Controls the enabled state of the segmented button. When false, this segmented button will not be clickable.
+{:.table}
