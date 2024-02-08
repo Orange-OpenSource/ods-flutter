@@ -279,6 +279,25 @@ class OdsTheme {
         }),
       ),
     ),
+    segmentedButtonTheme: SegmentedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            return states.contains(MaterialState.selected) &&
+                    !states.contains(MaterialState.disabled)
+                ? lightColorScheme.primary
+                : lightColorScheme.onSecondary;
+          },
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            return !states.contains(MaterialState.disabled)
+                ? lightColorScheme.secondary
+                : null;
+          },
+        ),
+      ),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -532,6 +551,29 @@ class OdsTheme {
           }
           return Colors.transparent;
         }),
+      ),
+    ),
+    segmentedButtonTheme: SegmentedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (!states.contains(MaterialState.disabled)) {
+              return states.contains(MaterialState.selected)
+                  ? darkColorScheme.primary
+                  : darkColorScheme.onSecondary;
+            }
+            return darkColorScheme.onSecondary;
+          },
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith(
+          (Set<MaterialState> states) {
+            if (!states.contains(MaterialState.disabled)) {
+              return states.contains(MaterialState.selected)
+                  ? darkColorScheme.onSecondary
+                  : darkColorScheme.secondary;
+            }
+          },
+        ),
       ),
     ),
   );

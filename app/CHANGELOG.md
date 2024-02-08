@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Added
 
 - [Bug]: ODS - Components - Cards - Horizontal card - divider ([#271](https://github.com/Orange-OpenSource/ods-flutter/issues/271))
+- ODS - Component - Buttons: Segmented Buttons ([#7](https://github.com/Orange-OpenSource/ods-flutter/issues/7))
 
 ## Changed
 
