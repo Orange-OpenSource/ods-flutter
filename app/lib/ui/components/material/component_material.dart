@@ -22,7 +22,7 @@ class _ComponentMaterialState extends State<ComponentMaterial> {
         children: [
           ButtonsIcons(),
           //ButtonsFab(),
-          ButtonsSegmented(),
+          //ButtonsSegmented(),
           //BottomSheets(),
           //Cards(),
           //Chips(),
