@@ -66,7 +66,7 @@ extension OdsSnackbarsSingleLineExtension on OdsSnackbar {
   }) {
     final snackbar = SnackBar(
       width: double.infinity,
-      content: Text(message),
+      content: Text(message, maxLines: 1),
       behavior: SnackBarBehavior.floating,
       action: actionLabel != null && actionLabel.isNotEmpty && onPressed != null
           ? SnackBarAction(
@@ -91,17 +91,17 @@ extension OdsSnackbarsTwoLinesExtension on OdsSnackbar {
   }) {
     SnackBar snackbar = SnackBar(
       width: double.infinity,
-      content: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 2.5,
-            child: Text(
-              message,
-            ),
-          ),
-        ],
-      ),
+      content: actionLabel != null
+          ? Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  child: Text(message, maxLines: 2),
+                ),
+              ],
+            )
+          : Text(message, maxLines: 2),
       action: actionLabel != null && actionLabel.isNotEmpty && onPressed != null
           ? SnackBarAction(
               label: actionLabel,
@@ -135,9 +135,7 @@ extension OdsSnackbarsLongerActionExtension on OdsSnackbar {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 2.5,
-                  child: Text(
-                    message,
-                  ),
+                  child: Text(message, maxLines: 2),
                 ),
               ],
             ),
