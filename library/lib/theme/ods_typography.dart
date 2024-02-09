@@ -133,82 +133,92 @@ TextTheme iosTextTheme = const TextTheme(
   // Headline L > iOS: Large Title
   headlineLarge: TextStyle(
       debugLabel: 'Headline L',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Display',
       fontSize: 40,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.25,
       letterSpacing: 0.25),
   // Headline M > no correspondence
   headlineMedium: TextStyle(
       debugLabel: 'Headline M',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Display',
       fontSize: 34,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.29,
       letterSpacing: 0.25),
   // Headline S > iOS: Headline
   headlineSmall: TextStyle(
       debugLabel: 'Headline S',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Display',
       fontSize: 24,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.33,
       letterSpacing: 0),
 
   // Title L > iOS: Title 1
   titleLarge: TextStyle(
       debugLabel: 'Title L',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Display',
       fontSize: 20,
       fontWeight: FontWeight.w600,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.27,
       letterSpacing: 0),
   // Title M > iOS: Title 2
   titleMedium: TextStyle(
       debugLabel: 'Title M',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Text',
       fontSize: 16,
       fontWeight: FontWeight.w500,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.5,
       letterSpacing: 0.15),
   // Title S > iOS: Title 3
   titleSmall: TextStyle(
       debugLabel: 'Title S',
-      fontFamily: 'CupertinoSystemDisplay',
+      fontFamily: '.SF UI Text',
       fontSize: 14,
       fontWeight: FontWeight.w500,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.43,
       letterSpacing: 0.1),
 
   // Body L > iOS: Body
   bodyLarge: TextStyle(
       debugLabel: 'Body L',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
       fontSize: 16,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.5,
       letterSpacing: 0.5),
   // Body M > iOS: Callout
   bodyMedium: TextStyle(
       debugLabel: 'Body M',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.43,
       letterSpacing: 0.25),
   // Body S > iOS: Subheadline
   bodySmall: TextStyle(
       debugLabel: 'Body S',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
       fontSize: 12,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.33,
       letterSpacing: 0.4),
 
   // Label L > iOS: Footnote
   labelLarge: TextStyle(
       debugLabel: 'Label L',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
+      textBaseline: TextBaseline.alphabetic,
       fontSize: 14,
       fontWeight: FontWeight.w500,
       height: 1.43,
@@ -216,17 +226,19 @@ TextTheme iosTextTheme = const TextTheme(
   // Label M > iOS: Caption 1
   labelMedium: TextStyle(
       debugLabel: 'Label M',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
       fontSize: 11,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.33,
       letterSpacing: 1.5),
   // Label S > iOS: Caption 2
   labelSmall: TextStyle(
       debugLabel: 'Label S',
-      fontFamily: 'CupertinoSystemText',
+      fontFamily: '.SF UI Text',
       fontSize: 10,
       fontWeight: FontWeight.w400,
+      textBaseline: TextBaseline.alphabetic,
       height: 1.45,
       letterSpacing: 1.5),
 );
