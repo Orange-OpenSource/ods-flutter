@@ -34,7 +34,7 @@ class GuidelineColoursScreen extends StatelessWidget {
                   Text(
                       AppLocalizations.of(context)!
                           .guidelinesColoursDescription,
-                      style: Theme.of(context).textTheme.bodyLarge),
+                      style: Theme.of(context).textTheme.bodyMedium),
                   SizedBox(
                     height: spacingM,
                   ),

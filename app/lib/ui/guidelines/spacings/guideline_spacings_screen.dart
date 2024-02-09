@@ -43,7 +43,6 @@ class GuidelineSpacingsScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: spacingM),
                 child: Text(
                   AppLocalizations.of(context)!.guidelinesSpacingsDescription,
-                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
               SizedBox(

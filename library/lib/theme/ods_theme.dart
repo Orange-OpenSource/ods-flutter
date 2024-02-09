@@ -60,15 +60,15 @@ class OdsTheme {
             return TextStyle(
                 color: lightColorScheme.primary,
                 overflow: TextOverflow.ellipsis,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
                 height: 1.43,
                 letterSpacing: 0.25);
           }
           return TextStyle(
               color: lightColorScheme.secondary,
               overflow: TextOverflow.ellipsis,
-              fontSize: 14,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
               height: 1.43,
               letterSpacing: 0.25);

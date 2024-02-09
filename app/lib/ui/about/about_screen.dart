@@ -63,7 +63,7 @@ class _AboutScreenState extends State<AboutScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(AppLocalizations.of(context)!.aboutScreenTitle,
-                    style: Theme.of(context).textTheme.headlineLarge),
+                    style: Theme.of(context).textTheme.headlineMedium),
                 SizedBox(height: spacingXs),
                 Text(
                     'Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})',
@@ -76,7 +76,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
           ListTile(
             title: Text(AppLocalizations.of(context)!.aboutMenuChangelog,
-                style: Theme.of(context).textTheme.titleMedium),
+                style: Theme.of(context).textTheme.bodyMedium),
             onTap: () {
               Get.to(
                 OdsAboutFileScreen(

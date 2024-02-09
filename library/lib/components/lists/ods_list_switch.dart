@@ -66,7 +66,8 @@ class _OdsListSwitchState extends State<OdsListSwitch> {
       button: true,
       excludeSemantics: true,
       child: SwitchListTile(
-        title: Text(widget.title),
+        title:
+            Text(widget.title, style: Theme.of(context).textTheme.bodyMedium),
         value: widget.checked,
         onChanged: widget.enabled != false ? widget.onCheckedChange : null,
         thumbIcon: widget.icon == true ? odsSwitchIcon.thumbIcon : null,

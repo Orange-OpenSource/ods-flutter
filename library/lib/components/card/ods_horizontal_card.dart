@@ -130,7 +130,7 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                                   Text(
                                     widget.title,
                                     style:
-                                        Theme.of(context).textTheme.titleLarge,
+                                        Theme.of(context).textTheme.titleMedium,
                                   ),
                                   if (widget.subtitle != null)
                                     Text(

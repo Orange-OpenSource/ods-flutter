@@ -11,6 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
@@ -39,16 +40,18 @@ class ComponentDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(spacingM),
                 child: Text(
                   component.description,
-                  //style: Theme.of(context).textTheme.bodyLarge,
-                  style: TextStyle(
-                      debugLabel: 'Body L',
-                      fontFamily: 'Roboto',
-                      //fontFamily: '.AppleSystemUIFont',
-                      //fontFamily: 'CupertinoSystemDisplay',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5,
-                      letterSpacing: 0.5),
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: spacingM,
+                    right: spacingM,
+                    top: spacingS,
+                    bottom: spacingS),
+                child: Text(
+                  AppLocalizations.of(context)!.componentScreenVariantTitle,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               ListView.builder(
@@ -86,9 +89,11 @@ class VariantEntry extends StatelessWidget {
             Icon(Icons.play_circle_outline),
           ],
         ),
-        title: Text(variant.title),
+        title:
+            Text(variant.title, style: Theme.of(context).textTheme.bodyMedium),
         subtitle: ExcludeSemantics(
-          child: Text(variant.technicalName),
+          child: Text(variant.technicalName,
+              style: Theme.of(context).textTheme.bodyMedium),
         ),
         onTap: () {
           Get.to(variant.screen);

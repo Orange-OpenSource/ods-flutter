@@ -74,7 +74,7 @@ class _ComponentCountRowState extends State<ComponentCountRow> {
           Expanded(
               child: Text(
             widget.title,
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.bodyMedium,
           )),
           MaterialButton(
               minWidth: 40,
