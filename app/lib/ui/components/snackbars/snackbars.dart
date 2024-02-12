@@ -17,6 +17,7 @@ import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbar.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -89,8 +90,7 @@ class _SnackBarsVariants extends StatelessWidget {
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbar.showSnackbarSingleLine(
                   context: context,
-                  message: AppLocalizations.of(context)!
-                      .componentSnackbarsSingleText,
+                  message: OdsApplication.recipes[21].description,
                   actionLabel: customizationState?.hasActionButton == true
                       ? AppLocalizations.of(context)!
                           .componentSnackbarsActionExampleButtonText
@@ -103,8 +103,7 @@ class _SnackBarsVariants extends StatelessWidget {
                   customizationState?.hasLongerAction == false) {
                 OdsSnackbar.showSnackbarTwoLines(
                   context: context,
-                  message: AppLocalizations.of(context)!
-                      .componentSnackbarsTwoLineActionText,
+                  message: OdsApplication.recipes[7].description,
                   actionLabel: customizationState?.hasActionButton == true
                       ? AppLocalizations.of(context)!
                           .componentSnackbarsActionExampleButtonText
@@ -117,8 +116,7 @@ class _SnackBarsVariants extends StatelessWidget {
               if (customizationState?.hasLongerAction == true) {
                 OdsSnackbar.showSnackbarLongerAction(
                   context: context,
-                  message: AppLocalizations.of(context)!
-                      .componentSnackbarsTwoLineLongerActionText,
+                  message: OdsApplication.recipes[7].description,
                   actionLabel: AppLocalizations.of(context)!
                       .componentSnackbarsTwoLineLongerActionButton,
                   onPressed: () {},
