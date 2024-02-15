@@ -17,6 +17,7 @@ import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_contained.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_outlined.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_text.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/segmented/segmented_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_horizontal.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
@@ -107,6 +108,10 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.segmentedButtonsVariantTitle,
             AppLocalizations.of(context)!.segmentedButtonsVariantSubtitle,
             SegmentedButtons()),
+        Variant(
+            AppLocalizations.of(context)!.buttonsIconVariantTitle,
+            AppLocalizations.of(context)!.buttonsIconVariantSubtitle,
+            ButtonsIcons()),
       ],
     ),
     Component(
