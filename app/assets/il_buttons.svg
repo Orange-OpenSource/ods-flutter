@@ -1,7 +1,1 @@
-<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1692 854">
-    <rect id="b" style="fill:#1b1b1b;" width="1692" height="854"/><g><g id="c" transform="translate(0.5 0.5)">
-        <g id="d"><rect id="e" style="fill:none;" x="458.78" y="263" width="774.44" height="328" rx="36.44" ry="36.44"/><g id="f" style="opacity:.12;">
-            <rect id="g" style="fill:#ff7900;" x="458.78" y="263" width="774.44" height="328" rx="36.44" ry="36.44"/></g></g><g id="h" transform="translate(8 23)">
-        <text style="font-family:Roboto-Medium, Roboto;fill:#ff7900;font-size:127.56px;isolation:isolate;" transform="translate(563.78 472.55)"><tspan style="letter-spacing:.09em;" x="0" y="0">BU</tspan><tspan style="letter-spacing:.1em;" x="186.32" y="0">T</tspan><tspan style="letter-spacing:.08em;" x="276.09" y="0">T</tspan>
-            <tspan style="letter-spacing:.09em;" x="363.12" y="0">ON</tspan></text></g></g><g id="i">
-        <rect id="j" style="fill:none;" x="458.78" y="263" width="774.44" height="328" rx="36.44" ry="36.44"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?><svg id="Android_Thumbnails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="#1b1b1b"/><rect x="112" y="64" width="176" height="72" rx="36" ry="36" fill="#ff7900"/><text transform="translate(154.69 109.82)" font-family="HelveticaNeue-Bold, &apos;Helvetica Neue&apos;" font-size="27.5" font-weight="700" letter-spacing=".02em"><tspan x="0" y="0">Button</tspan></text></svg>
