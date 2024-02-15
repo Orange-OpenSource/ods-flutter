@@ -51,3 +51,8 @@ toc2:
 
   - title: Modules
     subfolderitems:
+
+  - title: About
+    subfolderitems:
+      - page: "Cookies"
+        url: /about/Cookies_docs
