@@ -151,6 +151,8 @@
   "buttonsIconFunctionalFilledEnum": "Filled",
   "buttonsIconFunctionalTonalEnum": "Tonal",
   "buttonsIconFunctionalOutlinedEnum": "Outlined",
+  "buttonsIconSelected": "Selected",
+  "buttonsIconDeselected": "Deselected",
 
   "@_COMPONENTS_SNACKBARS": {},
   "componentSnackbarsTitle": "Snackbars",

@@ -34,7 +34,7 @@ const lightColorScheme = ColorScheme(
   // onSecondaryFixedVariant: white100,
   tertiary: grey600,
   onTertiary: white100,
-  tertiaryContainer: grey300,
+  tertiaryContainer: grey200,
   onTertiaryContainer: black900,
   // tertiaryFixed: grey200,
   // onTertiaryFixed: black900,

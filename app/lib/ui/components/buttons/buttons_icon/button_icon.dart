@@ -74,22 +74,9 @@ class _BodyState extends State<_Body> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              selected ? 'Selected' : 'Deselected',
-            ),
-            OdsButtonIcon(
-              icon: const Icon(Icons.settings_outlined),
-              selectedIcon: const Icon(Icons.settings),
-              style: style,
-              isSelected: selected,
-              isEnabled: customizationState!.hasEnabled,
-              onClick: () {
-                setState(() {
-                  selected = !selected;
-                });
-              },
-            ),
-            Text(
-              selected ? 'Selected' : 'Deselected',
+              selected
+                  ? AppLocalizations.of(context)!.buttonsIconSelected
+                  : AppLocalizations.of(context)!.buttonsIconDeselected,
             ),
             OdsButtonIcon(
               icon: Image.asset('assets/ic_heart_deselected.png'),
