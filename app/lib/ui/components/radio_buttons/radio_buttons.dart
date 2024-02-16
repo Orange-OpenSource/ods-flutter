@@ -12,9 +12,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/lists/ods_list_radio_button.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
-import 'package:ods_flutter/components/radio_button/ods_radio_button.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -67,28 +68,34 @@ class __BodyState extends State<_Body> {
     return Center(
       child: Column(
         children: <Widget>[
-          OdsRadioButton(
-              value: Options.option1,
-              groupValue: _selectedOption,
-              enabled: customizationState?.hasEnabled == true ? true : false,
-              onCheckedChange: (Options? value) {
-                setState(
-                  () {
-                    _selectedOption = value;
-                  },
-                );
-              }),
-          OdsRadioButton(
-              value: Options.option2,
-              groupValue: _selectedOption,
-              enabled: customizationState?.hasEnabled == true ? true : false,
-              onCheckedChange: (Options? value) {
-                setState(
-                  () {
-                    _selectedOption = value;
-                  },
-                );
-              }),
+          OdsListRadioButton(
+            title: OdsApplication.recipes[0].title,
+            value: Options.option1,
+            groupValue: _selectedOption,
+            onCheckedChange: customizationState?.hasEnabled == true
+                ? (Options? value) {
+                    setState(
+                      () {
+                        _selectedOption = value;
+                      },
+                    );
+                  }
+                : null,
+          ),
+          OdsListRadioButton<Options>(
+            title: OdsApplication.recipes[1].title,
+            value: Options.option2,
+            groupValue: _selectedOption,
+            onCheckedChange: customizationState?.hasEnabled == true
+                ? (value) {
+                    setState(
+                      () {
+                        _selectedOption = value;
+                      },
+                    );
+                  }
+                : null,
+          ),
         ],
       ),
     );
