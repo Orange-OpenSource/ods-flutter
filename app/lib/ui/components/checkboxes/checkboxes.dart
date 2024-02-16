@@ -12,10 +12,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/checkbox/ods_checkbox.dart';
+import 'package:ods_flutter/components/lists/ods_list_checkbox.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -70,16 +71,17 @@ class __BodyState extends State<_Body> {
           children: [
             Padding(
               padding: const EdgeInsets.all(spacingS),
-              child: OdsCheckbox(
+              child: OdsListCheckbox(
                 checked: isChecked,
+                title: OdsApplication.foods[46].name,
+                enabled:
+                    customizationState?.hasEnabled == true ? isEnable : false,
+                indeterminate: true,
                 onCheckedChange: (value) {
                   setState(() {
                     isChecked = value;
                   });
                 },
-                enabled:
-                    customizationState?.hasEnabled == true ? isEnable : false,
-                indeterminate: true,
               ),
             ),
           ],

@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
-import 'package:ods_flutter/components/switch/ods_switch.dart';
+import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/switches/switches_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -67,15 +67,16 @@ class __BodyState extends State<_Body> {
     return Center(
       child: Column(
         children: <Widget>[
-          OdsSwitch(
+          OdsListSwitch(
+            title: OdsApplication.foods[47].name,
             checked: isChecked,
+            icon: customizationState?.hasIcon == true ? true : false,
+            enabled: customizationState?.hasEnabled == true ? isEnabled : false,
             onCheckedChange: (value) {
               setState(() {
                 isChecked = value!;
               });
             },
-            icon: customizationState?.hasIcon == true ? true : false,
-            enabled: customizationState?.hasEnabled == true ? isEnabled : false,
           ),
         ],
       ),
