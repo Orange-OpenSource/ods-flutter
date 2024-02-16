@@ -20,6 +20,9 @@ description: Buttons allow users to take actions, and make choices, with a singl
     * [Segmented button](#segmented-button)
         * [Flutter implementation](#flutter-implementation-3)
             * [OdsSegmentedButton API](#odssegmentedbutton-api)
+    * [Button icon](#button-icon)
+        * [Flutter implementation](#flutter-implementation-4)
+            * [OdsButtonIcon API](#odsbuttonicon-api)
 
 ---
 
@@ -214,4 +217,61 @@ Parameter | Default&nbsp;value | Description
 `selected: Set<T>` | | The set of `ButtonSegment.values` that indicate which `segments` are selected.
 `onSelectionChanged: (Set<T>)? onSelectionChanged` | `null` | Callback invoked on selection change
 `enabled: bool?` | `true` | Controls the enabled state of the segmented button. When false, this segmented button will not be clickable.
+{:.table}
+
+### Button icon
+
+Each icon button has as an optional toggle behavior, which gives the button a selected and unselected state. Toggle buttons remain highlighted when selected, and are styled differently than the default icon buttons.
+
+There are four styles of icon buttons:
+
+- Filled icon button
+- Filled tonal icon button
+- Outlined icon button 
+- Standard icon button
+
+Selected
+
+![Segmented button single light](images/button_icon_selected_light.png) ![Segmented button single dark](images/button_icon_selected_dark.png)
+
+Deselected
+
+![Segmented button single light](images/button_icon_deselected_light.png) ![Segmented button single dark](images/button_icon_deselected_dark.png)
+
+#### Flutter implementation
+
+The button has a standard style by default. Please add the attribute according to your need :
+
+- Standard : OdsButtonIconStyle.functionalStandard
+- Filled : OdsButtonIconStyle.functionalFilled
+- Tonal : OdsButtonIconStyle.functionalTonal
+- Outlined : OdsButtonIconStyle.functionalOutlined
+
+```dart
+bool selected = false;
+
+return IconButton(
+  icon: Icon(Icons.settings_outlined),
+  selectedIcon: const Icon(Icons.settings), // Optional
+  style: OdsButtonIconStyle.functionalStandard, // Optional by default OdsButtonIconStyle.functionalStandard
+  isSelected: selected,
+  isEnabled: true, // Optional by default true
+  onClick: () {
+    setState(() {
+      selected = !selected;
+    });
+  },
+),
+```
+
+##### OdsButtonIcon API
+
+Parameter | Default&nbsp;value | Description
+-- | -- | --
+`icon: Widget` | | The icon to display inside the button.
+`selectedIcon: Widget?` | `null` | The icon to display inside the button when `isSelected` is true.
+`isSelected: bool` | `false` | The optional selection state of the icon button.
+`isEnabled: bool` | `true` | The optional selection state enabled/disabled of the icon button.
+`onClick: void Function()?` | `null` | The action to be executed when the button is pressed.
+`style: OdsButtonIconStyle` | `OdsButtonIconStyle.functionalStandard` | The button's style color.
 {:.table}

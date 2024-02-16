@@ -17,6 +17,7 @@ import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_contained.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_outlined.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_text.dart';
+import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/segmented/segmented_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_horizontal.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
@@ -34,7 +35,6 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_switches.dart';
-import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_exposed_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
@@ -107,6 +107,10 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.segmentedButtonsVariantTitle,
             AppLocalizations.of(context)!.segmentedButtonsVariantSubtitle,
             SegmentedButtons()),
+        Variant(
+            AppLocalizations.of(context)!.buttonsIconVariantTitle,
+            AppLocalizations.of(context)!.buttonsIconVariantSubtitle,
+            ButtonsIcons()),
       ],
     ),
     Component(
@@ -324,6 +328,9 @@ List<Component> components(BuildContext context) {
         ),
       ],
     ),
+
+    /// Delete material 3 demo page
+    /*
     Component(
       AppLocalizations.of(context)!.componentMaterialsTitle,
       'assets/placeholder.png',
@@ -335,5 +342,6 @@ List<Component> components(BuildContext context) {
             ComponentMaterial()),
       ],
     ),
+     */
   ];
 }
