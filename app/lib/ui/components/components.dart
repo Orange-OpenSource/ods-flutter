@@ -35,7 +35,6 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_radio_buttons.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
 import 'package:ods_flutter_demo/ui/components/lists/lists_switches.dart';
-import 'package:ods_flutter_demo/ui/components/material/component_material.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_exposed_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
@@ -329,6 +328,9 @@ List<Component> components(BuildContext context) {
         ),
       ],
     ),
+
+    /// Delete material 3 demo page
+    /*
     Component(
       AppLocalizations.of(context)!.componentMaterialsTitle,
       'assets/placeholder.png',
@@ -340,5 +342,6 @@ List<Component> components(BuildContext context) {
             ComponentMaterial()),
       ],
     ),
+     */
   ];
 }
