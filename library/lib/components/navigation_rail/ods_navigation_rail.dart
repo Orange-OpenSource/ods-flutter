@@ -23,7 +23,7 @@ class OdsNavigationRail extends StatefulWidget {
   ///
   /// * [selectedIndex] - The index into [destinations] for the current selected NavigationRailDestination or null if no destination is selected.
   /// * [destinations] - Defines the appearance of the button items that are arrayed within the navigation rail.
-  /// * [onDestinationSelected] - Called when one of the destinations is selected..
+  /// * [onDestinationSelected] - Called when one of the destinations is selected.
   /// * [leadingIconFirst] - The first leading widget in the rail that is placed above the destinations.
   /// * [leadingIconSecond] - The second leading widget in the rail that is placed above the destinations.
   const OdsNavigationRail({
@@ -57,21 +57,38 @@ class OdsNavigationRail extends StatefulWidget {
 class _OdsNavigationBarState extends State<OdsNavigationRail> {
   @override
   Widget build(BuildContext context) {
-    return NavigationRail(
-      selectedIndex: widget.selectedIndex,
-      onDestinationSelected: widget.onDestinationSelected,
-      destinations: widget.destinations,
-      labelType: NavigationRailLabelType.all,
-      leading: widget.leadingIconFirst != null ||
-              widget.leadingIconSecond != null
-          ? Column(
-              children: [
-                if (widget.leadingIconFirst != null) widget.leadingIconFirst!,
-                if (widget.leadingIconSecond != null) widget.leadingIconSecond!,
-                const SizedBox(height: spacingXl),
-              ],
-            )
-          : null,
+    return Row(
+      children: [
+        LayoutBuilder(
+          builder: (context, constraint) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: NavigationRail(
+                    selectedIndex: widget.selectedIndex,
+                    onDestinationSelected: widget.onDestinationSelected,
+                    destinations: widget.destinations,
+                    labelType: NavigationRailLabelType.all,
+                    leading: widget.leadingIconFirst != null ||
+                            widget.leadingIconSecond != null
+                        ? Column(
+                            children: [
+                              if (widget.leadingIconFirst != null)
+                                widget.leadingIconFirst!,
+                              if (widget.leadingIconSecond != null)
+                                widget.leadingIconSecond!,
+                              const SizedBox(height: spacingXl),
+                            ],
+                          )
+                        : null,
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 }
