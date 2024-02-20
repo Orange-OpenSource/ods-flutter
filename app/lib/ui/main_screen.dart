@@ -12,6 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
+import 'package:ods_flutter/components/navigation_rail/ods_navigation_rail.dart';
 import 'package:ods_flutter_demo/ui/utilities/navigation_items.dart';
 
 import 'main_app_bar.dart';
@@ -45,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
       body: Row(
         children: [
           if (MediaQuery.of(context).size.width >= 640)
-            NavigationRail(
+            OdsNavigationRail(
               onDestinationSelected: (int index) {
                 setState(() {
                   _selectedIndex = index;
@@ -53,7 +54,6 @@ class _MainScreenState extends State<MainScreen> {
               },
               selectedIndex: _selectedIndex,
               destinations: navigationItems.getNavigationRailDestinations(),
-              labelType: NavigationRailLabelType.all,
               // Called when one tab is selected,
             ),
           Expanded(
