@@ -45,6 +45,8 @@
   "componentElementTypes": "Types",
   "componentElementToggleCount": "Toggle count",
   "componentElementEnabled": "Enabled",
+  "componentTrailing": "Trailing element",
+  "componentLeading": "Leading",
 
   "@_COMPONENTS_CARDS": {},
   "componentCardsTitle": "Cards",
@@ -261,6 +263,16 @@
   "componentMenuExposedDropdownSubtitle": "OdsExposedDropdownMenu",
   "componentMenuIcons" : "Icons",
   "componentMenuEnabled" : "Enabled",
+
+  "@_COMPONENTS_NAVIGATION_RAIL": {},
+  "componentNavigationRail": "Navigation rail",
+  "componentNavigationRailDescription": "Navigation rail is meant to be displayed at the left or right of an app to navigate between a small number of views.",
+
+  "@_NAVIGATION_RAIL_VARIANT": {},
+  "componentNavigationRailSubtitle": "OdsNavigationRail",
+  "componentNavigationRailLeadingNone": "None",
+  "componentNavigationRailLeadingFirst": "First",
+  "componentNavigationRailLeadingSecond": "Second",
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",
