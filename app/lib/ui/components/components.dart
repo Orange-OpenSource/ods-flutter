@@ -38,6 +38,7 @@ import 'package:ods_flutter_demo/ui/components/lists/lists_switches.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_exposed_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
+import 'package:ods_flutter_demo/ui/components/navigation_rail/navigation_rail.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_circular.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_linear.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons.dart';
@@ -240,6 +241,18 @@ List<Component> components(BuildContext context) {
       ],
     ),
     Component(
+      AppLocalizations.of(context)!.componentNavigationRail,
+      'assets/il_navigation_rail.png',
+      AppLocalizations.of(context)!.componentNavigationRailDescription,
+      [
+        Variant(
+          AppLocalizations.of(context)!.componentNavigationRail,
+          AppLocalizations.of(context)!.componentNavigationRailSubtitle,
+          ComponentNavigationRail(),
+        ),
+      ],
+    ),
+    Component(
       AppLocalizations.of(context)!.componentProgressTitle,
       'assets/il_progress.png',
       AppLocalizations.of(context)!.componentProgressDescription,
@@ -328,20 +341,5 @@ List<Component> components(BuildContext context) {
         ),
       ],
     ),
-
-    /// Delete material 3 demo page
-    /*
-    Component(
-      AppLocalizations.of(context)!.componentMaterialsTitle,
-      'assets/placeholder.png',
-      AppLocalizations.of(context)!.componentMaterialsDescription,
-      [
-        Variant(
-            AppLocalizations.of(context)!.materialsVariantTitle,
-            AppLocalizations.of(context)!.materialsVariantSubtitle,
-            ComponentMaterial()),
-      ],
-    ),
-     */
   ];
 }

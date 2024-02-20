@@ -75,12 +75,29 @@ class OdsTheme {
         },
       ),
     ),
-    navigationRailTheme: const NavigationRailThemeData(
+    navigationRailTheme: NavigationRailThemeData(
+      //surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: grey200,
       indicatorShape: null,
-      selectedLabelTextStyle:
-          TextStyle(color: orange200, overflow: TextOverflow.ellipsis),
+      selectedIconTheme: IconThemeData(color: lightColorScheme.primary),
+      unselectedIconTheme: IconThemeData(color: lightColorScheme.secondary),
+      selectedLabelTextStyle: TextStyle(
+        color: lightColorScheme.primary,
+        overflow: TextOverflow.ellipsis,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        height: 1.43,
+        letterSpacing: 0.25,
+      ),
+      unselectedLabelTextStyle: TextStyle(
+        color: lightColorScheme.secondary,
+        overflow: TextOverflow.ellipsis,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        height: 1.43,
+        letterSpacing: 0.25,
+      ),
     ),
     cardTheme: CardTheme(
         surfaceTintColor: lightColorScheme.onSecondary,
@@ -357,12 +374,29 @@ class OdsTheme {
             letterSpacing: 0.25);
       }),
     ),
-    navigationRailTheme: const NavigationRailThemeData(
+    navigationRailTheme: NavigationRailThemeData(
+      //surfaceTintColor: lightColorScheme.onSecondary,
       elevation: 3.0,
       indicatorColor: grey800,
       indicatorShape: null,
-      selectedLabelTextStyle:
-          TextStyle(color: orange100, overflow: TextOverflow.ellipsis),
+      selectedIconTheme: IconThemeData(color: darkColorScheme.primary),
+      unselectedIconTheme: IconThemeData(color: darkColorScheme.secondary),
+      selectedLabelTextStyle: TextStyle(
+        color: darkColorScheme.primary,
+        overflow: TextOverflow.ellipsis,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        height: 1.43,
+        letterSpacing: 0.25,
+      ),
+      unselectedLabelTextStyle: TextStyle(
+        color: darkColorScheme.secondary,
+        overflow: TextOverflow.ellipsis,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        height: 1.43,
+        letterSpacing: 0.25,
+      ),
     ),
     cardTheme: CardTheme(
       surfaceTintColor: darkColorScheme.onSecondary,

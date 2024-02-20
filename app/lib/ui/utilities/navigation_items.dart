@@ -12,8 +12,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar_item.dart';
+import 'package:ods_flutter/components/navigation_rail/ods_navigation_rail_item.dart';
 import 'package:ods_flutter_demo/ui/about/about_screen.dart';
 import 'package:ods_flutter_demo/ui/components/components.dart';
 import 'package:ods_flutter_demo/ui/components/components_screen.dart';
@@ -24,7 +24,7 @@ import 'package:ods_flutter_demo/ui/modules/modules_screen.dart';
 class NavigationItems {
   late BuildContext context;
   late List<OdsNavigationItem> _destinationsStatic;
-  late List<NavigationRailDestination> _destinationsRailStatic;
+  late List<OdsNavigationRailItem> _destinationsRailStatic;
   late List<Widget> _screens;
 
   NavigationItems(this.context) {
@@ -58,35 +58,25 @@ class NavigationItems {
     ];
 
     _destinationsRailStatic = [
-      NavigationRailDestination(
-        icon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_guidelines_dna.svg",
-            colorFilter: activeColorFilter),
-        label: Text(
-          AppLocalizations.of(context)!.bottomNavigationGuideline,
-        ),
+      OdsNavigationRailItem(
+        context: context,
+        label: AppLocalizations.of(context)!.bottomNavigationGuideline,
+        icon: "assets/ic_guidelines_dna.svg",
       ),
-      NavigationRailDestination(
-        icon: SvgPicture.asset("assets/ic_components_atom.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_components_atom.svg",
-            colorFilter: activeColorFilter),
-        label: Text(AppLocalizations.of(context)!.bottomNavigationComponents),
+      OdsNavigationRailItem(
+        context: context,
+        label: AppLocalizations.of(context)!.bottomNavigationComponents,
+        icon: "assets/ic_components_atom.svg",
       ),
-      NavigationRailDestination(
-        icon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_modules_molecule.svg",
-            colorFilter: activeColorFilter),
-        label: Text(AppLocalizations.of(context)!.bottomNavigationModules),
+      OdsNavigationRailItem(
+        context: context,
+        label: AppLocalizations.of(context)!.bottomNavigationModules,
+        icon: "assets/ic_modules_molecule.svg",
       ),
-      NavigationRailDestination(
-        icon: SvgPicture.asset("assets/ic_about_info.svg",
-            colorFilter: colorFilter),
-        selectedIcon: SvgPicture.asset("assets/ic_about_info.svg",
-            colorFilter: activeColorFilter),
-        label: Text(AppLocalizations.of(context)!.bottomNavigationAbout),
+      OdsNavigationRailItem(
+        context: context,
+        label: AppLocalizations.of(context)!.bottomNavigationAbout,
+        icon: "assets/ic_about_info.svg",
       ),
     ];
     _screens = [
