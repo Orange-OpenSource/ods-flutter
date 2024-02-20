@@ -52,19 +52,19 @@ class _ComponentNavigationBarState extends State<ComponentNavigationRail> {
       ),
       key: _scaffoldKey,
       appBar: MainAppBar(AppLocalizations.of(context)!.componentNavigationRail),
-      body: _NavBarDemo(),
+      body: _NavRailDemo(),
     ));
   }
 }
 
-class _NavBarDemo extends StatefulWidget {
-  _NavBarDemo();
+class _NavRailDemo extends StatefulWidget {
+  _NavRailDemo();
 
   @override
-  State<_NavBarDemo> createState() => _NavBarDemoState();
+  State<_NavRailDemo> createState() => _NavRailDemoState();
 }
 
-class _NavBarDemoState extends State<_NavBarDemo> {
+class _NavRailDemoState extends State<_NavRailDemo> {
   late int selectedIndex;
 
   @override
