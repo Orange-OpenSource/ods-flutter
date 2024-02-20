@@ -34,6 +34,8 @@ toc2:
         url: components/listsItem_docs
       - page: Menus
         url: components/menus_docs
+      - page: Navigation Rail
+        url: components/navigation_rail_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
       - page: Radio buttons
