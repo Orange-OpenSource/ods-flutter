@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Vertical Card customization updates ([#189](https://github.com/Orange-OpenSource/ods-flutter/issues/189))
 - Typographie flutter ios ([#293](https://github.com/Orange-OpenSource/ods-flutter/issues/293))
 - [Bug]: Snackbar without action text positioning ([#198](https://github.com/Orange-OpenSource/ods-flutter/issues/198))
+- [Bug]: Text Field > Trailing element > text issue ([#314](https://github.com/Orange-OpenSource/ods-flutter/issues/314))
+- [Bug]: Text Field > Input type > single line doesn't stay on 1 line ([#315](https://github.com/Orange-OpenSource/ods-flutter/issues/315))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 
