@@ -192,7 +192,8 @@ class _BodyState extends State<_Body> {
             : null,
         characterCounter:
             customizationState?.characterCount == true ? 20 : null,
-        maxLines: 5,
+        maxLines:
+            customizationState?.selectedElement == TextFieldEnum.multi ? 5 : 1,
         textCapitalization:
             customizationState?.capitalization == true ? true : false,
       ),
