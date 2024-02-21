@@ -11,6 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 
 /// ODS OdsTextField.
 ///
@@ -119,8 +120,17 @@ class _OdsTextFieldState extends State<OdsTextField> {
       maxLines: widget.maxLines,
       decoration: InputDecoration(
         prefixIcon: widget.leadingIcon,
-        suffixIcon: widget.trailingIcon,
-        suffixText: widget.trailingText,
+        suffixIcon: widget.trailingText != null
+            ? Padding(
+                padding: const EdgeInsets.fromLTRB(
+                    spacingM, spacingM, spacingM, spacingM),
+                child: Text(
+                  widget.trailingText!,
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.tertiary),
+                ),
+              )
+            : widget.trailingIcon,
         labelText: widget.label,
         hintText: widget.placeholder,
         errorText: widget.errorMessage,
