@@ -14,11 +14,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/button/ods_text_button.dart';
+import 'package:ods_flutter/components/button/ods_button.dart';
+import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -65,14 +67,13 @@ class _Body extends StatelessWidget {
         CardCustomization.of(context);
 
     List<Widget> listButtons = [
-      OdsTextButton(
+      OdsOutlinedButton(
         text: AppLocalizations.of(context)!.componentElementButton1,
-        style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
-      OdsTextButton(
+      OdsButton(
         text: AppLocalizations.of(context)!.componentElementButton2,
-        style: OdsTextButtonStyle.functionalPrimary,
+        style: OdsButtonStyle.functionalPrimary,
         onClick: () {},
       ),
     ];
@@ -80,35 +81,39 @@ class _Body extends StatelessWidget {
     List<Widget> buttons =
         listButtons.sublist(0, customizationState?.numberOfItems);
 
-    OdsTextButton? firstButton;
-    OdsTextButton? secondButton;
+    OdsOutlinedButton? firstButton;
+    OdsButton? secondButton;
 
     if (buttons.isNotEmpty) {
-      firstButton = buttons[0] as OdsTextButton;
+      firstButton = buttons[0] as OdsOutlinedButton;
     }
     if (buttons.length > 1) {
-      secondButton = buttons[1] as OdsTextButton;
+      secondButton = buttons[1] as OdsButton;
     }
 
     return SingleChildScrollView(
       child: Column(
         children: [
-          OdsVerticalImageFirstCard(
-            image: OdsCardImage(
-              imageProvider: NetworkImage(recipe.url),
-              contentDescription: '', //Optional
-              alignment: Alignment.center,
-              contentScale: BoxFit.cover,
+          Padding(
+            padding: const EdgeInsets.only(top: spacingM, bottom: 91),
+            child: OdsVerticalImageFirstCard(
+              image: OdsCardImage(
+                imageProvider: NetworkImage(recipe.url),
+                contentDescription: '', //Optional
+                alignment: Alignment.center,
+                contentScale: BoxFit.cover,
+              ),
+              title: recipe.title,
+              subtitle: customizationState?.hasSubtitle == true
+                  ? recipe.subtitle
+                  : null,
+              text: customizationState?.hasText == true
+                  ? recipe.description
+                  : null,
+              firstButton: firstButton,
+              secondButton: secondButton,
+              onClick: customizationState!.clickable ? () {} : null,
             ),
-            title: recipe.title,
-            subtitle: customizationState?.hasSubtitle == true
-                ? recipe.subtitle
-                : null,
-            text:
-                customizationState?.hasText == true ? recipe.description : null,
-            firstButton: firstButton,
-            secondButton: secondButton,
-            onClick: customizationState!.clickable ? () {} : null,
           ),
         ],
       ),
