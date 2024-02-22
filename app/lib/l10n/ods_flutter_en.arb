@@ -64,6 +64,9 @@
   "componentCardHorizontalImagePosition": "Image position",
   "componentCardHorizontalImagePositionStart": "Start",
   "componentCardHorizontalImagePositionEnd": "End",
+  "componentCardVerticalHeaderFirst": "Vertical header first card",
+  "componentCardVerticalHeaderFirstSubtitle": "OdsVerticalHeaderFirstCard",
+  "componentCardVerticalHeaderFirstThumbnail": "Thumbnail",
 
   "@_COMPONENTS_CHECKBOXES": {},
   "componentCheckboxes": "Checkboxes",

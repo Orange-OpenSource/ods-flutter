@@ -85,120 +85,130 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
       container: true,
       image: false,
       label: 'Card',
-      child: SizedBox(
-        width: double.infinity,
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: widget.onClick,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(odsCardRadius),
-              ),
-              elevation: 0.3,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    constraints: const BoxConstraints(
-                        minHeight: OdsHorizontalCard._imageMinWidth),
-                    child: IntrinsicHeight(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          if (widget.imagePosition ==
-                              OdsHorizontalCardImagePosition.start)
-                            ExcludeSemantics(
-                              child: SizedBox(
-                                width: OdsHorizontalCard._imageWidth,
-                                height: OdsHorizontalCard._imageHeight,
-                                child: widget.image,
-                              ),
-                            ),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: spacingM,
-                                  top: spacingM,
-                                  right: spacingM,
-                                  bottom: spacingS),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    widget.title,
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
-                                  ),
-                                  if (widget.subtitle != null)
-                                    Text(
-                                      widget.subtitle!,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium,
+      child: Stack(
+        children: [
+          IntrinsicHeight(
+            child: SizedBox(
+              width: double.infinity,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(odsCardRadius),
+                ),
+                elevation: 2,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: widget.onClick,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          constraints: const BoxConstraints(
+                              minHeight: OdsHorizontalCard._imageMinWidth),
+                          child: IntrinsicHeight(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                if (widget.imagePosition ==
+                                    OdsHorizontalCardImagePosition.start)
+                                  ExcludeSemantics(
+                                    child: SizedBox(
+                                      width: OdsHorizontalCard._imageWidth,
+                                      height: OdsHorizontalCard._imageHeight,
+                                      child: widget.image,
                                     ),
-                                  if (widget.text != null)
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(top: spacingM),
-                                      child: Text(widget.text!,
+                                  ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: spacingM,
+                                        top: spacingM,
+                                        right: spacingM,
+                                        bottom: spacingS),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          widget.title,
                                           style: Theme.of(context)
                                               .textTheme
-                                              .bodyMedium,
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis),
+                                              .titleMedium,
+                                        ),
+                                        if (widget.subtitle != null)
+                                          Text(
+                                            widget.subtitle!,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyMedium,
+                                          ),
+                                        if (widget.text != null)
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: spacingM),
+                                            child: Text(widget.text!,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyMedium,
+                                                maxLines: 2,
+                                                overflow:
+                                                    TextOverflow.ellipsis),
+                                          ),
+                                      ],
                                     ),
-                                ],
-                              ),
+                                  ),
+                                ),
+                                if (widget.imagePosition ==
+                                    OdsHorizontalCardImagePosition.end)
+                                  ExcludeSemantics(
+                                    child: SizedBox(
+                                      width: OdsHorizontalCard._imageWidth,
+                                      height: OdsHorizontalCard._imageHeight,
+                                      child: widget.image,
+                                    ),
+                                  )
+                              ],
                             ),
                           ),
-                          if (widget.imagePosition ==
-                              OdsHorizontalCardImagePosition.end)
-                            ExcludeSemantics(
-                              child: SizedBox(
-                                width: OdsHorizontalCard._imageWidth,
-                                height: OdsHorizontalCard._imageHeight,
-                                child: widget.image,
-                              ),
-                            )
-                        ],
-                      ),
-                    ),
-                  ),
-                  if (widget.divider != false)
-                    Divider(
-                      height: 0,
-                      thickness: 1,
-                      indent: 0,
-                      color: Theme.of(context)
-                          .colorScheme
-                          .onSurface
-                          .withOpacity(OdsHorizontalCard._dividerOpacity),
-                    ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        if (widget.firstButton != null)
-                          Padding(
-                            padding: const EdgeInsets.all(spacingS),
-                            child: widget.firstButton,
+                        ),
+                        if (widget.divider != false)
+                          Divider(
+                            height: 0,
+                            thickness: 1,
+                            indent: 0,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSurface
+                                .withOpacity(OdsHorizontalCard._dividerOpacity),
                           ),
-                        if (widget.secondButton != null)
-                          Padding(
-                            padding: const EdgeInsets.all(spacingS),
-                            child: widget.secondButton,
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              if (widget.firstButton != null)
+                                Padding(
+                                  padding: const EdgeInsets.all(spacingS),
+                                  child: widget.firstButton,
+                                ),
+                              if (widget.secondButton != null)
+                                Padding(
+                                  padding: const EdgeInsets.all(spacingS),
+                                  child: widget.secondButton,
+                                ),
+                            ],
                           ),
+                        ),
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

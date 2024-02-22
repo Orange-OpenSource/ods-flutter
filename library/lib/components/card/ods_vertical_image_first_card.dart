@@ -11,10 +11,10 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/ods_text_button.dart';
+import 'package:ods_flutter/components/button/ods_button.dart';
+import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter/theme/ods_theme.dart';
 
 /// ODS Vertical image first card.
 ///
@@ -34,7 +34,7 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
     this.onClick,
   }) : super(key: key);
 
-  static const double _imageHeight = 194;
+  static const double _imageHeight = 200;
 
   /// The image displayed in the card.
   ///TODO For the moment the fit of the image is handled by the provided image. It should be done in the library but we need help to do that!
@@ -50,10 +50,10 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   final String? text;
 
   /// Optional first button. If null, button will not be shown.
-  final OdsTextButton? firstButton;
+  final OdsOutlinedButton? firstButton;
 
   /// Optional second button in the card. If null, button will not be shown.
-  final OdsTextButton? secondButton;
+  final OdsButton? secondButton;
 
   /// The action executed on card tap.
   final Function()? onClick;
@@ -66,82 +66,67 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
 class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: InkWell(
-        onTap: widget.onClick,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(odsCardRadius),
-          ),
-          elevation: 1,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: OdsVerticalImageFirstCard._imageHeight,
-                child: widget.image,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: spacingM, top: spacingM, right: spacingM),
-                child: Column(
+    return Stack(
+      children: [
+        IntrinsicHeight(
+          child: SizedBox(
+            width: double.infinity,
+            child: Card(
+              clipBehavior: Clip.antiAlias,
+              elevation: 2,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: widget.onClick,
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Expanded(
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: OdsVerticalImageFirstCard._imageHeight,
+                          child: widget.image,
+                        ),
+                      ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: spacingS),
+                        padding: const EdgeInsets.only(
+                            top: spacingM, left: spacingM),
                         child: Text(
                           widget.title,
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ),
                       if (widget.subtitle != null)
                         Padding(
-                          padding: const EdgeInsets.only(bottom: spacingS),
+                          padding: const EdgeInsets.only(left: spacingM),
                           child: Text(
                             widget.subtitle!,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ),
-                      if (widget.text != null)
+                      if (widget.text != null && widget.text!.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: spacingS, bottom: spacingS),
+                              left: spacingM, right: spacingM, top: spacingS),
                           child: Text(
                             widget.text!,
-                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ),
-                    ]),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(spacingNone),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      if (widget.firstButton != null)
-                        Padding(
-                          padding: const EdgeInsets.all(spacingNone),
-                          child: widget.firstButton,
-                        ),
-                      if (widget.secondButton != null)
-                        Padding(
-                          padding: (widget.secondButton != null)
-                              ? const EdgeInsets.only()
-                              : const EdgeInsets.only(),
-                          child: widget.secondButton,
-                        ),
+                      ButtonBar(
+                        alignment: MainAxisAlignment.start,
+                        children: [
+                          if (widget.firstButton != null) widget.firstButton!,
+                          if (widget.secondButton != null) widget.secondButton!,
+                        ],
+                      ),
                     ],
                   ),
                 ),
-              )
-            ],
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

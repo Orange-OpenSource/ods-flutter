@@ -17,23 +17,23 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
-import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
+import 'package:ods_flutter/components/card/ods_vertical_header_first_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
-import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class CardVerticalImageFirst extends StatefulWidget {
-  const CardVerticalImageFirst({super.key});
+class CardVerticalHeaderFirst extends StatefulWidget {
+  const CardVerticalHeaderFirst({super.key});
 
   @override
-  State<CardVerticalImageFirst> createState() => _CardVerticalImageFirstState();
+  State<CardVerticalHeaderFirst> createState() =>
+      _CardVerticalHeaderFirstState();
 }
 
-class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
+class _CardVerticalHeaderFirstState extends State<CardVerticalHeaderFirst> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -51,7 +51,7 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
           ),
           key: _scaffoldKey,
           appBar: MainAppBar(
-              AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle),
+              AppLocalizations.of(context)!.componentCardVerticalHeaderFirst),
           body: _Body()),
     );
   }
@@ -92,30 +92,31 @@ class _Body extends StatelessWidget {
     }
 
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: spacingM, bottom: 91),
-            child: OdsVerticalImageFirstCard(
-              image: OdsCardImage(
-                imageProvider: NetworkImage(recipe.url),
-                contentDescription: '', //Optional
-                alignment: Alignment.center,
-                contentScale: BoxFit.cover,
-              ),
-              title: recipe.title,
-              subtitle: customizationState?.hasSubtitle == true
-                  ? recipe.subtitle
-                  : null,
-              text: customizationState?.hasText == true
-                  ? recipe.description
-                  : null,
-              firstButton: firstButton,
-              secondButton: secondButton,
-              onClick: customizationState!.clickable ? () {} : null,
-            ),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 91),
+        child: OdsVerticalHeaderFirstCard(
+          thumbnail: customizationState!.thumbnail
+              ? OdsCardThumbnail(
+                  imageProvider: NetworkImage(recipe.url),
+                  contentDescription: '', //Optional
+                  alignment: Alignment.center,
+                  contentScale: BoxFit.cover,
+                )
+              : null,
+          title: recipe.title,
+          subtitle:
+              customizationState?.hasSubtitle == true ? recipe.subtitle : null,
+          text: customizationState?.hasText == true ? recipe.description : null,
+          image: OdsCardImage(
+            imageProvider: NetworkImage(recipe.url),
+            contentDescription: '', //Optional
+            alignment: Alignment.center,
+            contentScale: BoxFit.cover,
           ),
-        ],
+          firstButton: firstButton,
+          secondButton: secondButton,
+          onClick: customizationState!.clickable ? () {} : null,
+        ),
       ),
     );
   }
@@ -142,6 +143,13 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               checked: customizationState?.clickable ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.clickable = value;
+              }),
+          OdsListSwitch(
+              title: AppLocalizations.of(context)!
+                  .componentCardVerticalHeaderFirstThumbnail,
+              checked: customizationState?.thumbnail ?? true,
+              onCheckedChange: (bool value) {
+                customizationState?.thumbnail = value;
               }),
           OdsListSwitch(
               title: AppLocalizations.of(context)!.componentElementSubtitle,

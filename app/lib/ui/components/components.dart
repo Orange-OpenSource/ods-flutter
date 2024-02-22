@@ -21,6 +21,7 @@ import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon.
 import 'package:ods_flutter_demo/ui/components/buttons/segmented/segmented_button.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_horizontal.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_small.dart';
+import 'package:ods_flutter_demo/ui/components/cards/card_vertical_header_first.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_vertical_image_first.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_action.dart';
@@ -133,13 +134,18 @@ List<Component> components(BuildContext context) {
       AppLocalizations.of(context)!.componentCardsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.cardSmallVariantTitle,
-            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
-            CardSmall()),
-        Variant(
             AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle,
             AppLocalizations.of(context)!.cardVerticalImageFirstVariantSubtitle,
             CardVerticalImageFirst()),
+        Variant(
+            AppLocalizations.of(context)!.componentCardVerticalHeaderFirst,
+            AppLocalizations.of(context)!
+                .componentCardVerticalHeaderFirstSubtitle,
+            CardVerticalHeaderFirst()),
+        Variant(
+            AppLocalizations.of(context)!.cardSmallVariantTitle,
+            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
+            CardSmall()),
         Variant(
             AppLocalizations.of(context)!.componentCardHorizontalTitle,
             AppLocalizations.of(context)!.componentCardHorizontalSubtitle,
