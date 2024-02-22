@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Buttons: Segmented Buttons ([#7](https://github.com/Orange-OpenSource/ods-flutter/issues/7))
 - ODS - Component - Buttons: icon Buttons ([#6](https://github.com/Orange-OpenSource/ods-flutter/issues/6))
 - ODS - Component - Navigation Rail ([#25](https://github.com/Orange-OpenSource/ods-flutter/issues/25))
+- ODS - Component - Cards: Title First Card ([#9](https://github.com/Orange-OpenSource/ods-flutter/issues/9))
 
 ## Changed
 
