@@ -48,7 +48,7 @@ class CardCustomizationState extends State<CardCustomization> {
 
   static get maxNavigationItemCount => 2;
 
-  int _numberOfItems = minNavigationItemCount;
+  int _numberOfItems = maxNavigationItemCount;
 
   int get numberOfItems => _numberOfItems;
 
@@ -63,6 +63,7 @@ class CardCustomizationState extends State<CardCustomization> {
   bool _hasText = true;
   bool _hasDivider = false;
   bool _clickable = true;
+  bool _thumbnail = true;
 
   bool get hasSubtitle => _hasSubtitle;
   set hasSubtitle(bool value) {
@@ -89,6 +90,13 @@ class CardCustomizationState extends State<CardCustomization> {
   set clickable(bool value) {
     setState(() {
       _clickable = value;
+    });
+  }
+
+  bool get thumbnail => _thumbnail;
+  set thumbnail(bool value) {
+    setState(() {
+      _thumbnail = value;
     });
   }
 
