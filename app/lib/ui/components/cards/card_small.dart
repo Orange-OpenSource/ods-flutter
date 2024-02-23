@@ -14,6 +14,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
@@ -75,16 +76,11 @@ class _Body extends StatelessWidget {
                     subtitle: customizationState?.hasSubtitle == true
                         ? recipe.subtitle
                         : null,
-                    image: FadeInImage(
-                      placeholder: AssetImage('assets/placeholder.png'),
-                      image: NetworkImage(recipe.url),
-                      fit: BoxFit.cover,
-                      imageErrorBuilder: (context, error, stackTrace) {
-                        return Image(
-                          image: AssetImage('assets/placeholder.png'),
-                          fit: BoxFit.cover,
-                        );
-                      },
+                    image: OdsCardImage(
+                      imageProvider: NetworkImage(recipe.url),
+                      contentDescription: '', //Optional
+                      alignment: Alignment.center,
+                      contentScale: BoxFit.cover,
                     ),
                     onTap: customizationState!.clickable ? () {} : null,
                   ),
