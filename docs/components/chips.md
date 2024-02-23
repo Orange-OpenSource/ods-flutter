@@ -145,7 +145,7 @@ Parameter | Default&nbsp;value | Description
 `selected: bool?` | `false` | Controls the selected state of the chip. When `true`, the chip is highlighted.
 `leadingAvatar: OdsChipLeadingAvatar?` | `null` | Avatar to be displayed in a circle shape at the start of the chip, preceding the content text
 
-Use the filter like exemple [FilterChip class](https://api.flutter.dev/flutter/material/FilterChip-class.html)
+Use the filter like example [FilterChip class](https://api.flutter.dev/flutter/material/FilterChip-class.html)
 
 ### Action chip
 
@@ -154,8 +154,7 @@ contextually in a UI.
 
 An alternative to action chips are buttons, which should appear persistently and consistently.
 
-![Light action chip](images/chips_action_light
-.png) ![Dark action chip](images/chips_action_dark.png)
+![Light action chip](images/chips_action_light.png) ![Dark action chip](images/chips_action_dark.png)
 
 #### Flutter implementation
 
