@@ -11,10 +11,8 @@ Use checkboxes to:
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-    * [OdsCheckbox API](#odscheckbox-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -57,4 +55,3 @@ Parameter | Default&nbsp;value | Description
 `onCheckedChange: (bool?)? Callback ` | `null` | Callback invoked on checkbox click. If `null`, then this is passive and relies entirely on a higher-level component to control the checked state.
 `enabled: bool` | `true` | Controls enabled state of the checkbox. When `false`, this checkbox will not be clickable.
 `indeterminate: bool` | `false` | Controls enabled state of the checkbox
-{:.table}

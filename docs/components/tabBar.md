@@ -8,12 +8,8 @@ description: Tabs organize content across different screens, data sets, and othe
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-  * [Fixed tabs](#fixed-tabs)
-  * [Scrollable tabs](#scrollable-tabs)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 

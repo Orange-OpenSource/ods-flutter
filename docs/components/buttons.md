@@ -8,21 +8,8 @@ description: Buttons allow users to take actions, and make choices, with a singl
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Text button](#text-button)
-        * [Flutter implementation](#flutter-implementation)
-    * [Outlined button](#outlined-button)
-        * [Flutter implementation](#flutter-implementation-1)
-    * [Contained button](#contained-button)
-        * [Flutter implementation](#flutter-implementation-2)
-    * [Segmented button](#segmented-button)
-        * [Flutter implementation](#flutter-implementation-3)
-            * [OdsSegmentedButton API](#odssegmentedbutton-api)
-    * [Button icon](#button-icon)
-        * [Flutter implementation](#flutter-implementation-4)
-            * [OdsButtonIcon API](#odsbuttonicon-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -217,7 +204,6 @@ Parameter | Default&nbsp;value | Description
 `selected: Set<T>` | | The set of `ButtonSegment.values` that indicate which `segments` are selected.
 `onSelectionChanged: (Set<T>)? onSelectionChanged` | `null` | Callback invoked on selection change
 `enabled: bool?` | `true` | Controls the enabled state of the segmented button. When false, this segmented button will not be clickable.
-{:.table}
 
 ### Button icon
 
@@ -274,4 +260,3 @@ Parameter | Default&nbsp;value | Description
 `isEnabled: bool` | `true` | The optional selection state enabled/disabled of the icon button.
 `onClick: void Function()?` | `null` | The action to be executed when the button is pressed.
 `style: OdsButtonIconStyle` | `OdsButtonIconStyle.functionalStandard` | The button's style color.
-{:.table}

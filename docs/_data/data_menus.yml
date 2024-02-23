@@ -36,7 +36,7 @@ toc2:
         url: components/menus_docs
       - page: Progress indicator
         url: components/progressIndicator_docs
-      - page: Radio Buttons
+      - page: Radio buttons
         url: components/radioButtons_docs
       - page: Sheets bottom
         url: components/sheets_bottom_docs
@@ -54,5 +54,9 @@ toc2:
 
   - title: About
     subfolderitems:
+      - page: "License"
+        url: about/License_docs
+      - page: "Team"
+        url: about/Team_docs
       - page: "Cookies"
-        url: /about/Cookies_docs
+        url: about/Cookies_docs

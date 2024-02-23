@@ -8,14 +8,8 @@ description: A floating action button (FAB) represents the primary action of a s
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Regular FAB](#regular-fab)
-    * [Small FAB](#small-fab)
-    * [Large FAB](#large-fab)
-    * [Extended FAB](#extended-fab)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 

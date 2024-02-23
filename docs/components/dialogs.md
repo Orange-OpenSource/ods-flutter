@@ -15,11 +15,8 @@ Dialogs are purposefully interruptive, so they should be used sparingly.
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Alert dialog](#alert-dialog)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 

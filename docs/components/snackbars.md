@@ -15,11 +15,8 @@ action that was just taken, or retrying an action that had failed.
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-    * [Flutter code](#flutter-code)
-        * [OdsSnackbar API](#odssnackbar-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -94,4 +91,3 @@ Parameter | Default&nbsp;value | Description
 `context: Context` | `BuildContext` | `Context` applied to the snackbar
 `actionLabel: Button` | | The button action label
 `onPressed: Button` | | The callback to be called when the button is pressed 
-{:.table}

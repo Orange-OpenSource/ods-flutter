@@ -8,12 +8,8 @@ description: Progress indicators express an unspecified wait time or display the
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Progress bar](#progress-bar)
-    * [Activity indicator](#activity-indicator)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 
