@@ -20,15 +20,16 @@ import 'package:ods_flutter/components/divider/ods_divider.dart';
 /// A ripple effect is managed on list tile.
 class OdsListStandardItem extends StatefulWidget {
   /// Creates an ODS List standard.
-  const OdsListStandardItem({
-    Key? key,
-    required this.title,
-    this.subtitle,
-    this.image,
-    this.text,
-    this.icon,
-    this.divider,
-  }) : super(key: key);
+  const OdsListStandardItem(
+      {Key? key,
+      required this.title,
+      this.subtitle,
+      this.image,
+      this.text,
+      this.icon,
+      this.divider,
+      this.onClick})
+      : super(key: key);
 
   /// The list's title .
   final String title;
@@ -48,6 +49,9 @@ class OdsListStandardItem extends StatefulWidget {
 
   /// The divider displayed in the list.
   final bool? divider;
+
+  /// The action to be executed when the button is pressed.
+  final void Function()? onClick;
 
   @override
   State<OdsListStandardItem> createState() => _OdsListStandardItemState();
@@ -79,6 +83,7 @@ class _OdsListStandardItemState extends State<OdsListStandardItem> {
                   if (widget.icon != null) widget.icon!, // icon-2
                 ],
               ),
+              onTap: widget.onClick,
             ),
             if (widget.divider != null) const OdsDivider(),
           ],

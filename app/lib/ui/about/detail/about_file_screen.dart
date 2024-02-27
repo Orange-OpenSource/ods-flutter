@@ -15,17 +15,20 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
+import 'package:path/path.dart' as path;
 import 'package:webview_flutter/webview_flutter.dart';
 
 class OdsAboutFileScreen extends StatelessWidget {
+  final String title;
   final String fileMenuItem;
   final bool darkModeEnabled;
 
   OdsAboutFileScreen(
-      {required this.fileMenuItem, required this.darkModeEnabled});
+      {required this.title,
+      required this.fileMenuItem,
+      required this.darkModeEnabled});
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +38,12 @@ class OdsAboutFileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: OdsAppTopBar(
-        title: AppLocalizations.of(context)!.aboutMenuChangelog,
+        title: title,
         navigationIcon: BackButton(),
       ),
       body: SafeArea(
         child: FutureBuilder(
-          future: _loadMarkdownData(),
+          future: _loadFileData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               String markdownContent = snapshot.data as String;
@@ -48,6 +51,13 @@ class OdsAboutFileScreen extends StatelessWidget {
               /// Convert Markdown to HTML using the markdown package
               String htmlContent = markdownToHtml(markdownContent);
 
+              print(_wrapHtmlWithCss(
+                htmlContent,
+                darkModeEnabled,
+                colors,
+                horizontalPadding,
+                verticalPadding,
+              ));
               return WebView(
                 initialUrl: 'about:blank',
                 onWebViewCreated: (WebViewController webViewController) {
@@ -74,7 +84,12 @@ class OdsAboutFileScreen extends StatelessWidget {
     );
   }
 
-  Future<String> _loadMarkdownData() async {
+  bool isHTMLFile(String filePath) {
+    String extension = path.extension(filePath);
+    return extension.toLowerCase() == '.html';
+  }
+
+  Future<String> _loadFileData() async {
     return await rootBundle.loadString(fileMenuItem);
   }
 
@@ -317,5 +332,6 @@ String convertToHtml(
   }
 
   result += "</html>";
+  print(result);
   return result;
 }
