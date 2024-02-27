@@ -21,7 +21,7 @@ In these GCU, the following terms shall, unless otherwise stated, have the follo
 
 **Networks:** means the electronic communication networks open to the public operated by Orange SA, regardless of the technology or standards used by these networks (cable, satellite, ADSL, optical fibre, GSM, GPRS, EDGE, UMTS, Wi-Fi, WIMAX, etc.). The Service is connected to the Networks.
 
-**Device / Devices:** means all Android operating system terminal devices from version 5 (Lollipop) and above (including touch-screen tablet-type mobile devices) which may be connected to the Internet via the Networks.
+**Device / Devices:** means all Android operating system terminal devices from version 5 (Lollipop) and all Apple iOS operating system terminal devices from version 11.0 and above (including touch-screen tablet-type mobile devices) which may be connected to the Internet via the Networks.
 
 **User:** means a natural person, whether adult or a minor who has obtained prior permission from their legal representative to use the Service, who uses the Service for their own needs and for personal, non-commercial purposes.
 
@@ -103,7 +103,7 @@ Any improvements, updates, derivative works or upgrades regarding the Service, w
 
 ### 9.3 license
 
-Orange Innovation hereby grants the User a non-exclusive, non-transferable, revocable right of use, valid globally, for as long as the Service is available free of charge and the User uses the Application on an Android compatible Device. The right of use is subject to compliance with these GCU and the GOOGLE Inc, Google Play Store terms of use.
+Orange Innovation hereby grants the User a non-exclusive, non-transferable, revocable right of use, valid globally, for as long as the Service is available free of charge and the User uses the Application on an Android or iOS compatible Device. The right of use is subject to compliance with these GCU and the GOOGLE Inc, Google Play Store terms of use.
 
 These GCUs do not give the User, with respect to the Application, its source code and/or software components, the right to sublicense, assign, use, copy, modify, distribute, access, disassemble, decompile or translate the Application, except as expressly authorised by applicable law.
 
