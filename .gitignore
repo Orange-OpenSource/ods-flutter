@@ -1,6 +1,0 @@
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-app/ios/Podfile.lock
