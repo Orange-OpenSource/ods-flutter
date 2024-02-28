@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: Snackbar without action text positioning ([#198](https://github.com/Orange-OpenSource/ods-flutter/issues/198))
 - [Bug]: Text Field > Trailing element > text issue ([#314](https://github.com/Orange-OpenSource/ods-flutter/issues/314))
 - [Bug]: Text Field > Input type > single line doesn't stay on 1 line ([#315](https://github.com/Orange-OpenSource/ods-flutter/issues/315))
+- [Bug]: Icons Button name ([#334](https://github.com/Orange-OpenSource/ods-flutter/issues/334))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 
