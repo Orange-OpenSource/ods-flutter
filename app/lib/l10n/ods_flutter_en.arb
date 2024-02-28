@@ -274,8 +274,8 @@
   "@_NAVIGATION_RAIL_VARIANT": {},
   "componentNavigationRailSubtitle": "OdsNavigationRail",
   "componentNavigationRailLeadingNone": "None",
-  "componentNavigationRailLeadingFirst": "First",
-  "componentNavigationRailLeadingSecond": "Second",
+  "componentNavigationRailLeadingMenu": "Menu",
+  "componentNavigationRailLeadingFab": "Fab",
 
   "@_COMPONENTS_SHEETS_BOTTOM": {},
   "componentSheetsBottomTitle": "Sheets: bottom",

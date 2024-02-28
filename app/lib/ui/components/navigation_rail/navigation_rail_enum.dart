@@ -21,11 +21,9 @@ extension CustomElementExtension on NavigationRailsEnum {
       case NavigationRailsEnum.none:
         return AppLocalizations.of(context)!.componentNavigationRailLeadingNone;
       case NavigationRailsEnum.firstIcon:
-        return AppLocalizations.of(context)!
-            .componentNavigationRailLeadingFirst;
+        return AppLocalizations.of(context)!.componentNavigationRailLeadingMenu;
       case NavigationRailsEnum.secondIcon:
-        return AppLocalizations.of(context)!
-            .componentNavigationRailLeadingSecond;
+        return AppLocalizations.of(context)!.componentNavigationRailLeadingFab;
       default:
         return "";
     }
