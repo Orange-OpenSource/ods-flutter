@@ -14,8 +14,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/button/ods_button.dart';
-import 'package:ods_flutter/components/button/ods_outlined_button.dart';
+import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_horizontal_card.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
@@ -69,13 +68,14 @@ class _Body extends StatelessWidget {
         CardCustomization.of(context);
 
     List<Widget> listButtons = [
-      OdsOutlinedButton(
+      OdsTextButton(
         text: AppLocalizations.of(context)!.componentElementButton1,
+        style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
-      OdsButton(
+      OdsTextButton(
         text: AppLocalizations.of(context)!.componentElementButton2,
-        style: OdsButtonStyle.functionalPrimary,
+        style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
     ];
@@ -83,14 +83,14 @@ class _Body extends StatelessWidget {
     List<Widget> buttons =
         listButtons.sublist(0, customizationState?.numberOfItems);
 
-    OdsOutlinedButton? firstButton;
-    OdsButton? secondButton;
+    OdsTextButton? firstButton;
+    OdsTextButton? secondButton;
 
     if (buttons.isNotEmpty) {
-      firstButton = buttons[0] as OdsOutlinedButton;
+      firstButton = buttons[0] as OdsTextButton;
     }
     if (buttons.length > 1) {
-      secondButton = buttons[1] as OdsButton;
+      secondButton = buttons[1] as OdsTextButton;
     }
 
     return SafeArea(
