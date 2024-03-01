@@ -13,7 +13,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 
-enum ListsTrailingEnum {
+enum ListTrailingEnum {
   none,
   trailingSwitch,
   trailingCheckbox,
@@ -21,18 +21,18 @@ enum ListsTrailingEnum {
   trailingInfoButton,
 }
 
-extension CustomElementExtension on ListsTrailingEnum {
+extension CustomElementExtension on ListTrailingEnum {
   String stringValue(BuildContext context) {
     switch (this) {
-      case ListsTrailingEnum.none:
+      case ListTrailingEnum.none:
         return AppLocalizations.of(context)!.listTrailingEnumNone;
-      case ListsTrailingEnum.trailingSwitch:
+      case ListTrailingEnum.trailingSwitch:
         return AppLocalizations.of(context)!.listTrailingEnumSwitch;
-      case ListsTrailingEnum.trailingCheckbox:
+      case ListTrailingEnum.trailingCheckbox:
         return AppLocalizations.of(context)!.listTrailingEnumCheckbox;
-      case ListsTrailingEnum.trailingText:
+      case ListTrailingEnum.trailingText:
         return AppLocalizations.of(context)!.listTrailingEnumText;
-      case ListsTrailingEnum.trailingInfoButton:
+      case ListTrailingEnum.trailingInfoButton:
         return AppLocalizations.of(context)!.listTrailingEnumInfoButton;
       default:
         return "";

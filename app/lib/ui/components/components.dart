@@ -31,11 +31,10 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_input.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/components/dialogs/dialogs.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_checkboxes.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_radio_buttons.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_selection.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_standard.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_switches.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_checkbox.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_item.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_radio_buttons.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_switches.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_exposed_dropdown.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar.dart';
@@ -199,18 +198,13 @@ List<Component> components(BuildContext context) {
     ),
     Component(
       AppLocalizations.of(context)!.componentListItem,
-      'assets/il_lists.svg',
+      'assets/il_list_item.png',
       AppLocalizations.of(context)!.componentListItemDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.listVariantSelectionTitle,
-          AppLocalizations.of(context)!.listVariantSelectionSubtitle,
+          AppLocalizations.of(context)!.listVariantItemTitle,
+          AppLocalizations.of(context)!.listVariantItemSubtitle,
           ComponentListsSelection(),
-        ),
-        Variant(
-          AppLocalizations.of(context)!.listVariantStandardTitle,
-          AppLocalizations.of(context)!.listVariantStandardSubtitle,
-          ComponentListsStandard(),
         ),
         Variant(
           AppLocalizations.of(context)!.listCheckboxesTitle,
