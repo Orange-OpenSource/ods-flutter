@@ -11,13 +11,53 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ods_flutter/components/card/ods_cards_common.dart';
+import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/modules/modules_entities.dart';
 
-class ModulesScreen extends StatelessWidget {
+class ModulesScreen extends StatefulWidget {
+  final List<Module> odsModules;
+
+  ModulesScreen({required this.odsModules});
+
+  @override
+  State<ModulesScreen> createState() => _ModulesScreenState();
+}
+
+class _ModulesScreenState extends State<ModulesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // Scaffold is a basic layout structure for an app screen
-      body: Container(), // Use an empty container to create an empty screen
+    return SafeArea(
+      child: ListView.builder(
+        itemCount: widget.odsModules.length,
+        itemBuilder: (context, index) {
+          var module = widget.odsModules[index];
+          return Padding(
+            padding: const EdgeInsets.all(spacingS),
+            child: Column(
+              children: [
+                OdsVerticalImageFirstCard(
+                  title: module.title,
+                  image: OdsCardImage(
+                    imageProvider: AssetImage(module.imageResourceName),
+                    contentDescription: '', //Optional
+                    alignment: Alignment.center,
+                    contentScale: BoxFit.cover,
+                  ),
+                  onClick: () {
+                    Get.to(
+                      module.screen,
+                      transition: Transition.rightToLeft,
+                    );
+                  },
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
