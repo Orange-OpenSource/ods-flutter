@@ -11,8 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/ods_button.dart';
-import 'package:ods_flutter/components/button/ods_outlined_button.dart';
+import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
@@ -60,10 +59,10 @@ class OdsHorizontalCard extends StatefulWidget {
   final String? text;
 
   /// Optional first button. If null, button will not be shown.
-  final OdsOutlinedButton? firstButton;
+  final OdsTextButton? firstButton;
 
   /// Optional second button in the card. If null, button will not be shown.
-  final OdsButton? secondButton;
+  final OdsTextButton? secondButton;
 
   /// imagePosition Position of the image within the card, it can be set to [OdsHorizontalCardImagePosition.Start] or [OdsHorizontalCardImagePosition.End]. [OdsHorizontalCardImagePosition.Start] by default.
   final OdsHorizontalCardImagePosition imagePosition;

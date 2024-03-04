@@ -106,13 +106,13 @@ List<Component> components(BuildContext context) {
             AppLocalizations.of(context)!.buttonsFunctionalVariantSubtitle,
             ButtonsContained(emphasis: ButtonEmphasis.functional)),
         Variant(
-            AppLocalizations.of(context)!.segmentedButtonsVariantTitle,
-            AppLocalizations.of(context)!.segmentedButtonsVariantSubtitle,
-            SegmentedButtons()),
-        Variant(
             AppLocalizations.of(context)!.buttonsIconVariantTitle,
             AppLocalizations.of(context)!.buttonsIconVariantSubtitle,
             ButtonsIcons()),
+        Variant(
+            AppLocalizations.of(context)!.segmentedButtonsVariantTitle,
+            AppLocalizations.of(context)!.segmentedButtonsVariantSubtitle,
+            SegmentedButtons()),
       ],
     ),
     Component(

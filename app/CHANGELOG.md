@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Buttons: icon Buttons ([#6](https://github.com/Orange-OpenSource/ods-flutter/issues/6))
 - ODS - Component - Navigation Rail ([#25](https://github.com/Orange-OpenSource/ods-flutter/issues/25))
 - ODS - Component - Cards: Title First Card ([#9](https://github.com/Orange-OpenSource/ods-flutter/issues/9))
+- About - Page ([#332](https://github.com/Orange-OpenSource/ods-flutter/issues/332))
 
 ## Changed
 
@@ -26,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update components to show label content examples ([#198](https://github.com/Orange-OpenSource/ods-flutter/issues/295))
 - [Bug]: Text Field > Trailing element > text issue ([#314](https://github.com/Orange-OpenSource/ods-flutter/issues/314))
 - [Bug]: Text Field > Input type > single line doesn't stay on 1 line ([#315](https://github.com/Orange-OpenSource/ods-flutter/issues/315))
+- [Bug]: Icons Button name ([#334](https://github.com/Orange-OpenSource/ods-flutter/issues/334))
+- [Bug]: - Navigation Rail : Name customization ([#333](https://github.com/Orange-OpenSource/ods-flutter/issues/333))
+- [Bug]: Card buttons ([#329](https://github.com/Orange-OpenSource/ods-flutter/issues/329))
 
 ### [0.7.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 

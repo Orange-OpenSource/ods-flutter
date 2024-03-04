@@ -48,7 +48,7 @@ class CardCustomizationState extends State<CardCustomization> {
 
   static get maxNavigationItemCount => 2;
 
-  int _numberOfItems = maxNavigationItemCount;
+  int _numberOfItems = minNavigationItemCount;
 
   int get numberOfItems => _numberOfItems;
 

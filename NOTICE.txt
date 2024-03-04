@@ -44,6 +44,9 @@ ods-flutter/app/assets/ic_profile.svg
 ods-flutter/app/assets/il_menu.png
 ods-flutter/app/assets/il_text-fields.png
 ods-flutter/app/assets/il_navigation_rail.png
+ods-flutter/app/assets/ic_calendar_event_info.png
+ods-flutter/app/assets/ic_identity_protection.png
+ods-flutter/app/assets/ic_task_list.png
 
 ods-flutter/app/assets/1.5x/il_about.png
 ods-flutter/app/assets/1.5x/il_switches.png
@@ -53,6 +56,9 @@ ods-flutter/app/assets/1.5x/il_navigation_bar.png
 ods-flutter/app/assets/1.5x/il_chips.png
 ods-flutter/app/assets/1.5x/ic_heart_deselected.png
 ods-flutter/app/assets/1.5x/ic_heart_selected.png
+ods-flutter/app/assets/1.5x/ic_calendar_event_info.png
+ods-flutter/app/assets/1.5x/ic_identity_protection.png
+ods-flutter/app/assets/1.5x/ic_task_list.png
 ods-flutter/app/assets/2.0x/il_about.png
 ods-flutter/app/assets/2.0x/il_switches.png
 ods-flutter/app/assets/2.0x/il_typography.png
@@ -61,6 +67,9 @@ ods-flutter/app/assets/2.0x/il_navigation_bar.png
 ods-flutter/app/assets/2.0x/il_chips.png
 ods-flutter/app/assets/2.0x/ic_heart_deselected.png
 ods-flutter/app/assets/2.0x/ic_heart_selected.png
+ods-flutter/app/assets/2.0x/ic_calendar_event_info.png
+ods-flutter/app/assets/2.0x/ic_identity_protection.png
+ods-flutter/app/assets/2.0x/ic_task_list.png
 ods-flutter/app/assets/3.0x/il_about.png
 ods-flutter/app/assets/3.0x/il_switches.png
 ods-flutter/app/assets/3.0x/il_typography.png
@@ -69,6 +78,9 @@ ods-flutter/app/assets/3.0x/il_navigation_bar.png
 ods-flutter/app/assets/3.0x/il_chips.png
 ods-flutter/app/assets/3.0x/ic_heart_deselected.png
 ods-flutter/app/assets/3.0x/ic_heart_selected.png
+ods-flutter/app/assets/3.0x/ic_calendar_event_info.png
+ods-flutter/app/assets/3.0x/ic_identity_protection.png
+ods-flutter/app/assets/3.0x/ic_task_list.png
 ods-flutter/app/assets/4.0x/il_about.png
 ods-flutter/app/assets/4.0x/il_switches.png
 ods-flutter/app/assets/4.0x/il_typography.png
@@ -77,6 +89,9 @@ ods-flutter/app/assets/4.0x/il_navigation_bar.png
 ods-flutter/app/assets/4.0x/il_chips.png
 ods-flutter/app/assets/4.0x/ic_heart_deselected.png
 ods-flutter/app/assets/4.0x/ic_heart_selected.png
+ods-flutter/app/assets/4.0x/ic_calendar_event_info.png
+ods-flutter/app/assets/4.0x/ic_identity_protection.png
+ods-flutter/app/assets/4.0x/ic_task_list.png
 
 
 ods-flutter/app/ios/Runner/Assets.xcassets/AppIcon.appiconset/iPad-App-76@1x.png

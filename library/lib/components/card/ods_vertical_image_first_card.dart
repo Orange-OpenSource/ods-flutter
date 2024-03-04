@@ -11,8 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/components/button/ods_button.dart';
-import 'package:ods_flutter/components/button/ods_outlined_button.dart';
+import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
@@ -50,10 +49,10 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   final String? text;
 
   /// Optional first button. If null, button will not be shown.
-  final OdsOutlinedButton? firstButton;
+  final OdsTextButton? firstButton;
 
   /// Optional second button in the card. If null, button will not be shown.
-  final OdsButton? secondButton;
+  final OdsTextButton? secondButton;
 
   /// The action executed on card tap.
   final Function()? onClick;
