@@ -18,16 +18,20 @@ import 'package:ods_flutter/components/divider/ods_divider.dart';
 /// This list contains content and actions about a single subject.
 ///
 /// A ripple effect is managed on list tile.
-class OdsListSelectionItem extends StatefulWidget {
+class OdsListItem extends StatefulWidget {
   /// Creates an ODS List selection.
-  const OdsListSelectionItem({
+  const OdsListItem({
     Key? key,
     required this.title,
     this.subtitle,
     this.image,
+    this.text,
+    this.icon,
     this.value,
     this.onChangedSwitch,
     this.onChangedCheckBox,
+    this.divider,
+    this.onClick,
   }) : super(key: key);
 
   /// The list's title .
@@ -40,6 +44,12 @@ class OdsListSelectionItem extends StatefulWidget {
   ///TODO For the moment the fit of the image is handled by the provided image. It should be done in the library but we need help to do that!
   final Widget? image;
 
+  /// The text displayed in the list trailing.
+  final String? text;
+
+  /// The icon displayed in the list trailing.
+  final Widget? icon;
+
   /// The optional switch or checkbox.
   final bool? value;
 
@@ -49,11 +59,17 @@ class OdsListSelectionItem extends StatefulWidget {
   /// The action executed change the checkbox.
   final Function(bool?)? onChangedCheckBox;
 
+  /// The divider displayed in the list.
+  final bool? divider;
+
+  /// The action to be executed when the item is pressed.
+  final void Function()? onClick;
+
   @override
-  State<OdsListSelectionItem> createState() => _OdsListSelectionItemState();
+  State<OdsListItem> createState() => _OdsListItemState();
 }
 
-class _OdsListSelectionItemState extends State<OdsListSelectionItem> {
+class _OdsListItemState extends State<OdsListItem> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
@@ -107,8 +123,16 @@ class _OdsListSelectionItemState extends State<OdsListSelectionItem> {
                         style: Theme.of(context).textTheme.bodyLarge,
                       )
                     : null,
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (widget.text != null) Text(widget.text!),
+                    if (widget.icon != null) widget.icon!, // icon-2
+                  ],
+                ),
+                onTap: widget.onClick,
               ),
-            const OdsDivider(),
+            if (widget.divider != null) const OdsDivider(),
           ],
         ),
       ),

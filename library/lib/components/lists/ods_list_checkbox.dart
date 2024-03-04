@@ -63,7 +63,10 @@ class _OdsListCheckboxState extends State<OdsListCheckbox> {
       hint: OdsLocalizations.of(context)!.componentCheckboxes,
       excludeSemantics: true,
       child: CheckboxListTile(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         value: widget.checked,
         onChanged: widget.enabled != false ? widget.onCheckedChange : null,
         tristate: widget.indeterminate,

@@ -13,7 +13,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
-import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
+import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/about/detail/about_file_screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -75,7 +75,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   ],
                 ),
               ),
-              OdsListStandardItem(
+              OdsListItem(
                 title: AppLocalizations.of(context)!.aboutMenuChangelog,
                 image: ImageIcon(
                   AssetImage('assets/ic_task_list.png'),
@@ -91,7 +91,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   );
                 },
               ),
-              OdsListStandardItem(
+              OdsListItem(
                 title: "Privacy Policy",
                 image: ImageIcon(
                   AssetImage('assets/ic_identity_protection.png'),
@@ -107,7 +107,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   );
                 },
               ),
-              OdsListStandardItem(
+              OdsListItem(
                 title: "Terms of services",
                 image: ImageIcon(
                   AssetImage('assets/ic_calendar_event_info.png'),
@@ -123,7 +123,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   );
                 },
               ),
-              OdsListStandardItem(
+              OdsListItem(
                 title: "Third party library",
                 image: ImageIcon(
                   AssetImage('assets/ic_task_list.png'),

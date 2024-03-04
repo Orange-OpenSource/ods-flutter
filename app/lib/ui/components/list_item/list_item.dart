@@ -13,15 +13,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
-import 'package:ods_flutter/components/lists/ods_list_selection_item.dart';
+import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_customization.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_leading_enum.dart';
-import 'package:ods_flutter_demo/ui/components/lists/lists_trailing_enum.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_customization.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_leading_enum.dart';
+import 'package:ods_flutter_demo/ui/components/list_item/list_trailing_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class ComponentListsSelection extends StatefulWidget {
@@ -42,7 +42,7 @@ class _ComponentListsSelectionState extends State<ComponentListsSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return ListsCustomization(
+    return ListCustomization(
       child: Scaffold(
         key: _scaffoldKey,
         bottomSheet: OdsSheetsBottom(
@@ -62,15 +62,17 @@ class _Body extends StatefulWidget {
 }
 
 class _BodyState extends State<_Body> {
-  List<bool> switchValues = List.filled(OdsApplication.recipes.length, true);
+  List<bool> selectionControls =
+      List.filled(OdsApplication.recipes.length, true);
 
   @override
   Widget build(BuildContext context) {
-    final ListsCustomizationState? customizationState =
-        ListsCustomization.of(context);
+    final ListCustomizationState? customizationState =
+        ListCustomization.of(context);
 
     var colorScheme = Theme.of(context).colorScheme;
 
+    /*
     return Scaffold(
       body: ListView.builder(
         itemCount: OdsApplication.recipes.length - 4,
@@ -127,6 +129,72 @@ class _BodyState extends State<_Body> {
         },
       ),
     );
+
+     */
+
+    var recipe = OdsApplication.recipes[0];
+    bool isSelectionControl = selectionControls[0];
+    var url = "";
+    switch (customizationState?.selectedLeadingElement ?? "") {
+      case ListLeadingEnum.icon:
+        url = recipe.getIconPath();
+        break;
+      case ListLeadingEnum.circle:
+        url = recipe.url;
+        break;
+      case ListLeadingEnum.square:
+        url = recipe.url;
+        break;
+      case ListLeadingEnum.wide:
+        url = recipe.url;
+        break;
+      case ListLeadingEnum.none:
+        // TODO: Handle this case.
+        break;
+    }
+    final odsImageShape = OdsImageShape(
+        context, customizationState?.selectedLeadingElement.name, url);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        OdsListItem(
+          title: recipe.title,
+          subtitle:
+              customizationState?.hasSubtitle == true ? recipe.subtitle : null,
+          image: odsImageShape.buildImage(),
+          icon: customizationState?.selectedTrailingElement ==
+                  ListTrailingEnum.trailingInfoButton
+              ? IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.info),
+                  color: colorScheme.secondary)
+              : null,
+          text: customizationState?.selectedTrailingElement ==
+                  ListTrailingEnum.trailingText
+              ? AppLocalizations.of(context)!.listTrailingExampleDetails
+              : null,
+          value: isSelectionControl,
+          onChangedSwitch: customizationState?.selectedTrailingElement ==
+                  ListTrailingEnum.trailingSwitch
+              ? (value) {
+                  setState(() {
+                    selectionControls[0] = value ?? false;
+                  });
+                }
+              : null,
+          onChangedCheckBox: customizationState?.selectedTrailingElement ==
+                  ListTrailingEnum.trailingCheckbox
+              ? (value) {
+                  setState(() {
+                    selectionControls[0] = value ?? false;
+                  });
+                }
+              : null,
+          onClick: () {},
+        ),
+      ],
+    );
   }
 }
 
@@ -143,8 +211,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
-    final ListsCustomizationState? customizationState =
-        ListsCustomization.of(context);
+    final ListCustomizationState? customizationState =
+        ListCustomization.of(context);
     return SafeArea(
       child: Column(
         children: [
@@ -172,7 +240,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Row(
                 children: List<Widget>.generate(
                     customizationState!.leadingElements.length, (int index) {
-                  ListsLeadingEnum currentElement =
+                  ListLeadingEnum currentElement =
                       customizationState.leadingElements[index];
                   bool isSelected = currentElement ==
                       customizationState.selectedLeadingElement;
@@ -216,7 +284,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Row(
                 children: List<Widget>.generate(
                     customizationState.trailingElements.length, (int index) {
-                  ListsTrailingEnum currentElement =
+                  ListTrailingEnum currentElement =
                       customizationState.trailingElements[index];
                   bool isSelected = currentElement ==
                       customizationState.selectedTrailingElement;

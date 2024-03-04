@@ -65,7 +65,10 @@ class _OdsRadioButtonState<T> extends State<OdsListRadioButton<T>> {
       hint: OdsLocalizations.of(context)!.componentCheckboxes,
       excludeSemantics: true,
       child: RadioListTile<T>(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         value: widget.value,
         onChanged: widget.enabled != false ? widget.onCheckedChange : null,
         groupValue: widget.groupValue,
