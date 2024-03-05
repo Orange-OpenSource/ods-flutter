@@ -6,21 +6,8 @@ description: Chips are compact elements that represent an input, attribute, or a
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Input chip](#input-chip)
-        * [Flutter implementation](#flutter-implementation)
-            * [OdsInputChip API](#odsinputchip-api)
-    * [Choice chip](#choice-chip)
-        * [Flutter implementation](#flutter-implementation-1)
-            * [OdsChoiceChip API](#odschoicechip-api)
-    * [Filter chip](#filter-chip)
-        * [Flutter implementation](#jflutter-implementation-2)
-            * [OdsFilterChip API](#odsfilterchip-api)
-    * [Action chip](#action-chip)
-        * [Flutter implementation](#flutter-implementation-3)
-            * [OdsActionChip API](#odsactionchip-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -79,7 +66,6 @@ Parameter | Default&nbsp;value | Description
 `leadingIcon: OdsChipLeadingIcon?` | `null` | Icon to be displayed at the start of the chip, preceding the text
 `leadingAvatar: OdsChipLeadingAvatar?` | `null` | Avatar to be displayed in a circle shape at the start of the chip, preceding the content text
 `onCancel: (() -> Unit)?` | `null` | Callback called on chip cancel cross click. Pass `null` for no cancel cross.
-{:.table}
 
 ### Choice chip
 
@@ -119,7 +105,6 @@ Parameter | Default&nbsp;value | Description
 `enabled: bool?` | `true` | Controls the enabled state of the chip. When `false`, this chip will not respond to user input. It also appears visually disabled and is disabled to accessibility services.
 `selected: bool?` | `false` | Controls the selected state of the chip. When `true`, the chip is highlighted.
 `leadingAvatar: OdsChipLeadingAvatar?` | `null` | Avatar to be displayed in a circle shape at the start of the chip, preceding the content text
-{:.table}
 
 
 ### Filter chip
@@ -159,9 +144,8 @@ Parameter | Default&nbsp;value | Description
 `enabled: bool?` | `true` | Controls the enabled state of the chip. When `false`, this chip will not respond to user input. It also appears visually disabled and is disabled to accessibility services.
 `selected: bool?` | `false` | Controls the selected state of the chip. When `true`, the chip is highlighted.
 `leadingAvatar: OdsChipLeadingAvatar?` | `null` | Avatar to be displayed in a circle shape at the start of the chip, preceding the content text
-{:.table}
 
-Use the filter like exemple [FilterChip class](https://api.flutter.dev/flutter/material/FilterChip-class.html)
+Use the filter like example [FilterChip class](https://api.flutter.dev/flutter/material/FilterChip-class.html)
 
 ### Action chip
 
@@ -170,8 +154,7 @@ contextually in a UI.
 
 An alternative to action chips are buttons, which should appear persistently and consistently.
 
-![Light action chip](images/chips_action_light
-.png) ![Dark action chip](images/chips_action_dark.png)
+![Light action chip](images/chips_action_light.png) ![Dark action chip](images/chips_action_dark.png)
 
 #### Flutter implementation
 
@@ -198,4 +181,3 @@ Parameter | Default&nbsp;value | Description
 `enabled: bool?` | `true` | Controls the enabled state of the chip. When `false`, this chip will not respond to user input. It also appears visually disabled and is disabled to accessibility services.
 `selected: bool?` | `false` | Controls the selected state of the chip. When `true`, the chip is highlighted.
 `leadingAvatar: Widget?` | `null` | Avatar to be displayed in a circle shape at the start of the chip, preceding the content text
-{:.table}

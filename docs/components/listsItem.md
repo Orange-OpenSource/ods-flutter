@@ -6,18 +6,8 @@ description: Lists are continuous, vertical indexes of text or images.
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Checkbox list](#checkbox-list)
-        * [Flutter implementation](#flutter-implementation)
-            * [OdsListItem API](#odslistitem-api)
-    * [Switch list](#switch-list)
-        * [Flutter implementation](#flutter-implementation-1)
-            * [OdsListSwitch API](#odslistswitch-api)
-    * [RadioButtons list](#radiobuttons-list)
-        * [Flutter implementation](#flutter-implementation-2)
-            * [OdsListRadioButton API](#odslistradiobutton-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -64,7 +54,6 @@ Parameter | Default&nbsp;value | Description
 `onCheckedChange: (bool?)? Callback ` | `null` | Callback invoked on checkbox click. If `null`, then this is passive and relies entirely on a higher-level component to control the checked state.
 `enabled: bool?` | `true` | Controls enabled state of the checkbox. When `false`, this checkbox will not be clickable.
 `indeterminate: bool?` | `false` | Controls enabled state of the checkbox
-{:.table}
 
 ### Switch list
 
@@ -96,7 +85,6 @@ Parameter | Default&nbsp;value | Description
 `onCheckedChange: (bool?)? Callback ` | `null` | Callback invoked on switch click. If `null`, then this is passive and relies entirely on a higher-level component to control the checked state.
 `icon: bool?` | `false` | Icon displayed in the switch button
 `enabled: bool?` | `true` | Controls enabled state of the checkbox. When `false`, this switch will not be clickable.
-{:.table}
 
 ### RadioButtons list
 
@@ -130,4 +118,3 @@ Parameter | Default&nbsp;value | Description
 `groupValue: T? ` | | The currently selected value for a group of radio buttons.
 `onCheckedChange: ((value: T?) -> Callback)?` | `null` | Called when the user selects this radio button. The radio button passes [value] as a parameter to this callback. The radio button does not actually change state until the parent widget rebuilds theradio button with the new [groupValue]. If null, the radio button will be displayed as disabled. The provided callback will not be invoked if this radio button is already selected.
 `enabled: bool? ` | `false` | Controls the enabled state of the radio button. When false, this button will not be clickable.
-{:.table}

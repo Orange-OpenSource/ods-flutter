@@ -8,14 +8,8 @@ description: Sliders allow users to make selections from a range of values.
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-  * [Continuous slider](#continuous-slider)
-  * [Continuous lockups slider](#continuous-lockups-slider)
-  * [Discrete slider](#discrete-slider)
-  * [Discrete lockups slider](#discrete-lockups-slider)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 

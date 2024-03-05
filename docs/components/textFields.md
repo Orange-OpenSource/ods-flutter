@@ -6,16 +6,8 @@ description: Text fields let users enter and edit text.
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Text field](#text-field-)
-        * [Flutter implementation](#flutter-implementation)
-            * [OdsTextField API](#odstextfield-api-)
-    * [Password text field](#password-text-field-)
-        * [Flutter implementation](#flutter-implementation-1)
-            * [OdsPasswordTextField API](#odspasswordtextfield-api-)
-* [Custom theme configuration](#custom-theme-configuration)
+* Table of contents
+{:toc}
 
 ---
 
@@ -92,7 +84,6 @@ Parameter | Default&nbsp;value | Description
 `keyboardActions: TextInputAction` | | When the input service emits an IME action, the corresponding callback is called.
 `maxLines: Int` | `null` | Maximum number of visible lines. Should be equal or greater than 1. Note that this parameter will be ignored and instead maxLines will be set to 1 if `singleLine` is set to `true`.
 `characterCounter: Int?` | `null` | Character counter displayed below the text field
-{:.table}
 
 ### Password text field [#](#password-text-field-)
 
@@ -145,7 +136,6 @@ Parameter | Default&nbsp;value | Description
 `keyboardActions: TextInputAction` | | When the input service emits an IME action, the corresponding callback is called.
 `maxLines: Int` | `null` | Maximum number of visible lines. Should be equal or greater than 1. Note that this parameter will be ignored and instead maxLines will be set to 1 if `singleLine` is set to `true`.
 `characterCounter: Int?` | `null` | Character counter displayed below the text field
-{:.table}
 
 ## Custom theme configuration
 

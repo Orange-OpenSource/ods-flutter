@@ -9,11 +9,8 @@ way to adjust settings on mobile.
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-    * [Flutter code](#flutter-code)
-        * [OdsSwitch API](#odsswitch-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -56,5 +53,3 @@ Parameter | Default&nbsp;value | Description
 `onCheckedChange: (bool?)? Callback` | `null` | Callback invoked on switch check. If `null`, then this is passive and relies entirely on a higher-level component to control the "checked" state.
 `icon: bool?` | `false` | Icon displayed in the switch button
 `enabled: bool?` | `true` | Controls the enabled state of the switch. When `false`, the switch will not be checkable and appears disabled.
-{:.table}
-

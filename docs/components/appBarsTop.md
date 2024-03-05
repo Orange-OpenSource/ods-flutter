@@ -6,15 +6,8 @@ description: Top app bars display information and actions relating to the curren
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Regular top app bar](#regular-top-app-bar)
-        * [Flutter implementation](#flutter-implementation)
-            * [OdsTopAppBar API](#odstopappbar-api)
-    * [Large top app bar](#large-top-app-bar)
-        * [Flutter implementation](#flutter-implementation-1)
-            * [OdsLargeTopAppBar API](#odslargetopappbar-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -65,7 +58,6 @@ Parameter | Default&nbsp;value | Description
 `title: String` | | Title to be displayed in the center of the top app bar
 `navigationIcon: Widget?` | `null` | Icon to be displayed at the start of the top app bar
 `actions: List<Widget?>` | `null` | Actions to be displayed at the end of the top app bar.
-{:.table}
 
 ### Large top app bar
 
@@ -101,4 +93,3 @@ Parameter | Default&nbsp;value | Description
 `navigationIcon: Widget?` | `null` | Icon to be displayed at the start of the top app bar
 `actions: List<Widget?>` | `null` | Actions to be displayed at the end of the top app bar.
 `scrollBehavior: Widget?` | `null` | `TopAppBarScrollBehavior` attached to the top app bar
-{:.table}

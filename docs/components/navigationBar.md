@@ -8,10 +8,8 @@ description: Navigation bar with Orange branding
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 

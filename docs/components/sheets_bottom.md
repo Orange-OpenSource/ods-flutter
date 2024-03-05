@@ -10,11 +10,8 @@ Use Sheets bottom to:
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-    * [Flutter](#flutter)
-        * [OdsSheetsBottom API](#odsheetbottom-api-)
+* Table of contents
+{:toc}
 
 ---
 
@@ -52,4 +49,3 @@ Parameter | Default&nbsp;value | Description
 -- | -- | --
 `title: String` | | Title header of the bottom sheet
 `sheetContent: Widget` |  | Content of the bottom sheet
-{:.table}

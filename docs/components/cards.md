@@ -8,14 +8,8 @@ description: Cards contain content and actions about a single subject.
 
 **Page Summary**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Vertical image first card](#vertical-image-first-card)
-    * [Vertical header first card](#vertical-header-first-card)
-    * [Small card](#small-card)
-    * [Horizontal card](#horizontal-card)
-* [Component specific tokens](#component-specific-tokens)
+* Table of contents
+{:toc}
 
 ---
 
@@ -69,7 +63,6 @@ Parameter | Default&nbsp;value | Description
 `firstButton: OdsCard.Button?` | `null` | First button displayed into the card
 `secondButton: OdsCard.Button?` | `null` | Second button displayed into the card
 `onClick: (() -> Void)?` | `null` | Callback called on card click
-{:.table}
 
 ### Vertical header first card
 
@@ -131,7 +124,6 @@ Parameter | Default&nbsp;value | Description
 `imagePosition: OdsHorizontalCardImagePosition` | `OdsHorizontalCardImagePosition.Start` | Position of the image within the card, it can be set to `OdsHorizontalCardImagePosition.start` or `OdsHorizontalCardImagePosition.end`
 `divider: Boolean` | `false` | Controls the divider display. If true, it will be displayed between the card content and the action buttons.
 `onClick: (() -> Void)?` | `null` | Callback called on card click
-{:.table}
 
 ## Component specific tokens
 

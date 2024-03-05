@@ -6,15 +6,8 @@ description: Menus appear from a button, action, or other control. It contains a
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Variants](#variants)
-    * [Dropdown menu](#dropdown-menu)
-        * [Flutter implementation](#flutter-implementation)
-            * [OdsDropdownMenu API](#odsdropdownmenu-api)
-    * [Exposed dropdown menu](#exposed-dropdown-menu)
-        * [Flutter implementation](#flutter-implementation-1)
-            * [OdsExposedDropdownMenu API](#odsexposeddropdownmenu-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -62,7 +55,6 @@ return OdsDropdownMenu(
 Parameter | Default&nbsp;value | Description
 -- | -- | --
 `items: List<OdsDropdownMenuItem<String>>` | | Items displayed into the dropdown menu
-{:.table}
 
 ### Exposed dropdown menu
 
@@ -103,4 +95,3 @@ Parameter | Default&nbsp;value | Description
 `items: List<DropdownMenuEntry>` | | Items displayed into the dropdown menu
 `selectedItem: Function(T?)?` | | Selected item displayed into the text field
 `enabled: Boolean` | `true` | Controls the enabled state of the dropdown menu. When `false`, the dropdown menu text field will be neither clickable nor focusable, visually it will appear in the disabled state.
-{:.table}

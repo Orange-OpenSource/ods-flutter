@@ -13,11 +13,8 @@ Use radio buttons to:
 
 <br>**On this page**
 
-* [Specifications references](#specifications-references)
-* [Accessibility](#accessibility)
-* [Implementation](#implementation)
-    * [Flutter code](#flutter-code)
-        * [OdsRadioButton API](#odsradiobutton-api)
+* Table of contents
+{:toc}
 
 ---
 
@@ -62,4 +59,3 @@ Parameter | Default&nbsp;value | Description
 `groupValue: T? ` | | The currently selected value for a group of radio buttons.
 `onCheckedChange: ((value: T?) -> Callback)?` | `null` | Called when the user selects this radio button. The radio button passes [value] as a parameter to this callback. The radio button does not actually change state until the parent widget rebuilds theradio button with the new [groupValue]. If null, the radio button will be displayed as disabled. The provided callback will not be invoked if this radio button is already selected.
 `enabled: bool? ` | false | Controls the enabled state of the radio button. When false, this button will not be clickable.
-{:.table}
