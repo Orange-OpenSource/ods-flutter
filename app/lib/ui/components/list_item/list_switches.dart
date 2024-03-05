@@ -42,8 +42,7 @@ class _ComponentSwitchesListState extends State<ComponentSwitchesList> {
             title: AppLocalizations.of(context)!.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar:
-              MainAppBar(AppLocalizations.of(context)!.listSwitchesSubtitle),
+          appBar: MainAppBar(AppLocalizations.of(context)!.listSwitchesTitle),
           body: _Body()),
     );
   }

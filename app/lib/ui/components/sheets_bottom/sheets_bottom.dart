@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
-import 'package:ods_flutter/components/lists/ods_list_standard_item.dart';
+import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
@@ -140,7 +140,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             final odsImageShape = OdsImageShape(
                 context, OdsImageShapeEnum.icon.name, recipe.getIconPath());
 
-            return OdsListStandardItem(
+            return OdsListItem(
               title: recipe.title,
               image: odsImageShape.buildImage(),
             );
