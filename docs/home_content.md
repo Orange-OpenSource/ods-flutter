@@ -25,7 +25,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```dart
 dependencies:
-  ods_flutter: ^0.1.1
+  ods_flutter: ^0.7.0
 ``` 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
 
@@ -33,4 +33,19 @@ Alternatively, your editor might support flutter pub get. Check the docs for you
 Now in your Dart code, you can use:
 ```dart
 import 'package:ods_flutter/ods_flutter.dart';
+``` 
+
+### Add the OdsTheme
+
+This is the theme of your application.
+To share a Theme across your entire app, set the theme property to your MaterialApp constructor :
+
+```dart
+return MaterialApp(
+      title: 'Application name',
+      theme: OdsTheme.lightTheme,
+      darkTheme: OdsTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title: 'Flutter Home Page'),
+    );
 ``` 
