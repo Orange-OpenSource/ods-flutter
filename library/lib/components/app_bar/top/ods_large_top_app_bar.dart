@@ -40,11 +40,14 @@ class OdsLargeTopAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
-        SliverAppBar.large(
-          title: Text(title),
-          actions: actions,
-          leading: navigationIcon,
-          automaticallyImplyLeading: navigationIcon != null ? true : false,
+        Semantics(
+          header: true,
+          child: SliverAppBar.large(
+            title: Text(title),
+            actions: actions,
+            leading: navigationIcon,
+            automaticallyImplyLeading: navigationIcon != null ? true : false,
+          ),
         ),
 
         /// Adding a list as content

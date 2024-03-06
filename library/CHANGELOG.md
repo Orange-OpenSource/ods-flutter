@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: Icons Button name ([#334](https://github.com/Orange-OpenSource/ods-flutter/issues/334))
 - [Bug]: - Navigation Rail : Name customization ([#333](https://github.com/Orange-OpenSource/ods-flutter/issues/333))
 - [Bug]: Card buttons ([#329](https://github.com/Orange-OpenSource/ods-flutter/issues/329))
+- [Bug]: Accessibility - add a header to the large title ([#343](https://github.com/Orange-OpenSource/ods-flutter/issues/343))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.7.0) - 2023-02-02
 
