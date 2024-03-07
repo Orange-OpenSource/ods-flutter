@@ -16,13 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ODS - Component - Cards: Title First Card ([#9](https://github.com/Orange-OpenSource/ods-flutter/issues/9))
 - About - Page ([#332](https://github.com/Orange-OpenSource/ods-flutter/issues/332))
 - Module - List ([#331](https://github.com/Orange-OpenSource/ods-flutter/issues/331))
+- Documentation : sprint documentation ([#345](https://github.com/Orange-OpenSource/ods-flutter/issues/345))
 
 ### Changed
 
 - Update Copyright in files ([#303](https://github.com/Orange-OpenSource/ods-flutter/issues/303))
 - Vertical Card customization updates ([#189](https://github.com/Orange-OpenSource/ods-flutter/issues/189))
 - Typographie flutter ios ([#293](https://github.com/Orange-OpenSource/ods-flutter/issues/293))
-- [Bug]: Snackbar without action text positioning ([#198](https://github.com/Orange-OpenSource/ods-flutter/issues/198))
 - [Bug]: Text Field > Trailing element > text issue ([#314](https://github.com/Orange-OpenSource/ods-flutter/issues/314))
 - [Bug]: Text Field > Input type > single line doesn't stay on 1 line ([#315](https://github.com/Orange-OpenSource/ods-flutter/issues/315))
 - [Bug]: Icons Button name ([#334](https://github.com/Orange-OpenSource/ods-flutter/issues/334))

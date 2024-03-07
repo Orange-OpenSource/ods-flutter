@@ -34,20 +34,11 @@ Here is an example of use:
 
 ```dart
 return OdsAppTopBar(
-  title: "Regular",
-  actions: IconButton(icon: const Icon(Icons.notifications), onPressed: () {}),
-  leading: BackButton(),
-  body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-        final itemNumber = index.toString();
-        return ListTile(
-            title: Text(
-            'Item #$itemNumber',
-            ),
-        );
-      },
-    )
+  title: "App Bar",
+  actions: [
+    IconButton(icon: const Icon(Icons.color_lens), onPressed: () {})
+  ],
+  navigationIcon: const BackButton(),
 );
 ```
 

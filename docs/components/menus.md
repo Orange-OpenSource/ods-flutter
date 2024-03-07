@@ -38,8 +38,8 @@ The library offers an `OdsDropdownMenu` container composable in which you can ad
 return OdsDropdownMenu(
   items: [
     OdsDropdownMenuItem(
-      value: "Summer Salad",
       text: "Summer Salad",
+      value: "Summer Salad",
       enabled: false, //Optional by default true
       icon: const Icon(Icons.coffee) // Optional
     ),
@@ -55,6 +55,18 @@ return OdsDropdownMenu(
 Parameter | Default&nbsp;value | Description
 -- | -- | --
 `items: List<OdsDropdownMenuItem<String>>` | | Items displayed into the dropdown menu
+`selectedItem: Function(T?)?` | | Selected item displayed
+{:.table}
+
+##### OdsDropdownMenuItem API
+
+Parameter | Default&nbsp;value | Description
+-- | -- | --
+`text: String` | | Typically a Text
+`value: T?` | | The value that will be returned by showMenu if this entry is selected.
+`enabled: bool?` | `true` | Whether the user is permitted to select this item.
+`icon: Widget?` | `null` | Typically a single-line ListTile for menus with icons.
+{:.table}
 
 ### Exposed dropdown menu
 
