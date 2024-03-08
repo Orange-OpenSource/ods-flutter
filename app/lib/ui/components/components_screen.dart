@@ -46,7 +46,7 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
     } else {
       /// Mobile Portrait
       crossAxisCount = 2;
-      childAspectRatio = 1.07;
+      childAspectRatio = 0.97;
     }
 
     return SafeArea(
