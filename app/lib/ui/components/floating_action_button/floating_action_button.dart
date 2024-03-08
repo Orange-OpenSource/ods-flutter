@@ -134,7 +134,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               child: Text(
                 AppLocalizations.of(context)!
                     .componentFloatingActionButtonSizeTitle,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
             ),

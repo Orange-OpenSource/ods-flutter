@@ -208,7 +208,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             padding: const EdgeInsets.all(spacingM),
             child: Text(
               AppLocalizations.of(context)!.componentState,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.left,
             ),
           ),
