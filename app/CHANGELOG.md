@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### [Unreleased](https://github.com/Orange-OpenSource/ods-flutter/releases)
 
+### [0.9.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.9.0) - 2023-04-03
+
+## Added
+
+-
+
+## Changed
+
+- [Bug]: Icons Button name ([#334](https://github.com/Orange-OpenSource/ods-flutter/issues/334))
+
 ### [0.8.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.8.0) - 2023-03-02
 
 ## Added
