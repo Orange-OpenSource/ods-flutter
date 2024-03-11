@@ -64,83 +64,88 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
       child: AnimatedContainer(
         duration: const Duration(seconds: 11150),
         height: expanded ? collapsedHeight : null,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            GestureDetector(
-              onPanEnd: (details) {
-                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
-                    details.velocity.pixelsPerSecond.dy != 0.0) {
-                  _expandCloseBottomSheet();
-                }
-              },
-              child: Container(
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: spacingM),
-                      child: Container(
-                        width: 40,
-                        height: 5,
-                        margin: const EdgeInsets.symmetric(vertical: spacingXs),
-                        decoration: BoxDecoration(
-                          color:
-                              Theme.of(context).colorScheme.secondaryContainer,
-                          borderRadius: BorderRadius.circular(2.5),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            GestureDetector(
-              onPanEnd: (details) {
-                if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
-                    details.velocity.pixelsPerSecond.dy != 0.0) {
-                  _expandCloseBottomSheet();
-                }
-              },
-              child: MergeSemantics(
+        child: GestureDetector(
+          onTap: _expandCloseBottomSheet,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                onPanEnd: (details) {
+                  if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                      details.velocity.pixelsPerSecond.dy != 0.0) {
+                    _expandCloseBottomSheet();
+                  }
+                },
                 child: Container(
                   color: Colors.transparent,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      AnimatedRotation(
-                        turns: chevronTurns,
-                        duration: const Duration(milliseconds: 200),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.expand_more,
-                            size: 31,
+                      Padding(
+                        padding: const EdgeInsets.only(top: spacingM),
+                        child: Container(
+                          width: 40,
+                          height: 5,
+                          margin:
+                              const EdgeInsets.symmetric(vertical: spacingXs),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .secondaryContainer,
+                            borderRadius: BorderRadius.circular(2.5),
                           ),
-                          onPressed: _expandCloseBottomSheet,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          widget.title,
-                          style: Theme.of(context).textTheme.titleMedium,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-            if (!expanded)
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: spacingXl),
-                    child: widget.sheetContent,
+              GestureDetector(
+                onPanEnd: (details) {
+                  if (details.velocity.pixelsPerSecond.dy.abs() > 100 &&
+                      details.velocity.pixelsPerSecond.dy != 0.0) {
+                    _expandCloseBottomSheet();
+                  }
+                },
+                child: MergeSemantics(
+                  child: Container(
+                    color: Colors.transparent,
+                    child: Row(
+                      children: [
+                        AnimatedRotation(
+                          turns: chevronTurns,
+                          duration: const Duration(milliseconds: 200),
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.expand_more,
+                              size: 31,
+                            ),
+                            onPressed: _expandCloseBottomSheet,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            widget.title,
+                            style: Theme.of(context).textTheme.titleMedium,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              )
-          ],
+              ),
+              if (!expanded)
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: spacingXl),
+                      child: widget.sheetContent,
+                    ),
+                  ),
+                )
+            ],
+          ),
         ),
       ),
     );
