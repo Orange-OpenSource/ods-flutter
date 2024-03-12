@@ -13,13 +13,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/dialogs/ods_alert_dialog.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/dialogs/dialogs_customization.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
@@ -29,14 +29,16 @@ class ComponentDialogs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return DialogsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.componentDialogsTitle,
+            title: l10n.componentDialogsTitle,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -53,6 +55,8 @@ class _Body extends StatefulWidget {
 class _BodyState extends State<_Body> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final DialogsCustomizationState? customizationState =
         DialogsCustomization.of(context);
     var recipe =
@@ -65,8 +69,7 @@ class _BodyState extends State<_Body> {
           children: [
             Padding(
               padding: const EdgeInsets.all(spacingM),
-              child: Text(
-                  AppLocalizations.of(context)!.dialogsVariantExampleLabel),
+              child: Text(l10n.dialogsVariantExampleLabel),
             ),
             Wrap(
               crossAxisAlignment: WrapCrossAlignment.start,
@@ -74,18 +77,15 @@ class _BodyState extends State<_Body> {
               spacing: spacingM,
               children: [
                 OdsButton(
-                  text: AppLocalizations.of(context)!
-                      .dialogsVariantExampleOpenButton,
+                  text: l10n.dialogsVariantExampleOpenButton,
                   style: OdsButtonStyle.functionalPrimary,
                   onClick: () => OdsAlertDialog.openDialog(
                     context: context,
                     text: recipe.description,
                     confirmButton: OdsAlertDialogButton(
                       text: customizationState?.hasDismissButton == true
-                          ? AppLocalizations.of(context)!
-                              .dialogsVariantExampleAcceptButton
-                          : AppLocalizations.of(context)!
-                              .dialogsVariantExampleOkButton,
+                          ? l10n.dialogsVariantExampleAcceptButton
+                          : l10n.dialogsVariantExampleOkButton,
                       onClick: () => Navigator.of(context).pop(),
                     ),
                     title: customizationState?.hasTitle == true
@@ -93,8 +93,7 @@ class _BodyState extends State<_Body> {
                         : null,
                     dismissButton: customizationState?.hasDismissButton == true
                         ? OdsAlertDialogButton(
-                            text: AppLocalizations.of(context)!
-                                .dialogsVariantExampleDeclineButton,
+                            text: l10n.dialogsVariantExampleDeclineButton,
                             onClick: () => Navigator.of(context).pop(),
                           )
                         : null,
@@ -102,7 +101,7 @@ class _BodyState extends State<_Body> {
                 ),
                 /*
                 OdsButton(
-                  text: AppLocalizations.of(context)!
+                  text: l10n
                       .dialogsVariantExampleOpenFullDialogsButton,
                   fullWidth: false,
                   style: OdsButtonStyle.functionalPrimary,
@@ -113,7 +112,7 @@ class _BodyState extends State<_Body> {
                       padding: const EdgeInsets.all(spacingL),
                       child: Text(recipe.description),
                     ),
-                    buttonRight: AppLocalizations.of(context)!
+                    buttonRight: l10n
                         .dialogsVariantExampleCloseButton,
                     onButtonRightClick: () => Navigator.of(context).pop(),
                   ),
@@ -136,20 +135,22 @@ class _CustomizationContent extends StatefulWidget {
 class _CustomizationContentState extends State<_CustomizationContent> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final DialogsCustomizationState? customizationState =
         DialogsCustomization.of(context);
+
     return Column(
       children: [
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeDialogsTitle,
+          title: l10n.componentCustomizeDialogsTitle,
           checked: customizationState?.hasTitle ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasTitle = value;
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!
-              .componentCustomizeDialogsDismissButton,
+          title: l10n.componentCustomizeDialogsDismissButton,
           checked: customizationState?.hasDismissButton ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasDismissButton = value;

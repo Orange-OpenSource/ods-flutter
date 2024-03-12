@@ -11,12 +11,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/segmented/button_icon/ods_button_icon.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon_customization.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -38,15 +38,16 @@ class _ButtonsIconsState extends State<ButtonsIcons> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ButtonIconCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar:
-            MainAppBar(AppLocalizations.of(context)!.buttonsIconVariantTitle),
+        appBar: MainAppBar(l10n.buttonsIconVariantTitle),
         body: SafeArea(child: _Body()),
       ),
     );
@@ -63,6 +64,8 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ButtonIconCustomizationState? customizationState =
         ButtonIconCustomization.of(context);
     final style = _determineButtonIconStyle(customizationState?.selectedStyle);
@@ -74,9 +77,7 @@ class _BodyState extends State<_Body> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              selected
-                  ? AppLocalizations.of(context)!.buttonsIconSelected
-                  : AppLocalizations.of(context)!.buttonsIconDeselected,
+              selected ? l10n.buttonsIconSelected : l10n.buttonsIconDeselected,
             ),
             OdsButtonIcon(
               icon: Image.asset('assets/ic_heart_deselected.png'),
@@ -131,6 +132,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ButtonIconCustomizationState? customizationState =
         ButtonIconCustomization.of(context);
 
@@ -141,8 +144,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           child: Padding(
             padding: const EdgeInsets.all(spacingM),
             child: Text(
-              AppLocalizations.of(context)!
-                  .buttonsTextFunctionalCustomizeFunctionalTitle,
+              l10n.buttonsTextFunctionalCustomizeFunctionalTitle,
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.left,
             ),
@@ -163,8 +165,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
-                      text:
-                          customizationState.style[index].stringValue(context),
+                      text: customizationState.style[index].stringValue(l10n),
                       selected: isSelected,
                       onClick: (selected) {
                         setState(
@@ -182,7 +183,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           ),
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeEnable,
+          title: l10n.componentCustomizeEnable,
           checked: customizationState.hasEnabled,
           onCheckedChange: (bool value) {
             customizationState.hasEnabled = value;

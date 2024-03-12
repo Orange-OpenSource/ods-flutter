@@ -11,11 +11,11 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/segmented/ods_segmented_button.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/segmented/segmented_button_customization.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/segmented/segmented_button_enum.dart';
@@ -41,15 +41,16 @@ class _SegmentedButtonsState extends State<SegmentedButtons> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return SegmentedButtonCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.segmentedButtonsVariantTitle),
+          appBar: MainAppBar(l10n.segmentedButtonsVariantTitle),
           body: _Body()),
     );
   }
@@ -162,6 +163,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final SegmentedButtonCustomizationState? customizationState =
         SegmentedButtonCustomization.of(context);
 
@@ -173,8 +176,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(spacingM),
-                child: Text(AppLocalizations.of(context)!.componentElementTypes,
-                    style: Theme.of(context).textTheme.titleMedium),
+                child: Text(
+                  l10n.componentElementTypes,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,12 +189,14 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       ButtonSegment<SegmentedButtonsEnum>(
                         value: SegmentedButtonsEnum.multi,
                         label: Text(
-                            SegmentedButtonsEnum.multi.stringValue(context)),
+                          SegmentedButtonsEnum.multi.stringValue(l10n),
+                        ),
                       ),
                       ButtonSegment<SegmentedButtonsEnum>(
                         value: SegmentedButtonsEnum.single,
                         label: Text(
-                            SegmentedButtonsEnum.single.stringValue(context)),
+                          SegmentedButtonsEnum.single.stringValue(l10n),
+                        ),
                       ),
                     ],
                     selected: <SegmentedButtonsEnum>{selectView},
@@ -206,7 +213,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ],
           ),
           ComponentCountRow(
-              title: AppLocalizations.of(context)!.componentElementToggleCount,
+              title: l10n.componentElementToggleCount,
               minCount:
                   SegmentedButtonCustomizationState.minNavigationItemCount,
               maxCount:
@@ -216,14 +223,14 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 customizationState.numberOfItems = value;
               }),
           OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementIcon,
+            title: l10n.componentElementIcon,
             checked: customizationState.hasIcon,
             onCheckedChange: (bool value) {
               customizationState.hasIcon = value;
             },
           ),
           OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementEnabled,
+            title: l10n.componentElementEnabled,
             checked: customizationState.hasEnabled,
             onCheckedChange: (bool value) {
               customizationState.hasEnabled = value;

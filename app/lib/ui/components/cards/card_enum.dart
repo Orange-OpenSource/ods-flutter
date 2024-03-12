@@ -10,22 +10,13 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum CardEnum { start, end }
 
 extension CustomElementExtension on CardEnum {
-  String stringValue(BuildContext context) {
-    switch (this) {
-      case CardEnum.start:
-        return AppLocalizations.of(context)!
-            .componentCardHorizontalImagePositionStart;
-      case CardEnum.end:
-        return AppLocalizations.of(context)!
-            .componentCardHorizontalImagePositionEnd;
-      default:
-        return "";
-    }
-  }
+  String stringValue(AppLocalizations l10n) => switch (this) {
+        CardEnum.start => l10n.componentCardHorizontalImagePositionStart,
+        CardEnum.end => l10n.componentCardHorizontalImagePositionEnd,
+      };
 }

@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 ///Segmented Button Enum
 /// * [single] - Single select segmented button.
@@ -22,12 +21,12 @@ enum SegmentedButtonsEnum {
 }
 
 extension CustomElementExtension on SegmentedButtonsEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case SegmentedButtonsEnum.single:
-        return AppLocalizations.of(context)!.segmentedEnumSingle;
+        return l10n.segmentedEnumSingle;
       case SegmentedButtonsEnum.multi:
-        return AppLocalizations.of(context)!.segmentedEnumMulti;
+        return l10n.segmentedEnumMulti;
     }
   }
 }

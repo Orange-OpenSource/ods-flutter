@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 ///Button Icon
 /// * [functionalStandard] - Text displayed in the button with a standard icon button style.
@@ -26,16 +25,16 @@ enum ButtonsIconEnum {
 }
 
 extension CustomElementExtension on ButtonsIconEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case ButtonsIconEnum.functionalStandard:
-        return AppLocalizations.of(context)!.buttonsIconFunctionalStandardEnum;
+        return l10n.buttonsIconFunctionalStandardEnum;
       case ButtonsIconEnum.functionalFilled:
-        return AppLocalizations.of(context)!.buttonsIconFunctionalFilledEnum;
+        return l10n.buttonsIconFunctionalFilledEnum;
       case ButtonsIconEnum.functionalTonal:
-        return AppLocalizations.of(context)!.buttonsIconFunctionalTonalEnum;
+        return l10n.buttonsIconFunctionalTonalEnum;
       case ButtonsIconEnum.functionalOutlined:
-        return AppLocalizations.of(context)!.buttonsIconFunctionalOutlinedEnum;
+        return l10n.buttonsIconFunctionalOutlinedEnum;
     }
   }
 }

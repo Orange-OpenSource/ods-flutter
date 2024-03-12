@@ -11,12 +11,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/button/ods_outlined_button.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -37,15 +37,16 @@ class _ButtonsOutlinedState extends State<ButtonsOutlined> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ButtonCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar: MainAppBar(
-            AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle),
+        appBar: MainAppBar(l10n.buttonsLowEmphasisVariantTitle),
         body: SafeArea(child: _Body()),
       ),
     );
@@ -58,13 +59,15 @@ class _Body extends StatelessWidget {
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
 
+    final l10n = context.l10n;
+
     return Semantics(
       header: true,
       child: Padding(
         padding: const EdgeInsets.only(
             left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
         child: OdsOutlinedButton(
-          text: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+          text: l10n.componentButtonsExampleTitle,
           onClick: customizationState?.hasEnabled == true ? () {} : null,
           icon: customizationState?.hasIcon == true
               ? SvgPicture.asset('assets/ic_profile.svg')
@@ -79,26 +82,28 @@ class _Body extends StatelessWidget {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeIcon,
+          title: l10n.componentCustomizeIcon,
           checked: customizationState?.hasIcon ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasIcon = value;
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeFullScreen,
+          title: l10n.componentCustomizeFullScreen,
           checked: customizationState?.hasFullScreen ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasFullScreen = value;
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeEnable,
+          title: l10n.componentCustomizeEnable,
           checked: customizationState?.hasEnabled ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;

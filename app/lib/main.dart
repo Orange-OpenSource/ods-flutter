@@ -14,16 +14,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
 import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/main_screen.dart';
+import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
-
-import 'ui/theme/model_theme.dart';
 
 void main() {
   runApp(OdsApplication());

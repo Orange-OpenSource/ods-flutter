@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 ///Button Contained
 /// * [functionalPositive] - Text displayed in the button with a functional positive style.
@@ -26,16 +25,16 @@ enum ButtonsEnum {
 }
 
 extension CustomElementExtension on ButtonsEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case ButtonsEnum.functionalPositive:
-        return AppLocalizations.of(context)!.buttonsFunctionalPositiveEnum;
+        return l10n.buttonsFunctionalPositiveEnum;
       case ButtonsEnum.functionalNegative:
-        return AppLocalizations.of(context)!.buttonsFunctionalNegativeEnum;
+        return l10n.buttonsFunctionalNegativeEnum;
       case ButtonsEnum.functionalDefault:
-        return AppLocalizations.of(context)!.buttonsTextFunctionalDefaultEnum;
+        return l10n.buttonsTextFunctionalDefaultEnum;
       case ButtonsEnum.functionalPrimary:
-        return AppLocalizations.of(context)!.buttonsTextFunctionalPrimaryEnum;
+        return l10n.buttonsTextFunctionalPrimaryEnum;
     }
   }
 }

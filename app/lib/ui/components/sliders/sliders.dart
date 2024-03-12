@@ -11,12 +11,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/sliders/ods_slider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/sliders/sliders_customization.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
@@ -25,14 +25,16 @@ class ComponentSliders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return SlidersCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.componentSlidersTitle,
+            title: l10n.componentSlidersTitle,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -82,12 +84,14 @@ class _BodyState extends State<_Body> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final SlidersCustomizationState? customizationState =
         SlidersCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentSlidersCustomizeIcon,
+          title: l10n.componentSlidersCustomizeIcon,
           checked: customizationState?.hasIcon ?? true,
           onCheckedChange: (bool value) {
             if (customizationState != null) {
@@ -96,8 +100,7 @@ class _CustomizationContent extends StatelessWidget {
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!
-              .componentSlidersCustomizeDisplayValue,
+          title: l10n.componentSlidersCustomizeDisplayValue,
           checked: customizationState?.displayValue ?? true,
           onCheckedChange: (bool value) {
             if (customizationState != null) {
@@ -106,7 +109,7 @@ class _CustomizationContent extends StatelessWidget {
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeSlidersStepped,
+          title: l10n.componentCustomizeSlidersStepped,
           checked: customizationState?.stepped ?? true,
           onCheckedChange: (bool value) {
             if (customizationState != null) {

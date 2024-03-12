@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bar_large.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_contained.dart';
@@ -49,294 +48,256 @@ import 'package:ods_flutter_demo/ui/components/switches/switches.dart';
 import 'package:ods_flutter_demo/ui/components/textfields/textfield.dart';
 import 'package:ods_flutter_demo/ui/components/textfields/textfield_password.dart';
 
-List<Component> components(BuildContext context) {
+List<Component> components(AppLocalizations l10n) {
   return [
     Component(
-      AppLocalizations.of(context)!.componentAppBarsTop,
+      l10n.componentAppBarsTop,
       'assets/il_app_bars_top_generic.svg',
-      AppLocalizations.of(context)!.componentAppBarsTopDescription,
+      l10n.componentAppBarsTopDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.componentAppBarsTopRegular,
-          AppLocalizations.of(context)!.componentAppTopBarsRegularSubtitle,
+          l10n.componentAppBarsTopRegular,
+          l10n.componentAppTopBarsRegularSubtitle,
           ComponentTopAppBars(),
         ),
         Variant(
-          AppLocalizations.of(context)!.componentAppBarsTopLarge,
-          AppLocalizations.of(context)!.componentAppBarsTopLargeSubtitle,
+          l10n.componentAppBarsTopLarge,
+          l10n.componentAppBarsTopLargeSubtitle,
           ComponentTopAppBarLarge(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentNavigationBarTitle,
+      l10n.componentNavigationBarTitle,
       'assets/il_navigation_bar.png',
-      AppLocalizations.of(context)!.componentNavigationBarDescription,
+      l10n.componentNavigationBarDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.navigationBarVariantTitle,
-            AppLocalizations.of(context)!.navigationBarVariantSubtitle,
-            ComponentNavigationBar()),
+        Variant(l10n.navigationBarVariantTitle,
+            l10n.navigationBarVariantSubtitle, ComponentNavigationBar()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentButtonsTitle,
+      l10n.componentButtonsTitle,
       'assets/il_buttons.svg',
-      AppLocalizations.of(context)!.componentButtonsDescription,
+      l10n.componentButtonsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle,
-            AppLocalizations.of(context)!.buttonsHighEmphasisVariantSubtitle,
+            l10n.buttonsHighEmphasisVariantTitle,
+            l10n.buttonsHighEmphasisVariantSubtitle,
             ButtonsContained(emphasis: ButtonEmphasis.highEmphasis)),
         Variant(
-            AppLocalizations.of(context)!.buttonsMediumEmphasisVariantTitle,
-            AppLocalizations.of(context)!.buttonsMediumEmphasisVariantSubtitle,
+            l10n.buttonsMediumEmphasisVariantTitle,
+            l10n.buttonsMediumEmphasisVariantSubtitle,
             ButtonsContained(emphasis: ButtonEmphasis.mediumEmphasis)),
+        Variant(l10n.buttonsLowEmphasisVariantTitle,
+            l10n.buttonsLowEmphasisVariantSubtitle, ButtonsOutlined()),
+        Variant(l10n.buttonsLowestEmphasisVariantTitle,
+            l10n.buttonsLowestEmphasisVariantSubtitle, ButtonsText()),
         Variant(
-            AppLocalizations.of(context)!.buttonsLowEmphasisVariantTitle,
-            AppLocalizations.of(context)!.buttonsLowEmphasisVariantSubtitle,
-            ButtonsOutlined()),
-        Variant(
-            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantTitle,
-            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantSubtitle,
-            ButtonsText()),
-        Variant(
-            AppLocalizations.of(context)!.buttonsFunctionalVariantTitle,
-            AppLocalizations.of(context)!.buttonsFunctionalVariantSubtitle,
+            l10n.buttonsFunctionalVariantTitle,
+            l10n.buttonsFunctionalVariantSubtitle,
             ButtonsContained(emphasis: ButtonEmphasis.functional)),
-        Variant(
-            AppLocalizations.of(context)!.buttonsIconVariantTitle,
-            AppLocalizations.of(context)!.buttonsIconVariantSubtitle,
+        Variant(l10n.buttonsIconVariantTitle, l10n.buttonsIconVariantSubtitle,
             ButtonsIcons()),
-        Variant(
-            AppLocalizations.of(context)!.segmentedButtonsVariantTitle,
-            AppLocalizations.of(context)!.segmentedButtonsVariantSubtitle,
-            SegmentedButtons()),
+        Variant(l10n.segmentedButtonsVariantTitle,
+            l10n.segmentedButtonsVariantSubtitle, SegmentedButtons()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentFloatingActionButtonTitle,
+      l10n.componentFloatingActionButtonTitle,
       'assets/il_floating_action_button.svg',
-      AppLocalizations.of(context)!.componentFloatingActionButtonDescription,
+      l10n.componentFloatingActionButtonDescription,
       [
         Variant(
-          AppLocalizations.of(context)!
-              .componentFloatingActionButtonVariantTitle,
-          AppLocalizations.of(context)!.componentFloatingActionButtonOds,
+          l10n.componentFloatingActionButtonVariantTitle,
+          l10n.componentFloatingActionButtonOds,
           ComponentFloatingActionButton(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentCardsTitle,
+      l10n.componentCardsTitle,
       'assets/il_cards.svg',
-      AppLocalizations.of(context)!.componentCardsDescription,
+      l10n.componentCardsDescription,
       [
         Variant(
-            AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle,
-            AppLocalizations.of(context)!.cardVerticalImageFirstVariantSubtitle,
+            l10n.cardVerticalImageFirstVariantTitle,
+            l10n.cardVerticalImageFirstVariantSubtitle,
             CardVerticalImageFirst()),
         Variant(
-            AppLocalizations.of(context)!.componentCardVerticalHeaderFirst,
-            AppLocalizations.of(context)!
-                .componentCardVerticalHeaderFirstSubtitle,
+            l10n.componentCardVerticalHeaderFirst,
+            l10n.componentCardVerticalHeaderFirstSubtitle,
             CardVerticalHeaderFirst()),
-        Variant(
-            AppLocalizations.of(context)!.cardSmallVariantTitle,
-            AppLocalizations.of(context)!.cardSmallVariantSubtitle,
+        Variant(l10n.cardSmallVariantTitle, l10n.cardSmallVariantSubtitle,
             CardSmall()),
-        Variant(
-            AppLocalizations.of(context)!.componentCardHorizontalTitle,
-            AppLocalizations.of(context)!.componentCardHorizontalSubtitle,
-            CardHorizontal()),
+        Variant(l10n.componentCardHorizontalTitle,
+            l10n.componentCardHorizontalSubtitle, CardHorizontal()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentCheckboxes,
+      l10n.componentCheckboxes,
       'assets/il_checkbox.svg',
-      AppLocalizations.of(context)!.componentCheckboxesDescription,
+      l10n.componentCheckboxesDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.checkboxesVariantTitle,
-            AppLocalizations.of(context)!.checkboxesVariantSubtitle,
+        Variant(l10n.checkboxesVariantTitle, l10n.checkboxesVariantSubtitle,
             ComponentCheckboxes())
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentChips,
+      l10n.componentChips,
       'assets/il_chips.png',
-      AppLocalizations.of(context)!.componentChipsDescription,
+      l10n.componentChipsDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.componentChipAction,
-            AppLocalizations.of(context)!.componentChipActionSubtitle,
+        Variant(l10n.componentChipAction, l10n.componentChipActionSubtitle,
             ComponentChipsAction()),
-        Variant(
-            AppLocalizations.of(context)!.componentChipFilter,
-            AppLocalizations.of(context)!.componentChipFilterSubtitle,
+        Variant(l10n.componentChipFilter, l10n.componentChipFilterSubtitle,
             ComponentChipsFilter()),
-        Variant(
-            AppLocalizations.of(context)!.componentChipInput,
-            AppLocalizations.of(context)!.componentChipInputSubtitle,
+        Variant(l10n.componentChipInput, l10n.componentChipInputSubtitle,
             ComponentChipsInput()),
-        Variant(
-            AppLocalizations.of(context)!.componentChipChoice,
-            AppLocalizations.of(context)!.componentChipChoiceSubtitle,
+        Variant(l10n.componentChipChoice, l10n.componentChipChoiceSubtitle,
             ComponentChipsChoice()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentDialogsTitle,
+      l10n.componentDialogsTitle,
       'assets/il_dialogs.png',
-      AppLocalizations.of(context)!.componentDialogsDescription,
+      l10n.componentDialogsDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.dialogsVariantTitle,
-            AppLocalizations.of(context)!.dialogsVariantSubtitle,
+        Variant(l10n.dialogsVariantTitle, l10n.dialogsVariantSubtitle,
             ComponentDialogs())
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentListItem,
+      l10n.componentListItem,
       'assets/il_list_item.png',
-      AppLocalizations.of(context)!.componentListItemDescription,
+      l10n.componentListItemDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.listVariantItemTitle,
-          AppLocalizations.of(context)!.listVariantItemSubtitle,
+          l10n.listVariantItemTitle,
+          l10n.listVariantItemSubtitle,
           ComponentListsSelection(),
         ),
         Variant(
-          AppLocalizations.of(context)!.listCheckboxesTitle,
-          AppLocalizations.of(context)!.listCheckboxesSubtitle,
+          l10n.listCheckboxesTitle,
+          l10n.listCheckboxesSubtitle,
           ComponentCheckboxesList(),
         ),
         Variant(
-          AppLocalizations.of(context)!.listRadioButtonsTitle,
-          AppLocalizations.of(context)!.listRadioButtonsSubtitle,
+          l10n.listRadioButtonsTitle,
+          l10n.listRadioButtonsSubtitle,
           ComponentRadioButtonsList(),
         ),
         Variant(
-          AppLocalizations.of(context)!.listSwitchesTitle,
-          AppLocalizations.of(context)!.listSwitchesSubtitle,
+          l10n.listSwitchesTitle,
+          l10n.listSwitchesSubtitle,
           ComponentSwitchesList(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentMenus,
+      l10n.componentMenus,
       'assets/il_menu.png',
-      AppLocalizations.of(context)!.componentMenuDescription,
+      l10n.componentMenuDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.componentMenuDropdown,
-          AppLocalizations.of(context)!.componentMenuDropdownSubtitle,
+          l10n.componentMenuDropdown,
+          l10n.componentMenuDropdownSubtitle,
           ComponentMenuDropdown(),
         ),
         Variant(
-          AppLocalizations.of(context)!.componentMenuExposedDropdown,
-          AppLocalizations.of(context)!.componentMenuExposedDropdownSubtitle,
+          l10n.componentMenuExposedDropdown,
+          l10n.componentMenuExposedDropdownSubtitle,
           MenuExposedDropdown(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentNavigationRail,
+      l10n.componentNavigationRail,
       'assets/il_navigation_rail.png',
-      AppLocalizations.of(context)!.componentNavigationRailDescription,
+      l10n.componentNavigationRailDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.componentNavigationRail,
-          AppLocalizations.of(context)!.componentNavigationRailSubtitle,
+          l10n.componentNavigationRail,
+          l10n.componentNavigationRailSubtitle,
           ComponentNavigationRail(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentProgressTitle,
+      l10n.componentProgressTitle,
       'assets/il_progress.png',
-      AppLocalizations.of(context)!.componentProgressDescription,
+      l10n.componentProgressDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.progressLinearVariantTitle,
-          AppLocalizations.of(context)!.progressLinearVariantSubtitle,
+          l10n.progressLinearVariantTitle,
+          l10n.progressLinearVariantSubtitle,
           ComponentProgressLinear(),
         ),
         Variant(
-          AppLocalizations.of(context)!.progressCircularVariantTitle,
-          AppLocalizations.of(context)!.progressCircularVariantSubtitle,
+          l10n.progressCircularVariantTitle,
+          l10n.progressCircularVariantSubtitle,
           ComponentProgressCircular(),
         ),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentRadioButtons,
+      l10n.componentRadioButtons,
       'assets/il_radio_buttons.svg',
-      AppLocalizations.of(context)!.componentRadioButtonsDescription,
+      l10n.componentRadioButtonsDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.radioButtonVariantTitle,
-            AppLocalizations.of(context)!.radioButtonVariantSubtitle,
+        Variant(l10n.radioButtonVariantTitle, l10n.radioButtonVariantSubtitle,
             ComponentRadioButtons()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSlidersTitle,
+      l10n.componentSlidersTitle,
       'assets/il_sliders.png',
-      AppLocalizations.of(context)!.componentSlidersDescription,
+      l10n.componentSlidersDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.slidersVariantTitle,
-            AppLocalizations.of(context)!.slidersVariantSubtitle,
+        Variant(l10n.slidersVariantTitle, l10n.slidersVariantSubtitle,
             ComponentSliders()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSheetsBottomTitle,
+      l10n.componentSheetsBottomTitle,
       'assets/il_sheets_bottom.png',
-      AppLocalizations.of(context)!.componentSheetsBottomDescription,
+      l10n.componentSheetsBottomDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.sheetsBottomVariantTitle,
-            AppLocalizations.of(context)!.sheetsBottomVariantSubtitle,
+        Variant(l10n.sheetsBottomVariantTitle, l10n.sheetsBottomVariantSubtitle,
             ComponentSheetsBottom()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSnackbarsTitle,
+      l10n.componentSnackbarsTitle,
       'assets/il_snackbars.svg',
-      AppLocalizations.of(context)!.componentSnackbarsDescription,
+      l10n.componentSnackbarsDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.snackbarsVariantTitle,
-            AppLocalizations.of(context)!.snackbarsVariantSubtitle,
+        Variant(l10n.snackbarsVariantTitle, l10n.snackbarsVariantSubtitle,
             ComponentSnackbars()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentSwitchesTitle,
+      l10n.componentSwitchesTitle,
       'assets/il_switches.png',
-      AppLocalizations.of(context)!.componentSwitchesDescription,
+      l10n.componentSwitchesDescription,
       [
-        Variant(
-            AppLocalizations.of(context)!.switchesVariantTitle,
-            AppLocalizations.of(context)!.switchesVariantSubtitle,
+        Variant(l10n.switchesVariantTitle, l10n.switchesVariantSubtitle,
             ComponentSwitches()),
       ],
     ),
     Component(
-      AppLocalizations.of(context)!.componentTextFields,
+      l10n.componentTextFields,
       'assets/il_text-fields.png',
-      AppLocalizations.of(context)!.componentTextFieldsDescription,
+      l10n.componentTextFieldsDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.componentTextField,
-          AppLocalizations.of(context)!.componentTextFieldSubtitle,
+          l10n.componentTextField,
+          l10n.componentTextFieldSubtitle,
           ComponentTextField(),
         ),
         Variant(
-          AppLocalizations.of(context)!.componentTextFieldPassword,
-          AppLocalizations.of(context)!.componentTextFieldPasswordSubtitle,
+          l10n.componentTextFieldPassword,
+          l10n.componentTextFieldPasswordSubtitle,
           ComponentTextFieldPassword(),
         ),
       ],

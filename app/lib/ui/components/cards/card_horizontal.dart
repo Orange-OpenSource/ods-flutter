@@ -13,7 +13,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_horizontal_card.dart';
@@ -21,6 +20,7 @@ import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_enum.dart';
@@ -44,15 +44,16 @@ class _CardHorizontalState extends State<CardHorizontal> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return CardCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.componentCardHorizontalTitle),
+          appBar: MainAppBar(l10n.componentCardHorizontalTitle),
           body: _Body()),
     );
   }
@@ -64,17 +65,19 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
 
     List<Widget> listButtons = [
       OdsTextButton(
-        text: AppLocalizations.of(context)!.componentElementButton1,
+        text: l10n.componentElementButton1,
         style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
       OdsTextButton(
-        text: AppLocalizations.of(context)!.componentElementButton2,
+        text: l10n.componentElementButton2,
         style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
@@ -135,13 +138,15 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
     return SafeArea(
       child: Column(
         children: [
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentCardClickable,
+              title: l10n.componentCardClickable,
               checked: customizationState?.clickable ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.clickable = value;
@@ -151,8 +156,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!
-                    .componentCardHorizontalImagePosition,
+                l10n.componentCardHorizontalImagePosition,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -169,7 +173,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
                       text: customizationState?.elements[index]
-                              .stringValue(context) ??
+                              .stringValue(l10n) ??
                           '',
                       selected: isSelected,
                       onClick: (selected) {
@@ -187,20 +191,19 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ),
           ),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentElementSubtitle,
+              title: l10n.componentElementSubtitle,
               checked: customizationState?.hasSubtitle ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasSubtitle = value;
               }),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentElementText,
+              title: l10n.componentElementText,
               checked: customizationState?.hasText ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasText = value;
               }),
           ComponentCountRow(
-              title:
-                  AppLocalizations.of(context)!.componentCardActionButtonCount,
+              title: l10n.componentCardActionButtonCount,
               minCount: CardCustomizationState.minNavigationItemCount,
               maxCount: CardCustomizationState.maxNavigationItemCount,
               count: customizationState!.numberOfItems,
@@ -208,7 +211,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                 customizationState.numberOfItems = value;
               }),
           OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentElementDivider,
+            title: l10n.componentElementDivider,
             checked: customizationState.hasDivider,
             onCheckedChange: (customizationState.numberOfItems >= 1)
                 ? (bool value) {

@@ -12,7 +12,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab_extended.dart';
@@ -21,6 +20,7 @@ import 'package:ods_flutter/components/floating_action_button/ods_fab_small.dart
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_button_enum.dart';
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -44,11 +44,12 @@ class _ComponentFloatingActionButtonState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return FloatingActionButtonCustomization(
       child: Scaffold(
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.componentFloatingActionButtonTitle),
+          appBar: MainAppBar(l10n.componentFloatingActionButtonTitle),
           body: _Body()),
     );
   }
@@ -62,6 +63,8 @@ class _Body extends StatefulWidget {
 class _BodyState extends State<_Body> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final FloatingActionButtonCustomizationState? customizationState =
         FloatingActionButtonCustomization.of(context);
 
@@ -90,8 +93,7 @@ class _BodyState extends State<_Body> {
       fab = OdsExtendedFloatingActionButton(
         onClick: () {},
         icon: customizationState?.hasIcon == true ? Icon(Icons.add) : null,
-        text: AppLocalizations.of(context)!
-            .componentFloatingActionButtonSizeExtended,
+        text: l10n.componentFloatingActionButtonSizeExtended,
       );
     }
 
@@ -100,7 +102,7 @@ class _BodyState extends State<_Body> {
         sortKey: OrdinalSortKey(2.0),
         child: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
       ),
       floatingActionButton: Semantics(
@@ -122,6 +124,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final FloatingActionButtonCustomizationState? customizationState =
         FloatingActionButtonCustomization.of(context);
     return SafeArea(
@@ -132,8 +136,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!
-                    .componentFloatingActionButtonSizeTitle,
+                l10n.componentFloatingActionButtonSizeTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -150,7 +153,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsFilterChip(
                       text: customizationState?.elements[index]
-                              .stringValue(context) ??
+                              .stringValue(l10n) ??
                           '',
                       onClick: (selected) {
                         setState(() {
@@ -168,8 +171,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ),
           ),
           OdsListSwitch(
-            title:
-                AppLocalizations.of(context)!.componentFloatingActionButtonIcon,
+            title: l10n.componentFloatingActionButtonIcon,
             checked: customizationState?.hasIcon ?? true,
             onCheckedChange: (customizationState?.selectedElement ==
                     FloatingActionButtonEnum.extendedFab)

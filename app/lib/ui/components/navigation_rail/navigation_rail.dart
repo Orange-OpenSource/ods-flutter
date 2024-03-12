@@ -11,7 +11,6 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/segmented/button_icon/ods_button_icon.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/floating_action_button/ods_fab.dart';
@@ -20,6 +19,7 @@ import 'package:ods_flutter/components/navigation_rail/ods_navigation_rail.dart'
 import 'package:ods_flutter/components/navigation_rail/ods_navigation_rail_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar_customization.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_rail/navigation_rail_customization.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_rail/navigation_rail_enum.dart';
@@ -44,14 +44,16 @@ class _ComponentNavigationBarState extends State<ComponentNavigationRail> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return NavigationRailCustomization(
         child: Scaffold(
       bottomSheet: OdsSheetsBottom(
         sheetContent: _CustomizationContent(),
-        title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        title: l10n.componentCustomizeTitle,
       ),
       key: _scaffoldKey,
-      appBar: MainAppBar(AppLocalizations.of(context)!.componentNavigationRail),
+      appBar: MainAppBar(l10n.componentNavigationRail),
       body: _NavRailDemo(),
     ));
   }
@@ -171,35 +173,37 @@ class _NavRailDemoState extends State<_NavRailDemo> {
   }
 
   List<OdsNavigationRailItem> _destinations(BuildContext context) {
+    final l10n = context.l10n;
+
     final NavigationRailCustomizationState? customizationState =
         NavigationRailCustomization.of(context);
     return [
       OdsNavigationRailItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemCookingPot,
+        label: l10n.navigationBarItemCookingPot,
         icon: "assets/recipes/ic_cooking_pot.svg",
         badge: customizationState?.hasBadge == true ? "3" : null,
       ),
       OdsNavigationRailItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemCoffee,
+        label: l10n.navigationBarItemCoffee,
         icon: Icon(
           Icons.coffee_sharp,
         ),
       ),
       OdsNavigationRailItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemIceCream,
+        label: l10n.navigationBarItemIceCream,
         icon: "assets/recipes/ic_ice_cream.svg",
       ),
       OdsNavigationRailItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemRestaurant,
+        label: l10n.navigationBarItemRestaurant,
         icon: "assets/recipes/ic_restaurant.svg",
       ),
       OdsNavigationRailItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemFavorites,
+        label: l10n.navigationBarItemFavorites,
         icon: "assets/recipes/ic_heart_favorite.svg",
       ),
     ];
@@ -215,12 +219,15 @@ class _CustomizationContent extends StatefulWidget {
 class _CustomizationContentState extends State<_CustomizationContent> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final NavigationRailCustomizationState? customizationState =
         NavigationRailCustomization.of(context);
+
     return Column(
       children: [
         ComponentCountRow(
-            title: AppLocalizations.of(context)!.navigationBarItemCount,
+            title: l10n.navigationBarItemCount,
             minCount: NavigationBarCustomizationState.minNavigationItemCount,
             maxCount: NavigationBarCustomizationState.maxNavigationItemCount,
             count: customizationState!.numberOfItems,
@@ -228,7 +235,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
               customizationState.numberOfItems = value;
             }),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.navigationBarItemBadge,
+          title: l10n.navigationBarItemBadge,
           checked: customizationState.hasBadge,
           onCheckedChange: (bool value) {
             customizationState.hasBadge = value;
@@ -239,7 +246,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           child: Padding(
             padding: const EdgeInsets.all(spacingM),
             child: Text(
-              AppLocalizations.of(context)!.componentLeading,
+              l10n.componentLeading,
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.left,
             ),
@@ -260,8 +267,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
-                      text: customizationState.elements[index]
-                          .stringValue(context),
+                      text:
+                          customizationState.elements[index].stringValue(l10n),
                       selected: isSelected,
                       onClick: (selected) {
                         setState(

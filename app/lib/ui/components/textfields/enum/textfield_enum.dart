@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum TextFieldEnum { single, multi }
 
@@ -20,46 +19,38 @@ enum TextFieldStateEnum { stateDefault, error, disabled }
 enum TextFieldTrailingEnum { none, icon, text }
 
 extension CustomElementExtension on TextFieldEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case TextFieldEnum.single:
-        return AppLocalizations.of(context)!
-            .componentTextFieldInputTypeSingleLine;
+        return l10n.componentTextFieldInputTypeSingleLine;
       case TextFieldEnum.multi:
-        return AppLocalizations.of(context)!
-            .componentTextFieldInputTypeMultiline;
-      default:
-        return "";
+        return l10n.componentTextFieldInputTypeMultiline;
     }
   }
 }
 
 extension CustomStateExtension on TextFieldStateEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case TextFieldStateEnum.stateDefault:
-        return AppLocalizations.of(context)!.componentStateDefault;
+        return l10n.componentStateDefault;
       case TextFieldStateEnum.disabled:
-        return AppLocalizations.of(context)!.componentStateDisabled;
+        return l10n.componentStateDisabled;
       case TextFieldStateEnum.error:
-        return AppLocalizations.of(context)!.componentStateError;
-      default:
-        return "";
+        return l10n.componentStateError;
     }
   }
 }
 
 extension CustomTrailingExtension on TextFieldTrailingEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case TextFieldTrailingEnum.none:
-        return AppLocalizations.of(context)!.componentElementNone;
+        return l10n.componentElementNone;
       case TextFieldTrailingEnum.icon:
-        return AppLocalizations.of(context)!.componentElementIcon;
+        return l10n.componentElementIcon;
       case TextFieldTrailingEnum.text:
-        return AppLocalizations.of(context)!.componentElementText;
-      default:
-        return "";
+        return l10n.componentElementText;
     }
   }
 }

@@ -11,12 +11,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_button.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/snackbars/ods_snackbar.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -38,15 +38,16 @@ class _ComponentSnackbarsState extends State<ComponentSnackbars> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ComponentSnackbarsCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar:
-              MainAppBar(AppLocalizations.of(context)!.componentSnackbarsTitle),
+          appBar: MainAppBar(l10n.componentSnackbarsTitle),
           body: _Body()),
     );
   }
@@ -55,6 +56,8 @@ class _ComponentSnackbarsState extends State<ComponentSnackbars> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,8 +65,7 @@ class _Body extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(spacingM),
             child: Text(
-              AppLocalizations.of(context)!
-                  .componentSnackbarsDescriptionExampleText,
+              l10n.componentSnackbarsDescriptionExampleText,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
@@ -77,6 +79,8 @@ class _Body extends StatelessWidget {
 class _SnackBarsVariants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ComponentSnackbarsCustomizationState? customizationState =
         ComponentSnackbarsCustomization.of(context);
 
@@ -92,8 +96,7 @@ class _SnackBarsVariants extends StatelessWidget {
                   context: context,
                   message: OdsApplication.recipes[21].description,
                   actionLabel: customizationState?.hasActionButton == true
-                      ? AppLocalizations.of(context)!
-                          .componentSnackbarsActionExampleButtonText
+                      ? l10n.componentSnackbarsActionExampleButtonText
                       : null,
                   onPressed: customizationState?.hasActionButton == true
                       ? () {}
@@ -105,8 +108,7 @@ class _SnackBarsVariants extends StatelessWidget {
                   context: context,
                   message: OdsApplication.recipes[7].description,
                   actionLabel: customizationState?.hasActionButton == true
-                      ? AppLocalizations.of(context)!
-                          .componentSnackbarsActionExampleButtonText
+                      ? l10n.componentSnackbarsActionExampleButtonText
                       : null,
                   onPressed: customizationState?.hasActionButton == true
                       ? () {}
@@ -117,14 +119,12 @@ class _SnackBarsVariants extends StatelessWidget {
                 OdsSnackbar.showSnackbarLongerAction(
                   context: context,
                   message: OdsApplication.recipes[7].description,
-                  actionLabel: AppLocalizations.of(context)!
-                      .componentSnackbarsTwoLineLongerActionButton,
+                  actionLabel: l10n.componentSnackbarsTwoLineLongerActionButton,
                   onPressed: () {},
                 );
               }
             },
-            text: AppLocalizations.of(context)!
-                .componentSnackbarsDescriptionExampleButton,
+            text: l10n.componentSnackbarsDescriptionExampleButton,
             style: OdsButtonStyle.functionalPrimary,
           ),
         ),
@@ -136,13 +136,14 @@ class _SnackBarsVariants extends StatelessWidget {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ComponentSnackbarsCustomizationState? customizationState =
         ComponentSnackbarsCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-          title:
-              AppLocalizations.of(context)!.componentSnackBarsCustomizeAction,
+          title: l10n.componentSnackBarsCustomizeAction,
           checked: customizationState?.hasActionButton ?? true,
           onCheckedChange: customizationState!.isActionButtonEnabled
               ? (bool value) {
@@ -152,8 +153,7 @@ class _CustomizationContent extends StatelessWidget {
               : null,
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!
-              .componentSnackBarsTwoLineCustomizeText,
+          title: l10n.componentSnackBarsTwoLineCustomizeText,
           checked: customizationState.hasTwoLines,
           onCheckedChange: customizationState.hasLongerAction == false
               ? (bool value) {
@@ -162,8 +162,7 @@ class _CustomizationContent extends StatelessWidget {
               : null,
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!
-              .componentSnackbarsTwoLineLongerActionButton,
+          title: l10n.componentSnackbarsTwoLineLongerActionButton,
           checked: customizationState.hasLongerAction,
           onCheckedChange: customizationState.hasActionButton
               ? (bool value) {

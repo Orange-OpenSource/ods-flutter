@@ -11,10 +11,10 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_large_top_app_bar.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customization.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
@@ -37,11 +37,13 @@ class _ComponentTopAppBarLargeState extends State<ComponentTopAppBarLarge> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ComponentTopAppBarsCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
           body: _Body()),
@@ -52,6 +54,8 @@ class _ComponentTopAppBarLargeState extends State<ComponentTopAppBarLarge> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ComponentTopAppBarsCustomizationState? customizationState =
         ComponentTopAppBarsCustomization.of(context);
 
@@ -79,7 +83,7 @@ class _Body extends StatelessWidget {
     ];
 
     return OdsLargeTopAppBar(
-      title: AppLocalizations.of(context)!.componentAppBarsTopLarge,
+      title: l10n.componentAppBarsTopLarge,
       actions: actions.sublist(0, customizationState?.numberOfItems),
       navigationIcon:
           customizationState?.navigationIcon == true ? BackButton() : null,
@@ -100,19 +104,20 @@ class _Body extends StatelessWidget {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ComponentTopAppBarsCustomizationState? customizationState =
         ComponentTopAppBarsCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-            title:
-                AppLocalizations.of(context)!.componentAppTopBarsNavigationIcon,
+            title: l10n.componentAppTopBarsNavigationIcon,
             checked: customizationState?.navigationIcon ?? true,
             onCheckedChange: (bool value) {
               customizationState?.navigationIcon = value;
             }),
         ComponentCountRow(
-            title: AppLocalizations.of(context)!.componentAppTopBarsActionCount,
+            title: l10n.componentAppTopBarsActionCount,
             minCount:
                 ComponentTopAppBarsCustomizationState.minNavigationItemCount,
             maxCount:

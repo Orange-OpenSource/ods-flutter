@@ -11,12 +11,12 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar.dart';
 import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
@@ -38,15 +38,16 @@ class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return NavigationBarCustomization(
         child: Scaffold(
       bottomSheet: OdsSheetsBottom(
         sheetContent: _CustomizationContent(),
-        title: AppLocalizations.of(context)!.componentCustomizeTitle,
+        title: l10n.componentCustomizeTitle,
       ),
       key: _scaffoldKey,
-      appBar:
-          MainAppBar(AppLocalizations.of(context)!.componentNavigationBarTitle),
+      appBar: MainAppBar(l10n.componentNavigationBarTitle),
       body: _NavBarDemo(),
     ));
   }
@@ -70,6 +71,8 @@ class _NavBarDemoState extends State<_NavBarDemo> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final NavigationBarCustomizationState? customizationState =
         NavigationBarCustomization.of(context);
 
@@ -91,22 +94,14 @@ class _NavBarDemoState extends State<_NavBarDemo> {
               child: IndexedStack(
                 index: selectedIndex,
                 children: [
-                  Center(
-                      child: Text(AppLocalizations.of(context)!
-                          .navigationBarScreenCookingPot)),
+                  Center(child: Text(l10n.navigationBarScreenCookingPot)),
                   Center(
                       child: Text(
-                    AppLocalizations.of(context)!.navigationBarScreenCoffee,
+                    l10n.navigationBarScreenCoffee,
                   )),
-                  Center(
-                      child: Text(AppLocalizations.of(context)!
-                          .navigationBarScreenIceCream)),
-                  Center(
-                      child: Text(AppLocalizations.of(context)!
-                          .navigationBarScreenRestaurant)),
-                  Center(
-                      child: Text(AppLocalizations.of(context)!
-                          .navigationBarScreenFavorites)),
+                  Center(child: Text(l10n.navigationBarScreenIceCream)),
+                  Center(child: Text(l10n.navigationBarScreenRestaurant)),
+                  Center(child: Text(l10n.navigationBarScreenFavorites)),
                 ],
               ),
             ),
@@ -134,35 +129,37 @@ class _NavBarDemoState extends State<_NavBarDemo> {
   }
 
   List<OdsNavigationItem> _destinations(BuildContext context) {
+    final l10n = context.l10n;
+
     final NavigationBarCustomizationState? customizationState =
         NavigationBarCustomization.of(context);
     return [
       OdsNavigationItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemCookingPot,
+        label: l10n.navigationBarItemCookingPot,
         icon: "assets/recipes/ic_cooking_pot.svg",
         badge: customizationState?.hasBadge == true ? "3" : null,
       ),
       OdsNavigationItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemCoffee,
+        label: l10n.navigationBarItemCoffee,
         icon: Icon(
           Icons.coffee_sharp,
         ),
       ),
       OdsNavigationItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemIceCream,
+        label: l10n.navigationBarItemIceCream,
         icon: "assets/recipes/ic_ice_cream.svg",
       ),
       OdsNavigationItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemRestaurant,
+        label: l10n.navigationBarItemRestaurant,
         icon: "assets/recipes/ic_restaurant.svg",
       ),
       OdsNavigationItem(
         context: context,
-        label: AppLocalizations.of(context)!.navigationBarItemFavorites,
+        label: l10n.navigationBarItemFavorites,
         icon: "assets/recipes/ic_heart_favorite.svg",
       ),
     ];
@@ -173,12 +170,14 @@ class _NavBarDemoState extends State<_NavBarDemo> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final NavigationBarCustomizationState? customizationState =
         NavigationBarCustomization.of(context);
     return Column(
       children: [
         ComponentCountRow(
-            title: AppLocalizations.of(context)!.navigationBarItemCount,
+            title: l10n.navigationBarItemCount,
             minCount: NavigationBarCustomizationState.minNavigationItemCount,
             maxCount: NavigationBarCustomizationState.maxNavigationItemCount,
             count: customizationState!.numberOfItems,
@@ -186,7 +185,7 @@ class _CustomizationContent extends StatelessWidget {
               customizationState.numberOfItems = value;
             }),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.navigationBarItemBadge,
+          title: l10n.navigationBarItemBadge,
           checked: customizationState.hasBadge,
           onCheckedChange: (bool value) {
             customizationState.hasBadge = value;

@@ -11,13 +11,13 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/progress/ods_circular_progress_indicator.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_customization.dart';
 import 'package:ods_flutter_demo/ui/components/progress/progress_enum.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
@@ -27,14 +27,16 @@ class ComponentProgressCircular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ProgressCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.progressCircularVariantTitle,
+            title: l10n.progressCircularVariantTitle,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -51,6 +53,8 @@ class _Body extends StatefulWidget {
 class _BodyState extends State<_Body> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ProgressCustomizationState? customizationState =
         ProgressCustomization.of(context);
 
@@ -71,8 +75,7 @@ class _BodyState extends State<_Body> {
           child: OdsCircularProgressIndicator(
               progress: currentProgressValue,
               label: customizationState?.hasLabel == true
-                  ? AppLocalizations.of(context)!
-                      .progressCircularVariantExampleLabel
+                  ? l10n.progressCircularVariantExampleLabel
                   : null),
         ),
       ),
@@ -91,6 +94,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ProgressCustomizationState? customizationState =
         ProgressCustomization.of(context);
     return Column(
@@ -100,7 +105,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           child: Padding(
             padding: const EdgeInsets.all(spacingM),
             child: Text(
-              AppLocalizations.of(context)!.componentCustomizeProgressType,
+              l10n.componentCustomizeProgressType,
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.left,
             ),
@@ -121,7 +126,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                   child: OdsChoiceChip(
                     text: customizationState.progressType[index]
-                        .stringValue(context),
+                        .stringValue(l10n),
                     onClick: (selected) {
                       setState(
                         () {
@@ -140,7 +145,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           ),
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeProgressLabel,
+          title: l10n.componentCustomizeProgressLabel,
           checked: customizationState.hasLabel,
           onCheckedChange: (bool value) {
             customizationState.hasLabel = value;

@@ -10,43 +10,42 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter_demo/ui/guidelines/colours/palette/coulour_palette.dart';
 import 'package:ods_flutter_demo/ui/guidelines/colours/theme/colour_theme.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_entities.dart';
 import 'package:ods_flutter_demo/ui/guidelines/spacings/guideline_spacings_screen.dart';
 import 'package:ods_flutter_demo/ui/guidelines/typography/guideline_typography_screen.dart';
 
-List<Guideline> guidelines(BuildContext context) {
+List<Guideline> guidelines(AppLocalizations l10n) {
   return [
     Guideline.withVariant(
-      AppLocalizations.of(context)!.guidelinesColours,
+      l10n.guidelinesColours,
       'assets/il_color.png',
-      AppLocalizations.of(context)!.guidelinesColoursDescription,
+      l10n.guidelinesColoursDescription,
       [
         Variant(
-          AppLocalizations.of(context)!.guidelinesColoursThemeVariantTitle,
-          AppLocalizations.of(context)!.guidelinesColoursThemeVariantSubtitle,
+          l10n.guidelinesColoursThemeVariantTitle,
+          l10n.guidelinesColoursThemeVariantSubtitle,
           ColourTheme(),
         ),
         Variant(
-          AppLocalizations.of(context)!.guidelinesColoursPaletteVariantTitle,
-          AppLocalizations.of(context)!.guidelinesColoursPaletteVariantSubtitle,
+          l10n.guidelinesColoursPaletteVariantTitle,
+          l10n.guidelinesColoursPaletteVariantSubtitle,
           ColourPalette(),
         ),
       ],
     ),
     Guideline(
-      AppLocalizations.of(context)!.guidelinesSpacings,
+      l10n.guidelinesSpacings,
       'assets/il_spacing.png',
-      AppLocalizations.of(context)!.cardSmallVariantTitle,
+      l10n.cardSmallVariantTitle,
       GuidelineSpacingsScreen(),
     ),
     Guideline(
-      AppLocalizations.of(context)!.guidelinesTypography,
+      l10n.guidelinesTypography,
       'assets/il_typography.png',
-      AppLocalizations.of(context)!.cardSmallVariantTitle,
+      l10n.cardSmallVariantTitle,
       GuidelineTypographyScreen(),
     ),
   ];

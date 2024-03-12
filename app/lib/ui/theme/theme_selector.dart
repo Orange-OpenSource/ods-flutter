@@ -11,7 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/theme/model_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -33,13 +33,15 @@ class _ThemeSelectorState extends State<ThemeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    var themeNotifier = Provider.of<ModelTheme>(context);
+    final l10n = context.l10n;
+
+    final themeNotifier = Provider.of<ModelTheme>(context);
 
     return Semantics(
       button: true,
       label: themeNotifier.themeMode == ThemeMode.light
-          ? AppLocalizations.of(context)!.themeSelectorSwitchDarkMode
-          : AppLocalizations.of(context)!.themeSelectorSwitchLightMode,
+          ? l10n.themeSelectorSwitchDarkMode
+          : l10n.themeSelectorSwitchLightMode,
       child: IconButton(
         icon: Icon(themeNotifier.themeMode == ThemeMode.light
             ? Icons.light_mode
@@ -52,8 +54,8 @@ class _ThemeSelectorState extends State<ThemeSelector> {
           });
         },
         tooltip: themeNotifier.themeMode == ThemeMode.light
-            ? AppLocalizations.of(context)!.themeSelectorSwitchDarkMode
-            : AppLocalizations.of(context)!.themeSelectorSwitchLightMode,
+            ? l10n.themeSelectorSwitchDarkMode
+            : l10n.themeSelectorSwitchLightMode,
       ),
     );
   }

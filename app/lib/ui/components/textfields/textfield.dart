@@ -14,12 +14,12 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/textfield/ods_text_field.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/textfields/enum/keyboard_enum.dart';
 import 'package:ods_flutter_demo/ui/components/textfields/enum/textfield_enum.dart';
@@ -44,16 +44,18 @@ class _ComponentTextFieldState extends State<ComponentTextField> {
 
   @override
   Widget build(BuildContext context) {
-    var themeNotifier = Provider.of<ModelTheme>(context);
+    final l10n = context.l10n;
+
+    final themeNotifier = Provider.of<ModelTheme>(context);
     return TextFieldCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
           appBar: AppBar(
-            title: Text(AppLocalizations.of(context)!.componentTextField),
+            title: Text(l10n.componentTextField),
             actions: [
               IconButton(
                 icon: Icon(themeNotifier.themeMode == ThemeMode.light
@@ -71,9 +73,8 @@ class _ComponentTextFieldState extends State<ComponentTextField> {
                   );
                 },
                 tooltip: themeNotifier.themeMode == ThemeMode.light
-                    ? AppLocalizations.of(context)!.themeSelectorSwitchDarkMode
-                    : AppLocalizations.of(context)!
-                        .themeSelectorSwitchLightMode,
+                    ? l10n.themeSelectorSwitchDarkMode
+                    : l10n.themeSelectorSwitchLightMode,
               ),
             ],
           ),
@@ -97,6 +98,8 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final TextFieldCustomizationState? customizationState =
         TextFieldCustomization.of(context);
     final TextEditingController controllerTextField = TextEditingController();
@@ -171,11 +174,11 @@ class _BodyState extends State<_Body> {
                 : true,
         errorMessage:
             customizationState?.selectedState == TextFieldStateEnum.error
-                ? AppLocalizations.of(context)!.componentTextFieldErrorMessage
+                ? l10n.componentTextFieldErrorMessage
                 : null,
         keyboardType: keyboardType,
         keyboardActions: keyboardAction,
-        label: AppLocalizations.of(context)!.componentElementLabel,
+        label: l10n.componentElementLabel,
         trailingIcon:
             customizationState?.selectedTrailing == TextFieldTrailingEnum.icon
                 ? IconButton(
@@ -209,6 +212,8 @@ class _CustomizationContent extends StatefulWidget {
 class _CustomizationContentState extends State<_CustomizationContent> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final TextFieldCustomizationState? customizationState =
         TextFieldCustomization.of(context);
 
@@ -222,14 +227,10 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             TabBar(
               tabs: [
                 Tab(
-                  text: AppLocalizations.of(context)!
-                      .componentTextField
-                      .toUpperCase(),
+                  text: l10n.componentTextField.toUpperCase(),
                 ),
                 Tab(
-                  text: AppLocalizations.of(context)!
-                      .componentTextFieldKeyboard
-                      .toUpperCase(),
+                  text: l10n.componentTextFieldKeyboard.toUpperCase(),
                 )
               ],
             ),
@@ -240,8 +241,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   Column(
                     children: <Widget>[
                       OdsListSwitch(
-                          title: AppLocalizations.of(context)!
-                              .componentElementLeadingIcon,
+                          title: l10n.componentElementLeadingIcon,
                           checked: customizationState?.leadingIcon ?? true,
                           onCheckedChange: (bool value) {
                             customizationState?.leadingIcon = value;
@@ -251,8 +251,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: Padding(
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
-                            AppLocalizations.of(context)!
-                                .componentTextFieldInputType,
+                            l10n.componentTextFieldInputType,
                             style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
@@ -275,7 +274,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                                       right: spacingXs, left: spacingS),
                                   child: OdsChoiceChip(
                                     text: customizationState.elements[index]
-                                        .stringValue(context),
+                                        .stringValue(l10n),
                                     selected: isSelected,
                                     onClick: (selected) {
                                       setState(
@@ -305,7 +304,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: Padding(
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
-                            AppLocalizations.of(context)!.componentState,
+                            l10n.componentState,
                             style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
@@ -328,7 +327,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                                       right: spacingXs, left: spacingS),
                                   child: OdsChoiceChip(
                                     text: customizationState.states[index]
-                                        .stringValue(context),
+                                        .stringValue(l10n),
                                     selected: isSelected,
                                     onClick: (selected) {
                                       setState(
@@ -357,8 +356,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: Padding(
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
-                            AppLocalizations.of(context)!
-                                .componentElementTrailing,
+                            l10n.componentElementTrailing,
                             style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
@@ -381,7 +379,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                                       right: spacingXs, left: spacingS),
                                   child: OdsChoiceChip(
                                     text: customizationState.trailings[index]
-                                        .stringValue(context),
+                                        .stringValue(l10n),
                                     selected: isSelected,
                                     onClick: (selected) {
                                       setState(
@@ -407,8 +405,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         ),
                       ),
                       OdsListSwitch(
-                          title: AppLocalizations.of(context)!
-                              .componentTextFieldCharacterCounter,
+                          title: l10n.componentTextFieldCharacterCounter,
                           checked: customizationState.characterCount,
                           onCheckedChange: (bool value) {
                             customizationState.characterCount = value;
@@ -422,8 +419,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: Padding(
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
-                            AppLocalizations.of(context)!
-                                .componentTextFieldKeyboardType,
+                            l10n.componentTextFieldKeyboardType,
                             style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
@@ -447,7 +443,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                                   child: OdsChoiceChip(
                                     text: customizationState
                                         .keyboardTypes[index]
-                                        .stringValue(context),
+                                        .stringValue(l10n),
                                     selected: isSelected,
                                     onClick: (selected) {
                                       setState(
@@ -476,8 +472,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         ),
                       ),
                       OdsListSwitch(
-                        title: AppLocalizations.of(context)!
-                            .componentTextFieldKeyboardCapitalization,
+                        title: l10n.componentTextFieldKeyboardCapitalization,
                         checked: customizationState.capitalization,
                         onCheckedChange: (bool value) {
                           FocusScope.of(context).unfocus();
@@ -495,8 +490,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                         child: Padding(
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
-                            AppLocalizations.of(context)!
-                                .componentTextFieldKeyboardAction,
+                            l10n.componentTextFieldKeyboardAction,
                             style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
@@ -520,7 +514,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                                   child: OdsChoiceChip(
                                     text: customizationState
                                         .keyboardActions[index]
-                                        .stringValue(context),
+                                        .stringValue(l10n),
                                     selected: isSelected,
                                     onClick: (selected) {
                                       setState(

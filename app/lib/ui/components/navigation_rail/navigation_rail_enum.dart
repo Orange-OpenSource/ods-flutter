@@ -10,22 +10,19 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum NavigationRailsEnum { none, firstIcon, secondIcon }
 
 extension CustomElementExtension on NavigationRailsEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case NavigationRailsEnum.none:
-        return AppLocalizations.of(context)!.componentNavigationRailLeadingNone;
+        return l10n.componentNavigationRailLeadingNone;
       case NavigationRailsEnum.firstIcon:
-        return AppLocalizations.of(context)!.componentNavigationRailLeadingMenu;
+        return l10n.componentNavigationRailLeadingMenu;
       case NavigationRailsEnum.secondIcon:
-        return AppLocalizations.of(context)!.componentNavigationRailLeadingFab;
-      default:
-        return "";
+        return l10n.componentNavigationRailLeadingFab;
     }
   }
 }
