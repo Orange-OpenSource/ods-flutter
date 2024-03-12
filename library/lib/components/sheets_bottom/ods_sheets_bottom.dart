@@ -12,6 +12,7 @@
 
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 
@@ -45,7 +46,7 @@ class _OdsSheetsBottomState extends State<OdsSheetsBottom> {
 
   @override
   Widget build(BuildContext context) {
-    double collapsedHeight = Platform.isAndroid ? 80 : 91;
+    double collapsedHeight = !kIsWeb && Platform.isAndroid ? 80 : 91;
 
     return Container(
       decoration: BoxDecoration(
