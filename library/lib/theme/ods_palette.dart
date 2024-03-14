@@ -19,25 +19,47 @@ const black900 = Color(0xff000000);
 const obsGrey700 = Color(0xff595959);
 // Supporting colors
 
-const blue100 = Color(0xffB5E8F7);
-const blue200 = Color(0xff4BB4E6);
-const blue300 = Color(0xff085EBD);
+const blue100 = Color(0xFFB5E8F7);
+const blue200 = Color(0xFF80CEEF);
+const blue300 = Color(0xFF4BB4E6);
+const blue400 = Color(0xFF3E9DD6);
+const blue500 = Color(0xFF237ECA);
+const blue600 = Color(0xFF085EBD);
 
-const yellow100 = Color(0xffFFF6B6);
-const yellow200 = Color(0xffFFD200);
-const yellow300 = Color(0xffFFB400);
+const yellow100 = Color(0xFFFFF6B6);
+const yellow200 = Color(0xFFFFE45B);
+const yellow300 = Color(0xFFFFD200);
+const yellow400 = Color(0xFFFFD400);
+const yellow500 = Color(0xFFB98F11);
+const yellow600 = Color(0xFF9D6E06);
 
-const green100 = Color(0xffB8EBD6);
-const green200 = Color(0xff50BE87);
-const green300 = Color(0xff0A6E31);
+const green100 = Color(0xFFB8EBD6);
+const green200 = Color(0xFF84D5AF);
+const green300 = Color(0xFF50BE87);
+const green400 = Color(0xFF27A971);
+const green500 = Color(0xFF198C51);
+const green600 = Color(0xFF0A6E31);
 
-const purple100 = Color(0xffD9C2F0);
-const purple200 = Color(0xffA885D8);
-const purple300 = Color(0xff492191);
+const purple100 = Color(0xFFD9C2F0);
+const purple200 = Color(0xFFC1A4E4);
+const purple300 = Color(0xFFA885D8);
+const purple400 = Color(0xFF9373BD);
+const purple500 = Color(0xFF6E4AA7);
+const purple600 = Color(0xFF492191);
 
-const pink100 = Color(0xffFFE8F7);
-const pink200 = Color(0xffFFB4E6);
-const pink300 = Color(0xffFF8AD4);
+const pink100 = Color(0xFFFFE8F7);
+const pink200 = Color(0xFFFFCEEF);
+const pink300 = Color(0xFFFFB4E6);
+const pink400 = Color(0xFFFF8AD4);
+const pink500 = Color(0xFFD573BB);
+const pink600 = Color(0xFFBC4D9A);
+
+const organic100 = Color(0xFFF9F5F0);
+const organic200 = Color(0xFFF4CFB2);
+const organic300 = Color(0xFFC19372);
+const organic400 = Color(0xFF714E46);
+const organic500 = Color(0xFF62342D);
+const organic600 = Color(0xFF482E26);
 
 // Functional colors
 
