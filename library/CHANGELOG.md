@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Guidelines > Colors ([#330](https://github.com/Orange-OpenSource/ods-flutter/issues/330))
+
 ### Changed
 
 - [Bug]: Spacing for the 'Small Card' component ([#342](https://github.com/Orange-OpenSource/ods-flutter/issues/342))

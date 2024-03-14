@@ -14,8 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/components/component_detail_screen.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
-import 'package:ods_flutter_demo/ui/components/detail_screen.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentsScreen extends StatefulWidget {
