@@ -20,7 +20,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsVerticalImageFirstCard extends StatefulWidget {
+class OdsVerticalImageFirstCard extends StatelessWidget {
   /// Creates an ODS vertical image first card.
   const OdsVerticalImageFirstCard({
     Key? key,
@@ -58,12 +58,6 @@ class OdsVerticalImageFirstCard extends StatefulWidget {
   final Function()? onClick;
 
   @override
-  State<OdsVerticalImageFirstCard> createState() =>
-      _OdsVerticalImageFirstCardState();
-}
-
-class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -76,46 +70,46 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: widget.onClick,
+                  onTap: onClick,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                         child: SizedBox(
                           width: double.infinity,
-                          height: OdsVerticalImageFirstCard._imageHeight,
-                          child: widget.image,
+                          height: _imageHeight,
+                          child: image,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
                             top: spacingM, left: spacingM),
                         child: Text(
-                          widget.title,
+                          title,
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ),
-                      if (widget.subtitle != null)
+                      if (subtitle != null)
                         Padding(
                           padding: const EdgeInsets.only(left: spacingM),
                           child: Text(
-                            widget.subtitle!,
+                            subtitle!,
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ),
-                      if (widget.text != null && widget.text!.isNotEmpty)
+                      if (text != null && text!.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(
                               left: spacingM, right: spacingM, top: spacingS),
                           child: Text(
-                            widget.text!,
+                            text!,
                           ),
                         ),
                       ButtonBar(
                         alignment: MainAxisAlignment.start,
                         children: [
-                          if (widget.firstButton != null) widget.firstButton!,
-                          if (widget.secondButton != null) widget.secondButton!,
+                          if (firstButton != null) firstButton!,
+                          if (secondButton != null) secondButton!,
                         ],
                       ),
                     ],

@@ -18,9 +18,18 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 /// A dropdown menu that can be opened from a TextField.
 ///
 ///.
-class OdsExposedDropdownMenu<T> extends StatefulWidget {
+class OdsExposedDropdownMenu<T> extends StatelessWidget {
+  const OdsExposedDropdownMenu({
+    Key? key,
+    required this.items,
+    required this.label,
+    this.leadingIcon,
+    this.selectedItem,
+    this.enabled = true,
+  }) : super(key: key);
+
   /// Descriptions of the menu items in the [OdsExposedDropdownMenu]
-  final List<DropdownMenuEntry> items;
+  final List<DropdownMenuEntry<T>> items;
 
   /// Text describes the input field
   final String label;
@@ -32,26 +41,7 @@ class OdsExposedDropdownMenu<T> extends StatefulWidget {
   final bool enabled;
 
   /// The callback is called when a selection is made.
-  final Function(T)? selectedItem;
-
-  const OdsExposedDropdownMenu({
-    Key? key,
-    required this.items,
-    required this.label,
-    this.leadingIcon,
-    this.selectedItem,
-    this.enabled = true,
-  }) : super(key: key);
-
-  @override
-  State<OdsExposedDropdownMenu> createState() => _OdsExposedDropdownMenuState();
-}
-
-class _OdsExposedDropdownMenuState extends State<OdsExposedDropdownMenu> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  final ValueChanged<T?>? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +52,10 @@ class _OdsExposedDropdownMenuState extends State<OdsExposedDropdownMenu> {
           padding: const EdgeInsets.all(spacingS),
           child: DropdownMenu(
             requestFocusOnTap: true,
-            label: Text(widget.label),
-            enabled: widget.enabled,
-            onSelected: widget.selectedItem,
-            dropdownMenuEntries: widget.items,
+            label: Text(label),
+            enabled: enabled,
+            onSelected: selectedItem,
+            dropdownMenuEntries: items,
           ),
         ),
       ],

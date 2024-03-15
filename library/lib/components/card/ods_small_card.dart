@@ -19,7 +19,7 @@ import 'package:ods_flutter/theme/ods_theme.dart';
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsSmallCard extends StatefulWidget {
+class OdsSmallCard extends StatelessWidget {
   /// Creates an ODS Small card.
   const OdsSmallCard({
     Key? key,
@@ -45,11 +45,6 @@ class OdsSmallCard extends StatefulWidget {
   final Function()? onTap;
 
   @override
-  State<OdsSmallCard> createState() => _OdsSmallCardState();
-}
-
-class _OdsSmallCardState extends State<OdsSmallCard> {
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -66,8 +61,8 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: OdsSmallCard._imageHeight,
-                  child: widget.image,
+                  height: _imageHeight,
+                  child: image,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(spacingM),
@@ -75,13 +70,13 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.title,
+                          title,
                           style: Theme.of(context).textTheme.titleMedium,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        if (widget.subtitle != null)
+                        if (subtitle != null)
                           Text(
-                            widget.subtitle!,
+                            subtitle!,
                             style: Theme.of(context).textTheme.bodyMedium,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -91,12 +86,12 @@ class _OdsSmallCardState extends State<OdsSmallCard> {
             ),
           ),
         ),
-        if (widget.onTap != null)
+        if (onTap != null)
           Positioned.fill(
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: widget.onTap,
+                onTap: onTap,
               ),
             ),
           )

@@ -18,7 +18,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 ///
 /// The Navigation Rail is meant to be displayed at the left or right of an app to navigate between
 /// a small number of views, typically between three and five.
-class OdsNavigationRail extends StatefulWidget {
+class OdsNavigationRail extends StatelessWidget {
   /// Creates an ODS Button.
   ///
   /// * [selectedIndex] - The index into [destinations] for the current selected NavigationRailDestination or null if no destination is selected.
@@ -51,11 +51,6 @@ class OdsNavigationRail extends StatefulWidget {
   final Widget? leadingIconSecond;
 
   @override
-  State<OdsNavigationRail> createState() => _OdsNavigationBarState();
-}
-
-class _OdsNavigationBarState extends State<OdsNavigationRail> {
-  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -66,18 +61,16 @@ class _OdsNavigationBarState extends State<OdsNavigationRail> {
                 constraints: BoxConstraints(minHeight: constraint.maxHeight),
                 child: IntrinsicHeight(
                   child: NavigationRail(
-                    selectedIndex: widget.selectedIndex,
-                    onDestinationSelected: widget.onDestinationSelected,
-                    destinations: widget.destinations,
+                    selectedIndex: selectedIndex,
+                    onDestinationSelected: onDestinationSelected,
+                    destinations: destinations,
                     labelType: NavigationRailLabelType.all,
-                    leading: widget.leadingIconFirst != null ||
-                            widget.leadingIconSecond != null
+                    leading: leadingIconFirst != null ||
+                            leadingIconSecond != null
                         ? Column(
                             children: [
-                              if (widget.leadingIconFirst != null)
-                                widget.leadingIconFirst!,
-                              if (widget.leadingIconSecond != null)
-                                widget.leadingIconSecond!,
+                              if (leadingIconFirst != null) leadingIconFirst!,
+                              if (leadingIconSecond != null) leadingIconSecond!,
                               const SizedBox(height: spacingXl),
                             ],
                           )

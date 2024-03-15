@@ -26,7 +26,7 @@ enum OdsHorizontalCardImagePosition {
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsHorizontalCard extends StatefulWidget {
+class OdsHorizontalCard extends StatelessWidget {
   const OdsHorizontalCard({
     Key? key,
     required this.title,
@@ -74,11 +74,6 @@ class OdsHorizontalCard extends StatefulWidget {
   final Function()? onClick;
 
   @override
-  State<OdsHorizontalCard> createState() => _OdsHorizontalCardState();
-}
-
-class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
@@ -98,24 +93,24 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: widget.onClick,
+                    onTap: onClick,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          constraints: const BoxConstraints(
-                              minHeight: OdsHorizontalCard._imageMinWidth),
+                          constraints:
+                              const BoxConstraints(minHeight: _imageMinWidth),
                           child: IntrinsicHeight(
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                if (widget.imagePosition ==
+                                if (imagePosition ==
                                     OdsHorizontalCardImagePosition.start)
                                   ExcludeSemantics(
                                     child: SizedBox(
-                                      width: OdsHorizontalCard._imageWidth,
-                                      height: OdsHorizontalCard._imageHeight,
-                                      child: widget.image,
+                                      width: _imageWidth,
+                                      height: _imageHeight,
+                                      child: image,
                                     ),
                                   ),
                                 Expanded(
@@ -132,23 +127,23 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          widget.title,
+                                          title,
                                           style: Theme.of(context)
                                               .textTheme
                                               .titleMedium,
                                         ),
-                                        if (widget.subtitle != null)
+                                        if (subtitle != null)
                                           Text(
-                                            widget.subtitle!,
+                                            subtitle!,
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodyMedium,
                                           ),
-                                        if (widget.text != null)
+                                        if (text != null)
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 top: spacingM),
-                                            child: Text(widget.text!,
+                                            child: Text(text!,
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyMedium,
@@ -160,20 +155,20 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                                     ),
                                   ),
                                 ),
-                                if (widget.imagePosition ==
+                                if (imagePosition ==
                                     OdsHorizontalCardImagePosition.end)
                                   ExcludeSemantics(
                                     child: SizedBox(
-                                      width: OdsHorizontalCard._imageWidth,
-                                      height: OdsHorizontalCard._imageHeight,
-                                      child: widget.image,
+                                      width: _imageWidth,
+                                      height: _imageHeight,
+                                      child: image,
                                     ),
                                   )
                               ],
                             ),
                           ),
                         ),
-                        if (widget.divider != false)
+                        if (divider != false)
                           Divider(
                             height: 0,
                             thickness: 1,
@@ -181,21 +176,21 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withOpacity(OdsHorizontalCard._dividerOpacity),
+                                .withOpacity(_dividerOpacity),
                           ),
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             children: [
-                              if (widget.firstButton != null)
+                              if (firstButton != null)
                                 Padding(
                                   padding: const EdgeInsets.all(spacingS),
-                                  child: widget.firstButton,
+                                  child: firstButton,
                                 ),
-                              if (widget.secondButton != null)
+                              if (secondButton != null)
                                 Padding(
                                   padding: const EdgeInsets.all(spacingS),
-                                  child: widget.secondButton,
+                                  child: secondButton,
                                 ),
                             ],
                           ),

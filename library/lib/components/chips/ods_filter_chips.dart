@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsFilterChip extends StatefulWidget {
+class OdsFilterChip extends StatelessWidget {
   /// Creates an ODS Fliter Chip.
   ///
   /// * [text] - Text to be displayed into the chip
@@ -50,20 +50,15 @@ class OdsFilterChip extends StatefulWidget {
   final Widget? leadingAvatar;
 
   @override
-  State<OdsFilterChip> createState() => _OdsFilterChipState();
-}
-
-class _OdsFilterChipState extends State<OdsFilterChip> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
+      label: text,
       child: FilterChip(
-        label: Text(widget.text),
-        onSelected: widget.enabled != false ? widget.onClick : null,
-        selected: widget.selected,
-        avatar: widget.leadingAvatar,
+        label: Text(text),
+        onSelected: enabled != false ? onClick : null,
+        selected: selected,
+        avatar: leadingAvatar,
       ),
     );
 

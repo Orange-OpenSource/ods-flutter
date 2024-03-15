@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsActionChip extends StatefulWidget {
+class OdsActionChip extends StatelessWidget {
   /// Creates an ODS Action Chips.
   ///
   /// * [text] - Text displayed in the chip.
@@ -43,19 +43,14 @@ class OdsActionChip extends StatefulWidget {
   final bool? enabled;
 
   @override
-  State<OdsActionChip> createState() => _OdsActionChipState();
-}
-
-class _OdsActionChipState extends State<OdsActionChip> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
+      label: text,
       child: ActionChip(
-        label: Text(widget.text),
-        avatar: widget.leadingIcon,
-        onPressed: widget.enabled != false ? widget.onClick : null,
+        label: Text(text),
+        avatar: leadingIcon,
+        onPressed: enabled != false ? onClick : null,
       ),
     );
   }

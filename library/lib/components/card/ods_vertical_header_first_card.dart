@@ -20,7 +20,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsVerticalHeaderFirstCard extends StatefulWidget {
+class OdsVerticalHeaderFirstCard extends StatelessWidget {
   const OdsVerticalHeaderFirstCard({
     Key? key,
     required this.title,
@@ -62,13 +62,6 @@ class OdsVerticalHeaderFirstCard extends StatefulWidget {
   final Function()? onClick;
 
   @override
-  State<OdsVerticalHeaderFirstCard> createState() =>
-      _OdsVerticalHeaderFirstCardState();
-}
-
-class _OdsVerticalHeaderFirstCardState
-    extends State<OdsVerticalHeaderFirstCard> {
-  @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: SizedBox(
@@ -77,30 +70,29 @@ class _OdsVerticalHeaderFirstCardState
           clipBehavior: Clip.antiAlias,
           elevation: 2,
           child: InkWell(
-            onTap: widget.onClick,
+            onTap: onClick,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: spacingXs),
                   child: ListTile(
-                    leading: widget.thumbnail,
-                    title: Text(widget.title!,
+                    leading: thumbnail,
+                    title: Text(title!,
                         style: Theme.of(context).textTheme.titleLarge,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis),
-                    subtitle:
-                        widget.subtitle != null ? Text(widget.subtitle!) : null,
+                    subtitle: subtitle != null ? Text(subtitle!) : null,
                   ),
                 ),
                 Expanded(
                   child: SizedBox(
                     width: double.infinity,
-                    height: OdsVerticalHeaderFirstCard._imageHeight,
-                    child: widget.image,
+                    height: _imageHeight,
+                    child: image,
                   ),
                 ),
-                if (widget.text != null && widget.text!.isNotEmpty)
+                if (text != null && text!.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(
                         left: spacingM,
@@ -108,15 +100,15 @@ class _OdsVerticalHeaderFirstCardState
                         top: spacingM,
                         bottom: spacingXs),
                     child: Text(
-                      widget.text!,
+                      text!,
                     ),
                   ),
-                if (widget.firstButton != null || widget.secondButton != null)
+                if (firstButton != null || secondButton != null)
                   ButtonBar(
                     alignment: MainAxisAlignment.start,
                     children: [
-                      if (widget.firstButton != null) widget.firstButton!,
-                      if (widget.secondButton != null) widget.secondButton!,
+                      if (firstButton != null) firstButton!,
+                      if (secondButton != null) secondButton!,
                     ],
                   ),
               ],

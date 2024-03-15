@@ -72,11 +72,6 @@ class OdsPasswordTextField extends StatefulWidget {
 }
 
 class _OdsPasswordTextFieldState extends State<OdsPasswordTextField> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
   bool isObscureText = true;
 
   @override

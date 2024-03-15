@@ -35,14 +35,7 @@ class OdsAlertDialogButton {
 ///
 /// Displays a customizable dialog with an optional dismiss button.
 /// The dialog can expand to full screen width if specified.
-class OdsAlertDialog extends StatefulWidget {
-  const OdsAlertDialog({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<OdsAlertDialog> createState() => _OdsAlertDialogState();
-
+class OdsAlertDialog {
   /// Creates an ODS Alert Dialog.
   ///
   /// * [text] - Text displayed into the dialog which presents the details regarding the Dialog's purpose.
@@ -116,17 +109,5 @@ class OdsAlertDialog extends StatefulWidget {
         ),
       ),
     );
-  }
-}
-
-class _OdsAlertDialogState extends State<OdsAlertDialog> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
