@@ -12,7 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 class OdsLinearProgressIndicator extends StatefulWidget {
   /// ODS CircularProgressIndicator.
@@ -50,6 +50,8 @@ class _OdsLinearProgressIndicatorState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.odsL10n;
+
     return MergeSemantics(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,8 +84,7 @@ class _OdsLinearProgressIndicatorState
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   LinearProgressIndicator(
-                    semanticsLabel:
-                        OdsLocalizations.of(context)!.componentProgressTitle,
+                    semanticsLabel: l10n.componentProgressTitle,
                     value: widget.progress != null ? value : null,
                   ),
                   ExcludeSemantics(

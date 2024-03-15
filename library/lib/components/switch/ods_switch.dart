@@ -12,7 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/components/utilities/ods_switch_icon.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 /// ODS OdsSwitch.
 ///
@@ -46,11 +46,13 @@ class OdsSwitch extends StatefulWidget {
 class _OdsSwitchState extends State<OdsSwitch> {
   @override
   Widget build(BuildContext context) {
-    String switchValue = widget.checked
-        ? OdsLocalizations.of(context)!.componentSwitchesChecked
-        : OdsLocalizations.of(context)!.componentSwitchesUnchecked;
+    final l10n = context.odsL10n;
 
-    OdsSwitchIcon odsSwitchIcon = OdsSwitchIcon(context);
+    final switchValue = widget.checked
+        ? l10n.componentSwitchesChecked
+        : l10n.componentSwitchesUnchecked;
+
+    final odsSwitchIcon = OdsSwitchIcon(context);
 
     return Semantics(
       value: switchValue,

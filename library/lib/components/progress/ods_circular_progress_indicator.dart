@@ -12,7 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 class OdsCircularProgressIndicator extends StatefulWidget {
   /// ODS CircularProgressIndicator.
@@ -42,6 +42,8 @@ class _OdsCircularProgressIndicatorState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.odsL10n;
+
     final progressValue = widget.progress ?? 0.0;
 
     return TweenAnimationBuilder<double>(
@@ -49,7 +51,7 @@ class _OdsCircularProgressIndicatorState
       duration: const Duration(seconds: 3),
       builder: (BuildContext context, double value, Widget? child) {
         final circularProgress = CircularProgressIndicator(
-          semanticsLabel: OdsLocalizations.of(context)!.componentProgressTitle,
+          semanticsLabel: l10n.componentProgressTitle,
           value: widget.progress != null ? value : null,
         );
 

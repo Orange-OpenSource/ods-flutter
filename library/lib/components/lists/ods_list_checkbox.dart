@@ -11,7 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 /// ODS OdsListCheckbox.
 ///
@@ -50,17 +50,19 @@ class OdsListCheckbox extends StatefulWidget {
 class _OdsListCheckboxState extends State<OdsListCheckbox> {
   @override
   Widget build(BuildContext context) {
-    String checkBoxValue = widget.checked == null
-        ? OdsLocalizations.of(context)!.componentCheckboxesIndeterminate
+    final l10n = context.odsL10n;
+
+    final checkBoxValue = widget.checked == null
+        ? l10n.componentCheckboxesIndeterminate
         : widget.checked ?? false
-            ? OdsLocalizations.of(context)!.componentCheckboxesChecked
-            : OdsLocalizations.of(context)!.componentCheckboxesUnchecked;
+            ? l10n.componentCheckboxesChecked
+            : l10n.componentCheckboxesUnchecked;
 
     return Semantics(
       label: widget.title,
       value: checkBoxValue,
       enabled: widget.enabled,
-      hint: OdsLocalizations.of(context)!.componentCheckboxes,
+      hint: l10n.componentCheckboxes,
       excludeSemantics: true,
       child: CheckboxListTile(
         title: Text(

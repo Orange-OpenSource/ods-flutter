@@ -15,8 +15,12 @@ import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 enum CardEnum { start, end }
 
 extension CustomElementExtension on CardEnum {
-  String stringValue(AppLocalizations l10n) => switch (this) {
-        CardEnum.start => l10n.componentCardHorizontalImagePositionStart,
-        CardEnum.end => l10n.componentCardHorizontalImagePositionEnd,
-      };
+  String stringValue(AppLocalizations l10n) {
+    switch (this) {
+      case CardEnum.start:
+        return l10n.componentCardHorizontalImagePositionStart;
+      case CardEnum.end:
+        return l10n.componentCardHorizontalImagePositionEnd;
+    }
+  }
 }
