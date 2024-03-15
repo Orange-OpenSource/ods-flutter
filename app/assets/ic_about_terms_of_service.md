@@ -17,7 +17,7 @@ Access to and use of the Service are subject to these General Conditions of Use 
 
 In these GCU, the following terms shall, unless otherwise stated, have the following meanings:
 
-**Application:** means to the software application titled "Orange Design System", which provides access to the Service and is available for free on the GOOGLE Inc, Google Play Store and which the User has chosen to download onto his/her Device for free from the Google Play Store.
+**Application:** means to the software application titled "Orange Design System", which provides access to the Service and is available for free on the mobile Store and which the User has chosen to download onto his/her Device for free.
 
 **Networks:** means the electronic communication networks open to the public operated by Orange SA, regardless of the technology or standards used by these networks (cable, satellite, ADSL, optical fibre, GSM, GPRS, EDGE, UMTS, Wi-Fi, WIMAX, etc.). The Service is connected to the Networks.
 
@@ -75,7 +75,7 @@ Orange Innovation in no way guarantees that the Service and/or Application are e
 
 ### ARTICLE 7 – SUSPENSION AND TERMINATION
 
-Orange Innovation reserves the right to stop providing the Service in the GOOGLE Inc, Google Play Store without prior notice and without penalty. Orange Innovation may at any time permanently stop providing the Service.
+Orange Innovation reserves the right to stop providing the Service in the mobile Store without prior notice and without penalty. Orange Innovation may at any time permanently stop providing the Service.
 
 Upon termination, the User will still be bound by the guarantees made and by the exclusions and limitations of Orange Innovation liability. In addition, Orange Innovation will not be liable to Users or any third party for any termination of access to the Service.
 
@@ -103,7 +103,7 @@ Any improvements, updates, derivative works or upgrades regarding the Service, w
 
 ### 9.3 license
 
-Orange Innovation hereby grants the User a non-exclusive, non-transferable, revocable right of use, valid globally, for as long as the Service is available free of charge and the User uses the Application on an Android or iOS compatible Device. The right of use is subject to compliance with these GCU and the GOOGLE Inc, Google Play Store terms of use.
+Orange Innovation hereby grants the User a non-exclusive, non-transferable, revocable right of use, valid globally, for as long as the Service is available free of charge and the User uses the Application on an Android or iOS compatible Device. The right of use is subject to compliance with these GCU and the mobile Store terms of use.
 
 These GCUs do not give the User, with respect to the Application, its source code and/or software components, the right to sublicense, assign, use, copy, modify, distribute, access, disassemble, decompile or translate the Application, except as expressly authorised by applicable law.
 
