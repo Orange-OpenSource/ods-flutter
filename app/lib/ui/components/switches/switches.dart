@@ -74,7 +74,7 @@ class __BodyState extends State<_Body> {
             enabled: customizationState?.hasEnabled == true ? isEnabled : false,
             onCheckedChange: (value) {
               setState(() {
-                isChecked = value!;
+                isChecked = value;
               });
             },
           ),

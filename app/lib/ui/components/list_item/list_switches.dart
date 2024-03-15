@@ -77,7 +77,7 @@ class __BodyState extends State<_Body> {
                   customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked0 = value!;
+                  isChecked0 = value;
                 });
               },
             ),
@@ -89,7 +89,7 @@ class __BodyState extends State<_Body> {
                   customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked1 = value!;
+                  isChecked1 = value;
                 });
               },
             ),
@@ -101,7 +101,7 @@ class __BodyState extends State<_Body> {
                   customizationState?.hasEnabled == true ? isEnabled : false,
               onCheckedChange: (value) {
                 setState(() {
-                  isChecked2 = value!;
+                  isChecked2 = value;
                 });
               },
             ),

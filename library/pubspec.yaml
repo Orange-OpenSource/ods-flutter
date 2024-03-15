@@ -3,9 +3,17 @@ description: ODS Flutter provides Orange Flutter components for Android and iOS 
 version: 0.8.0
 repository: https://github.com/Orange-OpenSource/ods-flutter
 
+platforms:
+  android:
+  ios:
+  web:
+  windows:
+  macos:
+  linux:
+
 environment:
-  sdk: '>=2.19.6 <3.0.0'
-  flutter: ">=1.17.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
 
 dependencies:
   flutter:

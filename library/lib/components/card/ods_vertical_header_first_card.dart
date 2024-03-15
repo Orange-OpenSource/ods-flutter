@@ -85,10 +85,12 @@ class _OdsVerticalHeaderFirstCardState
                   padding: const EdgeInsets.only(bottom: spacingXs),
                   child: ListTile(
                     leading: widget.thumbnail,
-                    title: Text(widget.title!,
-                        style: Theme.of(context).textTheme.titleLarge,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis),
+                    title: Text(
+                      widget.title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     subtitle:
                         widget.subtitle != null ? Text(widget.subtitle!) : null,
                   ),
