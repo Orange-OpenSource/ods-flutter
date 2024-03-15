@@ -21,20 +21,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/snackbars/snackbars_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentSnackbars extends StatefulWidget {
-  const ComponentSnackbars({Key? key}) : super(key: key);
+class ComponentSnackbars extends StatelessWidget {
+  ComponentSnackbars({Key? key}) : super(key: key);
 
-  @override
-  State<ComponentSnackbars> createState() => _ComponentSnackbarsState();
-}
-
-class _ComponentSnackbarsState extends State<ComponentSnackbars> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

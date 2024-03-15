@@ -25,20 +25,10 @@ import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class CardVerticalImageFirst extends StatefulWidget {
-  const CardVerticalImageFirst({super.key});
+class CardVerticalImageFirst extends StatelessWidget {
+  CardVerticalImageFirst({super.key});
 
-  @override
-  State<CardVerticalImageFirst> createState() => _CardVerticalImageFirstState();
-}
-
-class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,15 +111,7 @@ class _Body extends StatelessWidget {
   }
 }
 
-class _CustomizationContent extends StatefulWidget {
-  @override
-  State<_CustomizationContent> createState() => _CustomizationContentState();
-}
-
-class _CustomizationContentState extends State<_CustomizationContent> {
-  int selectedIndex = 0;
-  bool isFiltered = true;
-
+class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState =

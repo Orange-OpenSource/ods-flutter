@@ -19,22 +19,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/radio_buttons/radio_buttons_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentRadioButtons extends StatefulWidget {
-  const ComponentRadioButtons({Key? key}) : super(key: key);
+class ComponentRadioButtons extends StatelessWidget {
+  ComponentRadioButtons({Key? key}) : super(key: key);
 
-  @override
-  State<ComponentRadioButtons> createState() => _ComponentRadioButtonsState();
-}
-
-enum Options { option1, option2 }
-
-class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +39,8 @@ class _ComponentRadioButtonsState extends State<ComponentRadioButtons> {
     );
   }
 }
+
+enum Options { option1, option2 }
 
 class _Body extends StatefulWidget {
   @override

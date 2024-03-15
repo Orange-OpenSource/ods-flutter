@@ -24,20 +24,10 @@ import 'package:ods_flutter_demo/ui/components/list_item/list_leading_enum.dart'
 import 'package:ods_flutter_demo/ui/components/list_item/list_trailing_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ModuleListsStandard extends StatefulWidget {
-  const ModuleListsStandard({super.key});
+class ModuleListsStandard extends StatelessWidget {
+  ModuleListsStandard({super.key});
 
-  @override
-  State<ModuleListsStandard> createState() => _ModuleListsStandardState();
-}
-
-class _ModuleListsStandardState extends State<ModuleListsStandard> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

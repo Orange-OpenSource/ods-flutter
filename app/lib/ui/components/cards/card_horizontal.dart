@@ -27,20 +27,10 @@ import 'package:ods_flutter_demo/ui/components/cards/card_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class CardHorizontal extends StatefulWidget {
-  const CardHorizontal({super.key});
+class CardHorizontal extends StatelessWidget {
+  CardHorizontal({super.key});
 
-  @override
-  State<CardHorizontal> createState() => _CardHorizontalState();
-}
-
-class _CardHorizontalState extends State<CardHorizontal> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

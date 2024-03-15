@@ -24,19 +24,8 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class ComponentChipsInput extends StatefulWidget {
+class ComponentChipsInput extends StatelessWidget {
   const ComponentChipsInput({super.key});
-  @override
-  State<ComponentChipsInput> createState() => _ComponentChipsInputState();
-}
-
-class _ComponentChipsInputState extends State<ComponentChipsInput> {
-  bool isFiltered = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +45,7 @@ class _ComponentChipsInputState extends State<ComponentChipsInput> {
   }
 }
 
-class _Body extends StatefulWidget {
-  @override
-  _BodyState createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
-  int selectedIndex = 0;
-  bool isFiltered = true;
-
+class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ChipsCustomizationState? customizationState =
@@ -157,7 +138,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       onClick: (selected) {
                         setState(() {
                           selectedIndex = index;
-                          isFiltered = selected!;
+                          isFiltered = selected;
                           customizationState?.selectedElement =
                               customizationState.elements[index];
                         });

@@ -20,20 +20,10 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ButtonsOutlined extends StatefulWidget {
-  const ButtonsOutlined({super.key});
+class ButtonsOutlined extends StatelessWidget {
+  ButtonsOutlined({super.key});
 
-  @override
-  State<ButtonsOutlined> createState() => _ButtonsOutlinedState();
-}
-
-class _ButtonsOutlinedState extends State<ButtonsOutlined> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

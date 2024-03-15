@@ -24,21 +24,10 @@ import 'package:ods_flutter_demo/ui/components/list_item/list_leading_enum.dart'
 import 'package:ods_flutter_demo/ui/components/list_item/list_trailing_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentListsSelection extends StatefulWidget {
-  const ComponentListsSelection({super.key});
+class ComponentListsSelection extends StatelessWidget {
+  ComponentListsSelection({super.key});
 
-  @override
-  State<ComponentListsSelection> createState() =>
-      _ComponentListsSelectionState();
-}
-
-class _ComponentListsSelectionState extends State<ComponentListsSelection> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

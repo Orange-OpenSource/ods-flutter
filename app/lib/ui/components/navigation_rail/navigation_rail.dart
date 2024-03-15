@@ -26,21 +26,10 @@ import 'package:ods_flutter_demo/ui/components/navigation_rail/navigation_rail_e
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class ComponentNavigationRail extends StatefulWidget {
-  const ComponentNavigationRail({Key? key}) : super(key: key);
+class ComponentNavigationRail extends StatelessWidget {
+  ComponentNavigationRail({Key? key}) : super(key: key);
 
-  @override
-  State<ComponentNavigationRail> createState() =>
-      _ComponentNavigationBarState();
-}
-
-class _ComponentNavigationBarState extends State<ComponentNavigationRail> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +240,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List<Widget>.generate(
-                customizationState!.elements.length,
+                customizationState.elements.length,
                 (int index) {
                   NavigationRailsEnum currentElement =
                       customizationState.elements[index];

@@ -22,20 +22,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class CardSmall extends StatefulWidget {
-  const CardSmall({super.key});
+class CardSmall extends StatelessWidget {
+  CardSmall({super.key});
 
-  @override
-  State<CardSmall> createState() => _CardSmallState();
-}
-
-class _CardSmallState extends State<CardSmall> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
