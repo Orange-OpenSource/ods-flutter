@@ -38,11 +38,6 @@ class _ComponentTextFieldState extends State<ComponentTextField> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     var themeNotifier = Provider.of<ModelTheme>(context);
     return TextFieldCustomization(
@@ -82,18 +77,11 @@ class _ComponentTextFieldState extends State<ComponentTextField> {
   }
 }
 
-class _Body extends StatefulWidget {
+class _Body extends StatelessWidget {
   _Body();
 
-  @override
-  State<_Body> createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
-  var recipe =
+  final recipe =
       OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
-
-  _BodyState();
 
   @override
   Widget build(BuildContext context) {

@@ -18,23 +18,18 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guideline_detail_screen.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_entities.dart';
 
-class GuidelinesScreen extends StatefulWidget {
+class GuidelinesScreen extends StatelessWidget {
   final List<Guideline> odsGuidelines;
 
   GuidelinesScreen({required this.odsGuidelines});
 
   @override
-  State<GuidelinesScreen> createState() => _GuidelinesScreenState();
-}
-
-class _GuidelinesScreenState extends State<GuidelinesScreen> {
-  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: ListView.builder(
-        itemCount: widget.odsGuidelines.length,
+        itemCount: odsGuidelines.length,
         itemBuilder: (context, index) {
-          var guideline = widget.odsGuidelines[index];
+          var guideline = odsGuidelines[index];
           return Padding(
             padding: const EdgeInsets.all(spacingS),
             child: Column(

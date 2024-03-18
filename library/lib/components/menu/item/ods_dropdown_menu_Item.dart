@@ -18,6 +18,14 @@ import 'package:flutter/material.dart';
 ///
 ///.
 class OdsDropdownMenuItem<T> extends PopupMenuEntry<T> {
+  const OdsDropdownMenuItem({
+    Key? key,
+    required this.text,
+    this.value,
+    this.enabled = true,
+    this.icon,
+  }) : super(key: key);
+
   ///Typically a Text
   final String text;
 
@@ -30,20 +38,11 @@ class OdsDropdownMenuItem<T> extends PopupMenuEntry<T> {
   ///Typically a single-line ListTile for menus with icons
   final Widget? icon;
 
-  const OdsDropdownMenuItem({
-    Key? key,
-    required this.text,
-    this.value,
-    this.enabled = true,
-    this.icon,
-  }) : super(key: key);
-
   @override
-  State<OdsDropdownMenuItem> createState() => _OdsDropdownMenuItemState();
-
-  @override
+  State<OdsDropdownMenuItem<T>> createState() => _OdsDropdownMenuItemState<T>();
 
   /// TODO: implement height
+  @override
   double get height => throw UnimplementedError();
 
   @override
@@ -53,12 +52,7 @@ class OdsDropdownMenuItem<T> extends PopupMenuEntry<T> {
   }
 }
 
-class _OdsDropdownMenuItemState extends State<OdsDropdownMenuItem> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _OdsDropdownMenuItemState<T> extends State<OdsDropdownMenuItem<T>> {
   @override
   Widget build(BuildContext context) {
     Widget? itemMenu;

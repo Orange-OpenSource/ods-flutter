@@ -40,11 +40,6 @@ class _ComponentTextFieldPasswordState
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     var themeNotifier = Provider.of<ModelTheme>(context);
     return TextFieldCustomization(
@@ -85,13 +80,8 @@ class _ComponentTextFieldPasswordState
   }
 }
 
-class _Body extends StatefulWidget {
-  @override
-  State<_Body> createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
-  var recipe =
+class _Body extends StatelessWidget {
+  final recipe =
       OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
   @override

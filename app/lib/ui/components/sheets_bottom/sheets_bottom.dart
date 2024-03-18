@@ -23,17 +23,8 @@ import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom_custo
 import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom_enum.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class ComponentSheetsBottom extends StatefulWidget {
+class ComponentSheetsBottom extends StatelessWidget {
   const ComponentSheetsBottom({super.key});
-  @override
-  State<ComponentSheetsBottom> createState() => _ComponentSheetsBottomState();
-}
-
-class _ComponentSheetsBottomState extends State<ComponentSheetsBottom> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +86,7 @@ class _BodyState extends State<_Body> {
                     setState(
                       () {
                         selectedIndex = index;
-                        isFiltered = selected!;
+                        isFiltered = selected;
                         customizationState.selectedElement =
                             customizationState.elements[index];
                       },
@@ -112,12 +103,7 @@ class _BodyState extends State<_Body> {
   }
 }
 
-class _CustomizationContent extends StatefulWidget {
-  @override
-  State<_CustomizationContent> createState() => _CustomizationContentState();
-}
-
-class _CustomizationContentState extends State<_CustomizationContent> {
+class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SheetsBottomCustomizationState? customizationState =

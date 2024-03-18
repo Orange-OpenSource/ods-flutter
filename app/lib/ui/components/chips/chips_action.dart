@@ -22,19 +22,9 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class ComponentChipsAction extends StatefulWidget {
-  const ComponentChipsAction({super.key});
-  @override
-  State<ComponentChipsAction> createState() => _ComponentChipsActionState();
-}
-
-class _ComponentChipsActionState extends State<ComponentChipsAction> {
+class ComponentChipsAction extends StatelessWidget {
+  ComponentChipsAction({super.key});
   bool isFiltered = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

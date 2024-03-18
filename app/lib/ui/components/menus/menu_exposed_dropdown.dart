@@ -20,20 +20,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class MenuExposedDropdown extends StatefulWidget {
-  const MenuExposedDropdown({super.key});
+class MenuExposedDropdown extends StatelessWidget {
+  MenuExposedDropdown({super.key});
 
-  @override
-  State<MenuExposedDropdown> createState() => _MenuExposedDropdownState();
-}
-
-class _MenuExposedDropdownState extends State<MenuExposedDropdown> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 ///
 /// The OdsCheckbox widget represents a checkbox element that can be checked or unchecked.
 /// It allows for handling the checkbox state and triggering a callback when its state changes.
-class OdsSegmentedButton<T> extends StatefulWidget {
+class OdsSegmentedButton<T> extends StatelessWidget {
   /// Creates an ODS RadioButton.
   const OdsSegmentedButton({
     Key? key,
@@ -44,20 +44,12 @@ class OdsSegmentedButton<T> extends StatefulWidget {
   final List<ButtonSegment<T>> segments;
 
   @override
-  State<OdsSegmentedButton<T>> createState() => _OdsSegmentedButtonState<T>();
-}
-
-class _OdsSegmentedButtonState<T> extends State<OdsSegmentedButton<T>> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       child: SegmentedButton<T>(
-        segments: widget.segments.length > 5
-            ? widget.segments.sublist(0, 5)
-            : widget.segments,
-        selected: widget.selected,
-        onSelectionChanged:
-            widget.enabled != false ? widget.onSelectionChanged : null,
+        segments: segments.length > 5 ? segments.sublist(0, 5) : segments,
+        selected: selected,
+        onSelectionChanged: enabled != false ? onSelectionChanged : null,
         multiSelectionEnabled: true,
         //emptySelectionAllowed: true,
       ),

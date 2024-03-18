@@ -23,19 +23,8 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class ComponentChipsChoice extends StatefulWidget {
+class ComponentChipsChoice extends StatelessWidget {
   const ComponentChipsChoice({super.key});
-  @override
-  State<ComponentChipsChoice> createState() => _ComponentChipsChoiceState();
-}
-
-class _ComponentChipsChoiceState extends State<ComponentChipsChoice> {
-  bool isFiltered = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

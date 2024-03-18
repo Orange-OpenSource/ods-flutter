@@ -18,16 +18,11 @@ import 'package:ods_flutter_demo/ui/components/component_detail_screen.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
-class ComponentsScreen extends StatefulWidget {
+class ComponentsScreen extends StatelessWidget {
   final List<Component> odsComponents;
 
   ComponentsScreen({required this.odsComponents});
 
-  @override
-  State<ComponentsScreen> createState() => _ComponentsScreenState();
-}
-
-class _ComponentsScreenState extends State<ComponentsScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -55,7 +50,7 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
         child: GridView.count(
           crossAxisCount: crossAxisCount,
           childAspectRatio: childAspectRatio,
-          children: widget.odsComponents.map(
+          children: odsComponents.map(
             (component) {
               return Column(
                 children: [

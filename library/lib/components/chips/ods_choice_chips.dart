@@ -18,7 +18,7 @@ import 'ods_chip_common.dart';
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsChoiceChip extends StatefulWidget {
+class OdsChoiceChip extends StatelessWidget {
   /// Creates an ODS Choice Chip.
   ///
   /// * [text] - Text to be displayed into the chip
@@ -52,20 +52,15 @@ class OdsChoiceChip extends StatefulWidget {
   final OdsChipLeadingAvatar? leadingAvatar;
 
   @override
-  State<OdsChoiceChip> createState() => _OdsChoiceChipState();
-}
-
-class _OdsChoiceChipState extends State<OdsChoiceChip> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
+      label: text,
       child: ChoiceChip(
-        label: Text(widget.text),
-        onSelected: widget.enabled != false ? widget.onClick : null,
-        selected: widget.selected,
-        avatar: widget.leadingAvatar,
+        label: Text(text),
+        onSelected: enabled != false ? onClick : null,
+        selected: selected,
+        avatar: leadingAvatar,
       ),
     );
   }

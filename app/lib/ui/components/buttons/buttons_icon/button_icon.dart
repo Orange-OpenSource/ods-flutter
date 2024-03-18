@@ -21,20 +21,10 @@ import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon_
 import 'package:ods_flutter_demo/ui/components/buttons/buttons_icon/button_icon_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ButtonsIcons extends StatefulWidget {
-  const ButtonsIcons({super.key});
+class ButtonsIcons extends StatelessWidget {
+  ButtonsIcons({super.key});
 
-  @override
-  State<ButtonsIcons> createState() => _ButtonsIconsState();
-}
-
-class _ButtonsIconsState extends State<ButtonsIcons> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,11 +113,6 @@ class _CustomizationContent extends StatefulWidget {
 
 class _CustomizationContentState extends State<_CustomizationContent> {
   _CustomizationContentState();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

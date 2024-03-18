@@ -18,7 +18,7 @@ import 'package:ods_flutter/guidelines/spacings.dart';
 /// A text field lets the user enter text, either with hardware keyboard or with an onscreen keyboard.
 ///
 ///.
-class OdsTextField extends StatefulWidget {
+class OdsTextField extends StatelessWidget {
   /// A controller for an editable text field
   final TextEditingController? controller;
 
@@ -91,49 +91,39 @@ class OdsTextField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<OdsTextField> createState() => _OdsTextFieldState();
-}
-
-class _OdsTextFieldState extends State<OdsTextField> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: widget.controller,
-      keyboardType: widget.keyboardType,
-      textInputAction: widget.keyboardActions,
-      onChanged: widget.onValueChange,
-      textCapitalization: widget.textCapitalization == true
+      controller: controller,
+      keyboardType: keyboardType,
+      textInputAction: keyboardActions,
+      onChanged: onValueChange,
+      textCapitalization: textCapitalization == true
           ? TextCapitalization.characters
           : TextCapitalization.none,
       keyboardAppearance: Theme.of(context).brightness == Brightness.dark
           ? Brightness.dark
           : Brightness.light,
-      maxLength: widget.characterCounter,
-      enabled: widget.enabled,
-      readOnly: widget.readOnly,
-      minLines: widget.maxLines != null ? 1 : null,
-      maxLines: widget.maxLines,
+      maxLength: characterCounter,
+      enabled: enabled,
+      readOnly: readOnly,
+      minLines: maxLines != null ? 1 : null,
+      maxLines: maxLines,
       decoration: InputDecoration(
-        prefixIcon: widget.leadingIcon,
-        suffixIcon: widget.trailingText != null
+        prefixIcon: leadingIcon,
+        suffixIcon: trailingText != null
             ? Padding(
                 padding: const EdgeInsets.fromLTRB(
                     spacingM, spacingM, spacingM, spacingM),
                 child: Text(
-                  widget.trailingText!,
+                  trailingText!,
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.tertiary),
                 ),
               )
-            : widget.trailingIcon,
-        labelText: widget.label,
-        hintText: widget.placeholder,
-        errorText: widget.errorMessage,
+            : trailingIcon,
+        labelText: label,
+        hintText: placeholder,
+        errorText: errorMessage,
         border: const OutlineInputBorder(),
         filled: false,
       ),

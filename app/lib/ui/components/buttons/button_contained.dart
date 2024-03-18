@@ -28,41 +28,35 @@ enum ButtonEmphasis {
   functional,
 }
 
-class ButtonsContained extends StatefulWidget {
+class ButtonsContained extends StatelessWidget {
+  const ButtonsContained({Key? key, required this.emphasis}) : super(key: key);
+
   final ButtonEmphasis emphasis;
-
-  ButtonsContained({Key? key, required this.emphasis}) : super(key: key);
-
-  @override
-  _ButtonsContainedState createState() => _ButtonsContainedState();
-}
-
-class _ButtonsContainedState extends State<ButtonsContained> {
-  _ButtonsContainedState();
 
   @override
   Widget build(BuildContext context) {
+    String getAppBarTitle() {
+      switch (emphasis) {
+        case ButtonEmphasis.highEmphasis:
+          return AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle;
+        case ButtonEmphasis.mediumEmphasis:
+          return AppLocalizations.of(context)!
+              .buttonsMediumEmphasisVariantTitle;
+        case ButtonEmphasis.functional:
+          return AppLocalizations.of(context)!.buttonsFunctionalVariantTitle;
+      }
+    }
+
     return ButtonCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
-          sheetContent: _CustomizationContent(emphasis: widget.emphasis),
+          sheetContent: _CustomizationContent(emphasis: emphasis),
           title: AppLocalizations.of(context)!.componentCustomizeTitle,
         ),
         appBar: MainAppBar(getAppBarTitle()),
-        body: SafeArea(child: _Body(emphasis: widget.emphasis)),
+        body: SafeArea(child: _Body(emphasis: emphasis)),
       ),
     );
-  }
-
-  String getAppBarTitle() {
-    switch (widget.emphasis) {
-      case ButtonEmphasis.highEmphasis:
-        return AppLocalizations.of(context)!.buttonsHighEmphasisVariantTitle;
-      case ButtonEmphasis.mediumEmphasis:
-        return AppLocalizations.of(context)!.buttonsMediumEmphasisVariantTitle;
-      case ButtonEmphasis.functional:
-        return AppLocalizations.of(context)!.buttonsFunctionalVariantTitle;
-    }
   }
 }
 
@@ -117,11 +111,6 @@ class _CustomizationContent extends StatefulWidget {
 
 class _CustomizationContentState extends State<_CustomizationContent> {
   _CustomizationContentState();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

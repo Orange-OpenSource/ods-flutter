@@ -19,7 +19,7 @@ class ExpandableTextWidget extends StatefulWidget {
   ExpandableTextWidget({required this.text, this.maxLines = 2});
 
   @override
-  _ExpandableTextWidgetState createState() => _ExpandableTextWidgetState();
+  State<ExpandableTextWidget> createState() => _ExpandableTextWidgetState();
 }
 
 class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {

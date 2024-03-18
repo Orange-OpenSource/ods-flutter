@@ -22,20 +22,10 @@ import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart
 import 'package:ods_flutter_demo/ui/components/buttons/button_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ButtonsText extends StatefulWidget {
-  const ButtonsText({super.key});
+class ButtonsText extends StatelessWidget {
+  ButtonsText({super.key});
 
-  @override
-  State<ButtonsText> createState() => _ButtonsTextState();
-}
-
-class _ButtonsTextState extends State<ButtonsText> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +84,6 @@ class _CustomizationContent extends StatefulWidget {
 
 class _CustomizationContentState extends State<_CustomizationContent> {
   _CustomizationContentState();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

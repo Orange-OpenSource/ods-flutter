@@ -24,20 +24,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentMenuDropdown extends StatefulWidget {
-  const ComponentMenuDropdown({super.key});
+class ComponentMenuDropdown extends StatelessWidget {
+  ComponentMenuDropdown({super.key});
 
-  @override
-  State<ComponentMenuDropdown> createState() => _ComponentMenuDropdownState();
-}
-
-class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +45,8 @@ class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
   }
 }
 
-class _Body extends StatefulWidget {
-  @override
-  __BodyState createState() => __BodyState();
-}
-
-class __BodyState extends State<_Body> {
-  var recipe =
+class _Body extends StatelessWidget {
+  final recipe =
       OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
   @override

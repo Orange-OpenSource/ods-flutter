@@ -17,7 +17,7 @@ import 'package:ods_flutter/components/navigation_bar/ods_navigation_bar_item.da
 ///
 /// The navigation bar displays a list of destinations that can be selected.
 /// It highlights the selected destination and calls a callback when a destination is selected.
-class OdsNavigationBar extends StatefulWidget {
+class OdsNavigationBar extends StatelessWidget {
   /// Creates an ODS Small card.
   const OdsNavigationBar({
     Key? key,
@@ -40,16 +40,11 @@ class OdsNavigationBar extends StatefulWidget {
   final Widget? icon;
 
   @override
-  State<OdsNavigationBar> createState() => _OdsNavigationBarState();
-}
-
-class _OdsNavigationBarState extends State<OdsNavigationBar> {
-  @override
   Widget build(BuildContext context) {
     return NavigationBar(
-      selectedIndex: widget.selectedIndex,
-      onDestinationSelected: widget.onDestinationSelected,
-      destinations: widget.destinations,
+      selectedIndex: selectedIndex,
+      onDestinationSelected: onDestinationSelected,
+      destinations: destinations,
     );
   }
 }
