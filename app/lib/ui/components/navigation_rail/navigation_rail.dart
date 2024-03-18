@@ -124,6 +124,8 @@ class _NavRailDemoState extends State<_NavRailDemo> {
           semanticsLabel: 'Add', //Optional
         );
         break;
+      case null:
+        break;
     }
 
     return Row(
@@ -251,7 +253,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List<Widget>.generate(
-                customizationState!.elements.length,
+                customizationState.elements.length,
                 (int index) {
                   NavigationRailsEnum currentElement =
                       customizationState.elements[index];

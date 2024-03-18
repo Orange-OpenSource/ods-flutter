@@ -64,10 +64,10 @@ class OdsNavigationItem extends NavigationDestination {
         ? Badge(
             label: Semantics(
               label:
-                  "${badge!} ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
+                  "$badge ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
               excludeSemantics: true,
               child: Text(
-                badge!,
+                badge,
                 textScaleFactor: 1.0,
               ),
             ),

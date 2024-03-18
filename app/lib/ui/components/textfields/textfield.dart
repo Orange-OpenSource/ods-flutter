@@ -159,6 +159,8 @@ class _BodyState extends State<_Body> {
       case KeyboardActionEnum.next:
         keyboardAction = TextInputAction.next;
         break;
+      case null:
+        break;
     }
 
     return Padding(

@@ -155,7 +155,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       onClick: (selected) {
                         setState(() {
                           selectedIndex = index;
-                          isFiltered = selected!;
+                          isFiltered = selected;
                           customizationState?.selectedElement =
                               customizationState.elements[index];
                         });

@@ -95,7 +95,7 @@ class _BodyState extends State<_Body> {
                     setState(
                       () {
                         selectedIndex = index;
-                        isFiltered = selected!;
+                        isFiltered = selected;
                         customizationState.selectedElement =
                             customizationState.elements[index];
                       },
