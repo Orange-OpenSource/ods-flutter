@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum ListTrailingEnum {
   none,
@@ -22,18 +21,18 @@ enum ListTrailingEnum {
 }
 
 extension CustomElementExtension on ListTrailingEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case ListTrailingEnum.none:
-        return AppLocalizations.of(context)!.listTrailingEnumNone;
+        return l10n.listTrailingEnumNone;
       case ListTrailingEnum.trailingSwitch:
-        return AppLocalizations.of(context)!.listTrailingEnumSwitch;
+        return l10n.listTrailingEnumSwitch;
       case ListTrailingEnum.trailingCheckbox:
-        return AppLocalizations.of(context)!.listTrailingEnumCheckbox;
+        return l10n.listTrailingEnumCheckbox;
       case ListTrailingEnum.trailingText:
-        return AppLocalizations.of(context)!.listTrailingEnumText;
+        return l10n.listTrailingEnumText;
       case ListTrailingEnum.trailingInfoButton:
-        return AppLocalizations.of(context)!.listTrailingEnumInfoButton;
+        return l10n.listTrailingEnumInfoButton;
       default:
         return "";
     }

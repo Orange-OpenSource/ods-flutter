@@ -11,9 +11,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/guidelines/spacings/guideline_spacings_image.dart';
 import 'package:ods_flutter_demo/ui/guidelines/spacings/spacing.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -21,11 +21,13 @@ import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 class GuidelineSpacingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Spacing> spacingItems = Spacing.values.toList();
+    final l10n = context.l10n;
+
+    const spacingItems = Spacing.values;
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: MainAppBar(AppLocalizations.of(context)!.guidelinesSpacings),
+      appBar: MainAppBar(l10n.guidelinesSpacings),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -42,7 +44,7 @@ class GuidelineSpacingsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: spacingM),
                 child: Text(
-                  AppLocalizations.of(context)!.guidelinesSpacingsDescription,
+                  l10n.guidelinesSpacingsDescription,
                 ),
               ),
               SizedBox(

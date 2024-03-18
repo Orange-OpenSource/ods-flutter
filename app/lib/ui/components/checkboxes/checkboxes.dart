@@ -11,11 +11,11 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/lists/ods_list_checkbox.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -37,14 +37,16 @@ class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return CheckboxesCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(AppLocalizations.of(context)!.componentCheckboxes),
+          appBar: MainAppBar(l10n.componentCheckboxes),
           body: _Body()),
     );
   }
@@ -94,13 +96,14 @@ class __BodyState extends State<_Body> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final CheckboxesCustomizationState? customizationState =
         CheckboxesCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-          title: AppLocalizations.of(context)!
-              .componentCheckboxesCustomizationEnabled,
+          title: l10n.componentCheckboxesCustomizationEnabled,
           checked: customizationState?.hasEnabled ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasEnabled = value;

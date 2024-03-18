@@ -11,7 +11,6 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
@@ -19,6 +18,7 @@ import 'package:ods_flutter/components/chips/ods_input_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
@@ -40,14 +40,16 @@ class _ComponentChipsInputState extends State<ComponentChipsInput> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ChipsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.componentChipInput,
+            title: l10n.componentChipInput,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -67,6 +69,8 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ChipsCustomizationState? customizationState =
         ChipsCustomization.of(context);
     var colorScheme = Theme.of(context).colorScheme;
@@ -78,8 +82,10 @@ class _BodyState extends State<_Body> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.componentChipFilterDescription,
-              style: Theme.of(context).textTheme.bodyMedium),
+          Text(
+            l10n.componentChipFilterDescription,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
           SizedBox(height: spacingM),
           Wrap(
             spacing: spacingS,
@@ -122,8 +128,11 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ChipsCustomizationState? customizationState =
         ChipsCustomization.of(context);
+
     return SafeArea(
       child: Column(
         children: [
@@ -132,7 +141,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(18.0),
               child: Text(
-                AppLocalizations.of(context)!.componentChipsLeading,
+                l10n.componentChipsLeading,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -152,7 +161,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                     padding: EdgeInsets.only(right: 5, left: 10),
                     child: OdsFilterChip(
                       text: customizationState?.elements[index]
-                              .stringValue(context) ??
+                              .stringValue(l10n) ??
                           '',
                       onClick: (selected) {
                         setState(() {
@@ -170,7 +179,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             ),
           ),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentChipsEnabled,
+              title: l10n.componentChipsEnabled,
               checked: customizationState?.hasEnabled ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasEnabled = value;

@@ -11,13 +11,13 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_customization.dart';
 import 'package:ods_flutter_demo/ui/components/buttons/button_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -39,15 +39,16 @@ class _ButtonsTextState extends State<ButtonsText> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ButtonCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar: MainAppBar(
-            AppLocalizations.of(context)!.buttonsLowestEmphasisVariantTitle),
+        appBar: MainAppBar(l10n.buttonsLowestEmphasisVariantTitle),
         body: SafeArea(child: _Body()),
       ),
     );
@@ -57,6 +58,8 @@ class _ButtonsTextState extends State<ButtonsText> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
 
@@ -72,7 +75,7 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.only(
             left: spacingM, top: spacingL, right: spacingM, bottom: spacingM),
         child: OdsTextButton(
-          text: AppLocalizations.of(context)!.componentButtonsExampleTitle,
+          text: l10n.componentButtonsExampleTitle,
           onClick: customizationState?.hasEnabled == true ? () {} : null,
           icon: customizationState?.hasIcon == true
               ? SvgPicture.asset('assets/ic_profile.svg')
@@ -102,6 +105,8 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ButtonCustomizationState? customizationState =
         ButtonCustomization.of(context);
 
@@ -112,8 +117,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           child: Padding(
             padding: const EdgeInsets.all(spacingM),
             child: Text(
-              AppLocalizations.of(context)!
-                  .buttonsTextFunctionalCustomizeFunctionalTitle,
+              l10n.buttonsTextFunctionalCustomizeFunctionalTitle,
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.left,
             ),
@@ -133,8 +137,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                   return Padding(
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
-                      text:
-                          customizationState.style[index].stringValue(context),
+                      text: customizationState.style[index].stringValue(l10n),
                       selected: isSelected,
                       onClick: (selected) {
                         setState(
@@ -152,21 +155,21 @@ class _CustomizationContentState extends State<_CustomizationContent> {
           ),
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeIcon,
+          title: l10n.componentCustomizeIcon,
           checked: customizationState.hasIcon,
           onCheckedChange: (bool value) {
             customizationState.hasIcon = value;
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeFullScreen,
+          title: l10n.componentCustomizeFullScreen,
           checked: customizationState.hasFullScreen,
           onCheckedChange: (bool value) {
             customizationState.hasFullScreen = value;
           },
         ),
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentCustomizeEnable,
+          title: l10n.componentCustomizeEnable,
           checked: customizationState.hasEnabled,
           onCheckedChange: (bool value) {
             customizationState.hasEnabled = value;

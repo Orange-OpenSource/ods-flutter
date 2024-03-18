@@ -10,20 +10,19 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum ChipsEnum { none, avatar, icon }
 
 extension CustomElementExtension on ChipsEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case ChipsEnum.none:
-        return AppLocalizations.of(context)!.componentChipEnumNone;
+        return l10n.componentChipEnumNone;
       case ChipsEnum.avatar:
-        return AppLocalizations.of(context)!.componentChipEnumAvatar;
+        return l10n.componentChipEnumAvatar;
       case ChipsEnum.icon:
-        return AppLocalizations.of(context)!.componentChipEnumIcon;
+        return l10n.componentChipEnumIcon;
       default:
         return "";
     }

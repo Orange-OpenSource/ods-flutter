@@ -10,26 +10,23 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum ListLeadingEnum { none, icon, circle, wide, square }
 
 extension CustomElementExtension on ListLeadingEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case ListLeadingEnum.none:
-        return AppLocalizations.of(context)!.listLeadingEnumNone;
+        return l10n.listLeadingEnumNone;
       case ListLeadingEnum.icon:
-        return AppLocalizations.of(context)!.listLeadingEnumIcon;
+        return l10n.listLeadingEnumIcon;
       case ListLeadingEnum.circle:
-        return AppLocalizations.of(context)!.listLeadingEnumCircle;
+        return l10n.listLeadingEnumCircle;
       case ListLeadingEnum.wide:
-        return AppLocalizations.of(context)!.listLeadingEnumWide;
+        return l10n.listLeadingEnumWide;
       case ListLeadingEnum.square:
-        return AppLocalizations.of(context)!.listLeadingEnumSquare;
-      default:
-        return "";
+        return l10n.listLeadingEnumSquare;
     }
   }
 }

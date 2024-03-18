@@ -13,15 +13,17 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/divider/ods_divider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class GuidelineTypographyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<_TextStyleItem> textStyleItems = [
+    final l10n = context.l10n;
+
+    final textStyleItems = [
       _TextStyleItem(
           name: 'Headline L',
           textStyle: Theme.of(context).textTheme.headlineLarge,
@@ -74,7 +76,7 @@ class GuidelineTypographyScreen extends StatelessWidget {
 
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: MainAppBar(AppLocalizations.of(context)!.guidelinesTypography),
+        appBar: MainAppBar(l10n.guidelinesTypography),
         body: SafeArea(
           child: ListView(children: [
             Image(
@@ -87,13 +89,11 @@ class GuidelineTypographyScreen extends StatelessWidget {
                 children: [
                   Platform.isAndroid
                       ? Text(
-                          AppLocalizations.of(context)!
-                              .guidelinesTypographyAndroidDescription,
+                          l10n.guidelinesTypographyAndroidDescription,
                           style: Theme.of(context).textTheme.bodyMedium,
                         )
                       : Text(
-                          AppLocalizations.of(context)!
-                              .guidelinesTypographyAppleDescription,
+                          l10n.guidelinesTypographyAppleDescription,
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                   SizedBox(

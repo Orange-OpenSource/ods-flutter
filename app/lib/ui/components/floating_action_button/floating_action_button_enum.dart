@@ -10,28 +10,21 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum FloatingActionButtonEnum { defaultFab, smallFab, largeFab, extendedFab }
 
 extension CustomElementExtension on FloatingActionButtonEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case FloatingActionButtonEnum.defaultFab:
-        return AppLocalizations.of(context)!
-            .componentFloatingActionButtonSizeDefault;
+        return l10n.componentFloatingActionButtonSizeDefault;
       case FloatingActionButtonEnum.smallFab:
-        return AppLocalizations.of(context)!
-            .componentFloatingActionButtonSizeSmall;
+        return l10n.componentFloatingActionButtonSizeSmall;
       case FloatingActionButtonEnum.largeFab:
-        return AppLocalizations.of(context)!
-            .componentFloatingActionButtonSizeLarge;
+        return l10n.componentFloatingActionButtonSizeLarge;
       case FloatingActionButtonEnum.extendedFab:
-        return AppLocalizations.of(context)!
-            .componentFloatingActionButtonSizeExtended;
-      default:
-        return "";
+        return l10n.componentFloatingActionButtonSizeExtended;
     }
   }
 }

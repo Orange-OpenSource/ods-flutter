@@ -11,7 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 /// ODS OdsListRadioButton.
 ///
@@ -50,19 +50,21 @@ class OdsListRadioButton<T> extends StatefulWidget {
 class _OdsRadioButtonState<T> extends State<OdsListRadioButton<T>> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.odsL10n;
+
     /*
     String radioButtonValue = widget.value == null
-        ? OdsLocalizations.of(context)!.componentCheckboxesIndeterminate
+        ? l10n.componentCheckboxesIndeterminate
         : widget.value ?? false
-        ? OdsLocalizations.of(context)!.componentCheckboxesChecked
-        : OdsLocalizations.of(context)!.componentCheckboxesUnchecked;
+        ? l10n.componentCheckboxesChecked
+        : l10n.componentCheckboxesUnchecked;
 
      */
 
     return Semantics(
       //value: radioButtonValue,
       enabled: widget.enabled,
-      hint: OdsLocalizations.of(context)!.componentCheckboxes,
+      hint: l10n.componentCheckboxes,
       excludeSemantics: true,
       child: RadioListTile<T>(
         title: Text(

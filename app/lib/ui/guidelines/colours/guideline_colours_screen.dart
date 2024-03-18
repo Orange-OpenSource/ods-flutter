@@ -11,16 +11,18 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
 class GuidelineColoursScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: MainAppBar(AppLocalizations.of(context)!.guidelinesColours),
+        appBar: MainAppBar(l10n.guidelinesColours),
         body: SafeArea(
           child: ListView(children: [
             Image(
@@ -31,9 +33,7 @@ class GuidelineColoursScreen extends StatelessWidget {
               padding: EdgeInsets.all(spacingM),
               child: Column(
                 children: [
-                  Text(
-                      AppLocalizations.of(context)!
-                          .guidelinesColoursDescription,
+                  Text(l10n.guidelinesColoursDescription,
                       style: Theme.of(context).textTheme.bodyMedium),
                   SizedBox(
                     height: spacingM,

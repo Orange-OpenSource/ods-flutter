@@ -10,8 +10,7 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
+import 'package:ods_flutter_demo/l10n/gen/ods_flutter_app_localizations.dart';
 
 enum KeyboardTypeEnum { text, decimal, email, number, phone, url }
 
@@ -27,58 +26,43 @@ enum KeyboardActionEnum {
 }
 
 extension CustomElementExtension on KeyboardTypeEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case KeyboardTypeEnum.text:
-        return AppLocalizations.of(context)!.componentTextFieldKeyboardTypeText;
+        return l10n.componentTextFieldKeyboardTypeText;
       case KeyboardTypeEnum.decimal:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardTypeDecimal;
+        return l10n.componentTextFieldKeyboardTypeDecimal;
       case KeyboardTypeEnum.email:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardTypeEmail;
+        return l10n.componentTextFieldKeyboardTypeEmail;
       case KeyboardTypeEnum.number:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardTypeNumber;
+        return l10n.componentTextFieldKeyboardTypeNumber;
       case KeyboardTypeEnum.phone:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardTypePhone;
+        return l10n.componentTextFieldKeyboardTypePhone;
       case KeyboardTypeEnum.url:
-        return AppLocalizations.of(context)!.componentTextFieldKeyboardTypeUrl;
-      default:
-        return "";
+        return l10n.componentTextFieldKeyboardTypeUrl;
     }
   }
 }
 
 extension CustomKeyboardActionExtension on KeyboardActionEnum {
-  String stringValue(BuildContext context) {
+  String stringValue(AppLocalizations l10n) {
     switch (this) {
       case KeyboardActionEnum.none:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionNone;
+        return l10n.componentTextFieldKeyboardActionNone;
       case KeyboardActionEnum.defaultAction:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionDefault;
+        return l10n.componentTextFieldKeyboardActionDefault;
       case KeyboardActionEnum.done:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionDone;
+        return l10n.componentTextFieldKeyboardActionDone;
       case KeyboardActionEnum.go:
-        return AppLocalizations.of(context)!.componentTextFieldKeyboardActionGo;
+        return l10n.componentTextFieldKeyboardActionGo;
       case KeyboardActionEnum.search:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionSearch;
+        return l10n.componentTextFieldKeyboardActionSearch;
       case KeyboardActionEnum.send:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionSend;
+        return l10n.componentTextFieldKeyboardActionSend;
       case KeyboardActionEnum.previous:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionPrevious;
+        return l10n.componentTextFieldKeyboardActionPrevious;
       case KeyboardActionEnum.next:
-        return AppLocalizations.of(context)!
-            .componentTextFieldKeyboardActionNext;
-      default:
-        return "";
+        return l10n.componentTextFieldKeyboardActionNext;
     }
   }
 }

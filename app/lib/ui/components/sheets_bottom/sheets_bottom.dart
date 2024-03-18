@@ -11,13 +11,13 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_filter_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom_customization.dart';
 import 'package:ods_flutter_demo/ui/components/sheets_bottom/sheets_bottom_enum.dart';
@@ -37,14 +37,16 @@ class _ComponentSheetsBottomState extends State<ComponentSheetsBottom> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return SheetsBottomCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.sheetsBottomCustomizeTitle,
+          title: l10n.sheetsBottomCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.componentSheetsBottomTitle,
+            title: l10n.componentSheetsBottomTitle,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -64,6 +66,8 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final SheetsBottomCustomizationState? customizationState =
         SheetsBottomCustomization.of(context);
 
@@ -73,10 +77,10 @@ class _BodyState extends State<_Body> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.sheetsBottomDescriptionExample,
+          Text(l10n.sheetsBottomDescriptionExample,
               style: Theme.of(context).textTheme.bodyMedium),
           SizedBox(height: spacingM),
-          Text(AppLocalizations.of(context)!.sheetsBottomSubtitleExample,
+          Text(l10n.sheetsBottomSubtitleExample,
               style: Theme.of(context).textTheme.headlineSmall),
           SizedBox(height: spacingM),
           Wrap(
@@ -90,7 +94,7 @@ class _BodyState extends State<_Body> {
                     currentElement == customizationState.selectedElement;
 
                 return OdsFilterChip(
-                  text: customizationState.elements[index].stringValue(context),
+                  text: customizationState.elements[index].stringValue(l10n),
                   onClick: (selected) {
                     setState(
                       () {

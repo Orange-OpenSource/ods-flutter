@@ -11,9 +11,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
@@ -25,6 +25,8 @@ class ComponentDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
       appBar: MainAppBar(component.title),
       body: SingleChildScrollView(
@@ -50,7 +52,7 @@ class ComponentDetailScreen extends StatelessWidget {
                     top: spacingS,
                     bottom: spacingS),
                 child: Text(
-                  AppLocalizations.of(context)!.componentScreenVariantTitle,
+                  l10n.componentScreenVariantTitle,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),

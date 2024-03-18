@@ -11,10 +11,10 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/ui/about/detail/about_file_screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -49,6 +49,8 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -63,27 +65,27 @@ class _AboutScreenState extends State<AboutScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(AppLocalizations.of(context)!.aboutScreenTitle,
+                    Text(l10n.aboutScreenTitle,
                         style: Theme.of(context).textTheme.headlineLarge),
                     SizedBox(height: spacingXs),
                     Text(
                         'Version ${_packageInfo.version} (build ${_packageInfo.buildNumber})',
                         style: Theme.of(context).textTheme.bodySmall),
                     SizedBox(height: spacingM),
-                    Text(AppLocalizations.of(context)!.aboutScreenDescription,
+                    Text(l10n.aboutScreenDescription,
                         style: Theme.of(context).textTheme.bodyMedium),
                   ],
                 ),
               ),
               OdsListItem(
-                title: AppLocalizations.of(context)!.aboutMenuChangelog,
+                title: l10n.aboutMenuChangelog,
                 image: ImageIcon(
                   AssetImage('assets/ic_task_list.png'),
                 ),
                 onClick: () {
                   Get.to(
                     OdsAboutFileScreen(
-                      title: AppLocalizations.of(context)!.aboutMenuChangelog,
+                      title: l10n.aboutMenuChangelog,
                       fileMenuItem: 'CHANGELOG.md',
                       darkModeEnabled:
                           Theme.of(context).brightness == Brightness.light,

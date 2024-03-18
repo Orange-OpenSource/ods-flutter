@@ -13,12 +13,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/button/ods_text_button.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_vertical_header_first_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -42,15 +42,16 @@ class _CardVerticalHeaderFirstState extends State<CardVerticalHeaderFirst> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return CardCustomization(
       child: Scaffold(
           bottomSheet: OdsSheetsBottom(
             sheetContent: _CustomizationContent(),
-            title: AppLocalizations.of(context)!.componentCustomizeTitle,
+            title: l10n.componentCustomizeTitle,
           ),
           key: _scaffoldKey,
-          appBar: MainAppBar(
-              AppLocalizations.of(context)!.componentCardVerticalHeaderFirst),
+          appBar: MainAppBar(l10n.componentCardVerticalHeaderFirst),
           body: _Body()),
     );
   }
@@ -62,17 +63,19 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
 
     List<Widget> listButtons = [
       OdsTextButton(
-        text: AppLocalizations.of(context)!.componentElementButton1,
+        text: l10n.componentElementButton1,
         style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
       OdsTextButton(
-        text: AppLocalizations.of(context)!.componentElementButton2,
+        text: l10n.componentElementButton2,
         style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
@@ -133,39 +136,40 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
+
     return SafeArea(
       child: Column(
         children: [
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentCardClickable,
+              title: l10n.componentCardClickable,
               checked: customizationState?.clickable ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.clickable = value;
               }),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!
-                  .componentCardVerticalHeaderFirstThumbnail,
+              title: l10n.componentCardVerticalHeaderFirstThumbnail,
               checked: customizationState?.thumbnail ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.thumbnail = value;
               }),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentElementSubtitle,
+              title: l10n.componentElementSubtitle,
               checked: customizationState?.hasSubtitle ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasSubtitle = value;
               }),
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.componentElementText,
+              title: l10n.componentElementText,
               checked: customizationState?.hasText ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasText = value;
               }),
           ComponentCountRow(
-              title:
-                  AppLocalizations.of(context)!.componentCardActionButtonCount,
+              title: l10n.componentCardActionButtonCount,
               minCount: CardCustomizationState.minNavigationItemCount,
               maxCount: CardCustomizationState.maxNavigationItemCount,
               count: customizationState!.numberOfItems,

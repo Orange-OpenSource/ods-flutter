@@ -11,13 +11,13 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:ods_flutter/components/chips/ods_action_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
@@ -38,14 +38,16 @@ class _ComponentChipsActionState extends State<ComponentChipsAction> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ChipsCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         appBar: OdsAppTopBar(
-            title: AppLocalizations.of(context)!.componentChipAction,
+            title: l10n.componentChipAction,
             actions: [ThemeSelector()],
             navigationIcon: BackButton()),
         body: SafeArea(child: _Body()),
@@ -57,6 +59,8 @@ class _ComponentChipsActionState extends State<ComponentChipsAction> {
 class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ChipsCustomizationState? customizationState =
         ChipsCustomization.of(context);
     var colorScheme = Theme.of(context).colorScheme;
@@ -67,7 +71,7 @@ class _Body extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppLocalizations.of(context)!.componentChipActionDescription,
+          Text(l10n.componentChipActionDescription,
               style: Theme.of(context).textTheme.bodyMedium),
           SizedBox(height: spacingM),
           OdsActionChip(
@@ -86,12 +90,14 @@ class _Body extends StatelessWidget {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ChipsCustomizationState? customizationState =
         ChipsCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-            title: AppLocalizations.of(context)!.componentChipsEnabled,
+            title: l10n.componentChipsEnabled,
             checked: customizationState?.hasEnabled ?? true,
             onCheckedChange: (bool value) {
               customizationState?.hasEnabled = value;

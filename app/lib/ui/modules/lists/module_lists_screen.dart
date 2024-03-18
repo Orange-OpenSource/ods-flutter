@@ -11,13 +11,13 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/chips/ods_choice_chips.dart';
 import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/components/utilities/ods_image_shape.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/list_item/list_customization.dart';
 import 'package:ods_flutter_demo/ui/components/list_item/list_leading_enum.dart';
@@ -41,14 +41,16 @@ class _ModuleListsStandardState extends State<ModuleListsStandard> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return ListCustomization(
       child: Scaffold(
         key: _scaffoldKey,
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
-        appBar: MainAppBar(AppLocalizations.of(context)!.moduleLists),
+        appBar: MainAppBar(l10n.moduleLists),
         body: _Body(),
       ),
     );
@@ -66,6 +68,8 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ListCustomizationState? customizationState =
         ListCustomization.of(context);
     var colorScheme = Theme.of(context).colorScheme;
@@ -113,7 +117,7 @@ class _BodyState extends State<_Body> {
                 : null,
             text: customizationState?.selectedTrailingElement ==
                     ListTrailingEnum.trailingText
-                ? AppLocalizations.of(context)!.listTrailingExampleDetails
+                ? l10n.listTrailingExampleDetails
                 : null,
             divider: true,
             value: isSelectionControl,
@@ -154,13 +158,15 @@ class _CustomizationContentState extends State<_CustomizationContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final ListCustomizationState? customizationState =
         ListCustomization.of(context);
     return SafeArea(
       child: Column(
         children: [
           OdsListSwitch(
-              title: AppLocalizations.of(context)!.listCustomizationSubtitle,
+              title: l10n.listCustomizationSubtitle,
               checked: customizationState?.hasSubtitle ?? true,
               onCheckedChange: (bool value) {
                 customizationState?.hasSubtitle = value;
@@ -170,7 +176,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listLeadingCustomizationTitle,
+                l10n.listLeadingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -191,7 +197,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
                       text: customizationState.leadingElements[index]
-                          .stringValue(context),
+                          .stringValue(l10n),
                       onClick: (selected) {
                         setState(
                           () {
@@ -214,7 +220,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
             child: Padding(
               padding: const EdgeInsets.all(spacingM),
               child: Text(
-                AppLocalizations.of(context)!.listTrailingCustomizationTitle,
+                l10n.listTrailingCustomizationTitle,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.left,
               ),
@@ -235,7 +241,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                     padding: EdgeInsets.only(right: spacingXs, left: spacingS),
                     child: OdsChoiceChip(
                       text: customizationState.trailingElements[index]
-                          .stringValue(context),
+                          .stringValue(l10n),
                       onClick: (selected) {
                         setState(
                           () {

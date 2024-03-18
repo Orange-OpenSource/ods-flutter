@@ -11,7 +11,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 /// ODS Widget for Localization test.
 ///
@@ -20,6 +20,8 @@ class OdsLocalizedComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(OdsLocalizations.of(context)!.localizedComponent);
+    final l10n = context.odsL10n;
+
+    return Text(l10n.localizedComponent);
   }
 }

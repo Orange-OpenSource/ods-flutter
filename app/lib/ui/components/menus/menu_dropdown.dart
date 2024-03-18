@@ -13,13 +13,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/menu/item/ods_dropdown_menu_Item.dart';
 import 'package:ods_flutter/components/menu/ods_dropdown_menu.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/l10n/l10n.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/menus/menu_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -41,14 +41,16 @@ class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     return MenuCustomization(
       child: Scaffold(
         bottomSheet: OdsSheetsBottom(
           sheetContent: _CustomizationContent(),
-          title: AppLocalizations.of(context)!.componentCustomizeTitle,
+          title: l10n.componentCustomizeTitle,
         ),
         key: _scaffoldKey,
-        appBar: MainAppBar(AppLocalizations.of(context)!.componentMenuDropdown),
+        appBar: MainAppBar(l10n.componentMenuDropdown),
         body: _Body(),
       ),
     );
@@ -66,6 +68,8 @@ class __BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final MenuCustomizationState? customizationState =
         MenuCustomization.of(context);
 
@@ -79,7 +83,7 @@ class __BodyState extends State<_Body> {
         Padding(
           padding: const EdgeInsets.all(spacingM),
           child: Text(
-            AppLocalizations.of(context)!.componentMenuDropdownDescription,
+            l10n.componentMenuDropdownDescription,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
@@ -169,12 +173,14 @@ class __BodyState extends State<_Body> {
 class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
     final MenuCustomizationState? customizationState =
         MenuCustomization.of(context);
     return Column(
       children: [
         OdsListSwitch(
-          title: AppLocalizations.of(context)!.componentMenuIcons,
+          title: l10n.componentMenuIcons,
           checked: customizationState?.hasIcon ?? true,
           onCheckedChange: (bool value) {
             customizationState?.hasIcon = value;

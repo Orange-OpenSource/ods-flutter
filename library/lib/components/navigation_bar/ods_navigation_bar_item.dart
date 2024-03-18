@@ -12,7 +12,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
+import 'package:ods_flutter/l10n/l10n.dart';
 
 class OdsNavigationItem extends NavigationDestination {
   OdsNavigationItem({
@@ -31,6 +31,8 @@ class OdsNavigationItem extends NavigationDestination {
   static Widget _buildIcon(
       dynamic iconData, String? badge, BuildContext context,
       {bool isSelected = false}) {
+    final l10n = context.odsL10n;
+
     var colorScheme = Theme.of(context).colorScheme;
     var colorFilter = isSelected
         ? ColorFilter.mode(colorScheme.primary, BlendMode.srcIn)
@@ -63,11 +65,10 @@ class OdsNavigationItem extends NavigationDestination {
     return badge != null
         ? Badge(
             label: Semantics(
-              label:
-                  "${badge!} ${OdsLocalizations.of(context)!.componentNavigationBarNotification}",
+              label: "$badge ${l10n.componentNavigationBarNotification}",
               excludeSemantics: true,
               child: Text(
-                badge!,
+                badge,
                 textScaleFactor: 1.0,
               ),
             ),
