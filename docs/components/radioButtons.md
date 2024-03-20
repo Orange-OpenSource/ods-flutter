@@ -38,7 +38,8 @@ usually unnecessary.
 
 ### Flutter code
 
-In your screen you can use:
+In your screen you can use.
+Add as many "OdsRadioButton" as you wish and place them in a "Column", for example.
 
 ```dart
 enum Options { option1, option2, option3 }
@@ -47,7 +48,13 @@ Options? _selectedOption = Options.option1;
 return OdsRadioButton(
   value: Options.option1,
   groupValue: _selectedOption,
-  onChanged: (Options? value) {}
+  onCheckedChange: (Options? value) {
+    setState(
+        () {
+         _selectedOption = value;
+        },
+      );
+    },
 )
 ```
 

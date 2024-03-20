@@ -80,9 +80,9 @@ You can add icons to the continuous lockups slider like this:
 ```dart
 return OdsSlider(
   value: 20.0,
-  label: sliderValue.round().toString(),
-  leftIcon: Icon(Icons.volume_mute),
-  rightIcon: Icon(Icons.volume_up),
+  displayValue: 20.0.round().toString(),
+  startIcon: Icon(Icons.volume_mute),
+  endIcon: Icon(Icons.volume_up),
 );
 ```
 
@@ -112,8 +112,8 @@ You can add icons to the discrete slider like this:
  return OdsSlider(
   value: 20.0,
   steps: 10,
-  leftIcon: Icon(Icons.volume_mute),
-  rightIcon: Icon(Icons.volume_up),
+  startIcon: Icon(Icons.volume_mute),
+  endIcon: Icon(Icons.volume_up),
 );
 ```
 

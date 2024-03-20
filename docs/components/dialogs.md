@@ -58,6 +58,28 @@ return OdsAlertDialog.openDialog(
 );
 ```
 
+This component should be used after an event, such as clicking a button. Complete example:
+
+```dart
+OdsButton(
+    text: "Open Dialog",
+    style: OdsButtonStyle.functionalPrimary,
+        onClick: () => OdsAlertDialog.openDialog(
+          context: context,
+          title: "title",
+          text: "content text of the dialog",
+          confirmButton: OdsAlertDialogButton(
+            text: "confirm",
+            onClick: () => Navigator.of(context).pop(),
+          ),
+          dismissButton: OdsAlertDialogButton(
+            text: "dismiss",
+            onClick: () => Navigator.of(context).pop(),
+          ),
+        ),
+    ), 
+```
+
 ## Component specific tokens
 
 _Soon available_
