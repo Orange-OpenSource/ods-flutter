@@ -73,10 +73,12 @@ class _BodyState extends State<_Body> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              selected
-                  ? AppLocalizations.of(context)!.buttonsIconSelected
-                  : AppLocalizations.of(context)!.buttonsIconDeselected,
+            ExcludeSemantics(
+              child: Text(
+                selected
+                    ? AppLocalizations.of(context)!.buttonsIconSelected
+                    : AppLocalizations.of(context)!.buttonsIconDeselected,
+              ),
             ),
             OdsButtonIcon(
               icon: Image.asset('assets/ic_heart_deselected.png'),

@@ -11,6 +11,11 @@
     "@_COMPONENTS_NAVIGATION_BAR": {},
     "componentNavigationBarNotification": "Notification(s)",
 
+    "@_COMPONENTS_RADIOBUTTON": {},
+    "componentRadioButton": "Radio button",
+    "componentRadioButtonSelected": "selected",
+    "componentRadioButtonUnselected": "unselected",
+
     "@_COMPONENTS_CHECKBOXES": {},
     "componentCheckboxes": "Checkbox",
     "componentCheckboxesIndeterminate": "indeterminate",
