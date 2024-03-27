@@ -51,56 +51,62 @@ class OdsSmallCard extends StatefulWidget {
 class _OdsSmallCardState extends State<OdsSmallCard> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(odsCardRadius),
-            ),
-            elevation: 2,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: OdsSmallCard._imageHeight,
-                  child: widget.image,
+    return MergeSemantics(
+      child: Semantics(
+        button: widget.onTap != null ? true : false,
+        onTap: widget.onTap,
+        child: Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(odsCardRadius),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(spacingM),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.title,
-                          style: Theme.of(context).textTheme.titleMedium,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        if (widget.subtitle != null)
-                          Text(
-                            widget.subtitle!,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                      ]),
-                )
-              ],
-            ),
-          ),
-        ),
-        if (widget.onTap != null)
-          Positioned.fill(
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: widget.onTap,
+                elevation: 2,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: OdsSmallCard._imageHeight,
+                      child: ExcludeSemantics(child: widget.image),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(spacingM),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.title,
+                              style: Theme.of(context).textTheme.titleMedium,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            if (widget.subtitle != null)
+                              Text(
+                                widget.subtitle!,
+                                style: Theme.of(context).textTheme.bodyMedium,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                          ]),
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-      ],
+            if (widget.onTap != null)
+              Positioned.fill(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: widget.onTap,
+                  ),
+                ),
+              )
+          ],
+        ),
+      ),
     );
   }
 }

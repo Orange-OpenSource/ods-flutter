@@ -166,7 +166,8 @@ class _OdsHorizontalCardState extends State<OdsHorizontalCard> {
                                     child: SizedBox(
                                       width: OdsHorizontalCard._imageWidth,
                                       height: OdsHorizontalCard._imageHeight,
-                                      child: widget.image,
+                                      child:
+                                          ExcludeSemantics(child: widget.image),
                                     ),
                                   )
                               ],

@@ -19,6 +19,7 @@ import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_vertical_header_first_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -51,7 +52,7 @@ class _CardVerticalHeaderFirstState extends State<CardVerticalHeaderFirst> {
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.componentCardVerticalHeaderFirst),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -93,7 +94,8 @@ class _Body extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 91),
+        padding: const EdgeInsets.only(
+            top: spacingM, bottom: 91, left: spacingM, right: spacingM),
         child: OdsVerticalHeaderFirstCard(
           thumbnail: customizationState!.thumbnail
               ? OdsCardThumbnail(

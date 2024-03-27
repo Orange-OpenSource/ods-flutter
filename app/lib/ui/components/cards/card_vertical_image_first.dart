@@ -51,7 +51,7 @@ class _CardVerticalImageFirstState extends State<CardVerticalImageFirst> {
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.cardVerticalImageFirstVariantTitle),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -67,7 +67,7 @@ class _Body extends StatelessWidget {
 
     List<Widget> listButtons = [
       OdsTextButton(
-        text: AppLocalizations.of(context)!.componentElementButton2,
+        text: AppLocalizations.of(context)!.componentElementButton1,
         style: OdsTextButtonStyle.functionalPrimary,
         onClick: () {},
       ),
@@ -95,7 +95,8 @@ class _Body extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: spacingM, bottom: 91),
+            padding: const EdgeInsets.only(
+                top: spacingM, bottom: 91, left: spacingM, right: spacingM),
             child: OdsVerticalImageFirstCard(
               image: OdsCardImage(
                 imageProvider: NetworkImage(recipe.url),
