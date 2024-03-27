@@ -65,7 +65,7 @@ class _OdsDropdownMenuItemState extends State<OdsDropdownMenuItem> {
 
     if (widget.icon != null) {
       itemMenu = ListTile(
-        leading: widget.icon,
+        leading: ExcludeSemantics(child: widget.icon),
         title: Text(widget.text),
       );
     } else {

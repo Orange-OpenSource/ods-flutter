@@ -58,9 +58,8 @@ class _OdsFilterChipState extends State<OdsFilterChip> {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
       child: FilterChip(
-        label: Text(widget.text),
+        label: Text(widget.text, style: Theme.of(context).textTheme.bodyMedium),
         onSelected: widget.enabled != false ? widget.onClick : null,
         selected: widget.selected,
         avatar: widget.leadingAvatar,
