@@ -11,7 +11,6 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:ods_flutter/guidelines/spacings.dart';
 
 /// ODS OdsExposedDropdownMenu.
 ///
@@ -55,20 +54,11 @@ class _OdsExposedDropdownMenuState extends State<OdsExposedDropdownMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(spacingS),
-          child: DropdownMenu(
-            requestFocusOnTap: true,
-            label: Text(widget.label),
-            enabled: widget.enabled,
-            onSelected: widget.selectedItem,
-            dropdownMenuEntries: widget.items,
-          ),
-        ),
-      ],
+    return DropdownMenu(
+      label: Text(widget.label),
+      enabled: widget.enabled,
+      onSelected: widget.selectedItem,
+      dropdownMenuEntries: widget.items,
     );
   }
 }

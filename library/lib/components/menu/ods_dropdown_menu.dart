@@ -43,13 +43,15 @@ class _OdsDropdownMenuState extends State<OdsDropdownMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton(
-      surfaceTintColor: Colors.white,
-      icon: const Icon(Icons.more_vert),
-      itemBuilder: (context) {
-        return widget.items;
-      },
-      onSelected: widget.selectedItem,
+    return Semantics(
+      child: PopupMenuButton(
+        surfaceTintColor: Colors.white,
+        icon: const Icon(Icons.more_vert),
+        itemBuilder: (context) {
+          return widget.items;
+        },
+        onSelected: widget.selectedItem,
+      ),
     );
   }
 }
