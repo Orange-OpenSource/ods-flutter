@@ -72,6 +72,7 @@ class __BodyState extends State<_Body> {
             title: OdsApplication.recipes[0].title,
             value: Options.option1,
             groupValue: _selectedOption,
+            enabled: customizationState?.hasEnabled,
             onCheckedChange: customizationState?.hasEnabled == true
                 ? (Options? value) {
                     setState(
@@ -86,6 +87,7 @@ class __BodyState extends State<_Body> {
             title: OdsApplication.recipes[1].title,
             value: Options.option2,
             groupValue: _selectedOption,
+            enabled: customizationState?.hasEnabled,
             onCheckedChange: customizationState?.hasEnabled == true
                 ? (value) {
                     setState(

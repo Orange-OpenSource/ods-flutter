@@ -50,19 +50,15 @@ class OdsListRadioButton<T> extends StatefulWidget {
 class _OdsRadioButtonState<T> extends State<OdsListRadioButton<T>> {
   @override
   Widget build(BuildContext context) {
-    /*
-    String radioButtonValue = widget.value == null
-        ? OdsLocalizations.of(context)!.componentCheckboxesIndeterminate
-        : widget.value ?? false
-        ? OdsLocalizations.of(context)!.componentCheckboxesChecked
-        : OdsLocalizations.of(context)!.componentCheckboxesUnchecked;
-
-     */
+    String radioButtonValue = widget.value == widget.groupValue
+        ? OdsLocalizations.of(context)!.componentRadioButtonSelected
+        : OdsLocalizations.of(context)!.componentRadioButtonUnselected;
 
     return Semantics(
-      //value: radioButtonValue,
+      label: widget.title,
+      value: radioButtonValue,
       enabled: widget.enabled,
-      hint: OdsLocalizations.of(context)!.componentCheckboxes,
+      hint: OdsLocalizations.of(context)!.componentRadioButton,
       excludeSemantics: true,
       child: RadioListTile<T>(
         title: Text(
