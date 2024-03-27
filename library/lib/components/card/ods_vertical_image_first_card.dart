@@ -84,7 +84,7 @@ class _OdsVerticalImageFirstCardState extends State<OdsVerticalImageFirstCard> {
                         child: SizedBox(
                           width: double.infinity,
                           height: OdsVerticalImageFirstCard._imageHeight,
-                          child: widget.image,
+                          child: ExcludeSemantics(child: widget.image),
                         ),
                       ),
                       Padding(

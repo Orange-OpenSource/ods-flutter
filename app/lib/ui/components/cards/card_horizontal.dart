@@ -53,7 +53,7 @@ class _CardHorizontalState extends State<CardHorizontal> {
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.componentCardHorizontalTitle),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -93,31 +93,27 @@ class _Body extends StatelessWidget {
       secondButton = buttons[1] as OdsTextButton;
     }
 
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(spacingM),
-        child: SingleChildScrollView(
-          child: OdsHorizontalCard(
-            image: OdsCardImage(
-              imageProvider: NetworkImage(recipe.url),
-              contentDescription: '', //Optional
-              alignment: Alignment.center,
-              contentScale: BoxFit.cover,
-            ),
-            title: recipe.title,
-            subtitle: customizationState?.hasSubtitle == true
-                ? recipe.subtitle
-                : null,
-            text:
-                customizationState?.hasText == true ? recipe.description : null,
-            firstButton: firstButton,
-            secondButton: secondButton,
-            imagePosition: customizationState?.selectedElement == CardEnum.start
-                ? OdsHorizontalCardImagePosition.start
-                : OdsHorizontalCardImagePosition.end,
-            divider: customizationState!.hasDivider == true ? true : false,
-            onClick: customizationState.clickable ? () {} : null,
+    return Padding(
+      padding: const EdgeInsets.all(spacingM),
+      child: SingleChildScrollView(
+        child: OdsHorizontalCard(
+          image: OdsCardImage(
+            imageProvider: NetworkImage(recipe.url),
+            contentDescription: '', //Optional
+            alignment: Alignment.center,
+            contentScale: BoxFit.cover,
           ),
+          title: recipe.title,
+          subtitle:
+              customizationState?.hasSubtitle == true ? recipe.subtitle : null,
+          text: customizationState?.hasText == true ? recipe.description : null,
+          firstButton: firstButton,
+          secondButton: secondButton,
+          imagePosition: customizationState?.selectedElement == CardEnum.start
+              ? OdsHorizontalCardImagePosition.start
+              : OdsHorizontalCardImagePosition.end,
+          divider: customizationState!.hasDivider == true ? true : false,
+          onClick: customizationState.clickable ? () {} : null,
         ),
       ),
     );

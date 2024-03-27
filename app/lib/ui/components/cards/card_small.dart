@@ -18,6 +18,7 @@ import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -48,7 +49,7 @@ class _CardSmallState extends State<CardSmall> {
           key: _scaffoldKey,
           appBar:
               MainAppBar(AppLocalizations.of(context)!.cardSmallVariantTitle),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -62,14 +63,16 @@ class _Body extends StatelessWidget {
     final CardCustomizationState? customizationState =
         CardCustomization.of(context);
 
-    return SafeArea(
-      child: OrientationBuilder(
-        builder: (context, orientation) {
-          return GridView.count(
-            crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            childAspectRatio: orientation == Orientation.portrait ? 0.9 : 1.1,
-            children: [
-              Column(
+    return OrientationBuilder(
+      builder: (context, orientation) {
+        return GridView.count(
+          crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+          childAspectRatio: orientation == Orientation.portrait ? 0.9 : 1.1,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(spacingM),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   OdsSmallCard(
                     title: recipe.title,
@@ -86,10 +89,10 @@ class _Body extends StatelessWidget {
                   ),
                 ],
               ),
-            ],
-          );
-        },
-      ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

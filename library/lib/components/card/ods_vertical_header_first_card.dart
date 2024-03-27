@@ -97,7 +97,7 @@ class _OdsVerticalHeaderFirstCardState
                   child: SizedBox(
                     width: double.infinity,
                     height: OdsVerticalHeaderFirstCard._imageHeight,
-                    child: widget.image,
+                    child: ExcludeSemantics(child: widget.image),
                   ),
                 ),
                 if (widget.text != null && widget.text!.isNotEmpty)
