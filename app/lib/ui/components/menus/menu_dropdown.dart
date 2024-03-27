@@ -49,7 +49,7 @@ class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
         ),
         key: _scaffoldKey,
         appBar: MainAppBar(AppLocalizations.of(context)!.componentMenuDropdown),
-        body: _Body(),
+        body: SafeArea(child: _Body()),
       ),
     );
   }
@@ -57,10 +57,10 @@ class _ComponentMenuDropdownState extends State<ComponentMenuDropdown> {
 
 class _Body extends StatefulWidget {
   @override
-  __BodyState createState() => __BodyState();
+  _BodyState createState() => _BodyState();
 }
 
-class __BodyState extends State<_Body> {
+class _BodyState extends State<_Body> {
   var recipe =
       OdsApplication.recipes[Random().nextInt(OdsApplication.recipes.length)];
 
