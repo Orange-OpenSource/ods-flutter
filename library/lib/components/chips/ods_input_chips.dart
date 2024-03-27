@@ -61,7 +61,6 @@ class _OdsInputChipsState extends State<OdsInputChip> {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
       child: ChipTheme(
         data: ChipThemeData(
           iconTheme: const IconThemeData(color: white100),
@@ -77,12 +76,15 @@ class _OdsInputChipsState extends State<OdsInputChip> {
                     : grey800,
           ),
         ),
-        child: InputChip(
-          label: Text(widget.text),
-          avatar: widget.leadingAvatar ?? widget.leadingIcon,
-          deleteIcon: null,
-          onPressed: widget.enabled != false ? widget.onClick : null,
-          onDeleted: widget.onCancel,
+        child: MergeSemantics(
+          child: InputChip(
+            label: Text(widget.text,
+                style: Theme.of(context).textTheme.bodyMedium),
+            avatar: widget.leadingAvatar ?? widget.leadingIcon,
+            deleteIcon: null,
+            onPressed: widget.enabled != false ? widget.onClick : null,
+            onDeleted: widget.onCancel,
+          ),
         ),
       ),
     );

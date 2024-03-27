@@ -60,9 +60,8 @@ class _OdsChoiceChipState extends State<OdsChoiceChip> {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
       child: ChoiceChip(
-        label: Text(widget.text),
+        label: Text(widget.text, style: Theme.of(context).textTheme.bodyMedium),
         onSelected: widget.enabled != false ? widget.onClick : null,
         selected: widget.selected,
         avatar: widget.leadingAvatar,

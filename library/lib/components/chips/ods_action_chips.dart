@@ -51,10 +51,9 @@ class _OdsActionChipState extends State<OdsActionChip> {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
       child: ActionChip(
         label: Text(widget.text),
-        avatar: widget.leadingIcon,
+        avatar: ExcludeSemantics(child: widget.leadingIcon),
         onPressed: widget.enabled != false ? widget.onClick : null,
       ),
     );
