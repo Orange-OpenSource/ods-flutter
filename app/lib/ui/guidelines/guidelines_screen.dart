@@ -15,6 +15,7 @@ import 'package:get/get.dart';
 import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/guidelines/guideline_detail_screen.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_entities.dart';
 
 class GuidelinesScreen extends StatefulWidget {
@@ -47,10 +48,19 @@ class _GuidelinesScreenState extends State<GuidelinesScreen> {
                     contentScale: BoxFit.cover,
                   ),
                   onClick: () {
-                    Get.to(
-                      guideline.screen,
-                      transition: Transition.rightToLeft,
-                    );
+                    if (guideline.screen != null) {
+                      Get.to(
+                        guideline.screen!,
+                        transition: Transition.rightToLeft,
+                      );
+                    } else {
+                      Get.to(
+                        GuidelineDetailScreen(
+                          guideline: guideline,
+                        ),
+                        transition: Transition.rightToLeft,
+                      );
+                    }
                   },
                 ),
               ],

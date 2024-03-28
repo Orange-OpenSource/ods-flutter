@@ -14,8 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/components/card/ods_small_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/components/component_detail_screen.dart';
 import 'package:ods_flutter_demo/ui/components/component_entities.dart';
-import 'package:ods_flutter_demo/ui/components/detail_screen.dart';
 import 'package:ods_flutter_demo/ui/utilities/display_image.dart';
 
 class ComponentsScreen extends StatefulWidget {
@@ -46,7 +46,7 @@ class _ComponentsScreenState extends State<ComponentsScreen> {
     } else {
       /// Mobile Portrait
       crossAxisCount = 2;
-      childAspectRatio = 1.07;
+      childAspectRatio = 0.97;
     }
 
     return SafeArea(

@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 0.8.0+1
+version: 0.9.0+1
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -99,6 +99,40 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+  fonts:
+    - family: Roboto Mono
+      fonts:
+        - asset: assets/fonts/android/RobotoMono-VariableFont_wght.ttf
+        - asset: assets/fonts/android/RobotoMono-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/android/static/RobotoMono-Thin.ttf
+        - asset: assets/fonts/android/static/RobotoMono-ExtraLight.ttf
+        - asset: assets/fonts/android/static/RobotoMono-Light.ttf
+        - asset: assets/fonts/android/static/RobotoMono-Medium.ttf
+        - asset: assets/fonts/android/static/RobotoMono-SemiBold.ttf
+        - asset: assets/fonts/android/static/RobotoMono-Bold.ttf
+        - asset: assets/fonts/android/static/RobotoMono-ThinItalic.ttf
+        - asset: assets/fonts/android/static/RobotoMono-ExtraLightItalic.ttf
+        - asset: assets/fonts/android/static/RobotoMono-LightItalic.ttf
+        - asset: assets/fonts/android/static/RobotoMono-MediumItalic.ttf
+        - asset: assets/fonts/android/static/RobotoMono-SemiBoldItalic.ttf
+        - asset: assets/fonts/android/static/RobotoMono-BoldItalic.ttf
+
+    - family: SF Mono
+      fonts:
+        - asset: assets/fonts/ios/SF-Mono-Bold.otf
+        - asset: assets/fonts/ios/SF-Mono-BoldItalic.otf
+        - asset: assets/fonts/ios/SF-Mono-Heavy.otf
+        - asset: assets/fonts/ios/SF-Mono-HeavyItalic.otf
+        - asset: assets/fonts/ios/SF-Mono-Light.otf
+        - asset: assets/fonts/ios/SF-Mono-LightItalic.otf
+        - asset: assets/fonts/ios/SF-Mono-Medium.otf
+        - asset: assets/fonts/ios/SF-Mono-MediumItalic.otf
+        - asset: assets/fonts/ios/SF-Mono-Regular.otf
+        - asset: assets/fonts/ios/SF-Mono-RegularItalic.otf
+        - asset: assets/fonts/ios/SF-Mono-Semibold.otf
+        - asset: assets/fonts/ios/SF-Mono-SemiboldItalic.otf
+
   # fonts:
   #   - family: Schyler
   #     fonts:

@@ -5,6 +5,20 @@ All notable changes done in ODS library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.9.0) - 2023-04-03
+
+### Added
+
+- Guidelines > Colors ([#330](https://github.com/Orange-OpenSource/ods-flutter/issues/330))
+
+### Changed
+
+- [Bug]: Spacing for the 'Small Card' component ([#342](https://github.com/Orange-OpenSource/ods-flutter/issues/342))
+- [Bug]: Snackbar without action text positioning ([#198](https://github.com/Orange-OpenSource/ods-flutter/issues/198))
+- [Bug]: SheetBottom. Tap to scroll down ([#341](https://github.com/Orange-OpenSource/ods-flutter/issues/341))
+- [Bug]: About - store reference ([#356](https://github.com/Orange-OpenSource/ods-flutter/issues/356))
+
+
 ## [0.8.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.8.0) - 2023-03-02
 
 ### Added

@@ -253,7 +253,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           child: Text(
                             AppLocalizations.of(context)!
                                 .componentTextFieldInputType,
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -306,7 +306,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           padding: const EdgeInsets.all(spacingM),
                           child: Text(
                             AppLocalizations.of(context)!.componentState,
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -359,7 +359,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           child: Text(
                             AppLocalizations.of(context)!
                                 .componentElementTrailing,
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -424,7 +424,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           child: Text(
                             AppLocalizations.of(context)!
                                 .componentTextFieldKeyboardType,
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -497,7 +497,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                           child: Text(
                             AppLocalizations.of(context)!
                                 .componentTextFieldKeyboardAction,
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.titleMedium,
                             textAlign: TextAlign.left,
                           ),
                         ),

@@ -18,7 +18,19 @@ class Guideline {
   String title;
   String imageResourceName;
   String description;
-  Widget screen;
+  Widget? screen;
+  List<Variant?>? variants;
 
   Guideline(this.title, this.imageResourceName, this.description, this.screen);
+
+  Guideline.withVariant(
+      this.title, this.imageResourceName, this.description, this.variants);
+}
+
+class Variant {
+  String title;
+  String technicalName;
+  Widget screen;
+
+  Variant(this.title, this.technicalName, this.screen);
 }
