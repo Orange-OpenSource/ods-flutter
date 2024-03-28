@@ -37,7 +37,7 @@
         @media (min-width: 1024px) {
             body > .container-xxl,
             body > .container-xxl > .row {
-                min-height: calc(100vh - 280px);
+                min-height: calc(100vh - 320px);
             }
         }
     </style>
@@ -56,11 +56,18 @@
         <div class="row">
 
             <div class="col-lg-3" aria-label="Global navigation of ODS iOS">
-                <aside class="h-100 border-end border-1 border-light overflow-auto z-offcanvas" style="position: sticky; top: 120px; max-height: calc(100vh - 180px);">
+                <aside class="h-100 border-end border-1 border-light overflow-auto z-offcanvas" style="position: sticky; top: 160px; max-height: calc(100vh - 220px);">
 
-                    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasWrapper" aria-labelledby="offcanvasWrapperLabel" style="--bs-offcanvas-width: 300px;">
+                    <div class="offcanvas-lg offcanvas-end border-0" tabindex="-1" id="offcanvasWrapper" aria-labelledby="offcanvasWrapperLabel" style="--bs-offcanvas-width: 100%;">
+                        <nav class="d-lg-none navbar navbar-expand supra ps-3" data-bs-theme="dark" aria-label="Supra navigation of ODS Flutter">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="#" class="nav-link">ODS Android</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">ODS iOS</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">ODS Flutter</a></li>
+                            </ul>
+                        </nav>
                         <div class="offcanvas-header border-bottom border-1 border-light">
-                            <h5 class="offcanvas-title" id="offcanvasWrapperLabel">ODS iOS navigation</h5>
+                            <h5 class="offcanvas-title" id="offcanvasWrapperLabel">ODS Flutter navigation</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasWrapper" style="margin-right: -.625rem;"><span class="visually-hidden">Close</span></button>
                         </div>
                         <nav class="offcanvas-body d-flex flex-column pb-4 pb-lg-0 pe-1 gap-4">
