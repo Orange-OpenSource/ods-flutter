@@ -25,5 +25,11 @@
     "@_COMPONENTS_SWITCHES": {},
     "componentSwitches": "Switch",
     "componentSwitchesChecked": "activated",
-    "componentSwitchesUnchecked": "deactivated"
+    "componentSwitchesUnchecked": "deactivated",
+
+    "@_COMPONENTS_TEXTFIELD": {},
+    "componentTextFieldActionObscure": "Show/Hide Password",
+    "componentTextFieldHidden": "Hidden text",
+    "componentTextFieldVisible": "Visible text"
+
 }

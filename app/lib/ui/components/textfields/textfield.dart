@@ -77,7 +77,7 @@ class _ComponentTextFieldState extends State<ComponentTextField> {
               ),
             ],
           ),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -162,7 +162,8 @@ class _BodyState extends State<_Body> {
     }
 
     return Padding(
-      padding: const EdgeInsets.all(spacingS),
+      padding: const EdgeInsets.only(
+          top: spacingL, left: spacingS, right: spacingS, bottom: spacingS),
       child: OdsTextField(
         controller: controllerTextField,
         enabled:

@@ -11,6 +11,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
+import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
 /// ODS OdsPasswordTextField.
 ///
@@ -81,43 +83,55 @@ class _OdsPasswordTextFieldState extends State<OdsPasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: widget.controller,
-      obscureText: widget.visualisationIcon == true ? isObscureText : true,
-      keyboardType: widget.keyboardType,
-      textInputAction: widget.keyboardActions,
-      onChanged: widget.onValueChange,
-      textCapitalization: widget.textCapitalization == true
-          ? TextCapitalization.characters
-          : TextCapitalization.none,
-      keyboardAppearance: Theme.of(context).brightness == Brightness.dark
-          ? Brightness.dark
-          : Brightness.light,
-      maxLength: widget.characterCounter,
-      enabled: widget.enabled,
-      decoration: InputDecoration(
-        suffixIcon: widget.visualisationIcon == true
-            ? IconButton(
-                icon: isObscureText
-                    ? const Icon(
-                        Icons.visibility_off_outlined,
-                      )
-                    : const Icon(
-                        Icons.visibility_outlined,
-                      ),
-                onPressed: () {
-                  setState(
-                    () {
-                      isObscureText = !isObscureText;
-                    },
-                  );
-                },
-              )
-            : null,
-        labelText: widget.label,
-        errorText: widget.errorMessage,
-        border: const OutlineInputBorder(),
-        filled: false,
+    return MergeSemantics(
+      child: Semantics(
+        customSemanticsActions: <CustomSemanticsAction, VoidCallback>{
+          CustomSemanticsAction(
+              label:
+                  OdsLocalizations.of(context)!.componentSwitchesChecked): () {
+            setState(() {
+              isObscureText = !isObscureText;
+            });
+          },
+        },
+        child: TextField(
+          controller: widget.controller,
+          obscureText: isObscureText,
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.keyboardActions,
+          onChanged: widget.onValueChange,
+          textCapitalization: widget.textCapitalization == true
+              ? TextCapitalization.characters
+              : TextCapitalization.none,
+          keyboardAppearance: Theme.of(context).brightness == Brightness.dark
+              ? Brightness.dark
+              : Brightness.light,
+          maxLength: widget.characterCounter,
+          enabled: widget.enabled,
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+              icon: isObscureText
+                  ? const Icon(
+                      Icons.visibility_off_outlined,
+                    )
+                  : const Icon(
+                      Icons.visibility_outlined,
+                    ),
+              onPressed: () {
+                setState(() {
+                  isObscureText = !isObscureText;
+                });
+              },
+              tooltip: isObscureText
+                  ? OdsLocalizations.of(context)!.componentTextFieldHidden
+                  : OdsLocalizations.of(context)!.componentTextFieldVisible,
+            ),
+            labelText: widget.label,
+            errorText: widget.errorMessage,
+            border: const OutlineInputBorder(),
+            filled: false,
+          ),
+        ),
       ),
     );
   }
