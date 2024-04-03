@@ -613,11 +613,11 @@ class OdsTheme {
         ),
         foregroundColor: MaterialStateProperty.resolveWith(
           (Set<MaterialState> states) {
-            if (!states.contains(MaterialState.disabled)) {
-              return states.contains(MaterialState.selected)
-                  ? darkColorScheme.onSecondary
-                  : darkColorScheme.secondary;
-            }
+            if (states.contains(MaterialState.disabled)) return null;
+
+            return states.contains(MaterialState.selected)
+                ? darkColorScheme.onSecondary
+                : darkColorScheme.secondary;
           },
         ),
       ),

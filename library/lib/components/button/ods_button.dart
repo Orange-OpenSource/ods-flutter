@@ -42,7 +42,7 @@ enum OdsButtonStyle {
 ///
 /// Displays a customizable button with an optional icon and a title.
 /// The button can expand to full screen width if specified.
-class OdsButton extends StatefulWidget {
+class OdsButton extends StatelessWidget {
   /// Creates an ODS Button.
   ///
   /// * [text] - Text displayed in the button.
@@ -74,53 +74,64 @@ class OdsButton extends StatefulWidget {
   /// The background style.
   final OdsButtonStyle style;
 
-  @override
-  State<OdsButton> createState() => _OdsButtonState();
-}
-
-class _OdsButtonState extends State<OdsButton> {
   static const double minimumWidthButtonIcon = 108;
   static const double minimumHeightButtonIcon = 40;
 
-  OdsButtonColors getColorsForStyle(OdsButtonStyle? style) {
-    switch (style) {
-      case OdsButtonStyle.functionalPrimary:
-        return OdsButtonColors(
-            background: Theme.of(context).colorScheme.primary,
-            text: Theme.of(context).colorScheme.onPrimary,
-            icon: Theme.of(context).colorScheme.onPrimary,
-            textDisabled: grey500);
-      case OdsButtonStyle.functionalDefault:
-        return OdsButtonColors(
-            background: Theme.of(context).colorScheme.secondary,
-            text: Theme.of(context).colorScheme.onSecondary,
-            icon: Theme.of(context).colorScheme.onSecondary,
-            textDisabled: grey500);
-      case OdsButtonStyle.functionalPositive:
-        return OdsButtonColors(
-            background: positive200,
-            text: Theme.of(context).colorScheme.onSecondary,
-            icon: Theme.of(context).colorScheme.onSecondary,
-            textDisabled: grey500);
-      case OdsButtonStyle.functionalNegative:
-        return OdsButtonColors(
-            background: Theme.of(context).colorScheme.error,
-            text: Theme.of(context).colorScheme.onSecondary,
-            icon: Theme.of(context).colorScheme.onSecondary,
-            textDisabled: grey500);
-      default:
-        return OdsButtonColors(
-            background: Theme.of(context).colorScheme.primary,
-            text: black900,
-            textDisabled: grey500);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final styleButtonColor = getColorsForStyle(widget.style);
+    OdsButtonColors getColorsForStyle(OdsButtonStyle? style) {
+      switch (style) {
+        case OdsButtonStyle.functionalPrimary:
+          return OdsButtonColors(
+              background: Theme.of(context).colorScheme.primary,
+              text: Theme.of(context).colorScheme.onPrimary,
+              icon: Theme.of(context).colorScheme.onPrimary,
+              textDisabled: grey500);
+        case OdsButtonStyle.functionalDefault:
+          return OdsButtonColors(
+              background: Theme.of(context).colorScheme.secondary,
+              text: Theme.of(context).colorScheme.onSecondary,
+              icon: Theme.of(context).colorScheme.onSecondary,
+              textDisabled: grey500);
+        case OdsButtonStyle.functionalPositive:
+          return OdsButtonColors(
+              background: positive200,
+              text: Theme.of(context).colorScheme.onSecondary,
+              icon: Theme.of(context).colorScheme.onSecondary,
+              textDisabled: grey500);
+        case OdsButtonStyle.functionalNegative:
+          return OdsButtonColors(
+              background: Theme.of(context).colorScheme.error,
+              text: Theme.of(context).colorScheme.onSecondary,
+              icon: Theme.of(context).colorScheme.onSecondary,
+              textDisabled: grey500);
+        default:
+          return OdsButtonColors(
+              background: Theme.of(context).colorScheme.primary,
+              text: black900,
+              textDisabled: grey500);
+      }
+    }
 
-    if (widget.icon != null && widget.fullWidth == false) {
+    ///Color Filter
+    Widget colorDefaultFilter() {
+      final styleButtonColor = getColorsForStyle(style);
+      return ColorFiltered(
+        colorFilter: ColorFilter.mode(styleButtonColor.icon!, BlendMode.srcIn),
+        child: icon,
+      );
+    }
+
+    Widget colorEnableFilter() {
+      return ColorFiltered(
+        colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
+        child: icon,
+      );
+    }
+
+    final styleButtonColor = getColorsForStyle(style);
+
+    if (icon != null && fullWidth == false) {
       return SizedBox(
         child: FilledButton.icon(
           style: FilledButton.styleFrom(
@@ -130,17 +141,15 @@ class _OdsButtonState extends State<OdsButton> {
                 spacingM, spacingS, spacingL, spacingS),
             backgroundColor: styleButtonColor.background,
           ),
-          onPressed: widget.onClick,
+          onPressed: onClick,
           icon: ExcludeSemantics(
             excluding: true,
-            child: widget.onClick != null
-                ? colorDefaultFilter()
-                : _colorEnableFilter(),
+            child: onClick != null ? colorDefaultFilter() : colorEnableFilter(),
           ),
           label: Text(
-            widget.text,
+            text,
             style: TextStyle(
-              color: widget.onClick != null
+              color: onClick != null
                   ? styleButtonColor.text
                   : styleButtonColor.textDisabled,
             ),
@@ -149,21 +158,19 @@ class _OdsButtonState extends State<OdsButton> {
       );
     }
 
-    if (widget.icon != null && widget.fullWidth == true) {
+    if (icon != null && fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: FilledButton.icon(
-          onPressed: widget.onClick,
+          onPressed: onClick,
           icon: ExcludeSemantics(
             excluding: true,
-            child: widget.onClick != null
-                ? colorDefaultFilter()
-                : _colorEnableFilter(),
+            child: onClick != null ? colorDefaultFilter() : colorEnableFilter(),
           ),
           label: Text(
-            widget.text,
+            text,
             style: TextStyle(
-              color: widget.onClick != null
+              color: onClick != null
                   ? styleButtonColor.text
                   : styleButtonColor.textDisabled,
             ),
@@ -174,17 +181,17 @@ class _OdsButtonState extends State<OdsButton> {
       );
     }
 
-    if (widget.fullWidth == true) {
+    if (fullWidth == true) {
       return SizedBox(
         width: double.infinity,
         child: FilledButton(
-          onPressed: widget.onClick,
+          onPressed: onClick,
           style: FilledButton.styleFrom(
               backgroundColor: styleButtonColor.background),
           child: Text(
-            widget.text,
+            text,
             style: TextStyle(
-              color: widget.onClick != null
+              color: onClick != null
                   ? styleButtonColor.text
                   : styleButtonColor.textDisabled,
             ),
@@ -194,33 +201,17 @@ class _OdsButtonState extends State<OdsButton> {
     }
 
     return FilledButton(
-      onPressed: widget.onClick,
+      onPressed: onClick,
       style:
           FilledButton.styleFrom(backgroundColor: styleButtonColor.background),
       child: Text(
-        widget.text,
+        text,
         style: TextStyle(
-          color: widget.onClick != null
+          color: onClick != null
               ? styleButtonColor.text
               : styleButtonColor.textDisabled,
         ),
       ),
-    );
-  }
-
-  ///Color Filter
-  Widget colorDefaultFilter() {
-    final styleButtonColor = getColorsForStyle(widget.style);
-    return ColorFiltered(
-      colorFilter: ColorFilter.mode(styleButtonColor.icon!, BlendMode.srcIn),
-      child: widget.icon,
-    );
-  }
-
-  Widget _colorEnableFilter() {
-    return ColorFiltered(
-      colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
-      child: widget.icon,
     );
   }
 }

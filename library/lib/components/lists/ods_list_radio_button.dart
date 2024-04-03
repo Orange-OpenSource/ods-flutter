@@ -17,7 +17,7 @@ import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 ///
 /// The OdsCheckbox widget represents a checkbox element that can be checked or unchecked.
 /// It allows for handling the checkbox state and triggering a callback when its state changes.
-class OdsListRadioButton<T> extends StatefulWidget {
+class OdsListRadioButton<T> extends StatelessWidget {
   /// Creates an ODS OdsListRadioButton.
   const OdsListRadioButton({
     Key? key,
@@ -44,34 +44,25 @@ class OdsListRadioButton<T> extends StatefulWidget {
   final bool? enabled;
 
   @override
-  State<OdsListRadioButton<T>> createState() => _OdsRadioButtonState<T>();
-}
-
-class _OdsRadioButtonState<T> extends State<OdsListRadioButton<T>> {
-  @override
   Widget build(BuildContext context) {
-    /*
-    String radioButtonValue = widget.value == null
-        ? OdsLocalizations.of(context)!.componentCheckboxesIndeterminate
-        : widget.value ?? false
-        ? OdsLocalizations.of(context)!.componentCheckboxesChecked
-        : OdsLocalizations.of(context)!.componentCheckboxesUnchecked;
-
-     */
+    String radioButtonValue = value == groupValue
+        ? OdsLocalizations.of(context)!.componentRadioButtonSelected
+        : OdsLocalizations.of(context)!.componentRadioButtonUnselected;
 
     return Semantics(
-      //value: radioButtonValue,
-      enabled: widget.enabled,
-      hint: OdsLocalizations.of(context)!.componentCheckboxes,
+      label: title,
+      value: radioButtonValue,
+      enabled: enabled,
+      hint: OdsLocalizations.of(context)!.componentRadioButton,
       excludeSemantics: true,
       child: RadioListTile<T>(
         title: Text(
-          widget.title,
+          title,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        value: widget.value,
-        onChanged: widget.enabled != false ? widget.onCheckedChange : null,
-        groupValue: widget.groupValue,
+        value: value,
+        onChanged: enabled != false ? onCheckedChange : null,
+        groupValue: groupValue,
       ),
     );
   }

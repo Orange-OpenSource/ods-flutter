@@ -24,19 +24,8 @@ import 'package:ods_flutter_demo/ui/components/chips/chips_customization.dart';
 import 'package:ods_flutter_demo/ui/components/chips/chips_enum.dart';
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 
-class ComponentChipsFilter extends StatefulWidget {
+class ComponentChipsFilter extends StatelessWidget {
   const ComponentChipsFilter({super.key});
-  @override
-  State<ComponentChipsFilter> createState() => _ComponentChipsFilterState();
-}
-
-class _ComponentChipsFilterState extends State<ComponentChipsFilter> {
-  bool isFiltered = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

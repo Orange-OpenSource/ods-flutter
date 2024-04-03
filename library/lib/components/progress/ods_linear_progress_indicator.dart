@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 
-class OdsLinearProgressIndicator extends StatefulWidget {
+class OdsLinearProgressIndicator extends StatelessWidget {
   /// ODS CircularProgressIndicator.
   const OdsLinearProgressIndicator({
     Key? key,
@@ -37,18 +37,6 @@ class OdsLinearProgressIndicator extends StatefulWidget {
   final bool? showCurrentValue;
 
   @override
-  State<OdsLinearProgressIndicator> createState() =>
-      _OdsLinearProgressIndicatorState();
-}
-
-class _OdsLinearProgressIndicatorState
-    extends State<OdsLinearProgressIndicator> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MergeSemantics(
       child: Column(
@@ -58,14 +46,14 @@ class _OdsLinearProgressIndicatorState
             padding: const EdgeInsets.only(top: spacingS, bottom: spacingS),
             child: Row(
               children: [
-                if (widget.icon != null) ...[
-                  widget.icon!,
+                if (icon != null) ...[
+                  icon!,
                   const SizedBox(width: 8),
                 ],
-                if (widget.label != null)
+                if (label != null)
                   Flexible(
                     child: Text(
-                      widget.label!,
+                      label!,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
@@ -73,7 +61,7 @@ class _OdsLinearProgressIndicatorState
             ),
           ),
           TweenAnimationBuilder<double>(
-            tween: Tween(begin: 0.0, end: widget.progress ?? 0.0),
+            tween: Tween(begin: 0.0, end: progress ?? 0.0),
             duration: const Duration(seconds: 5),
             builder: (BuildContext context, double value, Widget? child) {
               final progressValue = value * 100;
@@ -84,19 +72,19 @@ class _OdsLinearProgressIndicatorState
                   LinearProgressIndicator(
                     semanticsLabel:
                         OdsLocalizations.of(context)!.componentProgressTitle,
-                    value: widget.progress != null ? value : null,
+                    value: progress != null ? value : null,
                   ),
                   ExcludeSemantics(
                     child: Padding(
                       padding: const EdgeInsets.only(
                           top: spacingS, bottom: spacingS),
-                      child: widget.showCurrentValue == true &&
-                              widget.showCurrentValue != null
-                          ? Text(
-                              "${progressValue.toInt()} %",
-                              style: Theme.of(context).textTheme.bodyMedium,
-                            )
-                          : null,
+                      child:
+                          showCurrentValue == true && showCurrentValue != null
+                              ? Text(
+                                  "${progressValue.toInt()} %",
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                )
+                              : null,
                     ),
                   ),
                 ],

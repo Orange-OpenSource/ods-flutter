@@ -28,7 +28,7 @@ enum OdsButtonIconStyle {
 ///
 /// Displays a customizable button with an optional icon and a title.
 /// The button can expand to full screen width if specified.
-class OdsButtonIcon extends StatefulWidget {
+class OdsButtonIcon extends StatelessWidget {
   /// Creates an ODS Button.
   ///
   /// * [isSelected] - The optional selection state of the icon button.
@@ -67,114 +67,110 @@ class OdsButtonIcon extends StatefulWidget {
   final OdsButtonIconStyle style;
 
   @override
-  State<OdsButtonIcon> createState() => _OdsButtonState();
-}
-
-class _OdsButtonState extends State<OdsButtonIcon> {
-  @override
   Widget build(BuildContext context) {
     final ColorScheme colors = Theme.of(context).colorScheme;
-    ButtonStyle? getColorsForStyle(OdsButtonIconStyle? style) {
+    ButtonStyle? getColorsForStyle(OdsButtonIconStyle style) {
       switch (style) {
         case OdsButtonIconStyle.functionalStandard:
           return null;
         case OdsButtonIconStyle.functionalFilled:
-          return enabledFilledButtonStyle(widget.isSelected, colors);
+          return enabledFilledButtonStyle(isSelected, colors);
         case OdsButtonIconStyle.functionalTonal:
-          return enabledFilledTonalButtonStyle(widget.isSelected, colors);
+          return enabledFilledTonalButtonStyle(isSelected, colors);
         case OdsButtonIconStyle.functionalOutlined:
-          return enabledOutlinedButtonStyle(widget.isSelected, colors);
+          return enabledOutlinedButtonStyle(isSelected, colors);
       }
+      return null;
     }
 
-    final styleButtonColor = getColorsForStyle(widget.style);
+    final styleButtonColor = getColorsForStyle(style);
 
     return IconButton(
       visualDensity: VisualDensity.standard,
-      isSelected: widget.isSelected,
+      isSelected: isSelected,
       icon: colorDeselectedFilter(colors),
-      selectedIcon: colorSelectedFilter(widget.isSelected, colors),
-      onPressed: widget.isEnabled ? widget.onClick : null,
+      selectedIcon: colorSelectedFilter(isSelected, colors),
+      onPressed: isEnabled ? onClick : null,
       style: styleButtonColor,
     );
   }
 
   ///Color Filter
   Widget colorDeselectedFilter(ColorScheme colors) {
-    switch (widget.style) {
+    switch (style) {
       case OdsButtonIconStyle.functionalStandard:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.secondary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.icon,
+          child: icon,
         );
       case OdsButtonIconStyle.functionalFilled:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.primary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.icon,
+          child: icon,
         );
       case OdsButtonIconStyle.functionalTonal:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.secondary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.icon,
+          child: icon,
         );
       case OdsButtonIconStyle.functionalOutlined:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.secondary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.icon,
+          child: icon,
         );
       default:
-        return widget.icon;
+        return icon;
     }
   }
 
   Widget? colorSelectedFilter(bool selected, ColorScheme colors) {
-    switch (widget.style) {
+    switch (style) {
       case OdsButtonIconStyle.functionalStandard:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.primary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.selectedIcon,
+          child: selectedIcon,
         );
       case OdsButtonIconStyle.functionalFilled:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.onPrimary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.selectedIcon,
+          child: selectedIcon,
         );
       case OdsButtonIconStyle.functionalTonal:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.onSecondary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.selectedIcon,
+          child: selectedIcon,
         );
       case OdsButtonIconStyle.functionalOutlined:
         return ColorFiltered(
-          colorFilter: widget.isEnabled
+          colorFilter: isEnabled
               ? ColorFilter.mode(colors.primary, BlendMode.srcIn)
               : ColorFilter.mode(
                   colors.onSurface.withOpacity(0.38), BlendMode.srcIn),
-          child: widget.selectedIcon,
+          child: selectedIcon,
         );
       default:
-        return widget.selectedIcon;
+        return selectedIcon;
     }
   }
 
@@ -230,7 +226,7 @@ class _OdsButtonState extends State<OdsButtonIcon> {
           ? colors.onSurface.withOpacity(0.12)
           : colors.onSurface.withOpacity(0.12),
       side: BorderSide(
-        color: !widget.isEnabled
+        color: !isEnabled
             ? colors.onSurface.withOpacity(0.38)
             : (selected ? colors.primary : colors.outline),
       ),

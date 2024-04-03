@@ -17,7 +17,7 @@ import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 ///
 /// The OdsListCheckbox widget represents a checkbox list element that can be checked or unchecked.
 /// It allows for handling the checkbox list state and triggering a callback when its state changes.
-class OdsListCheckbox extends StatefulWidget {
+class OdsListCheckbox extends StatelessWidget {
   /// Creates an ODS Checkbox list.
   const OdsListCheckbox({
     Key? key,
@@ -44,32 +44,27 @@ class OdsListCheckbox extends StatefulWidget {
   final bool indeterminate;
 
   @override
-  State<OdsListCheckbox> createState() => _OdsListCheckboxState();
-}
-
-class _OdsListCheckboxState extends State<OdsListCheckbox> {
-  @override
   Widget build(BuildContext context) {
-    String checkBoxValue = widget.checked == null
+    String checkBoxValue = checked == null
         ? OdsLocalizations.of(context)!.componentCheckboxesIndeterminate
-        : widget.checked ?? false
+        : checked ?? false
             ? OdsLocalizations.of(context)!.componentCheckboxesChecked
             : OdsLocalizations.of(context)!.componentCheckboxesUnchecked;
 
     return Semantics(
-      label: widget.title,
+      label: title,
       value: checkBoxValue,
-      enabled: widget.enabled,
+      enabled: enabled,
       hint: OdsLocalizations.of(context)!.componentCheckboxes,
       excludeSemantics: true,
       child: CheckboxListTile(
         title: Text(
-          widget.title,
+          title,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        value: widget.checked,
-        onChanged: widget.enabled != false ? widget.onCheckedChange : null,
-        tristate: widget.indeterminate,
+        value: checked,
+        onChanged: enabled != false ? onCheckedChange : null,
+        tristate: indeterminate,
       ),
     );
   }

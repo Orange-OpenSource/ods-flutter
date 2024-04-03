@@ -19,7 +19,7 @@ import 'package:ods_flutter/theme/ods_theme.dart';
 /// Cards contain content and actions about a single subject.
 ///
 /// A ripple effect is managed on card click.
-class OdsSmallCard extends StatefulWidget {
+class OdsSmallCard extends StatelessWidget {
   /// Creates an ODS Small card.
   const OdsSmallCard({
     Key? key,
@@ -45,62 +45,63 @@ class OdsSmallCard extends StatefulWidget {
   final Function()? onTap;
 
   @override
-  State<OdsSmallCard> createState() => _OdsSmallCardState();
-}
-
-class _OdsSmallCardState extends State<OdsSmallCard> {
-  @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(odsCardRadius),
-            ),
-            elevation: 2,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: OdsSmallCard._imageHeight,
-                  child: widget.image,
+    return MergeSemantics(
+      child: Semantics(
+        button: onTap != null ? true : false,
+        onTap: onTap,
+        child: Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(odsCardRadius),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(spacingM),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.title,
-                          style: Theme.of(context).textTheme.titleMedium,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        if (widget.subtitle != null)
-                          Text(
-                            widget.subtitle!,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                      ]),
-                )
-              ],
-            ),
-          ),
-        ),
-        if (widget.onTap != null)
-          Positioned.fill(
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: widget.onTap,
+                elevation: 2,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: OdsSmallCard._imageHeight,
+                      child: ExcludeSemantics(child: image),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(spacingM),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: Theme.of(context).textTheme.titleMedium,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            if (subtitle != null)
+                              Text(
+                                subtitle!,
+                                style: Theme.of(context).textTheme.bodyMedium,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                          ]),
+                    )
+                  ],
+                ),
               ),
             ),
-          )
-      ],
+            if (onTap != null)
+              Positioned.fill(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: onTap,
+                  ),
+                ),
+              )
+          ],
+        ),
+      ),
     );
   }
 }

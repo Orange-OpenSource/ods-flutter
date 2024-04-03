@@ -17,23 +17,18 @@ import 'package:ods_flutter/components/card/ods_vertical_image_first_card.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/modules/modules_entities.dart';
 
-class ModulesScreen extends StatefulWidget {
-  final List<Module> odsModules;
-
+class ModulesScreen extends StatelessWidget {
   ModulesScreen({required this.odsModules});
 
-  @override
-  State<ModulesScreen> createState() => _ModulesScreenState();
-}
+  final List<Module> odsModules;
 
-class _ModulesScreenState extends State<ModulesScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: ListView.builder(
-        itemCount: widget.odsModules.length,
+        itemCount: odsModules.length,
         itemBuilder: (context, index) {
-          var module = widget.odsModules[index];
+          var module = odsModules[index];
           return Padding(
             padding: const EdgeInsets.all(spacingS),
             child: Column(

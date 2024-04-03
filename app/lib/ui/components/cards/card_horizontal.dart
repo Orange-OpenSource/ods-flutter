@@ -27,20 +27,10 @@ import 'package:ods_flutter_demo/ui/components/cards/card_enum.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class CardHorizontal extends StatefulWidget {
-  const CardHorizontal({super.key});
+class CardHorizontal extends StatelessWidget {
+  CardHorizontal({super.key});
 
-  @override
-  State<CardHorizontal> createState() => _CardHorizontalState();
-}
-
-class _CardHorizontalState extends State<CardHorizontal> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +43,7 @@ class _CardHorizontalState extends State<CardHorizontal> {
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.componentCardHorizontalTitle),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -93,31 +83,27 @@ class _Body extends StatelessWidget {
       secondButton = buttons[1] as OdsTextButton;
     }
 
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(spacingM),
-        child: SingleChildScrollView(
-          child: OdsHorizontalCard(
-            image: OdsCardImage(
-              imageProvider: NetworkImage(recipe.url),
-              contentDescription: '', //Optional
-              alignment: Alignment.center,
-              contentScale: BoxFit.cover,
-            ),
-            title: recipe.title,
-            subtitle: customizationState?.hasSubtitle == true
-                ? recipe.subtitle
-                : null,
-            text:
-                customizationState?.hasText == true ? recipe.description : null,
-            firstButton: firstButton,
-            secondButton: secondButton,
-            imagePosition: customizationState?.selectedElement == CardEnum.start
-                ? OdsHorizontalCardImagePosition.start
-                : OdsHorizontalCardImagePosition.end,
-            divider: customizationState!.hasDivider == true ? true : false,
-            onClick: customizationState.clickable ? () {} : null,
+    return Padding(
+      padding: const EdgeInsets.all(spacingM),
+      child: SingleChildScrollView(
+        child: OdsHorizontalCard(
+          image: OdsCardImage(
+            imageProvider: NetworkImage(recipe.url),
+            contentDescription: '', //Optional
+            alignment: Alignment.center,
+            contentScale: BoxFit.cover,
           ),
+          title: recipe.title,
+          subtitle:
+              customizationState?.hasSubtitle == true ? recipe.subtitle : null,
+          text: customizationState?.hasText == true ? recipe.description : null,
+          firstButton: firstButton,
+          secondButton: secondButton,
+          imagePosition: customizationState?.selectedElement == CardEnum.start
+              ? OdsHorizontalCardImagePosition.start
+              : OdsHorizontalCardImagePosition.end,
+          divider: customizationState!.hasDivider == true ? true : false,
+          onClick: customizationState.clickable ? () {} : null,
         ),
       ),
     );

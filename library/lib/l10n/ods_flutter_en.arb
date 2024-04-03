@@ -11,6 +11,11 @@
     "@_COMPONENTS_NAVIGATION_BAR": {},
     "componentNavigationBarNotification": "Notification(s)",
 
+    "@_COMPONENTS_RADIOBUTTON": {},
+    "componentRadioButton": "Radio button",
+    "componentRadioButtonSelected": "selected",
+    "componentRadioButtonUnselected": "unselected",
+
     "@_COMPONENTS_CHECKBOXES": {},
     "componentCheckboxes": "Checkbox",
     "componentCheckboxesIndeterminate": "indeterminate",
@@ -20,5 +25,11 @@
     "@_COMPONENTS_SWITCHES": {},
     "componentSwitches": "Switch",
     "componentSwitchesChecked": "activated",
-    "componentSwitchesUnchecked": "deactivated"
+    "componentSwitchesUnchecked": "deactivated",
+
+    "@_COMPONENTS_TEXTFIELD": {},
+    "componentTextFieldActionObscure": "Show/Hide Password",
+    "componentTextFieldHidden": "Hidden text",
+    "componentTextFieldVisible": "Visible text"
+
 }

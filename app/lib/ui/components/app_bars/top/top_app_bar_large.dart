@@ -20,20 +20,9 @@ import 'package:ods_flutter_demo/ui/components/app_bars/top/top_app_bars_customi
 import 'package:ods_flutter_demo/ui/theme/theme_selector.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class ComponentTopAppBarLarge extends StatefulWidget {
-  const ComponentTopAppBarLarge({super.key});
-  @override
-  State<ComponentTopAppBarLarge> createState() =>
-      _ComponentTopAppBarLargeState();
-}
-
-class _ComponentTopAppBarLargeState extends State<ComponentTopAppBarLarge> {
+class ComponentTopAppBarLarge extends StatelessWidget {
+  ComponentTopAppBarLarge({super.key});
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

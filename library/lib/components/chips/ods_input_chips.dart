@@ -17,7 +17,7 @@ import 'package:ods_flutter/theme/ods_palette.dart';
 ///
 /// Displays a customizable chips with an optional action.
 ///
-class OdsInputChip extends StatefulWidget {
+class OdsInputChip extends StatelessWidget {
   /// Creates an ODS Action Chips.
   ///
   /// * [text] - Text displayed in the chip.
@@ -53,15 +53,9 @@ class OdsInputChip extends StatefulWidget {
   final bool enabled;
 
   @override
-  State<OdsInputChip> createState() => _OdsInputChipsState();
-}
-
-class _OdsInputChipsState extends State<OdsInputChip> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.text,
       child: ChipTheme(
         data: ChipThemeData(
           iconTheme: const IconThemeData(color: white100),
@@ -71,18 +65,20 @@ class _OdsInputChipsState extends State<OdsInputChip> {
           ),
           side: BorderSide(
             color: Theme.of(context).brightness == Brightness.light
-                ? (widget.enabled ? black900 : grey400)
+                ? (enabled ? black900 : grey400)
                 : Theme.of(context).brightness == Brightness.dark
-                    ? (widget.enabled ? white100 : grey800)
+                    ? (enabled ? white100 : grey800)
                     : grey800,
           ),
         ),
-        child: InputChip(
-          label: Text(widget.text),
-          avatar: widget.leadingAvatar ?? widget.leadingIcon,
-          deleteIcon: null,
-          onPressed: widget.enabled != false ? widget.onClick : null,
-          onDeleted: widget.onCancel,
+        child: MergeSemantics(
+          child: InputChip(
+            label: Text(text, style: Theme.of(context).textTheme.bodyMedium),
+            avatar: leadingAvatar ?? leadingIcon,
+            deleteIcon: null,
+            onPressed: enabled != false ? onClick : null,
+            onDeleted: onCancel,
+          ),
         ),
       ),
     );

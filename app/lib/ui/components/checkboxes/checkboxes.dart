@@ -20,20 +20,10 @@ import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/checkboxes/checkboxes_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentCheckboxes extends StatefulWidget {
-  const ComponentCheckboxes({super.key});
+class ComponentCheckboxes extends StatelessWidget {
+  ComponentCheckboxes({super.key});
 
-  @override
-  State<ComponentCheckboxes> createState() => _ComponentCheckboxesState();
-}
-
-class _ComponentCheckboxesState extends State<ComponentCheckboxes> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

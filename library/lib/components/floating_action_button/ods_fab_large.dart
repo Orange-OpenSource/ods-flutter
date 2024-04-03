@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 ///
 /// Displays a customizable floating action button with an optional icon and a tooltip.
 /// The floating action button
-class OdsLargeFloatingActionButton extends StatefulWidget {
+class OdsLargeFloatingActionButton extends StatelessWidget {
   /// Creates an ODS Floating Action Button.
   ///
   /// * [icon] - The icon widget displayed inside the button.
@@ -39,20 +39,13 @@ class OdsLargeFloatingActionButton extends StatefulWidget {
   final String? semanticsLabel;
 
   @override
-  State<OdsLargeFloatingActionButton> createState() =>
-      _OdsLargeFloatingActionButtonState();
-}
-
-class _OdsLargeFloatingActionButtonState
-    extends State<OdsLargeFloatingActionButton> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: widget.semanticsLabel,
+      label: semanticsLabel,
       child: FloatingActionButton.large(
-        onPressed: widget.onClick,
-        child: widget.icon,
+        onPressed: onClick,
+        child: icon,
       ),
     );
   }

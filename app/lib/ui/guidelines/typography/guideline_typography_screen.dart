@@ -12,6 +12,7 @@
 
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:ods_flutter/components/divider/ods_divider.dart';
@@ -85,7 +86,7 @@ class GuidelineTypographyScreen extends StatelessWidget {
               padding: EdgeInsets.all(spacingM),
               child: Column(
                 children: [
-                  Platform.isAndroid
+                  kIsWeb || Platform.isAndroid
                       ? Text(
                           AppLocalizations.of(context)!
                               .guidelinesTypographyAndroidDescription,

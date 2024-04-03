@@ -24,20 +24,10 @@ import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
 enum Foods { ham, milk, figs, eggs, oil }
 
-class SegmentedButtons extends StatefulWidget {
-  const SegmentedButtons({super.key});
+class SegmentedButtons extends StatelessWidget {
+  SegmentedButtons({super.key});
 
-  @override
-  State<SegmentedButtons> createState() => _SegmentedButtonsState();
-}
-
-class _SegmentedButtonsState extends State<SegmentedButtons> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

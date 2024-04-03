@@ -1,0 +1,14 @@
+name: ods_flutter
+
+packages:
+  - app
+  - library
+
+scripts:
+  l10n:
+    name: l10n
+    description: Generate l10n files
+    packageFilters:
+      flutter: true
+      fileExists: l10n.yaml
+    exec: flutter gen-l10n

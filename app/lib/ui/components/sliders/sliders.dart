@@ -41,13 +41,8 @@ class ComponentSliders extends StatelessWidget {
   }
 }
 
-class _Body extends StatefulWidget {
-  @override
-  _BodyState createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
-  double value = 20.0;
+class _Body extends StatelessWidget {
+  final value = 20.0;
 
   @override
   Widget build(BuildContext context) {

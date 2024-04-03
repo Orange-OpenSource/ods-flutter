@@ -19,26 +19,16 @@ import 'package:ods_flutter/components/card/ods_cards_common.dart';
 import 'package:ods_flutter/components/card/ods_vertical_header_first_card.dart';
 import 'package:ods_flutter/components/lists/ods_list_switch.dart';
 import 'package:ods_flutter/components/sheets_bottom/ods_sheets_bottom.dart';
+import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/main.dart';
 import 'package:ods_flutter_demo/ui/components/cards/card_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class CardVerticalHeaderFirst extends StatefulWidget {
-  const CardVerticalHeaderFirst({super.key});
+class CardVerticalHeaderFirst extends StatelessWidget {
+  CardVerticalHeaderFirst({super.key});
 
-  @override
-  State<CardVerticalHeaderFirst> createState() =>
-      _CardVerticalHeaderFirstState();
-}
-
-class _CardVerticalHeaderFirstState extends State<CardVerticalHeaderFirst> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +41,7 @@ class _CardVerticalHeaderFirstState extends State<CardVerticalHeaderFirst> {
           key: _scaffoldKey,
           appBar: MainAppBar(
               AppLocalizations.of(context)!.componentCardVerticalHeaderFirst),
-          body: _Body()),
+          body: SafeArea(child: _Body())),
     );
   }
 }
@@ -93,7 +83,8 @@ class _Body extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 91),
+        padding: const EdgeInsets.only(
+            top: spacingM, bottom: 91, left: spacingM, right: spacingM),
         child: OdsVerticalHeaderFirstCard(
           thumbnail: customizationState!.thumbnail
               ? OdsCardThumbnail(
@@ -105,8 +96,8 @@ class _Body extends StatelessWidget {
               : null,
           title: recipe.title,
           subtitle:
-              customizationState?.hasSubtitle == true ? recipe.subtitle : null,
-          text: customizationState?.hasText == true ? recipe.description : null,
+              customizationState.hasSubtitle == true ? recipe.subtitle : null,
+          text: customizationState.hasText == true ? recipe.description : null,
           image: OdsCardImage(
             imageProvider: NetworkImage(recipe.url),
             contentDescription: '', //Optional
@@ -115,22 +106,14 @@ class _Body extends StatelessWidget {
           ),
           firstButton: firstButton,
           secondButton: secondButton,
-          onClick: customizationState!.clickable ? () {} : null,
+          onClick: customizationState.clickable ? () {} : null,
         ),
       ),
     );
   }
 }
 
-class _CustomizationContent extends StatefulWidget {
-  @override
-  State<_CustomizationContent> createState() => _CustomizationContentState();
-}
-
-class _CustomizationContentState extends State<_CustomizationContent> {
-  int selectedIndex = 0;
-  bool isFiltered = true;
-
+class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CardCustomizationState? customizationState =

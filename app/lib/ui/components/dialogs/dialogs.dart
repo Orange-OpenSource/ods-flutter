@@ -45,12 +45,7 @@ class ComponentDialogs extends StatelessWidget {
   }
 }
 
-class _Body extends StatefulWidget {
-  @override
-  _BodyState createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
+class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final DialogsCustomizationState? customizationState =
@@ -128,12 +123,7 @@ class _BodyState extends State<_Body> {
   }
 }
 
-class _CustomizationContent extends StatefulWidget {
-  @override
-  State<_CustomizationContent> createState() => _CustomizationContentState();
-}
-
-class _CustomizationContentState extends State<_CustomizationContent> {
+class _CustomizationContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final DialogsCustomizationState? customizationState =

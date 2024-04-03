@@ -25,22 +25,10 @@ import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_a
 import 'package:ods_flutter_demo/ui/components/floating_action_button/floating_action_customization.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
-class ComponentFloatingActionButton extends StatefulWidget {
-  const ComponentFloatingActionButton({super.key});
+class ComponentFloatingActionButton extends StatelessWidget {
+  ComponentFloatingActionButton({super.key});
 
-  @override
-  State<ComponentFloatingActionButton> createState() =>
-      _ComponentFloatingActionButtonState();
-}
-
-class _ComponentFloatingActionButtonState
-    extends State<ComponentFloatingActionButton> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +143,7 @@ class _CustomizationContentState extends State<_CustomizationContent> {
                       onClick: (selected) {
                         setState(() {
                           selectedIndex = index;
-                          isFiltered = selected!;
+                          isFiltered = selected;
                           customizationState?.selectedElement =
                               customizationState.elements[index];
                         });

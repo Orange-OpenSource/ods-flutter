@@ -18,7 +18,7 @@ import 'package:ods_flutter/components/divider/ods_divider.dart';
 /// This list contains content and actions about a single subject.
 ///
 /// A ripple effect is managed on list tile.
-class OdsListItem extends StatefulWidget {
+class OdsListItem extends StatelessWidget {
   /// Creates an ODS List selection.
   const OdsListItem({
     Key? key,
@@ -66,73 +66,67 @@ class OdsListItem extends StatefulWidget {
   final void Function()? onClick;
 
   @override
-  State<OdsListItem> createState() => _OdsListItemState();
-}
-
-class _OdsListItemState extends State<OdsListItem> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
       child: MergeSemantics(
         child: Column(
           children: [
-            if (widget.onChangedSwitch != null)
+            if (onChangedSwitch != null)
               SwitchListTile(
-                secondary: widget.image,
+                secondary: image,
                 title: Text(
-                  widget.title,
+                  title,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                subtitle: widget.subtitle != null
+                subtitle: subtitle != null
                     ? Text(
-                        widget.subtitle!,
+                        subtitle!,
                         style: Theme.of(context).textTheme.bodyMedium,
                       )
                     : null,
-                value: widget.value ?? false,
-                onChanged: widget.onChangedSwitch,
+                value: value ?? false,
+                onChanged: onChangedSwitch,
               ),
-            if (widget.onChangedCheckBox != null)
+            if (onChangedCheckBox != null)
               CheckboxListTile(
-                secondary: widget.image,
+                secondary: image,
                 title: Text(
-                  widget.title,
+                  title,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                subtitle: widget.subtitle != null
+                subtitle: subtitle != null
                     ? Text(
-                        widget.subtitle!,
+                        subtitle!,
                         style: Theme.of(context).textTheme.bodyMedium,
                       )
                     : null,
-                value: widget.value ?? false,
-                onChanged: widget.onChangedCheckBox,
+                value: value ?? false,
+                onChanged: onChangedCheckBox,
               ),
-            if (widget.onChangedSwitch == null &&
-                widget.onChangedCheckBox == null)
+            if (onChangedSwitch == null && onChangedCheckBox == null)
               ListTile(
-                leading: widget.image,
+                leading: image,
                 title: Text(
-                  widget.title,
+                  title,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                subtitle: widget.subtitle != null
+                subtitle: subtitle != null
                     ? Text(
-                        widget.subtitle!,
+                        subtitle!,
                         style: Theme.of(context).textTheme.bodyLarge,
                       )
                     : null,
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    if (widget.text != null) Text(widget.text!),
-                    if (widget.icon != null) widget.icon!, // icon-2
+                    if (text != null) Text(text!),
+                    if (icon != null) icon!, // icon-2
                   ],
                 ),
-                onTap: widget.onClick,
+                onTap: onClick,
               ),
-            if (widget.divider != null) const OdsDivider(),
+            if (divider != null) const OdsDivider(),
           ],
         ),
       ),

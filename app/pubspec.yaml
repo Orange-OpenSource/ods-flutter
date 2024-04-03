@@ -19,7 +19,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 0.9.0+1
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -50,7 +51,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.1.0
   flutter_svg: ^2.0.5
-  get:  ^4.6.5
+  get: ^4.6.5
 
   # Read markdown.
   markdown: ^7.1.1
@@ -72,7 +73,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -83,10 +83,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/
-   - assets/recipes/
-   - THIRD_PARTY.md
-   - CHANGELOG.md
+    - assets/
+    - assets/recipes/
+    - THIRD_PARTY.md
+    - CHANGELOG.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

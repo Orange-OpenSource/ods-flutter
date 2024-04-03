@@ -21,20 +21,10 @@ import 'package:ods_flutter_demo/ui/components/navigation_bar/navigation_bar_cus
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 import 'package:ods_flutter_demo/ui/utilities/component_count_row.dart';
 
-class ComponentNavigationBar extends StatefulWidget {
-  const ComponentNavigationBar({Key? key}) : super(key: key);
+class ComponentNavigationBar extends StatelessWidget {
+  ComponentNavigationBar({Key? key}) : super(key: key);
 
-  @override
-  State<ComponentNavigationBar> createState() => _ComponentNavigationBarState();
-}
-
-class _ComponentNavigationBarState extends State<ComponentNavigationBar> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
