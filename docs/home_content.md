@@ -25,7 +25,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```dart
 dependencies:
-  ods_flutter: ^0.7.0
+  ods_flutter: ^0.4.0
 ``` 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
 
