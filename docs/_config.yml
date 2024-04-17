@@ -1,13 +1,13 @@
-
-# Build settings
-baseurl: /ods-flutter
+# If you update this file, please also update _config_netlify.yml with the exact same changes
+plugins:
+- jekyll-feed
+- jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
 remote_theme: Orange-OpenSource/ods-jekyll-theme
-plugins:
-  - jekyll-feed
-  - jekyll-relative-links
+
+baseurl: /ods-flutter
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -28,3 +28,29 @@ exclude:
    - vendor/cache/
    - vendor/gems/
    - vendor/ruby/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+        version: ""
+  - scope:
+      path: "0.4.0"
+    values:
+      version: "0.4.0"
+  - scope:
+      path: "0.5.0"
+    values:
+      version: "0.5.0"
+  - scope:
+      path: "0.6.0"
+    values:
+      version: "0.6.0"
+  - scope:
+      path: "0.7.0"
+    values:
+      version: "0.7.0"
+  - scope:
+      path: "0.8.0"
+    values:
+      version: "0.8.0"
