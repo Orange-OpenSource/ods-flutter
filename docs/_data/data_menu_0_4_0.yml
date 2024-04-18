@@ -1,0 +1,33 @@
+# Edit this file to update the documentation menu
+toc2:
+  - title: Get Started
+    subfolderitems:
+      - page: Integration
+        url: /index.html
+    
+  - title: Guidelines
+    subfolderitems:
+      - page: Spacings
+        url: /guidelines/spacings_docs
+      - page: Typography
+        url: /guidelines/typography_docs
+
+  - title: Components
+    subfolderitems:
+      - page: Bars - navigation
+        url: /components/navigationBar_docs
+      - page: Buttons
+        url: /components/buttons_docs
+      - page: Cards
+        url: /components/cards_docs
+      - page: Checkboxes
+        url: /components/checkboxes_docs
+      - page: Dialogs
+        url: /components/dialogs_docs
+      - page: Floating action buttons
+        url: /components/floatingActionButtons_docs
+      - page: Progress indicator
+        url: /components/progressIndicator_docs
+      - page: Slider
+        url: /components/slider_docs
+
