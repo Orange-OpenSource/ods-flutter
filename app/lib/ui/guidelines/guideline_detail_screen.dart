@@ -50,9 +50,12 @@ class GuidelineDetailScreen extends StatelessWidget {
                     right: spacingM,
                     top: spacingS,
                     bottom: spacingS),
-                child: Text(
-                  AppLocalizations.of(context)!.componentScreenVariantTitle,
-                  style: Theme.of(context).textTheme.titleLarge,
+                child: Semantics(
+                  header: true,
+                  child: Text(
+                    AppLocalizations.of(context)!.guidelinesScreenVariantTitle,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
               ),
               ListView.builder(

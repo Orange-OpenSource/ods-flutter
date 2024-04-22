@@ -15,7 +15,6 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
-import 'package:ods_flutter/components/divider/ods_divider.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
 
@@ -120,25 +119,16 @@ class _TextStyleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MergeSemantics(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: spacingS),
-          Text(
-            textStyleItem.name,
-            style: textStyleItem.textStyle,
-          ),
-          SizedBox(height: spacingXs),
-          Text(
-            textStyleItem.code,
-            style: Theme.of(context).textTheme.labelMedium,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: spacingS),
-          OdsDivider(),
-        ],
+    return ListTile(
+      title: Text(
+        textStyleItem.name,
+        style: textStyleItem.textStyle,
       ),
+      subtitle: Text(
+        textStyleItem.code,
+        style: Theme.of(context).textTheme.labelMedium,
+      ),
+      contentPadding: EdgeInsets.zero,
     );
   }
 }
