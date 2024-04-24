@@ -380,5 +380,14 @@
   "@_ABOUT_SCREEN": {},
   "aboutScreenTitle": "Orange Design System Flutter App",
   "aboutScreenDescription": "In this app you'll find implemented code examples of the guidelines, components and modules, for the themes of the Orange Design System.",
-  "aboutMenuChangelog": "Changelog"
+  "aboutMenuChangelog": "Changelog",
+  "aboutAccessibilityStatementTitle": "Accessibility : conform",
+  "aboutAccessibilityStatementCompliant": "% compliant",
+  "aboutAccessibilityStatementDate": "Date of the audit",
+  "aboutAccessibilityStatementIdentity": "Assessment approval",
+  "aboutAccessibilityStatementIdentityName": "Orange SA",
+  "aboutAccessibilityStatementIdentityAdress": "Siège social : 11, quai du Président Roosevelt, CS 70222, 91130 Issy-les-Moulineaux CEDEX",
+  "aboutAccessibilityStatementReferential": "Standard applied",
+  "aboutAccessibilityStatementTechnology": "Technical of the application",
+  "aboutAccessibilityStatementDetailButton": "MORE DETAIL"
 }
