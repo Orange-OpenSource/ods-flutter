@@ -73,3 +73,9 @@ Apache License 2.0
 Copyright 2018 WebView for Flutter
 [https://pub.dev/packages/webview_flutter](https://pub.dev/packages/webview_flutter)
 Apache License 2.0
+
+### Url Launcher
+
+Copyright 2018 Url Launcher
+[https://pub.dev/packages/url_launcher](https://pub.dev/packages/url_launcher)
+Apache License 2.0
