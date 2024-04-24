@@ -56,6 +56,7 @@ dependencies:
   # Read markdown.
   markdown: ^7.1.1
   webview_flutter: ^2.0.13
+  url_launcher: ^6.0.3
 
 dev_dependencies:
   flutter_test:
