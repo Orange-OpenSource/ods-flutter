@@ -106,7 +106,7 @@ class OdsListItem extends StatelessWidget {
               ),
             if (onChangedSwitch == null && onChangedCheckBox == null)
               Semantics(
-                button: true,
+                button: onClick != null ? true : false,
                 child: ListTile(
                   leading: image,
                   title: Text(

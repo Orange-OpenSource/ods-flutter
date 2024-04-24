@@ -52,13 +52,6 @@ class OdsAboutFileScreen extends StatelessWidget {
               /// Convert Markdown to HTML using the markdown package
               String htmlContent = markdownToHtml(markdownContent);
 
-              print(_wrapHtmlWithCss(
-                htmlContent,
-                darkModeEnabled,
-                colors,
-                horizontalPadding,
-                verticalPadding,
-              ));
               return WebView(
                 initialUrl: 'about:blank',
                 onWebViewCreated: (WebViewController webViewController) {
@@ -337,6 +330,5 @@ String convertToHtml(
   }
 
   result += "</html>";
-  print(result);
   return result;
 }
