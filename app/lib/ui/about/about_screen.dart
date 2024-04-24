@@ -15,6 +15,7 @@ import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
+import 'package:ods_flutter_demo/ui/about/detail/about_accessibility_statement.dart';
 import 'package:ods_flutter_demo/ui/about/detail/about_file_screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -121,6 +122,16 @@ class _AboutScreenState extends State<AboutScreen> {
                           Theme.of(context).brightness == Brightness.light,
                     ),
                   );
+                },
+              ),
+              OdsListItem(
+                title: AppLocalizations.of(context)!
+                    .aboutAccessibilityStatementTitle,
+                image: ImageIcon(
+                  AssetImage('assets/ic_accessibility.png'),
+                ),
+                onClick: () {
+                  Get.to(AboutAccessibilityStatement());
                 },
               ),
               OdsListItem(

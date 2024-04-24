@@ -1,0 +1,577 @@
+{
+  "declaration": {
+    "title": {
+      "__cdata": "Orange Design System"
+    },
+    "lang": "en",
+    "status": "DONE",
+    "approval": {
+      "name": "The Orange Group Accessibility Skills Center",
+      "content": {
+        "__cdata": "<p><a href=\"https://a11y-guidelines.orange.com/en/\">The Orange Group Accessibility Skills Center</a></p>\n"
+      }
+    },
+    "contact": {
+      "name": "Équipe Projet",
+      "content": {
+        "__cdata": "<p>We welcome your feedback on the accessibility of this site. Please let us know if you encounter accessibility problems by sending an email to <a href=\"mailto:XXX@orange.com\">XXX@orange.com</a>.</p>\n"
+      }
+    },
+    "audit_date": "2024-04-24",
+    "audit_updatedate": "",
+    "plan": {
+      "__cdata": "<p>[Name of the organization] undertakes to make its websites internet, intranet, extranet and its mobile applications accessible in accordance with article 47 of Law No. 2005-102 of February 11, 2005.</p>\n<p>To this end, it implements the following strategy and actions :</p>\n<p><a href=\"https://oran.ge/accessibilite-schema\" title=\"the pluri-annual accessibility framework (French) (PDF, 230Ko)\">the pluri-annual accessibility framework (French)</a>.</p>\n<p>This accessibility statement applies to [Project name or URL].</p>\n"
+    },
+    "referential": {
+      "name": "WCAG",
+      "version": 2.2,
+      "level": "AA",
+      "url": "https://www.w3.org/Translations/WCAG20-fr/"
+    },
+    "technologies": {
+      "technology": "Flutter"
+    },
+    "tests": {
+      "test": [
+        {
+          "name": "aXe",
+          "version": "0.10.2"
+        },
+        {
+          "name": "Accessibility Scanner",
+          "version": ""
+        },
+        {
+          "name": "Talkback",
+          "version": ""
+        },
+        {
+          "name": "Switch Access",
+          "version": ""
+        }
+      ]
+    },
+    "environments": "",
+    "urls": {
+      "url": [
+        {
+          "name": {
+            "__cdata": "Guidelines"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Modules"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "About"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Guidelines-Colour"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Guidelines-Typography"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Guidelines-Spacing"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - App bars: top"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Bars Navigation"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Buttons"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Buttons: FAB"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Cards"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Chips"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Lists"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Progress indicators"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Sheets"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Sliders"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Components - Text field"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        },
+        {
+          "name": {
+            "__cdata": "Modules - List"
+          },
+          "location": {
+            "__cdata": ""
+          }
+        }
+      ]
+    },
+    "nonComplianceComment": {
+      "__cdata": ""
+    },
+    "users": 0,
+    "blocking_points": 0,
+    "results": {
+      "result": [
+        {
+          "criteria": 32,
+          "ok": 12,
+          "nok": 3,
+          "na": 17,
+          "conformity": 80
+        },
+        {
+          "criteria": 24,
+          "ok": 12,
+          "nok": 3,
+          "na": 9,
+          "conformity": 80
+        },
+        {
+          "criteria": 56,
+          "ok": 24,
+          "nok": 6,
+          "na": 26,
+          "conformity": 80
+        }
+      ]
+    },
+    "pages_results": {
+      "page": [
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            11
+          ],
+          "nok": [
+            0,
+            2
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 93
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            14
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            10
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            12
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            12
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            12,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            20,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            13,
+            13
+          ],
+          "nok": [
+            1,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 96
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            14
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            10
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            14
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            10
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            14,
+            12
+          ],
+          "nok": [
+            0,
+            1
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 96
+        },
+        {
+          "ok": [
+            14,
+            14
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            10
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            12,
+            11
+          ],
+          "nok": [
+            1,
+            2
+          ],
+          "na": [
+            19,
+            11
+          ],
+          "conformity": 88
+        },
+        {
+          "ok": [
+            13,
+            13
+          ],
+          "nok": [
+            1,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 96
+        },
+        {
+          "ok": [
+            14,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            18,
+            11
+          ],
+          "conformity": 100
+        },
+        {
+          "ok": [
+            15,
+            13
+          ],
+          "nok": [
+            0,
+            0
+          ],
+          "na": [
+            17,
+            11
+          ],
+          "conformity": 100
+        }
+      ]
+    },
+    "details": {
+      "detail": [
+        {
+          "title": "1.1.1, Non-text Content, Niveau A",
+          "description": {
+            "__cdata": ""
+          }
+        },
+        {
+          "title": "1.4.4, Resize text, Niveau AA",
+          "description": {
+            "__cdata": ""
+          }
+        },
+        {
+          "title": "1.4.10, Reflow, Niveau AA",
+          "description": {
+            "__cdata": ""
+          }
+        },
+        {
+          "title": "2.5.1, Pointer Gestures, Niveau A",
+          "description": {
+            "__cdata": ""
+          }
+        },
+        {
+          "title": "2.5.8, Target size, Niveau AA",
+          "description": {
+            "__cdata": ""
+          }
+        },
+        {
+          "title": "3.2.2, On Input, Niveau A",
+          "description": {
+            "__cdata": ""
+          }
+        }
+      ]
+    },
+    "derogations": {
+      "__cdata": ""
+    },
+    "exemptions": {
+      "__cdata": ""
+    }
+  }
+}
