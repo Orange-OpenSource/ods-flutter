@@ -105,26 +105,29 @@ class OdsListItem extends StatelessWidget {
                 onChanged: onChangedCheckBox,
               ),
             if (onChangedSwitch == null && onChangedCheckBox == null)
-              ListTile(
-                leading: image,
-                title: Text(
-                  title,
-                  style: Theme.of(context).textTheme.titleSmall,
+              Semantics(
+                button: onClick != null ? true : false,
+                child: ListTile(
+                  leading: image,
+                  title: Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                  subtitle: subtitle != null
+                      ? Text(
+                          subtitle!,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        )
+                      : null,
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (text != null) Text(text!),
+                      if (icon != null) icon!, // icon-2
+                    ],
+                  ),
+                  onTap: onClick,
                 ),
-                subtitle: subtitle != null
-                    ? Text(
-                        subtitle!,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      )
-                    : null,
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (text != null) Text(text!),
-                    if (icon != null) icon!, // icon-2
-                  ],
-                ),
-                onTap: onClick,
               ),
             if (divider != null) const OdsDivider(),
           ],

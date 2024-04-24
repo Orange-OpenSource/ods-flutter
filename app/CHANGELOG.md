@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 
+- [A11y] Review accessibility ([#371](https://github.com/Orange-OpenSource/ods-flutter/issues/371))
 - Guidelines > Colors ([#330](https://github.com/Orange-OpenSource/ods-flutter/issues/330))
 
 ## Changed

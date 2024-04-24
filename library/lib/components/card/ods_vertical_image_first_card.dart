@@ -69,50 +69,53 @@ class OdsVerticalImageFirstCard extends StatelessWidget {
               elevation: 2,
               child: Material(
                 color: Colors.transparent,
-                child: InkWell(
-                  onTap: onClick,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: OdsVerticalImageFirstCard._imageHeight,
-                          child: ExcludeSemantics(child: image),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: spacingM, left: spacingM),
-                        child: Text(
-                          title,
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ),
-                      if (subtitle != null)
-                        Padding(
-                          padding: const EdgeInsets.only(left: spacingM),
-                          child: Text(
-                            subtitle!,
-                            style: Theme.of(context).textTheme.bodyMedium,
+                child: Semantics(
+                  button: true,
+                  child: InkWell(
+                    onTap: onClick,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: double.infinity,
+                            height: OdsVerticalImageFirstCard._imageHeight,
+                            child: ExcludeSemantics(child: image),
                           ),
                         ),
-                      if (text != null && text!.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: spacingM, right: spacingM, top: spacingS),
+                              top: spacingM, left: spacingM),
                           child: Text(
-                            text!,
+                            title,
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ),
-                      ButtonBar(
-                        alignment: MainAxisAlignment.start,
-                        children: [
-                          if (firstButton != null) firstButton!,
-                          if (secondButton != null) secondButton!,
-                        ],
-                      ),
-                    ],
+                        if (subtitle != null)
+                          Padding(
+                            padding: const EdgeInsets.only(left: spacingM),
+                            child: Text(
+                              subtitle!,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                        if (text != null && text!.isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: spacingM, right: spacingM, top: spacingS),
+                            child: Text(
+                              text!,
+                            ),
+                          ),
+                        ButtonBar(
+                          alignment: MainAxisAlignment.start,
+                          children: [
+                            if (firstButton != null) firstButton!,
+                            if (secondButton != null) secondButton!,
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

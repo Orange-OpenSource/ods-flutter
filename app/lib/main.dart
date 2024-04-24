@@ -12,6 +12,9 @@
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
@@ -19,7 +22,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ods_flutter/l10n/gen/ods_localizations.dart';
 import 'package:ods_flutter/theme/ods_theme.dart';
-import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart';
+import 'package:ods_flutter_demo/domain/declaration/declaration_entities.dart';
+import 'package:ods_flutter_demo/domain/recipes/recipes_entities.dart' as ods;
 import 'package:ods_flutter_demo/ui/main_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -31,19 +35,37 @@ void main() {
 
 class OdsApplication extends StatefulWidget {
   const OdsApplication({super.key});
-  static List<Recipe> recipes = [];
-  static List<Category> category = [];
-  static List<Food> foods = [];
+  static List<ods.Recipe> recipes = [];
+  static List<ods.Category> category = [];
+  static List<ods.Food> foods = [];
+  static late Declaration declaration;
 
   @override
   State<OdsApplication> createState() => _OdsApplicationState();
 }
 
 class _OdsApplicationState extends State<OdsApplication> {
-  // Fetch content from the json file
+  /// Fetch content from the json file
   Future<void> _readJson() async {
+    ///Declaration
+    final String responseDeclaration;
+
+    if (kIsWeb || Platform.isAndroid) {
+      responseDeclaration =
+          await rootBundle.loadString('assets/declaration_ios.json');
+    } else {
+      responseDeclaration =
+          await rootBundle.loadString('assets/declaration_android.json');
+    }
+
+    Declaration entityDeclaration =
+        entityDeclarationFromJson(responseDeclaration);
+
+    OdsApplication.declaration = entityDeclaration;
+
+    ///Recipes
     final String response = await rootBundle.loadString('assets/recipes.json');
-    Entity entity = entityFromJson(response);
+    ods.Entity entity = ods.entityFromJson(response);
 
     OdsApplication.category = entity.category;
     OdsApplication.recipes = entity.recipes;

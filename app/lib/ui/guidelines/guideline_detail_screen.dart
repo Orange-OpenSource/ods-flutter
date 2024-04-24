@@ -13,6 +13,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/ods_flutter_app_localizations.dart';
 import 'package:get/get.dart';
+import 'package:ods_flutter/components/lists/ods_list_item.dart';
 import 'package:ods_flutter/guidelines/spacings.dart';
 import 'package:ods_flutter_demo/ui/guidelines/guidelines_entities.dart';
 import 'package:ods_flutter_demo/ui/main_app_bar.dart';
@@ -49,9 +50,12 @@ class GuidelineDetailScreen extends StatelessWidget {
                     right: spacingM,
                     top: spacingS,
                     bottom: spacingS),
-                child: Text(
-                  AppLocalizations.of(context)!.componentScreenVariantTitle,
-                  style: Theme.of(context).textTheme.titleLarge,
+                child: Semantics(
+                  header: true,
+                  child: Text(
+                    AppLocalizations.of(context)!.guidelinesScreenVariantTitle,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
               ),
               ListView.builder(
@@ -80,28 +84,13 @@ class VariantEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      onTap: () {
+    return OdsListItem(
+      title: variant.title,
+      subtitle: variant.technicalName,
+      image: Icon(Icons.play_circle_outline),
+      onClick: () {
         Get.to(variant.screen);
       },
-      child: ListTile(
-        leading: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.play_circle_outline),
-          ],
-        ),
-        title:
-            Text(variant.title, style: Theme.of(context).textTheme.bodyMedium),
-        subtitle: ExcludeSemantics(
-          child: Text(variant.technicalName,
-              style: Theme.of(context).textTheme.bodyMedium),
-        ),
-        onTap: () {
-          Get.to(variant.screen);
-        },
-      ),
     );
   }
 }
