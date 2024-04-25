@@ -88,7 +88,7 @@ class _Body extends StatelessWidget {
         child: OdsVerticalHeaderFirstCard(
           thumbnail: customizationState!.thumbnail
               ? OdsCardThumbnail(
-                  imageProvider: NetworkImage(recipe.url),
+                  image: recipe.getIconPath(),
                   contentDescription: '', //Optional
                   alignment: Alignment.center,
                   contentScale: BoxFit.cover,
