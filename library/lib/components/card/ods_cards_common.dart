@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class OdsCardImage extends StatelessWidget {
-  final ImageProvider imageProvider;
+  final dynamic image;
   final String contentDescription;
   final Alignment alignment;
   final BoxFit contentScale;
@@ -22,7 +22,7 @@ class OdsCardImage extends StatelessWidget {
 
   const OdsCardImage({
     super.key,
-    required this.imageProvider,
+    required this.image,
     required this.contentDescription,
     this.alignment = Alignment.center,
     this.contentScale = BoxFit.cover,
@@ -40,7 +40,7 @@ class OdsCardImage extends StatelessWidget {
         ),
         child: FadeInImage(
           placeholder: const AssetImage('assets/placeholder.png'),
-          image: imageProvider,
+          image: _getImageProvider(),
           fit: contentScale,
           alignment: alignment,
           imageErrorBuilder: (context, error, stackTrace) {
@@ -52,6 +52,20 @@ class OdsCardImage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  ImageProvider _getImageProvider() {
+    if (image is String) {
+      if (image.startsWith('http') || image.startsWith('https')) {
+        return NetworkImage(image);
+      } else {
+        return AssetImage(image);
+      }
+    } else if (image is ImageProvider) {
+      return image;
+    } else {
+      return const AssetImage('assets/placeholder.png');
+    }
   }
 }
 

@@ -39,7 +39,7 @@ return OdsAppTopBar(
     IconButton(icon: const Icon(Icons.color_lens), onPressed: () {})
   ],
   navigationIcon: const BackButton(),
-);
+)
 ```
 
 ##### OdsTopAppBar API
@@ -61,8 +61,10 @@ Here is an example of use:
 ```dart
 return OdsLargeTopAppBar(
   title: "Large",
-  actions: IconButton(icon: const Icon(Icons.notifications), onPressed: () {}),
-  leading: BackButton(),
+  actions: [
+    IconButton(icon: const Icon(Icons.color_lens), onPressed: () {})
+  ],
+  navigationIcon: const BackButton(),
   scrollBehavior: SliverList(
     delegate: SliverChildBuilderDelegate(
       (BuildContext context, int index) {

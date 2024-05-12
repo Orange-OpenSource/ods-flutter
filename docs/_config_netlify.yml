@@ -53,3 +53,7 @@ defaults:
       path: "0.8.0"
     values:
       version: "0.8.0"
+  - scope:
+      path: "1.0.0"
+    values:
+      version: "1.0.0"

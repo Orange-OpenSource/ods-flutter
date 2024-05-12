@@ -89,7 +89,7 @@ class _Body extends StatelessWidget {
                 top: spacingM, bottom: 91, left: spacingM, right: spacingM),
             child: OdsVerticalImageFirstCard(
               image: OdsCardImage(
-                imageProvider: NetworkImage(recipe.url),
+                image: recipe.url,
                 contentDescription: '', //Optional
                 alignment: Alignment.center,
                 contentScale: BoxFit.cover,

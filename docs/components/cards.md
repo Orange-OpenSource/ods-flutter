@@ -55,8 +55,8 @@ return OdsVerticalImageFirstCard(
   ),
   subtitle: "Subtitle", //Optional
   text: "Text", //Optional
-  firstButton: OdsOutlinedButton(text: "First button", onClick: () {}), //Optional
-  secondButton: OdsButton(text: "Second button", onClick: () {}), //Optional
+  firstButton: OdsTextButton(text: "First button", onClick: () {}), //Optional
+  secondButton: OdsTextButton(text: "Second button", onClick: () {}), //Optional
   onClick: () {},
 );
 ```
@@ -69,8 +69,8 @@ Parameter | Default&nbsp;value | Description
 `image: OdsCardImage` | | Image displayed into the card
 `subtitle: String?` | `null` | Subtitle displayed into the card
 `text: String?` | `null` | Text displayed into the card
-`firstButton: OdsOutlinedButton?` | `null` | First button displayed into the card
-`secondButton: OdsButton?` | `null` | Second button displayed into the card
+`firstButton: OdsTextButton?` | `null` | First button displayed into the card
+`secondButton: OdsTextButton?` | `null` | Second button displayed into the card
 `onClick: (() -> Void)?` | `null` | Callback called on card click
 
 ### Vertical header first card
@@ -100,8 +100,8 @@ return OdsVerticalHeaderFirstCard(
   ),
   subtitle: "Subtitle", //Optional
   text: "Text", //Optional
-  firstButton: OdsOutlinedButton(text: "First button", onClick: () {}), //Optional
-  secondButton: OdsButton(text: "Second button", onClick: () {}), //Optional
+  firstButton: OdsTextButton(text: "First button", onClick: () {}), //Optional
+  secondButton: OdsTextButton(text: "Second button", onClick: () {}), //Optional
   onClick: () {},
 );
 ```
@@ -114,8 +114,8 @@ Parameter | Default&nbsp;value | Description
 `image: OdsCardImage` | | Image displayed into the card
 `subtitle: String?` | `null` | Subtitle displayed into the card
 `text: String?` | `null` | Text displayed into the card
-`firstButton: OdsOutlinedButton?` | `null` | First button displayed into the card
-`secondButton: OdsButton?` | `null` | Second button displayed into the card
+`firstButton: OdsTextButton?` | `null` | First button displayed into the card
+`secondButton: OdsTextButton?` | `null` | Second button displayed into the card
 `onClick: (() -> Void)?` | `null` | Callback called on card click
 {:.table}
 
@@ -175,8 +175,8 @@ return OdsHorizontalCard(
   ),
   subtitle: "Subtitle", //Optional
   text: "Text", //Optional
-  firstButton: OdsOutlinedButton(text: "First button", onClick: () {}), //Optional
-  secondButton: OdsButton(text: "Second button", onClick: () {}), //Optional
+  firstButton: OdsTextButton(text: "First button", onClick: () {}), //Optional
+  secondButton: OdsTextButton(text: "Second button", onClick: () {}), //Optional
   imagePosition: OdsHorizontalCardImagePosition.start, //Optional. Start by default.
   divider: false, // Optional. True by default.
   onClick: () {},
@@ -191,8 +191,8 @@ Parameter | Default&nbsp;value | Description
 `image: OdsCardImage` | | Image displayed into the card
 `subtitle: String?` | `null` | Subtitle displayed into the card
 `text: String?` | `null` | Text displayed into the card
-`firstButton: OdsOutlinedButton?` | `null` | First button displayed into the card
-`secondButton: OdsButton?` | `null` | Second button displayed into the card
+`firstButton: OdsTextButton?` | `null` | First button displayed into the card
+`secondButton: OdsTextButton?` | `null` | Second button displayed into the card
 `imagePosition: OdsHorizontalCardImagePosition` | `OdsHorizontalCardImagePosition.Start` | Position of the image within the card, it can be set to `OdsHorizontalCardImagePosition.start` or `OdsHorizontalCardImagePosition.end`
 `divider: Boolean` | `false` | Controls the divider display. If true, it will be displayed between the card content and the action buttons.
 `onClick: (() -> Void)?` | `null` | Callback called on card click

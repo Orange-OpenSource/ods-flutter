@@ -24,7 +24,6 @@ class OdsNavigationBar extends StatelessWidget {
     required this.selectedIndex,
     required this.destinations,
     this.onDestinationSelected,
-    this.icon,
   }) : super(key: key);
 
   /// The index of the currently selected destination.
@@ -35,9 +34,6 @@ class OdsNavigationBar extends StatelessWidget {
 
   /// The callback function called when a destination is selected.
   final void Function(int)? onDestinationSelected;
-
-  /// The list of destinations to display.
-  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {

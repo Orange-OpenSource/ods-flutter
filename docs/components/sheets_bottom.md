@@ -35,9 +35,7 @@ The contents within a bottom sheet should follow their own accessibility guideli
 ```dart
 return Scaffold(
   bottomSheet: OdsSheetsBottom(
-    sheetContent = {
-        // Put here the content of the sheet
-    },
+    sheetContent: Container(), // Put here the content of the sheet
     title: "Recipes",
   ),
 );

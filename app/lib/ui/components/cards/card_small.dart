@@ -70,12 +70,12 @@ class _Body extends StatelessWidget {
                         ? recipe.subtitle
                         : null,
                     image: OdsCardImage(
-                      imageProvider: NetworkImage(recipe.url),
+                      image: NetworkImage(recipe.url),
                       contentDescription: '', //Optional
                       alignment: Alignment.center,
                       contentScale: BoxFit.cover,
                     ),
-                    onTap: customizationState!.clickable ? () {} : null,
+                    onClick: customizationState!.clickable ? () {} : null,
                   ),
                 ],
               ),

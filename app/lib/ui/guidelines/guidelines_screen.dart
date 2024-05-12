@@ -37,7 +37,7 @@ class GuidelinesScreen extends StatelessWidget {
                 OdsVerticalImageFirstCard(
                   title: guideline.title,
                   image: OdsCardImage(
-                    imageProvider: AssetImage(guideline.imageResourceName),
+                    image: guideline.imageResourceName,
                     contentDescription: '', //Optional
                     alignment: Alignment.center,
                     contentScale: BoxFit.cover,

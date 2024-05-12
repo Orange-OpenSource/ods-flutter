@@ -40,11 +40,11 @@ return OdsDropdownMenu(
     OdsDropdownMenuItem(
       text: "Summer Salad",
       value: "Summer Salad",
-      enabled: false, //Optional by default true
+      enabled: true, //Optional by default true
       icon: const Icon(Icons.coffee) // Optional
     ),
   ],
-    selectedItem: (String value) {
+    selectedItem: (value) {
     print('$value');
   },
 );
@@ -81,11 +81,11 @@ To display an exposed dropdown menu, you can use the `OdsExposedDropdownMenu` co
 ```dart
 return OdsExposedDropdownMenu(
   label: "Recipe",
-  enabled: false, // Optional by default true
+  enabled: true, // Optional by default true
   items: <DropdownMenuEntry<String>>[
     DropdownMenuEntry<String>(
-      value: "Summer Salad",,
-      label: "Summer Salad",,
+      value: "Summer Salad",
+      label: "Summer Salad",
       leadingIcon: const Icon(Icons.coffee), // Optional
     ),
   ],

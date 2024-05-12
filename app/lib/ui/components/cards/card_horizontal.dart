@@ -88,7 +88,7 @@ class _Body extends StatelessWidget {
       child: SingleChildScrollView(
         child: OdsHorizontalCard(
           image: OdsCardImage(
-            imageProvider: NetworkImage(recipe.url),
+            image: NetworkImage(recipe.url),
             contentDescription: '', //Optional
             alignment: Alignment.center,
             contentScale: BoxFit.cover,
