@@ -5,10 +5,11 @@ All notable changes done in ODS library will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.9.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.9.0) - 2023-04-03
+## [1.0.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...1.0.0) - 2023-05-12
 
 ### Added
 
+- [A11y] Review accessibility ([#371](https://github.com/Orange-OpenSource/ods-flutter/issues/371))
 - Guidelines > Colors ([#330](https://github.com/Orange-OpenSource/ods-flutter/issues/330))
 
 ### Changed
@@ -18,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Bug]: SheetBottom. Tap to scroll down ([#341](https://github.com/Orange-OpenSource/ods-flutter/issues/341))
 - [Bug]: About - store reference ([#356](https://github.com/Orange-OpenSource/ods-flutter/issues/356))
 - [Bug] Card leading icon ([#340](https://github.com/Orange-OpenSource/ods-flutter/issues/340))
+- Documentation versioning ([#369](https://github.com/Orange-OpenSource/ods-flutter/issues/369))
+- Setup Localization of mobile library ([#374](https://github.com/Orange-OpenSource/ods-flutter/issues/374))
+- Documentation check ([#361](https://github.com/Orange-OpenSource/ods-flutter/issues/361))
 
 
 ## [0.8.O](https://github.com/Orange-OpenSource/ods-flutter/compare/0.1.1...0.8.0) - 2023-03-02
