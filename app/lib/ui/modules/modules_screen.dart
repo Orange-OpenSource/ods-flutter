@@ -36,7 +36,7 @@ class ModulesScreen extends StatelessWidget {
                 OdsVerticalImageFirstCard(
                   title: module.title,
                   image: OdsCardImage(
-                    imageProvider: AssetImage(module.imageResourceName),
+                    image: module.imageResourceName,
                     contentDescription: '', //Optional
                     alignment: Alignment.center,
                     contentScale: BoxFit.cover,

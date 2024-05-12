@@ -58,7 +58,7 @@ class ComponentsScreen extends StatelessWidget {
                     title: component.title,
                     image: displayImage(
                         component.imageResourceName, double.infinity),
-                    onTap: () {
+                    onClick: () {
                       Get.to(
                         ComponentDetailScreen(
                           component: component,

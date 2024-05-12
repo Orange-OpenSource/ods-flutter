@@ -99,7 +99,7 @@ class _Body extends StatelessWidget {
               customizationState.hasSubtitle == true ? recipe.subtitle : null,
           text: customizationState.hasText == true ? recipe.description : null,
           image: OdsCardImage(
-            imageProvider: NetworkImage(recipe.url),
+            image: recipe.url,
             contentDescription: '', //Optional
             alignment: Alignment.center,
             contentScale: BoxFit.cover,

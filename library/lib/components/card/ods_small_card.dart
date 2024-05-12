@@ -26,7 +26,7 @@ class OdsSmallCard extends StatelessWidget {
     required this.title,
     required this.image,
     this.subtitle,
-    this.onTap,
+    this.onClick,
   }) : super(key: key);
 
   static const double _imageHeight = 110;
@@ -42,14 +42,14 @@ class OdsSmallCard extends StatelessWidget {
   final String? subtitle;
 
   /// The action executed on card tap.
-  final Function()? onTap;
+  final Function()? onClick;
 
   @override
   Widget build(BuildContext context) {
     return MergeSemantics(
       child: Semantics(
-        button: onTap != null ? true : false,
-        onTap: onTap,
+        button: onClick != null ? true : false,
+        onTap: onClick,
         child: Stack(
           children: [
             SizedBox(
@@ -90,12 +90,12 @@ class OdsSmallCard extends StatelessWidget {
                 ),
               ),
             ),
-            if (onTap != null)
+            if (onClick != null)
               Positioned.fill(
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: onTap,
+                    onTap: onClick,
                   ),
                 ),
               )
