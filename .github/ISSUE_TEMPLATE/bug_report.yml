@@ -1,5 +1,5 @@
 name: Report a bug
-description: Tell us about a bug or issue you may have identified in ODS Android.
+description: Tell us about a bug or issue you may have identified in ODS Flutter.
 title: "[Bug]: Bug Summary"
 labels: ["🐞 bug", "🔍 triage"]
 assignees: 
