@@ -10,7 +10,6 @@
  * Software description: Flutter library of reusable graphical components for Android and iOS
  */
 
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -19,7 +18,6 @@ import 'package:flutter/services.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:ods_flutter/components/app_bar/top/ods_top_app_bar.dart';
 import 'package:path/path.dart' as path;
-import 'package:webview_flutter/webview_flutter.dart';
 
 class OdsAboutFileScreen extends StatelessWidget {
   final String title;
@@ -42,6 +40,7 @@ class OdsAboutFileScreen extends StatelessWidget {
         title: title,
         navigationIcon: BackButton(),
       ),
+      /*
       body: SafeArea(
         child: FutureBuilder(
           future: _loadFileData(),
@@ -75,6 +74,8 @@ class OdsAboutFileScreen extends StatelessWidget {
           },
         ),
       ),
+
+       */
     );
   }
 
