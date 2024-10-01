@@ -19,18 +19,18 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^4.0.3
-  flutter_svg: ^2.0.5
+  flutter_svg: any
 
   # Localization setup
   flutter_localizations:
     sdk: flutter
   intl: any
-  intl_translation: ^0.18.0
+  intl_translation: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
