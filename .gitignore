@@ -1,9 +1,0 @@
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.dart_tool/
-.fvm/
-.idea/
-.vscode/
-app/ios/Podfile.lock
