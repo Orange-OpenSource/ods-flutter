@@ -1,5 +1,12 @@
 # Contributing to Orange Design System Flutter
 
+> [!CAUTION]
+> ODS is not maintained anymore.
+> You should use [Orange Unified Design System](https://github.com/Orange-OpenSource/ouds-flutter) instead.
+
+> [!IMPORTANT]
+> This project is different to [Orange Unified Design System](https://github.com/Orange-OpenSource/ouds-flutter) instead.
+
 Looking to contribute something to Orange Design System Flutter? **Here's how you can help.**
 
 Please take a moment to review this document in order to make the contribution process easy for everyone involved.

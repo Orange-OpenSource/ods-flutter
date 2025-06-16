@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -40,7 +40,7 @@ jobs:
     needs: test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -59,7 +59,7 @@ jobs:
           flutter build appbundle --flavor=${{ steps.determine_flavor.outputs.flavor }}
 
       - name: Store Android app artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: android-app
           path: |
@@ -71,7 +71,7 @@ jobs:
     needs: test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -89,7 +89,7 @@ jobs:
           flutter build ios --no-codesign --flavor=${{ steps.determine_flavor.outputs.flavor }}
 
       - name: Store iOS app artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ios-app
           path: app/build/ios/iphoneos/Runner.app
