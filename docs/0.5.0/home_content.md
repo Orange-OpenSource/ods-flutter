@@ -11,6 +11,15 @@ Using these resources will allow you to create Orange branded applications faste
 
 The Orange Design System framework supports iOS 11 and later.
 
+```
+⚠️ ODS is not Orange Unified Design System (OUDS). See unified-design-system.orange.com
+⚠️ You should maybe use OUDS instead. See github.com/Orange-OpenSource/ouds-flutter
+```
+
+🚨 Orange Design System is not maintained anymore.
+
+🚨 Go to [OUDS Flutter](https://github.com/Orange-OpenSource/ouds-flutter) for the next design system generation!
+
 ## Instructions
 
 ### Use this package as a library
