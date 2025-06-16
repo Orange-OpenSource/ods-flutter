@@ -11,6 +11,13 @@
   <a href="https://github.com/Orange-OpenSource/ods-flutter/issues/new?assignees=B3nz01d&labels=feature%2C%F0%9F%94%8D%20triage&template=feature_request.yml&title=[feature]%3A+">Request feature</a>
 </p>
 
+> [!CAUTION]
+> ODS is not maintained anymore.
+> You should use [Orange Unified Design System](https://github.com/Orange-OpenSource/ouds-flutter) instead.
+
+> [!IMPORTANT]
+> This project is different to [Orange Unified Design System](https://github.com/Orange-OpenSource/ouds-flutter) instead.
+
 ## Table of contents
 
 - [Status](#status)
@@ -42,10 +49,6 @@ Have a bug or a feature request? Please first search for existing and closed iss
 ## Contributing
 
 Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ods-flutter/blob/main/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-## Project Temporarily Archived
-
-This project has been archived and is no longer actively maintained. No further updates, bug fixes, or support will be provided. For the time being, this project will remain in its archived state. While it may still offer value, we recommend exploring other solutions or alternatives for ongoing support and updates
 
 ## Copyright and license
 
